@@ -1,0 +1,6 @@
+framework module Pods_Gethingd {
+  umbrella header "Pods-Gethingd-umbrella.h"
+
+  export *
+  module * { export * }
+}

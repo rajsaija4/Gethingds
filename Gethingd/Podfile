@@ -1,0 +1,41 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Gethingd' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Gethingd
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
+  pod 'Toast-Swift'
+  pod 'IQKeyboardManagerSwift'
+  pod 'Kingfisher'
+  pod 'NVActivityIndicatorView/Extended'
+  pod 'SVPinView'
+  pod 'GooglePlaces'
+  pod 'RangeSeekSlider'
+  pod 'MessageKit'
+  pod 'SwiftyStoreKit'
+  
+  # For Animation View
+  
+  pod 'Hero'
+  
+  # For Firebase Notification
+  pod 'Firebase/Messaging'
+  
+  # For Crash Report Firebase
+  pod 'Firebase/Crashlytics'
+  pod 'Firebase/Analytics'
+  
+  # For Crop Profile Image
+  pod 'CropViewController'
+  
+  #For Country Code Picker
+  pod 'CountryPickerView'
+  
+  #For Tinder like cards
+  pod "Koloda"
+
+end

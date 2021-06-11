@@ -12,6 +12,7 @@
 		183042D226720E8900E6A29A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 183042D026720E8900E6A29A /* Main.storyboard */; };
 		183042D426720E8B00E6A29A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 183042D326720E8B00E6A29A /* Assets.xcassets */; };
 		183042D726720E8B00E6A29A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 183042D526720E8B00E6A29A /* LaunchScreen.storyboard */; };
+		6A28A73AB43CE01DE80F335B /* Pods_Gethingd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F5AD948B2005A04BB9EEB2 /* Pods_Gethingd.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		183042D326720E8B00E6A29A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		183042D626720E8B00E6A29A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		183042D826720E8B00E6A29A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CA5EC62CBB9378181B5FC41 /* Pods-Gethingd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gethingd.debug.xcconfig"; path = "Target Support Files/Pods-Gethingd/Pods-Gethingd.debug.xcconfig"; sourceTree = "<group>"; };
+		65DFBE8CF9BFC095D90B1189 /* Pods-Gethingd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gethingd.release.xcconfig"; path = "Target Support Files/Pods-Gethingd/Pods-Gethingd.release.xcconfig"; sourceTree = "<group>"; };
+		D9F5AD948B2005A04BB9EEB2 /* Pods_Gethingd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gethingd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A28A73AB43CE01DE80F335B /* Pods_Gethingd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1600C479654E47769FF29815 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2CA5EC62CBB9378181B5FC41 /* Pods-Gethingd.debug.xcconfig */,
+				65DFBE8CF9BFC095D90B1189 /* Pods-Gethingd.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		183042BE26720E8900E6A29A = {
 			isa = PBXGroup;
 			children = (
 				183042C926720E8900E6A29A /* Gethingd */,
 				183042C826720E8900E6A29A /* Products */,
+				1600C479654E47769FF29815 /* Pods */,
+				2E7B67C3CB8DF0C3C3D3C106 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +81,14 @@
 			path = Gethingd;
 			sourceTree = "<group>";
 		};
+		2E7B67C3CB8DF0C3C3D3C106 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D9F5AD948B2005A04BB9EEB2 /* Pods_Gethingd.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +96,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 183042DB26720E8B00E6A29A /* Build configuration list for PBXNativeTarget "Gethingd" */;
 			buildPhases = (
+				6F3B2ADF6CAC4525E69A1173 /* [CP] Check Pods Manifest.lock */,
 				183042C326720E8900E6A29A /* Sources */,
 				183042C426720E8900E6A29A /* Frameworks */,
 				183042C526720E8900E6A29A /* Resources */,
+				179008E9C20DDAD0F79707BF /* [CP] Embed Pods Frameworks */,
+				720B66BB0C409C8BAFF5CF4F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -128,6 +156,65 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		179008E9C20DDAD0F79707BF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gethingd/Pods-Gethingd-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gethingd/Pods-Gethingd-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gethingd/Pods-Gethingd-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6F3B2ADF6CAC4525E69A1173 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Gethingd-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		720B66BB0C409C8BAFF5CF4F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gethingd/Pods-Gethingd-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gethingd/Pods-Gethingd-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gethingd/Pods-Gethingd-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		183042C326720E8900E6A29A /* Sources */ = {
@@ -279,6 +366,7 @@
 		};
 		183042DC26720E8B00E6A29A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CA5EC62CBB9378181B5FC41 /* Pods-Gethingd.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -298,6 +386,7 @@
 		};
 		183042DD26720E8B00E6A29A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65DFBE8CF9BFC095D90B1189 /* Pods-Gethingd.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
