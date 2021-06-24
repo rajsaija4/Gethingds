@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FreshMatchesCell" id="gTV-IL-0wX" customClass="FreshMatchesCell" customModule="Zodi" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="131" height="174"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="131" height="174"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_user_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="0CA-hW-5lG">
+                        <rect key="frame" x="0.0" y="0.0" width="131" height="144"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nbf-zc-uzc">
+                        <rect key="frame" x="0.0" y="144" width="131" height="30"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YmN-ld-2QU">
+                                <rect key="frame" x="0.0" y="0.0" width="131" height="30"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                <state key="normal" title="Snow J">
+                                    <color key="titleColor" systemColor="viewFlipsideBackgroundColor"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YmN-ld-2QU" firstAttribute="leading" secondItem="Nbf-zc-uzc" secondAttribute="leading" id="DeY-ma-vtt"/>
+                            <constraint firstAttribute="trailing" secondItem="YmN-ld-2QU" secondAttribute="trailing" id="EqW-1T-km6"/>
+                            <constraint firstAttribute="bottom" secondItem="YmN-ld-2QU" secondAttribute="bottom" id="itB-Rj-hhg"/>
+                            <constraint firstAttribute="height" constant="30" id="nFD-5h-EaI"/>
+                            <constraint firstItem="YmN-ld-2QU" firstAttribute="top" secondItem="Nbf-zc-uzc" secondAttribute="top" id="uJx-sN-9Mi"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Nbf-zc-uzc" secondAttribute="bottom" id="6KO-dN-DIU"/>
+                <constraint firstItem="Nbf-zc-uzc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="AqK-VD-n2c"/>
+                <constraint firstItem="0CA-hW-5lG" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="CLc-EZ-NpQ"/>
+                <constraint firstItem="0CA-hW-5lG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="EdW-Lx-WD5"/>
+                <constraint firstAttribute="trailing" secondItem="0CA-hW-5lG" secondAttribute="trailing" id="bZl-zi-v17"/>
+                <constraint firstItem="Nbf-zc-uzc" firstAttribute="top" secondItem="0CA-hW-5lG" secondAttribute="bottom" id="g5q-OK-miP"/>
+                <constraint firstAttribute="trailing" secondItem="Nbf-zc-uzc" secondAttribute="trailing" id="shQ-rY-4gv"/>
+            </constraints>
+            <size key="customSize" width="131" height="174"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="8"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="btnName" destination="YmN-ld-2QU" id="EDp-4o-pU4"/>
+                <outlet property="imgUser" destination="0CA-hW-5lG" id="kW3-oY-399"/>
+            </connections>
+            <point key="canvasLocation" x="190.57971014492756" y="194.86607142857142"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="img_user_placeholder" width="640" height="960"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="viewFlipsideBackgroundColor">
+            <color red="0.1215686274509804" green="0.12941176470588239" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

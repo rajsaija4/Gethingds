@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Medium.ttf">
+            <string>Poppins-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SignCell" id="gTV-IL-0wX" customClass="SignCell" customModule="Zodi" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lkt-iu-Jrr">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Of-lR-s4R">
+                                <rect key="frame" x="172" y="8" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="C1U-fq-lYh"/>
+                                    <constraint firstAttribute="width" secondItem="4Of-lR-s4R" secondAttribute="height" id="Pgy-eG-hZ3"/>
+                                </constraints>
+                                <state key="normal" image="img_unselect"/>
+                                <state key="selected" image="img_select"/>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_scorpio" translatesAutoresizingMaskIntoConstraints="NO" id="iWb-Lq-Wzm">
+                                <rect key="frame" x="60" y="60" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="iWb-Lq-Wzm" secondAttribute="height" id="EAb-8Z-lsc"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCORPION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZF-td-OXF">
+                                <rect key="frame" x="8" y="148" width="184" height="36"/>
+                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="13"/>
+                                <color key="textColor" red="0.090196078430000007" green="0.023529411760000001" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3r-bl-kJC">
+                                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                <color key="backgroundColor" red="0.090196078430000007" green="0.023529411760000001" blue="0.32156862749999998" alpha="0.79913072183098588" colorSpace="calibratedRGB"/>
+                                <inset key="imageEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
+                                <state key="normal" image="img_Lock"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="f3r-bl-kJC" secondAttribute="bottom" id="E6M-tg-DWZ"/>
+                            <constraint firstItem="iWb-Lq-Wzm" firstAttribute="centerX" secondItem="Lkt-iu-Jrr" secondAttribute="centerX" id="EVs-4d-tTm"/>
+                            <constraint firstItem="iWb-Lq-Wzm" firstAttribute="width" secondItem="Lkt-iu-Jrr" secondAttribute="width" multiplier="0.4" id="F1a-25-awC"/>
+                            <constraint firstItem="4Of-lR-s4R" firstAttribute="top" secondItem="Lkt-iu-Jrr" secondAttribute="top" constant="8" id="PYd-EH-uqS"/>
+                            <constraint firstAttribute="bottom" secondItem="KZF-td-OXF" secondAttribute="bottom" constant="16" id="WpF-cK-iwT"/>
+                            <constraint firstAttribute="trailing" secondItem="4Of-lR-s4R" secondAttribute="trailing" constant="8" id="Wsi-3c-Wf0"/>
+                            <constraint firstAttribute="trailing" secondItem="KZF-td-OXF" secondAttribute="trailing" constant="8" id="YVk-R8-6ib"/>
+                            <constraint firstItem="f3r-bl-kJC" firstAttribute="leading" secondItem="Lkt-iu-Jrr" secondAttribute="leading" id="dsE-mb-kat"/>
+                            <constraint firstItem="iWb-Lq-Wzm" firstAttribute="centerY" secondItem="Lkt-iu-Jrr" secondAttribute="centerY" id="iZ3-S5-VY7"/>
+                            <constraint firstItem="KZF-td-OXF" firstAttribute="top" secondItem="iWb-Lq-Wzm" secondAttribute="bottom" constant="8" id="kpJ-gX-ZHH"/>
+                            <constraint firstItem="f3r-bl-kJC" firstAttribute="top" secondItem="Lkt-iu-Jrr" secondAttribute="top" id="mKo-r2-Qr2"/>
+                            <constraint firstItem="KZF-td-OXF" firstAttribute="leading" secondItem="Lkt-iu-Jrr" secondAttribute="leading" constant="8" id="nIY-Fo-HQc"/>
+                            <constraint firstAttribute="trailing" secondItem="f3r-bl-kJC" secondAttribute="trailing" id="w4H-PC-KHR"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="Lkt-iu-Jrr" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="FjZ-BW-Z2w"/>
+                <constraint firstAttribute="trailing" secondItem="Lkt-iu-Jrr" secondAttribute="trailing" id="Qvl-1d-3HB"/>
+                <constraint firstAttribute="bottom" secondItem="Lkt-iu-Jrr" secondAttribute="bottom" id="l0l-9y-uj2"/>
+                <constraint firstItem="Lkt-iu-Jrr" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="tuH-dR-DYe"/>
+            </constraints>
+            <size key="customSize" width="181" height="193"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="8"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="btnCheck" destination="4Of-lR-s4R" id="KaE-sT-odL"/>
+                <outlet property="btnLock" destination="f3r-bl-kJC" id="Ebd-fo-3BL"/>
+                <outlet property="imgSign" destination="iWb-Lq-Wzm" id="ua6-ai-qvg"/>
+                <outlet property="lblSignName" destination="KZF-td-OXF" id="AiN-ru-YFh"/>
+            </connections>
+            <point key="canvasLocation" x="226.81159420289856" y="201.22767857142856"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="img_Lock" width="39" height="52"/>
+        <image name="img_scorpio" width="51" height="55"/>
+        <image name="img_select" width="22" height="22"/>
+        <image name="img_unselect" width="22" height="22"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

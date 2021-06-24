@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Medium.ttf">
+            <string>Poppins-Medium</string>
+        </array>
+        <array key="Poppins-SemiBold.ttf">
+            <string>Poppins-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--ReportVC-->
+        <scene sceneID="oKA-e3-esl">
+            <objects>
+                <viewController storyboardIdentifier="ReportVC" id="B4w-p4-URX" customClass="ReportVC" customModule="Zodi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sKO-vO-k2w">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0x3-Ja-2Eq">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <connections>
+                                    <action selector="onDismissBtnTap:" destination="B4w-p4-URX" eventType="touchUpInside" id="SdF-OQ-WEf"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bUW-cg-X7z">
+                                <rect key="frame" x="20" y="240" width="374" height="416"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vcE-7A-dl3">
+                                        <rect key="frame" x="16" y="10" width="342" height="62"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure  ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39y-iZ-pcz">
+                                                <rect key="frame" x="0.0" y="0.0" width="342" height="28"/>
+                                                <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="20"/>
+                                                <color key="textColor" red="0.090196078430000007" green="0.023529411760000001" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tell us why..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ukk-fw-fgG">
+                                                <rect key="frame" x="0.0" y="38" width="342" height="24"/>
+                                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="17"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2ot-SP-ihh">
+                                        <rect key="frame" x="0.0" y="88" width="374" height="246"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="B4w-p4-URX" id="IaI-s1-UVh"/>
+                                            <outlet property="delegate" destination="B4w-p4-URX" id="Rhv-xU-9Zr"/>
+                                        </connections>
+                                    </tableView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6wh-nX-3fB" customClass="UIControl">
+                                        <rect key="frame" x="87" y="350" width="200" height="50"/>
+                                        <subviews>
+                                            <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UI3-ha-Oof">
+                                                <rect key="frame" x="68" y="8" width="64.5" height="34"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REPORT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJB-ba-EwK">
+                                                        <rect key="frame" x="0.0" y="5" width="64.5" height="24"/>
+                                                        <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="17"/>
+                                                        <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.090196078430000007" green="0.023529411760000001" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="UI3-ha-Oof" firstAttribute="centerX" secondItem="6wh-nX-3fB" secondAttribute="centerX" id="JAK-MT-8Vc"/>
+                                            <constraint firstAttribute="bottom" secondItem="UI3-ha-Oof" secondAttribute="bottom" constant="8" id="KVu-oZ-0Fx"/>
+                                            <constraint firstAttribute="width" constant="200" id="N6P-1k-t0r"/>
+                                            <constraint firstAttribute="height" constant="50" id="ac2-jr-9Zq"/>
+                                            <constraint firstItem="UI3-ha-Oof" firstAttribute="top" secondItem="6wh-nX-3fB" secondAttribute="top" constant="8" id="oza-RK-k2z"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onReportBtnTap:" destination="B4w-p4-URX" eventType="touchUpInside" id="gbX-3z-g8c"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="vcE-7A-dl3" secondAttribute="trailing" constant="16" id="B8Q-Ik-HMp"/>
+                                    <constraint firstAttribute="width" secondItem="bUW-cg-X7z" secondAttribute="height" multiplier="0.9" id="JQp-Mi-qVW"/>
+                                    <constraint firstItem="6wh-nX-3fB" firstAttribute="top" secondItem="2ot-SP-ihh" secondAttribute="bottom" constant="16" id="JVF-qL-cau"/>
+                                    <constraint firstItem="vcE-7A-dl3" firstAttribute="leading" secondItem="bUW-cg-X7z" secondAttribute="leading" constant="16" id="TAp-Go-fg1"/>
+                                    <constraint firstAttribute="bottom" secondItem="6wh-nX-3fB" secondAttribute="bottom" constant="16" id="XOY-Qt-zgx"/>
+                                    <constraint firstItem="6wh-nX-3fB" firstAttribute="centerX" secondItem="bUW-cg-X7z" secondAttribute="centerX" id="i2w-tI-K1h"/>
+                                    <constraint firstItem="vcE-7A-dl3" firstAttribute="top" secondItem="bUW-cg-X7z" secondAttribute="top" constant="10" id="l8L-fI-cHG"/>
+                                    <constraint firstItem="2ot-SP-ihh" firstAttribute="top" secondItem="vcE-7A-dl3" secondAttribute="bottom" constant="16" id="uEa-JL-mNs"/>
+                                    <constraint firstItem="2ot-SP-ihh" firstAttribute="leading" secondItem="bUW-cg-X7z" secondAttribute="leading" id="whj-X4-Mo9"/>
+                                    <constraint firstAttribute="trailing" secondItem="2ot-SP-ihh" secondAttribute="trailing" id="yWy-tu-bT9"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Zul-zI-ocZ"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bUW-cg-X7z" firstAttribute="centerY" secondItem="sKO-vO-k2w" secondAttribute="centerY" id="G16-WD-avx"/>
+                            <constraint firstItem="Zul-zI-ocZ" firstAttribute="trailing" secondItem="bUW-cg-X7z" secondAttribute="trailing" constant="20" id="GMV-q9-eES"/>
+                            <constraint firstItem="0x3-Ja-2Eq" firstAttribute="leading" secondItem="sKO-vO-k2w" secondAttribute="leading" id="Rn3-LO-aub"/>
+                            <constraint firstItem="0x3-Ja-2Eq" firstAttribute="top" secondItem="sKO-vO-k2w" secondAttribute="top" id="h3P-Wp-pp8"/>
+                            <constraint firstItem="bUW-cg-X7z" firstAttribute="leading" secondItem="Zul-zI-ocZ" secondAttribute="leading" constant="20" id="pMc-hg-dwu"/>
+                            <constraint firstAttribute="trailing" secondItem="0x3-Ja-2Eq" secondAttribute="trailing" id="zAv-cp-Pus"/>
+                            <constraint firstAttribute="bottom" secondItem="0x3-Ja-2Eq" secondAttribute="bottom" id="zNb-wa-QZX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lblType" destination="ZJB-ba-EwK" id="OsF-wM-cjC"/>
+                        <outlet property="tblReportReason" destination="2ot-SP-ihh" id="pLa-2M-kA1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZwU-oP-0Gb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="142" y="116"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

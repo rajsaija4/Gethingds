@@ -17,6 +17,7 @@ target 'Gethingd' do
   pod 'RangeSeekSlider'
   pod 'MessageKit'
   pod 'SwiftyStoreKit'
+  pod 'PhoneNumberKit'
   
   # For Animation View
   
@@ -31,9 +32,6 @@ target 'Gethingd' do
   
   # For Crop Profile Image
   pod 'CropViewController'
-  
-  #For Country Code Picker
-  pod 'CountryPickerView'
   
   #For Tinder like cards
   pod "Koloda"

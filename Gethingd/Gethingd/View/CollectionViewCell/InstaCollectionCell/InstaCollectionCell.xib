@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="InstaCollectionCell" id="gTV-IL-0wX" customClass="InstaCollectionCell" customModule="Zodi" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="215" height="243"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="215" height="243"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="erY-V8-vMW">
+                        <rect key="frame" x="0.0" y="0.0" width="215" height="243"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2s-4f-q1P">
+                        <rect key="frame" x="191" y="4" width="20" height="20"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="0.30356378424657532" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="KW5-Wz-Y4y"/>
+                            <constraint firstAttribute="width" secondItem="p2s-4f-q1P" secondAttribute="height" id="Pdu-mW-DrB"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_play" translatesAutoresizingMaskIntoConstraints="NO" id="tN6-8g-yPE">
+                        <rect key="frame" x="82.5" y="96.5" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="tN6-8g-yPE" secondAttribute="height" id="6t5-gw-ecZ"/>
+                            <constraint firstAttribute="width" constant="50" id="VcO-Cr-clb"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="p2s-4f-q1P" secondAttribute="trailing" constant="4" id="3xu-Ck-FKz"/>
+                <constraint firstItem="p2s-4f-q1P" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="GI6-ir-yYi"/>
+                <constraint firstItem="tN6-8g-yPE" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="O83-HZ-yT7"/>
+                <constraint firstItem="erY-V8-vMW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Pwd-Yf-3rT"/>
+                <constraint firstItem="erY-V8-vMW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Vht-5e-5v5"/>
+                <constraint firstAttribute="bottom" secondItem="erY-V8-vMW" secondAttribute="bottom" id="Z1k-8y-I9A"/>
+                <constraint firstItem="tN6-8g-yPE" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="a4r-Zg-FAr"/>
+                <constraint firstAttribute="trailing" secondItem="erY-V8-vMW" secondAttribute="trailing" id="oxG-E6-csv"/>
+            </constraints>
+            <size key="customSize" width="215" height="243"/>
+            <connections>
+                <outlet property="imgInsta" destination="erY-V8-vMW" id="arO-Iv-bpP"/>
+                <outlet property="imgPlay" destination="tN6-8g-yPE" id="EFy-Uh-CTo"/>
+                <outlet property="lblMediaCount" destination="p2s-4f-q1P" id="8wB-dG-neZ"/>
+            </connections>
+            <point key="canvasLocation" x="260.14492753623188" y="195.20089285714286"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="img_play" width="128" height="128"/>
+    </resources>
+</document>
