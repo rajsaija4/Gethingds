@@ -123,7 +123,16 @@ extension VerificationVC {
         resendOTP(param: param)
     }
     
-    @IBAction func onVerifyControlTap(_ sender: UIControl) {
+    @IBAction func onCallMeBtnTap(_ sender: UIButton) {
+        
+        let param = [
+            "phone_number": contactNumber
+        ]
+        
+        resendOTP(param: param)
+    }
+    
+    @IBAction func onVerifyControlTap(_ sender: UIButton) {
         
         guard pin.count == 4 else {
             self.showToast("Please Enter OTP")

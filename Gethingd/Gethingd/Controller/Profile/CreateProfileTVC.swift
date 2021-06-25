@@ -96,7 +96,8 @@ class CreateProfileTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupUI()
+        //setupUI()
+        
         
     }
     
@@ -120,14 +121,6 @@ extension CreateProfileTVC {
     
     fileprivate func setupUI() {
         
-        navigationController?.isNavigationBarHidden = false
-        
-        if isFromLogin {
-            navigationController?.addBackButtonWithTitle(title: "Create Profile (slide down to apply)")
-        } else {
-            navigationController?.addBackButtonWithTitle(title: "Update Profile (slide down to apply)", action: #selector(self.onBackBtnTap))
-        }
-        
         navigationItem.setHidesBackButton(true, animated: true)
         
         txtDate.setInputViewDatePicker(target: self, selector: #selector(self.onDoneBtnTap))
@@ -143,7 +136,7 @@ extension CreateProfileTVC {
             self.showFreemiumPlanActiveAlert()
         }
         
-        getProfile()
+        //getProfile()
 //        getHeight()
     }
     

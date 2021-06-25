@@ -27,7 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
                 setupCreateProfileVC()
             }
         } else {
-            setupLogin()
+//            setupLogin()
+            setupCreateProfileVC()
         }
         
         
@@ -67,6 +68,7 @@ extension AppDelegate {
         let vc = CreateProfileTVC.instantiate(fromAppStoryboard: .Profile)
         vc.isFromLogin = true
         let nvc = UINavigationController(rootViewController: vc)
+        nvc.isNavigationBarHidden = true
         window?.rootViewController = nvc
         window?.makeKeyAndVisible()
     }

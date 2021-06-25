@@ -18,7 +18,6 @@ class SignInVC: UIViewController {
     
     
     //MARK:- OUTLET
-    @IBOutlet weak var viewTop: UIView!
     @IBOutlet weak var txtPhoneNumber: PhoneNumberTextField!
     @IBOutlet weak var imgNumberStatus: UIImageView!
     
@@ -31,11 +30,6 @@ class SignInVC: UIViewController {
     }
     
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        viewTop.roundCorners(corners: .bottomRight, radius: 50)
-    }
-    
     @IBAction func onTermsBtnTap(_ sender: UIButton) {
         
         guard let termsURL = URL(string: "https://www.zodiap.org/page/terms_and_conditions") else {
@@ -112,7 +106,7 @@ extension SignInVC {
 
 extension SignInVC {
     
-    @IBAction func signInBtnTap(_ sender: UIControl) {
+    @IBAction func signInBtnTap(_ sender: UIButton) {
         
         
         let vc = VerificationVC.instantiate(fromAppStoryboard: .Login)
