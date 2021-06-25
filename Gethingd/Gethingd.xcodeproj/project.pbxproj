@@ -10,6 +10,34 @@
 		183042CB26720E8900E6A29A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183042CA26720E8900E6A29A /* AppDelegate.swift */; };
 		183042D426720E8B00E6A29A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 183042D326720E8B00E6A29A /* Assets.xcassets */; };
 		6A28A73AB43CE01DE80F335B /* Pods_Gethingd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F5AD948B2005A04BB9EEB2 /* Pods_Gethingd.framework */; };
+		9F7F723A2685959A009C46E9 /* ReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F72172685959A009C46E9 /* ReportVC.swift */; };
+		9F7F723B2685959A009C46E9 /* UpdateNowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F72192685959A009C46E9 /* UpdateNowVC.swift */; };
+		9F7F723C2685959A009C46E9 /* SuperLikeAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F721A2685959A009C46E9 /* SuperLikeAddVC.swift */; };
+		9F7F723D2685959A009C46E9 /* UpgradePlanInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F721B2685959A009C46E9 /* UpgradePlanInfoVC.swift */; };
+		9F7F723E2685959A009C46E9 /* UpgradeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F721C2685959A009C46E9 /* UpgradeVC.swift */; };
+		9F7F723F2685959A009C46E9 /* UserDetailsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F721E2685959A009C46E9 /* UserDetailsTVC.swift */; };
+		9F7F72402685959A009C46E9 /* InstagramFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F721F2685959A009C46E9 /* InstagramFeedVC.swift */; };
+		9F7F72412685959B009C46E9 /* DiscoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F72202685959A009C46E9 /* DiscoverVC.swift */; };
+		9F7F72422685959B009C46E9 /* FilterTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F72212685959A009C46E9 /* FilterTVC.swift */; };
+		9F7F72432685959B009C46E9 /* MatchUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F72222685959A009C46E9 /* MatchUserVC.swift */; };
+		9F7F72442685959B009C46E9 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F72252685959A009C46E9 /* Message.swift */; };
+		9F7F72452685959B009C46E9 /* MessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F72262685959A009C46E9 /* MessageVC.swift */; };
+		9F7F72462685959B009C46E9 /* ChatUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F72272685959A009C46E9 /* ChatUser.swift */; };
+		9F7F72472685959B009C46E9 /* MessagesFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F72282685959A009C46E9 /* MessagesFlowLayout.swift */; };
+		9F7F72482685959B009C46E9 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F72292685959A009C46E9 /* MessageCell.swift */; };
+		9F7F72492685959B009C46E9 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F722A2685959A009C46E9 /* ChatVC.swift */; };
+		9F7F724A2685959B009C46E9 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F722B2685959A009C46E9 /* MainTabBarController.swift */; };
+		9F7F724B2685959B009C46E9 /* ProfileTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F722D2685959A009C46E9 /* ProfileTVC.swift */; };
+		9F7F724C2685959B009C46E9 /* CreateProfileTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F722E2685959A009C46E9 /* CreateProfileTVC.swift */; };
+		9F7F724D2685959B009C46E9 /* InstaLoginWebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F72302685959A009C46E9 /* InstaLoginWebVC.swift */; };
+		9F7F724E2685959B009C46E9 /* InstagramApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F72312685959A009C46E9 /* InstagramApi.swift */; };
+		9F7F724F2685959B009C46E9 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F72322685959A009C46E9 /* NotificationVC.swift */; };
+		9F7F72502685959B009C46E9 /* VerificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F72342685959A009C46E9 /* VerificationVC.swift */; };
+		9F7F72512685959B009C46E9 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F72352685959A009C46E9 /* ForgotPasswordVC.swift */; };
+		9F7F72522685959B009C46E9 /* VerifyEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F72362685959A009C46E9 /* VerifyEmailVC.swift */; };
+		9F7F72532685959B009C46E9 /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F72372685959A009C46E9 /* ChangePasswordVC.swift */; };
+		9F7F72542685959B009C46E9 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F72382685959A009C46E9 /* SignInVC.swift */; };
+		9F7F72552685959B009C46E9 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F72392685959A009C46E9 /* SignUpVC.swift */; };
 		9FD6CD0326846764002EF5BD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CCF126846764002EF5BD /* Constants.swift */; };
 		9FD6CD0426846764002EF5BD /* AppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CCF226846764002EF5BD /* AppCell.swift */; };
 		9FD6CD0526846764002EF5BD /* AppUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CCF326846764002EF5BD /* AppUserDefaults.swift */; };
@@ -29,34 +57,6 @@
 		9FD6CD49268489EB002EF5BD /* NetworkCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CD46268489EB002EF5BD /* NetworkCaller.swift */; };
 		9FD6CD4A268489EB002EF5BD /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CD47268489EB002EF5BD /* NetworkManager.swift */; };
 		9FD6CD4B268489EB002EF5BD /* URLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CD48268489EB002EF5BD /* URLManager.swift */; };
-		9FD6CD7526848C50002EF5BD /* ReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CD5226848C50002EF5BD /* ReportVC.swift */; };
-		9FD6CD7626848C50002EF5BD /* UpdateNowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CD5426848C50002EF5BD /* UpdateNowVC.swift */; };
-		9FD6CD7726848C50002EF5BD /* SuperLikeAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CD5526848C50002EF5BD /* SuperLikeAddVC.swift */; };
-		9FD6CD7826848C50002EF5BD /* UpgradePlanInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CD5626848C50002EF5BD /* UpgradePlanInfoVC.swift */; };
-		9FD6CD7926848C50002EF5BD /* UpgradeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CD5726848C50002EF5BD /* UpgradeVC.swift */; };
-		9FD6CD7A26848C50002EF5BD /* UserDetailsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CD5926848C50002EF5BD /* UserDetailsTVC.swift */; };
-		9FD6CD7B26848C50002EF5BD /* InstagramFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CD5A26848C50002EF5BD /* InstagramFeedVC.swift */; };
-		9FD6CD7C26848C50002EF5BD /* DiscoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CD5B26848C50002EF5BD /* DiscoverVC.swift */; };
-		9FD6CD7D26848C50002EF5BD /* FilterTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CD5C26848C50002EF5BD /* FilterTVC.swift */; };
-		9FD6CD7E26848C50002EF5BD /* MatchUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CD5D26848C50002EF5BD /* MatchUserVC.swift */; };
-		9FD6CD7F26848C50002EF5BD /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CD6026848C50002EF5BD /* Message.swift */; };
-		9FD6CD8026848C50002EF5BD /* MessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CD6126848C50002EF5BD /* MessageVC.swift */; };
-		9FD6CD8126848C50002EF5BD /* ChatUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CD6226848C50002EF5BD /* ChatUser.swift */; };
-		9FD6CD8226848C50002EF5BD /* MessagesFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CD6326848C50002EF5BD /* MessagesFlowLayout.swift */; };
-		9FD6CD8326848C50002EF5BD /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CD6426848C50002EF5BD /* MessageCell.swift */; };
-		9FD6CD8426848C50002EF5BD /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CD6526848C50002EF5BD /* ChatVC.swift */; };
-		9FD6CD8526848C50002EF5BD /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CD6626848C50002EF5BD /* MainTabBarController.swift */; };
-		9FD6CD8626848C50002EF5BD /* ProfileTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CD6826848C50002EF5BD /* ProfileTVC.swift */; };
-		9FD6CD8726848C50002EF5BD /* CreateProfileTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CD6926848C50002EF5BD /* CreateProfileTVC.swift */; };
-		9FD6CD8826848C50002EF5BD /* InstaLoginWebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CD6B26848C50002EF5BD /* InstaLoginWebVC.swift */; };
-		9FD6CD8926848C50002EF5BD /* InstagramApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CD6C26848C50002EF5BD /* InstagramApi.swift */; };
-		9FD6CD8A26848C50002EF5BD /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CD6D26848C50002EF5BD /* NotificationVC.swift */; };
-		9FD6CD8B26848C50002EF5BD /* VerificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CD6F26848C50002EF5BD /* VerificationVC.swift */; };
-		9FD6CD8C26848C50002EF5BD /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CD7026848C50002EF5BD /* ForgotPasswordVC.swift */; };
-		9FD6CD8D26848C50002EF5BD /* VerifyEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CD7126848C50002EF5BD /* VerifyEmailVC.swift */; };
-		9FD6CD8E26848C50002EF5BD /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CD7226848C50002EF5BD /* ChangePasswordVC.swift */; };
-		9FD6CD8F26848C50002EF5BD /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CD7326848C50002EF5BD /* SignInVC.swift */; };
-		9FD6CD9026848C50002EF5BD /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CD7426848C50002EF5BD /* SignUpVC.swift */; };
 		9FD6CD9F26848C7D002EF5BD /* UserConversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CD9426848C7C002EF5BD /* UserConversation.swift */; };
 		9FD6CDA026848C7D002EF5BD /* Zodic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CD9526848C7C002EF5BD /* Zodic.swift */; };
 		9FD6CDA126848C7D002EF5BD /* MatchDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CD9626848C7C002EF5BD /* MatchDetails.swift */; };
@@ -107,6 +107,34 @@
 		183042D826720E8B00E6A29A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CA5EC62CBB9378181B5FC41 /* Pods-Gethingd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gethingd.debug.xcconfig"; path = "Target Support Files/Pods-Gethingd/Pods-Gethingd.debug.xcconfig"; sourceTree = "<group>"; };
 		65DFBE8CF9BFC095D90B1189 /* Pods-Gethingd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gethingd.release.xcconfig"; path = "Target Support Files/Pods-Gethingd/Pods-Gethingd.release.xcconfig"; sourceTree = "<group>"; };
+		9F7F72172685959A009C46E9 /* ReportVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportVC.swift; sourceTree = "<group>"; };
+		9F7F72192685959A009C46E9 /* UpdateNowVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateNowVC.swift; sourceTree = "<group>"; };
+		9F7F721A2685959A009C46E9 /* SuperLikeAddVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperLikeAddVC.swift; sourceTree = "<group>"; };
+		9F7F721B2685959A009C46E9 /* UpgradePlanInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpgradePlanInfoVC.swift; sourceTree = "<group>"; };
+		9F7F721C2685959A009C46E9 /* UpgradeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpgradeVC.swift; sourceTree = "<group>"; };
+		9F7F721E2685959A009C46E9 /* UserDetailsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailsTVC.swift; sourceTree = "<group>"; };
+		9F7F721F2685959A009C46E9 /* InstagramFeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramFeedVC.swift; sourceTree = "<group>"; };
+		9F7F72202685959A009C46E9 /* DiscoverVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverVC.swift; sourceTree = "<group>"; };
+		9F7F72212685959A009C46E9 /* FilterTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTVC.swift; sourceTree = "<group>"; };
+		9F7F72222685959A009C46E9 /* MatchUserVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchUserVC.swift; sourceTree = "<group>"; };
+		9F7F72252685959A009C46E9 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		9F7F72262685959A009C46E9 /* MessageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageVC.swift; sourceTree = "<group>"; };
+		9F7F72272685959A009C46E9 /* ChatUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatUser.swift; sourceTree = "<group>"; };
+		9F7F72282685959A009C46E9 /* MessagesFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesFlowLayout.swift; sourceTree = "<group>"; };
+		9F7F72292685959A009C46E9 /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		9F7F722A2685959A009C46E9 /* ChatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
+		9F7F722B2685959A009C46E9 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		9F7F722D2685959A009C46E9 /* ProfileTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTVC.swift; sourceTree = "<group>"; };
+		9F7F722E2685959A009C46E9 /* CreateProfileTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateProfileTVC.swift; sourceTree = "<group>"; };
+		9F7F72302685959A009C46E9 /* InstaLoginWebVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstaLoginWebVC.swift; sourceTree = "<group>"; };
+		9F7F72312685959A009C46E9 /* InstagramApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramApi.swift; sourceTree = "<group>"; };
+		9F7F72322685959A009C46E9 /* NotificationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
+		9F7F72342685959A009C46E9 /* VerificationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationVC.swift; sourceTree = "<group>"; };
+		9F7F72352685959A009C46E9 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
+		9F7F72362685959A009C46E9 /* VerifyEmailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyEmailVC.swift; sourceTree = "<group>"; };
+		9F7F72372685959A009C46E9 /* ChangePasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
+		9F7F72382685959A009C46E9 /* SignInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
+		9F7F72392685959A009C46E9 /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		9FD6CCF126846764002EF5BD /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9FD6CCF226846764002EF5BD /* AppCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCell.swift; sourceTree = "<group>"; };
 		9FD6CCF326846764002EF5BD /* AppUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUserDefaults.swift; sourceTree = "<group>"; };
@@ -126,34 +154,6 @@
 		9FD6CD46268489EB002EF5BD /* NetworkCaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkCaller.swift; sourceTree = "<group>"; };
 		9FD6CD47268489EB002EF5BD /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		9FD6CD48268489EB002EF5BD /* URLManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLManager.swift; sourceTree = "<group>"; };
-		9FD6CD5226848C50002EF5BD /* ReportVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportVC.swift; sourceTree = "<group>"; };
-		9FD6CD5426848C50002EF5BD /* UpdateNowVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateNowVC.swift; sourceTree = "<group>"; };
-		9FD6CD5526848C50002EF5BD /* SuperLikeAddVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperLikeAddVC.swift; sourceTree = "<group>"; };
-		9FD6CD5626848C50002EF5BD /* UpgradePlanInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpgradePlanInfoVC.swift; sourceTree = "<group>"; };
-		9FD6CD5726848C50002EF5BD /* UpgradeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpgradeVC.swift; sourceTree = "<group>"; };
-		9FD6CD5926848C50002EF5BD /* UserDetailsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailsTVC.swift; sourceTree = "<group>"; };
-		9FD6CD5A26848C50002EF5BD /* InstagramFeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramFeedVC.swift; sourceTree = "<group>"; };
-		9FD6CD5B26848C50002EF5BD /* DiscoverVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverVC.swift; sourceTree = "<group>"; };
-		9FD6CD5C26848C50002EF5BD /* FilterTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTVC.swift; sourceTree = "<group>"; };
-		9FD6CD5D26848C50002EF5BD /* MatchUserVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchUserVC.swift; sourceTree = "<group>"; };
-		9FD6CD6026848C50002EF5BD /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		9FD6CD6126848C50002EF5BD /* MessageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageVC.swift; sourceTree = "<group>"; };
-		9FD6CD6226848C50002EF5BD /* ChatUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatUser.swift; sourceTree = "<group>"; };
-		9FD6CD6326848C50002EF5BD /* MessagesFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesFlowLayout.swift; sourceTree = "<group>"; };
-		9FD6CD6426848C50002EF5BD /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
-		9FD6CD6526848C50002EF5BD /* ChatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
-		9FD6CD6626848C50002EF5BD /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		9FD6CD6826848C50002EF5BD /* ProfileTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTVC.swift; sourceTree = "<group>"; };
-		9FD6CD6926848C50002EF5BD /* CreateProfileTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateProfileTVC.swift; sourceTree = "<group>"; };
-		9FD6CD6B26848C50002EF5BD /* InstaLoginWebVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstaLoginWebVC.swift; sourceTree = "<group>"; };
-		9FD6CD6C26848C50002EF5BD /* InstagramApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramApi.swift; sourceTree = "<group>"; };
-		9FD6CD6D26848C50002EF5BD /* NotificationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
-		9FD6CD6F26848C50002EF5BD /* VerificationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationVC.swift; sourceTree = "<group>"; };
-		9FD6CD7026848C50002EF5BD /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
-		9FD6CD7126848C50002EF5BD /* VerifyEmailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyEmailVC.swift; sourceTree = "<group>"; };
-		9FD6CD7226848C50002EF5BD /* ChangePasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
-		9FD6CD7326848C50002EF5BD /* SignInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
-		9FD6CD7426848C50002EF5BD /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		9FD6CD9426848C7C002EF5BD /* UserConversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserConversation.swift; sourceTree = "<group>"; };
 		9FD6CD9526848C7C002EF5BD /* Zodic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zodic.swift; sourceTree = "<group>"; };
 		9FD6CD9626848C7C002EF5BD /* MatchDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchDetails.swift; sourceTree = "<group>"; };
@@ -241,10 +241,10 @@
 			isa = PBXGroup;
 			children = (
 				183042CA26720E8900E6A29A /* AppDelegate.swift */,
+				9F7F72152685959A009C46E9 /* Controller */,
 				9FD6CDDB26848DF0002EF5BD /* Interface */,
 				9FD6CDAB26848D2A002EF5BD /* View */,
 				9FD6CD9326848C7C002EF5BD /* Model */,
-				9FD6CD5026848C50002EF5BD /* Controller */,
 				9FD6CD45268489EA002EF5BD /* Networking */,
 				9FD6CD43268489B5002EF5BD /* Thirdparty */,
 				9FD6CD42268489A4002EF5BD /* Supporting */,
@@ -260,6 +260,105 @@
 				D9F5AD948B2005A04BB9EEB2 /* Pods_Gethingd.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9F7F72152685959A009C46E9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9F7F72162685959A009C46E9 /* ReportVC */,
+				9F7F72182685959A009C46E9 /* Upgrade */,
+				9F7F721D2685959A009C46E9 /* Discover */,
+				9F7F72232685959A009C46E9 /* Chat */,
+				9F7F722B2685959A009C46E9 /* MainTabBarController.swift */,
+				9F7F722C2685959A009C46E9 /* Profile */,
+				9F7F72322685959A009C46E9 /* NotificationVC.swift */,
+				9F7F72332685959A009C46E9 /* Login */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9F7F72162685959A009C46E9 /* ReportVC */ = {
+			isa = PBXGroup;
+			children = (
+				9F7F72172685959A009C46E9 /* ReportVC.swift */,
+			);
+			path = ReportVC;
+			sourceTree = "<group>";
+		};
+		9F7F72182685959A009C46E9 /* Upgrade */ = {
+			isa = PBXGroup;
+			children = (
+				9F7F72192685959A009C46E9 /* UpdateNowVC.swift */,
+				9F7F721A2685959A009C46E9 /* SuperLikeAddVC.swift */,
+				9F7F721B2685959A009C46E9 /* UpgradePlanInfoVC.swift */,
+				9F7F721C2685959A009C46E9 /* UpgradeVC.swift */,
+			);
+			path = Upgrade;
+			sourceTree = "<group>";
+		};
+		9F7F721D2685959A009C46E9 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				9F7F721E2685959A009C46E9 /* UserDetailsTVC.swift */,
+				9F7F721F2685959A009C46E9 /* InstagramFeedVC.swift */,
+				9F7F72202685959A009C46E9 /* DiscoverVC.swift */,
+				9F7F72212685959A009C46E9 /* FilterTVC.swift */,
+				9F7F72222685959A009C46E9 /* MatchUserVC.swift */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		9F7F72232685959A009C46E9 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				9F7F72242685959A009C46E9 /* MessageKit */,
+				9F7F722A2685959A009C46E9 /* ChatVC.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		9F7F72242685959A009C46E9 /* MessageKit */ = {
+			isa = PBXGroup;
+			children = (
+				9F7F72252685959A009C46E9 /* Message.swift */,
+				9F7F72262685959A009C46E9 /* MessageVC.swift */,
+				9F7F72272685959A009C46E9 /* ChatUser.swift */,
+				9F7F72282685959A009C46E9 /* MessagesFlowLayout.swift */,
+				9F7F72292685959A009C46E9 /* MessageCell.swift */,
+			);
+			path = MessageKit;
+			sourceTree = "<group>";
+		};
+		9F7F722C2685959A009C46E9 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				9F7F722D2685959A009C46E9 /* ProfileTVC.swift */,
+				9F7F722E2685959A009C46E9 /* CreateProfileTVC.swift */,
+				9F7F722F2685959A009C46E9 /* Instagram */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		9F7F722F2685959A009C46E9 /* Instagram */ = {
+			isa = PBXGroup;
+			children = (
+				9F7F72302685959A009C46E9 /* InstaLoginWebVC.swift */,
+				9F7F72312685959A009C46E9 /* InstagramApi.swift */,
+			);
+			path = Instagram;
+			sourceTree = "<group>";
+		};
+		9F7F72332685959A009C46E9 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				9F7F72342685959A009C46E9 /* VerificationVC.swift */,
+				9F7F72352685959A009C46E9 /* ForgotPasswordVC.swift */,
+				9F7F72362685959A009C46E9 /* VerifyEmailVC.swift */,
+				9F7F72372685959A009C46E9 /* ChangePasswordVC.swift */,
+				9F7F72382685959A009C46E9 /* SignInVC.swift */,
+				9F7F72392685959A009C46E9 /* SignUpVC.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		9FD6CCF026846764002EF5BD /* Helper */ = {
@@ -334,106 +433,6 @@
 				9FD6CD48268489EB002EF5BD /* URLManager.swift */,
 			);
 			path = Networking;
-			sourceTree = "<group>";
-		};
-		9FD6CD5026848C50002EF5BD /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				9FD6CD5126848C50002EF5BD /* ReportVC */,
-				9FD6CD5326848C50002EF5BD /* Upgrade */,
-				9FD6CD5826848C50002EF5BD /* Discover */,
-				9FD6CD5E26848C50002EF5BD /* Chat */,
-				9FD6CD6626848C50002EF5BD /* MainTabBarController.swift */,
-				9FD6CD6726848C50002EF5BD /* Profile */,
-				9FD6CD6D26848C50002EF5BD /* NotificationVC.swift */,
-				9FD6CD6E26848C50002EF5BD /* Login */,
-			);
-			name = Controller;
-			path = "../../../Zodi App/Zodi App/Zodi/Zodi/Controller";
-			sourceTree = "<group>";
-		};
-		9FD6CD5126848C50002EF5BD /* ReportVC */ = {
-			isa = PBXGroup;
-			children = (
-				9FD6CD5226848C50002EF5BD /* ReportVC.swift */,
-			);
-			path = ReportVC;
-			sourceTree = "<group>";
-		};
-		9FD6CD5326848C50002EF5BD /* Upgrade */ = {
-			isa = PBXGroup;
-			children = (
-				9FD6CD5426848C50002EF5BD /* UpdateNowVC.swift */,
-				9FD6CD5526848C50002EF5BD /* SuperLikeAddVC.swift */,
-				9FD6CD5626848C50002EF5BD /* UpgradePlanInfoVC.swift */,
-				9FD6CD5726848C50002EF5BD /* UpgradeVC.swift */,
-			);
-			path = Upgrade;
-			sourceTree = "<group>";
-		};
-		9FD6CD5826848C50002EF5BD /* Discover */ = {
-			isa = PBXGroup;
-			children = (
-				9FD6CD5926848C50002EF5BD /* UserDetailsTVC.swift */,
-				9FD6CD5A26848C50002EF5BD /* InstagramFeedVC.swift */,
-				9FD6CD5B26848C50002EF5BD /* DiscoverVC.swift */,
-				9FD6CD5C26848C50002EF5BD /* FilterTVC.swift */,
-				9FD6CD5D26848C50002EF5BD /* MatchUserVC.swift */,
-			);
-			path = Discover;
-			sourceTree = "<group>";
-		};
-		9FD6CD5E26848C50002EF5BD /* Chat */ = {
-			isa = PBXGroup;
-			children = (
-				9FD6CD5F26848C50002EF5BD /* MessageKit */,
-				9FD6CD6526848C50002EF5BD /* ChatVC.swift */,
-			);
-			path = Chat;
-			sourceTree = "<group>";
-		};
-		9FD6CD5F26848C50002EF5BD /* MessageKit */ = {
-			isa = PBXGroup;
-			children = (
-				9FD6CD6026848C50002EF5BD /* Message.swift */,
-				9FD6CD6126848C50002EF5BD /* MessageVC.swift */,
-				9FD6CD6226848C50002EF5BD /* ChatUser.swift */,
-				9FD6CD6326848C50002EF5BD /* MessagesFlowLayout.swift */,
-				9FD6CD6426848C50002EF5BD /* MessageCell.swift */,
-			);
-			path = MessageKit;
-			sourceTree = "<group>";
-		};
-		9FD6CD6726848C50002EF5BD /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				9FD6CD6826848C50002EF5BD /* ProfileTVC.swift */,
-				9FD6CD6926848C50002EF5BD /* CreateProfileTVC.swift */,
-				9FD6CD6A26848C50002EF5BD /* Instagram */,
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
-		9FD6CD6A26848C50002EF5BD /* Instagram */ = {
-			isa = PBXGroup;
-			children = (
-				9FD6CD6B26848C50002EF5BD /* InstaLoginWebVC.swift */,
-				9FD6CD6C26848C50002EF5BD /* InstagramApi.swift */,
-			);
-			path = Instagram;
-			sourceTree = "<group>";
-		};
-		9FD6CD6E26848C50002EF5BD /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				9FD6CD6F26848C50002EF5BD /* VerificationVC.swift */,
-				9FD6CD7026848C50002EF5BD /* ForgotPasswordVC.swift */,
-				9FD6CD7126848C50002EF5BD /* VerifyEmailVC.swift */,
-				9FD6CD7226848C50002EF5BD /* ChangePasswordVC.swift */,
-				9FD6CD7326848C50002EF5BD /* SignInVC.swift */,
-				9FD6CD7426848C50002EF5BD /* SignUpVC.swift */,
-			);
-			path = Login;
 			sourceTree = "<group>";
 		};
 		9FD6CD9326848C7C002EF5BD /* Model */ = {
@@ -736,73 +735,73 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F7F724B2685959B009C46E9 /* ProfileTVC.swift in Sources */,
 				9FD6CD0626846764002EF5BD /* IAPManager.swift in Sources */,
-				9FD6CD8226848C50002EF5BD /* MessagesFlowLayout.swift in Sources */,
+				9F7F72432685959B009C46E9 /* MatchUserVC.swift in Sources */,
 				9FD6CDA626848C7D002EF5BD /* SubscriptionPlan.swift in Sources */,
-				9FD6CD8426848C50002EF5BD /* ChatVC.swift in Sources */,
+				9F7F723D2685959A009C46E9 /* UpgradePlanInfoVC.swift in Sources */,
 				9FD6CD0D26846764002EF5BD /* Alert+Extension.swift in Sources */,
 				9FD6CD0C26846764002EF5BD /* UIView+Inspectable.swift in Sources */,
 				9FD6CDA326848C7D002EF5BD /* InstagramMedia.swift in Sources */,
+				9F7F72442685959B009C46E9 /* Message.swift in Sources */,
+				9F7F72502685959B009C46E9 /* VerificationVC.swift in Sources */,
+				9F7F72462685959B009C46E9 /* ChatUser.swift in Sources */,
 				9FD6CDC626848D2A002EF5BD /* InstaCollectionCell.swift in Sources */,
-				9FD6CD7B26848C50002EF5BD /* InstagramFeedVC.swift in Sources */,
+				9F7F724A2685959B009C46E9 /* MainTabBarController.swift in Sources */,
+				9F7F724F2685959B009C46E9 /* NotificationVC.swift in Sources */,
+				9F7F723E2685959A009C46E9 /* UpgradeVC.swift in Sources */,
+				9F7F724E2685959B009C46E9 /* InstagramApi.swift in Sources */,
+				9F7F723A2685959A009C46E9 /* ReportVC.swift in Sources */,
 				9FD6CDCC26848D2A002EF5BD /* KolodaOverlayView.swift in Sources */,
-				9FD6CD8C26848C50002EF5BD /* ForgotPasswordVC.swift in Sources */,
+				9F7F72412685959B009C46E9 /* DiscoverVC.swift in Sources */,
+				9F7F72452685959B009C46E9 /* MessageVC.swift in Sources */,
+				9F7F723F2685959A009C46E9 /* UserDetailsTVC.swift in Sources */,
 				9FD6CD9F26848C7D002EF5BD /* UserConversation.swift in Sources */,
 				9FD6CDA126848C7D002EF5BD /* MatchDetails.swift in Sources */,
-				9FD6CD8B26848C50002EF5BD /* VerificationVC.swift in Sources */,
-				9FD6CD7726848C50002EF5BD /* SuperLikeAddVC.swift in Sources */,
 				9FD6CD0726846764002EF5BD /* ColorModel.swift in Sources */,
-				9FD6CD7F26848C50002EF5BD /* Message.swift in Sources */,
 				9FD6CDCA26848D2A002EF5BD /* SignCell.swift in Sources */,
-				9FD6CD8826848C50002EF5BD /* InstaLoginWebVC.swift in Sources */,
-				9FD6CD7A26848C50002EF5BD /* UserDetailsTVC.swift in Sources */,
 				9FD6CD0926846764002EF5BD /* VideoPicker.swift in Sources */,
+				9F7F72542685959B009C46E9 /* SignInVC.swift in Sources */,
+				9F7F724D2685959B009C46E9 /* InstaLoginWebVC.swift in Sources */,
+				9F7F723C2685959A009C46E9 /* SuperLikeAddVC.swift in Sources */,
+				9F7F72472685959B009C46E9 /* MessagesFlowLayout.swift in Sources */,
 				9FD6CD49268489EB002EF5BD /* NetworkCaller.swift in Sources */,
 				9FD6CD0426846764002EF5BD /* AppCell.swift in Sources */,
 				9FD6CDA526848C7D002EF5BD /* User.swift in Sources */,
 				9FD6CDA026848C7D002EF5BD /* Zodic.swift in Sources */,
-				9FD6CD7C26848C50002EF5BD /* DiscoverVC.swift in Sources */,
 				9FD6CD1126846764002EF5BD /* AppSupport.swift in Sources */,
-				9FD6CD8926848C50002EF5BD /* InstagramApi.swift in Sources */,
-				9FD6CD8126848C50002EF5BD /* ChatUser.swift in Sources */,
-				9FD6CD7826848C50002EF5BD /* UpgradePlanInfoVC.swift in Sources */,
-				9FD6CD8326848C50002EF5BD /* MessageCell.swift in Sources */,
 				9FD6CDA426848C7D002EF5BD /* UserProfile.swift in Sources */,
 				9FD6CDA826848C7D002EF5BD /* Filter.swift in Sources */,
+				9F7F72522685959B009C46E9 /* VerifyEmailVC.swift in Sources */,
 				9FD6CDD126848D2A002EF5BD /* NotificationCell.swift in Sources */,
 				9FD6CDC826848D2A002EF5BD /* FreshMatchesCell.swift in Sources */,
 				9FD6CD0F26846764002EF5BD /* UIController+Ext.swift in Sources */,
-				9FD6CD8526848C50002EF5BD /* MainTabBarController.swift in Sources */,
+				9F7F72402685959A009C46E9 /* InstagramFeedVC.swift in Sources */,
+				9F7F72422685959B009C46E9 /* FilterTVC.swift in Sources */,
 				9FD6CD1026846764002EF5BD /* AppStoryboard.swift in Sources */,
-				9FD6CD7E26848C50002EF5BD /* MatchUserVC.swift in Sources */,
 				9FD6CDD526848D2A002EF5BD /* UserChatCell.swift in Sources */,
 				183042CB26720E8900E6A29A /* AppDelegate.swift in Sources */,
-				9FD6CD8626848C50002EF5BD /* ProfileTVC.swift in Sources */,
 				9FD6CDD326848D2A002EF5BD /* ReportReasonCell.swift in Sources */,
+				9F7F72492685959B009C46E9 /* ChatVC.swift in Sources */,
 				9FD6CD4A268489EB002EF5BD /* NetworkManager.swift in Sources */,
+				9F7F724C2685959B009C46E9 /* CreateProfileTVC.swift in Sources */,
 				9FD6CDA226848C7D002EF5BD /* PassLocation.swift in Sources */,
-				9FD6CD7926848C50002EF5BD /* UpgradeVC.swift in Sources */,
 				9FD6CD0A26846764002EF5BD /* UINavigationController+Ext.swift in Sources */,
-				9FD6CD8726848C50002EF5BD /* CreateProfileTVC.swift in Sources */,
-				9FD6CD7D26848C50002EF5BD /* FilterTVC.swift in Sources */,
-				9FD6CD8E26848C50002EF5BD /* ChangePasswordVC.swift in Sources */,
+				9F7F72512685959B009C46E9 /* ForgotPasswordVC.swift in Sources */,
 				9FD6CD1226846764002EF5BD /* AppFonts.swift in Sources */,
-				9FD6CD7526848C50002EF5BD /* ReportVC.swift in Sources */,
-				9FD6CD9026848C50002EF5BD /* SignUpVC.swift in Sources */,
 				9FD6CD0826846764002EF5BD /* ImagePicker.swift in Sources */,
 				9FD6CD0E26846764002EF5BD /* UIKit+Ext.swift in Sources */,
-				9FD6CD8D26848C50002EF5BD /* VerifyEmailVC.swift in Sources */,
 				9FD6CD0526846764002EF5BD /* AppUserDefaults.swift in Sources */,
 				9FD6CDA726848C7D002EF5BD /* Notification.swift in Sources */,
-				9FD6CD7626848C50002EF5BD /* UpdateNowVC.swift in Sources */,
+				9F7F72532685959B009C46E9 /* ChangePasswordVC.swift in Sources */,
+				9F7F72552685959B009C46E9 /* SignUpVC.swift in Sources */,
 				9FD6CDA926848C7D002EF5BD /* ReportReason.swift in Sources */,
-				9FD6CD8026848C50002EF5BD /* MessageVC.swift in Sources */,
 				9FD6CD0326846764002EF5BD /* Constants.swift in Sources */,
 				9FD6CD0B26846764002EF5BD /* String+Ext.swift in Sources */,
-				9FD6CD8F26848C50002EF5BD /* SignInVC.swift in Sources */,
 				9FD6CDCE26848D2A002EF5BD /* UserView.swift in Sources */,
 				9FD6CD4B268489EB002EF5BD /* URLManager.swift in Sources */,
-				9FD6CD8A26848C50002EF5BD /* NotificationVC.swift in Sources */,
+				9F7F723B2685959A009C46E9 /* UpdateNowVC.swift in Sources */,
+				9F7F72482685959B009C46E9 /* MessageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
