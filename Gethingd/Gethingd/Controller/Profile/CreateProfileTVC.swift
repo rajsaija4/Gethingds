@@ -50,12 +50,12 @@ class CreateProfileTVC: UITableViewController {
     @IBOutlet weak var imgAddressDropdown: UIImageView!
     @IBOutlet var arrLookingForSelect: [UIImageView]!
     @IBOutlet var arrGenderSelect: [UIImageView]!
-    @IBOutlet weak var txtDate: UITextField!
+    @IBOutlet weak var txtDate: CustomTextField!
     @IBOutlet weak var txtAddress: UITextField!
     @IBOutlet weak var lblHeight: UILabel!
     @IBOutlet weak var txtHeight: UITextField!
-    @IBOutlet weak var txtFirstName: UITextField!
-    @IBOutlet weak var txtLastName: UITextField!
+    @IBOutlet weak var txtFirstName: CustomTextField!
+    @IBOutlet weak var txtLastName: CustomTextField!
     @IBOutlet weak var txtNickName: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtAboutView: UITextView!{
@@ -97,6 +97,9 @@ class CreateProfileTVC: UITableViewController {
         super.viewDidLoad()
         
         //setupUI()
+        txtFirstName.setPlaceHolderColor()
+        txtLastName.setPlaceHolderColor()
+        txtDate.setPlaceHolderColor()
         
         
     }

@@ -241,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				183042CA26720E8900E6A29A /* AppDelegate.swift */,
+				9FD6CCF026846764002EF5BD /* Helper */,
 				9F7F72152685959A009C46E9 /* Controller */,
 				9FD6CDDB26848DF0002EF5BD /* Interface */,
 				9FD6CDAB26848D2A002EF5BD /* View */,
@@ -249,7 +250,6 @@
 				9FD6CD43268489B5002EF5BD /* Thirdparty */,
 				9FD6CD42268489A4002EF5BD /* Supporting */,
 				9FD6CD4126848948002EF5BD /* Resources */,
-				9FD6CCF026846764002EF5BD /* Helper */,
 			);
 			path = Gethingd;
 			sourceTree = "<group>";

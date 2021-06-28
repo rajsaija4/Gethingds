@@ -297,21 +297,17 @@ extension UITextField {
 
 class CustomTextField: UITextField {
     
-    var placeholderColorNew: UIColor {
-        get {
-            return self.attributedPlaceholder?.attribute(.foregroundColor, at: 0, effectiveRange: nil) as? UIColor ?? .lightText
-        }
-        set {
-            let firstAttributes = [NSAttributedString.Key.foregroundColor: newValue]
-            let secondAttributes = [NSAttributedString.Key.foregroundColor: UIColor.red]
-            
-            let firstString = NSMutableAttributedString(string: self.placeholder ?? "", attributes: firstAttributes)
-            let secondString = NSAttributedString(string: "*", attributes: secondAttributes)
-            
-            firstString.append(secondString)
-            
-            self.attributedPlaceholder = firstString
-        }
+    func setPlaceHolderColor() {
+        let firstAttributes = [NSAttributedString.Key.foregroundColor: COLOR.lightBalck]
+        let secondAttributes = [NSAttributedString.Key.foregroundColor: UIColor.red]
+        
+        let firstString = NSMutableAttributedString(string: self.placeholder ?? "", attributes: firstAttributes)
+        let secondString = NSAttributedString(string: "*", attributes: secondAttributes)
+        
+        firstString.append(secondString)
+        
+        self.attributedPlaceholder = firstString
+
     }
-    
+
 }
