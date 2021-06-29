@@ -153,10 +153,6 @@ extension UserDetailsTVC {
         
         arrImgView[0].addGradientLayer()
         
-        if user.instaToken.count > 0 {
-            self.getInstaMedia()
-        }
-        
     }
 }
 
@@ -214,33 +210,6 @@ extension UserDetailsTVC {
     
 }
 
-
-
-extension UserDetailsTVC {
-    
-    fileprivate func getInstaMedia() {
-        
-        let url = InstagramApi.shared.feedURL + user.instaToken
-        NetworkCaller.getRequest(url: url, params: nil, headers: nil) { (json) in
-            print(json)
-            for data in json["data"].arrayValue {
-                if data["media_type"].stringValue != MediaType.VIDEO.rawValue {
-                    self.arrInstaMedia.append(InstaMedia(data))
-                }
-                
-            }
-            
-            self.lblInstgramCount.text = "Instagram Photos (\(self.arrInstaMedia.count))"
-            self.pageControl.numberOfPages = Int(self.arrInstaMedia.count / 6) + 1
-            self.pageControl.currentPage = 0
-            self.collectionInsta.reloadData()
-        } failure: { (error) in
-            print(error.localizedDescription)
-        }
-        
-    }
-    
-}
 
 
 extension UserDetailsTVC {

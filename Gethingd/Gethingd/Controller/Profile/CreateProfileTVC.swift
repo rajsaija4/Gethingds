@@ -100,13 +100,18 @@ class CreateProfileTVC: UITableViewController {
         }
     }
     
-    @IBAction func onJobTitleTap(_ sender: UITextField) {
+    @IBAction func onJobTitleTap(_ sender: UIControl) {
+        
     }
     
-    @IBAction func onSexualOrientationTap(_ sender: CustomTextField) {
+    @IBAction func onSexualOrientationTap(_ sender: UIControl) {
+        
     }
-    @IBAction func onPassionTap(_ sender: UITextField) {
+    
+    @IBAction func onPassionTap(_ sender: UIControl) {
+        
     }
+    
     
     @IBAction func onLocationTap(_ sender: UIControl) {
     }
@@ -144,6 +149,7 @@ class CreateProfileTVC: UITableViewController {
     }
     
     @IBAction func onKidTypeTap(_ sender: UIControl) {
+        
     }
     
     
@@ -525,6 +531,12 @@ extension CreateProfileTVC: UITextViewDelegate {
             textView.text = placeHolder
         }
     }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        lblCharacterLeft.text = "Characters left: \(150 - textView.text.count)"
+        return textView.text.count < 150
+    }
+    
 }
 
 

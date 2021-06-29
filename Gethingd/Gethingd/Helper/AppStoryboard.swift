@@ -20,6 +20,7 @@ enum AppStoryboard : String {
     case Login
     case Report
     case Upgrade
+    case ReviewLater
     
     var instance : UIStoryboard {
         

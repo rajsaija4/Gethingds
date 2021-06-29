@@ -344,7 +344,7 @@
                                                                 <action selector="onLocationTap:" destination="ftm-uy-TkX" eventType="touchUpInside" id="Yhw-Gt-eXY"/>
                                                             </connections>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oIm-eQ-c1Y">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oIm-eQ-c1Y" customClass="UIControl">
                                                             <rect key="frame" x="0.0" y="58" width="374" height="50"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="j8n-yz-beP">
@@ -354,9 +354,6 @@
                                                                             <rect key="frame" x="0.0" y="5.6666666666666732" width="319" height="22.666666666666671"/>
                                                                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                                                                             <textInputTraits key="textInputTraits"/>
-                                                                            <connections>
-                                                                                <action selector="onJobTitleTap:" destination="ftm-uy-TkX" eventType="editingDidBegin" id="QBK-Bq-a7q"/>
-                                                                            </connections>
                                                                         </textField>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="gY6-of-K7w">
                                                                             <rect key="frame" x="327" y="9" width="15" height="16"/>
@@ -386,8 +383,11 @@
                                                                     <color key="value" red="0.97647058819999999" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="onJobTitleTap:" destination="ftm-uy-TkX" eventType="touchUpInside" id="p1a-xV-UYg"/>
+                                                            </connections>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Msa-fU-nxl">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Msa-fU-nxl" customClass="UIControl">
                                                             <rect key="frame" x="0.0" y="116" width="374" height="50"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="w3f-jI-DTm">
@@ -397,9 +397,6 @@
                                                                             <rect key="frame" x="0.0" y="5.666666666666659" width="319" height="22.666666666666671"/>
                                                                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                                                                             <textInputTraits key="textInputTraits"/>
-                                                                            <connections>
-                                                                                <action selector="onSexualOrientationTap:" destination="ftm-uy-TkX" eventType="editingDidBegin" id="jGr-97-ohF"/>
-                                                                            </connections>
                                                                         </textField>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="GxF-8H-vsG">
                                                                             <rect key="frame" x="327" y="9" width="15" height="16"/>
@@ -429,8 +426,11 @@
                                                                     <color key="value" red="0.97647058819999999" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="onSexualOrientationTap:" destination="ftm-uy-TkX" eventType="touchUpInside" id="sXM-K7-atR"/>
+                                                            </connections>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ehj-Nk-Fbd">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ehj-Nk-Fbd" customClass="UIControl">
                                                             <rect key="frame" x="0.0" y="174" width="374" height="50"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="aRR-aZ-djC">
@@ -440,9 +440,6 @@
                                                                             <rect key="frame" x="0.0" y="5.666666666666659" width="319" height="22.666666666666671"/>
                                                                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                                                                             <textInputTraits key="textInputTraits"/>
-                                                                            <connections>
-                                                                                <action selector="onPassionTap:" destination="ftm-uy-TkX" eventType="editingDidBegin" id="cSz-2J-eVo"/>
-                                                                            </connections>
                                                                         </textField>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="LHH-iA-W39">
                                                                             <rect key="frame" x="327" y="9" width="15" height="16"/>
@@ -472,6 +469,9 @@
                                                                     <color key="value" red="0.97647058819999999" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="onPassionTap:" destination="ftm-uy-TkX" eventType="touchUpInside" id="rAt-fe-8ky"/>
+                                                            </connections>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6DA-H0-p5S">
                                                             <rect key="frame" x="0.0" y="232" width="374" height="172"/>
@@ -1706,7 +1706,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="260" height="16"/>
                                                             <subviews>
                                                                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWo-94-DRK">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="16"/>
+                                                                    <rect key="frame" x="-16" y="0.0" width="16" height="16"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="16" id="g7i-fe-QGs"/>
                                                                         <constraint firstAttribute="width" secondItem="cWo-94-DRK" secondAttribute="height" id="na4-Ya-Oox"/>
@@ -1717,8 +1717,8 @@
                                                                         <action selector="onLocationCloseBtnTap:" destination="2ao-wt-fLr" eventType="touchUpInside" id="klu-MC-klG"/>
                                                                     </connections>
                                                                 </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pDE-uK-KUt">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="122" height="16"/>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pDE-uK-KUt">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="234" height="16"/>
                                                                     <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="17"/>
                                                                     <state key="normal" title="Galaxy Pass">
                                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1727,8 +1727,8 @@
                                                                         <action selector="onLocationBtnTap:" destination="2ao-wt-fLr" eventType="touchUpInside" id="ocg-Lc-72f"/>
                                                                     </connections>
                                                                 </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgW-ik-Ns7">
-                                                                    <rect key="frame" x="132" y="0.0" width="128" height="16"/>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgW-ik-Ns7">
+                                                                    <rect key="frame" x="244" y="0.0" width="16" height="16"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="16" id="0wf-bg-ZED"/>
                                                                         <constraint firstAttribute="width" secondItem="lgW-ik-Ns7" secondAttribute="height" id="MCy-Px-gPh"/>
@@ -1741,8 +1741,8 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PS3-H4-ofH">
                                                             <rect key="frame" x="0.0" y="32" width="260" height="16"/>
                                                             <subviews>
-                                                                <button opaque="NO" tag="1" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pou-rg-ORx">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="15" height="16"/>
+                                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pou-rg-ORx">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="pou-rg-ORx" secondAttribute="height" id="356-1O-VBB"/>
                                                                         <constraint firstAttribute="height" constant="16" id="wXj-N7-cTW"/>
@@ -1753,8 +1753,8 @@
                                                                         <action selector="onLocationCloseBtnTap:" destination="2ao-wt-fLr" eventType="touchUpInside" id="fcZ-1E-ZCg"/>
                                                                     </connections>
                                                                 </button>
-                                                                <button opaque="NO" tag="1" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aa6-DD-RAh">
-                                                                    <rect key="frame" x="25" y="0.0" width="209" height="16"/>
+                                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aa6-DD-RAh">
+                                                                    <rect key="frame" x="26" y="0.0" width="208" height="16"/>
                                                                     <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="17"/>
                                                                     <state key="normal" title="Galaxy Pass">
                                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1780,8 +1780,8 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PC9-Ne-2tx">
                                                             <rect key="frame" x="0.0" y="64" width="260" height="16"/>
                                                             <subviews>
-                                                                <button opaque="NO" tag="3" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wto-yZ-jWx">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="15" height="16"/>
+                                                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wto-yZ-jWx">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="Wto-yZ-jWx" secondAttribute="height" id="Vyv-y4-hoZ"/>
                                                                         <constraint firstAttribute="height" constant="16" id="kQB-B2-vWR"/>
@@ -1792,8 +1792,8 @@
                                                                         <action selector="onLocationCloseBtnTap:" destination="2ao-wt-fLr" eventType="touchUpInside" id="9k5-oN-Gbc"/>
                                                                     </connections>
                                                                 </button>
-                                                                <button opaque="NO" tag="3" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2sQ-lm-GjB">
-                                                                    <rect key="frame" x="25" y="0.0" width="104" height="16"/>
+                                                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2sQ-lm-GjB">
+                                                                    <rect key="frame" x="26" y="0.0" width="208" height="16"/>
                                                                     <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="17"/>
                                                                     <state key="normal" title="Galaxy Pass">
                                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1802,8 +1802,8 @@
                                                                         <action selector="onLocationBtnTap:" destination="2ao-wt-fLr" eventType="touchUpInside" id="vqy-oa-FOl"/>
                                                                     </connections>
                                                                 </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="haK-Br-9p9">
-                                                                    <rect key="frame" x="139" y="0.0" width="121" height="16"/>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="haK-Br-9p9">
+                                                                    <rect key="frame" x="244" y="0.0" width="16" height="16"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="haK-Br-9p9" secondAttribute="height" id="2Sa-h1-r1S"/>
                                                                         <constraint firstAttribute="height" constant="16" id="u47-yy-ikJ"/>
@@ -1828,8 +1828,8 @@
                                                                         <action selector="onLocationCloseBtnTap:" destination="2ao-wt-fLr" eventType="touchUpInside" id="oGa-pK-4WL"/>
                                                                     </connections>
                                                                 </button>
-                                                                <button opaque="NO" tag="4" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHT-Cu-oDg">
-                                                                    <rect key="frame" x="26" y="0.0" width="104" height="16"/>
+                                                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHT-Cu-oDg">
+                                                                    <rect key="frame" x="26" y="0.0" width="208" height="16"/>
                                                                     <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="17"/>
                                                                     <state key="normal" title="Galaxy Pass">
                                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1838,8 +1838,8 @@
                                                                         <action selector="onLocationBtnTap:" destination="2ao-wt-fLr" eventType="touchUpInside" id="Ndk-fF-w3S"/>
                                                                     </connections>
                                                                 </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="But-Er-L6I">
-                                                                    <rect key="frame" x="140" y="0.0" width="120" height="16"/>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="But-Er-L6I">
+                                                                    <rect key="frame" x="244" y="0.0" width="16" height="16"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="But-Er-L6I" secondAttribute="height" id="0vc-fx-Xth"/>
                                                                         <constraint firstAttribute="height" constant="16" id="2ly-SR-wfE"/>
@@ -1852,8 +1852,8 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ImT-DB-7QR">
                                                             <rect key="frame" x="0.0" y="128" width="260" height="16"/>
                                                             <subviews>
-                                                                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3R-Cp-Bo0">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
+                                                                <button opaque="NO" tag="5" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3R-Cp-Bo0">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="15" height="16"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="16" id="9jp-JO-630"/>
                                                                         <constraint firstAttribute="width" secondItem="P3R-Cp-Bo0" secondAttribute="height" id="caA-Jw-P5g"/>
@@ -1865,7 +1865,7 @@
                                                                     </connections>
                                                                 </button>
                                                                 <button opaque="NO" tag="5" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yKx-Xg-1Rn">
-                                                                    <rect key="frame" x="26" y="0.0" width="104" height="16"/>
+                                                                    <rect key="frame" x="25" y="0.0" width="209" height="16"/>
                                                                     <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="17"/>
                                                                     <state key="normal" title="Galaxy Pass">
                                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1874,8 +1874,8 @@
                                                                         <action selector="onLocationBtnTap:" destination="2ao-wt-fLr" eventType="touchUpInside" id="nHw-8K-n0T"/>
                                                                     </connections>
                                                                 </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ml8-tg-iGi">
-                                                                    <rect key="frame" x="140" y="0.0" width="120" height="16"/>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ml8-tg-iGi">
+                                                                    <rect key="frame" x="244" y="0.0" width="16" height="16"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="16" id="9Mg-kS-d9c"/>
                                                                         <constraint firstAttribute="width" secondItem="ml8-tg-iGi" secondAttribute="height" id="Xi6-rA-GJx"/>
@@ -1888,8 +1888,8 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="m7S-6H-lzf">
                                                             <rect key="frame" x="0.0" y="160" width="260" height="16"/>
                                                             <subviews>
-                                                                <button opaque="NO" tag="2" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QtA-aG-wWL">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="8" height="16"/>
+                                                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QtA-aG-wWL">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="16" id="Jtm-3I-KqU"/>
                                                                         <constraint firstAttribute="width" secondItem="QtA-aG-wWL" secondAttribute="height" id="skq-et-hej"/>
@@ -1900,8 +1900,8 @@
                                                                         <action selector="onLocationCloseBtnTap:" destination="2ao-wt-fLr" eventType="touchUpInside" id="cX9-cH-XNu"/>
                                                                     </connections>
                                                                 </button>
-                                                                <button opaque="NO" tag="2" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMr-Nz-lXw">
-                                                                    <rect key="frame" x="18" y="0.0" width="104" height="16"/>
+                                                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMr-Nz-lXw">
+                                                                    <rect key="frame" x="26" y="0.0" width="208" height="16"/>
                                                                     <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="17"/>
                                                                     <state key="normal" title="Galaxy Pass">
                                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1910,8 +1910,8 @@
                                                                         <action selector="onLocationBtnTap:" destination="2ao-wt-fLr" eventType="touchUpInside" id="6Bn-Ko-7Dm"/>
                                                                     </connections>
                                                                 </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rj7-uq-28i">
-                                                                    <rect key="frame" x="132" y="0.0" width="128" height="16"/>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rj7-uq-28i">
+                                                                    <rect key="frame" x="244" y="0.0" width="16" height="16"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="16" id="ATK-Xd-dnQ"/>
                                                                         <constraint firstAttribute="width" secondItem="Rj7-uq-28i" secondAttribute="height" id="YZh-EJ-a3Y"/>
@@ -2088,20 +2088,20 @@
                                                     <rect key="frame" x="40" y="10" width="315" height="30"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_account" translatesAutoresizingMaskIntoConstraints="NO" id="J0V-6h-3uM">
-                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                            <rect key="frame" x="0.0" y="2.6666666666666661" width="25" height="25"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="J0V-6h-3uM" secondAttribute="height" id="AWp-mj-9Qa"/>
                                                                 <constraint firstAttribute="width" constant="25" id="BFQ-Oc-y6A"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1QI-HH-uoO">
-                                                            <rect key="frame" x="50" y="3" width="235" height="24"/>
+                                                            <rect key="frame" x="45" y="3" width="240" height="24"/>
                                                             <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="17"/>
                                                             <color key="textColor" systemColor="viewFlipsideBackgroundColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMn-HP-LP2">
-                                                            <rect key="frame" x="305" y="3" width="10" height="24"/>
+                                                            <rect key="frame" x="305" y="7" width="10" height="16"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="16" id="4QW-bM-ACL"/>
                                                                 <constraint firstAttribute="width" constant="10" id="Pwb-wJ-p0c"/>

@@ -28,7 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
             }
         } else {
 //            setupLogin()
-            setupCreateProfileVC()
+//            setupCreateProfileVC()
+            setupMainTabBarController()
         }
         
         
@@ -78,20 +79,25 @@ extension AppDelegate {
         let tabBarVC = MainTabBarController.instantiate(fromAppStoryboard: .Main)
         
         let profileVC = ProfileTVC.instantiate(fromAppStoryboard: .Profile)
-        profileVC.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(named: "img_profile"), selectedImage: UIImage(named: "img_profile"))
+        profileVC.tabBarItem = UITabBarItem(title: "PROFILE", image: UIImage(named: "img_profile"), selectedImage: UIImage(named: "img_profile"))
         let profileNVC = UINavigationController(rootViewController: profileVC)
         
         let discoverVC = DiscoverVC.instantiate(fromAppStoryboard: .Discover)
-        discoverVC.tabBarItem = UITabBarItem(title: "Discover", image: UIImage(named: "img_discover"), selectedImage: UIImage(named: "img_discover"))
+        discoverVC.tabBarItem = UITabBarItem(title: "DISCOVER", image: UIImage(named: "img_discover"), selectedImage: UIImage(named: "img_discover"))
         let discoverNVC = UINavigationController(rootViewController: discoverVC)
         discoverNVC.isNavigationBarHidden = true
         
+        let reviewLaterVC = ReviewLaterVC.instantiate(fromAppStoryboard: .ReviewLater)
+        reviewLaterVC.tabBarItem = UITabBarItem(title: "REVIEW LATER", image: UIImage(named: "img_discover"), selectedImage: UIImage(named: "img_discover"))
+        let reviewLaterNVC = UINavigationController(rootViewController: reviewLaterVC)
+        reviewLaterNVC.isNavigationBarHidden = true
+        
         let chatVC = ChatVC.instantiate(fromAppStoryboard: .Chat)
-        chatVC.tabBarItem = UITabBarItem(title: "Chat", image: UIImage(named: "img_chat"), selectedImage: UIImage(named: "img_chat"))
+        chatVC.tabBarItem = UITabBarItem(title: "CHAT", image: UIImage(named: "img_chat"), selectedImage: UIImage(named: "img_chat"))
         let chatNVC = UINavigationController(rootViewController: chatVC)
         
         
-        tabBarVC.viewControllers = [profileNVC, discoverNVC, chatNVC]
+        tabBarVC.viewControllers = [profileNVC, discoverNVC, reviewLaterNVC, chatNVC]
         tabBarVC.selectedIndex = 1
         
         let tabBarNVC = UINavigationController(rootViewController: tabBarVC)

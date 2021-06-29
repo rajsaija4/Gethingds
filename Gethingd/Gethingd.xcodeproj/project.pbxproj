@@ -10,6 +10,8 @@
 		183042CB26720E8900E6A29A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183042CA26720E8900E6A29A /* AppDelegate.swift */; };
 		183042D426720E8B00E6A29A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 183042D326720E8B00E6A29A /* Assets.xcassets */; };
 		6A28A73AB43CE01DE80F335B /* Pods_Gethingd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F5AD948B2005A04BB9EEB2 /* Pods_Gethingd.framework */; };
+		9F1F70C1268B597600097F7E /* ReviewLaterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1F70C0268B597500097F7E /* ReviewLaterVC.swift */; };
+		9F1F70C8268B599700097F7E /* ReviewLater.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F1F70C7268B599700097F7E /* ReviewLater.storyboard */; };
 		9F7F723A2685959A009C46E9 /* ReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F72172685959A009C46E9 /* ReportVC.swift */; };
 		9F7F723B2685959A009C46E9 /* UpdateNowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F72192685959A009C46E9 /* UpdateNowVC.swift */; };
 		9F7F723C2685959A009C46E9 /* SuperLikeAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F721A2685959A009C46E9 /* SuperLikeAddVC.swift */; };
@@ -29,8 +31,6 @@
 		9F7F724A2685959B009C46E9 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F722B2685959A009C46E9 /* MainTabBarController.swift */; };
 		9F7F724B2685959B009C46E9 /* ProfileTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F722D2685959A009C46E9 /* ProfileTVC.swift */; };
 		9F7F724C2685959B009C46E9 /* CreateProfileTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F722E2685959A009C46E9 /* CreateProfileTVC.swift */; };
-		9F7F724D2685959B009C46E9 /* InstaLoginWebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F72302685959A009C46E9 /* InstaLoginWebVC.swift */; };
-		9F7F724E2685959B009C46E9 /* InstagramApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F72312685959A009C46E9 /* InstagramApi.swift */; };
 		9F7F724F2685959B009C46E9 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F72322685959A009C46E9 /* NotificationVC.swift */; };
 		9F7F72502685959B009C46E9 /* VerificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F72342685959A009C46E9 /* VerificationVC.swift */; };
 		9F7F72512685959B009C46E9 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F72352685959A009C46E9 /* ForgotPasswordVC.swift */; };
@@ -107,6 +107,8 @@
 		183042D826720E8B00E6A29A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CA5EC62CBB9378181B5FC41 /* Pods-Gethingd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gethingd.debug.xcconfig"; path = "Target Support Files/Pods-Gethingd/Pods-Gethingd.debug.xcconfig"; sourceTree = "<group>"; };
 		65DFBE8CF9BFC095D90B1189 /* Pods-Gethingd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gethingd.release.xcconfig"; path = "Target Support Files/Pods-Gethingd/Pods-Gethingd.release.xcconfig"; sourceTree = "<group>"; };
+		9F1F70C0268B597500097F7E /* ReviewLaterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewLaterVC.swift; sourceTree = "<group>"; };
+		9F1F70C7268B599700097F7E /* ReviewLater.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReviewLater.storyboard; sourceTree = "<group>"; };
 		9F7F72172685959A009C46E9 /* ReportVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportVC.swift; sourceTree = "<group>"; };
 		9F7F72192685959A009C46E9 /* UpdateNowVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateNowVC.swift; sourceTree = "<group>"; };
 		9F7F721A2685959A009C46E9 /* SuperLikeAddVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperLikeAddVC.swift; sourceTree = "<group>"; };
@@ -126,8 +128,6 @@
 		9F7F722B2685959A009C46E9 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		9F7F722D2685959A009C46E9 /* ProfileTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTVC.swift; sourceTree = "<group>"; };
 		9F7F722E2685959A009C46E9 /* CreateProfileTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateProfileTVC.swift; sourceTree = "<group>"; };
-		9F7F72302685959A009C46E9 /* InstaLoginWebVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstaLoginWebVC.swift; sourceTree = "<group>"; };
-		9F7F72312685959A009C46E9 /* InstagramApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramApi.swift; sourceTree = "<group>"; };
 		9F7F72322685959A009C46E9 /* NotificationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
 		9F7F72342685959A009C46E9 /* VerificationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationVC.swift; sourceTree = "<group>"; };
 		9F7F72352685959A009C46E9 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
@@ -262,6 +262,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9F1F70C3268B597A00097F7E /* ReviewLater */ = {
+			isa = PBXGroup;
+			children = (
+				9F1F70C0268B597500097F7E /* ReviewLaterVC.swift */,
+			);
+			path = ReviewLater;
+			sourceTree = "<group>";
+		};
 		9F7F72152685959A009C46E9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +281,7 @@
 				9F7F722C2685959A009C46E9 /* Profile */,
 				9F7F72322685959A009C46E9 /* NotificationVC.swift */,
 				9F7F72332685959A009C46E9 /* Login */,
+				9F1F70C3268B597A00097F7E /* ReviewLater */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -334,18 +343,8 @@
 			children = (
 				9F7F722D2685959A009C46E9 /* ProfileTVC.swift */,
 				9F7F722E2685959A009C46E9 /* CreateProfileTVC.swift */,
-				9F7F722F2685959A009C46E9 /* Instagram */,
 			);
 			path = Profile;
-			sourceTree = "<group>";
-		};
-		9F7F722F2685959A009C46E9 /* Instagram */ = {
-			isa = PBXGroup;
-			children = (
-				9F7F72302685959A009C46E9 /* InstaLoginWebVC.swift */,
-				9F7F72312685959A009C46E9 /* InstagramApi.swift */,
-			);
-			path = Instagram;
 			sourceTree = "<group>";
 		};
 		9F7F72332685959A009C46E9 /* Login */ = {
@@ -567,6 +566,7 @@
 				9FD6CDE326848DF0002EF5BD /* Login.storyboard */,
 				9FD6CDE426848DF0002EF5BD /* Chat.storyboard */,
 				9FD6CDE526848DF0002EF5BD /* Discover.storyboard */,
+				9F1F70C7268B599700097F7E /* ReviewLater.storyboard */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -650,6 +650,7 @@
 				9FD6CDD926848DB6002EF5BD /* GoogleService-Info.plist in Resources */,
 				9FD6CDEA26848DF0002EF5BD /* Main.storyboard in Resources */,
 				9FD6CDEB26848DF0002EF5BD /* Login.storyboard in Resources */,
+				9F1F70C8268B599700097F7E /* ReviewLater.storyboard in Resources */,
 				9FD6CDFC26848EF9002EF5BD /* Poppins-Bold.ttf in Resources */,
 				9FD6CDE626848DF0002EF5BD /* Report.storyboard in Resources */,
 				9FD6CDD426848D2A002EF5BD /* UserChatCell.xib in Resources */,
@@ -744,13 +745,13 @@
 				9FD6CD0C26846764002EF5BD /* UIView+Inspectable.swift in Sources */,
 				9FD6CDA326848C7D002EF5BD /* InstagramMedia.swift in Sources */,
 				9F7F72442685959B009C46E9 /* Message.swift in Sources */,
+				9F1F70C1268B597600097F7E /* ReviewLaterVC.swift in Sources */,
 				9F7F72502685959B009C46E9 /* VerificationVC.swift in Sources */,
 				9F7F72462685959B009C46E9 /* ChatUser.swift in Sources */,
 				9FD6CDC626848D2A002EF5BD /* InstaCollectionCell.swift in Sources */,
 				9F7F724A2685959B009C46E9 /* MainTabBarController.swift in Sources */,
 				9F7F724F2685959B009C46E9 /* NotificationVC.swift in Sources */,
 				9F7F723E2685959A009C46E9 /* UpgradeVC.swift in Sources */,
-				9F7F724E2685959B009C46E9 /* InstagramApi.swift in Sources */,
 				9F7F723A2685959A009C46E9 /* ReportVC.swift in Sources */,
 				9FD6CDCC26848D2A002EF5BD /* KolodaOverlayView.swift in Sources */,
 				9F7F72412685959B009C46E9 /* DiscoverVC.swift in Sources */,
@@ -762,7 +763,6 @@
 				9FD6CDCA26848D2A002EF5BD /* SignCell.swift in Sources */,
 				9FD6CD0926846764002EF5BD /* VideoPicker.swift in Sources */,
 				9F7F72542685959B009C46E9 /* SignInVC.swift in Sources */,
-				9F7F724D2685959B009C46E9 /* InstaLoginWebVC.swift in Sources */,
 				9F7F723C2685959A009C46E9 /* SuperLikeAddVC.swift in Sources */,
 				9F7F72472685959B009C46E9 /* MessagesFlowLayout.swift in Sources */,
 				9FD6CD49268489EB002EF5BD /* NetworkCaller.swift in Sources */,
