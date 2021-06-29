@@ -17,86 +17,61 @@ class CreateProfileTVC: UITableViewController {
     //MARK:- VARIABLE
     
     var isFromLogin = false
-    var freemiumPlanActiveMsg = String()
+
     var onPopView: (() -> Void)?
-    fileprivate var selectedSunSign: Int = 0
-    fileprivate var selectedMoonSign: Int = 0
-    fileprivate var selectedRisingSign: Int = 0
     fileprivate var latitude: String = ""
     fileprivate var longitude: String = ""
     fileprivate var selectedImageIndex = 0
     fileprivate var imagePicker: ImagePicker!
-    fileprivate let placeHolder = "Tell us something about yourself"
+    fileprivate let placeHolder = "About Information"
     
     fileprivate var selectedGender = -1
-    fileprivate var selectedLookingFor = -1
+    fileprivate var numberOfKids = 0
     fileprivate var profile: UserProfile = UserProfile(JSON.null)
-    fileprivate var arrHeight: [Double] = []
     fileprivate var locationManager: CLLocationManager?
-    fileprivate var instagramTestUser: InstagramTestUser? = nil
-    fileprivate var instagramUser: InstagramUser? = nil
     
     var pickerView: UIPickerView!
-    let feetList = Array(3...9)
-    let inchList = Array(0...11)
-    let numberOfComponents = 4
-    var arrImgParam: [String] = ["0", "0", "0", "0", "0"]
+    var arrImgParam: [String] = ["0", "0", "0", "0", "0", "0"]
     
     
     //MARK:- OUTLET
     
     
     @IBOutlet var arrProfileBtn: [UIButton]!
-    @IBOutlet weak var imgAddressDropdown: UIImageView!
-    @IBOutlet var arrLookingForSelect: [UIImageView]!
-    @IBOutlet var arrGenderSelect: [UIImageView]!
+
     @IBOutlet weak var txtDate: CustomTextField!
-    @IBOutlet weak var txtAddress: UITextField!
-    @IBOutlet weak var lblHeight: UILabel!
-    @IBOutlet weak var txtHeight: UITextField!
+   
     @IBOutlet weak var txtFirstName: CustomTextField!
     @IBOutlet weak var txtLastName: CustomTextField!
-    @IBOutlet weak var txtNickName: UITextField!
-    @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtAboutView: UITextView!{
         didSet {
             txtAboutView.delegate = self
         }
     }
-    @IBOutlet weak var btnInstaGram: UIButton!
-    @IBOutlet weak var btnRemoveInsta: UIButton!
+
     
     @IBOutlet var arrImageProfile: [UIImageView]!
-    @IBOutlet weak var sunSignCollectionView: UICollectionView!{
-        didSet{
-            sunSignCollectionView.delegate = self
-            sunSignCollectionView.dataSource = self
-            sunSignCollectionView.registerCell(SignCell.self)
-        }
-    }
+    @IBOutlet var arrGenderBtn: [UIButton]!
+    @IBOutlet weak var txtJobTitle: UITextField!
+    @IBOutlet weak var txtOrientation: CustomTextField!
+    @IBOutlet weak var txtPassion: UITextField!
+    @IBOutlet weak var lblLocation: UILabel!
+    @IBOutlet weak var lblCharacterLeft: UILabel!
+    @IBOutlet var arrStackView: [UIStackView]!
+    @IBOutlet weak var txtNumberOfKids: CustomTextField!
+    @IBOutlet weak var txtKid1: UITextField!
+    @IBOutlet weak var txtKid2: UITextField!
+    @IBOutlet weak var txtKid3: UITextField!
+    @IBOutlet weak var txtKid4: UITextField!
+    @IBOutlet weak var txtKid5: UITextField!
     
-    @IBOutlet weak var moonSignCollectionView: UICollectionView!{
-        didSet{
-            moonSignCollectionView.delegate = self
-            moonSignCollectionView.dataSource = self
-            moonSignCollectionView.registerCell(SignCell.self)
-        }
-    }
-    
-    @IBOutlet weak var risingSignCollectionView: UICollectionView!{
-        didSet{
-            risingSignCollectionView.delegate = self
-            risingSignCollectionView.dataSource = self
-            risingSignCollectionView.registerCell(SignCell.self)
-        }
-    }
     
     //MARK:- LIFECYCLE
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //setupUI()
+        setupUI()
         txtFirstName.setPlaceHolderColor()
         txtLastName.setPlaceHolderColor()
         txtDate.setPlaceHolderColor()
@@ -114,10 +89,91 @@ class CreateProfileTVC: UITableViewController {
         }
     }
     
-   
+    @IBAction func onGenderBtnTap(_ sender: UIButton) {
+        
+        for btn in arrGenderBtn {
+            if btn.tag == sender.tag {
+                btn.isSelected = true
+            } else {
+                btn.isSelected = false
+            }
+        }
+    }
+    
+    @IBAction func onJobTitleTap(_ sender: UITextField) {
+    }
+    
+    @IBAction func onSexualOrientationTap(_ sender: CustomTextField) {
+    }
+    @IBAction func onPassionTap(_ sender: UITextField) {
+    }
+    
+    @IBAction func onLocationTap(_ sender: UIControl) {
+    }
+    
+    @IBAction func onNumberOfKidsTap(_ sender: UIControl) {
+        let alert = UIAlertController(title: "No of Kids", message: "Selct No of Kids", actionNames: ["0", "1", "2", "3", "4", "5"]) { (action) in
+            
+            for i in 0..<self.arrStackView.count {
+                self.arrStackView[i].isHidden = true
+            }
+            
+            self.txtNumberOfKids.text = action.title ?? ""
+            
+            self.numberOfKids = Int(action.title ?? "0") ?? 0
+            
+            guard let count = Int(action.title ?? "0"), count > 0 else {
+                
+                self.tableView.reloadData()
+                self.tableView.invalidateIntrinsicContentSize()
+                self.tableView.layoutIfNeeded()
+                
+                return
+            }
+            
+            for i in 0..<count {
+                self.arrStackView[i].isHidden = false
+            }
+            
+            self.tableView.reloadData()
+            self.tableView.invalidateIntrinsicContentSize()
+            self.tableView.layoutIfNeeded()
+            
+        }
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func onKidTypeTap(_ sender: UIControl) {
+    }
+    
     
 }
 
+extension CreateProfileTVC {
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return 166
+        }
+        
+        if indexPath.section == 1 {
+            return 100
+        }
+        
+        if indexPath.section == 2 {
+            return 448
+        }
+        
+        if indexPath.section == 4 {
+            return CGFloat((numberOfKids * 50) + 66 + (numberOfKids * 8))
+        }
+        
+        if indexPath.section == 5 {
+            return 80
+        }
+        return UITableView.automaticDimension
+    }
+}
 
 
 extension CreateProfileTVC {
@@ -127,26 +183,9 @@ extension CreateProfileTVC {
         navigationItem.setHidesBackButton(true, animated: true)
         
         txtDate.setInputViewDatePicker(target: self, selector: #selector(self.onDoneBtnTap))
-        
-        self.pickerView = UIPickerView(frame:CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 216))
-        self.pickerView.delegate = self
-        self.pickerView.dataSource = self
-        txtHeight.inputView = self.pickerView
-        self.pickerView.backgroundColor = UIColor.white
-        txtHeight.inputView = self.pickerView
-        
-        if freemiumPlanActiveMsg.count > 0 {
-            self.showFreemiumPlanActiveAlert()
-        }
-        
-        //getProfile()
-//        getHeight()
     }
     
     fileprivate func setupDataUI() {
-        selectedSunSign = Int(profile.sunSignId) ?? 0
-        selectedMoonSign = Int(profile.moonSignId) ?? 0
-        selectedRisingSign = Int(profile.risingSignId) ?? 0
         
         for btn in arrProfileBtn {
             btn.isSelected = false
@@ -161,64 +200,11 @@ extension CreateProfileTVC {
         
         txtFirstName.text = profile.firstName
         txtLastName.text = profile.lastName
-        txtNickName.text = profile.nickName
         txtAboutView.text = profile.about.count > 0 ? profile.about : placeHolder
-        
-        let feet = (Int(profile.userHeight) ?? 0) / 12
-        let inches = (Int(profile.userHeight) ?? 0) % 12
-
-        let userHeight = "\(feet)'\(inches)''"
-        
-        
-//        lblHeight.text = userHeight
-        
-        txtHeight.text = profile.userHeight == "0" ? "Height" : userHeight
-        txtAddress.text = profile.address
-        txtAddress.isEnabled = isFromLogin
-        
-//        imgAddressDropdown.isHidden = profile.address.count == 0
-//        imgAddressDropdown.isHidden = true
-        txtEmail.text = profile.email
+    
         txtDate.text = profile.dateOfBirth
-        if profile.lookingFor.count > 0 {
-            selectedLookingFor = profile.lookingFor.lowercased() == "Female".lowercased() ? 0 : 1
-        }
-        
-        if profile.gender.count > 0 {
-            selectedGender = profile.gender.lowercased() == "Male".lowercased() ? 0 : 1
-        }
-        
-        if profile.instagramId.count > 0 {
-            btnInstaGram.setTitle(profile.instagramId, for: .normal)
-            btnInstaGram.isEnabled = false
-            btnRemoveInsta.isHidden = false
-        } else {
-            btnInstaGram.setTitle("Connect With Instagram", for: .normal)
-            btnRemoveInsta.isHidden = true
-            btnInstaGram.isEnabled = true
-        }
-              
-        
-        if selectedGender == 0 {
-            arrGenderSelect[0].image = UIImage.selectedImage
-            arrGenderSelect[1].image = UIImage.unSelectedImage
-        } else if selectedGender == 1 {
-            arrGenderSelect[1].image = UIImage.selectedImage
-            arrGenderSelect[0].image = UIImage.unSelectedImage
-        }
-        
-        if selectedLookingFor == 0 {
-            arrLookingForSelect[0].image = UIImage.selectedImage
-            arrLookingForSelect[1].image = UIImage.unSelectedImage
-        } else if selectedLookingFor == 1 {
-            arrLookingForSelect[1].image = UIImage.selectedImage
-            arrLookingForSelect[0].image = UIImage.unSelectedImage
-        }
-        
-        
-        sunSignCollectionView.reloadData()
-        moonSignCollectionView.reloadData()
-        risingSignCollectionView.reloadData()
+       
+
         
         if profile.address.count == 0 {
             locationManager = CLLocationManager()
@@ -233,6 +219,7 @@ extension CreateProfileTVC {
 
 
 extension CreateProfileTVC {
+    
     
     @IBAction func onAddressFieldEditingBegin(_ sender: UITextField) {
         
@@ -249,22 +236,7 @@ extension CreateProfileTVC {
         gmsACVC.modalPresentationStyle = .fullScreen
         present(gmsACVC, animated: true, completion: nil)
     }
-    
-    @IBAction func onConnectInstaBtnTap(_ sender: UIButton) {
-        let vc: InstaLoginWebVC = InstaLoginWebVC.instantiate(fromAppStoryboard: .Profile)
-        vc.instaGramUser = { user in
-            self.instagramTestUser = user
-            self.getInstagramProfile()
-        }
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true, completion: nil)
-    }
-    
-    @IBAction func onRemoveInstaBtnTap(_ sender: UIButton) {
-        instagramUser = nil
-        instagramTestUser = nil
-        addInstagramAccount()
-    }
+
     
     @IBAction func onImageBtnTap(_ sender: UIControl) {
         imagePicker = ImagePicker(presentationController: self, delegate: self)
@@ -272,35 +244,9 @@ extension CreateProfileTVC {
         selectedImageIndex = sender.tag
     }
     
-    @IBAction func onGenderSelect(_ sender: UIControl) {
-        for i in 0..<arrGenderSelect.count {
-            arrGenderSelect[i].image = i == sender.tag ? UIImage.selectedImage : UIImage.unSelectedImage
-        }
-        selectedGender = sender.tag
-    }
     
 
-    @IBAction func onLookingForControlTap(_ sender: UIControl) {
-        for i in 0..<arrLookingForSelect.count {
-            arrLookingForSelect[i].image = i == sender.tag ? UIImage.selectedImage : UIImage.unSelectedImage
-        }
-        selectedLookingFor = sender.tag
-    }
-    
-    @IBAction func onHeightControlTap(_ sender: UIControl) {
-       
-        var heights: [String] = []
-        for i in 145..<201 {
-            heights.append("\(i)")
-        }
-        let alert = UIAlertController(title: "Your Height", message: "Select Height", actionNames: heights) { (action) in
-            guard let height = action.title else { return }
-            self.lblHeight.text = height
-        }
-        
-        self.present(alert, animated: true, completion: nil)
-    }
-    
+
     @objc fileprivate func onBackBtnTap() {
         onPopView?()
         navigationController?.popViewController(animated: false)
@@ -325,11 +271,7 @@ extension CreateProfileTVC {
     }
     
     @IBAction func onNextControlTap(_ sender: UIControl) {
-        
-        guard selectedSunSign != 0 else {
-            self.showAlert("Please Select Sun Sign")
-            return
-        }
+    
         
         let img1 = arrImageProfile[0].image
         let img2 = arrImageProfile[1].image
@@ -400,108 +342,27 @@ extension CreateProfileTVC {
             return
         }
         
-        guard let nickName = txtNickName.text, nickName.count > 0 else {
-            self.showAlert("Please \(txtNickName.placeholder ?? "")")
-            return
-        }
-        
-        guard let email = txtEmail.text, email.count > 0 else {
-            self.showAlert("Please \(txtEmail.placeholder ?? "")")
-            return
-        }
-        
-        guard email.isValidEmail else {
-            self.showAlert("Please Enter Valid Email Address")
-            return
-        }
-        
-        
         guard let aboutInfo = txtAboutView.text, aboutInfo.count > 0, aboutInfo != placeHolder else {
             self.showAlert("Please \(placeHolder)")
             return
         }
-        
-        guard let userHeight = txtHeight.text, userHeight != "Height" else {
-            self.showAlert("Please Enter Height")
-            return
-        }
-        
-        guard let feet = Int(userHeight.components(separatedBy: "'")[0]),  let inch = Int(userHeight.components(separatedBy: "'")[1]) else {
-            return
-        }
-        
-        //
-        
-        let newUserHeight = ((feet * 12) + inch)
-        
-        guard newUserHeight > 0 else {
-            self.showAlert("Please Enter Height")
-            return
-        }
-        
+    
         guard let dob = txtDate.text, dob.count > 0 else {
             self.showAlert("Please Select Date Of Birth")
             return
         }
         
-        guard selectedGender != -1 else {
-            self.showAlert("Please Select Gender")
-            return
-        }
-        
-        guard selectedLookingFor != -1 else {
-            self.showAlert("Please Select Looking For")
-            return
-        }
-        
-        guard let address = txtAddress.text, address.count > 0 else {
-            self.showAlert("Please \(txtAddress.placeholder ?? "")")
-            return
-        }
-        
-        /*
-        guard selectedMoonSign != 0 else {
-            self.showAlert("Please Select Moon Sign")
-            return
-        }
-        
-        guard selectedRisingSign != 0 else {
-            self.showAlert("Please Select Rising Sign")
-            return
-        }
- 
-        */
-        
-//        guard let instagramID = txtInstagram.text, instagramID.count > 0 else {
-//            self.showAlert("Please \(txtInstagram.placeholder ?? "")")
-//            return
-//        }
-        
-//        guard let imgData1 = img1.jpegData(compressionQuality: 0.5), let imgData2 = img2.jpegData(compressionQuality: 0.5), let imgData3 = img3.jpegData(compressionQuality: 0.5), let imgData4 = img4.jpegData(compressionQuality: 0.5), let imgData5 = img5.jpegData(compressionQuality: 0.5) else {
-//            self.showAlert("Image Data Compression Issue")
-//            return
-//        }
     
-        
-        
         var parameters =
             [
                 "token": User.details.token,
-                "sun_zodiac_sign_id": "\(selectedSunSign)",
-                "moon_zodiac_sign_id": "\(selectedMoonSign)",
-                "rising_zodiac_sign_id": "\(selectedRisingSign)",
                 "first_name": firstName,
                 "last_name": lastName,
-                "nick_name": nickName,
-                "email": email,
                 "about": aboutInfo,
-                "looking_for": selectedLookingFor == 0 ? "Female" : "Male",
                 "gender": selectedGender == 0 ? "Male" : "Female",
-                "height": "\(newUserHeight)",
                 "dob": dob,
                 "latitude": latitude,
-                "longitude": longitude,
-                "address": address
+                "longitude": longitude
             ] as [String : String]
         
         for i in 1...arrImgParam.count {
@@ -542,15 +403,7 @@ extension CreateProfileTVC {
         }
     }
     
-    fileprivate func getHeight() {
-        NetworkManager.Profile.getHeight({ (heights) in
-            self.arrHeight.removeAll()
-            self.arrHeight.append(contentsOf: heights)
-        }) { (error) in
-//            self.showToast(error)
-        }
-    }
-    
+   
     fileprivate func addProfile(source: [String: Data], parameters: [String: String]) {
         showHUD()
         NetworkManager.Profile.addProfile(source: source, params: parameters, { (message) in
@@ -570,12 +423,6 @@ extension CreateProfileTVC {
             
         }) { (error) in
             self.hideHUD()
-            if error == "2" {
-                self.showVerifyEmailAlert()
-                return
-            }
-            
-            
             self.showAlert(error)
         }
     }
@@ -589,151 +436,8 @@ extension CreateProfileTVC {
             
         }) { (error) in
             self.hideHUD()
-            let alert = UIAlertController(title: "Oops!", message: error) { (_) in
-                self.showVerifyEmailAlert()
-            }
-            self.present(alert, animated: true, completion: nil)
-        }
-    }
-    
-    fileprivate func showVerifyEmailAlert() {
-        guard let email = self.txtEmail.text else { return }
-        let alert = UIAlertController(title: "Email OTP Verification", message: "Please enter the code received in your email \(email). If you do not see email in your Inbox then please check your Spam/Junk emails.", actionName: "Verify", placeholder: "Enter Verification OTP") { (txtOTP) in
-            
-            let param = [
-                "email": email,
-                "otp": txtOTP.text ?? ""
-            ]
-            self.verifyEmailOTP(param: param)
-        }
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    fileprivate func getInstagramProfile() {
-        guard let testUser = instagramTestUser else { return }
-        
-        
-        InstagramApi.shared.getInstagramUser(testUserData: testUser) { [weak self] (user) in
-            
-            self?.instagramUser = user
-            
-            DispatchQueue.main.async {
-                self?.addInstagramAccount()
-//                self?.btnInstaGram.setTitle(user.username, for: .normal)
-                
-            }
-        }
-    }
-    
-    fileprivate func addInstagramAccount() {
-        
-        showHUD()
-        
-        let param = [
-            "instagram_id": instagramUser?.username ?? "",
-            "insta_access_token": instagramTestUser?.access_token ?? ""
-        ]
-        
-        NetworkManager.Profile.addInstagramAccount(param: param) { (success) in
-            self.hideHUD()
-            self.getProfile()
-        } _: { (error) in
-            self.hideHUD()
             self.showAlert(error)
         }
-
-    }
-}
-
-
-
-extension CreateProfileTVC: UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: SignCell = collectionView.dequequReusableCell(for: indexPath)
-        let index = indexPath.row + 1
-        if collectionView == sunSignCollectionView {
-            if index == selectedSunSign {
-                cell.setupProfileCellSelected(name: "\(index)")
-            } else {
-                cell.setupProfileCell(name: "\(index)")
-            }
-            return cell
-        }
-        
-        if collectionView == moonSignCollectionView {
-            if index == selectedMoonSign {
-                cell.setupProfileCellSelected(name: "\(index)")
-            } else {
-                cell.setupProfileCell(name: "\(index)")
-            }
-            return cell
-        }
-        
-        if collectionView == risingSignCollectionView {
-            if index == selectedRisingSign {
-                cell.setupProfileCellSelected(name: "\(index)")
-            } else {
-                cell.setupProfileCell(name: "\(index)")
-            }
-            return cell
-        }
-        return cell
-    }
-}
-
-
-
-extension CreateProfileTVC: UICollectionViewDelegate {
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        if collectionView == sunSignCollectionView {
-            selectedSunSign = indexPath.item + 1
-        }
-        
-        if collectionView == moonSignCollectionView {
-            if selectedMoonSign == indexPath.item + 1 {
-                selectedMoonSign = 0
-            } else {
-                selectedMoonSign = indexPath.item + 1
-            }
-            
-        }
-        
-        if collectionView == risingSignCollectionView {
-            if selectedRisingSign == indexPath.item + 1 {
-                selectedRisingSign = 0
-            } else {
-                selectedRisingSign = indexPath.item + 1
-            }
-            
-        }
-        
-        collectionView.reloadData()
-
-    }
-}
-
-
-
-extension CreateProfileTVC: UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let height = collectionView.frame.size.height
-        return CGSize(width: height * 0.8, height: height)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
     }
 
 }
@@ -889,7 +593,7 @@ extension CreateProfileTVC: GMSAutocompleteViewControllerDelegate {
         //getAddressFromCenterCoordinate(centerCoordinate: place.coordinate)
         self.latitude = latitude
         self.longitude = longitude
-        self.txtAddress.text = addressString
+        self.lblLocation.text = addressString
         dismiss(animated: true, completion: nil)
     }
     func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
@@ -1017,61 +721,17 @@ extension CreateProfileTVC {
                                                     */
                                                     self.latitude = latitude
                                                     self.longitude = longitude
-                                                    self.txtAddress.text = locationName
+                                                    self.lblLocation.text = locationName
                                                     
                                                 })
         
     }
 }
 
-
-// MARK: - UIPickerView Methods
-extension CreateProfileTVC: UIPickerViewDelegate, UIPickerViewDataSource {
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return numberOfComponents
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if component == 0 {
-            return feetList.count
-        }else if component == 2 {
-            return inchList.count
-        }else {
-            return 1
-        }
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if component == 0 {
-            return "\(feetList[row])"
-        }else if component == 1 {
-            return "ft"
-        }else if component == 2 {
-            return "\(inchList[row])"
-        }else {
-            return "in"
-        }
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let feetIndex = pickerView.selectedRow(inComponent: 0)
-        let inchIndex = pickerView.selectedRow(inComponent: 2)
-        txtHeight.text = "\(feetList[feetIndex])'\(inchList[inchIndex])''"
-    }
-}
-
-
-
 extension CreateProfileTVC {
     
     func showAlert(_ alert: String) {
         let alert = UIAlertController(title: "Oops!", message: alert)
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    func showFreemiumPlanActiveAlert() {
-        let alert = UIAlertController(title: "Congratulations", message: freemiumPlanActiveMsg)
         self.present(alert, animated: true, completion: nil)
     }
 }
