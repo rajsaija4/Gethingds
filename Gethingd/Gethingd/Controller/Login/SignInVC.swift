@@ -69,8 +69,7 @@ extension SignInVC {
     }
     
     @objc func textFieldDidChange(sender: UITextField) {
-        imgNumberStatus.isHidden = txtPhoneNumber.text?.count ?? 0 == 0
-        imgNumberStatus.image = txtPhoneNumber.isValidNumber ? UIImage(named: "success") : UIImage(named: "error")
+        imgNumberStatus.isHidden = !txtPhoneNumber.isValidNumber
     }
     
 }
