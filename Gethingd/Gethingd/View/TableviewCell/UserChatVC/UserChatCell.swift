@@ -13,11 +13,13 @@ class UserChatCell: UITableViewCell {
     @IBOutlet weak var imgUser: UIImageView!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblLastMsg: UILabel!
-    @IBOutlet weak var lblTime: UILabel!
-    @IBOutlet weak var lblUnRead: UILabel!
+    @IBOutlet weak var lblTIime: UILabel!
+    @IBOutlet weak var lblUnread: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        lblUnread.clipsToBounds = true
+        lblUnread.layer.cornerRadius = self.lblUnread.bounds.width / 2
         // Initialization code
     }
 
@@ -33,9 +35,9 @@ class UserChatCell: UITableViewCell {
         }
         lblName.text = user.name
         lblLastMsg.text = user.message
-        lblTime.text = user.createdDate.displayTime
-        lblUnRead.isHidden = user.unreadMessageCount == 0
-        lblUnRead.text = "\(user.unreadMessageCount)"
+        lblTIime.text = user.createdDate.displayTime
+        lblUnread.isHidden = user.unreadMessageCount == 0
+        lblUnread.text = "\(user.unreadMessageCount)"
     }
     
 }

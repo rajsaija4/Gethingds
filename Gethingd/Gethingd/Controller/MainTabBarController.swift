@@ -14,8 +14,8 @@ class MainTabBarController: UITabBarController {
         super.viewDidLoad()
 
         self.tabBar.barTintColor = .white
-        self.tabBar.unselectedItemTintColor = COLOR.App
-        self.tabBar.tintColor = COLOR.Red
+        self.tabBar.unselectedItemTintColor = COLOR.darkBlack
+        self.tabBar.tintColor = COLOR.App
     }
 
 }

@@ -18,7 +18,8 @@ target 'Gethingd' do
   pod 'MessageKit'
   pod 'SwiftyStoreKit'
   pod 'PhoneNumberKit'
-  
+  pod 'FAPanels'
+  pod 'Parchment'
   # For Animation View
   
   pod 'Hero'

@@ -123,7 +123,6 @@ class User: NSObject, NSCoding {
 }
 
 
-
 extension User {
         
     static var isExist: Bool {

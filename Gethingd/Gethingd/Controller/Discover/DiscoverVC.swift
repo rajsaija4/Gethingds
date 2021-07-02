@@ -46,7 +46,6 @@ class DiscoverVC: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        viewHeader.roundCorners(corners: .bottomRight, radius: 40)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,9 +63,6 @@ extension DiscoverVC {
         kolodaView.dataSource = self
         kolodaView.delegate = self
         self.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
-//        locationManager = CLLocationManager()
-//        locationManager?.delegate = self
-//        locationManager?.requestAlwaysAuthorization()
         
         getUserList()
     }
@@ -287,9 +283,7 @@ extension DiscoverVC {
     
     @IBAction func onFilterBtnTap(_ sender: UIButton) {
         let vc = FilterTVC.instantiate(fromAppStoryboard: .Discover)
-        vc.onFilter = {
-            self.getUserList()
-        }
+//        
         let nvc = UINavigationController(rootViewController: vc)
         nvc.modalPresentationStyle = .fullScreen
         nvc.modalTransitionStyle = .crossDissolve

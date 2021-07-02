@@ -106,14 +106,7 @@ extension SignInVC {
 extension SignInVC {
     
     @IBAction func signInBtnTap(_ sender: UIButton) {
-        
-        
-        let vc = VerificationVC.instantiate(fromAppStoryboard: .Login)
-        vc.contactNumber = "9067782816"
-        vc.otp = "1234"
-        self.navigationController?.pushViewController(vc, animated: true)
-        
-        return
+
         
         guard txtPhoneNumber.text?.count ?? 0 > 0 else {
             showToast("Please enter your mobile number")
@@ -131,7 +124,7 @@ extension SignInVC {
         }
 
 
-        let contact = countryCode + phoneNumber
+        let contact = "+" + countryCode + phoneNumber
 
         userLogIn(contact: contact)
        

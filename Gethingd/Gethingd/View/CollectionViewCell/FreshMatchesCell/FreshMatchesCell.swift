@@ -12,7 +12,10 @@ import Kingfisher
 class FreshMatchesCell: UICollectionViewCell {
 
     @IBOutlet weak var imgUser: UIImageView!
-    @IBOutlet weak var btnName: UIButton!
+   
+    @IBOutlet weak var btnReviewLater: UIButton!
+    @IBOutlet weak var lblUserName: UILabel!
+    @IBOutlet weak var btnStatus: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,7 +26,7 @@ class FreshMatchesCell: UICollectionViewCell {
         if let imgURL = URL(string: user.userImage) {
             imgUser.kf.setImage(with: imgURL)
         }
-        btnName.setTitle(user.name, for: .normal)
+        lblUserName.text = user.name
         let userStatus = user.readStatus == "unread" ? "img_active_user" : "img_inactive_user"
         //btnName.setImage(UIImage(named: userStatus), for: .normal)
     }

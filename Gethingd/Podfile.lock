@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (5.4.3)
   - CropViewController (2.6.0)
+  - FAPanels (2.0.1)
   - Firebase/Analytics (7.11.0):
     - Firebase/Core
   - Firebase/Core (7.11.0):
@@ -122,6 +123,7 @@ PODS:
   - NVActivityIndicatorView/Base (5.1.1)
   - NVActivityIndicatorView/Extended (5.1.1):
     - NVActivityIndicatorView/Base
+  - Parchment (3.0.1)
   - PhoneNumberKit (3.3.3):
     - PhoneNumberKit/PhoneNumberKitCore (= 3.3.3)
     - PhoneNumberKit/UIKit (= 3.3.3)
@@ -139,6 +141,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - CropViewController
+  - FAPanels
   - Firebase/Analytics
   - Firebase/Crashlytics
   - Firebase/Messaging
@@ -149,6 +152,7 @@ DEPENDENCIES:
   - Koloda
   - MessageKit
   - NVActivityIndicatorView/Extended
+  - Parchment
   - PhoneNumberKit
   - RangeSeekSlider
   - SVPinView
@@ -160,6 +164,7 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - CropViewController
+    - FAPanels
     - Firebase
     - FirebaseAnalytics
     - FirebaseCore
@@ -180,6 +185,7 @@ SPEC REPOS:
     - MessageKit
     - nanopb
     - NVActivityIndicatorView
+    - Parchment
     - PhoneNumberKit
     - pop
     - PromisesObjC
@@ -192,6 +198,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   CropViewController: 7093b39ec3cb508531b22d35773e06cecd7378d8
+  FAPanels: 050291ef601a1dc00fad888f83e74284cb86dd52
   Firebase: c121feb35e4126c0b355e3313fa9b487d47319fd
   FirebaseAnalytics: cd3bd84d722a24a8923918af8af8e5236f615d77
   FirebaseCore: 907447d8917a4d3eb0cce2829c5a0ad21d90b432
@@ -212,6 +219,7 @@ SPEC CHECKSUMS:
   MessageKit: 1f07618183be6d92b648ba7a384aafa097362a00
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
+  Parchment: 466a1cfb6151780db8acb4bbedc2d9c6bfa1e2ff
   PhoneNumberKit: 4ce83273551c4d2ae10b7361162f4283dd02835f
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
@@ -221,6 +229,6 @@ SPEC CHECKSUMS:
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: fcdf307ca1a92a5a165ece3bd40285679f14e6a4
+PODFILE CHECKSUM: 4d97d5d6ac5516326dfede8620f8b4f75b2b13de
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.10.0

@@ -30,9 +30,10 @@ class VerificationVC: UIViewController {
             pinView.activeBorderLineColor = pinViewColor
             pinView.borderLineThickness = 1
             pinView.activeBorderLineThickness = 1
-            pinView.activeFieldBackgroundColor = pinViewColor
+            pinView.activeFieldBackgroundColor = COLOR.lightGray
             pinView.fieldBackgroundColor = pinViewColor
             pinView.fieldCornerRadius = pinView.frame.height / 2
+            pinView.fieldBackgroundColor = COLOR.lightGray
             pinView.activeFieldCornerRadius = pinView.frame.height / 2
             
             pinView.font = AppFonts.Poppins_SemiBold.withSize(20)
@@ -132,7 +133,7 @@ extension VerificationVC {
     }
     
     @IBAction func onVerifyControlTap(_ sender: UIButton) {
-        
+
         guard pin.count == 4 else {
             self.showToast("Please Enter OTP")
             return

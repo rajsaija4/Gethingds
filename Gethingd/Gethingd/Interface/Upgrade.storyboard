@@ -26,7 +26,7 @@
         <!--UpgradeVC-->
         <scene sceneID="tE3-Hy-DaQ">
             <objects>
-                <viewController storyboardIdentifier="UpgradeVC" id="SZ4-Bq-7FB" customClass="UpgradeVC" customModule="Zodi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UpgradeVC" id="SZ4-Bq-7FB" customClass="UpgradeVC" customModule="Gethingd" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Xb-7e-gYk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1266,7 +1266,7 @@
         <!--Super Like AddVC-->
         <scene sceneID="1wK-5R-7FI">
             <objects>
-                <viewController storyboardIdentifier="SuperLikeAddVC" id="xQ6-Kd-vH2" customClass="SuperLikeAddVC" customModule="Zodi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SuperLikeAddVC" id="xQ6-Kd-vH2" customClass="SuperLikeAddVC" customModule="Gethingd" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sO1-P2-Lmh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1419,7 +1419,7 @@
         <!--Update NowVC-->
         <scene sceneID="UtZ-EE-70w">
             <objects>
-                <viewController storyboardIdentifier="UpdateNowVC" id="tHg-Dc-Ft1" customClass="UpdateNowVC" customModule="Zodi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UpdateNowVC" id="tHg-Dc-Ft1" customClass="UpdateNowVC" customModule="Gethingd" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ith-VN-Lru">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1516,7 +1516,7 @@
         <!--Upgrade Plan InfoVC-->
         <scene sceneID="Oxp-1b-FJE">
             <objects>
-                <viewController storyboardIdentifier="UpgradePlanInfoVC" id="5gR-W8-CE7" customClass="UpgradePlanInfoVC" customModule="Zodi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UpgradePlanInfoVC" id="5gR-W8-CE7" customClass="UpgradePlanInfoVC" customModule="Gethingd" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q7r-JU-tWr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1546,15 +1546,15 @@
                                 <rect key="frame" x="20" y="156" width="414" height="686"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="xYv-e4-V2r">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="396"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="323"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lob-fX-PwG">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="84"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="72"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Astro Likes">
                                                         <attributes>
                                                             <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <font key="NSFont" size="20" name="Poppins-Regular"/>
+                                                            <font key="NSFont" metaFont="system" size="20"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             <integer key="NSUnderline" value="1"/>
                                                         </attributes>
@@ -1562,7 +1562,7 @@
                                                     <fragment content=" alert users right away of your interest, increasing the chances of you finding the perfect match">
                                                         <attributes>
                                                             <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <font key="NSFont" size="20" name="Poppins-Regular"/>
+                                                            <font key="NSFont" metaFont="system" size="20"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
@@ -1570,12 +1570,12 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUT-Lo-bGA">
-                                                <rect key="frame" x="0.0" y="114" width="374" height="140"/>
+                                                <rect key="frame" x="0.0" y="102" width="374" height="95.5"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Moon Boosts">
                                                         <attributes>
                                                             <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <font key="NSFont" size="20" name="Poppins-Regular"/>
+                                                            <font key="NSFont" metaFont="system" size="20"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             <integer key="NSUnderline" value="1"/>
                                                         </attributes>
@@ -1584,7 +1584,7 @@
                                                         <string key="content"> bring your profile to the front of the line thus increasing your profile's visibility and boosting your chances of being found by your soulmate</string>
                                                         <attributes>
                                                             <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <font key="NSFont" size="20" name="Poppins-Regular"/>
+                                                            <font key="NSFont" metaFont="system" size="20"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
@@ -1592,12 +1592,12 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O7e-hM-fWD">
-                                                <rect key="frame" x="0.0" y="284" width="374" height="112"/>
+                                                <rect key="frame" x="0.0" y="227.5" width="374" height="95.5"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Galaxy Pass">
                                                         <attributes>
                                                             <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <font key="NSFont" size="20" name="Poppins-Regular"/>
+                                                            <font key="NSFont" metaFont="system" size="20"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             <integer key="NSUnderline" value="1"/>
                                                         </attributes>
@@ -1605,7 +1605,7 @@
                                                     <fragment content=" allows users that travel frequently to change their location at will, to match with users in cities they plan on traveling to">
                                                         <attributes>
                                                             <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <font key="NSFont" size="20" name="Poppins-Regular"/>
+                                                            <font key="NSFont" metaFont="system" size="20"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
