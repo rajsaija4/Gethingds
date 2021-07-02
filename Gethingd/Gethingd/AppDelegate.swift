@@ -27,9 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
                 setupCreateProfileVC()
             }
         } else {
-//            setupLogin()
+            setupLogin()
 //            setupCreateProfileVC()
-            setupMainTabBarController()
+//            setupMainTabBarController()
         }
         
         return true
