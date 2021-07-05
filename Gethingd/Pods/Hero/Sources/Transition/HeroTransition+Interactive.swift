@@ -93,16 +93,16 @@ extension HeroTransition {
    - modifiers: the modifiers to override
    - view: the view to override to
    */
-  public func apply(modifiers: [HeroModifier], to view: UIView) {
+  public func apply(modifiers: [HeroModifier], to baseView: UIView) {
     guard state == .animating else { return }
     let targetState = HeroTargetState(modifiers: modifiers)
-    if let otherView = self.context.pairedView(for: view) {
+    if let otherView = self.context.pairedView(for: baseView) {
       for animator in self.animators {
         animator.apply(state: targetState, to: otherView)
       }
     }
     for animator in self.animators {
-      animator.apply(state: targetState, to: view)
+      animator.apply(state: targetState, to: baseView)
     }
   }
 
@@ -119,16 +119,16 @@ extension HeroTransition {
    - isDestination: if false, it changes the starting state
    - view: the view to override to
    */
-  public func changeTarget(modifiers: [HeroModifier], isDestination: Bool = true, to view: UIView) {
+  public func changeTarget(modifiers: [HeroModifier], isDestination: Bool = true, to baseView: UIView) {
     guard state == .animating else { return }
     let targetState = HeroTargetState(modifiers: modifiers)
-    if let otherView = self.context.pairedView(for: view) {
+    if let otherView = self.context.pairedView(for: baseView) {
       for animator in self.animators {
         animator.changeTarget(state: targetState, isDestination: !isDestination, to: otherView)
       }
     }
     for animator in self.animators {
-      animator.changeTarget(state: targetState, isDestination: isDestination, to: view)
+      animator.changeTarget(state: targetState, isDestination: isDestination, to: baseView)
     }
   }
 }

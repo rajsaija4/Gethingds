@@ -24,12 +24,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
             if User.details.firstName.count > 0  {
                 setupMainTabBarController()
             } else {
-                setupCreateProfileVC()
+//                setupCreateProfileVC()
+                editProfile()
             }
         } else {
-            setupLogin()
+//            setupLogin()
 //            setupCreateProfileVC()
 //            setupMainTabBarController()
+            
         }
         
         return true
@@ -63,6 +65,18 @@ extension AppDelegate {
         window?.rootViewController = nvc
         window?.makeKeyAndVisible()
     }
+    
+    
+    func editProfile() {
+            let vc = EditProfileVC.instantiate(fromAppStoryboard: .Profile)
+            let nvc = UINavigationController(rootViewController: vc)
+            nvc.isNavigationBarHidden = true
+            window?.rootViewController = nvc
+            window?.makeKeyAndVisible()
+        }
+
+        
+   
     
     func setupCreateProfileVC() {
         let vc = CreateProfileTVC.instantiate(fromAppStoryboard: .Profile)

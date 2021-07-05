@@ -20,6 +20,7 @@ target 'Gethingd' do
   pod 'PhoneNumberKit'
   pod 'FAPanels'
   pod 'Parchment'
+  pod 'TagListView'
   # For Animation View
   
   pod 'Hero'

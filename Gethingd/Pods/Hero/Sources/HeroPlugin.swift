@@ -76,7 +76,7 @@ open class HeroPlugin: NSObject, HeroPreprocessor, HeroAnimator {
    If return true, Hero won't animate and won't let any other plugins animate this view.
    The view will also be hidden automatically during the animation.
    */
-  open func canAnimate(view: UIView, appearing: Bool) -> Bool { return false }
+    open func canAnimate(view baseView: UIView, appearing: Bool) -> Bool { return false }
 
   /**
    Perform the animation.
@@ -128,8 +128,8 @@ open class HeroPlugin: NSObject, HeroPreprocessor, HeroAnimator {
        - state: the target state to override
        - view: the view to override
    */
-  open func apply(state: HeroTargetState, to view: UIView) {}
-  open func changeTarget(state: HeroTargetState, isDestination: Bool, to view: UIView) {}
+  open func apply(state: HeroTargetState, to baseView: UIView) {}
+  open func changeTarget(state: HeroTargetState, isDestination: Bool, to baseView: UIView) {}
 }
 
 // methods for enable/disable the current plugin

@@ -24,36 +24,20 @@
 
 import UIKit
 
-private let parameterRegex = "(?:\\-?\\d+(\\.?\\d+)?)|\\w+"
-private let modifiersRegex = "(\\w+)(?:\\(([^\\)]*)\\))?"
-
-internal extension NSObject {
-  func copyWithArchiver() -> Any? {
-    return NSKeyedUnarchiver.unarchiveObject(with: NSKeyedArchiver.archivedData(withRootObject: self))!
-  }
-}
-
-internal extension UIImage {
-  class func imageWithView(baseView: UIView) -> UIImage {
-    UIGraphicsBeginImageContextWithOptions(baseView.bounds.size, false, 0.0)
-    baseView.drawHierarchy(in: baseView.bounds, afterScreenUpdates: true)
-    let img = UIGraphicsGetImageFromCurrentImageContext()
-    UIGraphicsEndImageContext()
-    return img!
-  }
-}
-
-internal extension UIColor {
-  var components:(r:CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) {
-    var r: CGFloat = 0
-    var g: CGFloat = 0
-    var b: CGFloat = 0
-    var a: CGFloat = 0
-    getRed(&r, green: &g, blue: &b, alpha: &a)
-    return (r, g, b, a)
-  }
-  var alphaComponent: CGFloat {
-    return components.a
+// custom transition helper, used in hero_replaceViewController
+public extension HeroTransition {
+  func transition(from: UIViewController, to: UIViewController, in view: UIView, completion: ((Bool) -> Void)? = nil) {
+    guard !isTransitioning else { return }
+    self.state = .notified
+    isPresenting = true
+    transitionContainer = view
+    fromViewController = from
+    toViewController = to
+    completionCallback = {
+      completion?($0)
+      self.state = .possible
+    }
+    start()
   }
 }
 

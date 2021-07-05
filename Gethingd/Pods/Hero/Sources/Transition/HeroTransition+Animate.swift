@@ -33,11 +33,11 @@ extension HeroTransition {
     }
 
     // auto hide all animated views
-    for view in animatingFromViews {
-      context.hide(view: view)
+    for baseView in animatingFromViews {
+      context.hide(view: baseView)
     }
-    for view in animatingToViews {
-      context.hide(view: view)
+    for baseView in animatingToViews {
+      context.hide(view: baseView)
     }
 
     var totalDuration: TimeInterval = 0
@@ -57,7 +57,7 @@ extension HeroTransition {
     fromView?.layoutIfNeeded()
 
     for animator in animators {
-      let duration = animator.animate(fromViews: animatingFromViews.filter({ animator.canAnimate(view: $0, appearing: false) }),
+        let duration = animator.animate(fromViews: animatingFromViews.filter({ animator.canAnimate(view: $0, appearing: false) }),
                                       toViews: animatingToViews.filter({ animator.canAnimate(view: $0, appearing: true) }))
       if duration == .infinity {
         animatorWantsInteractive = true

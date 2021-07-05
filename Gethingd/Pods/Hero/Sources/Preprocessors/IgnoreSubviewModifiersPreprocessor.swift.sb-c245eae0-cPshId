@@ -24,36 +24,35 @@
 
 import UIKit
 
-private let parameterRegex = "(?:\\-?\\d+(\\.?\\d+)?)|\\w+"
-private let modifiersRegex = "(\\w+)(?:\\(([^\\)]*)\\))?"
-
-internal extension NSObject {
-  func copyWithArchiver() -> Any? {
-    return NSKeyedUnarchiver.unarchiveObject(with: NSKeyedArchiver.archivedData(withRootObject: self))!
+class IgnoreSubviewModifiersPreprocessor: BasePreprocessor {
+  override func process(fromViews: [UIView], toViews: [UIView]) {
+    process(views: fromViews)
+    process(views: toViews)
   }
-}
 
-internal extension UIImage {
-  class func imageWithView(baseView: UIView) -> UIImage {
-    UIGraphicsBeginImageContextWithOptions(baseView.bounds.size, false, 0.0)
-    baseView.drawHierarchy(in: baseView.bounds, afterScreenUpdates: true)
-    let img = UIGraphicsGetImageFromCurrentImageContext()
-    UIGraphicsEndImageContext()
-    return img!
-  }
-}
+  func process(views: [UIView]) {
+    for view in views {
+      guard let recursive = context[view]?.ignoreSubviewModifiers else { continue }
+      var parentView = view
+      if view is UITableView, let wrapperView = view.subviews.get(0) {
+        parentView = wrapperView
+      }
 
-internal extension UIColor {
-  var components:(r:CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) {
-    var r: CGFloat = 0
-    var g: CGFloat = 0
-    var b: CGFloat = 0
-    var a: CGFloat = 0
-    getRed(&r, green: &g, blue: &b, alpha: &a)
-    return (r, g, b, a)
+      if recursive {
+        cleanSubviewModifiers(parentView)
+      } else {
+        for subview in parentView.subviews {
+          context[subview] = nil
+        }
+      }
+    }
   }
-  var alphaComponent: CGFloat {
-    return components.a
+
+  private func cleanSubviewModifiers(_ parentView: UIView) {
+    for view in parentView.subviews {
+      context[view] = nil
+      cleanSubviewModifiers(view)
+    }
   }
 }
 

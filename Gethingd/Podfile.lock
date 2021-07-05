@@ -136,6 +136,7 @@ PODS:
   - SVPinView (1.0.11)
   - SwiftyJSON (5.0.1)
   - SwiftyStoreKit (0.16.1)
+  - TagListView (1.4.1)
   - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
@@ -158,6 +159,7 @@ DEPENDENCIES:
   - SVPinView
   - SwiftyJSON
   - SwiftyStoreKit
+  - TagListView
   - Toast-Swift
 
 SPEC REPOS:
@@ -193,6 +195,7 @@ SPEC REPOS:
     - SVPinView
     - SwiftyJSON
     - SwiftyStoreKit
+    - TagListView
     - Toast-Swift
 
 SPEC CHECKSUMS:
@@ -227,8 +230,9 @@ SPEC CHECKSUMS:
   SVPinView: 9b538d0ba68cdb092afe4f0f67ec84cbed079466
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
+  TagListView: a1c236d17960a0cf64156725a76ce6d73ebce2be
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 4d97d5d6ac5516326dfede8620f8b4f75b2b13de
+PODFILE CHECKSUM: 9794201e46cfba960d3ab828974cd060b1fa4247
 
 COCOAPODS: 1.10.0
