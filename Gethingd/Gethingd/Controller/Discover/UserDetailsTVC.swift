@@ -9,10 +9,12 @@
 import UIKit
 import SwiftyJSON
 import AVKit
+import TagListView
 
-class UserDetailsTVC: UITableViewController {
+class UserDetailsTVC: UITableViewController, TagListViewDelegate {
     
     //MARK:- VARIABLE
+    @IBOutlet weak var tagListView: TagListView!
     
     var onLikeUser: (() -> Void)?
     var onSuperLikeUser: (() -> Void)?
@@ -51,6 +53,10 @@ class UserDetailsTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tagListView.delegate = self
+        tagListView.textFont = AppFonts.Poppins_Medium.withSize(17)
+        tagListView.alignment = .leading
+        tagListView.addTags(["Biking","Walking","Beauty","Golf","German Hip"])
         navigationController?.addBackButtonWithTitle(title: "User Profile", action: #selector(self.onBackBtnTap))
         navigationController?.addBackButtonWithTitle(title: "User Profile", action: #selector(self.onBackBtnTap), reportAction: #selector(self.onReportBtnTap))
         
@@ -124,7 +130,7 @@ extension UserDetailsTVC {
             }
         }
         
-        lblUserInfo.text = user.firstName + " " + user.lastName
+//        lblUserInfo.text = user.firstName + " " + user.lastName
 
 
         let feet = (Int(user.userHeight) ?? 0) / 12
@@ -133,25 +139,25 @@ extension UserDetailsTVC {
         let userHeight = "\(feet)'\(inches)''"
         
         
-        lblHeight.text = userHeight
-        lblAge.text = "\(user.age)"
-        lblLocation.text = user.address
-        
-        lblUserDetails.text = user.about
+//        lblHeight.text = userHeight
+//        lblAge.text = "\(user.age)"
+//        lblLocation.text = user.address
+//
+//        lblUserDetails.text = user.about
        
         
-        arrImgSignView[0].setImage(user.sunSignId.getActiveSignURL)
-        arrImgSignView[1].setImage(user.moonSignId.getActiveSignURL)
-        arrImgSignView[2].setImage(user.risingSignId.getActiveSignURL)
-        
-        
-        arrLblSignName[0].text = user.sunSignId.signName
-        arrLblSignName[1].text = user.moonSignId.signName
-        arrLblSignName[2].text = user.risingSignId.signName
+//        arrImgSignView[0].setImage(user.sunSignId.getActiveSignURL)
+//        arrImgSignView[1].setImage(user.moonSignId.getActiveSignURL)
+//        arrImgSignView[2].setImage(user.risingSignId.getActiveSignURL)
+//
+//
+//        arrLblSignName[0].text = user.sunSignId.signName
+//        arrLblSignName[1].text = user.moonSignId.signName
+//        arrLblSignName[2].text = user.risingSignId.signName
         
         tableView.reloadData()
         
-        arrImgView[0].addGradientLayer()
+//        arrImgView[0].addGradientLayer()
         
     }
 }
@@ -211,7 +217,7 @@ extension UserDetailsTVC {
 }
 
 
-
+/*
 extension UserDetailsTVC {
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -246,7 +252,7 @@ extension UserDetailsTVC {
     }
 }
 
-
+*/
 
 extension UserDetailsTVC: UICollectionViewDataSource {
     
