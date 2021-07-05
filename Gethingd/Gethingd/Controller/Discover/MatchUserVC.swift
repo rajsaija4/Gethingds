@@ -27,7 +27,7 @@ class MatchUserVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+//        setupUI()
         
     }
     
@@ -37,48 +37,48 @@ class MatchUserVC: UIViewController {
 
 
 
-extension MatchUserVC {
+//extension MatchUserVC {
         
-    fileprivate func setupUI() {
-        
-        if let url = URL(string: matchDetails.userImage) {
-            imgUser.kf.setImage(with: url)
-        }
-        
-        if let url = URL(string: matchDetails.matchUserImage) {
-            imgOppsiteUser.kf.setImage(with: url)
-        }
-        
-        if let url = URL(string: "\(matchDetails.userSignId)".getSignIconURL) {
-            imgSignUser.kf.setImage(with: url)
-        }
-        
-        if let url = URL(string: "\(matchDetails.matchUserSignId)".getSignIconURL) {
-            imgOppositeUserSign.kf.setImage(with: url)
-        }
-        
-        lblMatch.text = "You have matched with \(matchDetails.matchUserName). Send a message to start the conversation."
-        
-    }
-}
+//    fileprivate func setupUI() {
+//
+//        if let url = URL(string: matchDetails.userImage) {
+//            imgUser.kf.setImage(with: url)
+//        }
+//
+//        if let url = URL(string: matchDetails.matchUserImage) {
+//            imgOppsiteUser.kf.setImage(with: url)
+//        }
+//
+//        if let url = URL(string: "\(matchDetails.userSignId)".getSignIconURL) {
+//            imgSignUser.kf.setImage(with: url)
+//        }
+//
+//        if let url = URL(string: "\(matchDetails.matchUserSignId)".getSignIconURL) {
+//            imgOppositeUserSign.kf.setImage(with: url)
+//        }
+//
+//        lblMatch.text = "You have matched with \(matchDetails.matchUserName). Send a message to start the conversation."
+//
+//    }
+//}
 
 
 
-extension MatchUserVC {
-    
-    @IBAction func onSendControlTap(_ sender: UIControl) {
-        let vc = MessageVC.instantiate(fromAppStoryboard: .Chat)
-        vc.hidesBottomBarWhenPushed = true
-        vc.conversation = Conversation(json: JSON.null, matchId: matchDetails.matchId, name: matchDetails.matchUserName)
-        vc.userImage = matchDetails.matchUserImage
-        vc.onPopView = {
-            self.dismiss(animated: true, completion: nil)
-        }
-        navigationController?.pushViewController(vc, animated: false)
-    }
-    
-    @IBAction func onLaterControlTap(_ sender: UIControl) {
-        APPDEL?.setupMainTabBarController()
-    }
-    
-}
+//extension MatchUserVC {
+//
+//    @IBAction func onSendControlTap(_ sender: UIControl) {
+//        let vc = MessageVC.instantiate(fromAppStoryboard: .Chat)
+//        vc.hidesBottomBarWhenPushed = true
+//        vc.conversation = Conversation(json: JSON.null, matchId: matchDetails.matchId, name: matchDetails.matchUserName)
+//        vc.userImage = matchDetails.matchUserImage
+//        vc.onPopView = {
+//            self.dismiss(animated: true, completion: nil)
+//        }
+//        navigationController?.pushViewController(vc, animated: false)
+//    }
+//
+//    @IBAction func onLaterControlTap(_ sender: UIControl) {
+//        APPDEL?.setupMainTabBarController()
+//    }
+//
+//}
