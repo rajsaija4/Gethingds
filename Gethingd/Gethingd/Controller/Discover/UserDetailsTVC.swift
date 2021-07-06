@@ -10,10 +10,20 @@ import UIKit
 import SwiftyJSON
 import AVKit
 import TagListView
+import CHIPageControl
 
 class UserDetailsTVC: UITableViewController, TagListViewDelegate {
     
     //MARK:- VARIABLE
+    @IBOutlet weak var pageControl: CHIPageControlJaloro!
+    @IBOutlet weak var collectionUserdetails: UICollectionView! {
+        didSet {
+            collectionUserdetails.registerCell(ProfilePhotoCollectionCell.self)
+            collectionUserdetails.delegate = self
+            collectionUserdetails.dataSource = self
+        }
+    }
+ 
     @IBOutlet weak var tagListView: TagListView!
     
     var onLikeUser: (() -> Void)?
@@ -29,14 +39,14 @@ class UserDetailsTVC: UITableViewController, TagListViewDelegate {
     //MARK:- OUTLET
     
     @IBOutlet weak var lblInstgramCount: UILabel!
-    @IBOutlet weak var pageControl: UIPageControl!
-    @IBOutlet weak var collectionInsta: UICollectionView!{
-        didSet{
-            collectionInsta.registerCell(InstaCollectionCell.self)
-            collectionInsta.delegate = self
-            collectionInsta.dataSource = self
-        }
-    }
+   
+//    @IBOutlet weak var collectionInsta: UICollectionView!{
+//        didSet{
+//            collectionInsta.registerCell(InstaCollectionCell.self)
+//            collectionInsta.delegate = self
+//            collectionInsta.dataSource = self
+//        }
+//    }
     @IBOutlet fileprivate var arrImgView: [UIImageView]!
     @IBOutlet fileprivate var arrImgSignView: [UIImageView]!
     @IBOutlet fileprivate var arrLblSignName: [UILabel]!
@@ -52,7 +62,14 @@ class UserDetailsTVC: UITableViewController, TagListViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let angle = CGFloat.pi/2
+                pageControl.transform = CGAffineTransform(rotationAngle: angle)
+                
+                pageControl.numberOfPages = 5
+                
+                
+                pageControl.progress = 3
+
         tagListView.delegate = self
         tagListView.textFont = AppFonts.Poppins_Medium.withSize(17)
         tagListView.alignment = .leading
@@ -257,19 +274,22 @@ extension UserDetailsTVC {
 extension UserDetailsTVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrInstaMedia.count
+        
+        return 5
+//        return arrInstaMedia.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: InstaCollectionCell = collectionView.dequequReusableCell(for: indexPath)
-        cell.setupInstaMedia(media: arrInstaMedia[indexPath.row])
-        cell.cornerRadius = 9
-        cell.clipsToBounds = true
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfilePhotoCollectionCell", for: indexPath) as! ProfilePhotoCollectionCell
+//        let cell: InstaCollectionCell = collectionView.dequequReusableCell(for: indexPath)
+//        cell.setupInstaMedia(media: arrInstaMedia[indexPath.row])
+//        cell.cornerRadius = 9
+//        cell.clipsToBounds = true
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        self.pageControl.currentPage = Int(indexPath.row / 6)
+        self.pageControl.progress = Double(indexPath.row)
     }
 }
 
@@ -279,20 +299,20 @@ extension UserDetailsTVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let width = (collectionView.frame.width - 20) / 3
-        return CGSize(width: width, height: width)
+//        let width = (view.frame.width - 20)
+        return CGSize(width: collectionUserdetails.bounds.width, height: collectionUserdetails.bounds.height)
     }
-    
+//
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
+        return 0
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
+        return 0
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
 }
 

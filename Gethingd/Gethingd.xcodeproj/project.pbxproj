@@ -16,6 +16,7 @@
 		9F48A6702692E4E0007A6046 /* TagListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F48A66F2692E4E0007A6046 /* TagListVC.swift */; };
 		9F53C08E269322AA0058D21B /* ProfilePhotoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53C08C269322AA0058D21B /* ProfilePhotoCollectionCell.swift */; };
 		9F53C08F269322AA0058D21B /* ProfilePhotoCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F53C08D269322AA0058D21B /* ProfilePhotoCollectionCell.xib */; };
+		9F6804B2269471F800C1C812 /* PolicyVerificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6804B1269471F800C1C812 /* PolicyVerificationVC.swift */; };
 		9F6938D4268D7DE200C57FCF /* MatchesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6938D3268D7DE200C57FCF /* MatchesVC.swift */; };
 		9F6938D7268D7E3A00C57FCF /* MessageVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6938D6268D7E3A00C57FCF /* MessageVC1.swift */; };
 		9F6938DA268D7E7A00C57FCF /* WholikedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6938D9268D7E7A00C57FCF /* WholikedVC.swift */; };
@@ -106,6 +107,8 @@
 		9FD6CDFB26848EF9002EF5BD /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FD6CDF626848EF8002EF5BD /* Poppins-Regular.ttf */; };
 		9FD6CDFC26848EF9002EF5BD /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FD6CDF726848EF8002EF5BD /* Poppins-Bold.ttf */; };
 		9FD6CDFD26848EF9002EF5BD /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FD6CDF826848EF8002EF5BD /* Poppins-SemiBold.ttf */; };
+		9FF205B126944E0100AC5332 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FF205B026944E0100AC5332 /* Setting.storyboard */; };
+		9FF205B426945E4900AC5332 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF205B326945E4900AC5332 /* SettingVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -121,6 +124,7 @@
 		9F48A66F2692E4E0007A6046 /* TagListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListVC.swift; sourceTree = "<group>"; };
 		9F53C08C269322AA0058D21B /* ProfilePhotoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoCollectionCell.swift; sourceTree = "<group>"; };
 		9F53C08D269322AA0058D21B /* ProfilePhotoCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfilePhotoCollectionCell.xib; sourceTree = "<group>"; };
+		9F6804B1269471F800C1C812 /* PolicyVerificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyVerificationVC.swift; sourceTree = "<group>"; };
 		9F6938D3268D7DE200C57FCF /* MatchesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesVC.swift; sourceTree = "<group>"; };
 		9F6938D6268D7E3A00C57FCF /* MessageVC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageVC1.swift; sourceTree = "<group>"; };
 		9F6938D9268D7E7A00C57FCF /* WholikedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WholikedVC.swift; sourceTree = "<group>"; };
@@ -211,6 +215,8 @@
 		9FD6CDF626848EF8002EF5BD /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		9FD6CDF726848EF8002EF5BD /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		9FD6CDF826848EF8002EF5BD /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		9FF205B026944E0100AC5332 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		9FF205B326945E4900AC5332 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
 		D9F5AD948B2005A04BB9EEB2 /* Pods_Gethingd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gethingd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -307,6 +313,8 @@
 				9F7F72322685959A009C46E9 /* NotificationVC.swift */,
 				9F7F72332685959A009C46E9 /* Login */,
 				9F1F70C3268B597A00097F7E /* ReviewLater */,
+				9FF205B326945E4900AC5332 /* SettingVC.swift */,
+				9F6804B1269471F800C1C812 /* PolicyVerificationVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -599,6 +607,7 @@
 				9FD6CDE426848DF0002EF5BD /* Chat.storyboard */,
 				9FD6CDE526848DF0002EF5BD /* Discover.storyboard */,
 				9F1F70C7268B599700097F7E /* ReviewLater.storyboard */,
+				9FF205B026944E0100AC5332 /* Setting.storyboard */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -700,6 +709,7 @@
 				9FD6CDFD26848EF9002EF5BD /* Poppins-SemiBold.ttf in Resources */,
 				9F53C08F269322AA0058D21B /* ProfilePhotoCollectionCell.xib in Resources */,
 				9FD6CDCF26848D2A002EF5BD /* UserView.xib in Resources */,
+				9FF205B126944E0100AC5332 /* Setting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -792,6 +802,7 @@
 				9F6938DA268D7E7A00C57FCF /* WholikedVC.swift in Sources */,
 				9F7F72452685959B009C46E9 /* MessageVC.swift in Sources */,
 				9F7F723F2685959A009C46E9 /* UserDetailsTVC.swift in Sources */,
+				9F6804B2269471F800C1C812 /* PolicyVerificationVC.swift in Sources */,
 				9FD6CD9F26848C7D002EF5BD /* UserConversation.swift in Sources */,
 				9FD6CDA126848C7D002EF5BD /* MatchDetails.swift in Sources */,
 				9FD6CD0726846764002EF5BD /* ColorModel.swift in Sources */,
@@ -810,6 +821,7 @@
 				9FD6CDA826848C7D002EF5BD /* Filter.swift in Sources */,
 				9F6938D4268D7DE200C57FCF /* MatchesVC.swift in Sources */,
 				9F7F72522685959B009C46E9 /* VerifyEmailVC.swift in Sources */,
+				9FF205B426945E4900AC5332 /* SettingVC.swift in Sources */,
 				9FD6CDD126848D2A002EF5BD /* NotificationCell.swift in Sources */,
 				9FD6CDC826848D2A002EF5BD /* FreshMatchesCell.swift in Sources */,
 				9FD6CD0F26846764002EF5BD /* UIController+Ext.swift in Sources */,

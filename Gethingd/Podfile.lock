@@ -1,5 +1,22 @@
 PODS:
   - Alamofire (5.4.3)
+  - CHIPageControl (0.2):
+    - CHIPageControl/Aji (= 0.2)
+    - CHIPageControl/Aleppo (= 0.2)
+    - CHIPageControl/Chimayo (= 0.2)
+    - CHIPageControl/Fresno (= 0.2)
+    - CHIPageControl/Jalapeno (= 0.2)
+    - CHIPageControl/Jaloro (= 0.2)
+    - CHIPageControl/Paprika (= 0.2)
+    - CHIPageControl/Puya (= 0.2)
+  - CHIPageControl/Aji (0.2)
+  - CHIPageControl/Aleppo (0.2)
+  - CHIPageControl/Chimayo (0.2)
+  - CHIPageControl/Fresno (0.2)
+  - CHIPageControl/Jalapeno (0.2)
+  - CHIPageControl/Jaloro (0.2)
+  - CHIPageControl/Paprika (0.2)
+  - CHIPageControl/Puya (0.2)
   - CropViewController (2.6.0)
   - FAPanels (2.0.1)
   - Firebase/Analytics (7.11.0):
@@ -123,6 +140,15 @@ PODS:
   - NVActivityIndicatorView/Base (5.1.1)
   - NVActivityIndicatorView/Extended (5.1.1):
     - NVActivityIndicatorView/Base
+  - PageControls (1.0.1):
+    - PageControls/FilledPageControl (= 1.0.1)
+    - PageControls/PillPageControl (= 1.0.1)
+    - PageControls/ScrollingPageControl (= 1.0.1)
+    - PageControls/SnakePageControl (= 1.0.1)
+  - PageControls/FilledPageControl (1.0.1)
+  - PageControls/PillPageControl (1.0.1)
+  - PageControls/ScrollingPageControl (1.0.1)
+  - PageControls/SnakePageControl (1.0.1)
   - Parchment (3.0.1)
   - PhoneNumberKit (3.3.3):
     - PhoneNumberKit/PhoneNumberKitCore (= 3.3.3)
@@ -141,6 +167,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - CHIPageControl
   - CropViewController
   - FAPanels
   - Firebase/Analytics
@@ -153,6 +180,7 @@ DEPENDENCIES:
   - Koloda
   - MessageKit
   - NVActivityIndicatorView/Extended
+  - PageControls
   - Parchment
   - PhoneNumberKit
   - RangeSeekSlider
@@ -165,6 +193,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - CHIPageControl
     - CropViewController
     - FAPanels
     - Firebase
@@ -187,6 +216,7 @@ SPEC REPOS:
     - MessageKit
     - nanopb
     - NVActivityIndicatorView
+    - PageControls
     - Parchment
     - PhoneNumberKit
     - pop
@@ -200,6 +230,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  CHIPageControl: a787bf7205c9b7e7fbfc412be36c5e8636b68f86
   CropViewController: 7093b39ec3cb508531b22d35773e06cecd7378d8
   FAPanels: 050291ef601a1dc00fad888f83e74284cb86dd52
   Firebase: c121feb35e4126c0b355e3313fa9b487d47319fd
@@ -222,6 +253,7 @@ SPEC CHECKSUMS:
   MessageKit: 1f07618183be6d92b648ba7a384aafa097362a00
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
+  PageControls: fc2436c93e79419521a6de5d46d84722593e2949
   Parchment: 466a1cfb6151780db8acb4bbedc2d9c6bfa1e2ff
   PhoneNumberKit: 4ce83273551c4d2ae10b7361162f4283dd02835f
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
@@ -233,6 +265,6 @@ SPEC CHECKSUMS:
   TagListView: a1c236d17960a0cf64156725a76ce6d73ebce2be
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 9794201e46cfba960d3ab828974cd060b1fa4247
+PODFILE CHECKSUM: f88a1e140f5e43f64847a2ea05746361132413f5
 
 COCOAPODS: 1.10.0

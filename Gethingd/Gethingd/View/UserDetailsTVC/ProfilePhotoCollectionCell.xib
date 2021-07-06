@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="332" height="271"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2E9-W4-OMb">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_MEN" translatesAutoresizingMaskIntoConstraints="NO" id="2E9-W4-OMb">
                         <rect key="frame" x="0.0" y="0.0" width="332" height="271"/>
                     </imageView>
                 </subviews>
@@ -36,4 +36,7 @@
             <point key="canvasLocation" x="291.304347826087" y="130.91517857142856"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="IMG_MEN" width="1118" height="1422"/>
+    </resources>
 </document>

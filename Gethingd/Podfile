@@ -21,6 +21,8 @@ target 'Gethingd' do
   pod 'FAPanels'
   pod 'Parchment'
   pod 'TagListView'
+  pod "PageControls"
+  pod 'CHIPageControl'
   # For Animation View
   
   pod 'Hero'
