@@ -68,7 +68,7 @@ extension AppDelegate {
     
     
     func editProfile() {
-            let vc = PolicyVerificationVC.instantiate(fromAppStoryboard: .Setting)
+            let vc = SubscribeVC.instantiate(fromAppStoryboard: .Upgrade)
             let nvc = UINavigationController(rootViewController: vc)
             nvc.isNavigationBarHidden = true
             window?.rootViewController = nvc

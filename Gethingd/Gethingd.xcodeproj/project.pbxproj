@@ -17,6 +17,7 @@
 		9F53C08E269322AA0058D21B /* ProfilePhotoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53C08C269322AA0058D21B /* ProfilePhotoCollectionCell.swift */; };
 		9F53C08F269322AA0058D21B /* ProfilePhotoCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F53C08D269322AA0058D21B /* ProfilePhotoCollectionCell.xib */; };
 		9F6804B2269471F800C1C812 /* PolicyVerificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6804B1269471F800C1C812 /* PolicyVerificationVC.swift */; };
+		9F6804B526948EE500C1C812 /* SubscribeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6804B426948EE500C1C812 /* SubscribeVC.swift */; };
 		9F6938D4268D7DE200C57FCF /* MatchesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6938D3268D7DE200C57FCF /* MatchesVC.swift */; };
 		9F6938D7268D7E3A00C57FCF /* MessageVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6938D6268D7E3A00C57FCF /* MessageVC1.swift */; };
 		9F6938DA268D7E7A00C57FCF /* WholikedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6938D9268D7E7A00C57FCF /* WholikedVC.swift */; };
@@ -125,6 +126,7 @@
 		9F53C08C269322AA0058D21B /* ProfilePhotoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoCollectionCell.swift; sourceTree = "<group>"; };
 		9F53C08D269322AA0058D21B /* ProfilePhotoCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfilePhotoCollectionCell.xib; sourceTree = "<group>"; };
 		9F6804B1269471F800C1C812 /* PolicyVerificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyVerificationVC.swift; sourceTree = "<group>"; };
+		9F6804B426948EE500C1C812 /* SubscribeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeVC.swift; sourceTree = "<group>"; };
 		9F6938D3268D7DE200C57FCF /* MatchesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesVC.swift; sourceTree = "<group>"; };
 		9F6938D6268D7E3A00C57FCF /* MessageVC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageVC1.swift; sourceTree = "<group>"; };
 		9F6938D9268D7E7A00C57FCF /* WholikedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WholikedVC.swift; sourceTree = "<group>"; };
@@ -307,8 +309,8 @@
 				9F7F72162685959A009C46E9 /* ReportVC */,
 				9F7F72182685959A009C46E9 /* Upgrade */,
 				9F7F721D2685959A009C46E9 /* Discover */,
-				9F7F72232685959A009C46E9 /* Chat */,
 				9F7F722B2685959A009C46E9 /* MainTabBarController.swift */,
+				9F7F72232685959A009C46E9 /* Chat */,
 				9F7F722C2685959A009C46E9 /* Profile */,
 				9F7F72322685959A009C46E9 /* NotificationVC.swift */,
 				9F7F72332685959A009C46E9 /* Login */,
@@ -334,6 +336,7 @@
 				9F7F721A2685959A009C46E9 /* SuperLikeAddVC.swift */,
 				9F7F721B2685959A009C46E9 /* UpgradePlanInfoVC.swift */,
 				9F7F721C2685959A009C46E9 /* UpgradeVC.swift */,
+				9F6804B426948EE500C1C812 /* SubscribeVC.swift */,
 			);
 			path = Upgrade;
 			sourceTree = "<group>";
@@ -822,6 +825,7 @@
 				9F6938D4268D7DE200C57FCF /* MatchesVC.swift in Sources */,
 				9F7F72522685959B009C46E9 /* VerifyEmailVC.swift in Sources */,
 				9FF205B426945E4900AC5332 /* SettingVC.swift in Sources */,
+				9F6804B526948EE500C1C812 /* SubscribeVC.swift in Sources */,
 				9FD6CDD126848D2A002EF5BD /* NotificationCell.swift in Sources */,
 				9FD6CDC826848D2A002EF5BD /* FreshMatchesCell.swift in Sources */,
 				9FD6CD0F26846764002EF5BD /* UIController+Ext.swift in Sources */,
