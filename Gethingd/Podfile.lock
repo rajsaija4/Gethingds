@@ -122,7 +122,6 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (7.3.1):
     - GoogleUtilities/Logger
-  - Hero (1.6.1)
   - InputBarAccessoryView (5.1.0):
     - InputBarAccessoryView/Core (= 5.1.0)
   - InputBarAccessoryView/Core (5.1.0)
@@ -174,7 +173,6 @@ DEPENDENCIES:
   - Firebase/Crashlytics
   - Firebase/Messaging
   - GooglePlaces
-  - Hero
   - IQKeyboardManagerSwift
   - Kingfisher
   - Koloda
@@ -208,7 +206,6 @@ SPEC REPOS:
     - GoogleDataTransport
     - GooglePlaces
     - GoogleUtilities
-    - Hero
     - InputBarAccessoryView
     - IQKeyboardManagerSwift
     - Kingfisher
@@ -245,7 +242,6 @@ SPEC CHECKSUMS:
   GoogleDataTransport: cd9db2180fcecd8da1b561aea31e3e56cf834aa7
   GooglePlaces: 5d87ca13ed98b7a937e0d8bc7026f718c7263271
   GoogleUtilities: e1d9ed4e544fc32a93e00e721400cbc3f377200d
-  Hero: 215865ba3ae41dd9bb08cd6c60a645529c6fc94b
   InputBarAccessoryView: 19953f486a23e846e9487099f92bbe3456e46ce5
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   Kingfisher: 6c3df386db71d82c0817a429d2c9421a77396529
@@ -265,6 +261,6 @@ SPEC CHECKSUMS:
   TagListView: a1c236d17960a0cf64156725a76ce6d73ebce2be
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: f88a1e140f5e43f64847a2ea05746361132413f5
+PODFILE CHECKSUM: abd0104e72feeac6000616f1825c842fe47f7f15
 
 COCOAPODS: 1.10.0

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Hero
+//import Hero
 
 class UpgradeVC: UIViewController {
     
@@ -47,8 +47,8 @@ class UpgradeVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        hero.isEnabled = true
-        btnInfo.heroID = "zodi"
+//        hero.isEnabled = true
+//        btnInfo.heroID = "zodi"
         setupActivePlan()
         navigationItem.setHidesBackButton(true, animated: true)
         

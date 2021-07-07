@@ -314,6 +314,7 @@
                                                                         </label>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="Vnr-xw-Rle">
                                                                             <rect key="frame" x="327" y="9" width="15" height="16"/>
+                                                                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="15" id="R2L-dU-Km3"/>
                                                                             </constraints>
@@ -357,6 +358,7 @@
                                                                         </textField>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="gY6-of-K7w">
                                                                             <rect key="frame" x="327" y="9" width="15" height="16"/>
+                                                                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="15" id="bJ8-as-O6c"/>
                                                                             </constraints>
@@ -400,6 +402,7 @@
                                                                         </textField>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="GxF-8H-vsG">
                                                                             <rect key="frame" x="327" y="9" width="15" height="16"/>
+                                                                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="15" id="QVR-tJ-A87"/>
                                                                             </constraints>
@@ -443,6 +446,7 @@
                                                                         </textField>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="LHH-iA-W39">
                                                                             <rect key="frame" x="327" y="9" width="15" height="16"/>
+                                                                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="15" id="eRR-Sl-xNq"/>
                                                                             </constraints>
@@ -580,7 +584,7 @@
                                                                                 <constraint firstAttribute="width" constant="30" id="Wt1-rh-umh"/>
                                                                                 <constraint firstAttribute="width" secondItem="khq-Xf-ygK" secondAttribute="height" id="m3j-YU-nq5"/>
                                                                             </constraints>
-                                                                            <state key="normal" image="img_plus"/>
+                                                                            <state key="normal" image="Img_closeImage"/>
                                                                             <state key="selected" image="img_remove_profile"/>
                                                                             <userDefinedRuntimeAttributes>
                                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -638,7 +642,7 @@
                                                                                 <constraint firstAttribute="width" constant="30" id="0Td-Ko-1uu"/>
                                                                                 <constraint firstAttribute="width" secondItem="xah-fg-2PB" secondAttribute="height" id="iyw-P2-cGb"/>
                                                                             </constraints>
-                                                                            <state key="normal" image="img_plus"/>
+                                                                            <state key="normal" image="Img_closeImage"/>
                                                                             <state key="selected" image="img_remove_profile"/>
                                                                             <userDefinedRuntimeAttributes>
                                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -692,7 +696,7 @@
                                                                                 <constraint firstAttribute="width" constant="30" id="gfx-zb-ZyR"/>
                                                                                 <constraint firstAttribute="width" secondItem="ief-yt-alY" secondAttribute="height" id="hQy-1z-AcJ"/>
                                                                             </constraints>
-                                                                            <state key="normal" image="img_plus"/>
+                                                                            <state key="normal" image="Img_closeImage"/>
                                                                             <state key="selected" image="img_remove_profile"/>
                                                                             <userDefinedRuntimeAttributes>
                                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -750,7 +754,7 @@
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="30" id="v07-jM-1Wn"/>
                                                                             </constraints>
-                                                                            <state key="normal" image="img_plus"/>
+                                                                            <state key="normal" image="Img_closeImage"/>
                                                                             <state key="selected" image="img_remove_profile"/>
                                                                             <userDefinedRuntimeAttributes>
                                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -805,7 +809,7 @@
                                                                                 <constraint firstAttribute="width" constant="30" id="IsP-v3-EKq"/>
                                                                                 <constraint firstAttribute="width" secondItem="q1g-J0-LtN" secondAttribute="height" id="jDo-R3-dfo"/>
                                                                             </constraints>
-                                                                            <state key="normal" image="img_plus"/>
+                                                                            <state key="normal" image="Img_closeImage"/>
                                                                             <state key="selected" image="img_remove_profile"/>
                                                                             <userDefinedRuntimeAttributes>
                                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -858,7 +862,7 @@
                                                                                 <constraint firstAttribute="width" constant="30" id="Hw5-HM-OaJ"/>
                                                                                 <constraint firstAttribute="width" secondItem="4aw-V7-xBN" secondAttribute="height" id="b07-xj-v3C"/>
                                                                             </constraints>
-                                                                            <state key="normal" image="img_plus"/>
+                                                                            <state key="normal" image="Img_closeImage"/>
                                                                             <state key="selected" image="img_remove_profile"/>
                                                                             <userDefinedRuntimeAttributes>
                                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -939,6 +943,7 @@
                                                                         </textField>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="mQo-qX-m6z">
                                                                             <rect key="frame" x="327" y="0.0" width="15" height="12"/>
+                                                                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="15" id="o8I-fY-WxS"/>
                                                                             </constraints>
@@ -994,6 +999,7 @@
                                                                                 </textField>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="3Q7-x8-ERh">
                                                                                     <rect key="frame" x="281" y="9" width="15" height="16"/>
+                                                                                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" constant="15" id="IUe-ns-kza"/>
                                                                                     </constraints>
@@ -1053,6 +1059,7 @@
                                                                                 </textField>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="NRU-iR-D1m">
                                                                                     <rect key="frame" x="278" y="9" width="15" height="16"/>
+                                                                                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" constant="15" id="wan-H2-UPb"/>
                                                                                     </constraints>
@@ -1112,6 +1119,7 @@
                                                                                 </textField>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="R1p-vW-LeT">
                                                                                     <rect key="frame" x="277.66666666666669" y="9" width="15" height="16"/>
+                                                                                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" constant="15" id="dO2-GZ-z0F"/>
                                                                                     </constraints>
@@ -1171,6 +1179,7 @@
                                                                                 </textField>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="nNK-oo-LDo">
                                                                                     <rect key="frame" x="276.66666666666669" y="9" width="15" height="16"/>
+                                                                                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" constant="15" id="Xnf-Yt-SwK"/>
                                                                                     </constraints>
@@ -1230,6 +1239,7 @@
                                                                                 </textField>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="yP3-d2-V8o">
                                                                                     <rect key="frame" x="277" y="9" width="15" height="16"/>
+                                                                                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" constant="15" id="vN6-fv-YfI"/>
                                                                                     </constraints>
@@ -1992,6 +2002,11 @@
                                         <state key="normal" title="CONTINUE">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E2T-F8-mNg">
                                         <rect key="frame" x="10" y="20" width="30" height="30"/>
@@ -2022,6 +2037,11 @@
                                     <constraint firstItem="E2T-F8-mNg" firstAttribute="centerY" secondItem="HN3-iO-8i5" secondAttribute="centerY" id="niy-mf-goM"/>
                                     <constraint firstItem="w0D-YI-Zim" firstAttribute="centerY" secondItem="t5h-WH-iFY" secondAttribute="centerY" id="tC5-Ne-rBW"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wIx-KD-oMI"/>
@@ -2135,7 +2155,7 @@
                                                                                 <constraint firstAttribute="width" secondItem="73H-qh-Ncf" secondAttribute="height" id="aJ0-Uo-13N"/>
                                                                                 <constraint firstAttribute="width" constant="30" id="bg9-12-PhH"/>
                                                                             </constraints>
-                                                                            <state key="normal" image="img_plus"/>
+                                                                            <state key="normal" image="Img_closeImage"/>
                                                                             <state key="selected" image="img_remove_profile"/>
                                                                             <userDefinedRuntimeAttributes>
                                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -2187,7 +2207,7 @@
                                                                                 <constraint firstAttribute="width" constant="30" id="RWI-xp-b7W"/>
                                                                                 <constraint firstAttribute="width" secondItem="Mhb-jD-dU1" secondAttribute="height" id="x0d-MC-Egy"/>
                                                                             </constraints>
-                                                                            <state key="normal" image="img_plus"/>
+                                                                            <state key="normal" image="Img_closeImage"/>
                                                                             <state key="selected" image="img_remove_profile"/>
                                                                             <userDefinedRuntimeAttributes>
                                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -2235,7 +2255,7 @@
                                                                                 <constraint firstAttribute="width" secondItem="nzD-Kf-1C0" secondAttribute="height" id="ACX-jF-z6n"/>
                                                                                 <constraint firstAttribute="width" constant="30" id="Q0G-UA-0rN"/>
                                                                             </constraints>
-                                                                            <state key="normal" image="img_plus"/>
+                                                                            <state key="normal" image="Img_closeImage"/>
                                                                             <state key="selected" image="img_remove_profile"/>
                                                                             <userDefinedRuntimeAttributes>
                                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -2287,7 +2307,7 @@
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="30" id="JmQ-YY-EUT"/>
                                                                             </constraints>
-                                                                            <state key="normal" image="img_plus"/>
+                                                                            <state key="normal" image="Img_closeImage"/>
                                                                             <state key="selected" image="img_remove_profile"/>
                                                                             <userDefinedRuntimeAttributes>
                                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -2336,7 +2356,7 @@
                                                                                 <constraint firstAttribute="width" secondItem="GPD-40-R2c" secondAttribute="height" id="7wb-MJ-sfM"/>
                                                                                 <constraint firstAttribute="width" constant="30" id="aTv-TN-hVa"/>
                                                                             </constraints>
-                                                                            <state key="normal" image="img_plus"/>
+                                                                            <state key="normal" image="Img_closeImage"/>
                                                                             <state key="selected" image="img_remove_profile"/>
                                                                             <userDefinedRuntimeAttributes>
                                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -2383,7 +2403,7 @@
                                                                                 <constraint firstAttribute="width" constant="30" id="Mwk-Mi-i7b"/>
                                                                                 <constraint firstAttribute="width" secondItem="ER3-Na-RQS" secondAttribute="height" id="Stl-KP-YDE"/>
                                                                             </constraints>
-                                                                            <state key="normal" image="img_plus"/>
+                                                                            <state key="normal" image="Img_closeImage"/>
                                                                             <state key="selected" image="img_remove_profile"/>
                                                                             <userDefinedRuntimeAttributes>
                                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -2445,7 +2465,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xyl-y5-NKR">
                                                     <rect key="frame" x="20" y="15.999999999999998" width="374" height="20.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8Cc-a5-avI">
@@ -2554,6 +2574,7 @@
                                                                         </textField>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="Tnv-pc-H5Q">
                                                                             <rect key="frame" x="327" y="9" width="15" height="16"/>
+                                                                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="15" id="yk3-Aa-uu9"/>
                                                                             </constraints>
@@ -2657,6 +2678,7 @@
                                                                         </textField>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="cIC-0v-eoy">
                                                                             <rect key="frame" x="327" y="0.0" width="15" height="12"/>
+                                                                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="15" id="cFK-L4-QZn"/>
                                                                             </constraints>
@@ -2709,6 +2731,7 @@
                                                                                 </textField>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="iT6-AI-5bF">
                                                                                     <rect key="frame" x="281" y="9" width="15" height="16"/>
+                                                                                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" constant="15" id="LQ5-n3-RmG"/>
                                                                                     </constraints>
@@ -2765,6 +2788,7 @@
                                                                                 </textField>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="AX5-LN-NTK">
                                                                                     <rect key="frame" x="278" y="9" width="15" height="16"/>
+                                                                                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" constant="15" id="PTM-a7-6pD"/>
                                                                                     </constraints>
@@ -2821,6 +2845,7 @@
                                                                                 </textField>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="Gio-TR-4jF">
                                                                                     <rect key="frame" x="277.66666666666669" y="9" width="15" height="16"/>
+                                                                                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" constant="15" id="90p-jS-DW7"/>
                                                                                     </constraints>
@@ -2877,6 +2902,7 @@
                                                                                 </textField>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="e0e-T2-19Z">
                                                                                     <rect key="frame" x="276.66666666666669" y="9" width="15" height="16"/>
+                                                                                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" constant="15" id="8M7-f9-JNW"/>
                                                                                     </constraints>
@@ -2933,6 +2959,7 @@
                                                                                 </textField>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="SjP-bj-AtF">
                                                                                     <rect key="frame" x="277" y="9" width="15" height="16"/>
+                                                                                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" constant="15" id="cGQ-FP-WDt"/>
                                                                                     </constraints>
@@ -3004,6 +3031,7 @@
                                                                         </textField>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="7c5-Kn-arD">
                                                                             <rect key="frame" x="327" y="9" width="15" height="16"/>
+                                                                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="15" id="7Dj-i9-9uF"/>
                                                                             </constraints>
@@ -3067,7 +3095,7 @@
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEC-oH-j0a">
                                                                             <rect key="frame" x="0.0" y="6.9999999999999982" width="199.33333333333334" height="20.333333333333329"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                            <nil key="textColor"/>
+                                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Knw-ci-i1T">
@@ -3157,22 +3185,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Hi-b0-ByM">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Hi-b0-ByM">
                                                     <rect key="frame" x="20" y="16" width="374" height="14"/>
-                                                    <attributedString key="attributedText">
-                                                        <fragment content="GENDER">
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.29894259569999998" green="0.29898265000000002" blue="0.29892891649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" metaFont="system" size="17"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                        <fragment content="*">
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.92128038410000002" green="0.085181571540000001" blue="0.24507722260000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" metaFont="system" size="17"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="uk0-vA-PSG">
@@ -3293,6 +3309,7 @@
     </designables>
     <resources>
         <image name="Img_Setting" width="28" height="28"/>
+        <image name="Img_closeImage" width="12" height="12"/>
         <image name="arrow.left" catalog="system" width="128" height="98"/>
         <image name="img_Diamond" width="30" height="26"/>
         <image name="img_Header" width="750" height="359"/>
@@ -3305,7 +3322,6 @@
         <image name="img_logout" width="230" height="230"/>
         <image name="img_next" width="14" height="24"/>
         <image name="img_pause" width="230" height="230"/>
-        <image name="img_plus" width="17" height="18"/>
         <image name="img_plusgetthingds" width="39" height="39"/>
         <image name="img_profile_edit" width="230" height="230"/>
         <image name="img_remove_profile" width="17" height="18"/>

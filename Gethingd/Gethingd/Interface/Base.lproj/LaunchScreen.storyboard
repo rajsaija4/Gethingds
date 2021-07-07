@@ -21,6 +21,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_splashsreen" translatesAutoresizingMaskIntoConstraints="NO" id="keL-2H-uya">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="vEF-K4-91c">
                                 <rect key="frame" x="62" y="242.5" width="290" height="311"/>
                                 <subviews>
@@ -46,11 +49,14 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.33004510399999998" green="0.1135013327" blue="0.27317330239999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="keL-2H-uya" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="36y-yJ-50j"/>
                             <constraint firstItem="vEF-K4-91c" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="6bx-Lq-2Lu"/>
+                            <constraint firstAttribute="bottom" secondItem="keL-2H-uya" secondAttribute="bottom" id="7zX-0W-ZFh"/>
+                            <constraint firstItem="keL-2H-uya" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="HOx-p5-nMm"/>
                             <constraint firstItem="vEF-K4-91c" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.7" id="PVm-rP-c72"/>
                             <constraint firstItem="FYv-Pm-a5G" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.4" id="Rmf-LM-Lx9"/>
+                            <constraint firstAttribute="trailing" secondItem="keL-2H-uya" secondAttribute="trailing" id="dQ8-cr-EJ8"/>
                             <constraint firstItem="vEF-K4-91c" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-50" id="rU9-Vp-HBB"/>
                         </constraints>
                     </view>
@@ -62,5 +68,6 @@
     </scenes>
     <resources>
         <image name="img_logo" width="202" height="177"/>
+        <image name="img_splashsreen" width="750" height="1334"/>
     </resources>
 </document>

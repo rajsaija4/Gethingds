@@ -305,7 +305,7 @@ extension DiscoverVC: KolodaViewDelegate {
     }
     
     func koloda(_ koloda: KolodaView, allowedDirectionsForIndex index: Int) -> [SwipeResultDirection] {
-        return [.left, .right, .up]
+        return [.left, .right, .up, .down]
     }
     
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
@@ -356,6 +356,26 @@ extension DiscoverVC: KolodaViewDelegate {
                 }
                 AppSupport.remainingSuperLikes -= 1
                 self.swipeUser(userID: arrUser[index].id, status: .superLike)
+        case .down:
+            let vc = UserDetailsTVC.instantiate(fromAppStoryboard: .Discover)
+            vc.user = arrUser[index]
+            vc.onLikeUser = {
+                koloda.swipe(.right)
+            }
+            
+            vc.onDisLikeUser = {
+                koloda.swipe(.left)
+            }
+            
+            vc.onSuperLikeUser = {
+                koloda.swipe(.up)
+    //            self.swipeUser(userID: self.arrUser[index].id, status: .superLike)
+            }
+            
+            let nvc = UINavigationController(rootViewController: vc)
+            nvc.modalPresentationStyle = .fullScreen
+            nvc.modalTransitionStyle = .crossDissolve
+            self.present(nvc, animated: true, completion: nil)
             default:
                 break
         }

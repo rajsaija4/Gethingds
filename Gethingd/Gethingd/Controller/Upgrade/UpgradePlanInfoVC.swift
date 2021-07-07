@@ -7,14 +7,14 @@
 //
 
 import UIKit
-import Hero
+//import Hero
 
 class UpgradePlanInfoVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        hero.isEnabled = true
-        self.view.heroID = "zodi"
+//        hero.isEnabled = true
+//        self.view.heroID = "zodi"
         
     }
     

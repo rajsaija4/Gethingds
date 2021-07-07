@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-
+/*
 extension UIView {
     
     @IBInspectable var cornerRadius: CGFloat {
@@ -150,9 +150,9 @@ extension UITextField {
         }
     }
 }
+*/
 
 
-/*
 extension UIView {
     
     var cornerRadius: CGFloat {
@@ -296,7 +296,7 @@ extension UITextField {
 }
  
  
- */
+
 class CustomTextField: UITextField {
     
     func setPlaceHolderColor() {
