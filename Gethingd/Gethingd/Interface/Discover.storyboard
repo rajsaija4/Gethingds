@@ -159,15 +159,15 @@
                         <sections>
                             <tableViewSection id="Zag-zn-h5a">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="350" id="c3p-Hh-5Gl">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="350"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="400" id="c3p-Hh-5Gl">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="400"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c3p-Hh-5Gl" id="IqA-Jj-yM7">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GGS-1j-8lD">
-                                                    <rect key="frame" x="20" y="11" width="374" height="328"/>
+                                                    <rect key="frame" x="20" y="11" width="374" height="378"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ly5-i7-x2s">
                                                         <size key="itemSize" width="128" height="128"/>
@@ -185,13 +185,18 @@
                                                             </collectionViewCellContentView>
                                                         </collectionViewCell>
                                                     </cells>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="25"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <outlet property="dataSource" destination="hpJ-mk-ydY" id="ewz-Cj-l4y"/>
                                                         <outlet property="delegate" destination="hpJ-mk-ydY" id="HRO-sD-kMY"/>
                                                     </connections>
                                                 </collectionView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1Tg-yc-7xe">
-                                                    <rect key="frame" x="20" y="277" width="374" height="53"/>
+                                                    <rect key="frame" x="20" y="327" width="374" height="53"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Florence Darden, 27" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJP-mP-uAa">
                                                             <rect key="frame" x="0.0" y="0.0" width="374" height="24"/>
@@ -208,7 +213,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAq-dh-CcJ" customClass="CHIPageControlJaloro" customModule="CHIPageControl">
-                                                    <rect key="frame" x="354" y="30" width="30" height="227"/>
+                                                    <rect key="frame" x="354" y="30" width="30" height="277"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="tintColor" systemColor="systemGrayColor"/>
                                                     <constraints>
@@ -257,7 +262,7 @@
                             <tableViewSection id="g1L-ky-2s6">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="300" id="O7s-QF-uDw">
-                                        <rect key="frame" x="0.0" y="434" width="414" height="300"/>
+                                        <rect key="frame" x="0.0" y="484" width="414" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="O7s-QF-uDw" id="2QZ-cE-ZUc">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
@@ -296,7 +301,7 @@
                             <tableViewSection id="uP8-jK-a0h">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="130" id="NtB-Ma-B7I">
-                                        <rect key="frame" x="0.0" y="790" width="414" height="130"/>
+                                        <rect key="frame" x="0.0" y="840" width="414" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NtB-Ma-B7I" id="jN0-qu-A6B">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
@@ -327,6 +332,11 @@
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <color key="textColor" red="0.32944318649999998" green="0.12744057180000001" blue="0.27206125860000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                    <real key="value" value="15"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                            </userDefinedRuntimeAttributes>
                                                                         </label>
                                                                     </subviews>
                                                                     <constraints>
@@ -384,11 +394,11 @@
                             </tableViewSection>
                             <tableViewSection id="krr-4Z-dUd">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="100" id="URR-i3-fcc">
-                                        <rect key="frame" x="0.0" y="976" width="414" height="100"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="80" id="URR-i3-fcc">
+                                        <rect key="frame" x="0.0" y="1026" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="URR-i3-fcc" id="PK8-gx-i96">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kids Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbA-Cs-00u">
@@ -398,13 +408,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MNV-P9-UVB">
-                                                    <rect key="frame" x="16" y="42" width="390" height="50"/>
+                                                    <rect key="frame" x="16" y="42" width="390" height="30"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VPd-pi-6yB">
-                                                            <rect key="frame" x="0.0" y="0.0" width="123.5" height="50"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="123.5" height="30"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="6oI-cb-dV2">
-                                                                    <rect key="frame" x="32.5" y="15" width="58" height="20.5"/>
+                                                                    <rect key="frame" x="32.5" y="5" width="58" height="20.5"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Infant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXc-yB-XSv">
                                                                             <rect key="frame" x="0.0" y="0.0" width="43.5" height="20.5"/>
@@ -418,6 +428,11 @@
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <color key="textColor" red="0.32944318649999998" green="0.12744057180000001" blue="0.27206125860000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                    <real key="value" value="50"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                            </userDefinedRuntimeAttributes>
                                                                         </label>
                                                                     </subviews>
                                                                 </stackView>
@@ -427,12 +442,17 @@
                                                                 <constraint firstItem="6oI-cb-dV2" firstAttribute="centerX" secondItem="VPd-pi-6yB" secondAttribute="centerX" id="pQG-D4-uni"/>
                                                                 <constraint firstItem="6oI-cb-dV2" firstAttribute="centerY" secondItem="VPd-pi-6yB" secondAttribute="centerY" id="wm3-hd-YTc"/>
                                                             </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="15"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s3V-Qd-jph">
-                                                            <rect key="frame" x="133.5" y="0.0" width="123" height="50"/>
+                                                            <rect key="frame" x="133.5" y="0.0" width="123" height="30"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="iwG-Tg-aNQ">
-                                                                    <rect key="frame" x="17.5" y="15" width="88.5" height="20.5"/>
+                                                                    <rect key="frame" x="17.5" y="5" width="88.5" height="20.5"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New born" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahH-vc-tmP">
                                                                             <rect key="frame" x="0.0" y="0.0" width="74" height="20.5"/>
@@ -455,12 +475,17 @@
                                                                 <constraint firstItem="iwG-Tg-aNQ" firstAttribute="centerY" secondItem="s3V-Qd-jph" secondAttribute="centerY" id="cGn-QW-3bz"/>
                                                                 <constraint firstItem="iwG-Tg-aNQ" firstAttribute="centerX" secondItem="s3V-Qd-jph" secondAttribute="centerX" id="dSF-SI-Hbw"/>
                                                             </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="15"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zZa-fL-nrz">
-                                                            <rect key="frame" x="266.5" y="0.0" width="123.5" height="50"/>
+                                                            <rect key="frame" x="266.5" y="0.0" width="123.5" height="30"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="hjD-4C-xXV">
-                                                                    <rect key="frame" x="33" y="15" width="58" height="20.5"/>
+                                                                    <rect key="frame" x="33" y="5" width="58" height="20.5"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Infant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4oV-xA-3jc">
                                                                             <rect key="frame" x="0.0" y="0.0" width="43.5" height="20.5"/>
@@ -483,10 +508,15 @@
                                                                 <constraint firstItem="hjD-4C-xXV" firstAttribute="centerX" secondItem="zZa-fL-nrz" secondAttribute="centerX" id="8v9-WC-DQz"/>
                                                                 <constraint firstItem="hjD-4C-xXV" firstAttribute="centerY" secondItem="zZa-fL-nrz" secondAttribute="centerY" id="VVZ-vE-Ht7"/>
                                                             </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="15"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </view>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="mME-FX-IJf"/>
+                                                        <constraint firstAttribute="height" constant="30" id="mME-FX-IJf"/>
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
@@ -508,7 +538,7 @@
                             <tableViewSection id="Gbo-DG-bPI">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="200" id="QXH-7y-HWF">
-                                        <rect key="frame" x="0.0" y="1132" width="414" height="200"/>
+                                        <rect key="frame" x="0.0" y="1162" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QXH-7y-HWF" id="oP7-4F-pN0">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
@@ -595,7 +625,7 @@
                             <tableViewSection id="Eem-Yl-rk1">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="80" id="eqU-4w-fhZ">
-                                        <rect key="frame" x="0.0" y="1388" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="1418" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eqU-4w-fhZ" id="HcM-ZZ-2YU">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
@@ -667,7 +697,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Hf-c9-VsZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="951" y="-5"/>
+            <point key="canvasLocation" x="950.625" y="-5.28169014084507"/>
         </scene>
         <!--FilterTVC-->
         <scene sceneID="9F3-Ej-rMK">
@@ -955,7 +985,7 @@
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                    <real key="value" value="8"/>
+                                                                    <real key="value" value="25"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                     <real key="value" value="1"/>
@@ -1002,7 +1032,7 @@
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                    <real key="value" value="8"/>
+                                                                    <real key="value" value="25"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                     <real key="value" value="1"/>
@@ -1257,7 +1287,7 @@
                                                 </subviews>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.90627235169999998" green="0.27215853330000001" blue="0.24586421250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.92156862745098034" green="0.066666666666666666" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="44O-BE-Jro"/>
                                             <constraint firstItem="cyc-Oj-jmK" firstAttribute="top" secondItem="f5z-sO-lmw" secondAttribute="top" constant="8" id="CdU-m5-Vl3"/>

@@ -11,10 +11,14 @@ import SVPinView
 
 class VerificationVC: UIViewController {
     
+    @IBOutlet weak var lblCountdown: UILabel!
     //MARK: - VARIABLE
     var contactNumber = String()
     var otp = String()
     fileprivate var pin = ""
+    var timer:Timer?
+    var timeLeft = 59
+   
 
     
     //MARK: - OUTLET
@@ -49,12 +53,22 @@ class VerificationVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(onTimerFires), userInfo: nil, repeats: true)
 
         setupUI()
+//        update()
     }
-    
-}
+    @objc func onTimerFires()
+    {
+        timeLeft -= 1
+        lblCountdown.text = "00:\(timeLeft)"
 
+        if timeLeft <= 0 {
+            timer?.invalidate()
+            timer = nil
+        }
+    }
+}
 
 extension VerificationVC {
     

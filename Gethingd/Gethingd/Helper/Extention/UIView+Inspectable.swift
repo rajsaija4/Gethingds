@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-/*
+
 extension UIView {
     
     @IBInspectable var cornerRadius: CGFloat {
@@ -150,9 +150,9 @@ extension UITextField {
         }
     }
 }
-*/
 
 
+/*
 extension UIView {
     
     var cornerRadius: CGFloat {
@@ -283,18 +283,8 @@ extension UIView {
 }
 
 
+*/
 
-extension UITextField {
-    
-    var placeholderColor: UIColor {
-        get {
-            return value(forKeyPath: "placeholderLabel.textColor") as! UIColor
-        }set {
-            setValue(newValue, forKeyPath: "placeholderLabel.textColor")
-        }
-    }
-}
- 
  
 
 class CustomTextField: UITextField {

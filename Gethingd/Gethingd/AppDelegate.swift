@@ -20,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
         
         setupAppDelegate()
         
+        editProfile()
+        return true
+        
         if User.isExist {
             if User.details.firstName.count > 0  {
                 setupMainTabBarController()
@@ -28,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
                 editProfile()
             }
         } else {
-//            setupLogin()
+            setupLogin()
 //            setupCreateProfileVC()
 //            setupMainTabBarController()
             
@@ -68,7 +71,7 @@ extension AppDelegate {
     
     
     func editProfile() {
-            let vc = MatchUserVC.instantiate(fromAppStoryboard: .Discover)
+        let vc = ProfileTVC.instantiate(fromAppStoryboard: .Profile)
             let nvc = UINavigationController(rootViewController: vc)
             nvc.isNavigationBarHidden = true
             window?.rootViewController = nvc
