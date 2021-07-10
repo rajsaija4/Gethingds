@@ -17,18 +17,18 @@ struct URLManager {
     // Developement Path - current live
     //static let mainBasePath = "https://www.zodiap.org/development/public/"
     
-    // Live Path
+    // Live Path login
     //static let mainBasePath = "https://www.zodiap.org/public/"
     
-    static let mainBasePath = "https://www.zodiap.org/development/public/"
+    static let mainBasePath = "https://gurutechnolabs.co.in/website/laravel/gethingd/public/"
     static let basePath = "\(mainBasePath)api/"
 
     
     
     struct Auth {
         static let userSignUp = basePath + "user_signup"
-        static let login = basePath + "login?"
-        static let verify = basePath + "user_verification"
+        static let login = basePath + "login"
+        static let verify = basePath + "user_conformation"
         static let forgotPassword = basePath + "forget_password"
         static let changePassword = basePath + "change_password"
         static let resendOTP = basePath + "resend_otp"

@@ -34,6 +34,11 @@ class EditProfileVC: UITableViewController, TagListViewDelegate, UIImagePickerCo
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
     
 //    func tagPressed(_ title: String, tagView: TagView, sender: TagListView) {
 //        print("Tag pressed: \(title), \(sender)")

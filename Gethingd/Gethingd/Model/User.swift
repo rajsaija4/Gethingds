@@ -130,9 +130,15 @@ extension User {
         return decodedData != nil
     }
     
+//    static var token: [String:String] {
+//        get {
+//            return ["Authorization": "Bearer \(details.token)", "X-Requested-With": "XMLHttpRequest"]
+//        }
+//    }
+    
     static var token: [String:String] {
         get {
-            return ["Authorization": "Bearer \(details.token)", "X-Requested-With": "XMLHttpRequest"]
+            return ["Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGIwMzRmOTM5YmEzNTcyYTRmOWVjNzNlOTIzNmRmOWMzZjIzYWI3YjJkNDU1MGY3ODA4YmZhMTNjZDJmMWI1OWY2YzhiMTk1YjgyNjg1M2EiLCJpYXQiOjE2MjU5MjIwMTUsIm5iZiI6MTYyNTkyMjAxNSwiZXhwIjoxNjU3NDU4MDE1LCJzdWIiOiIxNCIsInNjb3BlcyI6W119.sSHjKORRU8OfvnOHV5ub1iF9hFi71XMDLJM0TTnV_-XBocuIMJFRgVqu1mtFU_mJk-xqztOOH1Xp79JzcHj7UTFXOue4PfFs_zJ8-0iMGLDvJWuyQ-IPVKXv1dPOfCrRSen6erO4hgPU6JjJus-u7DLfopCIu9xvJ086BXF_TfIHBD5Ho8SBalX6Pa4NvOHWt3urIXNwR1IfS2ZK0G4Rn37oXXZ2OzHw8By1HtMqOMS-1r1IcJ9AwZuLmPb-91MOyrdVN98GdoXgOP7iyfNi5D6HCpmH-q97nDchK4NhmBaGAUu7wakFSlH1xKotRAkBqOKVZ1c0OTdmzES1eH_nfljNQrJePHXPQCzR8QHOEyd5qGlliqKh8BGxCoVyt1AAqASt8qfi2BNZL8XdHKAqmA2mWekLqDggh5iiOKwNr50JAziJA0rp_cuTkvtLdkHIfmUOuk2ycdf37sBqU999lFFdgaf0nrz55Wn-lGREgh2vxlfsa9M76gQitM3EooXsF2yfQ7LfyENvF7QjzdOlSKAyaI1tRn3sKxH4S1I8TM98aLs1IaoFOw8zoRA5v1OL-UHQ2JjKfTSQqbvtaPRlQSBRwwbzNWT63EjiGQopom-yljKAJNlP4RW-q1c9fywXasbICpavkzWmbAZrPjFJ16Zng8lTt2rlRkjDC9dToe0", "X-Requested-With": "XMLHttpRequest"]
         }
     }
     

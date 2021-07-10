@@ -80,7 +80,7 @@ extension SignInVC {
     
     fileprivate func userLogIn(contact: String) {
         
-        let param = ["phone_number": contact]
+        let param = ["phone": contact]
         showHUD()
         
         NetworkManager.Auth.login(param: param, { (otp) in

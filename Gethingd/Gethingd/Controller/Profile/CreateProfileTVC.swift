@@ -11,15 +11,27 @@ import GooglePlaces
 import SwiftyJSON
 import CoreLocation
 import CropViewController
+import TagListView
 
-class CreateProfileTVC: UITableViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class CreateProfileTVC: UITableViewController, UIImagePickerControllerDelegate, TagListViewDelegate, UINavigationControllerDelegate, selectedPassion {
+    func passion(passion: [String]) {
+        arrPassion.removeAll()
+        lblPassion.isHidden = true
+        arrPassion.append(contentsOf: passion)
+        txtPassion.textFont = AppFonts.Poppins_Medium.withSize(17)
+        txtPassion.alignment = .leading
+        txtPassion.addTags(arrPassion)
+        
+    }
+    
     
     //MARK:- VARIABLE
    
     var selectedImage = 0
     var removeImage = 0
-    
+    var arrPassion:[String] = []
     var isFromLogin = false
+    var arrKids:[String] = []
 
     var onPopView: (() -> Void)?
     fileprivate var latitude: String = ""
@@ -41,6 +53,7 @@ class CreateProfileTVC: UITableViewController, UIImagePickerControllerDelegate &
     
     
     @IBOutlet var btnAddImages: [UIButton]!
+    @IBOutlet weak var txtEmail: CustomTextField!
     @IBOutlet var arrProfileBtn: [UIButton]!
 
     @IBOutlet weak var txtDate: CustomTextField!
@@ -58,16 +71,15 @@ class CreateProfileTVC: UITableViewController, UIImagePickerControllerDelegate &
     @IBOutlet var arrGenderBtn: [UIButton]!
     @IBOutlet weak var txtJobTitle: UITextField!
     @IBOutlet weak var txtOrientation: CustomTextField!
-    @IBOutlet weak var txtPassion: UITextField!
+ 
+    @IBOutlet weak var txtPassion: TagListView!
     @IBOutlet weak var lblLocation: UILabel!
     @IBOutlet weak var lblCharacterLeft: UILabel!
     @IBOutlet var arrStackView: [UIStackView]!
     @IBOutlet weak var txtNumberOfKids: CustomTextField!
-    @IBOutlet weak var txtKid1: UITextField!
-    @IBOutlet weak var txtKid2: UITextField!
-    @IBOutlet weak var txtKid3: UITextField!
-    @IBOutlet weak var txtKid4: UITextField!
-    @IBOutlet weak var txtKid5: UITextField!
+  
+    @IBOutlet var txtKids: [UITextField]!
+    @IBOutlet weak var lblPassion: UILabel!
     
     
     //MARK:- LIFECYCLE
@@ -79,7 +91,22 @@ class CreateProfileTVC: UITableViewController, UIImagePickerControllerDelegate &
         txtFirstName.setPlaceHolderColor()
         txtLastName.setPlaceHolderColor()
         txtDate.setPlaceHolderColor()
+        txtPassion.delegate = self
+        txtEmail.setPlaceHolderColor()
+        txtNumberOfKids.setPlaceHolderColor()
+        txtOrientation.setPlaceHolderColor()
+      
+       
         
+        
+    }
+    @IBAction func onPressbtnPassion(_ sender: Any) {
+        
+        let vc = TagListVC.instantiate(fromAppStoryboard: .Profile)
+        vc.delegate = self
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: true, completion: nil)
         
     }
     
@@ -243,30 +270,56 @@ class CreateProfileTVC: UITableViewController, UIImagePickerControllerDelegate &
         for btn in arrGenderBtn {
             if btn.tag == sender.tag {
                 btn.isSelected = true
+                selectedGender = btn.tag
             } else {
                 btn.isSelected = false
             }
         }
     }
     
-    @IBAction func onJobTitleTap(_ sender: UIControl) {
-        
-    }
     
     @IBAction func onSexualOrientationTap(_ sender: UIControl) {
+        let alert = UIAlertController(title: "Choose Secual Orientation", message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Heterosexual", style: .default, handler: { _ in
+            self.txtOrientation.text = "Heterosexual"
+        }))
+
+        alert.addAction(UIAlertAction(title: "Homosexual", style: .default, handler: { _ in
+            self.txtOrientation.text = "Homosexual"
+            }))
+        
+        alert.addAction(UIAlertAction(title: "Bisexual", style: .default, handler: { _ in
+            self.txtOrientation.text = "Bisexual"
+            }))
+
+        alert.addAction(UIAlertAction(title: "Asexual", style: .default, handler: { _ in
+            self.txtOrientation.text = "Asexual"
+            }))
+
+
+        alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+
+        self.present(alert, animated: true, completion: nil)
+        
         
     }
-    
-    @IBAction func onPassionTap(_ sender: UIControl) {
-        
-    }
-    
-    
+
     @IBAction func onLocationTap(_ sender: UIControl) {
+        
+        let gmsACVC = GMSAutocompleteViewController()
+        gmsACVC.delegate = self
+        gmsACVC.modalPresentationStyle = .fullScreen
+        present(gmsACVC, animated: true, completion: nil)
+        
     }
     
     @IBAction func onNumberOfKidsTap(_ sender: UIControl) {
         let alert = UIAlertController(title: "No of Kids", message: "Selct No of Kids", actionNames: ["0", "1", "2", "3", "4", "5"]) { (action) in
+            for i in 0..<5 {
+                self.txtKids[i].text = nil
+                self.arrKids.removeAll()
+                
+            }
             
             for i in 0..<self.arrStackView.count {
                 self.arrStackView[i].isHidden = true
@@ -299,6 +352,27 @@ class CreateProfileTVC: UITableViewController, UIImagePickerControllerDelegate &
     
     @IBAction func onKidTypeTap(_ sender: UIControl) {
         
+        let alert = UIAlertController(title: "Choose Kid Type", message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "New born", style: .default, handler: { _ in
+            
+            self.txtKids[sender.tag].text = "New born"
+            self.arrKids.append("New born")
+          
+        }))
+
+        alert.addAction(UIAlertAction(title: "Infant", style: .default, handler: { _ in
+            
+            self.txtKids[sender.tag].text = "Infant"
+            self.arrKids.append("Infant")
+        
+            }))
+        
+
+        alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+
+        self.present(alert, animated: true, completion: nil)
+        
+        
     }
     
     
@@ -308,7 +382,7 @@ extension CreateProfileTVC {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return 166
+            return 226
         }
         
         if indexPath.section == 1 {
@@ -433,12 +507,14 @@ extension CreateProfileTVC {
         let img3 = arrImageProfile[2].image
         let img4 = arrImageProfile[3].image
         let img5 = arrImageProfile[4].image
+        let img6 = arrImageProfile[5].image
         
         let imgData1 = img1?.jpegData(compressionQuality: 0.5)
         let imgData2 = img2?.jpegData(compressionQuality: 0.5)
         let imgData3 = img3?.jpegData(compressionQuality: 0.5)
         let imgData4 = img4?.jpegData(compressionQuality: 0.5)
         let imgData5 = img5?.jpegData(compressionQuality: 0.5)
+        let imgData6 = img6?.jpegData(compressionQuality: 0.5)
         
         var source: [String: Data] = [:]
         
@@ -472,6 +548,12 @@ extension CreateProfileTVC {
             }
         }
         
+        if imgData6 != nil {
+            source.merge(["profile_image6": imgData6!]) { (current, _) -> Data in
+                return current
+            }
+        }
+        
         guard source.count > 0 else {
             self.showAlert("Please upload at least one picture")
             return
@@ -497,7 +579,7 @@ extension CreateProfileTVC {
             return
         }
         
-        guard let aboutInfo = txtAboutView.text, aboutInfo.count > 0, aboutInfo != placeHolder else {
+        guard let sexualOrientation = txtOrientation.text, sexualOrientation.count > 0, sexualOrientation != placeHolder else {
             self.showAlert("Please \(placeHolder)")
             return
         }
@@ -507,24 +589,55 @@ extension CreateProfileTVC {
             return
         }
         
+        guard let email = txtEmail.text, email.count > 0, email != placeHolder else {
+            self.showAlert("Please Enter Email")
+            return
+        }
+        
+        guard let loc = lblLocation.text, loc.count > 0 else {
+            self.showAlert("Please Select Location")
+            return
+        }
+        
+        guard let noOfkids = txtNumberOfKids.text, noOfkids.count > 0 else {
+            self.showAlert("Please Enter No of Kids")
+            return
+        }
+       
+       
+        guard email.isValidEmail else {
+            self.showAlert("Please Enter Valid Email")
+            return
+        }
+       
+        
+        
     
-        var parameters =
+    
+        let parameters =
             [
-                "token": User.details.token,
                 "first_name": firstName,
                 "last_name": lastName,
-                "about": aboutInfo,
-                "gender": selectedGender == 0 ? "Male" : "Female",
+                "email": email,
                 "dob": dob,
+                "job_title":txtJobTitle.text ?? "",
+                "about": txtAboutView.text ?? "",
+                "sexual_orientation":sexualOrientation,
+                "kids": arrKids.joined(separator: ","),
+                "num_of_kids": noOfkids,
+                "gender": selectedGender == 0 ? "Male" : selectedGender == 1 ? "Female" : "Other",
                 "latitude": latitude,
-                "longitude": longitude
+                "longitude": longitude,
+                "address": loc,
+                "passion":arrPassion.joined(separator: ",")
+               
             ] as [String : String]
         
-        for i in 1...arrImgParam.count {
-            parameters.merge(["img\(i)": arrImgParam[i-1]]) { (current, _) -> String in
-                return current
-            }
-        }
+//        for i in 1...arrImgParam.count {
+//            parameters.merge(["img\(i)": arrImgParam[i-1]]) { (current, _) -> String in
+//                return current
+//            }
+//        }
         
 //        let source = [
 //            "profile_image1": imgData1,

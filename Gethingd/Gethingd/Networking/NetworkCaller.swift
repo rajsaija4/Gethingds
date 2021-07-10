@@ -135,11 +135,11 @@ class NetworkCaller: NSObject {
 extension JSON {
     
     var isSuccess: Bool {
-        return self["status_code"].intValue == 1
+        return self["status"].intValue == 1
     }
     
     var isAuthenticationFailed: Bool {
-        return self["status_code"].intValue == -1
+        return self["status"].intValue == -1
     }
     
     var errorMessage: String {

@@ -154,7 +154,7 @@ extension NetworkManager {
                 
                 guard response.isSuccess else {
                     
-                    if response["status_code"].stringValue == "2" {
+                    if response["status"].stringValue == "2" {
                         let user = User(json: response, token: User.details.token)
                         user.save()
                         fail("2")

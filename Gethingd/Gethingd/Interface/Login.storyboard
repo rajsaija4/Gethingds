@@ -739,6 +739,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="lZN-5n-NaO"/>
                     <connections>
+                        <outlet property="lblContactNo" destination="3PY-bm-iRL" id="g6v-5i-8OQ"/>
                         <outlet property="lblCountdown" destination="a4z-bA-T1K" id="51i-OP-HlB"/>
                         <outlet property="pinView" destination="RsA-hq-RUh" id="5dc-us-zU1"/>
                     </connections>

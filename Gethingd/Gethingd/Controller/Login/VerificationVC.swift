@@ -11,6 +11,7 @@ import SVPinView
 
 class VerificationVC: UIViewController {
     
+    @IBOutlet weak var lblContactNo: UILabel!
     @IBOutlet weak var lblCountdown: UILabel!
     //MARK: - VARIABLE
     var contactNumber = String()
@@ -53,6 +54,7 @@ class VerificationVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        lblContactNo.text = contactNumber
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(onTimerFires), userInfo: nil, repeats: true)
 
         setupUI()
@@ -114,7 +116,7 @@ extension VerificationVC {
             self.hideHUD()
             
             self.otp = otp
-//            self.showToast(otp)
+            self.showToast("OTP Resend Successfully")
             
         }) { (error) in
             self.hideHUD()
@@ -131,7 +133,7 @@ extension VerificationVC {
     @IBAction func onResendBtnTap(_ sender: UIButton) {
         
         let param = [
-            "phone_number": contactNumber
+            "phone": contactNumber
         ]
         
         resendOTP(param: param)
@@ -154,9 +156,8 @@ extension VerificationVC {
         }
         
         let param = [
-            "phone_number": contactNumber,
-            "otp": pin,
-            "device_type": 1,
+            "phone": contactNumber,
+            "login_otp": pin,
             "fcm_token": AppUserDefaults.value(forKey: .fcmToken, fallBackValue: "123").stringValue
         ] as [String : Any]
         

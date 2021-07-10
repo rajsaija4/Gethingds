@@ -7,11 +7,19 @@
 
 import UIKit
 import TagListView
-class TagListVC: UIViewController, TagListViewDelegate {
 
-    @IBOutlet weak var mainView: UIView!
+protocol selectedPassion {
     
+    func passion(passion:[ String ])
+    
+}
+
+class TagListVC: UIViewController, TagListViewDelegate {
+    
+    var arrPassion:[String] = []
+    @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var tagViewElements: TagListView!
+    var delegate:selectedPassion?
     override func viewDidLoad() {
         super.viewDidLoad()
         mainView.layer.cornerRadius = 15
@@ -30,8 +38,18 @@ class TagListVC: UIViewController, TagListViewDelegate {
     func tagPressed(_ title: String, tagView: TagView, sender: TagListView) {
         print("Tag pressed: \(title), \(sender)")
         tagView.isSelected = !tagView.isSelected
-    }
+        if tagView.isSelected {
+            arrPassion.append(title)
+        }
+        
+        else {
+            arrPassion.removeAll(where: { $0 == "\(title)"})
+            }
+            
+        }
+        
     
+   
     func tagRemoveButtonPressed(_ title: String, tagView: TagView, sender: TagListView) {
         print("Tag Remove pressed: \(title), \(sender)")
         sender.removeTagView(tagView)
@@ -39,8 +57,13 @@ class TagListVC: UIViewController, TagListViewDelegate {
  
      @IBAction func btnBack(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+        
      }
     
+    @IBAction func btnPressContinue(_ sender: Any) {
+        delegate?.passion(passion: arrPassion)
+        self.dismiss(animated: true, completion: nil)
+    }
     /*
      // MARK: - Navigation
 
