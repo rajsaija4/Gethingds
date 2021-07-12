@@ -14,6 +14,8 @@ import CropViewController
 import TagListView
 
 class CreateProfileTVC: UITableViewController, UIImagePickerControllerDelegate, TagListViewDelegate, UINavigationControllerDelegate, selectedPassion {
+    
+    
     func passion(passion: [String]) {
         arrPassion.removeAll()
         lblPassion.isHidden = true
@@ -26,13 +28,13 @@ class CreateProfileTVC: UITableViewController, UIImagePickerControllerDelegate, 
     
     
     //MARK:- VARIABLE
-   
-    var selectedImage = 0
-    var removeImage = 0
-    var arrPassion:[String] = []
+    
+    fileprivate var selectedImage = 0
+    fileprivate var removeImage = 0
+    fileprivate var arrPassion:[String] = []
     var isFromLogin = false
-    var arrKids:[String] = []
-
+    fileprivate var arrKids = [Int: String]()
+    
     var onPopView: (() -> Void)?
     fileprivate var latitude: String = ""
     fileprivate var longitude: String = ""
@@ -55,9 +57,9 @@ class CreateProfileTVC: UITableViewController, UIImagePickerControllerDelegate, 
     @IBOutlet var btnAddImages: [UIButton]!
     @IBOutlet weak var txtEmail: CustomTextField!
     @IBOutlet var arrProfileBtn: [UIButton]!
-
+    
     @IBOutlet weak var txtDate: CustomTextField!
-   
+    
     @IBOutlet weak var txtFirstName: CustomTextField!
     @IBOutlet weak var txtLastName: CustomTextField!
     @IBOutlet weak var txtAboutView: UITextView!{
@@ -65,28 +67,32 @@ class CreateProfileTVC: UITableViewController, UIImagePickerControllerDelegate, 
             txtAboutView.delegate = self
         }
     }
-
+    
     
     @IBOutlet var arrImageProfile: [UIImageView]!
     @IBOutlet var arrGenderBtn: [UIButton]!
     @IBOutlet weak var txtJobTitle: UITextField!
     @IBOutlet weak var txtOrientation: CustomTextField!
- 
+    
     @IBOutlet weak var txtPassion: TagListView!
     @IBOutlet weak var lblLocation: UILabel!
     @IBOutlet weak var lblCharacterLeft: UILabel!
-    @IBOutlet var arrStackView: [UIStackView]!
     @IBOutlet weak var txtNumberOfKids: CustomTextField!
-  
-    @IBOutlet var txtKids: [UITextField]!
+    
     @IBOutlet weak var lblPassion: UILabel!
     
-    
+    @IBOutlet weak var collKid: UICollectionView!{
+        didSet{
+            collKid.registerCell(KidCell.self)
+            collKid.dataSource = self
+            collKid.delegate = self
+        }
+    }
     //MARK:- LIFECYCLE
     
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+        
         setupUI()
         txtFirstName.setPlaceHolderColor()
         txtLastName.setPlaceHolderColor()
@@ -95,9 +101,7 @@ class CreateProfileTVC: UITableViewController, UIImagePickerControllerDelegate, 
         txtEmail.setPlaceHolderColor()
         txtNumberOfKids.setPlaceHolderColor()
         txtOrientation.setPlaceHolderColor()
-      
-       
-        
+//        getProfile()
         
     }
     @IBAction func onPressbtnPassion(_ sender: Any) {
@@ -117,96 +121,96 @@ class CreateProfileTVC: UITableViewController, UIImagePickerControllerDelegate, 
             alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
                 self.openCamera()
             }))
-
-//            alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
-//                self.openGallery()
-//            }))
-
-            alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
-
-            self.present(alert, animated: true, completion: nil)
-//
             
-//
+            //            alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
+            //                self.openGallery()
+            //            }))
+            
+            alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
+            //
+            
+            //
         }
-           else if sender.tag == 1 {
-              
-                selectedImage = sender.tag
+        else if sender.tag == 1 {
+            
+            selectedImage = sender.tag
             let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
             alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
                 self.openCamera()
             }))
-
+            
             alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
                 self.openGallery()
             }))
-
+            
             alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
-
+            
             self.present(alert, animated: true, completion: nil)
         }
-           else if sender.tag == 2 {
-              
-                selectedImage = sender.tag
+        else if sender.tag == 2 {
+            
+            selectedImage = sender.tag
             let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
             alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
                 self.openCamera()
             }))
-
+            
             alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
                 self.openGallery()
             }))
-
+            
             alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
-
+            
             self.present(alert, animated: true, completion: nil)
         }
-           else if sender.tag == 3 {
-              
-                selectedImage = sender.tag
+        else if sender.tag == 3 {
+            
+            selectedImage = sender.tag
             let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
             alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
                 self.openCamera()
             }))
-
+            
             alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
                 self.openGallery()
             }))
-
+            
             alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
-
+            
             self.present(alert, animated: true, completion: nil)
         }
-           else if sender.tag == 4 {
-              
-                selectedImage = sender.tag
+        else if sender.tag == 4 {
+            
+            selectedImage = sender.tag
             let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
             alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
                 self.openCamera()
             }))
-
+            
             alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
                 self.openGallery()
             }))
-
+            
             alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
-
+            
             self.present(alert, animated: true, completion: nil)
         }
-           else if sender.tag == 5 {
-               
-                selectedImage = sender.tag
+        else if sender.tag == 5 {
+            
+            selectedImage = sender.tag
             let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
             alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
                 self.openCamera()
             }))
-
+            
             alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
                 self.openGallery()
             }))
-
+            
             alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
-
+            
             self.present(alert, animated: true, completion: nil)
         }
         
@@ -218,26 +222,26 @@ class CreateProfileTVC: UITableViewController, UIImagePickerControllerDelegate, 
             btnAddImages[self.selectedImage].isHidden = true
             arrProfileBtn[self.selectedImage].isHidden = false
             dismiss(animated: true, completion: nil)
-    }
+        }
     }
     
     
     func openGallery()
-   {
-       if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary){
-           let imagePicker = UIImagePickerController()
-           imagePicker.delegate = self
-           imagePicker.allowsEditing = true
-           imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
-           self.present(imagePicker, animated: true, completion: nil)
-       }
-       else
-       {
-           let alert  = UIAlertController(title: "Warning", message: "You don't have permission to access gallery.", preferredStyle: .alert)
-           alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-           self.present(alert, animated: true, completion: nil)
-       }
-   }
+    {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary){
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.allowsEditing = true
+            imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+        else
+        {
+            let alert  = UIAlertController(title: "Warning", message: "You don't have permission to access gallery.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
     
     
     func openCamera()
@@ -262,7 +266,7 @@ class CreateProfileTVC: UITableViewController, UIImagePickerControllerDelegate, 
         arrImageProfile[sender.tag].image = nil
         arrProfileBtn[sender.tag].isHidden = true
         btnAddImages[sender.tag].isHidden = true
-     
+        
     }
     
     @IBAction func onGenderBtnTap(_ sender: UIButton) {
@@ -283,27 +287,27 @@ class CreateProfileTVC: UITableViewController, UIImagePickerControllerDelegate, 
         alert.addAction(UIAlertAction(title: "Heterosexual", style: .default, handler: { _ in
             self.txtOrientation.text = "Heterosexual"
         }))
-
+        
         alert.addAction(UIAlertAction(title: "Homosexual", style: .default, handler: { _ in
             self.txtOrientation.text = "Homosexual"
-            }))
+        }))
         
         alert.addAction(UIAlertAction(title: "Bisexual", style: .default, handler: { _ in
             self.txtOrientation.text = "Bisexual"
-            }))
-
+        }))
+        
         alert.addAction(UIAlertAction(title: "Asexual", style: .default, handler: { _ in
             self.txtOrientation.text = "Asexual"
-            }))
-
-
+        }))
+        
+        
         alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
-
+        
         self.present(alert, animated: true, completion: nil)
         
         
     }
-
+    
     @IBAction func onLocationTap(_ sender: UIControl) {
         
         let gmsACVC = GMSAutocompleteViewController()
@@ -314,17 +318,11 @@ class CreateProfileTVC: UITableViewController, UIImagePickerControllerDelegate, 
     }
     
     @IBAction func onNumberOfKidsTap(_ sender: UIControl) {
-        let alert = UIAlertController(title: "No of Kids", message: "Selct No of Kids", actionNames: ["0", "1", "2", "3", "4", "5"]) { (action) in
-            for i in 0..<5 {
-                self.txtKids[i].text = nil
-                self.arrKids.removeAll()
-                
-            }
-            
-            for i in 0..<self.arrStackView.count {
-                self.arrStackView[i].isHidden = true
-            }
-            
+       
+        let keys = Array(arrKids.keys).sorted(by: <).map{ $0.description }
+        
+        let alert = UIAlertController(title: "No of Kids", message: "Selct No of Kids", actionNames: keys) { (action) in
+
             self.txtNumberOfKids.text = action.title ?? ""
             
             self.numberOfKids = Int(action.title ?? "0") ?? 0
@@ -334,45 +332,32 @@ class CreateProfileTVC: UITableViewController, UIImagePickerControllerDelegate, 
                 self.tableView.reloadData()
                 self.tableView.invalidateIntrinsicContentSize()
                 self.tableView.layoutIfNeeded()
+                self.collKid.reloadData()
+                self.collKid.invalidateIntrinsicContentSize()
+                self.collKid.layoutIfNeeded()
                 
                 return
             }
-            
-            for i in 0..<count {
-                self.arrStackView[i].isHidden = false
-            }
-            
+
             self.tableView.reloadData()
             self.tableView.invalidateIntrinsicContentSize()
             self.tableView.layoutIfNeeded()
+            self.collKid.reloadData()
+            self.collKid.invalidateIntrinsicContentSize()
+            self.collKid.layoutIfNeeded()
             
         }
         self.present(alert, animated: true, completion: nil)
     }
     
-    @IBAction func onKidTypeTap(_ sender: UIControl) {
+    @objc func onKidTypeTap(_ sender: UIControl) {
         
-        let alert = UIAlertController(title: "Choose Kid Type", message: nil, preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "New born", style: .default, handler: { _ in
-            
-            self.txtKids[sender.tag].text = "New born"
-            self.arrKids.append("New born")
-          
-        }))
-
-        alert.addAction(UIAlertAction(title: "Infant", style: .default, handler: { _ in
-            
-            self.txtKids[sender.tag].text = "Infant"
-            self.arrKids.append("Infant")
+        let alert = UIAlertController(title: "Choose Kid Type", message: "", actionNames: ["New born", "Infant"]) { (action) in
+            self.arrKids[sender.tag] = action.title ?? ""
+            self.collKid.reloadData()
+        }
         
-            }))
-        
-
-        alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
-
         self.present(alert, animated: true, completion: nil)
-        
-        
     }
     
     
@@ -394,7 +379,7 @@ extension CreateProfileTVC {
         }
         
         if indexPath.section == 4 {
-            return CGFloat((numberOfKids * 50) + 66 + (numberOfKids * 8))
+            return CGFloat((numberOfKids * 50) + 74)
         }
         
         if indexPath.section == 5 {
@@ -405,6 +390,49 @@ extension CreateProfileTVC {
 }
 
 
+extension CreateProfileTVC: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return numberOfKids
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: KidCell = collectionView.dequequReusableCell(for: indexPath)
+        cell.lblKid.text = "\(indexPath.row + 1)"
+        cell.lblKidType.text = self.arrKids[indexPath.row]
+        cell.kidTypeControl.tag = indexPath.row
+        cell.kidTypeControl.addTarget(self, action: #selector(onKidTypeTap(_:)), for: .touchUpInside)
+        return cell
+    }
+}
+
+extension CreateProfileTVC: UICollectionViewDelegate {
+    
+    
+}
+
+extension CreateProfileTVC: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: 50)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+}
+
+
+
 extension CreateProfileTVC {
     
     fileprivate func setupUI() {
@@ -412,6 +440,11 @@ extension CreateProfileTVC {
         navigationItem.setHidesBackButton(true, animated: true)
         
         txtDate.setInputViewDatePicker(target: self, selector: #selector(self.onDoneBtnTap))
+        
+        for i in 0..<50 {
+            self.arrKids[i] = "New born"
+        }
+        
     }
     
     fileprivate func setupDataUI() {
@@ -430,10 +463,10 @@ extension CreateProfileTVC {
         txtFirstName.text = profile.firstName
         txtLastName.text = profile.lastName
         txtAboutView.text = profile.about.count > 0 ? profile.about : placeHolder
-    
+        
         txtDate.text = profile.dateOfBirth
-       
-
+        
+        
         
         if profile.address.count == 0 {
             locationManager = CLLocationManager()
@@ -465,7 +498,7 @@ extension CreateProfileTVC {
         gmsACVC.modalPresentationStyle = .fullScreen
         present(gmsACVC, animated: true, completion: nil)
     }
-
+    
     
     @IBAction func onImageBtnTap(_ sender: UIControl) {
         imagePicker = ImagePicker(presentationController: self, delegate: self)
@@ -474,22 +507,22 @@ extension CreateProfileTVC {
     }
     
     
-
-
+    
+    
     @objc fileprivate func onBackBtnTap() {
         onPopView?()
         navigationController?.popViewController(animated: false)
     }
     
     /*
-    @IBAction func onAddressFieldEditingBegin(_ sender: UITextField) {
-                sender.resignFirstResponder()
-                let gmsACVC = GMSAutocompleteViewController()
-                gmsACVC.delegate = self
-                gmsACVC.modalPresentationStyle = .fullScreen
-                present(gmsACVC, animated: true, completion: nil)
-    }
-    */
+     @IBAction func onAddressFieldEditingBegin(_ sender: UITextField) {
+     sender.resignFirstResponder()
+     let gmsACVC = GMSAutocompleteViewController()
+     gmsACVC.delegate = self
+     gmsACVC.modalPresentationStyle = .fullScreen
+     present(gmsACVC, animated: true, completion: nil)
+     }
+     */
     
     @objc fileprivate func onDoneBtnTap() {
         
@@ -500,7 +533,7 @@ extension CreateProfileTVC {
     }
     
     @IBAction func onNextControlTap(_ sender: UIControl) {
-    
+        
         
         let img1 = arrImageProfile[0].image
         let img2 = arrImageProfile[1].image
@@ -562,12 +595,12 @@ extension CreateProfileTVC {
         
         
         
-//        guard let img1 = arrImageProfile[0].image, let img2 = arrImageProfile[1].image, let img3 = arrImageProfile[2].image, let img4 = arrImageProfile[3].image, let img5 = arrImageProfile[4].image else {
-//            self.showAlert("Please Select All Profile Image")
-//            return
-//        }
+        //        guard let img1 = arrImageProfile[0].image, let img2 = arrImageProfile[1].image, let img3 = arrImageProfile[2].image, let img4 = arrImageProfile[3].image, let img5 = arrImageProfile[4].image else {
+        //            self.showAlert("Please Select All Profile Image")
+        //            return
+        //        }
         
-    
+        
         
         guard let firstName = txtFirstName.text, firstName.count > 0 else {
             self.showAlert("Please \(txtFirstName.placeholder ?? "")")
@@ -583,7 +616,7 @@ extension CreateProfileTVC {
             self.showAlert("Please \(placeHolder)")
             return
         }
-    
+        
         guard let dob = txtDate.text, dob.count > 0 else {
             self.showAlert("Please Select Date Of Birth")
             return
@@ -603,17 +636,17 @@ extension CreateProfileTVC {
             self.showAlert("Please Enter No of Kids")
             return
         }
-       
-       
+        
+        
         guard email.isValidEmail else {
             self.showAlert("Please Enter Valid Email")
             return
         }
-       
         
         
-    
-    
+        
+        
+        
         let parameters =
             [
                 "first_name": firstName,
@@ -623,42 +656,42 @@ extension CreateProfileTVC {
                 "job_title":txtJobTitle.text ?? "",
                 "about": txtAboutView.text ?? "",
                 "sexual_orientation":sexualOrientation,
-                "kids": arrKids.joined(separator: ","),
+//                "kids": arrKids.joined(separator: ","),
                 "num_of_kids": noOfkids,
                 "gender": selectedGender == 0 ? "Male" : selectedGender == 1 ? "Female" : "Other",
                 "latitude": latitude,
                 "longitude": longitude,
                 "address": loc,
                 "passion":arrPassion.joined(separator: ",")
-               
+                
             ] as [String : String]
         
-//        for i in 1...arrImgParam.count {
-//            parameters.merge(["img\(i)": arrImgParam[i-1]]) { (current, _) -> String in
-//                return current
-//            }
-//        }
+        //        for i in 1...arrImgParam.count {
+        //            parameters.merge(["img\(i)": arrImgParam[i-1]]) { (current, _) -> String in
+        //                return current
+        //            }
+        //        }
         
-//        let source = [
-//            "profile_image1": imgData1,
-//            "profile_image2": imgData2,
-//            "profile_image3": imgData3,
-//            "profile_image4": imgData4,
-//            "profile_image5": imgData5
-//        ]
+        //        let source = [
+        //            "profile_image1": imgData1,
+        //            "profile_image2": imgData2,
+        //            "profile_image3": imgData3,
+        //            "profile_image4": imgData4,
+        //            "profile_image5": imgData5
+        //        ]
         
         
         addProfile(source: source, parameters: parameters)
         
     }
-
+    
 }
 
 
 
 extension CreateProfileTVC {
     
-   
+    
     fileprivate func getProfile() {
         showHUD()
         NetworkManager.Profile.getMyProfile({ (profile) in
@@ -671,12 +704,12 @@ extension CreateProfileTVC {
         }
     }
     
-   
+    
     fileprivate func addProfile(source: [String: Data], parameters: [String: String]) {
         showHUD()
         NetworkManager.Profile.addProfile(source: source, params: parameters, { (message) in
             self.hideHUD()
-//            self.showAlert(message)
+            //            self.showAlert(message)
             
             let alert = UIAlertController(title: "Success", message: message) { (_) in
                 if self.isFromLogin {
@@ -687,7 +720,7 @@ extension CreateProfileTVC {
                 }
             }
             self.present(alert, animated: true, completion: nil)
-           
+            
             
         }) { (error) in
             self.hideHUD()
@@ -707,7 +740,7 @@ extension CreateProfileTVC {
             self.showAlert(error)
         }
     }
-
+    
 }
 
 
@@ -900,8 +933,8 @@ extension CreateProfileTVC: CLLocationManagerDelegate {
             
             self.present(alert, animated: true, completion: nil)
             
-//            self.txtAddress.isEnabled = true
-//            self.imgAddressDropdown.isHidden = false
+            //            self.txtAddress.isEnabled = true
+            //            self.imgAddressDropdown.isHidden = false
         }
     }
     
@@ -928,7 +961,7 @@ extension CreateProfileTVC {
         var postalCode = ""
         self.latitude = latitude
         self.longitude = longitude
-       
+        
         
         let location: CLLocation = CLLocation(latitude:centerCoordinate.latitude, longitude: centerCoordinate.longitude)
         
@@ -938,13 +971,13 @@ extension CreateProfileTVC {
                                                     self.hideHUD()
                                                     if (error != nil)
                                                     {
-//                                                        self.txtAddress.isEnabled = false
-//                                                        self.imgAddressDropdown.isHidden = false
+                                                        //                                                        self.txtAddress.isEnabled = false
+                                                        //                                                        self.imgAddressDropdown.isHidden = false
                                                         
                                                         print("reverse geodcode fail: \(error?.localizedDescription ?? "Error")")
                                                     } else {
-//                                                        self.txtAddress.isEnabled = true
-//                                                        self.imgAddressDropdown.isHidden = true
+                                                        //                                                        self.txtAddress.isEnabled = true
+                                                        //                                                        self.imgAddressDropdown.isHidden = true
                                                     }
                                                     guard let place = placemarks, place.count > 0 else {
                                                         return
@@ -954,9 +987,9 @@ extension CreateProfileTVC {
                                                     let pm = place[0]
                                                     
                                                     var addArray:[String] = []
-//                                                    if let name = pm.name {
-//                                                        addArray.append(name)
-//                                                    }
+                                                    //                                                    if let name = pm.name {
+                                                    //                                                        addArray.append(name)
+                                                    //                                                    }
                                                     if let locality = pm.locality {
                                                         addArray.append(locality)
                                                         city = locality
@@ -970,29 +1003,29 @@ extension CreateProfileTVC {
                                                         state = administrativeArea
                                                     }
                                                     
-//                                                    if let countryName = pm.country {
-//                                                        addArray.append(countryName)
-//                                                        country = countryName
-//                                                    }
-//                                                    if let postalCodeValue = pm.postalCode {
-//                                                        addArray.append(postalCodeValue)
-//                                                        postalCode = postalCodeValue
-//                                                    }
+                                                    //                                                    if let countryName = pm.country {
+                                                    //                                                        addArray.append(countryName)
+                                                    //                                                        country = countryName
+                                                    //                                                    }
+                                                    //                                                    if let postalCodeValue = pm.postalCode {
+                                                    //                                                        addArray.append(postalCodeValue)
+                                                    //                                                        postalCode = postalCodeValue
+                                                    //                                                    }
                                                     
                                                     let addressString = addArray.joined(separator: ", ")
                                                     locationName = addressString
                                                     
                                                     /*
-                                                    let param = [
-                                                        "latitude": latitude,
-                                                        "longitude": longitude,
-                                                        "type": "insert",
-                                                        "location": locationName,
-                                                        "country": country,
-                                                        "state": state,
-                                                        "city": city
-                                                    ]
-                                                    */
+                                                     let param = [
+                                                     "latitude": latitude,
+                                                     "longitude": longitude,
+                                                     "type": "insert",
+                                                     "location": locationName,
+                                                     "country": country,
+                                                     "state": state,
+                                                     "city": city
+                                                     ]
+                                                     */
                                                     self.latitude = latitude
                                                     self.longitude = longitude
                                                     self.lblLocation.text = locationName

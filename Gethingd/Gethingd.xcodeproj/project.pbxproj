@@ -48,6 +48,8 @@
 		9F7F72532685959B009C46E9 /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F72372685959A009C46E9 /* ChangePasswordVC.swift */; };
 		9F7F72542685959B009C46E9 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F72382685959A009C46E9 /* SignInVC.swift */; };
 		9F7F72552685959B009C46E9 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F72392685959A009C46E9 /* SignUpVC.swift */; };
+		9FBFFE94269C093800CA5BBE /* KidCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBFFE92269C093800CA5BBE /* KidCell.swift */; };
+		9FBFFE95269C093800CA5BBE /* KidCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FBFFE93269C093800CA5BBE /* KidCell.xib */; };
 		9FD6CD0326846764002EF5BD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CCF126846764002EF5BD /* Constants.swift */; };
 		9FD6CD0426846764002EF5BD /* AppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CCF226846764002EF5BD /* AppCell.swift */; };
 		9FD6CD0526846764002EF5BD /* AppUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CCF326846764002EF5BD /* AppUserDefaults.swift */; };
@@ -158,6 +160,8 @@
 		9F7F72382685959A009C46E9 /* SignInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		9F7F72392685959A009C46E9 /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		9F842D1E2696BAEB00924AA0 /* Gethingd.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Gethingd.entitlements; sourceTree = "<group>"; };
+		9FBFFE92269C093800CA5BBE /* KidCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidCell.swift; sourceTree = "<group>"; };
+		9FBFFE93269C093800CA5BBE /* KidCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KidCell.xib; sourceTree = "<group>"; };
 		9FD6CCF126846764002EF5BD /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9FD6CCF226846764002EF5BD /* AppCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCell.swift; sourceTree = "<group>"; };
 		9FD6CCF326846764002EF5BD /* AppUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUserDefaults.swift; sourceTree = "<group>"; };
@@ -404,6 +408,15 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		9FBFFE91269C093800CA5BBE /* KidCell */ = {
+			isa = PBXGroup;
+			children = (
+				9FBFFE92269C093800CA5BBE /* KidCell.swift */,
+				9FBFFE93269C093800CA5BBE /* KidCell.xib */,
+			);
+			path = KidCell;
+			sourceTree = "<group>";
+		};
 		9FD6CCF026846764002EF5BD /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -511,6 +524,7 @@
 		9FD6CDAC26848D2A002EF5BD /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				9FBFFE91269C093800CA5BBE /* KidCell */,
 				9FD6CDAD26848D2A002EF5BD /* InstaCollectionCell */,
 				9FD6CDB026848D2A002EF5BD /* FreshMatchesCell */,
 				9FD6CDB326848D2A002EF5BD /* SignCell */,
@@ -690,6 +704,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FD6CDCD26848D2A002EF5BD /* OverlayView.xib in Resources */,
+				9FBFFE95269C093800CA5BBE /* KidCell.xib in Resources */,
 				9FD6CDD026848D2A002EF5BD /* NotificationCell.xib in Resources */,
 				183042D426720E8B00E6A29A /* Assets.xcassets in Resources */,
 				9FD6CDCB26848D2A002EF5BD /* SignCell.xib in Resources */,
@@ -806,6 +821,7 @@
 				9F7F72412685959B009C46E9 /* DiscoverVC.swift in Sources */,
 				9F6938DA268D7E7A00C57FCF /* WholikedVC.swift in Sources */,
 				9F7F72452685959B009C46E9 /* MessageVC.swift in Sources */,
+				9FBFFE94269C093800CA5BBE /* KidCell.swift in Sources */,
 				9F7F723F2685959A009C46E9 /* UserDetailsTVC.swift in Sources */,
 				9F6804B2269471F800C1C812 /* PolicyVerificationVC.swift in Sources */,
 				9FD6CD9F26848C7D002EF5BD /* UserConversation.swift in Sources */,

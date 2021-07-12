@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-SemiBold.ttf">
+            <string>Poppins-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="KidCell" id="gTV-IL-0wX" customClass="KidCell" customModule="Gethingd" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="500" height="108"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="500" height="108"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SXh-pi-H69">
+                        <rect key="frame" x="0.0" y="0.0" width="500" height="108"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="WBk-pa-KP6">
+                                <rect key="frame" x="8" y="4" width="484" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Kid1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOQ-fe-LKe">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="100"/>
+                                        <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="15"/>
+                                        <color key="textColor" red="0.29894259569999998" green="0.29898265000000002" blue="0.29892891649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c9J-DQ-yJp" customClass="UIControl">
+                                        <rect key="frame" x="46" y="0.0" width="438" height="100"/>
+                                        <subviews>
+                                            <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9x4-MW-j2W">
+                                                <rect key="frame" x="16" y="8" width="406" height="84"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kid1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xM-q6-DvL">
+                                                        <rect key="frame" x="0.0" y="0.0" width="383" height="84"/>
+                                                        <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="15"/>
+                                                        <color key="textColor" red="0.29894259569999998" green="0.29898265000000002" blue="0.29892891649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="1v8-NX-XL7">
+                                                        <rect key="frame" x="391" y="0.0" width="15" height="84"/>
+                                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="15" id="e19-nt-3TO"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.9180724025" green="0.9181824327" blue="0.91803485159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="9x4-MW-j2W" firstAttribute="leading" secondItem="c9J-DQ-yJp" secondAttribute="leading" constant="16" id="Uqb-Cf-xDy"/>
+                                            <constraint firstItem="9x4-MW-j2W" firstAttribute="top" secondItem="c9J-DQ-yJp" secondAttribute="top" constant="8" id="WOu-nT-pG9"/>
+                                            <constraint firstAttribute="trailing" secondItem="9x4-MW-j2W" secondAttribute="trailing" constant="16" id="bok-OJ-w3o"/>
+                                            <constraint firstAttribute="bottom" secondItem="9x4-MW-j2W" secondAttribute="bottom" constant="8" id="nJd-jZ-s4e"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.97647058819999999" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WBk-pa-KP6" firstAttribute="leading" secondItem="SXh-pi-H69" secondAttribute="leading" constant="8" id="5YA-5G-MGa"/>
+                            <constraint firstAttribute="trailing" secondItem="WBk-pa-KP6" secondAttribute="trailing" constant="8" id="L1r-9t-8w3"/>
+                            <constraint firstAttribute="bottom" secondItem="WBk-pa-KP6" secondAttribute="bottom" constant="4" id="P5Z-ik-nbf"/>
+                            <constraint firstItem="WBk-pa-KP6" firstAttribute="top" secondItem="SXh-pi-H69" secondAttribute="top" constant="4" id="cgn-7k-ObA"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="SXh-pi-H69" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="AzA-EW-t6J"/>
+                <constraint firstItem="SXh-pi-H69" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="IRO-Rz-6DB"/>
+                <constraint firstAttribute="bottom" secondItem="SXh-pi-H69" secondAttribute="bottom" id="UYQ-qp-CrZ"/>
+                <constraint firstAttribute="trailing" secondItem="SXh-pi-H69" secondAttribute="trailing" id="wwc-YR-Leu"/>
+            </constraints>
+            <size key="customSize" width="500" height="108"/>
+            <connections>
+                <outlet property="kidTypeControl" destination="c9J-DQ-yJp" id="yCU-eB-33j"/>
+                <outlet property="lblKid" destination="QOQ-fe-LKe" id="3l9-tM-1jN"/>
+                <outlet property="lblKidType" destination="4xM-q6-DvL" id="GCU-Bi-lF6"/>
+            </connections>
+            <point key="canvasLocation" x="466.66666666666669" y="150"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="img_dropdown" width="16" height="16"/>
+    </resources>
+</document>

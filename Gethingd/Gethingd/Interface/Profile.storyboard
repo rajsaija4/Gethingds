@@ -972,29 +972,29 @@
                             </tableViewSection>
                             <tableViewSection id="r1c-NK-Uii">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="2al-QJ-yJ9">
-                                        <rect key="frame" x="0.0" y="1576" width="414" height="356"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="200" id="2al-QJ-yJ9">
+                                        <rect key="frame" x="0.0" y="1576" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2al-QJ-yJ9" id="ka8-Vg-JQG">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="356"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0Hu-cc-vxx">
-                                                    <rect key="frame" x="20" y="8" width="374" height="28"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0Hu-cc-vxx">
+                                                    <rect key="frame" x="20" y="8" width="374" height="184"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JXS-uX-E86" customClass="UIControl">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="28"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WTv-sz-H3f">
-                                                                    <rect key="frame" x="16" y="8" width="342" height="12"/>
+                                                                    <rect key="frame" x="16" y="8" width="342" height="34"/>
                                                                     <subviews>
                                                                         <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="No of Kids" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RBC-MY-ReG" customClass="CustomTextField" customModule="Gethingd" customModuleProvider="target">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="319" height="12"/>
+                                                                            <rect key="frame" x="0.0" y="5.6666666666666661" width="319" height="22.666666666666671"/>
                                                                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                                                                             <textInputTraits key="textInputTraits"/>
                                                                         </textField>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="mQo-qX-m6z">
-                                                                            <rect key="frame" x="327" y="0.0" width="15" height="12"/>
+                                                                            <rect key="frame" x="327" y="9" width="15" height="16"/>
                                                                             <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="15" id="o8I-fY-WxS"/>
@@ -1026,306 +1026,17 @@
                                                                 <action selector="onNumberOfKidsTap:" destination="ftm-uy-TkX" eventType="touchUpInside" id="TLi-wt-p0z"/>
                                                             </connections>
                                                         </view>
-                                                        <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="9Oi-rN-BJz">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kid1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3u-el-bef">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="30" height="50"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="20" id="e92-3q-tQc"/>
-                                                                    </constraints>
-                                                                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="15"/>
-                                                                    <color key="textColor" red="0.29894259569999998" green="0.29898265000000002" blue="0.29892891649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5tr-qn-55u" customClass="UIControl">
-                                                                    <rect key="frame" x="46" y="0.0" width="328" height="50"/>
-                                                                    <subviews>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="irA-xH-FrE">
-                                                                            <rect key="frame" x="16" y="8" width="296" height="34"/>
-                                                                            <subviews>
-                                                                                <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Born" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bJ1-Nh-cHF">
-                                                                                    <rect key="frame" x="0.0" y="5.6666666666666661" width="273" height="22.666666666666671"/>
-                                                                                    <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
-                                                                                    <textInputTraits key="textInputTraits"/>
-                                                                                </textField>
-                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="3Q7-x8-ERh">
-                                                                                    <rect key="frame" x="281" y="9" width="15" height="16"/>
-                                                                                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                    <constraints>
-                                                                                        <constraint firstAttribute="width" constant="15" id="IUe-ns-kza"/>
-                                                                                    </constraints>
-                                                                                </imageView>
-                                                                            </subviews>
-                                                                        </stackView>
-                                                                    </subviews>
-                                                                    <color key="backgroundColor" red="0.9180724025" green="0.9181824327" blue="0.91803485159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="bottom" secondItem="irA-xH-FrE" secondAttribute="bottom" constant="8" id="9O8-Xm-BaM"/>
-                                                                        <constraint firstItem="irA-xH-FrE" firstAttribute="leading" secondItem="5tr-qn-55u" secondAttribute="leading" constant="16" id="gfL-Ye-Eu0"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="irA-xH-FrE" secondAttribute="trailing" constant="16" id="kd9-TB-Mnt"/>
-                                                                        <constraint firstItem="irA-xH-FrE" firstAttribute="top" secondItem="5tr-qn-55u" secondAttribute="top" constant="8" id="mY4-vb-C4Z"/>
-                                                                    </constraints>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                            <real key="value" value="25"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                            <real key="value" value="1"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                            <color key="value" red="0.97647058819999999" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                    </userDefinedRuntimeAttributes>
-                                                                    <connections>
-                                                                        <action selector="onKidTypeTap:" destination="ftm-uy-TkX" eventType="touchUpInside" id="yZA-dy-zha"/>
-                                                                    </connections>
-                                                                </view>
-                                                            </subviews>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="50" id="5R4-xc-abT"/>
-                                                            </constraints>
-                                                        </stackView>
-                                                        <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="4Af-s0-QLp">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kid2" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ur3-JM-S6E">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="33" height="50"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="20" id="cJf-QG-o75"/>
-                                                                    </constraints>
-                                                                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="15"/>
-                                                                    <color key="textColor" red="0.29894259569999998" green="0.29898265000000002" blue="0.29892891649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yIS-cn-Mx9" customClass="UIControl">
-                                                                    <rect key="frame" x="49" y="0.0" width="325" height="50"/>
-                                                                    <subviews>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gkK-gD-oeD">
-                                                                            <rect key="frame" x="16" y="8" width="293" height="34"/>
-                                                                            <subviews>
-                                                                                <textField opaque="NO" tag="1" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Born" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RP9-Fd-2Rh">
-                                                                                    <rect key="frame" x="0.0" y="5.6666666666666661" width="270" height="22.666666666666671"/>
-                                                                                    <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
-                                                                                    <textInputTraits key="textInputTraits"/>
-                                                                                </textField>
-                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="NRU-iR-D1m">
-                                                                                    <rect key="frame" x="278" y="9" width="15" height="16"/>
-                                                                                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                    <constraints>
-                                                                                        <constraint firstAttribute="width" constant="15" id="wan-H2-UPb"/>
-                                                                                    </constraints>
-                                                                                </imageView>
-                                                                            </subviews>
-                                                                        </stackView>
-                                                                    </subviews>
-                                                                    <color key="backgroundColor" red="0.9180724025" green="0.9181824327" blue="0.91803485159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <constraints>
-                                                                        <constraint firstItem="gkK-gD-oeD" firstAttribute="top" secondItem="yIS-cn-Mx9" secondAttribute="top" constant="8" id="6ZA-ae-3k1"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="gkK-gD-oeD" secondAttribute="trailing" constant="16" id="OfC-gW-mmV"/>
-                                                                        <constraint firstItem="gkK-gD-oeD" firstAttribute="leading" secondItem="yIS-cn-Mx9" secondAttribute="leading" constant="16" id="aMz-dv-vRD"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="gkK-gD-oeD" secondAttribute="bottom" constant="8" id="fwy-ZS-Ay7"/>
-                                                                    </constraints>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                            <real key="value" value="25"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                            <real key="value" value="1"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                            <color key="value" red="0.97647058819999999" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                    </userDefinedRuntimeAttributes>
-                                                                    <connections>
-                                                                        <action selector="onKidTypeTap:" destination="ftm-uy-TkX" eventType="touchUpInside" id="yOo-Xe-YkA"/>
-                                                                    </connections>
-                                                                </view>
-                                                            </subviews>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="50" id="oNc-JN-baV"/>
-                                                            </constraints>
-                                                        </stackView>
-                                                        <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="5E7-go-P2Q">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kid3" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTG-aU-fzN">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="33.333333333333336" height="50"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="20" id="TGi-H1-5od"/>
-                                                                    </constraints>
-                                                                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="15"/>
-                                                                    <color key="textColor" red="0.29894259569999998" green="0.29898265000000002" blue="0.29892891649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eeO-SE-BCM" customClass="UIControl">
-                                                                    <rect key="frame" x="49.333333333333343" y="0.0" width="324.66666666666663" height="50"/>
-                                                                    <subviews>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yZr-4Q-s4H">
-                                                                            <rect key="frame" x="16" y="8" width="292.66666666666669" height="34"/>
-                                                                            <subviews>
-                                                                                <textField opaque="NO" tag="2" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Born" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MVM-Q4-gsg">
-                                                                                    <rect key="frame" x="0.0" y="5.6666666666666661" width="269.66666666666669" height="22.666666666666671"/>
-                                                                                    <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
-                                                                                    <textInputTraits key="textInputTraits"/>
-                                                                                </textField>
-                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="R1p-vW-LeT">
-                                                                                    <rect key="frame" x="277.66666666666669" y="9" width="15" height="16"/>
-                                                                                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                    <constraints>
-                                                                                        <constraint firstAttribute="width" constant="15" id="dO2-GZ-z0F"/>
-                                                                                    </constraints>
-                                                                                </imageView>
-                                                                            </subviews>
-                                                                        </stackView>
-                                                                    </subviews>
-                                                                    <color key="backgroundColor" red="0.9180724025" green="0.9181824327" blue="0.91803485159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="bottom" secondItem="yZr-4Q-s4H" secondAttribute="bottom" constant="8" id="Hfl-67-iMs"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="yZr-4Q-s4H" secondAttribute="trailing" constant="16" id="NTj-61-ibi"/>
-                                                                        <constraint firstItem="yZr-4Q-s4H" firstAttribute="top" secondItem="eeO-SE-BCM" secondAttribute="top" constant="8" id="cfI-r3-4IE"/>
-                                                                        <constraint firstItem="yZr-4Q-s4H" firstAttribute="leading" secondItem="eeO-SE-BCM" secondAttribute="leading" constant="16" id="hyK-jh-W53"/>
-                                                                    </constraints>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                            <real key="value" value="25"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                            <real key="value" value="1"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                            <color key="value" red="0.97647058819999999" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                    </userDefinedRuntimeAttributes>
-                                                                    <connections>
-                                                                        <action selector="onKidTypeTap:" destination="ftm-uy-TkX" eventType="touchUpInside" id="0xo-Jc-UbE"/>
-                                                                    </connections>
-                                                                </view>
-                                                            </subviews>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="50" id="9Oo-xN-C6A"/>
-                                                            </constraints>
-                                                        </stackView>
-                                                        <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="JTc-dg-9fh">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kid4" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Vj-eo-iH9">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="34.333333333333336" height="50"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="20" id="stW-gc-ZeS"/>
-                                                                    </constraints>
-                                                                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="15"/>
-                                                                    <color key="textColor" red="0.29894259569999998" green="0.29898265000000002" blue="0.29892891649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Cf-TE-b2g" customClass="UIControl">
-                                                                    <rect key="frame" x="50.333333333333343" y="0.0" width="323.66666666666663" height="50"/>
-                                                                    <subviews>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5TR-tD-WC1">
-                                                                            <rect key="frame" x="16" y="8" width="291.66666666666669" height="34"/>
-                                                                            <subviews>
-                                                                                <textField opaque="NO" tag="3" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Born" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yXx-1L-wvj">
-                                                                                    <rect key="frame" x="0.0" y="5.6666666666666661" width="268.66666666666669" height="22.666666666666671"/>
-                                                                                    <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
-                                                                                    <textInputTraits key="textInputTraits"/>
-                                                                                </textField>
-                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="nNK-oo-LDo">
-                                                                                    <rect key="frame" x="276.66666666666669" y="9" width="15" height="16"/>
-                                                                                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                    <constraints>
-                                                                                        <constraint firstAttribute="width" constant="15" id="Xnf-Yt-SwK"/>
-                                                                                    </constraints>
-                                                                                </imageView>
-                                                                            </subviews>
-                                                                        </stackView>
-                                                                    </subviews>
-                                                                    <color key="backgroundColor" red="0.9180724025" green="0.9181824327" blue="0.91803485159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="bottom" secondItem="5TR-tD-WC1" secondAttribute="bottom" constant="8" id="JUa-Pv-TUi"/>
-                                                                        <constraint firstItem="5TR-tD-WC1" firstAttribute="leading" secondItem="6Cf-TE-b2g" secondAttribute="leading" constant="16" id="ZTO-CI-9dX"/>
-                                                                        <constraint firstItem="5TR-tD-WC1" firstAttribute="top" secondItem="6Cf-TE-b2g" secondAttribute="top" constant="8" id="bsA-WQ-E1q"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="5TR-tD-WC1" secondAttribute="trailing" constant="16" id="neV-mP-ezd"/>
-                                                                    </constraints>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                            <real key="value" value="25"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                            <real key="value" value="1"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                            <color key="value" red="0.97647058819999999" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                    </userDefinedRuntimeAttributes>
-                                                                    <connections>
-                                                                        <action selector="onKidTypeTap:" destination="ftm-uy-TkX" eventType="touchUpInside" id="r2N-4f-0Pe"/>
-                                                                    </connections>
-                                                                </view>
-                                                            </subviews>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="50" id="2TR-D6-5VL"/>
-                                                            </constraints>
-                                                        </stackView>
-                                                        <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="yHw-np-cI4">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kid5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTd-bZ-fA8">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="34" height="50"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="20" id="nPo-2m-g5w"/>
-                                                                    </constraints>
-                                                                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="15"/>
-                                                                    <color key="textColor" red="0.29894259569999998" green="0.29898265000000002" blue="0.29892891649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7us-tZ-jcJ" customClass="UIControl">
-                                                                    <rect key="frame" x="50" y="0.0" width="324" height="50"/>
-                                                                    <subviews>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2KH-G9-cU5">
-                                                                            <rect key="frame" x="16" y="8" width="292" height="34"/>
-                                                                            <subviews>
-                                                                                <textField opaque="NO" tag="4" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Born" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bVb-pC-tXF">
-                                                                                    <rect key="frame" x="0.0" y="5.6666666666666661" width="269" height="22.666666666666671"/>
-                                                                                    <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
-                                                                                    <textInputTraits key="textInputTraits"/>
-                                                                                </textField>
-                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="yP3-d2-V8o">
-                                                                                    <rect key="frame" x="277" y="9" width="15" height="16"/>
-                                                                                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                    <constraints>
-                                                                                        <constraint firstAttribute="width" constant="15" id="vN6-fv-YfI"/>
-                                                                                    </constraints>
-                                                                                </imageView>
-                                                                            </subviews>
-                                                                        </stackView>
-                                                                    </subviews>
-                                                                    <color key="backgroundColor" red="0.9180724025" green="0.9181824327" blue="0.91803485159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <constraints>
-                                                                        <constraint firstItem="2KH-G9-cU5" firstAttribute="top" secondItem="7us-tZ-jcJ" secondAttribute="top" constant="8" id="Cgk-qu-nOK"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="2KH-G9-cU5" secondAttribute="bottom" constant="8" id="IN0-2B-JXM"/>
-                                                                        <constraint firstItem="2KH-G9-cU5" firstAttribute="leading" secondItem="7us-tZ-jcJ" secondAttribute="leading" constant="16" id="WbL-1X-ide"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="2KH-G9-cU5" secondAttribute="trailing" constant="16" id="baG-K9-JCR"/>
-                                                                    </constraints>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                            <real key="value" value="25"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                            <real key="value" value="1"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                            <color key="value" red="0.97647058819999999" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                    </userDefinedRuntimeAttributes>
-                                                                    <connections>
-                                                                        <action selector="onKidTypeTap:" destination="ftm-uy-TkX" eventType="touchUpInside" id="Fw2-5V-4aB"/>
-                                                                    </connections>
-                                                                </view>
-                                                            </subviews>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="50" id="e56-Gl-t1o"/>
-                                                            </constraints>
-                                                        </stackView>
+                                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KE0-ut-t5q">
+                                                            <rect key="frame" x="0.0" y="58" width="374" height="126"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yZ5-ZE-aAX">
+                                                                <size key="itemSize" width="128" height="128"/>
+                                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                            </collectionViewFlowLayout>
+                                                            <cells/>
+                                                        </collectionView>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
@@ -1344,7 +1055,7 @@
                             <tableViewSection id="Huk-zy-hLd">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="80" id="foJ-XX-pym">
-                                        <rect key="frame" x="0.0" y="1988" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="1832" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="foJ-XX-pym" id="hTZ-Uk-0Xg">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
@@ -1389,6 +1100,7 @@
                     </tableView>
                     <size key="freeformSize" width="414" height="2300"/>
                     <connections>
+                        <outlet property="collKid" destination="KE0-ut-t5q" id="wHC-VV-3sq"/>
                         <outlet property="lblCharacterLeft" destination="QeM-ku-dzr" id="gS0-5h-mtZ"/>
                         <outlet property="lblLocation" destination="S9O-H1-Ik7" id="DAX-8e-bUZ"/>
                         <outlet property="lblPassion" destination="D2b-Xj-KeM" id="ymh-iE-tja"/>
@@ -1404,11 +1116,6 @@
                         <outletCollection property="arrGenderBtn" destination="Qzb-Gd-Fxq" collectionClass="NSMutableArray" id="5d2-gS-Dy4"/>
                         <outletCollection property="arrGenderBtn" destination="R7y-x7-KSO" collectionClass="NSMutableArray" id="hIo-H3-aVK"/>
                         <outletCollection property="arrGenderBtn" destination="Wrs-5D-OvS" collectionClass="NSMutableArray" id="eD8-Mn-25t"/>
-                        <outletCollection property="arrStackView" destination="9Oi-rN-BJz" collectionClass="NSMutableArray" id="vYm-V3-c8D"/>
-                        <outletCollection property="arrStackView" destination="4Af-s0-QLp" collectionClass="NSMutableArray" id="jxT-Gd-qFg"/>
-                        <outletCollection property="arrStackView" destination="5E7-go-P2Q" collectionClass="NSMutableArray" id="0KC-M6-GZl"/>
-                        <outletCollection property="arrStackView" destination="JTc-dg-9fh" collectionClass="NSMutableArray" id="Dve-t0-xOM"/>
-                        <outletCollection property="arrStackView" destination="yHw-np-cI4" collectionClass="NSMutableArray" id="yf6-Zz-05y"/>
                         <outletCollection property="arrImageProfile" destination="U0k-yZ-mrA" collectionClass="NSMutableArray" id="b5L-51-OPo"/>
                         <outletCollection property="arrImageProfile" destination="ScC-YX-V7C" collectionClass="NSMutableArray" id="n06-5q-c7Q"/>
                         <outletCollection property="arrImageProfile" destination="tfe-uI-FJf" collectionClass="NSMutableArray" id="rQ8-dF-W1m"/>
@@ -1427,11 +1134,6 @@
                         <outletCollection property="arrProfileBtn" destination="5Hg-Gs-VxO" collectionClass="NSMutableArray" id="JG2-W3-cHI"/>
                         <outletCollection property="arrProfileBtn" destination="q1g-J0-LtN" collectionClass="NSMutableArray" id="LLl-jc-kf3"/>
                         <outletCollection property="arrProfileBtn" destination="4aw-V7-xBN" collectionClass="NSMutableArray" id="hTY-kg-M8O"/>
-                        <outletCollection property="txtKids" destination="bJ1-Nh-cHF" collectionClass="NSMutableArray" id="pNu-Xm-d01"/>
-                        <outletCollection property="txtKids" destination="RP9-Fd-2Rh" collectionClass="NSMutableArray" id="4Xq-jI-nYh"/>
-                        <outletCollection property="txtKids" destination="MVM-Q4-gsg" collectionClass="NSMutableArray" id="484-A6-hh4"/>
-                        <outletCollection property="txtKids" destination="yXx-1L-wvj" collectionClass="NSMutableArray" id="we6-A1-EUc"/>
-                        <outletCollection property="txtKids" destination="bVb-pC-tXF" collectionClass="NSMutableArray" id="lDM-rz-ftj"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x9j-e3-6Kc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
