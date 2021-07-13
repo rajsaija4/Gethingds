@@ -43,6 +43,7 @@ class CreateProfileTVC: UITableViewController, UIImagePickerControllerDelegate, 
     fileprivate let placeHolder = "About Information"
     
     fileprivate var selectedGender = -1
+    fileprivate var selectedLookingFor = -1
     fileprivate var numberOfKids = 0
     fileprivate var profile: UserProfile = UserProfile(JSON.null)
     fileprivate var locationManager: CLLocationManager?
@@ -71,8 +72,9 @@ class CreateProfileTVC: UITableViewController, UIImagePickerControllerDelegate, 
     
     @IBOutlet var arrImageProfile: [UIImageView]!
     @IBOutlet var arrGenderBtn: [UIButton]!
+    @IBOutlet var arrLookingforBtn: [UIButton]!
     @IBOutlet weak var txtJobTitle: UITextField!
-    @IBOutlet weak var txtOrientation: CustomTextField!
+  
     
     @IBOutlet weak var txtPassion: TagListView!
     @IBOutlet weak var lblLocation: UILabel!
@@ -100,7 +102,7 @@ class CreateProfileTVC: UITableViewController, UIImagePickerControllerDelegate, 
         txtPassion.delegate = self
         txtEmail.setPlaceHolderColor()
         txtNumberOfKids.setPlaceHolderColor()
-        txtOrientation.setPlaceHolderColor()
+ 
 //        getProfile()
         
     }
@@ -281,32 +283,43 @@ class CreateProfileTVC: UITableViewController, UIImagePickerControllerDelegate, 
         }
     }
     
-    
-    @IBAction func onSexualOrientationTap(_ sender: UIControl) {
-        let alert = UIAlertController(title: "Choose Secual Orientation", message: nil, preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Heterosexual", style: .default, handler: { _ in
-            self.txtOrientation.text = "Heterosexual"
-        }))
+    @IBAction func onLookingForbtnTap(_ sender: UIButton) {
         
-        alert.addAction(UIAlertAction(title: "Homosexual", style: .default, handler: { _ in
-            self.txtOrientation.text = "Homosexual"
-        }))
-        
-        alert.addAction(UIAlertAction(title: "Bisexual", style: .default, handler: { _ in
-            self.txtOrientation.text = "Bisexual"
-        }))
-        
-        alert.addAction(UIAlertAction(title: "Asexual", style: .default, handler: { _ in
-            self.txtOrientation.text = "Asexual"
-        }))
-        
-        
-        alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
-        
-        self.present(alert, animated: true, completion: nil)
-        
-        
+        for btn in arrLookingforBtn {
+            if btn.tag == sender.tag {
+                btn.isSelected = true
+                selectedLookingFor = btn.tag
+            } else {
+                btn.isSelected = false
+            }
+        }
     }
+    
+//    @IBAction func onSexualOrientationTap(_ sender: UIControl) {
+//        let alert = UIAlertController(title: "Choose Secual Orientation", message: nil, preferredStyle: .actionSheet)
+//        alert.addAction(UIAlertAction(title: "Heterosexual", style: .default, handler: { _ in
+//            self.txtOrientation.text = "Heterosexual"
+//        }))
+//
+//        alert.addAction(UIAlertAction(title: "Homosexual", style: .default, handler: { _ in
+//            self.txtOrientation.text = "Homosexual"
+//        }))
+//
+//        alert.addAction(UIAlertAction(title: "Bisexual", style: .default, handler: { _ in
+//            self.txtOrientation.text = "Bisexual"
+//        }))
+//
+//        alert.addAction(UIAlertAction(title: "Asexual", style: .default, handler: { _ in
+//            self.txtOrientation.text = "Asexual"
+//        }))
+//
+//
+//        alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+//
+//        self.present(alert, animated: true, completion: nil)
+//
+//
+//    }
     
     @IBAction func onLocationTap(_ sender: UIControl) {
         
@@ -612,10 +625,7 @@ extension CreateProfileTVC {
             return
         }
         
-        guard let sexualOrientation = txtOrientation.text, sexualOrientation.count > 0, sexualOrientation != placeHolder else {
-            self.showAlert("Please \(placeHolder)")
-            return
-        }
+       
         
         guard let dob = txtDate.text, dob.count > 0 else {
             self.showAlert("Please Select Date Of Birth")
@@ -644,6 +654,58 @@ extension CreateProfileTVC {
         }
         
         
+//        let kids = arrKids.values.map{ String($0) }
+        var tempKids:[String] = []
+        for values in arrKids.values {
+            tempKids.append(values)
+        }
+        
+        var kids:[String] = []
+        for i in 0..<collKid.numberOfItems(inSection: 0) {
+            kids.append(tempKids[i])
+        }
+        
+        
+        
+        guard selectedGender  >= 0  else {
+            self.showAlert("Please Select Gender")
+            return
+        }
+
+        guard selectedLookingFor  >= 0  else {
+            self.showAlert("Please Select Looking For")
+            return
+        }
+
+        var gendertoPass = ""
+
+        if selectedGender == 0 {
+                gendertoPass = "male"
+        }
+
+         if selectedGender == 1 {
+            gendertoPass = "female"
+        }
+
+        if selectedGender == 2 {
+            gendertoPass = "other"
+        }
+
+        var lookingForPass = ""
+
+        if selectedLookingFor == 0 {
+                lookingForPass = "male"
+        }
+
+        if selectedLookingFor == 1 {
+            lookingForPass = "female"
+        }
+
+        if selectedLookingFor == 2 {
+            lookingForPass = "other"
+        }
+          
+            
         
         
         
@@ -655,32 +717,19 @@ extension CreateProfileTVC {
                 "dob": dob,
                 "job_title":txtJobTitle.text ?? "",
                 "about": txtAboutView.text ?? "",
-                "sexual_orientation":sexualOrientation,
-//                "kids": arrKids.joined(separator: ","),
+                "looking_for":lookingForPass,
+                "kids":kids.joined(separator: ","),
                 "num_of_kids": noOfkids,
-                "gender": selectedGender == 0 ? "Male" : selectedGender == 1 ? "Female" : "Other",
+                "gender": gendertoPass,
                 "latitude": latitude,
                 "longitude": longitude,
                 "address": loc,
                 "passion":arrPassion.joined(separator: ",")
-                
+
             ] as [String : String]
-        
-        //        for i in 1...arrImgParam.count {
-        //            parameters.merge(["img\(i)": arrImgParam[i-1]]) { (current, _) -> String in
-        //                return current
-        //            }
-        //        }
-        
-        //        let source = [
-        //            "profile_image1": imgData1,
-        //            "profile_image2": imgData2,
-        //            "profile_image3": imgData3,
-        //            "profile_image4": imgData4,
-        //            "profile_image5": imgData5
-        //        ]
-        
-        
+
+
+
         addProfile(source: source, parameters: parameters)
         
     }
@@ -709,7 +758,15 @@ extension CreateProfileTVC {
         showHUD()
         NetworkManager.Profile.addProfile(source: source, params: parameters, { (message) in
             self.hideHUD()
-            //            self.showAlert(message)
+            
+            if User.details.email_verified == 0
+            {
+            self.showVerifyEmailAlert()
+                return
+            }
+            
+            
+//                        self.showAlert(message)
             
             let alert = UIAlertController(title: "Success", message: message) { (_) in
                 if self.isFromLogin {
@@ -1039,6 +1096,20 @@ extension CreateProfileTVC {
     
     func showAlert(_ alert: String) {
         let alert = UIAlertController(title: "Oops!", message: alert)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
+    fileprivate func showVerifyEmailAlert() {
+        guard let email = self.txtEmail.text else { return }
+        let alert = UIAlertController(title: "Email OTP Verification", message: "Please enter the code received in your email \(email). If you do not see email in your Inbox then please check your Spam/Junk emails.", actionName: "Verify", placeholder: "Enter Verification OTP") { (txtOTP) in
+            
+            let param = [
+                "email": email,
+                "otp": txtOTP.text ?? ""
+            ]
+            self.verifyEmailOTP(param: param)
+        }
         self.present(alert, animated: true, completion: nil)
     }
 }

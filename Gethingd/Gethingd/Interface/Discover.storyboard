@@ -710,11 +710,11 @@
                         <sections>
                             <tableViewSection id="udG-TR-jdO">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="500" id="18s-ag-6PU">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="500"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="440" id="18s-ag-6PU">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="440"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="18s-ag-6PU" id="oOh-9T-wDc">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="500"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="440"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FILTERS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3v-4h-q5z">
@@ -734,12 +734,12 @@
                                                     </connections>
                                                 </button>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LD9-pt-exk">
-                                                    <rect key="frame" x="20" y="90" width="280" height="390"/>
+                                                    <rect key="frame" x="20" y="90" width="280" height="330"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hut-wn-e7p">
                                                             <rect key="frame" x="0.0" y="0.0" width="280" height="60"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cfv-rE-wqR">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Looking For" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cfv-rE-wqR">
                                                                     <rect key="frame" x="0.0" y="0.0" width="280" height="21"/>
                                                                     <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="15"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -783,7 +783,7 @@
                                                                             <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
                                                                             <color key="tintColor" red="0.29894259569999998" green="0.29898265000000002" blue="0.29892891649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                                            <state key="normal" title="Other" image="img_unselect">
+                                                                            <state key="normal" title="Both" image="img_unselect">
                                                                                 <color key="titleColor" red="0.29894259569999998" green="0.29898265000000002" blue="0.29892891649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             </state>
                                                                             <state key="selected" image="img_select">
@@ -921,7 +921,7 @@
                                                                     <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="hideLabels" value="YES"/>
-                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="disableRange" value="YES"/>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="disableRange" value="NO"/>
                                                                         <userDefinedRuntimeAttribute type="color" keyPath="colorBetweenHandles">
                                                                             <color key="value" red="0.090196078430000007" green="0.023529411760000001" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                         </userDefinedRuntimeAttribute>
@@ -998,53 +998,6 @@
                                                                 <action selector="conLocationOnPress:" destination="yb1-oG-023" eventType="valueChanged" id="LTx-oT-SPT"/>
                                                             </connections>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6rW-E0-81h" customClass="UIControl">
-                                                            <rect key="frame" x="0.0" y="340" width="280" height="50"/>
-                                                            <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="N14-kL-whM">
-                                                                    <rect key="frame" x="16" y="8" width="248" height="34"/>
-                                                                    <subviews>
-                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Sexual Orientation" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ET6-hM-q15" customClass="CustomTextField" customModule="Gethingd" customModuleProvider="target">
-                                                                            <rect key="frame" x="0.0" y="6" width="225" height="22.5"/>
-                                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                            <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
-                                                                            <textInputTraits key="textInputTraits"/>
-                                                                        </textField>
-                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MiX-TW-yxJ">
-                                                                            <rect key="frame" x="233" y="9.5" width="15" height="15"/>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="width" constant="15" id="KT5-ET-4Gd"/>
-                                                                                <constraint firstAttribute="height" constant="15" id="a25-Q2-CFN"/>
-                                                                            </constraints>
-                                                                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                            <state key="normal" image="img_dropdown"/>
-                                                                        </button>
-                                                                    </subviews>
-                                                                </stackView>
-                                                            </subviews>
-                                                            <color key="backgroundColor" red="0.9180724025" green="0.9181824327" blue="0.91803485159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="trailing" secondItem="N14-kL-whM" secondAttribute="trailing" constant="16" id="0Mz-sI-tS7"/>
-                                                                <constraint firstItem="N14-kL-whM" firstAttribute="leading" secondItem="6rW-E0-81h" secondAttribute="leading" constant="16" id="EF0-Ev-Wcb"/>
-                                                                <constraint firstAttribute="bottom" secondItem="N14-kL-whM" secondAttribute="bottom" constant="8" id="Jbf-c1-dPN"/>
-                                                                <constraint firstItem="N14-kL-whM" firstAttribute="top" secondItem="6rW-E0-81h" secondAttribute="top" constant="8" id="Kt8-IE-07Y"/>
-                                                                <constraint firstAttribute="height" constant="50" id="l3X-nB-KiV"/>
-                                                            </constraints>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                    <real key="value" value="25"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                    <real key="value" value="1"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                    <color key="value" red="0.97647058819999999" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                            <connections>
-                                                                <action selector="conSexualOrientationPress:" destination="yb1-oG-023" eventType="valueChanged" id="oKZ-S9-W9C"/>
-                                                            </connections>
-                                                        </view>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
@@ -1067,7 +1020,7 @@
                             <tableViewSection id="u6k-Id-uZw">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="80" id="c0C-up-7Ub">
-                                        <rect key="frame" x="0.0" y="584" width="320" height="80"/>
+                                        <rect key="frame" x="0.0" y="524" width="320" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c0C-up-7Ub" id="zLC-Ar-toX">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
@@ -1421,7 +1374,6 @@
         <image name="img_boost" width="125" height="125"/>
         <image name="img_close" width="48" height="48"/>
         <image name="img_dislike" width="125" height="125"/>
-        <image name="img_dropdown" width="16" height="16"/>
         <image name="img_filter" width="43" height="29"/>
         <image name="img_like" width="125" height="125"/>
         <image name="img_likesgethingd" width="125" height="125"/>

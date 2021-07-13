@@ -13,7 +13,8 @@ import RangeSeekSlider
 class FilterTVC: UITableViewController {
     
     //MARK:- VARIABLE
-   
+    
+    var selectedGender =  -1
     var onFilter: (() -> Void)?
     
     @IBOutlet var btn_gender: [UIButton]!
@@ -45,13 +46,20 @@ class FilterTVC: UITableViewController {
     
     @IBAction func btnGenderonPress(_ sender: UIButton) {
         
-        sender.isSelected = !sender.isSelected
+        for btn in btn_gender {
+            if btn.tag == sender.tag {
+                btn.isSelected = true
+                selectedGender = btn.tag
+            } else {
+                btn.isSelected = false
+            }
+        }
+        
     }
     @IBAction func conLocationOnPress(_ sender: Any) {
     }
 
-    @IBAction func conSexualOrientationPress(_ sender: Any) {
-    }
+   
     @IBAction func onPressbtnSubmit(_ sender: Any) {
     }
 }
@@ -66,6 +74,7 @@ extension FilterTVC {
         
         rangeDistance.tag = 1
         rangeDistance.delegate = self
+        
         
   
         rangeAge.selectedMinValue = CGFloat(Filter.minAge)

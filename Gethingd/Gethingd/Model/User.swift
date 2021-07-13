@@ -10,115 +10,115 @@ import SwiftyJSON
 
 class User: NSObject, NSCoding {
 
-    var id: Int = 0
+    var id:Int = 0
     var firstName: String = ""
     var lastName: String = ""
-    var nickName: String = ""
-    var email: String = ""
-    var token: String = ""
-    var address: String = ""
-    var gender: String = ""
-    var height: String = ""
-    var sunSignId: String = ""
-    var moonSignId: String = ""
-    var risingSignId: String = ""
-    var about: String = ""
     var dob: String = ""
-    var lookingFor: String = ""
-    var instagramId: String = ""
-    var arrImage: [String] = []
+    var email:String = ""
+    var gender: String = ""
+    var looking_for:String = ""
+    var job_title:String = ""
+    var passion:[String] = []
+    var address: String = ""
+    var about:String = ""
+    var num_of_kids:Int = 0
+    var email_verified:Int = 0
+    var user_images:[String] = []
+    var user_kids:[String] = []
+    var api_token:String = ""
     
-
-
     init(_ json: JSON) {
         super.init()
-        
-        id = json["user_id"].intValue
-        firstName = json["first_name"].stringValue
-        lastName = json["last_name"].stringValue
-        nickName = json["nick_name"].stringValue
-        email = json["email"].stringValue
-        for image in json["images"].arrayValue {
-            arrImage.append(image.stringValue)
+        id = json["data"]["id"].intValue
+        firstName = json["data"]["first_name"].stringValue
+        lastName = json["data"]["last_name"].stringValue
+        dob = json["data"]["dob"].stringValue
+        email = json["data"]["email"].stringValue
+        gender = json["data"]["gender"].stringValue
+        looking_for = json["data"]["looking_for"].stringValue
+        job_title = json["data"]["job_title"].stringValue
+        for pas in json["data"]["passion"].arrayValue {
+            passion.append(pas.stringValue)
         }
-        token = json["access_token"].stringValue
-        address = json["address"].stringValue
-        gender = json["gender"].stringValue
-        height = json["height"].stringValue
-        sunSignId = json["sun_zodiac_sign_id"].stringValue
-        moonSignId = json["moon_zodiac_sign_id"].stringValue
-        risingSignId = json["rising_zodiac_sign_id"].stringValue
-        about = json["about"].stringValue
-        dob = json["dob"].stringValue
-        lookingFor = json["looking_for"].stringValue
-        instagramId = json["instagram_id"].stringValue
-        
+        address = json["data"]["address"].stringValue
+        about = json["data"]["about"].stringValue
+        num_of_kids = json["data"]["num_of_kids"].intValue
+        email_verified = json["data"]["email_verified"].intValue
+        for image in json["data"]["user_images"].arrayValue {
+            user_images.append(image.stringValue)
+        }
+        for kid in json["data"]["user_kids"].arrayValue {
+            user_kids.append(kid["kids_status"].stringValue)
+        }
+        api_token = json["data"]["api_token"].stringValue
+
     }
     
     init(json: JSON, token: String) {
         super.init()
-        id = json["user_id"].intValue
-        firstName = json["first_name"].stringValue
-        lastName = json["last_name"].stringValue
-        nickName = json["nick_name"].stringValue
-        email = json["email"].stringValue
-        for image in json["images"].arrayValue {
-            arrImage.append(image.stringValue)
+        id = json["data"]["id"].intValue
+        firstName = json["data"]["first_name"].stringValue
+        lastName = json["data"]["last_name"].stringValue
+        dob = json["data"]["dob"].stringValue
+        email = json["data"]["email"].stringValue
+        gender = json["data"]["gender"].stringValue
+        looking_for = json["data"]["looking_for"].stringValue
+        job_title = json["data"]["job_title"].stringValue
+        for pas in json["data"]["passion"].arrayValue {
+            passion.append(pas.stringValue)
         }
-        self.token = token
-        address = json["address"].stringValue
-        gender = json["gender"].stringValue
-        height = json["height"].stringValue
-        sunSignId = json["sun_zodiac_sign_id"].stringValue
-        moonSignId = json["moon_zodiac_sign_id"].stringValue
-        risingSignId = json["rising_zodiac_sign_id"].stringValue
-        about = json["about"].stringValue
-        dob = json["dob"].stringValue
-        lookingFor = json["looking_for"].stringValue
-        instagramId = json["instagram_id"].stringValue
+        address = json["data"]["address"].stringValue
+        about = json["data"]["about"].stringValue
+        num_of_kids = json["data"]["num_of_kids"].intValue
+        email_verified = json["data"]["email_verified"].intValue
+        for image in json["data"]["user_images"].arrayValue {
+            user_images.append(image.stringValue)
+        }
+        for kid in json["data"]["user_kids"].arrayValue {
+            user_kids.append(kid["kids_status"].stringValue)
+        }
+        api_token = json["data"]["api_token"].stringValue
     }
     
     
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(id, forKey: "id")
+        aCoder.encode(id,forKey: "id")
         aCoder.encode(firstName, forKey: "firstName")
         aCoder.encode(lastName, forKey: "lastName")
-        aCoder.encode(nickName, forKey: "nickName")
-        aCoder.encode(email, forKey: "email")
-        aCoder.encode(token, forKey: "token")
-        aCoder.encode(address, forKey: "address")
-        aCoder.encode(gender, forKey: "gender")
-        aCoder.encode(height, forKey: "height")
-        aCoder.encode(sunSignId, forKey: "sunSignId")
-        aCoder.encode(moonSignId, forKey: "moonSignId")
-        aCoder.encode(risingSignId, forKey: "risingSignId")
-        aCoder.encode(about, forKey: "about")
         aCoder.encode(dob, forKey: "dob")
-        aCoder.encode(lookingFor, forKey: "lookingFor")
-        aCoder.encode(instagramId, forKey: "instagramId")
-        aCoder.encode(arrImage, forKey: "arrImage")
-  
+        aCoder.encode(email, forKey: "email")
+        aCoder.encode(gender, forKey: "gender")
+        aCoder.encode(looking_for, forKey: "lookingFor")
+        aCoder.encode(job_title, forKey: "jobTitle")
+        aCoder.encode(passion, forKey: "passion")
+        aCoder.encode(address, forKey: "address")
+        aCoder.encode(about, forKey: "about")
+        aCoder.encode(num_of_kids, forKey: "noOfkids")
+        aCoder.encode(email_verified, forKey: "emailVerify")
+        aCoder.encode(user_images, forKey: "images")
+        aCoder.encode(user_kids, forKey: "kidsStatus")
+        aCoder.encode(api_token, forKey: "token")
     }
     
     required init?(coder aDecoder: NSCoder) {
         
-        id = aDecoder.decodeInteger(forKey: "id")
+        id = aDecoder.decodeInteger(forKey: "id") 
         firstName = aDecoder.decodeObject(forKey: "firstName") as! String
         lastName = aDecoder.decodeObject(forKey: "lastName") as! String
-        nickName = aDecoder.decodeObject(forKey: "nickName") as! String
-        email = aDecoder.decodeObject(forKey: "email") as! String
-        token = aDecoder.decodeObject(forKey: "token") as! String
-        address = aDecoder.decodeObject(forKey: "address") as! String
-        gender = aDecoder.decodeObject(forKey: "gender") as! String
-        height = aDecoder.decodeObject(forKey: "height") as! String
-        sunSignId = aDecoder.decodeObject(forKey: "sunSignId") as! String
-        moonSignId = aDecoder.decodeObject(forKey: "moonSignId") as! String
-        risingSignId = aDecoder.decodeObject(forKey: "risingSignId") as! String
-        about = aDecoder.decodeObject(forKey: "about") as! String
         dob = aDecoder.decodeObject(forKey: "dob") as! String
-        lookingFor = aDecoder.decodeObject(forKey: "lookingFor") as! String
-        instagramId = aDecoder.decodeObject(forKey: "instagramId") as! String
-        arrImage = aDecoder.decodeObject(forKey: "arrImage") as! [String]
+        email = aDecoder.decodeObject(forKey: "email") as! String
+        gender = aDecoder.decodeObject(forKey: "gender") as! String
+        looking_for = aDecoder.decodeObject(forKey: "lookingFor") as! String
+        job_title = aDecoder.decodeObject(forKey: "jobTitle") as! String
+        passion = aDecoder.decodeObject(forKey: "passion") as! [String]
+        address = aDecoder.decodeObject(forKey: "address") as! String
+        about = aDecoder.decodeObject(forKey: "about") as! String
+        num_of_kids = aDecoder.decodeInteger(forKey: "noOfkids") 
+        email_verified = aDecoder.decodeInteger(forKey: "emailVerify") 
+      
+        user_images = aDecoder.decodeObject(forKey: "images") as! [String]
+        user_kids = aDecoder.decodeObject(forKey: "kidsStatus") as! [String]
+        api_token = aDecoder.decodeObject(forKey: "token") as! String
     }
 }
 
@@ -138,7 +138,7 @@ extension User {
     
     static var token: [String:String] {
         get {
-            return ["Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGIwMzRmOTM5YmEzNTcyYTRmOWVjNzNlOTIzNmRmOWMzZjIzYWI3YjJkNDU1MGY3ODA4YmZhMTNjZDJmMWI1OWY2YzhiMTk1YjgyNjg1M2EiLCJpYXQiOjE2MjU5MjIwMTUsIm5iZiI6MTYyNTkyMjAxNSwiZXhwIjoxNjU3NDU4MDE1LCJzdWIiOiIxNCIsInNjb3BlcyI6W119.sSHjKORRU8OfvnOHV5ub1iF9hFi71XMDLJM0TTnV_-XBocuIMJFRgVqu1mtFU_mJk-xqztOOH1Xp79JzcHj7UTFXOue4PfFs_zJ8-0iMGLDvJWuyQ-IPVKXv1dPOfCrRSen6erO4hgPU6JjJus-u7DLfopCIu9xvJ086BXF_TfIHBD5Ho8SBalX6Pa4NvOHWt3urIXNwR1IfS2ZK0G4Rn37oXXZ2OzHw8By1HtMqOMS-1r1IcJ9AwZuLmPb-91MOyrdVN98GdoXgOP7iyfNi5D6HCpmH-q97nDchK4NhmBaGAUu7wakFSlH1xKotRAkBqOKVZ1c0OTdmzES1eH_nfljNQrJePHXPQCzR8QHOEyd5qGlliqKh8BGxCoVyt1AAqASt8qfi2BNZL8XdHKAqmA2mWekLqDggh5iiOKwNr50JAziJA0rp_cuTkvtLdkHIfmUOuk2ycdf37sBqU999lFFdgaf0nrz55Wn-lGREgh2vxlfsa9M76gQitM3EooXsF2yfQ7LfyENvF7QjzdOlSKAyaI1tRn3sKxH4S1I8TM98aLs1IaoFOw8zoRA5v1OL-UHQ2JjKfTSQqbvtaPRlQSBRwwbzNWT63EjiGQopom-yljKAJNlP4RW-q1c9fywXasbICpavkzWmbAZrPjFJ16Zng8lTt2rlRkjDC9dToe0", "X-Requested-With": "XMLHttpRequest"]
+            return ["Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzc1ZWI3MGM1NGY1NjUwMGNkZDc1ZWI5YTBjOTgxNTA4OWY2Nzk5NmE4YjJlZTEzOGFkZDQ1MDIyOWI0ZDkzODA1YWRjNWE5YWMxOWYzNmQiLCJpYXQiOjE2MjYwODI3MjQsIm5iZiI6MTYyNjA4MjcyNCwiZXhwIjoxNjU3NjE4NzI0LCJzdWIiOiIxNCIsInNjb3BlcyI6W119.z2QhYhtT2dQnrSzOZ6uHCpKuY5ATJzxazfyPQz_KBIT3EySSaF_K0BaaylJ6vl4nSqp32oqXozp2BcMryeAw2D4oOBjZiBta0T5v8uXBBiHRo3SMMmgmVmEBmRFJzeAbj7qHd01pb_It7DioG1qwUV_h_zQq97iY3V9JjE5PhOg_9O9VnaWvCGINz13JnzeLtE9X_ua_WGikirLbbYfadhSuFNcyZY3Wk87wAuJ8HTVhO2RR_E82UrPU6ivuFg4rxuDxxem8L9lbCn6E6PKQSjEuPRQCIcLooViSvdaR9W_5a3EC7I7eetwaiEbWDlZ0ejkuVcuS0AbVvtFTYMcd5ZB_hDgFaJhnNRTNylDsxOWFROqqVlwZWJ_tiPIMAVaJ0_dyvX5TROR1HcNMZV-f95d0BKNU3DIDjGNCjYgG6ZUInlpx5On41bg1aZvu6VIjxDw1xipbRLDTqvJeadOlloKyE24mpK9PzTsf-3CDhS7jgQ90iNesjca5zHdU-hqU3m3ivuV8m2sBPS2VFspeGipc6DxOofid48RUSY-Qc631PoFnufxT60o6wkDgrEkaHAbd98WsiyXJbMwthUBEWENegAwZBxNc4R7HA-YP8_61WDT_J5X8VFiDZ5kLMTJi7vTHoqPsojaPep4Z1WfHQjiFKd3ew5KqCPyWgtDkHb0"]
         }
     }
     

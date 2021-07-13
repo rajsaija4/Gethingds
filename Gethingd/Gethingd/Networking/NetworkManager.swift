@@ -12,9 +12,9 @@ import SwiftyJSON
 class NetworkManager {
     
     static var header: HTTPHeaders? {
-        guard User.isExist else {
-            return nil
-        }
+//        guard User.isExist else {
+//            return nil
+//        }
         return HTTPHeaders(User.token)
     }
 }
@@ -155,11 +155,12 @@ extension NetworkManager {
                 guard response.isSuccess else {
                     
                     if response["status"].stringValue == "2" {
-                        let user = User(json: response, token: User.details.token)
+                        let user = User(json: response, token: User.details.api_token)
                         user.save()
                         fail("2")
                         return
                     }
+                    
                     
                     for param in params {
                         if response["message"][param.key].arrayValue.count > 0 {
@@ -173,7 +174,8 @@ extension NetworkManager {
                     return
                 }
          
-                let user = User(json: response, token: User.details.token)
+//                let user = User(json: response, token: User.details.api_token)
+                let user = User(response)
                 user.save()
                 success(response.message)
                 
@@ -185,7 +187,7 @@ extension NetworkManager {
         
         static func getMyProfile(_ success: @escaping (UserProfile) -> Void, _ fail: @escaping (String) -> Void) {
             
-            let param = ["token": User.details.token]
+            let param = ["token": User.details.api_token]
             NetworkCaller.getRequest(url: URLManager.Profile.getMyProfile, params: param, headers: header, { (response) in
                 
                 guard response.isSuccess else {
@@ -193,7 +195,8 @@ extension NetworkManager {
                     return
                 }
                 
-                success(UserProfile(response))
+                let user = User(response)
+                user.save()
                 
             }) { (error) in
                 fail(error.localizedDescription)
@@ -268,7 +271,7 @@ extension NetworkManager {
         
         static func deleteProfile(_ success: @escaping (String) -> Void, _ fail: @escaping (String) -> Void) {
             
-            let param = ["token": User.details.token]
+            let param = ["token": User.details.api_token]
             NetworkCaller.getRequest(url: URLManager.Profile.deleteUser, params: param, headers: nil, { (response) in
                 
                 guard response.isSuccess else {

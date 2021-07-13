@@ -21,17 +21,12 @@ class EditProfileVC: UITableViewController, TagListViewDelegate, UIImagePickerCo
     @IBOutlet weak var selectedPassion: TagListView!
     override func viewDidLoad() {
         super.viewDidLoad()
-//        picker.delegate = self
-//        picker.allowsEditing = true
+        getProfile()
         selectedPassion.delegate = self
         selectedPassion.textFont = AppFonts.Poppins_Medium.withSize(17)
         selectedPassion.alignment = .leading
         selectedPassion.addTags(["Biking","Walking","Beauty","Golf","German Hip"])
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+  
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,15 +35,7 @@ class EditProfileVC: UITableViewController, TagListViewDelegate, UIImagePickerCo
     }
     
     
-//    func tagPressed(_ title: String, tagView: TagView, sender: TagListView) {
-//        print("Tag pressed: \(title), \(sender)")
-//        tagView.isSelected = !tagView.isSelected
-//    }
-//
-//    func tagRemoveButtonPressed(_ title: String, tagView: TagView, sender: TagListView) {
-//        print("Tag Remove pressed: \(title), \(sender)")
-//        sender.removeTagView(tagView)
-//    }
+
     @IBAction func onPressRemoveProfile(_ sender: UIButton) {
         
         img_Profile[sender.tag].image = nil
@@ -218,4 +205,23 @@ class EditProfileVC: UITableViewController, TagListViewDelegate, UIImagePickerCo
             self.present(alert, animated: true, completion: nil)
         }
     }
+    
 }
+
+
+extension EditProfileVC {
+    
+    fileprivate func getProfile() {
+        showHUD()
+        NetworkManager.Profile.getMyProfile { (profile) in
+            self.hideHUD()
+        } _: { (error) in
+            self.hideHUD()
+            print(error)
+        }
+
+    }
+
+}
+
+

@@ -433,33 +433,74 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Msa-fU-nxl" customClass="UIControl">
-                                                            <rect key="frame" x="0.0" y="116" width="374" height="50"/>
+                                                            <rect key="frame" x="0.0" y="116" width="374" height="100"/>
                                                             <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="w3f-jI-DTm">
-                                                                    <rect key="frame" x="16" y="8" width="342" height="34"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPk-ME-pbD">
+                                                                    <rect key="frame" x="16" y="8" width="342" height="20"/>
+                                                                    <attributedString key="attributedText">
+                                                                        <fragment content="Looking For">
+                                                                            <attributes>
+                                                                                <color key="NSColor" red="0.29893999999999998" green="0.29898000000000002" blue="0.29892999999999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                            </attributes>
+                                                                        </fragment>
+                                                                        <fragment content="*">
+                                                                            <attributes>
+                                                                                <color key="NSColor" red="0.92127999999999999" green="0.085180000000000006" blue="0.24507999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                            </attributes>
+                                                                        </fragment>
+                                                                    </attributedString>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="dH3-dV-CUt">
+                                                                    <rect key="frame" x="16" y="38" width="342" height="54"/>
                                                                     <subviews>
-                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Sexual Orientation" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KM7-1i-hP6" customClass="CustomTextField" customModule="Gethingd" customModuleProvider="target">
-                                                                            <rect key="frame" x="0.0" y="5.666666666666659" width="319" height="22.666666666666671"/>
-                                                                            <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
-                                                                            <textInputTraits key="textInputTraits"/>
-                                                                        </textField>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="GxF-8H-vsG">
-                                                                            <rect key="frame" x="327" y="9" width="15" height="16"/>
-                                                                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="width" constant="15" id="QVR-tJ-A87"/>
-                                                                            </constraints>
-                                                                        </imageView>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iyi-tR-nPJ">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="103.33333333333333" height="54"/>
+                                                                            <state key="normal" title="Male" image="img_unselect">
+                                                                                <color key="titleColor" red="0.43133229020000002" green="0.43139830229999998" blue="0.43131789570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            </state>
+                                                                            <state key="selected" image="img_select"/>
+                                                                            <connections>
+                                                                                <action selector="onLookingForbtnTap:" destination="ftm-uy-TkX" eventType="touchUpInside" id="oQd-0f-vJQ"/>
+                                                                            </connections>
+                                                                        </button>
+                                                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K3S-Ge-VWe">
+                                                                            <rect key="frame" x="119.33333333333334" y="0.0" width="103.33333333333334" height="54"/>
+                                                                            <state key="normal" title="Female" image="img_unselect">
+                                                                                <color key="titleColor" red="0.43133229020000002" green="0.43139830229999998" blue="0.43131789570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            </state>
+                                                                            <state key="selected" image="img_select"/>
+                                                                            <connections>
+                                                                                <action selector="onLookingForbtnTap:" destination="ftm-uy-TkX" eventType="touchUpInside" id="QTn-JQ-wMA"/>
+                                                                            </connections>
+                                                                        </button>
+                                                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EpJ-GE-D1q">
+                                                                            <rect key="frame" x="238.66666666666671" y="0.0" width="103.33333333333334" height="54"/>
+                                                                            <state key="normal" title="Both" image="img_unselect">
+                                                                                <color key="titleColor" red="0.43133229020000002" green="0.43139830229999998" blue="0.43131789570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            </state>
+                                                                            <state key="selected" image="img_select"/>
+                                                                            <connections>
+                                                                                <action selector="onLookingForbtnTap:" destination="ftm-uy-TkX" eventType="touchUpInside" id="EVF-ww-sRg"/>
+                                                                            </connections>
+                                                                        </button>
                                                                     </subviews>
                                                                 </stackView>
                                                             </subviews>
-                                                            <color key="backgroundColor" red="0.9180724025" green="0.9181824327" blue="0.91803485159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstItem="w3f-jI-DTm" firstAttribute="top" secondItem="Msa-fU-nxl" secondAttribute="top" constant="8" id="JGe-hS-cHZ"/>
-                                                                <constraint firstAttribute="bottom" secondItem="w3f-jI-DTm" secondAttribute="bottom" constant="8" id="ZEO-Ai-cHo"/>
-                                                                <constraint firstAttribute="height" constant="50" id="dlQ-9K-UL1"/>
-                                                                <constraint firstItem="w3f-jI-DTm" firstAttribute="leading" secondItem="Msa-fU-nxl" secondAttribute="leading" constant="16" id="jMZ-W2-NCs"/>
-                                                                <constraint firstAttribute="trailing" secondItem="w3f-jI-DTm" secondAttribute="trailing" constant="16" id="u4g-0b-wkY"/>
+                                                                <constraint firstAttribute="trailing" secondItem="dH3-dV-CUt" secondAttribute="trailing" constant="16" id="0bv-a0-xIr"/>
+                                                                <constraint firstAttribute="trailing" secondItem="UPk-ME-pbD" secondAttribute="trailing" constant="16" id="2K7-Xz-Reo"/>
+                                                                <constraint firstItem="UPk-ME-pbD" firstAttribute="leading" secondItem="Msa-fU-nxl" secondAttribute="leading" constant="16" id="8Zk-4S-pdO"/>
+                                                                <constraint firstItem="dH3-dV-CUt" firstAttribute="top" secondItem="UPk-ME-pbD" secondAttribute="bottom" constant="10" id="HSJ-nh-PXk"/>
+                                                                <constraint firstAttribute="bottom" secondItem="dH3-dV-CUt" secondAttribute="bottom" constant="8" id="MCj-UF-Sgd"/>
+                                                                <constraint firstItem="UPk-ME-pbD" firstAttribute="top" secondItem="Msa-fU-nxl" secondAttribute="top" constant="8" id="Wn2-qA-G9X"/>
+                                                                <constraint firstAttribute="height" constant="100" id="dlQ-9K-UL1"/>
+                                                                <constraint firstItem="dH3-dV-CUt" firstAttribute="leading" secondItem="Msa-fU-nxl" secondAttribute="leading" constant="16" id="fvd-ot-5JZ"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -472,12 +513,9 @@
                                                                     <color key="value" red="0.97647058819999999" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
-                                                            <connections>
-                                                                <action selector="onSexualOrientationTap:" destination="ftm-uy-TkX" eventType="touchUpInside" id="sXM-K7-atR"/>
-                                                            </connections>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ehj-Nk-Fbd">
-                                                            <rect key="frame" x="0.0" y="174" width="374" height="50"/>
+                                                            <rect key="frame" x="0.0" y="224" width="374" height="50"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rOn-am-099">
                                                                     <rect key="frame" x="16" y="8" width="342" height="34"/>
@@ -539,10 +577,10 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6DA-H0-p5S">
-                                                            <rect key="frame" x="0.0" y="232" width="374" height="172"/>
+                                                            <rect key="frame" x="0.0" y="282" width="374" height="122"/>
                                                             <subviews>
                                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="About Information" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="18C-6m-6wq">
-                                                                    <rect key="frame" x="16" y="8" width="350" height="156"/>
+                                                                    <rect key="frame" x="16" y="8" width="350" height="106"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <color key="textColor" red="0.29894259569999998" green="0.29898265000000002" blue="0.29892891649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
@@ -1111,7 +1149,6 @@
                         <outlet property="txtJobTitle" destination="o5B-sS-bNs" id="2vr-Qb-Oc4"/>
                         <outlet property="txtLastName" destination="3om-sQ-NYk" id="RWc-tJ-I2j"/>
                         <outlet property="txtNumberOfKids" destination="RBC-MY-ReG" id="rLr-YI-vhN"/>
-                        <outlet property="txtOrientation" destination="KM7-1i-hP6" id="0X0-cO-iKb"/>
                         <outlet property="txtPassion" destination="MfI-g4-4aZ" id="Aey-8S-juY"/>
                         <outletCollection property="arrGenderBtn" destination="Qzb-Gd-Fxq" collectionClass="NSMutableArray" id="5d2-gS-Dy4"/>
                         <outletCollection property="arrGenderBtn" destination="R7y-x7-KSO" collectionClass="NSMutableArray" id="hIo-H3-aVK"/>
@@ -1134,11 +1171,14 @@
                         <outletCollection property="arrProfileBtn" destination="5Hg-Gs-VxO" collectionClass="NSMutableArray" id="JG2-W3-cHI"/>
                         <outletCollection property="arrProfileBtn" destination="q1g-J0-LtN" collectionClass="NSMutableArray" id="LLl-jc-kf3"/>
                         <outletCollection property="arrProfileBtn" destination="4aw-V7-xBN" collectionClass="NSMutableArray" id="hTY-kg-M8O"/>
+                        <outletCollection property="arrLookingforBtn" destination="K3S-Ge-VWe" collectionClass="NSMutableArray" id="tOt-ks-clm"/>
+                        <outletCollection property="arrLookingforBtn" destination="iyi-tR-nPJ" collectionClass="NSMutableArray" id="e3S-Nm-kf9"/>
+                        <outletCollection property="arrLookingforBtn" destination="EpJ-GE-D1q" collectionClass="NSMutableArray" id="tHb-nF-eGl"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x9j-e3-6Kc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="876.81159420289862" y="121.875"/>
+            <point key="canvasLocation" x="876.79999999999995" y="121.18226600985223"/>
         </scene>
         <!--ProfileTVC-->
         <scene sceneID="owV-ty-5bO">
@@ -1344,20 +1384,20 @@
                                                     <rect key="frame" x="40" y="10" width="315" height="30"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Img_Setting" translatesAutoresizingMaskIntoConstraints="NO" id="J0V-6h-3uM">
-                                                            <rect key="frame" x="0.0" y="1" width="28" height="28"/>
+                                                            <rect key="frame" x="0.0" y="2.6666666666666661" width="25" height="25"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="J0V-6h-3uM" secondAttribute="height" id="AWp-mj-9Qa"/>
                                                                 <constraint firstAttribute="width" constant="25" id="BFQ-Oc-y6A"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Setting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1QI-HH-uoO">
-                                                            <rect key="frame" x="48" y="3" width="237" height="24"/>
+                                                            <rect key="frame" x="45" y="3" width="240" height="24"/>
                                                             <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="17"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMn-HP-LP2">
-                                                            <rect key="frame" x="305" y="3" width="10" height="24"/>
+                                                            <rect key="frame" x="305" y="7" width="10" height="16"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="16" id="4QW-bM-ACL"/>
                                                                 <constraint firstAttribute="width" constant="10" id="Pwb-wJ-p0c"/>

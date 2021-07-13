@@ -56,7 +56,7 @@ class ProfileTVC: UITableViewController {
         
     }
 
-//    @IBAction func onLocationCloseBtnTap(_ sender: UIButton) {
+    //    @IBAction func onLocationCloseBtnTap(_ sender: UIButton) {
 //        print(sender.tag)
 //        deleteLocation(param: ["location_id": arrPassLocation[sender.tag].id])
 //    }
@@ -218,7 +218,7 @@ class ProfileTVC: UITableViewController {
 
 
 
-//extension ProfileTVC {
+extension ProfileTVC {
 //
 //    fileprivate func getProfile() {
 //
@@ -286,18 +286,18 @@ class ProfileTVC: UITableViewController {
 //        })
 //    }
 //
-//    fileprivate func logoutProfile() {
-//
-//        showHUD()
-//        NetworkManager.Profile.logoutProfile { (message) in
-//            self.hideHUD()
-//            User.details.delete()
-//            APPDEL?.setupLogin()
-//        } _: { (error) in
-//            self.hideHUD()
-//            self.showToast(error)
-//        }
-//    }
+    fileprivate func logoutProfile() {
+
+        showHUD()
+        NetworkManager.Profile.logoutProfile { (message) in
+            self.hideHUD()
+            User.details.delete()
+            APPDEL?.setupLogin()
+        } _: { (error) in
+            self.hideHUD()
+            self.showToast(error)
+        }
+    }
 //
 //    fileprivate func deleteProfile() {
 //
@@ -338,22 +338,22 @@ class ProfileTVC: UITableViewController {
 //        }
 //    }
 //
-//}
+}
 //
 //
-//extension ProfileTVC {
-//
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        switch indexPath.section {
-//            case 1:
+extension ProfileTVC {
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+            case 1:
 //                let vc = CreateProfileTVC.instantiate(fromAppStoryboard: .Profile)
 //                vc.onPopView = { [weak self] in
 //                    self?.setupNavigationBar()
 //                }
 //                vc.hidesBottomBarWhenPushed = true
 //                navigationController?.pushViewController(vc, animated: false)
-//            break
-//            case 2:
+            break
+            case 2:
 //                let vc = UserDetailsTVC.instantiate(fromAppStoryboard: .Discover)
 //                vc.userId = User.details.id
 //                vc.isFromProfile = true
@@ -361,15 +361,15 @@ class ProfileTVC: UITableViewController {
 //                nvc.modalPresentationStyle = .fullScreen
 //                nvc.modalTransitionStyle = .crossDissolve
 //                self.present(nvc, animated: true, completion: nil)
-//                break
-//            case 3:
+                break
+            case 3:
 //                let vc = NotificationVC.instantiate(fromAppStoryboard: .Main)
 //                vc.onPopView = { [weak self] in
 //                    self?.setupNavigationBar()
 //                }
 //                vc.hidesBottomBarWhenPushed = true
 //                navigationController?.pushViewController(vc, animated: false)
-//            break
+            break
 //            case 4:
 //                guard isPurchase else {
 //                    let vc = UpgradeVC.instantiate(fromAppStoryboard: .Upgrade)
@@ -391,27 +391,27 @@ class ProfileTVC: UITableViewController {
 //                vc.hidesBottomBarWhenPushed = true
 //                navigationController?.pushViewController(vc, animated: false)
 //                break
-//            case 6:
-//                logoutProfile()
-//                break
-//            case 7:
-//
-//                isAccountTabOpen = !isAccountTabOpen
-//
-//                stackPause.isHidden = !isAccountTabOpen
-//                stackDelete.isHidden = !isAccountTabOpen
-//
-//                btnAccountDropDown.setImage(UIImage(named: isAccountTabOpen ? "img_dropdown" : "img_next"), for: .normal)
-//
-//                btnAccountDropDownWidth.constant = isAccountTabOpen ? 16 : 10
-//
-//                tableView.reloadData()
-//                break
-//            default:
-//            break
-//        }
-//    }
-//}
+            case 4:
+                logoutProfile()
+                break
+            case 7:
+
+                isAccountTabOpen = !isAccountTabOpen
+
+                stackPause.isHidden = !isAccountTabOpen
+                stackDelete.isHidden = !isAccountTabOpen
+
+                btnAccountDropDown.setImage(UIImage(named: isAccountTabOpen ? "img_dropdown" : "img_next"), for: .normal)
+
+                btnAccountDropDownWidth.constant = isAccountTabOpen ? 16 : 10
+
+                tableView.reloadData()
+                break
+            default:
+            break
+        }
+    }
+}
 //
 //
 //

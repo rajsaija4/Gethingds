@@ -44,7 +44,7 @@ internal struct Message: MessageType {
     
     init(_ text: String) {
         
-        self.init(.text(text), ChatUser(senderId: "\(User.details.id)", displayName: User.details.firstName), URL(string: User.details.arrImage.first ?? ""), UUID().uuidString, Date())
+        self.init(.text(text), ChatUser(senderId: "\(User.details.id)", displayName: User.details.firstName), URL(string: User.details.user_images.first ?? ""), UUID().uuidString, Date())
     }
     
     class UserInfo: NSObject {
