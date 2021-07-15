@@ -929,10 +929,10 @@
                                                                             <color key="value" red="0.32944318649999998" green="0.12744057180000001" blue="0.27206125860000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="minValue">
-                                                                            <real key="value" value="36"/>
+                                                                            <real key="value" value="0.0"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
-                                                                            <real key="value" value="119"/>
+                                                                            <real key="value" value="100"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
@@ -995,7 +995,7 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                             <connections>
-                                                                <action selector="conLocationOnPress:" destination="yb1-oG-023" eventType="valueChanged" id="LTx-oT-SPT"/>
+                                                                <action selector="locationOnPress:" destination="yb1-oG-023" eventType="touchUpInside" id="aXl-3g-DKe"/>
                                                             </connections>
                                                         </view>
                                                     </subviews>
@@ -1069,6 +1069,7 @@
                         <outlet property="lbl_Distance" destination="nbo-ys-lI9" id="W76-at-Xce"/>
                         <outlet property="lbl_kidsCount" destination="IXD-B7-lI8" id="CUj-jR-Ior"/>
                         <outlet property="lbl_location" destination="SF3-6q-RaU" id="qaC-kI-pif"/>
+                        <outlet property="location" destination="VUJ-t7-PkA" id="xd4-Y4-ecM"/>
                         <outlet property="rangeAge" destination="6TE-4H-lZF" id="wrd-0u-g3y"/>
                         <outlet property="rangeDistance" destination="0of-Pu-Qc2" id="2dh-4e-Y1X"/>
                         <outlet property="rangeKidsCount" destination="Rtl-cN-SKI" id="Rad-FZ-RBM"/>
@@ -1380,7 +1381,7 @@
         <image name="img_match_like" width="106" height="100"/>
         <image name="img_next" width="14" height="24"/>
         <image name="img_no_profile" width="507" height="393"/>
-        <image name="img_select" width="38" height="38"/>
+        <image name="img_select" width="22" height="22"/>
         <image name="img_splashsreen" width="750" height="1334"/>
         <image name="img_unselect" width="22" height="22"/>
         <image name="img_user_placeholder" width="640" height="960"/>

@@ -141,19 +141,19 @@ extension UserDetailsTVC {
         
         
         
-        for (i, image) in user.arrImage.enumerated() {
-            if let url = URL(string: image) {
-                self.arrImgView[i].kf.setImage(with: url)
-            }
-        }
+//        for (i, image) in user.arrImage.enumerated() {
+//            if let url = URL(string: image) {
+//                self.arrImgView[i].kf.setImage(with: url)
+//            }
+//        }
         
 //        lblUserInfo.text = user.firstName + " " + user.lastName
 
 
-        let feet = (Int(user.userHeight) ?? 0) / 12
-        let inches = (Int(user.userHeight) ?? 0) % 12
+//        let feet = (Int(user.userHeight) ?? 0) / 12
+//        let inches = (Int(user.userHeight) ?? 0) % 12
         
-        let userHeight = "\(feet)'\(inches)''"
+//        let userHeight = "\(feet)'\(inches)''"
         
         
 //        lblHeight.text = userHeight

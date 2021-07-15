@@ -13,7 +13,7 @@ import CoreLocation
 import CropViewController
 import TagListView
 
-class CreateProfileTVC: UITableViewController, UIImagePickerControllerDelegate, TagListViewDelegate, UINavigationControllerDelegate, selectedPassion {
+class CreateProfileTVC: UITableViewController, UIImagePickerControllerDelegate, TagListViewDelegate, UINavigationControllerDelegate, selectedPassionDelegate {
     
     
     func passion(passion: [String]) {
@@ -32,6 +32,7 @@ class CreateProfileTVC: UITableViewController, UIImagePickerControllerDelegate, 
     fileprivate var selectedImage = 0
     fileprivate var removeImage = 0
     fileprivate var arrPassion:[String] = []
+    var arrTags:[TagList] = []
     var isFromLogin = false
     fileprivate var arrKids = [Int: String]()
     
@@ -110,6 +111,9 @@ class CreateProfileTVC: UITableViewController, UIImagePickerControllerDelegate, 
         
         let vc = TagListVC.instantiate(fromAppStoryboard: .Profile)
         vc.delegate = self
+        for i in arrTags {
+            vc.arrTagsTitle.append(i.passion)
+        }
         vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .crossDissolve
         self.present(vc, animated: true, completion: nil)
@@ -326,6 +330,9 @@ class CreateProfileTVC: UITableViewController, UIImagePickerControllerDelegate, 
         let gmsACVC = GMSAutocompleteViewController()
         gmsACVC.delegate = self
         gmsACVC.modalPresentationStyle = .fullScreen
+        let filter = GMSAutocompleteFilter()
+        filter.type = .city
+        gmsACVC.autocompleteFilter = filter
         present(gmsACVC, animated: true, completion: nil)
         
     }
@@ -458,6 +465,7 @@ extension CreateProfileTVC {
             self.arrKids[i] = "New born"
         }
         
+        getPassion()
     }
     
     fileprivate func setupDataUI() {
@@ -467,12 +475,12 @@ extension CreateProfileTVC {
             btn.isEnabled = false
         }
         
-        for (i, image) in profile.arrImage.enumerated() {
-            self.arrImageProfile[i].setImage(image)
-            self.arrProfileBtn[i].isSelected = true
-            self.arrProfileBtn[i].isEnabled = true
-        }
-        
+//        for (i, image) in profile.arrImage.enumerated() {
+//            self.arrImageProfile[i].setImage(image)
+//            self.arrProfileBtn[i].isSelected = true
+//            self.arrProfileBtn[i].isEnabled = true
+//        }
+//        
         txtFirstName.text = profile.firstName
         txtLastName.text = profile.lastName
         txtAboutView.text = profile.about.count > 0 ? profile.about : placeHolder
@@ -512,12 +520,12 @@ extension CreateProfileTVC {
         present(gmsACVC, animated: true, completion: nil)
     }
     
-    
-    @IBAction func onImageBtnTap(_ sender: UIControl) {
-        imagePicker = ImagePicker(presentationController: self, delegate: self)
-        imagePicker.present(from: sender)
-        selectedImageIndex = sender.tag
-    }
+//
+//    @IBAction func onImageBtnTap(_ sender: UIControl) {
+//        imagePicker = ImagePicker(presentationController: self, delegate: self)
+//        imagePicker.present(from: sender)
+//        selectedImageIndex = sender.tag
+//    }
     
     
     
@@ -565,37 +573,37 @@ extension CreateProfileTVC {
         var source: [String: Data] = [:]
         
         if imgData1 != nil {
-            source.merge(["profile_image1": imgData1!]) { (current, _) -> Data in
+            source.merge(["image1": imgData1!]) { (current, _) -> Data in
                 return current
             }
         }
         
         if imgData2 != nil {
-            source.merge(["profile_image2": imgData2!]) { (current, _) -> Data in
+            source.merge(["image2": imgData2!]) { (current, _) -> Data in
                 return current
             }
         }
         
         if imgData3 != nil {
-            source.merge(["profile_image3": imgData3!]) { (current, _) -> Data in
+            source.merge(["image3": imgData3!]) { (current, _) -> Data in
                 return current
             }
         }
         
         if imgData4 != nil {
-            source.merge(["profile_image4": imgData4!]) { (current, _) -> Data in
+            source.merge(["image4": imgData4!]) { (current, _) -> Data in
                 return current
             }
         }
         
         if imgData5 != nil {
-            source.merge(["profile_image5": imgData5!]) { (current, _) -> Data in
+            source.merge(["image5": imgData5!]) { (current, _) -> Data in
                 return current
             }
         }
         
         if imgData6 != nil {
-            source.merge(["profile_image6": imgData6!]) { (current, _) -> Data in
+            source.merge(["image6": imgData6!]) { (current, _) -> Data in
                 return current
             }
         }
@@ -705,7 +713,13 @@ extension CreateProfileTVC {
             lookingForPass = "other"
         }
           
-            
+        var arrPassionIds = [String]()
+        
+        for passion in arrPassion {
+            if let id = self.arrTags.first(where: {$0.passion == passion})?.id {
+                arrPassionIds.append("\(id)")
+            }
+        }
         
         
         
@@ -724,7 +738,7 @@ extension CreateProfileTVC {
                 "latitude": latitude,
                 "longitude": longitude,
                 "address": loc,
-                "passion":arrPassion.joined(separator: ",")
+                "passion":arrPassionIds.joined(separator: ",")
 
             ] as [String : String]
 
@@ -741,17 +755,17 @@ extension CreateProfileTVC {
 extension CreateProfileTVC {
     
     
-    fileprivate func getProfile() {
-        showHUD()
-        NetworkManager.Profile.getMyProfile({ (profile) in
-            self.hideHUD()
-            self.profile = profile
-            self.setupDataUI()
-        }) { (error) in
-            self.hideHUD()
-            self.showAlert(error)
-        }
-    }
+//    fileprivate func getProfile() {
+//        showHUD()
+//        NetworkManager.Profile.getMyProfile({ (profile) in
+//            self.hideHUD()
+//            self.profile = profile
+//            self.setupDataUI()
+//        }) { (error) in
+//            self.hideHUD()
+//            self.showAlert(error)
+//        }
+//    }
     
     
     fileprivate func addProfile(source: [String: Data], parameters: [String: String]) {
@@ -796,6 +810,22 @@ extension CreateProfileTVC {
             self.hideHUD()
             self.showAlert(error)
         }
+    }
+    
+    
+   fileprivate func getPassion() {
+        showHUD()
+        NetworkManager.getPassion { (PassionSetting) in
+            self.arrTags.append(contentsOf: PassionSetting.passion)
+            print(self.arrTags)
+            self.hideHUD()
+        } _: { (error) in
+            self.hideHUD()
+            self.showToast(error)
+        }
+
+
+        
     }
     
 }

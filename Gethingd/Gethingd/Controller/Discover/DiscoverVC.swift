@@ -44,12 +44,15 @@ class DiscoverVC: UIViewController {
         setupUI()
     }
     
+    
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setupUI()
         navigationController?.isNavigationBarHidden = true
     }
     
@@ -75,16 +78,70 @@ extension DiscoverVC {
     func getUserList() {
         
         showHUD()
+        if Filter.filterApply == false {
+            
+            let param = [:] as [String : Any]
+            
+            /*
+            let param = [
+                "min_age": Filter.minAge,
+                "max_age": Filter.maxAge,
+                "distance": Filter.distance,
+                "min_height": Filter.minHeight,
+                "max_height": Filter.maxHeight,
+                "sun_zodiac_sign_id": Filter.sunSignId,
+                "moon_zodiac_sign_id": Filter.moonSignId,
+                "rising_zodiac_sign_id": Filter.risingSignId,
+                "latitude": "\(locationManager?.location?.coordinate.latitude ?? 0)",
+                "longitude": "\(locationManager?.location?.coordinate.longitude ?? 0)"
+            ] as [String : Any]
+            */
+            
+            NetworkManager.Discover.discoverUser(param: param, { (users) in
+                self.hideHUD()
+                
+                self.tabBarController?.tabBar.items?.last?.badgeValue = AppSupport.unreadCount > 0 ? "\(AppSupport.unreadCount)" : nil
+                
+                
+                if AppSupport.version > APP_VERSION {
+                    let vc = UpdateNowVC.instantiate(fromAppStoryboard: .Upgrade)
+                    vc.modalPresentationStyle = .overFullScreen
+                    self.present(vc, animated: true, completion: nil)
+                    return
+                }
+                
+                
+                self.arrUser.removeAll()
+                self.arrUser.append(contentsOf: users)
+                self.kolodaView.reconfigureCards()
+                self.kolodaView.reloadData()
+                self.kolodaView.resetCurrentCardIndex()
+                
+                self.setupNoProfileView()
+                
+            }, { (error) in
+                self.hideHUD()
+                let alert = UIAlertController(title: "Oops!", message: error)
+                self.present(alert, animated: true, completion: nil)
+                self.arrUser.removeAll()
+                self.kolodaView.reconfigureCards()
+                self.kolodaView.reloadData()
+                self.kolodaView.resetCurrentCardIndex()
+                self.setupNoProfileView()
+            })
+            
+        }
         
+        else {
         let param = [
+            "looking_for": Filter.lookingFor,
             "min_age": Filter.minAge,
             "max_age": Filter.maxAge,
             "distance": Filter.distance,
-            "min_height": Filter.minHeight,
-            "max_height": Filter.maxHeight,
-            "sun_zodiac_sign_id": Filter.sunSignId,
-            "moon_zodiac_sign_id": Filter.moonSignId,
-            "rising_zodiac_sign_id": Filter.risingSignId
+            "min_kids": Filter.minKid,
+            "max_kids": Filter.maxKid,
+            "latitude": Filter.latitude,
+            "longitude": Filter.longitude
         ] as [String : Any]
         
         /*
@@ -136,7 +193,7 @@ extension DiscoverVC {
         })
         
     }
-    
+    }
     
     
     fileprivate func swipeUser(userID: Int, status: SwipeType) {
@@ -321,7 +378,7 @@ extension DiscoverVC: KolodaViewDelegate {
         
         vc.onSuperLikeUser = {
             koloda.swipe(.up)
-//            self.swipeUser(userID: self.arrUser[index].id, status: .superLike)
+            self.swipeUser(userID: self.arrUser[index].id, status: .superLike)
         }
         
         let nvc = UINavigationController(rootViewController: vc)
@@ -413,16 +470,27 @@ extension DiscoverVC: KolodaViewDataSource {
         let user = arrUser[index]
         
         let userView = UserView(frame: koloda.bounds)
-        userView.imgSuperLike.isHidden = !user.isSuperLike
-        userView.lblInfo.text = "\(user.nickName)" + ", " + "\(user.age)"
+//        userView.imgSuperLike.isHidden = !user.isSuperLike
+        if user.userSetting.showmyAge == 1{
+        userView.lblInfo.text = "\(user.firstName)" + ", " + "\(user.age)"
+        }
+        else {
+            userView.lblInfo.text = "\(user.firstName)"
+        }
+        if user.userSetting.distanceVisible == 1{
+        userView.lbladdress.text = "\(user.distance)" + ", " + "\(user.address)"
+        }
+        else {
+        userView.lbladdress.text = "\(user.address)"
+        }
         //userView.btnRewind.tag = index
         //userView.btnRewind.addTarget(self, action: #selector(self.onRewindBtnTap(_:)), for: .touchUpInside)
-        if let url = URL(string: user.arrImage.first ?? "") {
+        if let url = URL(string: user.image1) {
             userView.imgUser.kf.setImage(with: url)
         }
-        if let url = URL(string: user.sunSignId.getActiveSignIconURL) {
-            userView.imgSign.kf.setImage(with: url)
-        }
+//        if let url = URL(string: user.sunSignId.getActiveSignIconURL) {
+//            userView.imgSign.kf.setImage(with: url)
+//        }
         
         return userView
     }

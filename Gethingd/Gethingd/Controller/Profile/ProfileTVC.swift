@@ -8,6 +8,7 @@
 
 import UIKit
 import GooglePlaces
+import Kingfisher
 
 class ProfileTVC: UITableViewController {
 
@@ -45,6 +46,14 @@ class ProfileTVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        lblName.text = User.details.firstName
+        lblAddress.text = User.details.address
+        
+        
+        if let url = URL(string: User.details.image1) {
+            self.imgUser.kf.setImage(with: url)
+        }
+        
 //        setupUI()
        
     }
@@ -346,21 +355,21 @@ extension ProfileTVC {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
             case 1:
-//                let vc = CreateProfileTVC.instantiate(fromAppStoryboard: .Profile)
-//                vc.onPopView = { [weak self] in
-//                    self?.setupNavigationBar()
-//                }
-//                vc.hidesBottomBarWhenPushed = true
-//                navigationController?.pushViewController(vc, animated: false)
+                let vc = EditProfileVC.instantiate(fromAppStoryboard: .Profile)
+                
+                vc.hidesBottomBarWhenPushed = true
+            
+                self.navigationController?.pushViewController(vc, animated: true)
             break
             case 2:
-//                let vc = UserDetailsTVC.instantiate(fromAppStoryboard: .Discover)
+                let vc = SettingVC.instantiate(fromAppStoryboard: .Setting)
+                vc.hidesBottomBarWhenPushed = true
 //                vc.userId = User.details.id
 //                vc.isFromProfile = true
 //                let nvc = UINavigationController(rootViewController: vc)
-//                nvc.modalPresentationStyle = .fullScreen
+//                vc.modalPresentationStyle = .fullScreen
 //                nvc.modalTransitionStyle = .crossDissolve
-//                self.present(nvc, animated: true, completion: nil)
+              self.navigationController?.pushViewController(vc, animated: true)
                 break
             case 3:
 //                let vc = NotificationVC.instantiate(fromAppStoryboard: .Main)
@@ -551,3 +560,5 @@ extension ProfileTVC {
 //
 //    }
 //}
+
+

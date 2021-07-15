@@ -50,7 +50,7 @@ struct URLManager {
     
     struct Discover {
         static let discover = basePath + "discover"
-        static let swipe = basePath + "swipe_profiles?"
+        static let swipe = basePath + "swipe_profile"
         static let boostUser = basePath + "add_user_boost"
     }
     
@@ -79,6 +79,12 @@ struct URLManager {
     struct Payment {
         static let makePayment = basePath + "after_payment"
         static let getPlans = basePath + "super_gold_slider"
+    }
+    
+    struct Setting {
+        static let getUserSetting = basePath + "get_user_settings"
+        static let updateUserSetting = basePath + "user_settings"
+        static let passion = basePath + "get_passion_list"
     }
     
 

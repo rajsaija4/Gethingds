@@ -185,9 +185,10 @@ extension NetworkManager {
             }
         }
         
-        static func getMyProfile(_ success: @escaping (UserProfile) -> Void, _ fail: @escaping (String) -> Void) {
+        static func getMyProfile(_ success: @escaping (User) -> Void, _ fail: @escaping (String) -> Void) {
             
-            let param = ["token": User.details.api_token]
+//            let param = ["token": User.details.api_token]
+            let param = ["token": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzc1ZWI3MGM1NGY1NjUwMGNkZDc1ZWI5YTBjOTgxNTA4OWY2Nzk5NmE4YjJlZTEzOGFkZDQ1MDIyOWI0ZDkzODA1YWRjNWE5YWMxOWYzNmQiLCJpYXQiOjE2MjYwODI3MjQsIm5iZiI6MTYyNjA4MjcyNCwiZXhwIjoxNjU3NjE4NzI0LCJzdWIiOiIxNCIsInNjb3BlcyI6W119.z2QhYhtT2dQnrSzOZ6uHCpKuY5ATJzxazfyPQz_KBIT3EySSaF_K0BaaylJ6vl4nSqp32oqXozp2BcMryeAw2D4oOBjZiBta0T5v8uXBBiHRo3SMMmgmVmEBmRFJzeAbj7qHd01pb_It7DioG1qwUV_h_zQq97iY3V9JjE5PhOg_9O9VnaWvCGINz13JnzeLtE9X_ua_WGikirLbbYfadhSuFNcyZY3Wk87wAuJ8HTVhO2RR_E82UrPU6ivuFg4rxuDxxem8L9lbCn6E6PKQSjEuPRQCIcLooViSvdaR9W_5a3EC7I7eetwaiEbWDlZ0ejkuVcuS0AbVvtFTYMcd5ZB_hDgFaJhnNRTNylDsxOWFROqqVlwZWJ_tiPIMAVaJ0_dyvX5TROR1HcNMZV-f95d0BKNU3DIDjGNCjYgG6ZUInlpx5On41bg1aZvu6VIjxDw1xipbRLDTqvJeadOlloKyE24mpK9PzTsf-3CDhS7jgQ90iNesjca5zHdU-hqU3m3ivuV8m2sBPS2VFspeGipc6DxOofid48RUSY-Qc631PoFnufxT60o6wkDgrEkaHAbd98WsiyXJbMwthUBEWENegAwZBxNc4R7HA-YP8_61WDT_J5X8VFiDZ5kLMTJi7vTHoqPsojaPep4Z1WfHQjiFKd3ew5KqCPyWgtDkHb0"]
             NetworkCaller.getRequest(url: URLManager.Profile.getMyProfile, params: param, headers: header, { (response) in
                 
                 guard response.isSuccess else {
@@ -197,6 +198,7 @@ extension NetworkManager {
                 
                 let user = User(response)
                 user.save()
+                success(user)
                 
             }) { (error) in
                 fail(error.localizedDescription)
@@ -357,34 +359,40 @@ extension NetworkManager {
                 }
                 
                 
-                Filter.distance = Int(response["params"]["distance"].stringValue) ?? 0
-                Filter.minAge = Int(response["params"]["min_age"].stringValue) ?? 0
-                Filter.maxAge = Int(response["params"]["max_age"].stringValue) ?? 0
-                Filter.minHeight = Int(response["params"]["min_height"].stringValue) ?? 0
-                Filter.maxHeight = Int(response["params"]["max_height"].stringValue) ?? 0
+                Filter.distance = Int(response["params"]["distance"].intValue)
+                Filter.minAge = Int(response["params"]["min_age"].intValue)
+                Filter.maxAge = Int(response["params"]["max_age"].intValue)
+                Filter.minKid = Int(response["params"]["min_kids"].intValue)
+                Filter.maxKid = Int(response["params"]["max_kids"].intValue)
+                Filter.longitude = String(response["params"]["longitude"].stringValue)
+                Filter.latitude = String(response["params"]["latitude"].stringValue)
+                Filter.lookingFor = String(response["params"]["looking_for"].stringValue)
                 
-                Filter.sunSignId = Int(response["params"]["sun_zodiac_sign_id"].stringValue) ?? 0
-                Filter.moonSignId = Int(response["params"]["moon_zodiac_sign_id"].stringValue) ?? 0
-                Filter.risingSignId = Int(response["params"]["rising_zodiac_sign_id"].stringValue) ?? 0
+//                Filter.minHeight = Int(response["params"]["min_height"].stringValue) ?? 0
+//                Filter.maxHeight = Int(response["params"]["max_height"].stringValue) ?? 0
+//                
+//                Filter.sunSignId = Int(response["params"]["sun_zodiac_sign_id"].stringValue) ?? 0
+//                Filter.moonSignId = Int(response["params"]["moon_zodiac_sign_id"].stringValue) ?? 0
+//                Filter.risingSignId = Int(response["params"]["rising_zodiac_sign_id"].stringValue) ?? 0
 
  
-                AppSupport.unreadCount = response["unread_count"].intValue
-                AppSupport.remainingLikes = response["remaining_likes_count"].intValue
-                AppSupport.isLikeLimited = response["is_likes_limited"].stringValue == "Yes"
-                AppSupport.remainingSuperLikes = response["remaining_slikes_count"].intValue
-                AppSupport.remainingBoost = response["remaining_boost_count"].intValue
-                
-                AppSupport.version = response["ios_version"].doubleValue
-                
-                SuperLike.superLikeCount = response["super_like_plan"]["count"].intValue
-                SuperLike.price = response["super_like_plan"]["price"].doubleValue
+                AppSupport.unreadCount = response["data"]["remaining_review_later_count"].intValue
+                AppSupport.remainingLikes = response["data"]["remaining_likes_count"].intValue
+                AppSupport.isLikeLimited = response["data"]["is_limited"].stringValue == "Yes"
+//                AppSupport.remainingSuperLikes = response["remaining_slikes_count"].intValue
+//                AppSupport.remainingBoost = response["remaining_boost_count"].intValue
+//
+//                AppSupport.version = response["ios_version"].doubleValue
+//
+//                SuperLike.superLikeCount = response["super_like_plan"]["count"].intValue
+//                SuperLike.price = response["super_like_plan"]["price"].doubleValue
 
                 
-                isPurchase = response["is_purchase"].stringValue != "No" 
+                isPurchase = response["data"]["is_order"].stringValue != "No"
                 
                 
                 var arrUser: [UserProfile] = []
-                for user in response["users"].arrayValue {
+                for user in response["data"]["users"].arrayValue {
                     arrUser.append(UserProfile(user))
                 }
                 
@@ -702,6 +710,7 @@ extension NetworkManager {
                 
                 success(response.message)
                 
+
             }) { (error) in
                 fail(error.localizedDescription)
             }
@@ -723,6 +732,75 @@ extension NetworkManager {
                 fail(error.localizedDescription)
             }
         }
+    }
+}
+
+
+extension NetworkManager {
+    
+    struct Setting {
+        
+        static func getUserSetting(_ success: @escaping (JSON) -> Void, _ fail: @escaping (String) -> Void) {
+            
+            NetworkCaller.getRequest(url: URLManager.Setting.getUserSetting, params: nil, headers: header, { (response) in
+                
+                guard response.isSuccess else {
+                    fail(response.message)
+                    return
+                }
+                
+        
+               success(response)
+                
+            }) { (error) in
+                fail(error.localizedDescription)
+            }
+        }
+        
+        static func updateUserSetting(param:Parameters, _ success: @escaping (String) -> Void, _ fail: @escaping (String) -> Void) {
+            
+            NetworkCaller.postRequest(url: URLManager.Setting.updateUserSetting, params: param, headers: header, { (response) in
+                
+                guard response.isSuccess else {
+                    fail(response.message)
+                    return
+                }
+                
+                let message = response["message"].stringValue
+               success(message)
+                
+            }) { (error) in
+                fail(error.localizedDescription)
+            }
+        }
+        
         
     }
+    
+    
+    
+}
+
+
+extension NetworkManager {
+    
+    
+    static func getPassion(_ success: @escaping (PassionSetting) -> Void, _ fail: @escaping (String) -> Void) {
+        
+        NetworkCaller.getRequest(url: URLManager.Setting.passion, params: nil, headers: header, { (response) in
+            
+            guard response.isSuccess else {
+                fail(response.message)
+                return
+            }
+            
+            let passion = PassionSetting(json: response)
+           success(passion)
+            
+        }) { (error) in
+            fail(error.localizedDescription)
+        }
+    }
+    
+    
 }

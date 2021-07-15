@@ -23,7 +23,12 @@ class User: NSObject, NSCoding {
     var about:String = ""
     var num_of_kids:Int = 0
     var email_verified:Int = 0
-    var user_images:[String] = []
+    var image1:String = ""
+    var image2:String = ""
+    var image3:String = ""
+    var image4:String = ""
+    var image5:String = ""
+    var image6:String = ""
     var user_kids:[String] = []
     var api_token:String = ""
     
@@ -44,9 +49,12 @@ class User: NSObject, NSCoding {
         about = json["data"]["about"].stringValue
         num_of_kids = json["data"]["num_of_kids"].intValue
         email_verified = json["data"]["email_verified"].intValue
-        for image in json["data"]["user_images"].arrayValue {
-            user_images.append(image.stringValue)
-        }
+        image1 = json["data"]["image1"].stringValue
+        image2 = json["data"]["image2"].stringValue
+        image3 = json["data"]["image3"].stringValue
+        image4 = json["data"]["image4"].stringValue
+        image5 = json["data"]["image5"].stringValue
+        image6 = json["data"]["image6"].stringValue
         for kid in json["data"]["user_kids"].arrayValue {
             user_kids.append(kid["kids_status"].stringValue)
         }
@@ -71,9 +79,12 @@ class User: NSObject, NSCoding {
         about = json["data"]["about"].stringValue
         num_of_kids = json["data"]["num_of_kids"].intValue
         email_verified = json["data"]["email_verified"].intValue
-        for image in json["data"]["user_images"].arrayValue {
-            user_images.append(image.stringValue)
-        }
+        image1 = json["data"]["image1"].stringValue
+        image2 = json["data"]["image2"].stringValue
+        image3 = json["data"]["image3"].stringValue
+        image4 = json["data"]["image4"].stringValue
+        image5 = json["data"]["image5"].stringValue
+        image6 = json["data"]["image6"].stringValue
         for kid in json["data"]["user_kids"].arrayValue {
             user_kids.append(kid["kids_status"].stringValue)
         }
@@ -95,7 +106,12 @@ class User: NSObject, NSCoding {
         aCoder.encode(about, forKey: "about")
         aCoder.encode(num_of_kids, forKey: "noOfkids")
         aCoder.encode(email_verified, forKey: "emailVerify")
-        aCoder.encode(user_images, forKey: "images")
+        aCoder.encode(image1,forKey: "image1")
+        aCoder.encode(image2,forKey: "image2")
+        aCoder.encode(image3,forKey: "image3")
+        aCoder.encode(image4,forKey: "image4")
+        aCoder.encode(image5,forKey: "image5")
+        aCoder.encode(image6,forKey: "image6")
         aCoder.encode(user_kids, forKey: "kidsStatus")
         aCoder.encode(api_token, forKey: "token")
     }
@@ -116,7 +132,12 @@ class User: NSObject, NSCoding {
         num_of_kids = aDecoder.decodeInteger(forKey: "noOfkids") 
         email_verified = aDecoder.decodeInteger(forKey: "emailVerify") 
       
-        user_images = aDecoder.decodeObject(forKey: "images") as! [String]
+        image1 = aDecoder.decodeObject(forKey: "image1") as! String
+        image2 = aDecoder.decodeObject(forKey: "image2") as! String
+        image3 = aDecoder.decodeObject(forKey: "image3") as! String
+        image4 = aDecoder.decodeObject(forKey: "image4") as! String
+        image5 = aDecoder.decodeObject(forKey: "image5") as! String
+        image6 = aDecoder.decodeObject(forKey: "image6") as! String
         user_kids = aDecoder.decodeObject(forKey: "kidsStatus") as! [String]
         api_token = aDecoder.decodeObject(forKey: "token") as! String
     }
@@ -138,7 +159,7 @@ extension User {
     
     static var token: [String:String] {
         get {
-            return ["Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzc1ZWI3MGM1NGY1NjUwMGNkZDc1ZWI5YTBjOTgxNTA4OWY2Nzk5NmE4YjJlZTEzOGFkZDQ1MDIyOWI0ZDkzODA1YWRjNWE5YWMxOWYzNmQiLCJpYXQiOjE2MjYwODI3MjQsIm5iZiI6MTYyNjA4MjcyNCwiZXhwIjoxNjU3NjE4NzI0LCJzdWIiOiIxNCIsInNjb3BlcyI6W119.z2QhYhtT2dQnrSzOZ6uHCpKuY5ATJzxazfyPQz_KBIT3EySSaF_K0BaaylJ6vl4nSqp32oqXozp2BcMryeAw2D4oOBjZiBta0T5v8uXBBiHRo3SMMmgmVmEBmRFJzeAbj7qHd01pb_It7DioG1qwUV_h_zQq97iY3V9JjE5PhOg_9O9VnaWvCGINz13JnzeLtE9X_ua_WGikirLbbYfadhSuFNcyZY3Wk87wAuJ8HTVhO2RR_E82UrPU6ivuFg4rxuDxxem8L9lbCn6E6PKQSjEuPRQCIcLooViSvdaR9W_5a3EC7I7eetwaiEbWDlZ0ejkuVcuS0AbVvtFTYMcd5ZB_hDgFaJhnNRTNylDsxOWFROqqVlwZWJ_tiPIMAVaJ0_dyvX5TROR1HcNMZV-f95d0BKNU3DIDjGNCjYgG6ZUInlpx5On41bg1aZvu6VIjxDw1xipbRLDTqvJeadOlloKyE24mpK9PzTsf-3CDhS7jgQ90iNesjca5zHdU-hqU3m3ivuV8m2sBPS2VFspeGipc6DxOofid48RUSY-Qc631PoFnufxT60o6wkDgrEkaHAbd98WsiyXJbMwthUBEWENegAwZBxNc4R7HA-YP8_61WDT_J5X8VFiDZ5kLMTJi7vTHoqPsojaPep4Z1WfHQjiFKd3ew5KqCPyWgtDkHb0"]
+            return ["Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMjBhMzFiMzA5YzA3NGY2MzM3MmNhYzBmOWI3YTI2ZTBiNzg2MzY2Y2U4NTE3OTk1ZmY1NjhiN2EyODdkMmE2NjQyYjA2Zjg2NWIxMGQyNmIiLCJpYXQiOjE2MjYzMzM0MDIsIm5iZiI6MTYyNjMzMzQwMiwiZXhwIjoxNjU3ODY5NDAyLCJzdWIiOiIxNCIsInNjb3BlcyI6W119.TW9mce4jFcHHitnhjmg8IHzlVbkCodpYiRDhFZ32IhRHNduHozzwFnaoV6l77bn0wl9OjsAeNWPDXvc0IZOGkYbYxudSFq4PagHul9Y6SzGWlF9mGiynADQ8fdZyPfb-UvQRExa-ZselCOf0B5fdTWCpgIAYTwcYISgaKDSPBDvbDzpkrh1RpQx5ezMzyfHOfVMKBKPLEq4E-ruDxAqD967t3oq2YrFg5bflLmO8tEDzoPMe39KbWYSghqmgnBvHyEh0UA5puTRlsPYiNEcCt6wkfwogxQiXuk9zyOf1c76urykL5gf43MyKSbmRJaYthkSGFeWp5nQ9fq92SSN8v8QIkIOHTJYtholWmth4X4K_GgHSHcfF97347ODKgNfTzenVfqUPUGo5ygk8I6HqJviHM8pPsUqiTD3gaoGPAPk8wh2AJV85ccerwKO1YxqKGeHpnFVDeWJ-m78quwoqCeZbsx4cQnPc3QQXxwPtpAqO7ZO9VG8PuVNn0BzBNIvircsYJCNj9gash5MoDQxQ4afkfVeijDTrNhFVRs6NY3nZbDqEcrQ2zAZ4u69Gxer3dnIvvTTl6vqKQKP5dyG00R8Jm3BxLmKGR7ikAo8eduCfENbU8W41VKZzdpEbTQIbAufuvf0ZQkLTB4PddS7w5soPCGkpIWRN8O3gl7ePW5o"]
         }
     }
     

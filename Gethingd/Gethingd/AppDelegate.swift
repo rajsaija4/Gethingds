@@ -17,18 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+//        setupCreateProfileVC()
         setupAppDelegate()
-        
-        editProfile()
+        setupMainTabBarController()
+//        editProfile()
         return true
         
         if User.isExist {
             if User.details.firstName.count > 0  {
                 setupMainTabBarController()
             } else {
-//                setupCreateProfileVC()
-                editProfile()
+                setupCreateProfileVC()
+//                editProfile()
             }
         } else {
             setupLogin()
@@ -71,7 +71,7 @@ extension AppDelegate {
     
     
     func editProfile() {
-        let vc = EditProfileVC.instantiate(fromAppStoryboard: .Profile)
+        let vc = DiscoverVC.instantiate(fromAppStoryboard: .Discover)
             let nvc = UINavigationController(rootViewController: vc)
             nvc.isNavigationBarHidden = true
             window?.rootViewController = nvc

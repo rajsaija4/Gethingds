@@ -9,12 +9,18 @@
 
 import UIKit
 import RangeSeekSlider
+import GooglePlaces
 
 class FilterTVC: UITableViewController {
     
     //MARK:- VARIABLE
     
     var selectedGender =  -1
+    var gender = ""
+
+    fileprivate var latitude: String = ""
+    @IBOutlet weak var location: UIControl!
+    fileprivate var longitude: String = ""
     var onFilter: (() -> Void)?
     
     @IBOutlet var btn_gender: [UIButton]!
@@ -50,17 +56,44 @@ class FilterTVC: UITableViewController {
             if btn.tag == sender.tag {
                 btn.isSelected = true
                 selectedGender = btn.tag
+                if selectedGender == 0 {
+                   gender = "male"
+                }
+                
+                else if selectedGender == 1 {
+                    gender = "female"
+                }
+                
+                else if selectedGender == 2 {
+                    gender = "both"
+                }
+                
+                else {
+                    print("No gender Selected")
+                }
             } else {
                 btn.isSelected = false
             }
         }
         
     }
-    @IBAction func conLocationOnPress(_ sender: Any) {
+    @IBAction func locationOnPress(_ sender: UIControl) {
+        
+        let gmsACVC = GMSAutocompleteViewController()
+        gmsACVC.delegate = self
+        gmsACVC.modalPresentationStyle = .fullScreen
+        let filter = GMSAutocompleteFilter()
+        filter.type = .city
+        gmsACVC.autocompleteFilter = filter
+        present(gmsACVC, animated: true, completion: nil)
     }
+   
 
    
     @IBAction func onPressbtnSubmit(_ sender: Any) {
+        
+        
+        
     }
 }
 
@@ -75,15 +108,21 @@ extension FilterTVC {
         rangeDistance.tag = 1
         rangeDistance.delegate = self
         
+        rangeKidsCount.tag = 2
+        rangeKidsCount.delegate = self
+        
         
   
         rangeAge.selectedMinValue = CGFloat(Filter.minAge)
         rangeAge.selectedMaxValue = CGFloat(Filter.maxAge)
         rangeDistance.selectedMaxValue = CGFloat(Filter.distance)
+        rangeKidsCount.selectedMinValue = CGFloat(Filter.minKid)
+        rangeKidsCount.selectedMaxValue = CGFloat(Filter.maxKid)
        
 
         lblAge.text = "\(Filter.minAge)-\(Filter.maxAge)"
         lbl_Distance.text = "\(Filter.distance) miles"
+        lbl_kidsCount.text = "\(Filter.minKid)-\(Filter.maxKid)"
         
         if Filter.distance == 0 || Filter.distance == 1 {
             self.lbl_Distance.text = "\(Filter.distance) mile"
@@ -114,6 +153,12 @@ extension FilterTVC {
         Filter.distance = Int(rangeDistance.selectedMaxValue)
         Filter.minAge = Int(rangeAge.selectedMinValue)
         Filter.maxAge = Int(rangeAge.selectedMaxValue)
+        Filter.minKid = Int(rangeKidsCount.selectedMinValue)
+        Filter.maxKid = Int(rangeKidsCount.selectedMaxValue)
+        Filter.lookingFor = gender
+        Filter.latitude = latitude
+        Filter.longitude = longitude
+        Filter.filterApply = true
     
         onFilter?()
         self.dismiss(animated: true, completion: nil)
@@ -142,12 +187,9 @@ extension FilterTVC: RangeSeekSliderDelegate {
                     self.lbl_Distance.text = "\(maxiValue)+ miles"
                 }
             case 2:
+                self.lbl_kidsCount.text = "\(miniValue)-\(maxiValue)"
                 
-                let minFeet = miniValue / 12
-                let minInches = miniValue % 12
-                
-                let maxFeet = maxiValue / 12
-                let maxInches = maxiValue % 12
+              
                 
         
                 
@@ -166,5 +208,63 @@ extension FilterTVC {
         
         let alert = UIAlertController(title: "Oops!", message: alert)
         self.present(alert, animated: true, completion: nil)
+    }
+}
+
+
+extension FilterTVC: GMSAutocompleteViewControllerDelegate {
+    
+    func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+        //        txtAddress.text = place.name
+        let latitude = "\(place.coordinate.latitude)"
+        let longitude = "\(place.coordinate.longitude)"
+        var locationName = ""
+        var country = ""
+        var state = ""
+        var city = ""
+        var postalCode = ""
+        
+        let placeName = place.name ?? ""
+        let address = place.formattedAddress ?? ""
+        
+        var addArray:[String] = []
+        for component in place.addressComponents ?? [] {
+            if component.types.contains("locality") {
+                locationName = component.name
+            }
+            if component.types.contains("administrative_area_level_2") {
+                city = component.name
+                if city.count > 0 {
+                    addArray.append(city)
+                }
+            }
+            if component.types.contains("administrative_area_level_1") {
+                state = component.name
+                if state.count > 0 {
+                    addArray.append(state)
+                }
+            }
+            if component.types.contains("country") {
+                country = component.name
+            }
+            if component.types.contains("postal_code") {
+                postalCode = component.name
+            }
+        }
+        
+        let addressString = addArray.joined(separator: ", ")
+        //getAddressFromCenterCoordinate(centerCoordinate: place.coordinate)
+        self.latitude = latitude
+       
+        self.longitude = longitude
+     
+        self.lbl_location.text = addressString
+        dismiss(animated: true, completion: nil)
+    }
+    func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+        print("Error: ", error.localizedDescription)
+    }
+    func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+        dismiss(animated: true, completion: nil)
     }
 }

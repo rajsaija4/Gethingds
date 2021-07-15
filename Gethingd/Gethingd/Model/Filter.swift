@@ -9,24 +9,28 @@
 import UIKit
 
 struct Filter {
-    static var minAge = 18
-    static var maxAge = 100
-    static var distance = 100
-    static var minHeight = 36 // inch
-    static var maxHeight = 119 // inch 
-    static var sunSignId = 0
-    static var moonSignId = 0
-    static var risingSignId = 0
+    static var filterApply = false
+    static var lookingFor = "both"
+    static var minAge = 0
+    static var maxAge = 0
+    static var distance = 0
+    static var minKid = 0  // inch
+    static var maxKid = 100 // inch
+    static var latitude = "0.0"
+    static var longitude = "0.0"
+ 
 
     
     static func reset() {
+        filterApply = false
+        lookingFor = "both"
         minAge = 18
         maxAge = 40
         distance = 100
-        minHeight = 140
-        maxHeight = 200
-        sunSignId = 0
-        moonSignId = 0
-        risingSignId = 0
+        minKid = 0
+        maxKid = 100
+        latitude = "0.0"
+        longitude = "0.0"
+       
     }
 }

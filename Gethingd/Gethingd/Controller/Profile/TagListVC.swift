@@ -8,7 +8,7 @@
 import UIKit
 import TagListView
 
-protocol selectedPassion {
+protocol selectedPassionDelegate {
     
     func passion(passion:[ String ])
     
@@ -17,16 +17,36 @@ protocol selectedPassion {
 class TagListVC: UIViewController, TagListViewDelegate {
     
     var arrPassion:[String] = []
+    var arrSelectedTagList:[String] = []
+    var arrTagsTitle:[String] = []
+  
+    
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var tagViewElements: TagListView!
-    var delegate:selectedPassion?
+    var delegate:selectedPassionDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
+//        getPassion()
+//        if User.details.passion.count > 0{
+//            arrSelectedTagList.append(contentsOf: User.details.passion)
+//        }
+        
         mainView.layer.cornerRadius = 15
         tagViewElements.delegate = self
         tagViewElements.textFont = AppFonts.Poppins_Medium.withSize(17)
         tagViewElements.alignment = .leading
-        tagViewElements.addTags(["Biking","Walking","Beauty","Golf","German Hip Hop","Vegan","Fitness","Activism","Dog Lover","Sports","Writer","Chilling","Driving","Music","Swimming","Kisses","Laughing","Week Trips"])
+        tagViewElements.addTags(arrTagsTitle)
+        
+        
+        
+        if arrSelectedTagList.count > 0 {
+        for tagView in tagViewElements.tagViews {
+            if arrSelectedTagList.contains(tagView.currentTitle ?? "") {
+                tagView.isSelected = true
+                arrPassion.append(tagView.currentTitle ?? "")
+            }
+        }
+        }
 //        tagViewElements.layer.cornerRadius = tagViewElements.frame.size.height/2
 //        tagViewElements.addTag("On tap will be removed").onTap = { [weak self] tagView in
 //            self?.tagViewElements.removeTagView(tagView)
@@ -40,6 +60,7 @@ class TagListVC: UIViewController, TagListViewDelegate {
         tagView.isSelected = !tagView.isSelected
         if tagView.isSelected {
             arrPassion.append(title)
+            
         }
         
         else {
@@ -75,3 +96,6 @@ class TagListVC: UIViewController, TagListViewDelegate {
     */
 
 }
+
+
+

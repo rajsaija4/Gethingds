@@ -16,6 +16,7 @@ class UserView: UIView {
     @IBOutlet weak var btnRewind: UIButton!
     @IBOutlet weak var imgUser: UIImageView!
     @IBOutlet weak var imgSuperLike: UIImageView!
+    @IBOutlet weak var lbladdress: UILabel!
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
