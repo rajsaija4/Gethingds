@@ -22,7 +22,12 @@ class CreateProfileTVC: UITableViewController, UIImagePickerControllerDelegate, 
         arrPassion.append(contentsOf: passion)
         txtPassion.textFont = AppFonts.Poppins_Medium.withSize(17)
         txtPassion.alignment = .leading
+        txtPassion.removeAllTags()
         txtPassion.addTags(arrPassion)
+        if passion.isEmpty {
+            lblPassion.isHidden = false
+        }
+        
         
     }
     
@@ -113,6 +118,10 @@ class CreateProfileTVC: UITableViewController, UIImagePickerControllerDelegate, 
         vc.delegate = self
         for i in arrTags {
             vc.arrTagsTitle.append(i.passion)
+        }
+        if arrPassion.count > 0 {
+            vc.arrSelectedTagList.removeAll()
+            vc.arrSelectedTagList.append(contentsOf: arrPassion)
         }
         vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .crossDissolve
@@ -461,10 +470,7 @@ extension CreateProfileTVC {
         
         txtDate.setInputViewDatePicker(target: self, selector: #selector(self.onDoneBtnTap))
         
-        for i in 0..<50 {
-            self.arrKids[i] = "New born"
-        }
-        
+       
         getPassion()
     }
     
@@ -819,6 +825,10 @@ extension CreateProfileTVC {
             self.arrTags.append(contentsOf: PassionSetting.passion)
             print(self.arrTags)
             self.hideHUD()
+            for i in 0...PassionSetting.noKids {
+                self.arrKids[i] = "New born"
+            }
+            self.collKid.reloadData()
         } _: { (error) in
             self.hideHUD()
             self.showToast(error)

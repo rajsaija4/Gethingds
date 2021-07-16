@@ -48,11 +48,15 @@ class ProfileTVC: UITableViewController {
         super.viewDidLoad()
         lblName.text = User.details.firstName
         lblAddress.text = User.details.address
+        lblAstroLike.text = "FREE LIKES : \(AppSupport.unreadCount)"
+        lblMoonBoosts.text = "REVIEW LATER : \(AppSupport.remainingLikes)"
         
         
         if let url = URL(string: User.details.image1) {
             self.imgUser.kf.setImage(with: url)
         }
+        
+        
         
 //        setupUI()
        
@@ -372,12 +376,12 @@ extension ProfileTVC {
               self.navigationController?.pushViewController(vc, animated: true)
                 break
             case 3:
-//                let vc = NotificationVC.instantiate(fromAppStoryboard: .Main)
+                let vc = SubscribeVC.instantiate(fromAppStoryboard: .Upgrade)
 //                vc.onPopView = { [weak self] in
 //                    self?.setupNavigationBar()
 //                }
-//                vc.hidesBottomBarWhenPushed = true
-//                navigationController?.pushViewController(vc, animated: false)
+                vc.hidesBottomBarWhenPushed = true
+                navigationController?.pushViewController(vc, animated: false)
             break
 //            case 4:
 //                guard isPurchase else {

@@ -36,9 +36,6 @@ class TagListVC: UIViewController, TagListViewDelegate {
         tagViewElements.textFont = AppFonts.Poppins_Medium.withSize(17)
         tagViewElements.alignment = .leading
         tagViewElements.addTags(arrTagsTitle)
-        
-        
-        
         if arrSelectedTagList.count > 0 {
         for tagView in tagViewElements.tagViews {
             if arrSelectedTagList.contains(tagView.currentTitle ?? "") {

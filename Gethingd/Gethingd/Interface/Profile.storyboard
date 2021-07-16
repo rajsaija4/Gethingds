@@ -42,7 +42,7 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIGN IN" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gIr-ff-yrV">
-                                    <rect key="frame" x="311" y="51" width="73" height="28"/>
+                                    <rect key="frame" x="311" y="53.333333333333336" width="73" height="23.333333333333336"/>
                                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="20"/>
                                     <color key="textColor" red="0.33004510399999998" green="0.1135013327" blue="0.27317330239999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -150,7 +150,7 @@
                                                                             <subviews>
                                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2EJ-DV-2pC" customClass="CustomTextField" customModule="Gethingd" customModuleProvider="target">
                                                                                     <rect key="frame" x="0.0" y="4.6666666666666732" width="342" height="22.666666666666671"/>
-                                                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                                                                                     <textInputTraits key="textInputTraits"/>
                                                                                 </textField>
@@ -184,6 +184,7 @@
                                                                             <subviews>
                                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date of Birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LXZ-f0-w3r" customClass="CustomTextField" customModule="Gethingd" customModuleProvider="target">
                                                                                     <rect key="frame" x="0.0" y="4.6666666666666572" width="342" height="22.666666666666668"/>
+                                                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                                                                                     <textInputTraits key="textInputTraits"/>
                                                                                 </textField>
@@ -406,6 +407,7 @@
                                                                     <subviews>
                                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Job Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o5B-sS-bNs">
                                                                             <rect key="frame" x="0.0" y="5.6666666666666732" width="342" height="22.666666666666671"/>
+                                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                                                                             <textInputTraits key="textInputTraits"/>
                                                                         </textField>
@@ -530,6 +532,9 @@
                                                                                 <userDefinedRuntimeAttribute type="color" keyPath="tagBackgroundColor">
                                                                                     <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 </userDefinedRuntimeAttribute>
+                                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                    <real key="value" value="12"/>
+                                                                                </userDefinedRuntimeAttribute>
                                                                             </userDefinedRuntimeAttributes>
                                                                         </view>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35F-jg-G2M">
@@ -582,7 +587,7 @@
                                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="About Information" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="18C-6m-6wq">
                                                                     <rect key="frame" x="16" y="8" width="350" height="106"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <color key="textColor" red="0.29894259569999998" green="0.29898265000000002" blue="0.29892891649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="textColor" red="0.29803921570000003" green="0.29803921570000003" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                 </textView>
@@ -1028,6 +1033,7 @@
                                                                     <subviews>
                                                                         <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="No of Kids" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RBC-MY-ReG" customClass="CustomTextField" customModule="Gethingd" customModuleProvider="target">
                                                                             <rect key="frame" x="0.0" y="5.6666666666666661" width="319" height="22.666666666666671"/>
+                                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                                                                             <textInputTraits key="textInputTraits"/>
                                                                         </textField>
@@ -1191,11 +1197,11 @@
                         <sections>
                             <tableViewSection id="ltj-Jd-9Pf">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="290" id="fZT-BQ-fZz">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="290"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="260" id="fZT-BQ-fZz">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="260"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fZT-BQ-fZz" id="rDt-kD-DUW">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="290"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="260"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_user_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="c5e-ZL-DkE">
@@ -1210,11 +1216,17 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="VPG-Tp-xgx">
-                                                    <rect key="frame" x="20" y="140" width="335" height="68"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VPG-Tp-xgx">
+                                                    <rect key="frame" x="20" y="140" width="335" height="38"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passiac Washingtone DC" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6U-JD-H0n">
-                                                            <rect key="frame" x="0.0" y="0.0" width="335" height="68"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Michal P. Garcia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWs-Ay-Z0B">
+                                                            <rect key="frame" x="0.0" y="0.0" width="335" height="17"/>
+                                                            <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="17"/>
+                                                            <color key="textColor" red="0.32944318649999998" green="0.12744057180000001" blue="0.27206125860000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Passiac Washingtone DC" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6U-JD-H0n">
+                                                            <rect key="frame" x="0.0" y="17" width="335" height="21"/>
                                                             <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="15"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -1222,7 +1234,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aj2-xP-LyO">
-                                                    <rect key="frame" x="20" y="224" width="335" height="50"/>
+                                                    <rect key="frame" x="20" y="194" width="335" height="50"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="wbs-2b-mNI">
                                                             <rect key="frame" x="16" y="0.0" width="303" height="50"/>
@@ -1287,13 +1299,6 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Michal P. Garcia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWs-Ay-Z0B">
-                                                    <rect key="frame" x="24" y="140" width="335" height="36.333333333333336"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="17"/>
-                                                    <color key="textColor" red="0.32944318649999998" green="0.12744057180000001" blue="0.27206125860000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_camera" translatesAutoresizingMaskIntoConstraints="NO" id="UKh-Zj-xMa">
                                                     <rect key="frame" x="217.66666666666666" y="100" width="20" height="20"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1325,7 +1330,7 @@
                             <tableViewSection id="SC2-Da-3ve">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="60" id="8RO-Nf-nFr">
-                                        <rect key="frame" x="0.0" y="374" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="344" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8RO-Nf-nFr" id="pX7-b5-cPy">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
@@ -1342,7 +1347,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZO-LR-iNm">
-                                                            <rect key="frame" x="45" y="8" width="240" height="24"/>
+                                                            <rect key="frame" x="45" y="10" width="240" height="20"/>
                                                             <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="17"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -1374,7 +1379,7 @@
                             <tableViewSection id="Blw-Jj-dL2">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="yCs-zP-7qp">
-                                        <rect key="frame" x="0.0" y="490" width="375" height="230"/>
+                                        <rect key="frame" x="0.0" y="460" width="375" height="230"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yCs-zP-7qp" id="NUx-kF-0Ff">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="230"/>
@@ -1391,7 +1396,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Setting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1QI-HH-uoO">
-                                                            <rect key="frame" x="48" y="3" width="237" height="24"/>
+                                                            <rect key="frame" x="48" y="5" width="237" height="20"/>
                                                             <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="17"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -1462,7 +1467,7 @@
                                                                     </connections>
                                                                 </button>
                                                                 <button hidden="YES" opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="CbR-Ge-PiJ">
-                                                                    <rect key="frame" x="663" y="0.0" width="0.0" height="36"/>
+                                                                    <rect key="frame" x="663" y="0.0" width="0.0" height="32"/>
                                                                     <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="17"/>
                                                                     <state key="normal" title="Resume Account">
                                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1516,7 +1521,7 @@
                             <tableViewSection id="ZgI-zR-uIO">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="60" id="tEw-2d-0zf">
-                                        <rect key="frame" x="0.0" y="776" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="746" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tEw-2d-0zf" id="d5e-y5-2yy">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
@@ -1533,7 +1538,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upgrade" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4rR-xm-TOF">
-                                                            <rect key="frame" x="45" y="8" width="240" height="24"/>
+                                                            <rect key="frame" x="45" y="10" width="240" height="20"/>
                                                             <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="17"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -1565,7 +1570,7 @@
                             <tableViewSection id="AX9-uI-XCX">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="60" id="XcY-KJ-rkt">
-                                        <rect key="frame" x="0.0" y="892" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="862" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XcY-KJ-rkt" id="XhU-M2-eVh">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
@@ -1582,7 +1587,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logout" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Io-Bu-YuX">
-                                                            <rect key="frame" x="45" y="8" width="240" height="24"/>
+                                                            <rect key="frame" x="45" y="10" width="240" height="20"/>
                                                             <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="17"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -1614,7 +1619,7 @@
                             <tableViewSection id="0nQ-i6-SYK">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="60" id="rqx-wM-Rug">
-                                        <rect key="frame" x="0.0" y="1008" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="978" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rqx-wM-Rug" id="FWU-pQ-tg4">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
@@ -1624,7 +1629,7 @@
                                                     <rect key="frame" x="20" y="10" width="335" height="40"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Evc-R4-Mcs">
-                                                            <rect key="frame" x="0.0" y="9.6666666666666679" width="335" height="21"/>
+                                                            <rect key="frame" x="0.0" y="11.33333333333333" width="335" height="17.666666666666671"/>
                                                             <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="15"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -2295,11 +2300,11 @@
                             </tableViewSection>
                             <tableViewSection id="NOo-fg-6rd">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="550" id="Z5K-d8-Sqw">
-                                        <rect key="frame" x="0.0" y="564" width="414" height="550"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="600" id="Z5K-d8-Sqw">
+                                        <rect key="frame" x="0.0" y="564" width="414" height="600"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Z5K-d8-Sqw" id="D2O-aI-NGc">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="550"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="600"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xyl-y5-NKR">
@@ -2309,7 +2314,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8Cc-a5-avI">
-                                                    <rect key="frame" x="20" y="44.333333333333343" width="374" height="495.66666666666663"/>
+                                                    <rect key="frame" x="20" y="44.333333333333314" width="374" height="545.66666666666674"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8YS-D3-p71">
                                                             <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
@@ -2348,6 +2353,7 @@
                                                                     <subviews>
                                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DOd-tr-FiC" customClass="CustomTextField" customModule="Gethingd" customModuleProvider="target">
                                                                             <rect key="frame" x="16" y="8" width="158" height="34"/>
+                                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                                                                             <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                                         </textField>
@@ -2368,14 +2374,48 @@
                                                                 </view>
                                                             </subviews>
                                                         </stackView>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oDi-Wn-1QH">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MvV-KV-nCm">
                                                             <rect key="frame" x="0.0" y="60" width="374" height="50"/>
+                                                            <subviews>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="myE-WP-Ba8">
+                                                                    <rect key="frame" x="16" y="8" width="342" height="34"/>
+                                                                    <subviews>
+                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nSa-Ye-dDP" customClass="CustomTextField" customModule="Gethingd" customModuleProvider="target">
+                                                                            <rect key="frame" x="0.0" y="5.6666666666666732" width="342" height="22.666666666666671"/>
+                                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
+                                                                            <textInputTraits key="textInputTraits"/>
+                                                                        </textField>
+                                                                    </subviews>
+                                                                </stackView>
+                                                            </subviews>
+                                                            <color key="backgroundColor" red="0.9180724025" green="0.9181824327" blue="0.91803485159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="myE-WP-Ba8" secondAttribute="trailing" constant="16" id="5cn-xx-k1M"/>
+                                                                <constraint firstAttribute="bottom" secondItem="myE-WP-Ba8" secondAttribute="bottom" constant="8" id="QVX-Rd-U3O"/>
+                                                                <constraint firstItem="myE-WP-Ba8" firstAttribute="leading" secondItem="MvV-KV-nCm" secondAttribute="leading" constant="16" id="chm-Wm-3C9"/>
+                                                                <constraint firstItem="myE-WP-Ba8" firstAttribute="top" secondItem="MvV-KV-nCm" secondAttribute="top" constant="8" id="qRq-rp-AgA"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="25"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                    <real key="value" value="1"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                    <color key="value" red="0.97647058819999999" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oDi-Wn-1QH">
+                                                            <rect key="frame" x="0.0" y="120" width="374" height="50"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6OF-0n-lHZ">
                                                                     <rect key="frame" x="16" y="8" width="342" height="34"/>
                                                                     <subviews>
                                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date of Birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Vd-Qb-iLL" customClass="CustomTextField" customModule="Gethingd" customModuleProvider="target">
-                                                                            <rect key="frame" x="0.0" y="5.6666666666666732" width="342" height="22.666666666666671"/>
+                                                                            <rect key="frame" x="0.0" y="5.666666666666659" width="342" height="22.666666666666671"/>
                                                                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                                                                             <textInputTraits key="textInputTraits"/>
                                                                         </textField>
@@ -2403,13 +2443,14 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sRl-eY-P1i" customClass="UIControl">
-                                                            <rect key="frame" x="0.0" y="120" width="374" height="50"/>
+                                                            <rect key="frame" x="0.0" y="180" width="374" height="50"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="aWK-JK-t8a">
                                                                     <rect key="frame" x="16" y="8" width="342" height="34"/>
                                                                     <subviews>
                                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Job Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qjU-3P-QpT">
                                                                             <rect key="frame" x="0.0" y="5.666666666666659" width="342" height="22.666666666666671"/>
+                                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                                                                             <textInputTraits key="textInputTraits"/>
                                                                         </textField>
@@ -2437,12 +2478,12 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cvr-sF-B82">
-                                                            <rect key="frame" x="0.0" y="180.00000000000003" width="374" height="285.66666666666674"/>
+                                                            <rect key="frame" x="0.0" y="239.99999999999997" width="374" height="275.66666666666663"/>
                                                             <subviews>
                                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="About Information" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NAF-A7-xJp">
-                                                                    <rect key="frame" x="16" y="8" width="350" height="269.66666666666669"/>
+                                                                    <rect key="frame" x="16" y="8" width="350" height="259.66666666666669"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <color key="textColor" red="0.29894259569999998" green="0.29898265000000002" blue="0.29892891649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="textColor" red="0.29803921570000003" green="0.29803921570000003" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                 </textView>
@@ -2461,7 +2502,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Characters left : 100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HaP-cr-9Db">
-                                                            <rect key="frame" x="0.0" y="475.66666666666669" width="374" height="20"/>
+                                                            <rect key="frame" x="0.0" y="525.66666666666663" width="374" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="2S8-hV-JJu"/>
                                                             </constraints>
@@ -2490,7 +2531,7 @@
                             <tableViewSection id="yiU-dd-fJe">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="200" id="8ad-tb-3jI">
-                                        <rect key="frame" x="0.0" y="1170" width="414" height="200"/>
+                                        <rect key="frame" x="0.0" y="1220" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8ad-tb-3jI" id="gGK-ry-0gh">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
@@ -2507,6 +2548,7 @@
                                                                     <subviews>
                                                                         <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="No of Kids" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="psZ-Vy-Kwe" customClass="CustomTextField" customModule="Gethingd" customModuleProvider="target">
                                                                             <rect key="frame" x="0.0" y="5.6666666666666661" width="319" height="22.666666666666671"/>
+                                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                                                                             <textInputTraits key="textInputTraits"/>
                                                                         </textField>
@@ -2572,14 +2614,14 @@
                             <tableViewSection id="L3t-LH-SsL">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="200" id="5gy-0Q-qnf">
-                                        <rect key="frame" x="0.0" y="1426" width="414" height="200"/>
+                                        <rect key="frame" x="0.0" y="1476" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5gy-0Q-qnf" id="hNJ-lt-cLz">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LDf-O0-wBQ">
-                                                    <rect key="frame" x="20" y="8" width="374" height="184"/>
+                                                    <rect key="frame" x="20" y="8" width="374" height="90"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZFO-uT-pDx" customClass="UIControl">
                                                             <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
@@ -2611,7 +2653,6 @@
                                                                 <constraint firstAttribute="trailing" secondItem="8qZ-ih-leg" secondAttribute="trailing" constant="16" id="Wz4-wX-kjD"/>
                                                                 <constraint firstItem="8qZ-ih-leg" firstAttribute="leading" secondItem="ZFO-uT-pDx" secondAttribute="leading" constant="16" id="cgb-6I-nIq"/>
                                                                 <constraint firstItem="8qZ-ih-leg" firstAttribute="top" secondItem="ZFO-uT-pDx" secondAttribute="top" constant="8" id="nED-Yo-ItK"/>
-                                                                <constraint firstAttribute="height" constant="50" id="tbE-Hq-iDh"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -2626,8 +2667,11 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pcw-Cf-qrP" customClass="TagListView" customModule="TagListView">
-                                                            <rect key="frame" x="0.0" y="58" width="374" height="126"/>
+                                                            <rect key="frame" x="0.0" y="58" width="374" height="32"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" id="VsW-PQ-qqB"/>
+                                                            </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="paddingY">
                                                                     <real key="value" value="10"/>
@@ -2664,7 +2708,6 @@
                                                 <constraint firstAttribute="trailing" secondItem="LDf-O0-wBQ" secondAttribute="trailing" constant="20" id="BOS-tC-2CG"/>
                                                 <constraint firstItem="LDf-O0-wBQ" firstAttribute="top" secondItem="hNJ-lt-cLz" secondAttribute="top" constant="8" id="CEe-Dg-d4B"/>
                                                 <constraint firstItem="LDf-O0-wBQ" firstAttribute="leading" secondItem="hNJ-lt-cLz" secondAttribute="leading" constant="20" id="GFf-Ji-ysi"/>
-                                                <constraint firstAttribute="bottom" secondItem="LDf-O0-wBQ" secondAttribute="bottom" constant="8" id="gVI-Lv-Nuc"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2674,7 +2717,7 @@
                             <tableViewSection id="h79-Um-zSE">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="100" id="TdV-kr-Qgn">
-                                        <rect key="frame" x="0.0" y="1682" width="414" height="100"/>
+                                        <rect key="frame" x="0.0" y="1732" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TdV-kr-Qgn" id="hV7-DJ-S6A">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
@@ -2757,7 +2800,7 @@
                             <tableViewSection id="nhH-3D-T8W">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="80" id="9q3-QY-eTw">
-                                        <rect key="frame" x="0.0" y="1838" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="1888" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9q3-QY-eTw" id="1pj-vE-nCu">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
@@ -2778,6 +2821,9 @@
                                                             <real key="value" value="25"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="onPressUpdatebtnTap:" destination="1an-4f-TLR" eventType="touchUpInside" id="peR-zB-zfX"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2800,6 +2846,7 @@
                         <outlet property="selectedPassion" destination="pcw-Cf-qrP" id="qsw-G6-CcT"/>
                         <outlet property="txtAbout" destination="NAF-A7-xJp" id="dQJ-U3-R3Z"/>
                         <outlet property="txtDob" destination="5Vd-Qb-iLL" id="IEc-Cs-OVj"/>
+                        <outlet property="txtEmail" destination="nSa-Ye-dDP" id="xDo-uR-rkB"/>
                         <outlet property="txtFname" destination="b8M-aC-eTm" id="6kw-Nz-XVM"/>
                         <outlet property="txtJobTitle" destination="qjU-3P-QpT" id="XbF-OI-MiL"/>
                         <outlet property="txtLname" destination="DOd-tr-FiC" id="4AA-SA-3Ok"/>

@@ -14,11 +14,12 @@ class EditProfileVC: UITableViewController, TagListViewDelegate, UIImagePickerCo
 //    let picker = UIImagePickerController()
     func passion(passion: [String]) {
         arrPassion.removeAll()
-//        selectedPassion.isHidden = true
         arrPassion.append(contentsOf: passion)
         selectedPassion.textFont = AppFonts.Poppins_Medium.withSize(17)
         selectedPassion.alignment = .leading
+        selectedPassion.removeAllTags()
         selectedPassion.addTags(arrPassion)
+        
         
     }
   
@@ -37,11 +38,15 @@ class EditProfileVC: UITableViewController, TagListViewDelegate, UIImagePickerCo
     @IBOutlet weak var txtDob: CustomTextField!
     @IBOutlet weak var txtFname: CustomTextField!
     @IBOutlet weak var txtLname: CustomTextField!
+    @IBOutlet weak var txtEmail: CustomTextField!
     @IBOutlet var img_Profile: [UIImageView]!
     @IBOutlet var img_Edit: [UIButton]!
     var selectedImage = 0
     var selectedGender = -1
+    var isFromLogin = false
+    var onPopView: (() -> Void)?
     var removeImage = 0
+    var arrTags:[TagList] = []
     fileprivate var arrPassion:[String] = []
 
     fileprivate let placeHolder = "About Information"
@@ -55,6 +60,12 @@ class EditProfileVC: UITableViewController, TagListViewDelegate, UIImagePickerCo
     @IBOutlet weak var selectedPassion: TagListView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        txtFname.setPlaceHolderColor()
+        txtLname.setPlaceHolderColor()
+        txtDob.setPlaceHolderColor()
+        txtEmail.setPlaceHolderColor()
+        txtNumberOfKids.setPlaceHolderColor()
+        txtAbout.delegate = self
         setupUI()
         navigationController?.navigationBar.isHidden = true
 //        getProfile()
@@ -69,6 +80,218 @@ class EditProfileVC: UITableViewController, TagListViewDelegate, UIImagePickerCo
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
   
+    }
+    @IBAction func onPressUpdatebtnTap(_ sender: UIButton) {
+        
+        let img1 = img_Profile[0].image
+        let img2 = img_Profile[1].image
+        let img3 = img_Profile[2].image
+        let img4 = img_Profile[3].image
+        let img5 = img_Profile[4].image
+        let img6 = img_Profile[5].image
+        
+        let imgData1 = img1?.jpegData(compressionQuality: 0.5)
+        let imgData2 = img2?.jpegData(compressionQuality: 0.5)
+        let imgData3 = img3?.jpegData(compressionQuality: 0.5)
+        let imgData4 = img4?.jpegData(compressionQuality: 0.5)
+        let imgData5 = img5?.jpegData(compressionQuality: 0.5)
+        let imgData6 = img6?.jpegData(compressionQuality: 0.5)
+        
+        var source: [String: Data] = [:]
+        
+        if imgData1 != nil {
+            source.merge(["image1": imgData1!]) { (current, _) -> Data in
+                return current
+            }
+        }
+        
+        if imgData2 != nil {
+            source.merge(["image2": imgData2!]) { (current, _) -> Data in
+                return current
+            }
+        }
+        
+        if imgData3 != nil {
+            source.merge(["image3": imgData3!]) { (current, _) -> Data in
+                return current
+            }
+        }
+        
+        if imgData4 != nil {
+            source.merge(["image4": imgData4!]) { (current, _) -> Data in
+                return current
+            }
+        }
+        
+        if imgData5 != nil {
+            source.merge(["image5": imgData5!]) { (current, _) -> Data in
+                return current
+            }
+        }
+        
+        if imgData6 != nil {
+            source.merge(["image6": imgData6!]) { (current, _) -> Data in
+                return current
+            }
+        }
+        
+        guard source.count > 0 else {
+            self.showAlert("Please upload at least one picture")
+            return
+        }
+        
+        
+        
+        
+        //        guard let img1 = arrImageProfile[0].image, let img2 = arrImageProfile[1].image, let img3 = arrImageProfile[2].image, let img4 = arrImageProfile[3].image, let img5 = arrImageProfile[4].image else {
+        //            self.showAlert("Please Select All Profile Image")
+        //            return
+        //        }
+        
+        
+        
+        guard let firstName = txtFname.text, firstName.count > 0 else {
+            self.showAlert("Please \(txtFname.placeholder ?? "")")
+            return
+        }
+        
+        guard let lastName = txtLname.text, lastName.count > 0 else {
+            self.showAlert("Please \(txtLname.placeholder ?? "")")
+            return
+        }
+        
+       
+        
+        guard let dob = txtDob.text, dob.count > 0 else {
+            self.showAlert("Please Select Date Of Birth")
+            return
+        }
+        
+        guard let email = txtEmail.text, email.count > 0, email != placeHolder else {
+            self.showAlert("Please Enter Email")
+            return
+        }
+        
+        guard let noOfkids = txtNumberOfKids.text, noOfkids.count > 0 else {
+            self.showAlert("Please Enter No of Kids")
+            return
+        }
+        
+        
+        guard email.isValidEmail else {
+            self.showAlert("Please Enter Valid Email")
+            return
+        }
+        
+        
+//        let kids = arrKids.values.map{ String($0) }
+        var tempKids:[String] = []
+        for values in arrKids.values {
+            tempKids.append(values)
+        }
+        
+        var kids:[String] = []
+        for i in 0..<collKid.visibleCells.count {
+            kids.append(tempKids[i])
+        }
+        
+        
+        
+        guard selectedGender  >= 0  else {
+            self.showAlert("Please Select Gender")
+            return
+        }
+        
+        var gendertoPass = ""
+
+        if selectedGender == 0 {
+                gendertoPass = "male"
+        }
+
+         if selectedGender == 1 {
+            gendertoPass = "female"
+        }
+
+        if selectedGender == 2 {
+            gendertoPass = "other"
+        }
+
+        
+          
+        var arrPassionIds = [String]()
+        
+        for passion in arrPassion {
+            if let id = self.arrTags.first(where: {$0.passion == passion})?.id {
+                arrPassionIds.append("\(id)")
+            }
+        }
+        
+        
+        
+        let parameters =
+            [
+                "first_name": firstName,
+                "last_name": lastName,
+                "email": email,
+                "dob": dob,
+                "job_title":txtJobTitle.text ?? "",
+                "about": txtAbout.text ?? "",
+                "kids":kids.joined(separator: ","),
+                "num_of_kids": noOfkids,
+                "gender": gendertoPass,
+                "passion":arrPassionIds.joined(separator: ",")
+
+            ] as [String : String]
+
+
+
+        addProfile(source: source, parameters: parameters)
+        
+    }
+    
+    
+        fileprivate func addProfile(source: [String: Data], parameters: [String: String]) {
+            showHUD()
+            NetworkManager.Profile.addProfile(source: source, params: parameters, { (message) in
+                self.hideHUD()
+                
+                if User.details.email_verified == 0
+                {
+                self.showVerifyEmailAlert()
+                    return
+                }
+                
+                
+    //                        self.showAlert(message)
+                
+                let alert = UIAlertController(title: "Success", message: message) { (_) in
+                    if self.isFromLogin {
+                        APPDEL?.setupMainTabBarController()
+                    } else {
+                        self.onPopView?()
+                        self.navigationController?.popViewController(animated: false)
+                    }
+                }
+                self.present(alert, animated: true, completion: nil)
+                
+                
+            }) { (error) in
+                self.hideHUD()
+                self.showAlert(error)
+            }
+        }
+    
+    fileprivate func verifyEmailOTP(param: [String: Any]) {
+        
+        showHUD()
+        NetworkManager.Auth.verifyEmail(param: param, { (success) in
+            self.hideHUD()
+            APPDEL?.setupMainTabBarController()
+            
+        }) { (error) in
+            self.hideHUD()
+            self.showAlert(error)
+        }
     }
     
     @IBAction func onPressbackBtn(_ sender: UIButton) {
@@ -213,11 +436,16 @@ class EditProfileVC: UITableViewController, TagListViewDelegate, UIImagePickerCo
     
     @IBAction func onPressEditPassion(_ sender: UIButton) {
         let vc = TagListVC.instantiate(fromAppStoryboard: .Profile)
+        vc.delegate = self
+        for i in arrTags {
+            vc.arrTagsTitle.append(i.passion)
+        }
+        if arrPassion.count > 0 {
+            vc.arrSelectedTagList.removeAll()
+            vc.arrSelectedTagList.append(contentsOf: arrPassion)
+        }
         vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .crossDissolve
-        vc.delegate = self
-        vc.arrSelectedTagList.removeAll()
-        vc.arrSelectedTagList.append(contentsOf: arrPassion)
         self.present(vc, animated: true, completion: nil)
         
         
@@ -398,16 +626,25 @@ extension EditProfileVC {
     
     fileprivate func setupUI() {
         
-        getProfile()
+        
+        getPassion()
         
 //        navigationItem.setHidesBackButton(true, animated: true)
         
-//        txtDate.setInputViewDatePicker(target: self, selector: #selector(self.onDoneBtnTap))
+        txtDob.setInputViewDatePicker(target: self, selector: #selector(self.onDoneBtnTap))
         
-        for i in 0..<arrKids.count {
-            self.arrKids[i] = "New born"
+//        for i in 0..<arrKids.count {
+//            self.arrKids[i] = "New born"
+//        }
+        
+    }
+    
+    @objc fileprivate func onDoneBtnTap() {
+        
+        if let datePicker = txtDob.inputView as? UIDatePicker, txtDob.isFirstResponder {
+            txtDob.text = DateFormatter().ecmDateFormatter.string(from: datePicker.date)
+            txtDob.resignFirstResponder()
         }
-        
     }
     
     fileprivate func getProfile() {
@@ -449,35 +686,51 @@ extension EditProfileVC {
                 self.img_Remove[5].isHidden = false
             }
             self.arrPassion.removeAll()
-            self.arrPassion.append(contentsOf: User.details.passion)
-            self.selectedPassion.addTags(self.arrPassion)
-            
+            for id in User.details.passion {
+                if let pas = self.arrTags.first(where: {$0.id == Int(id)})?.passion {
+                    self.arrPassion.append(pas)
+                }
+                
+            }
+            print(self.arrPassion)
+            for i in self.arrPassion {
+                self.selectedPassion.addTag(i)
+            }
+          
+            self.txtEmail.text = User.details.email
             self.txtFname.text = User.details.firstName
             self.txtLname.text = User.details.lastName
             self.txtDob.text = User.details.dob
+            if User.details.about.count > 0 {
             self.txtAbout.text = User.details.about
-            self.txtJobTitle.text = User.details.job_title
+            }
+            self.lblWordCounter.text = "Characters left: \(150 - self.txtAbout.text.count)"
             self.txtNumberOfKids.text = String(User.details.num_of_kids)
             self.numberOfKids = User.details.num_of_kids
             if User.details.gender == "male" {
                 self.btnGender[0].isSelected = true
+                self.selectedGender = 0
                 
             }
             else if User.details.gender == "female" {
                 self.btnGender[1].isSelected = true
+                self.selectedGender = 1
                 
             }
             else {
                 self.btnGender[2].isSelected = true
+                self.selectedGender = 2
             }
             
-            let count = User.details.user_kids.count
-            for i in User.details.user_kids {
-                for index in 0...count - 1{
-                    self.arrKids[index] = i
-                }
+            for i in 0..<User.details.user_kids.count {
+                self.arrKids[i] = User.details.user_kids[i]
             }
-            print(self.arrKids)
+            
+            
+            for i in 0..<User.details.user_kids.count {
+                self.arrKids[i] = User.details.user_kids[i]
+            }
+            
             self.collKid.reloadData()
 //            self.tableView.reloadData()
         
@@ -504,13 +757,56 @@ extension EditProfileVC: UITextViewDelegate {
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if txtAbout.text.isEmpty {
+            txtAbout.textColor = UIColor(hexString: "#4C4C4C")
             txtAbout.text = placeHolder
         }
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        txtAbout.textColor = .black
         lblWordCounter.text = "Characters left: \(150 - txtAbout.text.count)"
         return txtAbout.text.count < 150
     }
     
+    
+    fileprivate func getPassion() {
+         showHUD()
+         NetworkManager.getPassion { (PassionSetting) in
+             self.arrTags.append(contentsOf: PassionSetting.passion)
+             print(self.arrTags)
+             self.hideHUD()
+             for i in 0...PassionSetting.noKids {
+                 self.arrKids[i] = "New born"
+             }
+             self.collKid.reloadData()
+            self.getProfile()
+         } _: { (error) in
+             self.hideHUD()
+             self.showToast(error)
+         }
+
+
+         
+     }
+}
+extension EditProfileVC {
+    
+    func showAlert(_ alert: String) {
+        let alert = UIAlertController(title: "Oops!", message: alert)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
+    fileprivate func showVerifyEmailAlert() {
+        guard let email = self.txtEmail.text else { return }
+        let alert = UIAlertController(title: "Email OTP Verification", message: "Please enter the code received in your email \(email). If you do not see email in your Inbox then please check your Spam/Junk emails.", actionName: "Verify", placeholder: "Enter Verification OTP") { (txtOTP) in
+            
+            let param = [
+                "email": email,
+                "otp": txtOTP.text ?? ""
+            ]
+            self.verifyEmailOTP(param: param)
+        }
+        self.present(alert, animated: true, completion: nil)
+    }
 }

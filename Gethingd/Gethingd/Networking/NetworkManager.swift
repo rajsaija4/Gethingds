@@ -173,7 +173,9 @@ extension NetworkManager {
                     fail(response.message)
                     return
                 }
-         
+                AppSupport.unreadCount = response["data"]["remaining_review_later_count"].intValue
+                AppSupport.remainingLikes = response["data"]["remaining_likes_count"].intValue
+                AppSupport.isLikeLimited = response["data"]["is_limited"].stringValue == "Yes"
 //                let user = User(json: response, token: User.details.api_token)
                 let user = User(response)
                 user.save()
