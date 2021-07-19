@@ -6,13 +6,15 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ProfilePhotoCollectionCell: UICollectionViewCell {
 
     @IBOutlet weak var imgProfiles: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+       
     }
+ 
 
 }

@@ -16,6 +16,10 @@ class UserDetailsTVC: UITableViewController, TagListViewDelegate {
     
     //MARK:- VARIABLE
     @IBOutlet weak var pageControl: CHIPageControlJaloro!
+    @IBOutlet weak var lblAddress: UILabel!
+    @IBOutlet weak var lbluserName: UILabel!
+    @IBOutlet weak var txtAbout: UITextView!
+    @IBOutlet var btnChild: [UIButton]!
     @IBOutlet weak var collectionUserdetails: UICollectionView! {
         didSet {
             collectionUserdetails.registerCell(ProfilePhotoCollectionCell.self)
@@ -29,7 +33,15 @@ class UserDetailsTVC: UITableViewController, TagListViewDelegate {
     var onLikeUser: (() -> Void)?
     var onSuperLikeUser: (() -> Void)?
     var onDisLikeUser: (() -> Void)?
-    
+    var collImage:[String] = []
+    var infant = 0
+    var arrTags:[TagList] = []
+    var arrPassion:[String] = []
+    var newborn = 0
+    var toddler = 0
+    var preschooler = 0
+    var schoolagechild = 0
+    var adolescent = 0
     var user: UserProfile = UserProfile(JSON.null)
     var isFromNotification = false
     var isFromProfile = false
@@ -65,7 +77,7 @@ class UserDetailsTVC: UITableViewController, TagListViewDelegate {
         let angle = CGFloat.pi/2
                 pageControl.transform = CGAffineTransform(rotationAngle: angle)
                 
-                pageControl.numberOfPages = 5
+                pageControl.numberOfPages = 6
                 
                 
                 pageControl.progress = 3
@@ -73,7 +85,7 @@ class UserDetailsTVC: UITableViewController, TagListViewDelegate {
         tagListView.delegate = self
         tagListView.textFont = AppFonts.Poppins_Medium.withSize(17)
         tagListView.alignment = .leading
-        tagListView.addTags(["Biking","Walking","Beauty","Golf","German Hip"])
+       
         navigationController?.addBackButtonWithTitle(title: "User Profile", action: #selector(self.onBackBtnTap))
         navigationController?.addBackButtonWithTitle(title: "User Profile", action: #selector(self.onBackBtnTap), reportAction: #selector(self.onReportBtnTap))
         
@@ -138,9 +150,64 @@ class UserDetailsTVC: UITableViewController, TagListViewDelegate {
 extension UserDetailsTVC {
     
     fileprivate func setupUI() {
+        getPassion()
+        collImage.append(user.image1)
+        collImage.append(user.image2)
+        collImage.append(user.image3)
+        collImage.append(user.image4)
+        collImage.append(user.image5)
+        collImage.append(user.image6)
         
+       
+        print(user.userKids)
+        for kids in user.userKids {
+            if kids == "new born" {
+                newborn += 1
+            }
+            else if kids == "infrant" {
+                infant += 1
+            }
+            else if kids == "toddler" {
+                toddler += 1
+            }
+            else if kids == "preschooler" {
+                preschooler += 1
+            }
+            else if kids == "school-aged child" {
+                schoolagechild += 1
+            }
+            else  if kids == "adolescent" {
+                adolescent += 1
+            }
+        }
+       
+        btnChild[0].setTitle("\(newborn)", for: .normal)
+        btnChild[1].setTitle("\(infant)", for: .normal)
+        btnChild[2].setTitle("\(toddler)", for: .normal)
+        btnChild[3].setTitle("\(preschooler)", for: .normal)
+        btnChild[4].setTitle("\(schoolagechild)", for: .normal)
+        btnChild[5].setTitle("\(adolescent)", for: .normal)
         
+       
+        txtAbout.text = "\(user.about)"
+        txtAbout.isEditable = false
+       
+        if user.userSetting.showmyAge == 1{
+        lbluserName.text = "\(user.firstName)" + ", " + "\(user.age)"
+        }
+        else {
+            lbluserName.text = "\(user.firstName)"
+        }
+        if user.userSetting.distanceVisible == 1{
+        lblAddress.text = "\(user.distance)" + ", " + "\(user.address)"
+        }
+        else {
+        lblAddress.text = "\(user.address)"
+        }
         
+       
+//        for i in user.userKids {
+//        }
 //        for (i, image) in user.arrImage.enumerated() {
 //            if let url = URL(string: image) {
 //                self.arrImgView[i].kf.setImage(with: url)
@@ -172,7 +239,7 @@ extension UserDetailsTVC {
 //        arrLblSignName[1].text = user.moonSignId.signName
 //        arrLblSignName[2].text = user.risingSignId.signName
         
-        tableView.reloadData()
+        self.collectionUserdetails.reloadData()
         
 //        arrImgView[0].addGradientLayer()
         
@@ -275,16 +342,15 @@ extension UserDetailsTVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 5
+        return collImage.count
 //        return arrInstaMedia.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfilePhotoCollectionCell", for: indexPath) as! ProfilePhotoCollectionCell
-//        let cell: InstaCollectionCell = collectionView.dequequReusableCell(for: indexPath)
-//        cell.setupInstaMedia(media: arrInstaMedia[indexPath.row])
-//        cell.cornerRadius = 9
-//        cell.clipsToBounds = true
+        cell.imgProfiles.kf.setImage(with: URL(string: collImage[indexPath.row]))
+        cell.cornerRadius = 9
+        cell.clipsToBounds = true
         return cell
     }
     
@@ -360,10 +426,7 @@ extension UserDetailsTVC: UICollectionViewDelegate {
 extension UserDetailsTVC {
     
     @objc fileprivate func onBackBtnTap() {
-        if isFromNotification {
-            APPDEL?.setupMainTabBarController()
-            return
-        }
+        onSuperLikeUser?()
         self.dismiss(animated: true, completion: nil)
     }
 }
@@ -375,4 +438,29 @@ extension UserDetailsTVC {
         let alert = UIAlertController(title: "Oops!", message: alert)
         self.present(alert, animated: true, completion: nil)
     }
+    
+    fileprivate func getPassion() {
+         showHUD()
+         NetworkManager.getPassion { (PassionSetting) in
+             self.arrTags.append(contentsOf: PassionSetting.passion)
+             print(self.arrTags)
+            self.arrPassion.removeAll()
+            for id in self.user.passion {
+                if let pas = self.arrTags.first(where: {$0.id == Int(id)})?.passion {
+                    self.arrPassion.append(pas)
+                }
+                
+            }
+            for pas in self.arrPassion {
+                self.tagListView.addTag(pas)
+            }
+             self.hideHUD()
+         } _: { (error) in
+             self.hideHUD()
+             self.showToast(error)
+         }
+
+
+         
+     }
 }

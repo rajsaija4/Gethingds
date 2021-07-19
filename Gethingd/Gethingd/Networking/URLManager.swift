@@ -78,7 +78,7 @@ struct URLManager {
     
     struct Payment {
         static let makePayment = basePath + "after_payment"
-        static let getPlans = basePath + "super_gold_slider"
+        static let getPlans = basePath + "get_plan_list"
     }
     
     struct Setting {

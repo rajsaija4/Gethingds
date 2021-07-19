@@ -15,6 +15,7 @@ import Koloda
 private let overlayRightImageName = "img_like"
 private let overlayLeftImageName = "img_dislike"
 private let overlayUpImageName = "img_boost"
+private let overlayDownImageName = "img_details"
 
 
 
@@ -37,7 +38,9 @@ class KolodaOverlayView: OverlayView {
                 case .right? :
                     overlayImageView.image = UIImage(named: overlayRightImageName)
                 case .up? :
-                    overlayImageView.image = UIImage(named: overlayUpImageName)
+                    overlayImageView.image = UIImage(named: overlayDownImageName)
+            case .down?:
+                overlayImageView.image = UIImage(named: overlayUpImageName)
                 default:
                     overlayImageView.image = nil
             }

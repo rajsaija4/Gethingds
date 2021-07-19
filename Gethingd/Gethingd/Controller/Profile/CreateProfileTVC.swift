@@ -381,7 +381,7 @@ class CreateProfileTVC: UITableViewController, UIImagePickerControllerDelegate, 
     
     @objc func onKidTypeTap(_ sender: UIControl) {
         
-        let alert = UIAlertController(title: "Choose Kid Type", message: "", actionNames: ["New born", "Infant"]) { (action) in
+        let alert = UIAlertController(title: "Choose Kid Type", message: "", actionNames: ["New born", "Infant","Toddler","Preschooler","School-aged child","adolescent"]) { (action) in
             self.arrKids[sender.tag] = action.title ?? ""
             self.collKid.reloadData()
         }

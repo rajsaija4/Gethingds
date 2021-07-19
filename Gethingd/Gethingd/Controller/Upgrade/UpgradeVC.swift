@@ -93,36 +93,36 @@ extension UpgradeVC {
         getPlanList()
     }
     
-    fileprivate func setupUI() {
-        
-        btnUpgrade.isEnabled = !((freemiumPlan?.isActive ?? false) || (premiumPlan?.isActive ?? false))
-        
-        stackFreemiumPlan.isHidden = !((freemiumPlan?.isDisplay ?? true) && (freemiumPlan?.isActive ?? true))
-        
-        lblFreePlanActive.isHidden = !(freePlan?.isActive ?? false)
-        lblPremiumPlanActive.isHidden = !(premiumPlan?.isActive ?? false)
-        lblFreemiumPlanActive.isHidden = !(freemiumPlan?.isActive ?? false)
-        
-        lblFreeSwipe.text = "\(freePlan?.likesCount ?? 30) Likes Daily"
-        lblFreeSuperLike.text = "\(freePlan?.superLikeCount ?? 1) Astro Like Daily"
-        lblFreeBoost.text = "\(freePlan?.boostCount ?? 1) Moon Boost Monthly"
-        
-        lblFreemiumSwipe.text = "Unlimited Likes"
-        lblFreemiumSuperLike.text = "\(freemiumPlan?.superLikeCount ?? 5) Astro \((freemiumPlan?.superLikeCount ?? 5) > 1 ? "Likes" : "Like") Daily"
-        lblFreemiumBoost.text = "\(freemiumPlan?.boostCount ?? 10) Moon Boosts Monthly"
-        lblFreemiumExpireDate.text = "Expiry Date : \(freemiumPlan?.expiryDate ?? "")"
-        lblFreemiumExpireDate.isHidden = (freemiumPlan?.expiryDate ?? "").count == 0
-        
-        lblPremiumSwipe.text = "Unlimited Likes"
-        lblPremiumSuperLike.text = "\(premiumPlan?.superLikeCount ?? 5) Astro Likes Daily"
-        lblPremiumBoost.text = "\(premiumPlan?.boostCount ?? 10) Moon Boosts Monthly"
-        lblPremiumExpireDate.text = "Expiry Date : \(premiumPlan?.expiryDate ?? "")"
-        lblPremiumExpireDate.isHidden = (premiumPlan?.expiryDate ?? "").count == 0
-        
-        lblPrice.text = "$\(premiumPlan?.price ?? 9.99) PER MONTH"
-        
-    }
-    
+//    fileprivate func setupUI() {
+//
+//        btnUpgrade.isEnabled = !((freemiumPlan?.isActive ?? false) || (premiumPlan?.isActive ?? false))
+//
+//        stackFreemiumPlan.isHidden = !((freemiumPlan?.isDisplay ?? true) && (freemiumPlan?.isActive ?? true))
+//
+//        lblFreePlanActive.isHidden = !(freePlan?.isActive ?? false)
+//        lblPremiumPlanActive.isHidden = !(premiumPlan?.isActive ?? false)
+//        lblFreemiumPlanActive.isHidden = !(freemiumPlan?.isActive ?? false)
+//
+//        lblFreeSwipe.text = "\(freePlan?.likesCount ?? 30) Likes Daily"
+//        lblFreeSuperLike.text = "\(freePlan?.superLikeCount ?? 1) Astro Like Daily"
+//        lblFreeBoost.text = "\(freePlan?.boostCount ?? 1) Moon Boost Monthly"
+//
+//        lblFreemiumSwipe.text = "Unlimited Likes"
+//        lblFreemiumSuperLike.text = "\(freemiumPlan?.superLikeCount ?? 5) Astro \((freemiumPlan?.superLikeCount ?? 5) > 1 ? "Likes" : "Like") Daily"
+//        lblFreemiumBoost.text = "\(freemiumPlan?.boostCount ?? 10) Moon Boosts Monthly"
+//        lblFreemiumExpireDate.text = "Expiry Date : \(freemiumPlan?.expiryDate ?? "")"
+//        lblFreemiumExpireDate.isHidden = (freemiumPlan?.expiryDate ?? "").count == 0
+//
+//        lblPremiumSwipe.text = "Unlimited Likes"
+//        lblPremiumSuperLike.text = "\(premiumPlan?.superLikeCount ?? 5) Astro Likes Daily"
+//        lblPremiumBoost.text = "\(premiumPlan?.boostCount ?? 10) Moon Boosts Monthly"
+//        lblPremiumExpireDate.text = "Expiry Date : \(premiumPlan?.expiryDate ?? "")"
+//        lblPremiumExpireDate.isHidden = (premiumPlan?.expiryDate ?? "").count == 0
+//
+//        lblPrice.text = "$\(premiumPlan?.price ?? 9.99) PER MONTH"
+//
+//    }
+//
 }
 
 
@@ -132,12 +132,11 @@ extension UpgradeVC {
     fileprivate func getPlanList() {
         
         showHUD()
-        NetworkManager.Subscription.getSubscriptionPlans { (freePlan, premiumPlan, freemiumPlan) in
+        NetworkManager.Subscription.getSubscriptionPlans { (freePlan, premiumPlan) in
             self.hideHUD()
             self.freePlan = freePlan
             self.premiumPlan = premiumPlan
-            self.freemiumPlan = freemiumPlan
-            self.setupUI()
+//            self.setupUI()
         } _: { (error) in
             self.hideHUD()
             self.showToast(error)

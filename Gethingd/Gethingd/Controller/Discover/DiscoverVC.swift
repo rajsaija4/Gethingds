@@ -389,7 +389,7 @@ extension DiscoverVC: KolodaViewDelegate {
     
     func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
         print(direction)
-        arrRewind.append(arrUser[index])
+//        arrRewind.append(arrUser[index])
 //        return
         switch direction {
             case .right:
@@ -405,34 +405,37 @@ extension DiscoverVC: KolodaViewDelegate {
             case .left:
                 self.swipeUser(userID: arrUser[index].id, status: .nope)
             case .up:
-                if AppSupport.remainingSuperLikes == 0 {
-                    let vc = SuperLikeAddVC.instantiate(fromAppStoryboard: .Upgrade)
-                    vc.modalPresentationStyle = .overCurrentContext
-                    self.present(vc, animated: true, completion: nil)
-                    return
+                
+                let vc = UserDetailsTVC.instantiate(fromAppStoryboard: .Discover)
+                vc.user = arrUser[index]
+                vc.onLikeUser = {
+                    koloda.swipe(.right)
                 }
-                AppSupport.remainingSuperLikes -= 1
-                self.swipeUser(userID: arrUser[index].id, status: .superLike)
+                
+                vc.onDisLikeUser = {
+                    koloda.swipe(.left)
+                }
+                
+                vc.onSuperLikeUser = {
+                    self.kolodaView.revertAction()
+        //            self.swipeUser(userID: self.arrUser[index].id, status: .superLike)
+                }
+                
+                let nvc = UINavigationController(rootViewController: vc)
+                nvc.modalPresentationStyle = .overCurrentContext
+                nvc.modalTransitionStyle = .crossDissolve
+                self.present(nvc, animated: true, completion: nil)
+                
+               
         case .down:
-            let vc = UserDetailsTVC.instantiate(fromAppStoryboard: .Discover)
-            vc.user = arrUser[index]
-            vc.onLikeUser = {
-                koloda.swipe(.right)
+            if AppSupport.remainingSuperLikes == 0 {
+                let vc = SuperLikeAddVC.instantiate(fromAppStoryboard: .Upgrade)
+                vc.modalPresentationStyle = .overCurrentContext
+                self.present(vc, animated: true, completion: nil)
+                return
             }
-            
-            vc.onDisLikeUser = {
-                koloda.swipe(.left)
-            }
-            
-            vc.onSuperLikeUser = {
-                koloda.swipe(.up)
-    //            self.swipeUser(userID: self.arrUser[index].id, status: .superLike)
-            }
-            
-            let nvc = UINavigationController(rootViewController: vc)
-            nvc.modalPresentationStyle = .fullScreen
-            nvc.modalTransitionStyle = .crossDissolve
-            self.present(nvc, animated: true, completion: nil)
+            AppSupport.remainingSuperLikes -= 1
+            self.swipeUser(userID: arrUser[index].id, status: .superLike)
             default:
                 break
         }

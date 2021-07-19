@@ -19,8 +19,7 @@ class EditProfileVC: UITableViewController, TagListViewDelegate, UIImagePickerCo
         selectedPassion.alignment = .leading
         selectedPassion.removeAllTags()
         selectedPassion.addTags(arrPassion)
-        
-        
+        tableView.reloadData()
     }
   
     @IBOutlet var btnGender: [UIButton]!
@@ -53,6 +52,7 @@ class EditProfileVC: UITableViewController, TagListViewDelegate, UIImagePickerCo
     fileprivate var arrKids = [Int: String]()
 //    fileprivate var arrkidsValue:[String] = []
     fileprivate var numberOfKids = 0
+    fileprivate var passionSetting: PassionSetting? = nil
     
     
   
@@ -73,6 +73,8 @@ class EditProfileVC: UITableViewController, TagListViewDelegate, UIImagePickerCo
         selectedPassion.delegate = self
         selectedPassion.textFont = AppFonts.Poppins_Medium.withSize(17)
         selectedPassion.alignment = .leading
+        selectedPassion.backgroundColor = .clear
+        
 //        selectedPassion.addTags(["Biking","Walking","Beauty","Golf","German Hip"])
   
     }
@@ -492,7 +494,7 @@ class EditProfileVC: UITableViewController, TagListViewDelegate, UIImagePickerCo
    
     @IBAction func onPressChild(_ sender: UIControl) {
         
-        let keys = Array(arrKids.keys).sorted(by: <).map{ $0.description }
+          let keys = Array(arrKids.keys).sorted(by: <).map{ $0.description }
         
         let alert = UIAlertController(title: "No of Kids", message: "Selct No of Kids", actionNames: keys) { (action) in
 
@@ -525,7 +527,7 @@ class EditProfileVC: UITableViewController, TagListViewDelegate, UIImagePickerCo
     
     @objc func onKidTypeTap(_ sender: UIControl) {
         
-        let alert = UIAlertController(title: "Choose Kid Type", message: "", actionNames: ["New born", "Infant"]) { (action) in
+        let alert = UIAlertController(title: "Choose Kid Type", message: "", actionNames: ["New born", "Infant","Toddler","Preschooler","School-aged child","Adolescent"]) { (action) in
             self.arrKids[sender.tag] = action.title ?? ""
             self.collKid.reloadData()
         }
@@ -561,10 +563,11 @@ extension EditProfileVC {
 
         if indexPath.section == 2 {
             return CGFloat((numberOfKids * 50) + 74)
+           
         }
         
         if indexPath.section == 3 {
-            return 200
+            return CGFloat(selectedPassion.subviews.count * 48) + 56
         }
 
         if indexPath.section == 4 {
@@ -584,7 +587,7 @@ extension EditProfileVC {
 extension EditProfileVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrKids.count
+        return numberOfKids
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -701,12 +704,13 @@ extension EditProfileVC {
             self.txtFname.text = User.details.firstName
             self.txtLname.text = User.details.lastName
             self.txtDob.text = User.details.dob
+            self.numberOfKids = User.details.num_of_kids
             if User.details.about.count > 0 {
             self.txtAbout.text = User.details.about
             }
             self.lblWordCounter.text = "Characters left: \(150 - self.txtAbout.text.count)"
             self.txtNumberOfKids.text = String(User.details.num_of_kids)
-            self.numberOfKids = User.details.num_of_kids
+            
             if User.details.gender == "male" {
                 self.btnGender[0].isSelected = true
                 self.selectedGender = 0
@@ -722,17 +726,18 @@ extension EditProfileVC {
                 self.selectedGender = 2
             }
             
-            for i in 0..<User.details.user_kids.count {
-                self.arrKids[i] = User.details.user_kids[i]
+            if let kidsCount = self.passionSetting?.noKids {
+                for i in 0...kidsCount {
+                    if i < User.details.user_kids.count {
+                        self.arrKids[i] = User.details.user_kids[i]
+                    }
+                    
+                }
             }
-            
-            
-            for i in 0..<User.details.user_kids.count {
-                self.arrKids[i] = User.details.user_kids[i]
-            }
-            
+        
+           
             self.collKid.reloadData()
-//            self.tableView.reloadData()
+            self.tableView.reloadData()
         
             
             
@@ -778,6 +783,7 @@ extension EditProfileVC: UITextViewDelegate {
              for i in 0...PassionSetting.noKids {
                  self.arrKids[i] = "New born"
              }
+            self.passionSetting = PassionSetting
              self.collKid.reloadData()
             self.getProfile()
          } _: { (error) in
@@ -785,8 +791,6 @@ extension EditProfileVC: UITextViewDelegate {
              self.showToast(error)
          }
 
-
-         
      }
 }
 extension EditProfileVC {

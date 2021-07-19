@@ -38,6 +38,7 @@ class UserProfile: NSObject {
     var userKids: [String] = []
     var token: String = ""
     var userSetting:UserSetting!
+    var passion:[String] = []
     
     
   
@@ -72,10 +73,13 @@ class UserProfile: NSObject {
         image6 = json["image6"].stringValue
         
         for kid in json["user_kids"].arrayValue {
-            userKids.append(kid.stringValue)
+            userKids.append(kid["kids_status"].stringValue)
         }
         
         userSetting = UserSetting(json: json)
+        for pas in json["passion"].arrayValue{
+            passion.append(pas.stringValue)
+        }
        
 //        isSuperLike = json["super_like"].stringValue != "No"
 //        isButtonHide = json["button_hide"].boolValue

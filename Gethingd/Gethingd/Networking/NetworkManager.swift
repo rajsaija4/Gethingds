@@ -190,7 +190,7 @@ extension NetworkManager {
         static func getMyProfile(_ success: @escaping (User) -> Void, _ fail: @escaping (String) -> Void) {
             
 //            let param = ["token": User.details.api_token]
-            let param = ["token": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzc1ZWI3MGM1NGY1NjUwMGNkZDc1ZWI5YTBjOTgxNTA4OWY2Nzk5NmE4YjJlZTEzOGFkZDQ1MDIyOWI0ZDkzODA1YWRjNWE5YWMxOWYzNmQiLCJpYXQiOjE2MjYwODI3MjQsIm5iZiI6MTYyNjA4MjcyNCwiZXhwIjoxNjU3NjE4NzI0LCJzdWIiOiIxNCIsInNjb3BlcyI6W119.z2QhYhtT2dQnrSzOZ6uHCpKuY5ATJzxazfyPQz_KBIT3EySSaF_K0BaaylJ6vl4nSqp32oqXozp2BcMryeAw2D4oOBjZiBta0T5v8uXBBiHRo3SMMmgmVmEBmRFJzeAbj7qHd01pb_It7DioG1qwUV_h_zQq97iY3V9JjE5PhOg_9O9VnaWvCGINz13JnzeLtE9X_ua_WGikirLbbYfadhSuFNcyZY3Wk87wAuJ8HTVhO2RR_E82UrPU6ivuFg4rxuDxxem8L9lbCn6E6PKQSjEuPRQCIcLooViSvdaR9W_5a3EC7I7eetwaiEbWDlZ0ejkuVcuS0AbVvtFTYMcd5ZB_hDgFaJhnNRTNylDsxOWFROqqVlwZWJ_tiPIMAVaJ0_dyvX5TROR1HcNMZV-f95d0BKNU3DIDjGNCjYgG6ZUInlpx5On41bg1aZvu6VIjxDw1xipbRLDTqvJeadOlloKyE24mpK9PzTsf-3CDhS7jgQ90iNesjca5zHdU-hqU3m3ivuV8m2sBPS2VFspeGipc6DxOofid48RUSY-Qc631PoFnufxT60o6wkDgrEkaHAbd98WsiyXJbMwthUBEWENegAwZBxNc4R7HA-YP8_61WDT_J5X8VFiDZ5kLMTJi7vTHoqPsojaPep4Z1WfHQjiFKd3ew5KqCPyWgtDkHb0"]
+            let param = ["token": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOWU0OTk1ODgzYjNmNWMxNzk1ZTAyOGM3ZjM0YmZjNGRlYjkwZjlkMWRhNjE4ODZhMzNlYmVhMzM5ZTdjYTk1ZTVkYWNiNzdlNzBiYTcxY2YiLCJpYXQiOjE2MjY2ODg0MTAsIm5iZiI6MTYyNjY4ODQxMCwiZXhwIjoxNjU4MjI0NDEwLCJzdWIiOiIxNCIsInNjb3BlcyI6W119.Exp10HfJf6RMaG6GJrJDyUYrow3EjlHQ0fMcykfzOKdPM_gME7uHy_0zYG_AUWt-5SxZHMasKQrks12oHO_MhEux-mN1Md9tTU9Kk-_Xh_e7-UqJP3VCOaXq0K8fi0lhzf57qndebehpkVIXqphcJtKYDqIvzL3sCKwuyEaVc6-7RMPo9fJFCNZpf8T2qJ0LWjMXX-gLKrYMgXi5wYNwQSqbsShM-dzhEJBjXGKAg8Bq69TrRGw-5ulev1XXQzqbK1HsTPSxIUQ2veYN41J66sTrNU5rcTR4q_pyj3Wq0wDtwhhh5YnQAGAzud6pilGXpFQOkI6LBGx5v5RVJ6x9Cgkbjv6fBNP9pQO04OUuwk_rB4QS6JTGBusvGryadRYn5VONjZDdQVa1UxMz_InqT-6YU8Dm2erTkKCX2dwxgZLh7-U5KbA1ju5IgNxjzbFrSBosQ1NIF9XGOJvO-PhQzfvwv7Nn2rnP2sUDXwWDICdb0P1HU4KQTB_VEU6JOCEFkDlB2AqGkBJ1HSuhMPSGNUFBZX68rAdqGZ3zNOBRB0ObOACk3T1SzA6VVZw_Uh4yR9NlVb6ngG5za4E1mtQ8JwbxQQKhscJz1Qks7IWDsdN0oTj-IGZL_b9sMJYJ0ongVYB5tyUCd4DDzNnThlunSlUy2x-jVPqNxXIyLvdccyg"]
             NetworkCaller.getRequest(url: URLManager.Profile.getMyProfile, params: param, headers: header, { (response) in
                 
                 guard response.isSuccess else {
@@ -718,7 +718,7 @@ extension NetworkManager {
             }
         }
         
-        static func getSubscriptionPlans(_ success: @escaping ((freePlan: SubscriptionPlan, premiumPlan: SubscriptionPlan, freemiumPlan: SubscriptionPlan)) -> Void, _ fail: @escaping (String) -> Void) {
+        static func getSubscriptionPlans(_ success: @escaping ((freePlan: SubscriptionPlan, premiumPlan: SubscriptionPlan)) -> Void, _ fail: @escaping (String) -> Void) {
             
             NetworkCaller.getRequest(url: URLManager.Payment.getPlans, params: nil, headers: header, { (response) in
                 
@@ -728,7 +728,7 @@ extension NetworkManager {
                 }
                 
         
-                success((SubscriptionPlan(fjson: response), SubscriptionPlan(pjson: response), SubscriptionPlan(fpjson: response)))
+                success((SubscriptionPlan(fjson: response), SubscriptionPlan(pjson: response)))
                 
             }) { (error) in
                 fail(error.localizedDescription)
