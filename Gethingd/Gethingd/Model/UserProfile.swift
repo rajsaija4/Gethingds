@@ -39,6 +39,7 @@ class UserProfile: NSObject {
     var token: String = ""
     var userSetting:UserSetting!
     var passion:[String] = []
+    var jobTitle:String = ""
     
     
   
@@ -71,6 +72,7 @@ class UserProfile: NSObject {
         image4 = json["image4"].stringValue
         image5 = json["image5"].stringValue
         image6 = json["image6"].stringValue
+        jobTitle = json["job_title"].stringValue
         
         for kid in json["user_kids"].arrayValue {
             userKids.append(kid["kids_status"].stringValue)

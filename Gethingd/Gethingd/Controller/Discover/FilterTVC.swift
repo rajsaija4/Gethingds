@@ -158,7 +158,7 @@ extension FilterTVC {
         Filter.lookingFor = gender
         Filter.latitude = latitude
         Filter.longitude = longitude
-        Filter.filterApply = true
+      
     
         onFilter?()
         self.dismiss(animated: true, completion: nil)

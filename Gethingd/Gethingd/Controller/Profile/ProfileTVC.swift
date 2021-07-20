@@ -31,8 +31,8 @@ class ProfileTVC: UITableViewController {
     @IBOutlet weak var stackAddNewLocation: UIStackView!
     @IBOutlet var arrLocationName: [UIButton]!
     @IBOutlet weak var btnDropDownConstrain: NSLayoutConstraint!
-    @IBOutlet weak var lblAstroLike: UILabel!
-    @IBOutlet weak var lblMoonBoosts: UILabel!
+    @IBOutlet weak var lblFreelike: UILabel!
+    @IBOutlet weak var lblReviewLater: UILabel!
     @IBOutlet weak var lblVersion: UILabel!
     @IBOutlet weak var lblPremium: UILabel!
     @IBOutlet weak var imgPause: UIImageView!
@@ -48,9 +48,14 @@ class ProfileTVC: UITableViewController {
         super.viewDidLoad()
         lblName.text = User.details.firstName
         lblAddress.text = User.details.address
-        lblAstroLike.text = "FREE LIKES : \(AppSupport.unreadCount)"
-        lblMoonBoosts.text = "REVIEW LATER : \(AppSupport.remainingLikes)"
-        
+        if AppSupport.isOrder == false {
+        lblFreelike.text = "FREE LIKES : \(AppSupport.remainingLikes)"
+        lblReviewLater.text = "REVIEW LATER : \(AppSupport.reviewLater)"
+        }
+        if AppSupport.isOrder == true {
+            lblFreelike.text = "FREE LIKES : UNLIMITED"
+            lblReviewLater.text = "REVIEW LATER : UNLIMITED"
+        }
         
         if let url = URL(string: User.details.image1) {
             self.imgUser.kf.setImage(with: url)

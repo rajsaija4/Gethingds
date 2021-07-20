@@ -186,19 +186,9 @@ class EditProfileVC: UITableViewController, TagListViewDelegate, UIImagePickerCo
         }
         
         
-//        let kids = arrKids.values.map{ String($0) }
-        var tempKids:[String] = []
-        for values in arrKids.values {
-            tempKids.append(values)
-        }
+        let kids:[String] = collKid.visibleCells.map{ ($0 as? KidCell)?.lblKidType.text ?? "" }
         
-        var kids:[String] = []
-        for i in 0..<collKid.visibleCells.count {
-            kids.append(tempKids[i])
-        }
-        
-        
-        
+
         guard selectedGender  >= 0  else {
             self.showAlert("Please Select Gender")
             return

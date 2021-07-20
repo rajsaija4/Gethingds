@@ -16,9 +16,14 @@ class UserDetailsTVC: UITableViewController, TagListViewDelegate {
     
     //MARK:- VARIABLE
     @IBOutlet weak var pageControl: CHIPageControlJaloro!
+//    @IBOutlet var mainKidsTag: [UIStackView]!
+    @IBOutlet var kidMainStack: [UIStackView]!
+    @IBOutlet var kidView: [UIView]!
+    @IBOutlet var kidsStack: [UIStackView]!
     @IBOutlet weak var lblAddress: UILabel!
     @IBOutlet weak var lbluserName: UILabel!
     @IBOutlet weak var txtAbout: UITextView!
+    @IBOutlet weak var lblWork: UILabel!
     @IBOutlet var btnChild: [UIButton]!
     @IBOutlet weak var collectionUserdetails: UICollectionView! {
         didSet {
@@ -31,7 +36,7 @@ class UserDetailsTVC: UITableViewController, TagListViewDelegate {
     @IBOutlet weak var tagListView: TagListView!
     
     var onLikeUser: (() -> Void)?
-    var onSuperLikeUser: (() -> Void)?
+    var onReviewLater: (() -> Void)?
     var onDisLikeUser: (() -> Void)?
     var collImage:[String] = []
     var infant = 0
@@ -87,7 +92,7 @@ class UserDetailsTVC: UITableViewController, TagListViewDelegate {
         tagListView.alignment = .leading
        
         navigationController?.addBackButtonWithTitle(title: "User Profile", action: #selector(self.onBackBtnTap))
-        navigationController?.addBackButtonWithTitle(title: "User Profile", action: #selector(self.onBackBtnTap), reportAction: #selector(self.onReportBtnTap))
+//        navigationController?.addBackButtonWithTitle(title: "User Profile", action: #selector(self.onBackBtnTap), reportAction: #selector(self.onReportBtnTap))
         
         if isFromNotification || isFromProfile{
             getUserDetails()
@@ -123,27 +128,27 @@ class UserDetailsTVC: UITableViewController, TagListViewDelegate {
     
     @IBAction func onSuperLikeBtnTap(_ sender: UIButton) {
         if self.isFromNotification {
-            swipeUser(userID: userId, status: .superLike)
+            swipeUser(userID: userId, status: .reviewLater)
             return
         }
-        onSuperLikeUser?()
+        onReviewLater?()
         self.dismiss(animated: true, completion: nil)
     }
     
-    @objc fileprivate func onReportBtnTap() {
-        
-        let alert = UIAlertController(title: "Report User", message: "Do you want to report this user?", actionNames: ["Report"]) { (action) in
-            guard let actionName = action.title else { return }
-            let vc = ReportVC.instantiate(fromAppStoryboard: .Report)
-            vc.modalPresentationStyle = .overCurrentContext
-            vc.reportType = actionName
-            vc.selectedUserId = self.user.id
-            self.present(vc, animated: true, completion: nil)
-        }
-        
-        self.present(alert, animated: true, completion: nil)
-        
-    }
+//    @objc fileprivate func onReportBtnTap() {
+//
+//        let alert = UIAlertController(title: "Report User", message: "Do you want to report this user?", actionNames: ["Report"]) { (action) in
+//            guard let actionName = action.title else { return }
+//            let vc = ReportVC.instantiate(fromAppStoryboard: .Report)
+//            vc.modalPresentationStyle = .overCurrentContext
+//            vc.reportType = actionName
+//            vc.selectedUserId = self.user.id
+//            self.present(vc, animated: true, completion: nil)
+//        }
+//
+//        self.present(alert, animated: true, completion: nil)
+//
+//    }
    
 }
 
@@ -158,7 +163,7 @@ extension UserDetailsTVC {
         collImage.append(user.image5)
         collImage.append(user.image6)
         
-       
+        lblWork.text = user.jobTitle
         print(user.userKids)
         for kids in user.userKids {
             if kids == "new born" {
@@ -187,7 +192,38 @@ extension UserDetailsTVC {
         btnChild[3].setTitle("\(preschooler)", for: .normal)
         btnChild[4].setTitle("\(schoolagechild)", for: .normal)
         btnChild[5].setTitle("\(adolescent)", for: .normal)
-        
+        if newborn == 0 {
+            kidView[0].isHidden = true
+        }
+        if infant == 0 {
+            kidView[1].isHidden = true
+        }
+       
+        if toddler == 0 {
+            kidView[2].isHidden = true
+        }
+       
+        if preschooler == 0 {
+            kidView[3].isHidden = true
+        }
+       
+        if schoolagechild == 0 {
+            kidView[4].isHidden = true
+        }
+       
+        if adolescent == 0 {
+            kidView[5].isHidden = true
+        }
+       
+        if newborn == 0 && infant == 0 && toddler == 0 {
+            kidMainStack[0].isHidden = true
+        }
+        if preschooler == 0 && schoolagechild == 0 {
+            kidMainStack[1].isHidden = true
+        }
+        if adolescent == 0 {
+            kidMainStack[2].isHidden = true
+        }
        
         txtAbout.text = "\(user.about)"
         txtAbout.isEditable = false
@@ -240,6 +276,7 @@ extension UserDetailsTVC {
 //        arrLblSignName[2].text = user.risingSignId.signName
         
         self.collectionUserdetails.reloadData()
+        self.tableView.reloadData()
         
 //        arrImgView[0].addGradientLayer()
         
@@ -276,16 +313,16 @@ extension UserDetailsTVC {
         
         NetworkManager.Discover.swipeProfiles(param: param, { (details) in
             self.hideHUD()
-            if let matchDetails = details {
-                let vc = MatchUserVC.instantiate(fromAppStoryboard: .Discover)
-                vc.matchDetails = matchDetails
-                let nvc = UINavigationController(rootViewController: vc)
-                nvc.modalPresentationStyle = .fullScreen
-                nvc.modalTransitionStyle = .crossDissolve
-                nvc.isNavigationBarHidden = true
-                self.present(nvc, animated: true, completion: nil)
-                return
-            }
+//            if let matchDetails = details {
+//                let vc = MatchUserVC.instantiate(fromAppStoryboard: .Discover)
+//                vc.matchDetails = matchDetails
+//                let nvc = UINavigationController(rootViewController: vc)
+//                nvc.modalPresentationStyle = .fullScreen
+//                nvc.modalTransitionStyle = .crossDissolve
+//                nvc.isNavigationBarHidden = true
+//                self.present(nvc, animated: true, completion: nil)
+//                return
+//            }
             if self.isFromNotification {
                 APPDEL?.setupMainTabBarController()
                 return
@@ -301,7 +338,7 @@ extension UserDetailsTVC {
 }
 
 
-/*
+
 extension UserDetailsTVC {
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -310,33 +347,42 @@ extension UserDetailsTVC {
         
         switch indexPath.section {
             case 0:
-                return height
-            case 2:
-                return user.arrImage.count > 1 ? height : 0
-            case 4:
-                return user.arrImage.count > 2 ? height : 0
-            case 6:
-                return user.arrImage.count > 3 ? height : 0
-            case 8:
-                return user.arrImage.count > 4 ? height : 0
+                return 500
             case 1:
-                return 150
-            case 5:
-//                if user.moonSignId == "0", user.risingSignId == "0" {
-//                    return 0
+                return 148
+                
+            case 2:
+            return 50
+            
+//            case 3:
+//                
+//                return 200
+//                if mainKidsTag[0].isHidden == true && mainKidsTag[1].isHidden == true && mainKidsTag[2].isHidden == true {
+//                    return 50
 //                }
-                return 150
-            case 7:
-                return user.instaToken.count == 0 ? 0 : 300
-            case 9:
-                return user.isButtonHide ? 0 : 80
+//
+//                else if mainKidsTag[0].isHidden || true && mainKidsTag[1].isHidden || true && mainKidsTag[2].isHidden || true {
+//                    return 155
+//                }
+//
+//                else {
+//                    return 200
+//                }
+            
+            case 4:
+              
+                return  CGFloat(tagListView.subviews.count * 48) + 56
+                
+                
+            case 5:
+                return  80
+
             default:
                 return UITableView.automaticDimension
         }
     }
 }
 
-*/
 
 extension UserDetailsTVC: UICollectionViewDataSource {
     
@@ -384,49 +430,49 @@ extension UserDetailsTVC: UICollectionViewDelegateFlowLayout {
 
 
 
-extension UserDetailsTVC: UICollectionViewDelegate {
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        let vc: InstagramFeedVC = InstagramFeedVC.instantiate(fromAppStoryboard: .Discover)
-        vc.arrInstaMedia = arrInstaMedia
-        vc.indexPath = indexPath
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true, completion: nil)
-
-        /*
-        if arrInstaMedia[indexPath.row].mediaType == MediaType.CAROUSEL_ALBUM.rawValue {
-            let vc: InstagramFeedVC = InstagramFeedVC.instantiate(fromAppStoryboard: .Discover)
-            vc.arrInstaMedia = arrInstaMedia[indexPath.row].arrChildren
-            vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated: true, completion: nil)
-            return
-        } else if arrInstaMedia[indexPath.row].mediaType == MediaType.VIDEO.rawValue {
-            guard let videoURL = URL(string: arrInstaMedia[indexPath.row].mediaURL) else { return }
-            let player = AVPlayer(url: videoURL)
-            let playerViewController = AVPlayerViewController()
-            playerViewController.player = player
-            self.present(playerViewController, animated: true) {
-                playerViewController.player?.play()
-            }
-            return
-        } else {
-            let vc: InstagramFeedVC = InstagramFeedVC.instantiate(fromAppStoryboard: .Discover)
-            vc.arrInstaMedia = arrInstaMedia
-            vc.indexPath = indexPath
-            vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated: true, completion: nil)
-        }
-        */
-    }
-}
+//extension UserDetailsTVC: UICollectionViewDelegate {
+//
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//
+//        let vc: InstagramFeedVC = InstagramFeedVC.instantiate(fromAppStoryboard: .Discover)
+//        vc.arrInstaMedia = arrInstaMedia
+//        vc.indexPath = indexPath
+//        vc.modalPresentationStyle = .fullScreen
+//        self.present(vc, animated: true, completion: nil)
+//
+//        /*
+//        if arrInstaMedia[indexPath.row].mediaType == MediaType.CAROUSEL_ALBUM.rawValue {
+//            let vc: InstagramFeedVC = InstagramFeedVC.instantiate(fromAppStoryboard: .Discover)
+//            vc.arrInstaMedia = arrInstaMedia[indexPath.row].arrChildren
+//            vc.modalPresentationStyle = .fullScreen
+//            self.present(vc, animated: true, completion: nil)
+//            return
+//        } else if arrInstaMedia[indexPath.row].mediaType == MediaType.VIDEO.rawValue {
+//            guard let videoURL = URL(string: arrInstaMedia[indexPath.row].mediaURL) else { return }
+//            let player = AVPlayer(url: videoURL)
+//            let playerViewController = AVPlayerViewController()
+//            playerViewController.player = player
+//            self.present(playerViewController, animated: true) {
+//                playerViewController.player?.play()
+//            }
+//            return
+//        } else {
+//            let vc: InstagramFeedVC = InstagramFeedVC.instantiate(fromAppStoryboard: .Discover)
+//            vc.arrInstaMedia = arrInstaMedia
+//            vc.indexPath = indexPath
+//            vc.modalPresentationStyle = .fullScreen
+//            self.present(vc, animated: true, completion: nil)
+//        }
+//        */
+//    }
+//}
 
 
 
 extension UserDetailsTVC {
     
     @objc fileprivate func onBackBtnTap() {
-        onSuperLikeUser?()
+//        onReviewLater?()
         self.dismiss(animated: true, completion: nil)
     }
 }
@@ -453,7 +499,9 @@ extension UserDetailsTVC {
             }
             for pas in self.arrPassion {
                 self.tagListView.addTag(pas)
+                
             }
+            self.tableView.reloadData()
              self.hideHUD()
          } _: { (error) in
              self.hideHUD()

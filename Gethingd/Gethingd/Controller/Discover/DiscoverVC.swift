@@ -14,10 +14,10 @@ import CoreLocation
 //like,Like,Super Like,super like,nope,Nope,super gold,Super Gold,rewind,Rewind
 
 enum SwipeType: String {
-    case like = "Like"
-    case nope = "Nope"
-    case superLike = "Super Like"
-    case rewind = "Rewind"
+    case like = "like"
+    case nope = "nope"
+    case reviewLater = "review"
+
 }
 
 
@@ -77,92 +77,21 @@ extension DiscoverVC {
     
     func getUserList() {
         
-        showHUD()
-        if Filter.filterApply == false {
-            
-            let param = [:] as [String : Any]
-            
-            /*
-            let param = [
-                "min_age": Filter.minAge,
-                "max_age": Filter.maxAge,
-                "distance": Filter.distance,
-                "min_height": Filter.minHeight,
-                "max_height": Filter.maxHeight,
-                "sun_zodiac_sign_id": Filter.sunSignId,
-                "moon_zodiac_sign_id": Filter.moonSignId,
-                "rising_zodiac_sign_id": Filter.risingSignId,
-                "latitude": "\(locationManager?.location?.coordinate.latitude ?? 0)",
-                "longitude": "\(locationManager?.location?.coordinate.longitude ?? 0)"
-            ] as [String : Any]
-            */
-            
-            NetworkManager.Discover.discoverUser(param: param, { (users) in
-                self.hideHUD()
-                
-                self.tabBarController?.tabBar.items?.last?.badgeValue = AppSupport.unreadCount > 0 ? "\(AppSupport.unreadCount)" : nil
-                
-                
-                if AppSupport.version > APP_VERSION {
-                    let vc = UpdateNowVC.instantiate(fromAppStoryboard: .Upgrade)
-                    vc.modalPresentationStyle = .overFullScreen
-                    self.present(vc, animated: true, completion: nil)
-                    return
-                }
-                
-                
-                self.arrUser.removeAll()
-                self.arrUser.append(contentsOf: users)
-                self.kolodaView.reconfigureCards()
-                self.kolodaView.reloadData()
-                self.kolodaView.resetCurrentCardIndex()
-                
-                self.setupNoProfileView()
-                
-            }, { (error) in
-                self.hideHUD()
-                let alert = UIAlertController(title: "Oops!", message: error)
-                self.present(alert, animated: true, completion: nil)
-                self.arrUser.removeAll()
-                self.kolodaView.reconfigureCards()
-                self.kolodaView.reloadData()
-                self.kolodaView.resetCurrentCardIndex()
-                self.setupNoProfileView()
-            })
-            
-        }
-        
-        else {
         let param = [
             "looking_for": Filter.lookingFor,
-            "min_age": Filter.minAge,
-            "max_age": Filter.maxAge,
-            "distance": Filter.distance,
-            "min_kids": Filter.minKid,
-            "max_kids": Filter.maxKid,
-            "latitude": Filter.latitude,
-            "longitude": Filter.longitude
+//            "min_age": Filter.minAge,
+//            "max_age": Filter.maxAge,
+//            "distance": Filter.distance,
+//            "min_kids": Filter.minKid,
+//            "max_kids": Filter.maxKid,
+//            "latitude": Filter.latitude,
+//            "longitude": Filter.longitude
         ] as [String : Any]
-        
-        /*
-        let param = [
-            "min_age": Filter.minAge,
-            "max_age": Filter.maxAge,
-            "distance": Filter.distance,
-            "min_height": Filter.minHeight,
-            "max_height": Filter.maxHeight,
-            "sun_zodiac_sign_id": Filter.sunSignId,
-            "moon_zodiac_sign_id": Filter.moonSignId,
-            "rising_zodiac_sign_id": Filter.risingSignId,
-            "latitude": "\(locationManager?.location?.coordinate.latitude ?? 0)",
-            "longitude": "\(locationManager?.location?.coordinate.longitude ?? 0)"
-        ] as [String : Any]
-        */
-        
-        NetworkManager.Discover.discoverUser(param: param, { (users) in
+            
+         NetworkManager.Discover.discoverUser(param: param, { (users) in
             self.hideHUD()
             
-            self.tabBarController?.tabBar.items?.last?.badgeValue = AppSupport.unreadCount > 0 ? "\(AppSupport.unreadCount)" : nil
+            self.tabBarController?.tabBar.items?.last?.badgeValue = AppSupport.reviewLater > 0 ? "\(AppSupport.reviewLater)" : nil
             
             
             if AppSupport.version > APP_VERSION {
@@ -193,7 +122,7 @@ extension DiscoverVC {
         })
         
     }
-    }
+  
     
     
     fileprivate func swipeUser(userID: Int, status: SwipeType) {
@@ -203,27 +132,27 @@ extension DiscoverVC {
         
         let param = [
             "status": status.rawValue,
-            "user_id": userID,
+            "user_id": userID
         ] as [String : Any]
         
-        NetworkManager.Discover.swipeProfiles(param: param, { (details) in
+        NetworkManager.Discover.swipeProfiles(param: param, { (message) in
             self.hideHUD()
             
-            if let matchDetails = details {
-                let vc = MatchUserVC.instantiate(fromAppStoryboard: .Discover)
-                vc.matchDetails = matchDetails
-                let nvc = UINavigationController(rootViewController: vc)
-                nvc.modalPresentationStyle = .fullScreen
-                nvc.modalTransitionStyle = .crossDissolve
-                nvc.isNavigationBarHidden = true
-                self.present(nvc, animated: true, completion: nil)
-            }
-            
-            if status == .rewind {
-                self.bottomStack.isHidden = false
-                self.imgNoProfile.isHidden = true
-                self.kolodaView.isHidden = false
-            }
+//            if let matchDetails = details {
+//                let vc = MatchUserVC.instantiate(fromAppStoryboard: .Discover)
+//                vc.matchDetails = matchDetails
+//                let nvc = UINavigationController(rootViewController: vc)
+//                nvc.modalPresentationStyle = .fullScreen
+//                nvc.modalTransitionStyle = .crossDissolve
+//                nvc.isNavigationBarHidden = true
+//                self.present(nvc, animated: true, completion: nil)
+//            }
+//
+//            if status == .rewind {
+//                self.bottomStack.isHidden = false
+//                self.imgNoProfile.isHidden = true
+//                self.kolodaView.isHidden = false
+//            }
             
             guard status == .like else { return }
             
@@ -242,20 +171,20 @@ extension DiscoverVC {
         
     }
     
-    fileprivate func addBoostUser() {
-        
-        showHUD()
-        
-        NetworkManager.Discover.boostProfile { (message) in
-            self.hideHUD()
-            let alert = UIAlertController(title: "Success!!!", message: message)
-            self.present(alert, animated: true, completion: nil)
-        } _: { (error) in
-            self.hideHUD()
-            self.showToast(error)
-        }
-        
-    }
+//    fileprivate func addBoostUser() {
+//        
+//        showHUD()
+//        
+//        NetworkManager.Discover.boostProfile { (message) in
+//            self.hideHUD()
+//            let alert = UIAlertController(title: "Success!!!", message: message)
+//            self.present(alert, animated: true, completion: nil)
+//        } _: { (error) in
+//            self.hideHUD()
+//            self.showToast(error)
+//        }
+//        
+//    }
     
     fileprivate func setupNoProfileView() {
         bottomStack.isHidden = self.arrUser.count == 0
@@ -286,57 +215,57 @@ extension DiscoverVC {
         kolodaView?.swipe(.left)
     }
     
-    @IBAction func onRewindBtnTap(_ sender: UIButton) {
-        
-        guard isPurchase else {
-            let vc = UpgradeVC.instantiate(fromAppStoryboard: .Upgrade)
-            vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated: true, completion: nil)
-            return
-        }
-        
-        guard arrRewind.count > 0 else {
-            showToast("No result found")
-            return
-        }
-        self.kolodaView?.revertAction()
-    }
+//    @IBAction func onRewindBtnTap(_ sender: UIButton) {
+//
+//        guard isPurchase else {
+//            let vc = UpgradeVC.instantiate(fromAppStoryboard: .Upgrade)
+//            vc.modalPresentationStyle = .fullScreen
+//            self.present(vc, animated: true, completion: nil)
+//            return
+//        }
+//
+//        guard arrRewind.count > 0 else {
+//            showToast("No result found")
+//            return
+//        }
+//        self.kolodaView?.revertAction()
+//    }
     
     @IBAction func onSuperLikeBtnTap(_ sender: UIButton) {
         guard arrUser.count > 0 else { return }
         
-        if AppSupport.remainingSuperLikes == 0 {
-            let vc = SuperLikeAddVC.instantiate(fromAppStoryboard: .Upgrade)
+        if AppSupport.reviewLater == 0 {
+            let vc = SubscribeVC.instantiate(fromAppStoryboard: .Upgrade)
             vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: true, completion: nil)
             return
         }
-        kolodaView?.swipe(.up)
+        kolodaView?.swipe(.down)
     }
     
 //    @objc fileprivate func onRewindBtnTap(_ sender: UIButton) {
 //        self.kolodaView?.revertAction()
 //    }
-    
-    @IBAction func onBoostBtnTap(_ sender: UIButton) {
-        if AppSupport.remainingBoost == 0 {
-            let vc = UpgradeVC.instantiate(fromAppStoryboard: .Upgrade)
-            vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated: true, completion: nil)
-            return
-        }
-        AppSupport.remainingBoost -= 1
-        addBoostUser()
-    }
-    
-    @IBAction func onProfileLikedBtnTap(_ sender: UIButton) {
-        let vc = MatchUserVC.instantiate(fromAppStoryboard: .Discover)
-        let nvc = UINavigationController(rootViewController: vc)
-        nvc.modalPresentationStyle = .fullScreen
-        nvc.modalTransitionStyle = .crossDissolve
-        nvc.isNavigationBarHidden = true
-        self.present(nvc, animated: true, completion: nil)
-    }
+//
+//    @IBAction func onBoostBtnTap(_ sender: UIButton) {
+//        if AppSupport.remainingBoost == 0 {
+//            let vc = UpgradeVC.instantiate(fromAppStoryboard: .Upgrade)
+//            vc.modalPresentationStyle = .fullScreen
+//            self.present(vc, animated: true, completion: nil)
+//            return
+//        }
+//        AppSupport.remainingBoost -= 1
+//        addBoostUser()
+//    }
+//
+//    @IBAction func onProfileLikedBtnTap(_ sender: UIButton) {
+//        let vc = MatchUserVC.instantiate(fromAppStoryboard: .Discover)
+//        let nvc = UINavigationController(rootViewController: vc)
+//        nvc.modalPresentationStyle = .fullScreen
+//        nvc.modalTransitionStyle = .crossDissolve
+//        nvc.isNavigationBarHidden = true
+//        self.present(nvc, animated: true, completion: nil)
+//    }
     
     @IBAction func onFilterBtnTap(_ sender: UIButton) {
         let vc = FilterTVC.instantiate(fromAppStoryboard: .Discover)
@@ -365,27 +294,27 @@ extension DiscoverVC: KolodaViewDelegate {
         return [.left, .right, .up, .down]
     }
     
-    func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
-        let vc = UserDetailsTVC.instantiate(fromAppStoryboard: .Discover)
-        vc.user = arrUser[index]
-        vc.onLikeUser = {
-            koloda.swipe(.right)
-        }
-        
-        vc.onDisLikeUser = {
-            koloda.swipe(.left)
-        }
-        
-        vc.onSuperLikeUser = {
-            koloda.swipe(.up)
-            self.swipeUser(userID: self.arrUser[index].id, status: .superLike)
-        }
-        
-        let nvc = UINavigationController(rootViewController: vc)
-        nvc.modalPresentationStyle = .fullScreen
-        nvc.modalTransitionStyle = .crossDissolve
-        self.present(nvc, animated: true, completion: nil)
-    }
+//    func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
+//        let vc = UserDetailsTVC.instantiate(fromAppStoryboard: .Discover)
+//        vc.user = arrUser[index]
+//        vc.onLikeUser = {
+//            koloda.swipe(.right)
+//        }
+//
+//        vc.onDisLikeUser = {
+//            koloda.swipe(.left)
+//        }
+//
+//        vc.onReviewLater = {
+//            koloda.swipe(.down)
+//            self.swipeUser(userID: self.arrUser[index].id, status: .reviewLater)
+//        }
+//
+//        let nvc = UINavigationController(rootViewController: vc)
+//        nvc.modalPresentationStyle = .fullScreen
+//        nvc.modalTransitionStyle = .crossDissolve
+//        self.present(nvc, animated: true, completion: nil)
+//    }
     
     func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
         print(direction)
@@ -394,7 +323,7 @@ extension DiscoverVC: KolodaViewDelegate {
         switch direction {
             case .right:
                 if AppSupport.isLikeLimited && AppSupport.remainingLikes == 0 {
-                    let vc = UpgradeVC.instantiate(fromAppStoryboard: .Upgrade)
+                    let vc = SubscribeVC.instantiate(fromAppStoryboard: .Upgrade)
                     vc.modalPresentationStyle = .fullScreen
                     self.present(vc, animated: true, completion: nil)
                     return
@@ -416,9 +345,9 @@ extension DiscoverVC: KolodaViewDelegate {
                     koloda.swipe(.left)
                 }
                 
-                vc.onSuperLikeUser = {
-                    self.kolodaView.revertAction()
-        //            self.swipeUser(userID: self.arrUser[index].id, status: .superLike)
+                vc.onReviewLater = {
+                    koloda.swipe(.down)
+//                    self.swipeUser(userID: self.arrUser[index].id, status: .superLike)
                 }
                 
                 let nvc = UINavigationController(rootViewController: vc)
@@ -428,26 +357,26 @@ extension DiscoverVC: KolodaViewDelegate {
                 
                
         case .down:
-            if AppSupport.remainingSuperLikes == 0 {
-                let vc = SuperLikeAddVC.instantiate(fromAppStoryboard: .Upgrade)
+            if AppSupport.reviewLater == 0 {
+                let vc = SubscribeVC.instantiate(fromAppStoryboard: .Upgrade)
                 vc.modalPresentationStyle = .overCurrentContext
                 self.present(vc, animated: true, completion: nil)
                 return
             }
-            AppSupport.remainingSuperLikes -= 1
-            self.swipeUser(userID: arrUser[index].id, status: .superLike)
+            AppSupport.reviewLater -= 1
+            self.swipeUser(userID: arrUser[index].id, status: .reviewLater)
             default:
                 break
         }
     }
     
-    func koloda(_ koloda: KolodaView, didRewindTo index: Int) {
-        if arrRewind.count > index {
-//            print(arrRewind[index].id)
-            self.swipeUser(userID: arrRewind[index].id, status: .rewind)
-            arrRewind.remove(at: index)
-        }
-    }
+//    func koloda(_ koloda: KolodaView, didRewindTo index: Int) {
+//        if arrRewind.count > index {
+//           print(arrRewind[index].id)
+//            self.swipeUser(userID: arrRewind[index].id, status: .re)
+//            arrRewind.remove(at: index)
+//        }
+ //   }
     
     
     

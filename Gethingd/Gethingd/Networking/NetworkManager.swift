@@ -173,7 +173,7 @@ extension NetworkManager {
                     fail(response.message)
                     return
                 }
-                AppSupport.unreadCount = response["data"]["remaining_review_later_count"].intValue
+                AppSupport.reviewLater = response["data"]["remaining_review_later_count"].intValue
                 AppSupport.remainingLikes = response["data"]["remaining_likes_count"].intValue
                 AppSupport.isLikeLimited = response["data"]["is_limited"].stringValue == "Yes"
 //                let user = User(json: response, token: User.details.api_token)
@@ -251,6 +251,7 @@ extension NetworkManager {
                 }
                 
                 success(UserProfile(response))
+                print(response)
                 
             }) { (error) in
                 fail(error.localizedDescription)
@@ -378,7 +379,7 @@ extension NetworkManager {
 //                Filter.risingSignId = Int(response["params"]["rising_zodiac_sign_id"].stringValue) ?? 0
 
  
-                AppSupport.unreadCount = response["data"]["remaining_review_later_count"].intValue
+                AppSupport.reviewLater = response["data"]["remaining_review_later_count"].intValue
                 AppSupport.remainingLikes = response["data"]["remaining_likes_count"].intValue
                 AppSupport.isLikeLimited = response["data"]["is_limited"].stringValue == "Yes"
 //                AppSupport.remainingSuperLikes = response["remaining_slikes_count"].intValue
@@ -397,7 +398,7 @@ extension NetworkManager {
                 for user in response["data"]["users"].arrayValue {
                     arrUser.append(UserProfile(user))
                 }
-                
+                print(response)
                 success(arrUser)
                 
             }) { (error) in
@@ -405,48 +406,50 @@ extension NetworkManager {
             }
         }
         
-        static func swipeProfiles(param: Parameters, _ success: @escaping (MatchDetails?) -> Void, _ fail: @escaping (String) -> Void) {
+        static func swipeProfiles(param: Parameters, _ success: @escaping (String) -> Void, _ fail: @escaping (String) -> Void) {
             
-            NetworkCaller.getRequest(url: URLManager.Discover.swipe, params: param, headers: header, { (response) in
+            NetworkCaller.postRequest(url: URLManager.Discover.swipe, params: param, headers: header, { (response) in
                 
                 guard response.isSuccess else {
                     fail(response.message)
                     return
                 }
+                print(response)
                 
-                AppSupport.remainingLikes = response["remaining_likes_count"].intValue
-                AppSupport.isLikeLimited = response["is_likes_limited"].stringValue == "Yes"
-                AppSupport.remainingSuperLikes = response["remaining_slikes_count"].intValue
+                AppSupport.remainingLikes = response["data"]["remaining_likes_count"].intValue
+                AppSupport.isLikeLimited = response["data"]["is_limited"].stringValue == "Yes"
+                AppSupport.isOrder = response["data"]["is_order"].stringValue == "Yes"
+                AppSupport.reviewLater = response["data"]["remaining_review_later_count"].intValue
                 
-                if response["match_status"].stringValue == "Yes" {
-                        success(MatchDetails(response))
-                } else {
-                    success(nil)
-                }
-        
-                
+//                if response["match_status"].stringValue == "Yes" {
+//                        success(MatchDetails(response))
+//                } else {
+//                    success(nil)
+//                }
+//
+                success(response["message"].stringValue)
             }) { (error) in
                 fail(error.localizedDescription)
             }
         }
         
-        static func boostProfile(_ success: @escaping (String) -> Void, _ fail: @escaping (String) -> Void) {
-            
-            NetworkCaller.getRequest(url: URLManager.Discover.boostUser, params: nil, headers: header, { (response) in
-                
-                guard response.isSuccess else {
-                    fail(response.message)
-                    return
-                }
-        
-                AppSupport.remainingBoost = response["remaining_boost_count"].intValue
-                
-                success(response.message)
-                
-            }) { (error) in
-                fail(error.localizedDescription)
-            }
-        }
+//        static func boostProfile(_ success: @escaping (String) -> Void, _ fail: @escaping (String) -> Void) {
+//
+//            NetworkCaller.getRequest(url: URLManager.Discover.boostUser, params: nil, headers: header, { (response) in
+//
+//                guard response.isSuccess else {
+//                    fail(response.message)
+//                    return
+//                }
+//
+//                AppSupport.remainingBoost = response["remaining_boost_count"].intValue
+//
+//                success(response.message)
+//
+//            }) { (error) in
+//                fail(error.localizedDescription)
+//            }
+//        }
         
     }
 }
@@ -706,9 +709,11 @@ extension NetworkManager {
                 }
                 
                 AppSupport.remainingLikes = response["remaining_likes_count"].intValue
-                AppSupport.isLikeLimited = response["is_likes_limited"].stringValue == "Yes"
-                AppSupport.remainingSuperLikes = response["remaining_slikes_count"].intValue
-                AppSupport.remainingBoost = response["remaining_boost_count"].intValue
+                AppSupport.isLikeLimited = response["is_limited"].stringValue == "Yes"
+                AppSupport.isOrder = response["is_order"].stringValue == "Yes"
+                AppSupport.reviewLater = response["remaining_review_later_count"].intValue
+                
+             
                 
                 success(response.message)
                 

@@ -34,8 +34,8 @@ extension SuperLikeAddVC {
     
     fileprivate func setupUI() {
         
-        lblSuperLike.text = "\(SuperLike.superLikeCount) Astro \n Like"
-        lblPrice.text = "$ \(SuperLike.price)"
+//        lblSuperLike.text = "\(SuperLike.superLikeCount) Astro \n Like"
+//        lblPrice.text = "$ \(SuperLike.price)"
         
         
     }

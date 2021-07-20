@@ -9,10 +9,9 @@
 import UIKit
 
 struct Filter {
-    static var filterApply = false
     static var lookingFor = "both"
     static var minAge = 0
-    static var maxAge = 0
+    static var maxAge = 30
     static var distance = 0
     static var minKid = 0  // inch
     static var maxKid = 100 // inch
@@ -22,7 +21,7 @@ struct Filter {
 
     
     static func reset() {
-        filterApply = false
+      
         lookingFor = "both"
         minAge = 18
         maxAge = 40
