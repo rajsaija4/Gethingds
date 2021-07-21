@@ -744,7 +744,8 @@ extension CreateProfileTVC {
                 "latitude": latitude,
                 "longitude": longitude,
                 "address": loc,
-                "passion":arrPassionIds.joined(separator: ",")
+                "passion":arrPassionIds.joined(separator: ","),
+                "device_type":"iphone"
 
             ] as [String : String]
 

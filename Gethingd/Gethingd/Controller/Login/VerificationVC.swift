@@ -11,14 +11,15 @@ import SVPinView
 
 class VerificationVC: UIViewController {
     
-    @IBOutlet weak var lblContactNo: UILabel!
+    @IBOutlet weak var lblMessage: UILabel!
     @IBOutlet weak var lblCountdown: UILabel!
     //MARK: - VARIABLE
-    var contactNumber = String()
+    var email = ""
     var otp = String()
+    var password = ""
     fileprivate var pin = ""
-    var timer:Timer?
-    var timeLeft = 59
+//    var timer:Timer?
+//    var timeLeft = 59
    
 
     
@@ -54,22 +55,23 @@ class VerificationVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        lblContactNo.text = contactNumber
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(onTimerFires), userInfo: nil, repeats: true)
+        lblMessage.text = "Please enter the 4 digit code sent to \(email)"
+//        lblContactNo.text = contactNumber
+//        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(onTimerFires), userInfo: nil, repeats: true)
 
         setupUI()
 //        update()
     }
-    @objc func onTimerFires()
-    {
-        timeLeft -= 1
-        lblCountdown.text = "00:\(timeLeft)"
-
-        if timeLeft <= 0 {
-            timer?.invalidate()
-            timer = nil
-        }
-    }
+//    @objc func onTimerFires()
+//    {
+//        timeLeft -= 1
+//        lblCountdown.text = "00:\(timeLeft)"
+//
+//        if timeLeft <= 0 {
+//            timer?.invalidate()
+//            timer = nil
+//        }
+//    }
 }
 
 extension VerificationVC {
@@ -131,21 +133,21 @@ extension VerificationVC {
 extension VerificationVC {
     
     @IBAction func onResendBtnTap(_ sender: UIButton) {
+//
+//        let param = [
+//            "phone": contactNumber
+//        ]
         
-        let param = [
-            "phone": contactNumber
-        ]
-        
-        resendOTP(param: param)
+//        resendOTP(param: param)
     }
     
     @IBAction func onCallMeBtnTap(_ sender: UIButton) {
         
-        let param = [
-            "phone_number": contactNumber
-        ]
+//        let param = [
+//            "phone_number": contactNumber
+//        ]
         
-        resendOTP(param: param)
+//        resendOTP(param: param)
     }
     
     @IBAction func onVerifyControlTap(_ sender: UIButton) {
@@ -156,8 +158,10 @@ extension VerificationVC {
         }
         
         let param = [
-            "phone": contactNumber,
+            "email": email,
             "login_otp": pin,
+            "device_type":"ios",
+            "password":password,
             "fcm_token": AppUserDefaults.value(forKey: .fcmToken, fallBackValue: "123").stringValue
         ] as [String : Any]
         

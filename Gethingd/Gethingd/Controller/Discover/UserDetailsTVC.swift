@@ -16,7 +16,8 @@ class UserDetailsTVC: UITableViewController, TagListViewDelegate {
     
     //MARK:- VARIABLE
     @IBOutlet weak var pageControl: CHIPageControlJaloro!
-//    @IBOutlet var mainKidsTag: [UIStackView]!
+    @IBOutlet weak var viewAdolescent: UIView!
+    //    @IBOutlet var mainKidsTag: [UIStackView]!
     @IBOutlet var kidMainStack: [UIStackView]!
     @IBOutlet var kidView: [UIView]!
     @IBOutlet var kidsStack: [UIStackView]!
@@ -178,10 +179,10 @@ extension UserDetailsTVC {
             else if kids == "preschooler" {
                 preschooler += 1
             }
-            else if kids == "school-aged child" {
+            else if kids == "School-aged Child" {
                 schoolagechild += 1
             }
-            else  if kids == "adolescent" {
+            else  if kids == "Adolescent" {
                 adolescent += 1
             }
         }
@@ -222,7 +223,8 @@ extension UserDetailsTVC {
             kidMainStack[1].isHidden = true
         }
         if adolescent == 0 {
-            kidMainStack[2].isHidden = true
+            viewAdolescent.isHidden = true
+            
         }
        
         txtAbout.text = "\(user.about)"
@@ -352,7 +354,7 @@ extension UserDetailsTVC {
                 return 148
                 
             case 2:
-            return 50
+            return 60
             
 //            case 3:
 //                

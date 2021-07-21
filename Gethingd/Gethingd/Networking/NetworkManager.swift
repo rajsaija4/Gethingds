@@ -44,12 +44,19 @@ extension NetworkManager {
             NetworkCaller.postRequest(url: URLManager.Auth.login, params: param, headers: header, { (response) in
                 
                 guard response.isSuccess else {
+                    for param in param {
+                        if response["message"][param.key].arrayValue.count > 0 {
+                            let error = response["message"][param.key].arrayValue.map{ $0.stringValue }.joined(separator: "\n")
+                            fail(error)
+                            return
+                        }
+                        
+                    }
                     fail(response.message)
                     return
                 }
-                
                 success(response["otp"].stringValue)
-                
+     
             }) { (error) in
                 fail(error.localizedDescription)
             }
@@ -60,6 +67,14 @@ extension NetworkManager {
             NetworkCaller.postRequest(url: URLManager.Auth.verify, params: param, headers: header, { (response) in
                 
                 guard response.isSuccess else {
+                    for param in param {
+                        if response["message"][param.key].arrayValue.count > 0 {
+                            let error = response["message"][param.key].arrayValue.map{ $0.stringValue }.joined(separator: "\n")
+                            fail(error)
+                            return
+                        }
+                        
+                    }
                     fail(response.message)
                     return
                 }

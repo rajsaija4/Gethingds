@@ -18,9 +18,9 @@ class SignInVC: UIViewController {
     
     
     //MARK:- OUTLET
-    @IBOutlet weak var txtPhoneNumber: PhoneNumberTextField!
-    @IBOutlet weak var imgNumberStatus: UIImageView!
-    
+    @IBOutlet weak var txtEmail: UITextField!
+   @IBOutlet weak var txtConfirmPass: UITextField!
+    @IBOutlet weak var TxtPass: UITextField!
     
     //MARK:- LIFECYCLE
     override func viewDidLoad() {
@@ -48,6 +48,25 @@ class SignInVC: UIViewController {
         openSafariViewController(privacyURL)
     }
     
+    @IBAction func btnPassVisible(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+            if sender.tag == 0 {
+                TxtPass.isSecureTextEntry = false
+            }
+            
+            else if sender.tag == 1 {
+                txtConfirmPass.isSecureTextEntry = false
+            }
+        }
+        
+        if sender.tag == 0 {
+            TxtPass.isSecureTextEntry = true
+        }
+        
+        else if sender.tag == 1 {
+            txtConfirmPass.isSecureTextEntry = true
+        }    }
 }
 
 
@@ -56,21 +75,21 @@ extension SignInVC {
     
     fileprivate func setupUI() {
         AppUserDefaults.save(value: true, forKey: .isFirstTimeUpgrade)
-        txtPhoneNumber.withFlag = true
-        txtPhoneNumber.withPrefix = true
-        txtPhoneNumber.withExamplePlaceholder = true
-        txtPhoneNumber.withDefaultPickerUI = true
-        txtPhoneNumber.addTarget(self, action:#selector(self.textFieldDidChange(sender:)), for: UIControl.Event.editingChanged)
-        PhoneNumberKit.CountryCodePicker.forceModalPresentation = true
+//        txtPhoneNumber.withFlag = true
+//        txtPhoneNumber.withPrefix = true
+//        txtPhoneNumber.withExamplePlaceholder = true
+//        txtPhoneNumber.withDefaultPickerUI = true
+//        txtEmail.addTarget(self, action:#selector(self.textFieldDidChange(sender:)), for: UIControl.Event.editingChanged)
+//        PhoneNumberKit.CountryCodePicker.forceModalPresentation = true
         locationManager = CLLocationManager()
         locationManager?.delegate = self
         locationManager?.requestAlwaysAuthorization()
         
     }
     
-    @objc func textFieldDidChange(sender: UITextField) {
-        imgNumberStatus.isHidden = !txtPhoneNumber.isValidNumber
-    }
+//    @objc func textFieldDidChange(sender: UITextField) {
+//       imgNumberStatus.isHidden = !txtPhoneNumber.isValidNumber
+//    }
     
 }
 
@@ -78,17 +97,49 @@ extension SignInVC {
 
 extension SignInVC {
     
-    fileprivate func userLogIn(contact: String) {
+    
+    fileprivate func userLogIn() {
         
-        let param = ["phone": contact]
+        guard let email = txtEmail.text, email.count > 0 else {
+            self.showToast("Please Enter Email")
+            return
+        }
+        
+        guard email.isValidEmail else {
+            self.showToast("Please Enter Valid Email")
+            return
+        }
+        
+        guard let password = TxtPass.text, password.count > 0 else {
+            self.showToast("Please Enter Password")
+            return
+        }
+        
+        guard let rePassword = txtConfirmPass.text, password.count > 0 else {
+            self.showToast("Please Enter Password")
+            return
+        }
+        
+        guard password == rePassword else {
+            self.showToast("Please Enter Both Password Same")
+            return
+            
+        }
+        
+        
+        
+        let param = ["email": email,
+                     "password":password,
+                     "password_confirmation":rePassword
+        ] as [String:Any]
         showHUD()
         
         NetworkManager.Auth.login(param: param, { (otp) in
             self.hideHUD()
            
             let vc = VerificationVC.instantiate(fromAppStoryboard: .Login)
-            vc.contactNumber = contact
-            vc.otp = otp
+            vc.email = self.txtEmail.text ?? ""
+            vc.password = self.TxtPass.text ?? ""
             self.navigationController?.pushViewController(vc, animated: true)
            
         }) { (error) in
@@ -107,26 +158,20 @@ extension SignInVC {
     
     @IBAction func signInBtnTap(_ sender: UIButton) {
 
-        
-        guard txtPhoneNumber.text?.count ?? 0 > 0 else {
-            showToast("Please enter your mobile number")
-            return
-        }
-            
-        guard let phoneNumber = txtPhoneNumber.phoneNumber?.nationalNumber.description else {
-            showToast("Please enter your mobile number")
-            return
-        }
-        
-        guard let countryCode = txtPhoneNumber.phoneNumber?.countryCode.description else {
-            showToast("Please enter country code")
-            return
-        }
+//        guard let phoneNumber = txtPhoneNumber.phoneNumber?.nationalNumber.description else {
+//            showToast("Please enter your mobile number")
+//            return
+//        }
+//
+//        guard let countryCode = txtPhoneNumber.phoneNumber?.countryCode.description else {
+//            showToast("Please enter country code")
+//            return
+//        }
 
 
-        let contact = "+" + countryCode + phoneNumber
-
-        userLogIn(contact: contact)
+//        let contact = "+" + countryCode + phoneNumber
+//
+           userLogIn()
        
     }
     
@@ -147,11 +192,11 @@ extension SignInVC {
 
 extension SignInVC: UITextFieldDelegate {
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        txtPhoneNumber.text = txtPhoneNumber.text ?? "" + string
-        print(txtPhoneNumber.isValidNumber)
-        return true
-    }
+//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//        txtEmail.text = txtEmail.text ?? "" + string
+//
+//        return true
+//    }
 }
 
 

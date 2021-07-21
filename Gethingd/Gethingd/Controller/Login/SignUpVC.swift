@@ -56,7 +56,7 @@ extension SignUpVC {
             Filter.reset()
             let vc = VerificationVC.instantiate(fromAppStoryboard: .Login)
             vc.otp = otp
-            vc.contactNumber = self.txtPhoneNumber.text ?? ""
+//            vc.contactNumber = self.txtPhoneNumber.text ?? ""
             self.navigationController?.pushViewController(vc, animated: true)
         }) { (error) in
             self.hideHUD()
