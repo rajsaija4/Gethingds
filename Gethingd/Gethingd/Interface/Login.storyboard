@@ -951,10 +951,10 @@
             </objects>
             <point key="canvasLocation" x="3999" y="128"/>
         </scene>
-        <!--View Controller-->
+        <!--LoginVC-->
         <scene sceneID="NJD-L9-qym">
             <objects>
-                <viewController id="FFv-GH-7Oy" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FFv-GH-7Oy" customClass="LoginVC" customModule="Gethingd" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4P5-Rc-0J5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1059,7 +1059,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ait-cX-qEK">
                                                         <rect key="frame" x="16" y="0.0" width="261" height="50"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Your Password" textAlignment="natural" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="Chd-GO-lnQ" customClass="PhoneNumberTextField" customModule="PhoneNumberKit">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Your Password" textAlignment="natural" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="Chd-GO-lnQ">
                                                                 <rect key="frame" x="0.0" y="12.5" width="261" height="25.5"/>
                                                                 <color key="textColor" red="0.01266446523" green="0.01266790554" blue="0.012663293629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="17"/>
@@ -1105,6 +1105,9 @@
                                         <state key="normal" title="Forgot Password ?">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onPressForgotPassword:" destination="FFv-GH-7Oy" eventType="touchUpInside" id="7gL-b5-NTv"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5uY-nw-byg">
                                         <rect key="frame" x="0.0" y="154" width="315" height="50"/>
@@ -1121,6 +1124,9 @@
                                                 <real key="value" value="25"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onPressLogin:" destination="FFv-GH-7Oy" eventType="touchUpInside" id="fJs-bi-YR2"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -1197,7 +1203,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iMi-ds-4pe">
-                                <rect key="frame" x="20" y="414" width="335" height="125"/>
+                                <rect key="frame" x="20" y="414" width="335" height="126.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="I2f-a1-WeN">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="24"/>
@@ -1248,16 +1254,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5Kp-a8-As3">
-                                        <rect key="frame" x="40.5" y="94" width="254" height="31"/>
+                                        <rect key="frame" x="38" y="94" width="259" height="32.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZE-wh-Idi">
-                                                <rect key="frame" x="0.0" y="3.5" width="201" height="24"/>
+                                                <rect key="frame" x="0.0" y="4.5" width="201" height="24"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="17"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0NX-n2-y4E">
-                                                <rect key="frame" x="201" y="0.0" width="53" height="31"/>
+                                                <rect key="frame" x="201" y="0.0" width="58" height="32.5"/>
                                                 <state key="normal" title="Sign up">
                                                     <attributedString key="attributedTitle">
                                                         <fragment content="Sign up">
@@ -1269,6 +1275,9 @@
                                                         </fragment>
                                                     </attributedString>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onPressbtnSingUp:" destination="FFv-GH-7Oy" eventType="touchUpInside" id="3tX-4E-nLW"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -1294,6 +1303,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="a6w-uS-kwf"/>
+                    <connections>
+                        <outlet property="txtEmail" destination="Ylm-BP-1Ip" id="gsq-Gi-6ah"/>
+                        <outlet property="txtPassword" destination="Chd-GO-lnQ" id="1k8-X5-04Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wyf-0E-XRS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1685,7 +1698,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="e4l-iB-afE">
-                                <rect key="frame" x="20" y="424" width="335" height="125"/>
+                                <rect key="frame" x="20" y="424" width="335" height="126.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6Kg-NV-7Jd">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="24"/>
@@ -1736,16 +1749,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lu5-YA-mpg">
-                                        <rect key="frame" x="45.5" y="94" width="244" height="31"/>
+                                        <rect key="frame" x="44" y="94" width="247" height="32.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XhB-3N-ABK">
-                                                <rect key="frame" x="0.0" y="0.0" width="195" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="195" height="32.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3DE-en-7iN">
-                                                <rect key="frame" x="195" y="0.0" width="49" height="31"/>
+                                                <rect key="frame" x="195" y="0.0" width="52" height="32.5"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle">
                                                         <fragment content="Sign in">
@@ -1757,6 +1770,9 @@
                                                         </fragment>
                                                     </attributedString>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onPressSignin:" destination="LFs-XS-cuW" eventType="touchUpInside" id="Lhb-RI-qi1"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -1872,10 +1888,10 @@
             </objects>
             <point key="canvasLocation" x="87" y="33"/>
         </scene>
-        <!--View Controller-->
+        <!--FpasswordVC-->
         <scene sceneID="UmA-ka-Dhq">
             <objects>
-                <viewController id="2wP-Ln-C4N" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FpasswordVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2wP-Ln-C4N" customClass="FpasswordVC" customModule="Gethingd" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="31S-OC-RFO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2000,6 +2016,9 @@
                                         <state key="normal" title="Login">
                                             <color key="titleColor" red="0.32944318649999998" green="0.12744057180000001" blue="0.27206125860000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onPressLoginbtn:" destination="2wP-Ln-C4N" eventType="touchUpInside" id="qZd-e3-l4V"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -2024,10 +2043,10 @@
             </objects>
             <point key="canvasLocation" x="-626" y="-172"/>
         </scene>
-        <!--View Controller-->
+        <!--Change PasVC-->
         <scene sceneID="sgM-V1-OdW">
             <objects>
-                <viewController id="WAM-PA-8zg" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChangePasVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WAM-PA-8zg" customClass="ChangePasVC" customModule="Gethingd" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pmb-Uv-CyK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

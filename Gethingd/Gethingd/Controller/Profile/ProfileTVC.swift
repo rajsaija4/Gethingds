@@ -410,6 +410,10 @@ extension ProfileTVC {
 //                navigationController?.pushViewController(vc, animated: false)
 //                break
             case 4:
+                let vc = ChangePasVC.instantiate(fromAppStoryboard: .Login)
+                self.navigationController?.pushViewController(vc, animated: true)
+            break
+            case 5:
                 logoutProfile()
                 break
             case 7:

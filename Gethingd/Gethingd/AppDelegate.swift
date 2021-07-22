@@ -63,7 +63,7 @@ extension AppDelegate {
     }
     
     func setupLogin() {
-        let vc = SignInVC.instantiate(fromAppStoryboard: .Login)
+        let vc = LoginVC.instantiate(fromAppStoryboard: .Login)
         let nvc = UINavigationController(rootViewController: vc)
         nvc.isNavigationBarHidden = true
         window?.rootViewController = nvc

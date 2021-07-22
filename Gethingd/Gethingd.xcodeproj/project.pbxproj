@@ -49,6 +49,9 @@
 		9F7F72532685959B009C46E9 /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F72372685959A009C46E9 /* ChangePasswordVC.swift */; };
 		9F7F72542685959B009C46E9 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F72382685959A009C46E9 /* SignInVC.swift */; };
 		9F7F72552685959B009C46E9 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F72392685959A009C46E9 /* SignUpVC.swift */; };
+		9F8B3A6526A937D200AFC663 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B3A6426A937D200AFC663 /* LoginVC.swift */; };
+		9F8B3A6826A93BD400AFC663 /* FpasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B3A6726A93BD400AFC663 /* FpasswordVC.swift */; };
+		9F8B3A6B26A93EDD00AFC663 /* ChangePasVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B3A6A26A93EDD00AFC663 /* ChangePasVC.swift */; };
 		9FBFFE94269C093800CA5BBE /* KidCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBFFE92269C093800CA5BBE /* KidCell.swift */; };
 		9FBFFE95269C093800CA5BBE /* KidCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FBFFE93269C093800CA5BBE /* KidCell.xib */; };
 		9FD6CD0326846764002EF5BD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CCF126846764002EF5BD /* Constants.swift */; };
@@ -162,6 +165,9 @@
 		9F7F72382685959A009C46E9 /* SignInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		9F7F72392685959A009C46E9 /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		9F842D1E2696BAEB00924AA0 /* Gethingd.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Gethingd.entitlements; sourceTree = "<group>"; };
+		9F8B3A6426A937D200AFC663 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		9F8B3A6726A93BD400AFC663 /* FpasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FpasswordVC.swift; sourceTree = "<group>"; };
+		9F8B3A6A26A93EDD00AFC663 /* ChangePasVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasVC.swift; sourceTree = "<group>"; };
 		9FBFFE92269C093800CA5BBE /* KidCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidCell.swift; sourceTree = "<group>"; };
 		9FBFFE93269C093800CA5BBE /* KidCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KidCell.xib; sourceTree = "<group>"; };
 		9FD6CCF126846764002EF5BD /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -406,6 +412,9 @@
 				9F7F72372685959A009C46E9 /* ChangePasswordVC.swift */,
 				9F7F72382685959A009C46E9 /* SignInVC.swift */,
 				9F7F72392685959A009C46E9 /* SignUpVC.swift */,
+				9F8B3A6426A937D200AFC663 /* LoginVC.swift */,
+				9F8B3A6726A93BD400AFC663 /* FpasswordVC.swift */,
+				9F8B3A6A26A93EDD00AFC663 /* ChangePasVC.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -832,6 +841,7 @@
 				9FD6CD0726846764002EF5BD /* ColorModel.swift in Sources */,
 				9FD6CDCA26848D2A002EF5BD /* SignCell.swift in Sources */,
 				9FD6CD0926846764002EF5BD /* VideoPicker.swift in Sources */,
+				9F8B3A6826A93BD400AFC663 /* FpasswordVC.swift in Sources */,
 				9F48A6232692CB23007A6046 /* EditProfileVC.swift in Sources */,
 				9F7F72542685959B009C46E9 /* SignInVC.swift in Sources */,
 				9F7F723C2685959A009C46E9 /* SuperLikeAddVC.swift in Sources */,
@@ -847,6 +857,7 @@
 				9F7F72522685959B009C46E9 /* VerifyEmailVC.swift in Sources */,
 				9FF205B426945E4900AC5332 /* SettingVC.swift in Sources */,
 				9F6804B526948EE500C1C812 /* SubscribeVC.swift in Sources */,
+				9F8B3A6B26A93EDD00AFC663 /* ChangePasVC.swift in Sources */,
 				9FD6CDD126848D2A002EF5BD /* NotificationCell.swift in Sources */,
 				9F53D20626A050C2008CF8FF /* PassionSetting.swift in Sources */,
 				9FD6CDC826848D2A002EF5BD /* FreshMatchesCell.swift in Sources */,
@@ -867,6 +878,7 @@
 				9FD6CD1226846764002EF5BD /* AppFonts.swift in Sources */,
 				9FD6CD0826846764002EF5BD /* ImagePicker.swift in Sources */,
 				9FD6CD0E26846764002EF5BD /* UIKit+Ext.swift in Sources */,
+				9F8B3A6526A937D200AFC663 /* LoginVC.swift in Sources */,
 				9FD6CD0526846764002EF5BD /* AppUserDefaults.swift in Sources */,
 				9F6938D7268D7E3A00C57FCF /* MessageVC1.swift in Sources */,
 				9F53C08E269322AA0058D21B /* ProfilePhotoCollectionCell.swift in Sources */,

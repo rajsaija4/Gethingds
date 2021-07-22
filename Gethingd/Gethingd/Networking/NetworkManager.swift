@@ -62,6 +62,31 @@ extension NetworkManager {
             }
         }
         
+        static func SignIn(param: Parameters, _ success: @escaping (String) -> Void, _ fail: @escaping (String) -> Void) {
+            
+            NetworkCaller.postRequest(url: URLManager.Auth.loginUser, params: param, headers: header, { (response) in
+                
+                guard response.isSuccess else {
+                    for param in param {
+                        if response["message"][param.key].arrayValue.count > 0 {
+                            let error = response["message"][param.key].arrayValue.map{ $0.stringValue }.joined(separator: "\n")
+                            fail(error)
+                            return
+                        }
+                        
+                    }
+                    fail(response.message)
+                    return
+                }
+                let user = User(response)
+                user.save()
+                success(response["message"].stringValue)
+                
+            }) { (error) in
+                fail(error.localizedDescription)
+            }
+        }
+        
         static func verifyLogin(param: Parameters, _ success: @escaping (String) -> Void, _ fail: @escaping (String) -> Void) {
             
             NetworkCaller.postRequest(url: URLManager.Auth.verify, params: param, headers: header, { (response) in

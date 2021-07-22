@@ -33,6 +33,7 @@ struct URLManager {
         static let changePassword = basePath + "change_password"
         static let resendOTP = basePath + "resend_otp"
         static let emailVerification = basePath + "email_verification"
+        static let loginUser = basePath + "signin"
         
     }
     

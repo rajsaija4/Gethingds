@@ -26,10 +26,16 @@ class SignInVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        
+        self.navigationController?.navigationBar.isHidden = true
     }
     
-
+    @IBAction func onPressSignin(_ sender: Any) {
+        
+        let vc = LoginVC.instantiate(fromAppStoryboard: .Login)
+        self.modalPresentationStyle = .fullScreen
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func onTermsBtnTap(_ sender: UIButton) {
         
         guard let termsURL = URL(string: "https://www.zodiap.org/page/terms_and_conditions") else {
@@ -50,23 +56,15 @@ class SignInVC: UIViewController {
     
     @IBAction func btnPassVisible(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
-        if sender.isSelected {
-            if sender.tag == 0 {
-                TxtPass.isSecureTextEntry = false
-            }
-            
-            else if sender.tag == 1 {
-                txtConfirmPass.isSecureTextEntry = false
-            }
-        }
-        
         if sender.tag == 0 {
-            TxtPass.isSecureTextEntry = true
+            TxtPass.isSecureTextEntry = sender.isSelected
         }
         
         else if sender.tag == 1 {
-            txtConfirmPass.isSecureTextEntry = true
-        }    }
+            txtConfirmPass.isSecureTextEntry = sender.isSelected
+        }
+        
+    }
 }
 
 
