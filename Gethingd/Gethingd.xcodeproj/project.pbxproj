@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		183042CB26720E8900E6A29A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183042CA26720E8900E6A29A /* AppDelegate.swift */; };
 		183042D426720E8B00E6A29A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 183042D326720E8B00E6A29A /* Assets.xcassets */; };
+		35B021B026AA90E500FE27CD /* NewPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B021AF26AA90E500FE27CD /* NewPasswordVC.swift */; };
 		6A28A73AB43CE01DE80F335B /* Pods_Gethingd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F5AD948B2005A04BB9EEB2 /* Pods_Gethingd.framework */; };
 		9F1F70C1268B597600097F7E /* ReviewLaterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1F70C0268B597500097F7E /* ReviewLaterVC.swift */; };
 		9F1F70C8268B599700097F7E /* ReviewLater.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F1F70C7268B599700097F7E /* ReviewLater.storyboard */; };
@@ -124,6 +125,7 @@
 		183042D326720E8B00E6A29A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		183042D826720E8B00E6A29A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CA5EC62CBB9378181B5FC41 /* Pods-Gethingd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gethingd.debug.xcconfig"; path = "Target Support Files/Pods-Gethingd/Pods-Gethingd.debug.xcconfig"; sourceTree = "<group>"; };
+		35B021AF26AA90E500FE27CD /* NewPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordVC.swift; sourceTree = "<group>"; };
 		65DFBE8CF9BFC095D90B1189 /* Pods-Gethingd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gethingd.release.xcconfig"; path = "Target Support Files/Pods-Gethingd/Pods-Gethingd.release.xcconfig"; sourceTree = "<group>"; };
 		9F1F70C0268B597500097F7E /* ReviewLaterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewLaterVC.swift; sourceTree = "<group>"; };
 		9F1F70C7268B599700097F7E /* ReviewLater.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReviewLater.storyboard; sourceTree = "<group>"; };
@@ -415,6 +417,7 @@
 				9F8B3A6426A937D200AFC663 /* LoginVC.swift */,
 				9F8B3A6726A93BD400AFC663 /* FpasswordVC.swift */,
 				9F8B3A6A26A93EDD00AFC663 /* ChangePasVC.swift */,
+				35B021AF26AA90E500FE27CD /* NewPasswordVC.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -817,6 +820,7 @@
 				9FD6CDA626848C7D002EF5BD /* SubscriptionPlan.swift in Sources */,
 				9F7F723D2685959A009C46E9 /* UpgradePlanInfoVC.swift in Sources */,
 				9FD6CD0D26846764002EF5BD /* Alert+Extension.swift in Sources */,
+				35B021B026AA90E500FE27CD /* NewPasswordVC.swift in Sources */,
 				9FD6CD0C26846764002EF5BD /* UIView+Inspectable.swift in Sources */,
 				9FD6CDA326848C7D002EF5BD /* InstagramMedia.swift in Sources */,
 				9F7F72442685959B009C46E9 /* Message.swift in Sources */,

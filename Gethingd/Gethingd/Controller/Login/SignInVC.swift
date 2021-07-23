@@ -124,6 +124,15 @@ extension SignInVC {
             
         }
         
+        guard let password = TxtPass.text , password.count >= 6 else {
+            showToast("Password should be 6 or more then 6 characters")
+            return
+        }
+        
+        guard let confirmpassword = txtConfirmPass.text , confirmpassword.count >= 6 else {
+            showToast("Password should be 6 or more then 6 characters")
+            return
+        }
         
         
         let param = ["email": email,

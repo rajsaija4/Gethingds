@@ -32,9 +32,9 @@ struct URLManager {
         static let forgotPassword = basePath + "forget_password"
         static let changePassword = basePath + "change_password"
         static let resendOTP = basePath + "resend_otp"
-        static let emailVerification = basePath + "email_verification"
+        static let emailVerification = basePath + "forget_password_verification"
         static let loginUser = basePath + "signin"
-        
+        static let updatepassword = basePath + "update_new_password"
     }
     
     struct Profile {

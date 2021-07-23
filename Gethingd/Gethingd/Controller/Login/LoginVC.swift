@@ -65,6 +65,10 @@ extension LoginVC {
             return
         }
         
+        guard password.count >= 6 else {
+            showToast("Password should be 6 or more then 6 characters")
+            return
+        }
     
         let param = ["email": email,
                      "password":password,

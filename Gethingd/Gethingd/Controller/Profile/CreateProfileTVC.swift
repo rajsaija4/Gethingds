@@ -646,10 +646,10 @@ extension CreateProfileTVC {
             return
         }
         
-        guard let email = txtEmail.text, email.count > 0, email != placeHolder else {
-            self.showAlert("Please Enter Email")
-            return
-        }
+//        guard let email = txtEmail.text, email.count > 0, email != placeHolder else {
+//            self.showAlert("Please Enter Email")
+//            return
+//        }
         
         guard let loc = lblLocation.text, loc.count > 0 else {
             self.showAlert("Please Select Location")
@@ -662,10 +662,10 @@ extension CreateProfileTVC {
         }
         
         
-        guard email.isValidEmail else {
-            self.showAlert("Please Enter Valid Email")
-            return
-        }
+//        guard email.isValidEmail else {
+//            self.showAlert("Please Enter Valid Email")
+//            return
+//        }
         
         
 //        let kids = arrKids.values.map{ String($0) }
@@ -733,7 +733,7 @@ extension CreateProfileTVC {
             [
                 "first_name": firstName,
                 "last_name": lastName,
-                "email": email,
+//                "email": email,
                 "dob": dob,
                 "job_title":txtJobTitle.text ?? "",
                 "about": txtAboutView.text ?? "",

@@ -12,10 +12,10 @@ import SwiftyJSON
 class NetworkManager {
     
     static var header: HTTPHeaders? {
-//        guard User.isExist else {
-//            return nil
-//        }
-        return HTTPHeaders(User.token)
+        guard User.isExist else {
+            return nil
+        }
+        return HTTPHeaders(["Authorization": "Bearer \(UserDefaults.standard.string(forKey: "btoken") ?? "")"])
     }
 }
 
@@ -79,6 +79,8 @@ extension NetworkManager {
                     return
                 }
                 let user = User(response)
+                let barearToken = response["data"]["token"].stringValue
+                UserDefaults.standard.set(barearToken, forKey: "btoken")
                 user.save()
                 success(response["message"].stringValue)
                 
@@ -104,6 +106,8 @@ extension NetworkManager {
                     return
                 }
                 let user = User(response)
+                let barearToken = response["data"]["token"].stringValue
+                UserDefaults.standard.set(barearToken, forKey: "btoken")
                 user.save()
                 success(response["is_show_popup"].stringValue)
                 
@@ -112,7 +116,7 @@ extension NetworkManager {
             }
         }
         
-        static func verifyEmail(param: Parameters, _ success: @escaping (Bool) -> Void, _ fail: @escaping (String) -> Void) {
+        static func verifyEmail(param: Parameters, _ success: @escaping (String) -> Void, _ fail: @escaping (String) -> Void) {
             
             NetworkCaller.postRequest(url: URLManager.Auth.emailVerification, params: param, headers: header, { (response) in
                 
@@ -122,7 +126,7 @@ extension NetworkManager {
                 }
 //                let user = User(response)
 //                user.save()
-                success(true)
+                success(response["data"]["key"].stringValue)
                 
             }) { (error) in
                 fail(error.localizedDescription)
@@ -176,7 +180,19 @@ extension NetworkManager {
             }
         }
         
-        
+        static func updateNewpassword(param: Parameters, _ success: @escaping (String) -> Void, _ fail: @escaping (String) -> Void) {
+            
+            NetworkCaller.postRequest(url: URLManager.Auth.updatepassword, params: param, headers: header, { (response) in
+                
+                guard response.isSuccess else {
+                    fail(response.message)
+                    return
+                }
+                success(response["message"].stringValue)
+            }) { (error) in
+                fail(error.localizedDescription)
+            }
+        }
     }
 }
 

@@ -31,66 +31,68 @@ class User: NSObject, NSCoding {
     var image6:String = ""
     var user_kids:[String] = []
     var api_token:String = ""
+ 
     
     init(_ json: JSON) {
         super.init()
-        id = json["data"]["id"].intValue
-        firstName = json["data"]["first_name"].stringValue
-        lastName = json["data"]["last_name"].stringValue
-        dob = json["data"]["dob"].stringValue
-        email = json["data"]["email"].stringValue
-        gender = json["data"]["gender"].stringValue
-        looking_for = json["data"]["looking_for"].stringValue
-        job_title = json["data"]["job_title"].stringValue
-        for pas in json["data"]["passion"].arrayValue {
+        id = json["data"]["user"]["id"].intValue
+        firstName = json["data"]["user"]["first_name"].stringValue
+        lastName = json["data"]["user"]["last_name"].stringValue
+        dob = json["data"]["user"]["dob"].stringValue
+        email = json["data"]["user"]["email"].stringValue
+        gender = json["data"]["user"]["gender"].stringValue
+        looking_for = json["data"]["user"]["looking_for"].stringValue
+        job_title = json["data"]["user"]["job_title"].stringValue
+        for pas in json["data"]["user"]["passion"].arrayValue {
             passion.append(pas.stringValue)
         }
-        address = json["data"]["address"].stringValue
-        about = json["data"]["about"].stringValue
-        num_of_kids = json["data"]["num_of_kids"].intValue
+        address = json["data"]["user"]["address"].stringValue
+        about = json["data"]["user"]["about"].stringValue
+        num_of_kids = json["data"]["user"]["num_of_kids"].intValue
         email_verified = json["data"]["email_verified"].intValue
-        image1 = json["data"]["image1"].stringValue
-        image2 = json["data"]["image2"].stringValue
-        image3 = json["data"]["image3"].stringValue
-        image4 = json["data"]["image4"].stringValue
-        image5 = json["data"]["image5"].stringValue
-        image6 = json["data"]["image6"].stringValue
-        for kid in json["data"]["user_kids"].arrayValue {
+        image1 = json["data"]["user"]["image1"].stringValue
+        image2 = json["data"]["user"]["image2"].stringValue
+        image3 = json["data"]["user"]["image3"].stringValue
+        image4 = json["data"]["user"]["image4"].stringValue
+        image5 = json["data"]["user"]["image5"].stringValue
+        image6 = json["data"]["user"]["image6"].stringValue
+        for kid in json["data"]["user"]["user_kids"].arrayValue {
             user_kids.append(kid["kids_status"].stringValue)
         }
-        api_token = json["data"]["api_token"].stringValue
+        api_token = json["data"]["user"]["api_token"].stringValue
+       
 
     }
     
     init(json: JSON, token: String) {
         super.init()
-        id = json["data"]["id"].intValue
-        firstName = json["data"]["first_name"].stringValue
-        lastName = json["data"]["last_name"].stringValue
-        dob = json["data"]["dob"].stringValue
-        email = json["data"]["email"].stringValue
-        gender = json["data"]["gender"].stringValue
-        looking_for = json["data"]["looking_for"].stringValue
-        job_title = json["data"]["job_title"].stringValue
-        for pas in json["data"]["passion"].arrayValue {
+        id = json["data"]["user"]["id"].intValue
+        firstName = json["data"]["user"]["first_name"].stringValue
+        lastName = json["data"]["user"]["last_name"].stringValue
+        dob = json["data"]["user"]["dob"].stringValue
+        email = json["data"]["user"]["email"].stringValue
+        gender = json["data"]["user"]["gender"].stringValue
+        looking_for = json["data"]["user"]["looking_for"].stringValue
+        job_title = json["data"]["user"]["job_title"].stringValue
+        for pas in json["data"]["user"]["passion"].arrayValue {
             passion.append(pas.stringValue)
         }
-        address = json["data"]["address"].stringValue
-        about = json["data"]["about"].stringValue
-        num_of_kids = json["data"]["num_of_kids"].intValue
+        address = json["data"]["user"]["address"].stringValue
+        about = json["data"]["user"]["about"].stringValue
+        num_of_kids = json["data"]["user"]["num_of_kids"].intValue
         email_verified = json["data"]["email_verified"].intValue
-        image1 = json["data"]["image1"].stringValue
-        image2 = json["data"]["image2"].stringValue
-        image3 = json["data"]["image3"].stringValue
-        image4 = json["data"]["image4"].stringValue
-        image5 = json["data"]["image5"].stringValue
-        image6 = json["data"]["image6"].stringValue
-        for kid in json["data"]["user_kids"].arrayValue {
+        image1 = json["data"]["user"]["image1"].stringValue
+        image2 = json["data"]["user"]["image2"].stringValue
+        image3 = json["data"]["user"]["image3"].stringValue
+        image4 = json["data"]["user"]["image4"].stringValue
+        image5 = json["data"]["user"]["image5"].stringValue
+        image6 = json["data"]["user"]["image6"].stringValue
+        for kid in json["data"]["user"]["user_kids"].arrayValue {
             user_kids.append(kid["kids_status"].stringValue)
         }
-        api_token = json["data"]["api_token"].stringValue
+        api_token = json["data"]["user"]["api_token"].stringValue
+       
     }
-    
     
     func encode(with aCoder: NSCoder) {
         aCoder.encode(id,forKey: "id")
@@ -114,6 +116,7 @@ class User: NSObject, NSCoding {
         aCoder.encode(image6,forKey: "image6")
         aCoder.encode(user_kids, forKey: "kidsStatus")
         aCoder.encode(api_token, forKey: "token")
+       
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -140,6 +143,7 @@ class User: NSObject, NSCoding {
         image6 = aDecoder.decodeObject(forKey: "image6") as! String
         user_kids = aDecoder.decodeObject(forKey: "kidsStatus") as! [String]
         api_token = aDecoder.decodeObject(forKey: "token") as! String
+       
     }
 }
 
@@ -153,15 +157,15 @@ extension User {
     
 //    static var token: [String:String] {
 //        get {
-//            return ["Authorization": "Bearer \(details.token)", "X-Requested-With": "XMLHttpRequest"]
+//            return ["Authorization": "Bearer \(User.details.barearToken)", "X-Requested-With": "XMLHttpRequest"]
 //        }
 //    }
     
-    static var token: [String:String] {
-        get {
-            return ["Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOWU0OTk1ODgzYjNmNWMxNzk1ZTAyOGM3ZjM0YmZjNGRlYjkwZjlkMWRhNjE4ODZhMzNlYmVhMzM5ZTdjYTk1ZTVkYWNiNzdlNzBiYTcxY2YiLCJpYXQiOjE2MjY2ODg0MTAsIm5iZiI6MTYyNjY4ODQxMCwiZXhwIjoxNjU4MjI0NDEwLCJzdWIiOiIxNCIsInNjb3BlcyI6W119.Exp10HfJf6RMaG6GJrJDyUYrow3EjlHQ0fMcykfzOKdPM_gME7uHy_0zYG_AUWt-5SxZHMasKQrks12oHO_MhEux-mN1Md9tTU9Kk-_Xh_e7-UqJP3VCOaXq0K8fi0lhzf57qndebehpkVIXqphcJtKYDqIvzL3sCKwuyEaVc6-7RMPo9fJFCNZpf8T2qJ0LWjMXX-gLKrYMgXi5wYNwQSqbsShM-dzhEJBjXGKAg8Bq69TrRGw-5ulev1XXQzqbK1HsTPSxIUQ2veYN41J66sTrNU5rcTR4q_pyj3Wq0wDtwhhh5YnQAGAzud6pilGXpFQOkI6LBGx5v5RVJ6x9Cgkbjv6fBNP9pQO04OUuwk_rB4QS6JTGBusvGryadRYn5VONjZDdQVa1UxMz_InqT-6YU8Dm2erTkKCX2dwxgZLh7-U5KbA1ju5IgNxjzbFrSBosQ1NIF9XGOJvO-PhQzfvwv7Nn2rnP2sUDXwWDICdb0P1HU4KQTB_VEU6JOCEFkDlB2AqGkBJ1HSuhMPSGNUFBZX68rAdqGZ3zNOBRB0ObOACk3T1SzA6VVZw_Uh4yR9NlVb6ngG5za4E1mtQ8JwbxQQKhscJz1Qks7IWDsdN0oTj-IGZL_b9sMJYJ0ongVYB5tyUCd4DDzNnThlunSlUy2x-jVPqNxXIyLvdccyg"]
-        }
-    }
+//    static var token: [String:String] {
+//        get {
+//            return ["Authorization": "Bearer \(User.token)"]
+//        }
+//    }
     
    
     static var details: User {

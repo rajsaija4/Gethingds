@@ -363,14 +363,14 @@ extension ProfileTVC {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
-            case 1:
+            case 2:
                 let vc = EditProfileVC.instantiate(fromAppStoryboard: .Profile)
                 
                 vc.hidesBottomBarWhenPushed = true
             
                 self.navigationController?.pushViewController(vc, animated: true)
             break
-            case 2:
+            case 3:
                 let vc = SettingVC.instantiate(fromAppStoryboard: .Setting)
                 vc.hidesBottomBarWhenPushed = true
 //                vc.userId = User.details.id
@@ -380,7 +380,7 @@ extension ProfileTVC {
 //                nvc.modalTransitionStyle = .crossDissolve
               self.navigationController?.pushViewController(vc, animated: true)
                 break
-            case 3:
+            case 4:
                 let vc = SubscribeVC.instantiate(fromAppStoryboard: .Upgrade)
 //                vc.onPopView = { [weak self] in
 //                    self?.setupNavigationBar()
@@ -409,26 +409,26 @@ extension ProfileTVC {
 //                vc.hidesBottomBarWhenPushed = true
 //                navigationController?.pushViewController(vc, animated: false)
 //                break
-            case 4:
+            case 5:
                 let vc = ChangePasVC.instantiate(fromAppStoryboard: .Login)
                 self.navigationController?.pushViewController(vc, animated: true)
             break
-            case 5:
+            case 6:
                 logoutProfile()
                 break
-            case 7:
-
-                isAccountTabOpen = !isAccountTabOpen
-
-                stackPause.isHidden = !isAccountTabOpen
-                stackDelete.isHidden = !isAccountTabOpen
-
-                btnAccountDropDown.setImage(UIImage(named: isAccountTabOpen ? "img_dropdown" : "img_next"), for: .normal)
-
-                btnAccountDropDownWidth.constant = isAccountTabOpen ? 16 : 10
-
-                tableView.reloadData()
-                break
+//            case 8:
+//
+//                isAccountTabOpen = !isAccountTabOpen
+//
+//                stackPause.isHidden = !isAccountTabOpen
+//                stackDelete.isHidden = !isAccountTabOpen
+//
+//                btnAccountDropDown.setImage(UIImage(named: isAccountTabOpen ? "img_dropdown" : "img_next"), for: .normal)
+//
+//                btnAccountDropDownWidth.constant = isAccountTabOpen ? 16 : 10
+//
+//                tableView.reloadData()
+//                break
             default:
             break
         }
