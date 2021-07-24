@@ -77,7 +77,7 @@ extension DiscoverVC {
     
     func getUserList() {
         
-        Filter.lookingFor = "male"
+        Filter.lookingFor = "both"
         
         let param = [
             "looking_for": Filter.lookingFor,
@@ -90,6 +90,7 @@ extension DiscoverVC {
 //            "longitude": Filter.longitude
         ] as [String : Any]
             
+        showHUD()
          NetworkManager.Discover.discoverUser(param: param, { (users) in
             self.hideHUD()
             

@@ -18,11 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 //        setupCreateProfileVC()
-        setupLogin()
+//        setupLogin()
         setupAppDelegate()
-//        setupMainTabBarController()
-//        editProfile()
+        setupMainTabBarController()
         return true
+//        editProfile()
+//        return true
         
         if User.isExist {
             if User.details.firstName.count > 0  {

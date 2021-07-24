@@ -94,8 +94,8 @@
             filePath = "Gethingd/Controller/Discover/DiscoverVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "getUserList()"
             landmarkType = "7">
          </BreakpointContent>
@@ -110,42 +110,10 @@
             filePath = "Gethingd/Controller/Discover/DiscoverVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
             landmarkName = "swipeUser(userID:status:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "8CA488A8-B9ED-4784-9897-68CA626AC31C - 46de35b0c1c48fad"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Gethingd.DiscoverVC.(swipeUser in _AA1537A4640D17DF9D1561CEC6678E0A)(userID: Swift.Int, status: Gethingd.SwipeType) -&gt; ()"
-                  moduleName = "Gethingd"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Discover/DiscoverVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "138"
-                  endingLineNumber = "138"
-                  offsetFromSymbolStart = "272">
-               </Location>
-               <Location
-                  uuid = "8CA488A8-B9ED-4784-9897-68CA626AC31C - 5e976aa21e8eafbd"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.String) -&gt; () in Gethingd.DiscoverVC.(swipeUser in _AA1537A4640D17DF9D1561CEC6678E0A)(userID: Swift.Int, status: Gethingd.SwipeType) -&gt; ()"
-                  moduleName = "Gethingd"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Discover/DiscoverVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "139"
-                  endingLineNumber = "139"
-                  offsetFromSymbolStart = "176">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -164,14 +132,14 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "B41B1CA4-F58B-49F1-93B7-07C91865F922 - e2443e73c7cb6cf"
+                  uuid = "B41B1CA4-F58B-49F1-93B7-07C91865F922 - d0d2e3ce215f0847"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Gethingd.SettingVC.updateSetting(age: Swift.Int, distance: Swift.Int, notification: Swift.Int) -&gt; ()"
                   moduleName = "Gethingd"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/SettingVC.swift"
+                  urlString = "file:///Volumes/Project/Ashish/BitBucket/Gethingd/Gethingd/Gethingd/Controller/SettingVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "206"
@@ -179,14 +147,14 @@
                   offsetFromSymbolStart = "332">
                </Location>
                <Location
-                  uuid = "B41B1CA4-F58B-49F1-93B7-07C91865F922 - 43e7166bc9fb3a9d"
+                  uuid = "B41B1CA4-F58B-49F1-93B7-07C91865F922 - 9d11b642d4d88415"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (Swift.String) -&gt; () in Gethingd.SettingVC.updateSetting(age: Swift.Int, distance: Swift.Int, notification: Swift.Int) -&gt; ()"
                   moduleName = "Gethingd"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/SettingVC.swift"
+                  urlString = "file:///Volumes/Project/Ashish/BitBucket/Gethingd/Gethingd/Gethingd/Controller/SettingVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "207"
@@ -222,9 +190,9 @@
             filePath = "Gethingd/Networking/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "817"
-            endingLineNumber = "817"
-            landmarkName = "updateUserSetting(param:_:_:)"
+            startingLineNumber = "816"
+            endingLineNumber = "816"
+            landmarkName = "getUserSetting(_:_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -238,9 +206,9 @@
             filePath = "Gethingd/Networking/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "807"
-            endingLineNumber = "807"
-            landmarkName = "updateUserSetting(param:_:_:)"
+            startingLineNumber = "806"
+            endingLineNumber = "806"
+            landmarkName = "getUserSetting(_:_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -254,40 +222,40 @@
             filePath = "Gethingd/Networking/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "809"
-            endingLineNumber = "809"
-            landmarkName = "updateUserSetting(param:_:_:)"
+            startingLineNumber = "808"
+            endingLineNumber = "808"
+            landmarkName = "getUserSetting(_:_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "86D92C8D-2B61-4EAA-B953-AFDA0BFA0D8B - db7143f00071fb20"
+                  uuid = "86D92C8D-2B61-4EAA-B953-AFDA0BFA0D8B - e59d3e77f08e5a0c"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "static Gethingd.NetworkManager.Setting.updateUserSetting(param: Swift.Dictionary&lt;Swift.String, Any&gt;, _: (Swift.String) -&gt; (), _: (Swift.String) -&gt; ()) -&gt; ()"
+                  symbolName = "static Gethingd.NetworkManager.Setting.getUserSetting((SwiftyJSON.JSON) -&gt; (), (Swift.String) -&gt; ()) -&gt; ()"
                   moduleName = "Gethingd"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Networking/NetworkManager.swift"
+                  urlString = "file:///Volumes/Project/Ashish/BitBucket/Gethingd/Gethingd/Gethingd/Networking/NetworkManager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "809"
-                  endingLineNumber = "809"
-                  offsetFromSymbolStart = "61">
+                  startingLineNumber = "808"
+                  endingLineNumber = "808"
+                  offsetFromSymbolStart = "49">
                </Location>
                <Location
-                  uuid = "86D92C8D-2B61-4EAA-B953-AFDA0BFA0D8B - f41d7ecac7d633a3"
+                  uuid = "86D92C8D-2B61-4EAA-B953-AFDA0BFA0D8B - 3ae9284247ea1af6"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (SwiftyJSON.JSON) -&gt; () in static Gethingd.NetworkManager.Setting.updateUserSetting(param: Swift.Dictionary&lt;Swift.String, Any&gt;, _: (Swift.String) -&gt; (), _: (Swift.String) -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 (SwiftyJSON.JSON) -&gt; () in static Gethingd.NetworkManager.Setting.getUserSetting((SwiftyJSON.JSON) -&gt; (), (Swift.String) -&gt; ()) -&gt; ()"
                   moduleName = "Gethingd"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Networking/NetworkManager.swift"
+                  urlString = "file:///Volumes/Project/Ashish/BitBucket/Gethingd/Gethingd/Gethingd/Networking/NetworkManager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "811"
-                  endingLineNumber = "811"
-                  offsetFromSymbolStart = "211">
+                  startingLineNumber = "810"
+                  endingLineNumber = "810"
+                  offsetFromSymbolStart = "144">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -302,9 +270,9 @@
             filePath = "Gethingd/Networking/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "811"
-            endingLineNumber = "811"
-            landmarkName = "updateUserSetting(param:_:_:)"
+            startingLineNumber = "810"
+            endingLineNumber = "810"
+            landmarkName = "getUserSetting(_:_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -322,22 +290,6 @@
             endingLineNumber = "18"
             landmarkName = "header"
             landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "AB1F5F1B-91FF-4AB5-9C65-02148194CAD6"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Gethingd/Controller/Profile/CreateProfileTVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "passion(passion:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -369,22 +321,6 @@
             startingLineNumber = "24"
             endingLineNumber = "24"
             landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E9663AEF-2EF6-4BF1-9C1E-5F05C3373C18"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Gethingd/Controller/Profile/CreateProfileTVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "425"
-            endingLineNumber = "425"
-            landmarkName = "collectionView(_:numberOfItemsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -446,10 +382,42 @@
             filePath = "Gethingd/Networking/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "294"
-            endingLineNumber = "294"
-            landmarkName = "getOtherUserProfile(param:_:_:)"
+            startingLineNumber = "293"
+            endingLineNumber = "293"
+            landmarkName = "getHeight(_:_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F9F1B13C-5349-4016-8A8B-5204CE72C5CB - c03116c962dbc350"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (SwiftyJSON.JSON) -&gt; () in static Gethingd.NetworkManager.Profile.getHeight((Swift.Array&lt;Swift.Double&gt;) -&gt; (), (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Gethingd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Ashish/BitBucket/Gethingd/Gethingd/Gethingd/Networking/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "293"
+                  endingLineNumber = "293"
+                  offsetFromSymbolStart = "147">
+               </Location>
+               <Location
+                  uuid = "F9F1B13C-5349-4016-8A8B-5204CE72C5CB - 1f3c198919b9cf02"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (SwiftyJSON.JSON) -&gt; Swift.Double in closure #1 (SwiftyJSON.JSON) -&gt; () in static Gethingd.NetworkManager.Profile.getHeight((Swift.Array&lt;Swift.Double&gt;) -&gt; (), (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Gethingd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Ashish/BitBucket/Gethingd/Gethingd/Gethingd/Networking/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "293"
+                  endingLineNumber = "293"
+                  offsetFromSymbolStart = "19">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -462,10 +430,10 @@
             filePath = "Gethingd/Controller/Discover/DiscoverVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
-            landmarkName = "swipeUser(userID:status:)"
-            landmarkType = "7">
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "DiscoverVC"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -478,42 +446,10 @@
             filePath = "Gethingd/Networking/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "451"
-            endingLineNumber = "451"
-            landmarkName = "swipeProfiles(param:_:_:)"
+            startingLineNumber = "450"
+            endingLineNumber = "450"
+            landmarkName = "discoverUser(param:_:_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "9838F426-11FB-4B28-839C-C1BEB6FACC7F - d3c157c0a1b0e6ca"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static Gethingd.NetworkManager.Discover.swipeProfiles(param: Swift.Dictionary&lt;Swift.String, Any&gt;, _: (Swift.String) -&gt; (), _: (Swift.String) -&gt; ()) -&gt; ()"
-                  moduleName = "Gethingd"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Networking/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "451"
-                  endingLineNumber = "451"
-                  offsetFromSymbolStart = "61">
-               </Location>
-               <Location
-                  uuid = "9838F426-11FB-4B28-839C-C1BEB6FACC7F - 4eabd16fe6c0d84c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (SwiftyJSON.JSON) -&gt; () in static Gethingd.NetworkManager.Discover.swipeProfiles(param: Swift.Dictionary&lt;Swift.String, Any&gt;, _: (Swift.String) -&gt; (), _: (Swift.String) -&gt; ()) -&gt; ()"
-                  moduleName = "Gethingd"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Networking/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "453"
-                  endingLineNumber = "453"
-                  offsetFromSymbolStart = "216">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -526,9 +462,9 @@
             filePath = "Gethingd/Networking/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "453"
-            endingLineNumber = "453"
-            landmarkName = "swipeProfiles(param:_:_:)"
+            startingLineNumber = "452"
+            endingLineNumber = "452"
+            landmarkName = "discoverUser(param:_:_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -542,9 +478,9 @@
             filePath = "Gethingd/Networking/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "397"
-            endingLineNumber = "397"
-            landmarkName = "discoverUser(param:_:_:)"
+            startingLineNumber = "396"
+            endingLineNumber = "396"
+            landmarkName = "addInstagramAccount(param:_:_:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -590,9 +526,9 @@
             filePath = "Gethingd/Networking/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "459"
-            endingLineNumber = "459"
-            landmarkName = "swipeProfiles(param:_:_:)"
+            startingLineNumber = "458"
+            endingLineNumber = "458"
+            landmarkName = "discoverUser(param:_:_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -606,10 +542,42 @@
             filePath = "Gethingd/Networking/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "460"
-            endingLineNumber = "460"
-            landmarkName = "swipeProfiles(param:_:_:)"
+            startingLineNumber = "459"
+            endingLineNumber = "459"
+            landmarkName = "discoverUser(param:_:_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AB7BF822-A119-4B7E-8B28-17FE60A2A2FC - 280b229485eec8bb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (SwiftyJSON.JSON) -&gt; () in static Gethingd.NetworkManager.Discover.discoverUser(param: Swift.Dictionary&lt;Swift.String, Any&gt;, _: (Swift.Array&lt;Gethingd.UserProfile&gt;) -&gt; (), _: (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Gethingd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Ashish/BitBucket/Gethingd/Gethingd/Gethingd/Networking/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "460"
+                  endingLineNumber = "460"
+                  offsetFromSymbolStart = "7361">
+               </Location>
+               <Location
+                  uuid = "AB7BF822-A119-4B7E-8B28-17FE60A2A2FC - 506afee40d9d63ab"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Alamofire.AFError) -&gt; () in static Gethingd.NetworkManager.Discover.discoverUser(param: Swift.Dictionary&lt;Swift.String, Any&gt;, _: (Swift.Array&lt;Gethingd.UserProfile&gt;) -&gt; (), _: (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Gethingd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Ashish/BitBucket/Gethingd/Gethingd/Gethingd/Networking/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "461"
+                  endingLineNumber = "461"
+                  offsetFromSymbolStart = "98">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -622,10 +590,42 @@
             filePath = "Gethingd/Networking/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "461"
-            endingLineNumber = "461"
-            landmarkName = "swipeProfiles(param:_:_:)"
+            startingLineNumber = "460"
+            endingLineNumber = "460"
+            landmarkName = "discoverUser(param:_:_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9D90A0F5-4EAC-4FAA-94A3-1B3F35E0B66B - 280b229485eec8bb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (SwiftyJSON.JSON) -&gt; () in static Gethingd.NetworkManager.Discover.discoverUser(param: Swift.Dictionary&lt;Swift.String, Any&gt;, _: (Swift.Array&lt;Gethingd.UserProfile&gt;) -&gt; (), _: (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Gethingd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Ashish/BitBucket/Gethingd/Gethingd/Gethingd/Networking/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "460"
+                  endingLineNumber = "460"
+                  offsetFromSymbolStart = "7361">
+               </Location>
+               <Location
+                  uuid = "9D90A0F5-4EAC-4FAA-94A3-1B3F35E0B66B - 506afee40d9d63ab"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Alamofire.AFError) -&gt; () in static Gethingd.NetworkManager.Discover.discoverUser(param: Swift.Dictionary&lt;Swift.String, Any&gt;, _: (Swift.Array&lt;Gethingd.UserProfile&gt;) -&gt; (), _: (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Gethingd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Ashish/BitBucket/Gethingd/Gethingd/Gethingd/Networking/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "461"
+                  endingLineNumber = "461"
+                  offsetFromSymbolStart = "98">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -638,9 +638,9 @@
             filePath = "Gethingd/Networking/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "462"
-            endingLineNumber = "462"
-            landmarkName = "swipeProfiles(param:_:_:)"
+            startingLineNumber = "461"
+            endingLineNumber = "461"
+            landmarkName = "discoverUser(param:_:_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -654,9 +654,9 @@
             filePath = "Gethingd/Networking/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "457"
-            endingLineNumber = "457"
-            landmarkName = "swipeProfiles(param:_:_:)"
+            startingLineNumber = "456"
+            endingLineNumber = "456"
+            landmarkName = "discoverUser(param:_:_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -670,9 +670,9 @@
             filePath = "Gethingd/Networking/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "452"
-            endingLineNumber = "452"
-            landmarkName = "swipeProfiles(param:_:_:)"
+            startingLineNumber = "451"
+            endingLineNumber = "451"
+            landmarkName = "discoverUser(param:_:_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -750,8 +750,8 @@
             filePath = "Gethingd/Controller/Profile/EditProfileVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "521"
-            endingLineNumber = "521"
+            startingLineNumber = "517"
+            endingLineNumber = "517"
             landmarkName = "onKidTypeTap(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -786,38 +786,6 @@
             endingLineNumber = "135"
             landmarkName = "userLogIn()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "E8A16ECE-9FD0-47ED-B966-1EB70664F644 - 1f6bc5c98b141bbe"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Gethingd.SignInVC.(userLogIn in _8AB1D9F2B9DE96EF14177504102F59AC)() -&gt; ()"
-                  moduleName = "Gethingd"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Login/SignInVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "143"
-                  endingLineNumber = "143"
-                  offsetFromSymbolStart = "2108">
-               </Location>
-               <Location
-                  uuid = "E8A16ECE-9FD0-47ED-B966-1EB70664F644 - a921bf81e31802d6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.String) -&gt; () in Gethingd.SignInVC.(userLogIn in _8AB1D9F2B9DE96EF14177504102F59AC)() -&gt; ()"
-                  moduleName = "Gethingd"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Login/SignInVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "144"
-                  endingLineNumber = "144"
-                  offsetFromSymbolStart = "137">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -852,14 +820,14 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "CE21D5FC-EA19-4E69-B315-529552F4F060 - e0c6af57a2b7a2cd"
+                  uuid = "CE21D5FC-EA19-4E69-B315-529552F4F060 - d5e124e0df03259f"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "static Gethingd.NetworkManager.Auth.login(param: Swift.Dictionary&lt;Swift.String, Any&gt;, _: (Swift.String) -&gt; (), _: (Swift.String) -&gt; ()) -&gt; ()"
                   moduleName = "Gethingd"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Networking/NetworkManager.swift"
+                  urlString = "file:///Volumes/Project/Ashish/BitBucket/Gethingd/Gethingd/Gethingd/Networking/NetworkManager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "44"
@@ -867,14 +835,14 @@
                   offsetFromSymbolStart = "61">
                </Location>
                <Location
-                  uuid = "CE21D5FC-EA19-4E69-B315-529552F4F060 - 211eb5520234043e"
+                  uuid = "CE21D5FC-EA19-4E69-B315-529552F4F060 - 14393ee57f8083e0"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (SwiftyJSON.JSON) -&gt; () in static Gethingd.NetworkManager.Auth.login(param: Swift.Dictionary&lt;Swift.String, Any&gt;, _: (Swift.String) -&gt; (), _: (Swift.String) -&gt; ()) -&gt; ()"
                   moduleName = "Gethingd"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Networking/NetworkManager.swift"
+                  urlString = "file:///Volumes/Project/Ashish/BitBucket/Gethingd/Gethingd/Gethingd/Networking/NetworkManager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "46"
@@ -930,38 +898,6 @@
             endingLineNumber = "92"
             landmarkName = "verifyLogin(param:_:_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "4428464E-D175-4335-8623-8488E9E1187A - 796fe8d77ead12be"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static Gethingd.NetworkManager.Auth.verifyLogin(param: Swift.Dictionary&lt;Swift.String, Any&gt;, _: (Swift.String) -&gt; (), _: (Swift.String) -&gt; ()) -&gt; ()"
-                  moduleName = "Gethingd"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Networking/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "92"
-                  endingLineNumber = "92"
-                  offsetFromSymbolStart = "61">
-               </Location>
-               <Location
-                  uuid = "4428464E-D175-4335-8623-8488E9E1187A - b66f94ba02e414f0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (SwiftyJSON.JSON) -&gt; () in static Gethingd.NetworkManager.Auth.verifyLogin(param: Swift.Dictionary&lt;Swift.String, Any&gt;, _: (Swift.String) -&gt; (), _: (Swift.String) -&gt; ()) -&gt; ()"
-                  moduleName = "Gethingd"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Networking/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "94"
-                  endingLineNumber = "94"
-                  offsetFromSymbolStart = "291">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -996,14 +932,14 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "8FD3AD7E-CC10-405F-AB47-3235350BB2CE - 10453a55377c751d"
+                  uuid = "8FD3AD7E-CC10-405F-AB47-3235350BB2CE - 8717edece1a11e57"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Gethingd.VerificationVC.(verifyLogin in _24753504225A9A2F7C9028A3EF7FCAEB)(param: Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; ()"
                   moduleName = "Gethingd"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Login/VerificationVC.swift"
+                  urlString = "file:///Volumes/Project/Ashish/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Login/VerificationVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "96"
@@ -1011,14 +947,14 @@
                   offsetFromSymbolStart = "45">
                </Location>
                <Location
-                  uuid = "8FD3AD7E-CC10-405F-AB47-3235350BB2CE - 56e038c5289246ed"
+                  uuid = "8FD3AD7E-CC10-405F-AB47-3235350BB2CE - c1b2ef7cfe4f2da7"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (Swift.String) -&gt; () in Gethingd.VerificationVC.(verifyLogin in _24753504225A9A2F7C9028A3EF7FCAEB)(param: Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; ()"
                   moduleName = "Gethingd"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Login/VerificationVC.swift"
+                  urlString = "file:///Volumes/Project/Ashish/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Login/VerificationVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "97"
@@ -1042,6 +978,38 @@
             endingLineNumber = "94"
             landmarkName = "verifyLogin(param:_:_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "41CF8CCA-9EDB-47A6-832A-3D057A8DC1C5 - 4c48636003199942"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Gethingd.NetworkManager.Auth.verifyLogin(param: Swift.Dictionary&lt;Swift.String, Any&gt;, _: (Swift.String) -&gt; (), _: (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Gethingd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Ashish/BitBucket/Gethingd/Gethingd/Gethingd/Networking/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "61">
+               </Location>
+               <Location
+                  uuid = "41CF8CCA-9EDB-47A6-832A-3D057A8DC1C5 - 83481f0d7f50908c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (SwiftyJSON.JSON) -&gt; () in static Gethingd.NetworkManager.Auth.verifyLogin(param: Swift.Dictionary&lt;Swift.String, Any&gt;, _: (Swift.String) -&gt; (), _: (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Gethingd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Ashish/BitBucket/Gethingd/Gethingd/Gethingd/Networking/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
+                  offsetFromSymbolStart = "326">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1092,14 +1060,14 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "B5D1AC4D-43E3-4FF3-9C3A-38456ADC18FD - 2f3357b902e78c35"
+                  uuid = "B5D1AC4D-43E3-4FF3-9C3A-38456ADC18FD - 1a14dc0e7f530087"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "static Gethingd.NetworkManager.Auth.SignIn(param: Swift.Dictionary&lt;Swift.String, Any&gt;, _: (Swift.String) -&gt; (), _: (Swift.String) -&gt; ()) -&gt; ()"
                   moduleName = "Gethingd"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Networking/NetworkManager.swift"
+                  urlString = "file:///Volumes/Project/Ashish/BitBucket/Gethingd/Gethingd/Gethingd/Networking/NetworkManager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "67"
@@ -1107,19 +1075,19 @@
                   offsetFromSymbolStart = "61">
                </Location>
                <Location
-                  uuid = "B5D1AC4D-43E3-4FF3-9C3A-38456ADC18FD - 271415d4f6ef2e41"
+                  uuid = "B5D1AC4D-43E3-4FF3-9C3A-38456ADC18FD - 12339e638b5ba3ef"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (SwiftyJSON.JSON) -&gt; () in static Gethingd.NetworkManager.Auth.SignIn(param: Swift.Dictionary&lt;Swift.String, Any&gt;, _: (Swift.String) -&gt; (), _: (Swift.String) -&gt; ()) -&gt; ()"
                   moduleName = "Gethingd"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Networking/NetworkManager.swift"
+                  urlString = "file:///Volumes/Project/Ashish/BitBucket/Gethingd/Gethingd/Gethingd/Networking/NetworkManager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "69"
                   endingLineNumber = "69"
-                  offsetFromSymbolStart = "291">
+                  offsetFromSymbolStart = "326">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1154,36 +1122,116 @@
             endingLineNumber = "75"
             landmarkName = "userLogIn()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3C7AE4A9-EA88-4B15-B889-99F8822C854A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gethingd/Networking/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "412"
+            endingLineNumber = "412"
+            landmarkName = "discoverUser(param:_:_:)"
+            landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "CD50E43A-62DD-43EA-A5DB-0F4A59A7EBB0 - d1d9f1d1cd21a2ad"
+                  uuid = "3C7AE4A9-EA88-4B15-B889-99F8822C854A - ad1ecf613a5a1d45"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Gethingd.LoginVC.(userLogIn in _0C29301792065398966E0323FDB59E83)() -&gt; ()"
+                  symbolName = "static Gethingd.NetworkManager.Discover.discoverUser(param: Swift.Dictionary&lt;Swift.String, Any&gt;, _: (Swift.Array&lt;Gethingd.UserProfile&gt;) -&gt; (), _: (Swift.String) -&gt; ()) -&gt; ()"
                   moduleName = "Gethingd"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Login/LoginVC.swift"
+                  urlString = "file:///Volumes/Project/Ashish/BitBucket/Gethingd/Gethingd/Gethingd/Networking/NetworkManager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "75"
-                  endingLineNumber = "75"
-                  offsetFromSymbolStart = "1426">
+                  startingLineNumber = "413"
+                  endingLineNumber = "413"
+                  offsetFromSymbolStart = "61">
                </Location>
                <Location
-                  uuid = "CD50E43A-62DD-43EA-A5DB-0F4A59A7EBB0 - ebd2d955821ff9c4"
+                  uuid = "3C7AE4A9-EA88-4B15-B889-99F8822C854A - 280b229485eecf66"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.String) -&gt; () in Gethingd.LoginVC.(userLogIn in _0C29301792065398966E0323FDB59E83)() -&gt; ()"
+                  symbolName = "closure #1 (SwiftyJSON.JSON) -&gt; () in static Gethingd.NetworkManager.Discover.discoverUser(param: Swift.Dictionary&lt;Swift.String, Any&gt;, _: (Swift.Array&lt;Gethingd.UserProfile&gt;) -&gt; (), _: (Swift.String) -&gt; ()) -&gt; ()"
                   moduleName = "Gethingd"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Login/LoginVC.swift"
+                  urlString = "file:///Volumes/Project/Ashish/BitBucket/Gethingd/Gethingd/Gethingd/Networking/NetworkManager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "76"
-                  endingLineNumber = "76"
-                  offsetFromSymbolStart = "96">
+                  startingLineNumber = "415"
+                  endingLineNumber = "415"
+                  offsetFromSymbolStart = "279">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A02A6233-2BEF-4918-A7D7-44B008C85236"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gethingd/Networking/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
+            landmarkName = "addProfile(source:params:_:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CBA15918-9CAA-4E49-9D64-A8BE55CBB874"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gethingd/Networking/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
+            landmarkName = "addProfile(source:params:_:_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CBA15918-9CAA-4E49-9D64-A8BE55CBB874 - 26559aca9456ad04"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Gethingd.NetworkManager.Profile.addProfile(source: Swift.Dictionary&lt;Swift.String, Foundation.Data&gt;, params: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, _: (Swift.String) -&gt; (), _: (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Gethingd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Ashish/BitBucket/Gethingd/Gethingd/Gethingd/Networking/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "207"
+                  endingLineNumber = "207"
+                  offsetFromSymbolStart = "73">
+               </Location>
+               <Location
+                  uuid = "CBA15918-9CAA-4E49-9D64-A8BE55CBB874 - 10a671592b578260"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (SwiftyJSON.JSON) -&gt; () in static Gethingd.NetworkManager.Profile.addProfile(source: Swift.Dictionary&lt;Swift.String, Foundation.Data&gt;, params: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, _: (Swift.String) -&gt; (), _: (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Gethingd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Ashish/BitBucket/Gethingd/Gethingd/Gethingd/Networking/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "211"
+                  endingLineNumber = "211"
+                  offsetFromSymbolStart = "343">
                </Location>
             </Locations>
          </BreakpointContent>

@@ -59,12 +59,12 @@ extension NewPasswordVC {
             return
             
         }
-        guard let password = txtNewPassword.text , password.count >= 6 else {
+        guard password.count >= 6 else {
             showToast("Password should be 6 or more then 6 characters")
             return
         }
         
-        guard let confirmpassword = txtConfirmPassword.text , confirmpassword.count >= 6 else {
+        guard confirmpassword.count >= 6 else {
             showToast("Password should be 6 or more then 6 characters")
             return
         }

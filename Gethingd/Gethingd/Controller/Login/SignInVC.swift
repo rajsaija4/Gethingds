@@ -113,7 +113,7 @@ extension SignInVC {
             return
         }
         
-        guard let rePassword = txtConfirmPass.text, password.count > 0 else {
+        guard let rePassword = txtConfirmPass.text, rePassword.count > 0 else {
             self.showToast("Please Enter Password")
             return
         }
@@ -124,12 +124,12 @@ extension SignInVC {
             
         }
         
-        guard let password = TxtPass.text , password.count >= 6 else {
+        guard password.count >= 6 else {
             showToast("Password should be 6 or more then 6 characters")
             return
         }
         
-        guard let confirmpassword = txtConfirmPass.text , confirmpassword.count >= 6 else {
+        guard rePassword.count >= 6 else {
             showToast("Password should be 6 or more then 6 characters")
             return
         }

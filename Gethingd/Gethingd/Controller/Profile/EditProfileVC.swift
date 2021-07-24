@@ -310,10 +310,6 @@ class EditProfileVC: UITableViewController, TagListViewDelegate, UIImagePickerCo
         img_Edit[sender.tag].isHidden = false
         img_Remove[sender.tag].isHidden = true
      
-        
-        
-        
-        
     }
     
     @IBAction func onPressEditProfile(_ sender: UIButton) {
