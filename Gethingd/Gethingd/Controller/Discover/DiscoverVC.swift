@@ -77,6 +77,18 @@ extension DiscoverVC {
     
     func getUserList() {
         
+        NetworkManager.Profile.getMyProfile { user in
+            guard user.address.count > 0  else {
+              
+                APPDEL?.setupCreateProfileVC()
+               
+                return
+                    }
+        } _: { error in
+            self.showToast(error)
+        }
+
+ 
         Filter.lookingFor = "both"
         
         let param = [
@@ -93,7 +105,7 @@ extension DiscoverVC {
         showHUD()
          NetworkManager.Discover.discoverUser(param: param, { (users) in
             self.hideHUD()
-            
+           
             self.tabBarController?.tabBar.items?.last?.badgeValue = AppSupport.reviewLater > 0 ? "\(AppSupport.reviewLater)" : nil
             
             

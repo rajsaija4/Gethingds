@@ -31,66 +31,69 @@ class User: NSObject, NSCoding {
     var image6:String = ""
     var user_kids:[String] = []
     var api_token:String = ""
+    var longitude:String = ""
  
     
     init(_ json: JSON) {
         super.init()
-        id = json["data"]["user"]["id"].intValue
-        firstName = json["data"]["user"]["first_name"].stringValue
-        lastName = json["data"]["user"]["last_name"].stringValue
-        dob = json["data"]["user"]["dob"].stringValue
-        email = json["data"]["user"]["email"].stringValue
-        gender = json["data"]["user"]["gender"].stringValue
-        looking_for = json["data"]["user"]["looking_for"].stringValue
-        job_title = json["data"]["user"]["job_title"].stringValue
-        for pas in json["data"]["user"]["passion"].arrayValue {
+        id = json["data"]["id"].intValue
+        firstName = json["data"]["first_name"].stringValue
+        lastName = json["data"]["last_name"].stringValue
+        dob = json["data"]["dob"].stringValue
+        email = json["data"]["email"].stringValue
+        gender = json["data"]["gender"].stringValue
+        looking_for = json["data"]["looking_for"].stringValue
+        job_title = json["data"]["job_title"].stringValue
+        for pas in json["data"]["passion"].arrayValue {
             passion.append(pas.stringValue)
         }
-        address = json["data"]["user"]["address"].stringValue
-        about = json["data"]["user"]["about"].stringValue
-        num_of_kids = json["data"]["user"]["num_of_kids"].intValue
+        address = json["data"]["address"].stringValue
+        about = json["data"]["about"].stringValue
+        num_of_kids = json["data"]["num_of_kids"].intValue
         email_verified = json["data"]["email_verified"].intValue
-        image1 = json["data"]["user"]["image1"].stringValue
-        image2 = json["data"]["user"]["image2"].stringValue
-        image3 = json["data"]["user"]["image3"].stringValue
-        image4 = json["data"]["user"]["image4"].stringValue
-        image5 = json["data"]["user"]["image5"].stringValue
-        image6 = json["data"]["user"]["image6"].stringValue
-        for kid in json["data"]["user"]["user_kids"].arrayValue {
+        image1 = json["data"]["image1"].stringValue
+        image2 = json["data"]["image2"].stringValue
+        image3 = json["data"]["image3"].stringValue
+        image4 = json["data"]["image4"].stringValue
+        image5 = json["data"]["image5"].stringValue
+        image6 = json["data"]["image6"].stringValue
+        for kid in json["data"]["user_kids"].arrayValue {
             user_kids.append(kid["kids_status"].stringValue)
         }
-        api_token = json["data"]["user"]["api_token"].stringValue
+        api_token = json["data"]["api_token"].stringValue
+        longitude = json["data"]["longitude"].stringValue
        
 
     }
     
     init(json: JSON, token: String) {
         super.init()
-        id = json["data"]["user"]["id"].intValue
-        firstName = json["data"]["user"]["first_name"].stringValue
-        lastName = json["data"]["user"]["last_name"].stringValue
-        dob = json["data"]["user"]["dob"].stringValue
-        email = json["data"]["user"]["email"].stringValue
-        gender = json["data"]["user"]["gender"].stringValue
-        looking_for = json["data"]["user"]["looking_for"].stringValue
-        job_title = json["data"]["user"]["job_title"].stringValue
-        for pas in json["data"]["user"]["passion"].arrayValue {
+        id = json["data"]["id"].intValue
+        firstName = json["data"]["first_name"].stringValue
+        lastName = json["data"]["last_name"].stringValue
+        dob = json["data"]["dob"].stringValue
+        email = json["data"]["email"].stringValue
+        gender = json["data"]["gender"].stringValue
+        looking_for = json["data"]["looking_for"].stringValue
+        job_title = json["data"]["job_title"].stringValue
+        for pas in json["data"]["passion"].arrayValue {
             passion.append(pas.stringValue)
         }
-        address = json["data"]["user"]["address"].stringValue
-        about = json["data"]["user"]["about"].stringValue
-        num_of_kids = json["data"]["user"]["num_of_kids"].intValue
+        address = json["data"]["address"].stringValue
+        about = json["data"]["about"].stringValue
+        num_of_kids = json["data"]["num_of_kids"].intValue
         email_verified = json["data"]["email_verified"].intValue
-        image1 = json["data"]["user"]["image1"].stringValue
-        image2 = json["data"]["user"]["image2"].stringValue
-        image3 = json["data"]["user"]["image3"].stringValue
-        image4 = json["data"]["user"]["image4"].stringValue
-        image5 = json["data"]["user"]["image5"].stringValue
-        image6 = json["data"]["user"]["image6"].stringValue
-        for kid in json["data"]["user"]["user_kids"].arrayValue {
+        image1 = json["data"]["image1"].stringValue
+        image2 = json["data"]["image2"].stringValue
+        image3 = json["data"]["image3"].stringValue
+        image4 = json["data"]["image4"].stringValue
+        image5 = json["data"]["image5"].stringValue
+        image6 = json["data"]["image6"].stringValue
+        for kid in json["data"]["user_kids"].arrayValue {
             user_kids.append(kid["kids_status"].stringValue)
         }
-        api_token = json["data"]["user"]["api_token"].stringValue
+        api_token = json["data"]["api_token"].stringValue
+        longitude = json["data"]["longitude"].stringValue
        
     }
     
@@ -116,6 +119,7 @@ class User: NSObject, NSCoding {
         aCoder.encode(image6,forKey: "image6")
         aCoder.encode(user_kids, forKey: "kidsStatus")
         aCoder.encode(api_token, forKey: "token")
+        aCoder.encode(longitude,forKey: "longitude")
        
     }
     
@@ -143,7 +147,7 @@ class User: NSObject, NSCoding {
         image6 = aDecoder.decodeObject(forKey: "image6") as! String
         user_kids = aDecoder.decodeObject(forKey: "kidsStatus") as! [String]
         api_token = aDecoder.decodeObject(forKey: "token") as! String
-       
+        longitude = aDecoder.decodeObject(forKey: "longitude") as! String
     }
 }
 

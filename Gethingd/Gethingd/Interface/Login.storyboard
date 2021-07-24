@@ -2264,6 +2264,9 @@
                                                 <real key="value" value="25"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onPressResetPassword:" destination="WAM-PA-8zg" eventType="touchUpInside" id="id1-6f-hOE"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -2281,6 +2284,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="y2N-id-dT1"/>
+                    <connections>
+                        <outlet property="txtConfirmNewPassword" destination="Ex6-st-bRm" id="mI7-rD-qqV"/>
+                        <outlet property="txtCurrentPassword" destination="IUh-AK-Z3h" id="p5q-VX-9zM"/>
+                        <outlet property="txtNewPassword" destination="g48-HJ-7dN" id="44e-Sy-FWj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m1X-a0-NKU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

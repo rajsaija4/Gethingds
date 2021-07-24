@@ -134,7 +134,7 @@ class SettingVC: UITableViewController {
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
-        case 4:
+        case 3:
             switch indexPath.row {
             case 0:
                 print("0")

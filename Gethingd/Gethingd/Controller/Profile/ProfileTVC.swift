@@ -310,6 +310,7 @@ extension ProfileTVC {
         NetworkManager.Profile.logoutProfile { (message) in
             self.hideHUD()
             User.details.delete()
+            UserDefaults.standard.removeObject(forKey: "btoken")
             APPDEL?.setupLogin()
         } _: { (error) in
             self.hideHUD()

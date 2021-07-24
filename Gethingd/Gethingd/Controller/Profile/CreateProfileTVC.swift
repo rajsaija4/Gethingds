@@ -106,7 +106,7 @@ class CreateProfileTVC: UITableViewController, UIImagePickerControllerDelegate, 
         txtLastName.setPlaceHolderColor()
         txtDate.setPlaceHolderColor()
         txtPassion.delegate = self
-        txtEmail.setPlaceHolderColor()
+//        txtEmail.setPlaceHolderColor()
         txtNumberOfKids.setPlaceHolderColor()
  
 //        getProfile()
@@ -396,7 +396,7 @@ extension CreateProfileTVC {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return 226
+            return 170
         }
         
         if indexPath.section == 1 {
@@ -404,14 +404,18 @@ extension CreateProfileTVC {
         }
         
         if indexPath.section == 2 {
-            return 448
+            return 106
         }
         
-        if indexPath.section == 4 {
-            return CGFloat((numberOfKids * 50) + 74)
+        if indexPath.section == 3 {
+            return 350
         }
         
         if indexPath.section == 5 {
+            return CGFloat((numberOfKids * 50) + 74)
+        }
+        
+        if indexPath.section == 6 {
             return 80
         }
         return UITableView.automaticDimension
@@ -780,12 +784,12 @@ extension CreateProfileTVC {
         NetworkManager.Profile.addProfile(source: source, params: parameters, { (message) in
             self.hideHUD()
             
-            if User.details.email_verified == 0
-            {
-            self.showVerifyEmailAlert()
-                return
-            }
-            
+//            if User.details.email_verified == 0
+//            {
+//            self.showVerifyEmailAlert()
+//                return
+//            }
+//            
             
 //                        self.showAlert(message)
             

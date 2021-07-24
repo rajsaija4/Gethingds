@@ -18,9 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 //        setupCreateProfileVC()
-//        setupLogin()
+        setupLogin()
         setupAppDelegate()
-        setupMainTabBarController()
+//        setupMainTabBarController()
         return true
 //        editProfile()
 //        return true

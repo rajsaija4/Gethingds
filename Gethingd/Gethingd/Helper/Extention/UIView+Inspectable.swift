@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-/*
+
 extension UIView {
     
     @IBInspectable var cornerRadius: CGFloat {
@@ -137,7 +137,7 @@ extension UIView {
             trailingContraint])
     }
 }
-*/
+
 
 extension UITextField {
         
@@ -151,7 +151,7 @@ extension UITextField {
 }
 
 
-
+/*
 
 extension UIView {
     
@@ -283,7 +283,7 @@ extension UIView {
 }
 
 
-
+*/
 
 
 

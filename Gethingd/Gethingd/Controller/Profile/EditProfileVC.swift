@@ -60,10 +60,11 @@ class EditProfileVC: UITableViewController, TagListViewDelegate, UIImagePickerCo
     @IBOutlet weak var selectedPassion: TagListView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.isHidden = true
         txtFname.setPlaceHolderColor()
         txtLname.setPlaceHolderColor()
         txtDob.setPlaceHolderColor()
-        txtEmail.setPlaceHolderColor()
+//        txtEmail.setPlaceHolderColor()
         txtNumberOfKids.setPlaceHolderColor()
         txtAbout.delegate = self
         setupUI()
@@ -169,10 +170,10 @@ class EditProfileVC: UITableViewController, TagListViewDelegate, UIImagePickerCo
             return
         }
         
-        guard let email = txtEmail.text, email.count > 0, email != placeHolder else {
-            self.showAlert("Please Enter Email")
-            return
-        }
+//        guard let email = txtEmail.text, email.count > 0, email != placeHolder else {
+//            self.showAlert("Please Enter Email")
+//            return
+//        }
         
         guard let noOfkids = txtNumberOfKids.text, noOfkids.count > 0 else {
             self.showAlert("Please Enter No of Kids")
@@ -180,10 +181,10 @@ class EditProfileVC: UITableViewController, TagListViewDelegate, UIImagePickerCo
         }
         
         
-        guard email.isValidEmail else {
-            self.showAlert("Please Enter Valid Email")
-            return
-        }
+//        guard email.isValidEmail else {
+//            self.showAlert("Please Enter Valid Email")
+//            return
+//        }
         
         
         let kids:[String] = collKid.visibleCells.map{ ($0 as? KidCell)?.lblKidType.text ?? "" }
@@ -224,7 +225,6 @@ class EditProfileVC: UITableViewController, TagListViewDelegate, UIImagePickerCo
             [
                 "first_name": firstName,
                 "last_name": lastName,
-                "email": email,
                 "dob": dob,
                 "job_title":txtJobTitle.text ?? "",
                 "about": txtAbout.text ?? "",
@@ -247,11 +247,11 @@ class EditProfileVC: UITableViewController, TagListViewDelegate, UIImagePickerCo
             NetworkManager.Profile.addProfile(source: source, params: parameters, { (message) in
                 self.hideHUD()
                 
-                if User.details.email_verified == 0
-                {
-                self.showVerifyEmailAlert()
-                    return
-                }
+//                if User.details.email_verified == 0
+//                {
+//                self.showVerifyEmailAlert()
+//                    return
+//                }
                 
                 
     //                        self.showAlert(message)
@@ -538,7 +538,7 @@ extension EditProfileVC {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return 448
+            return 400
         }
 
         if indexPath.section == 1 {
@@ -557,7 +557,7 @@ extension EditProfileVC {
         }
 
         if indexPath.section == 4 {
-            return 100
+            return 92
             
            
         }
@@ -686,13 +686,19 @@ extension EditProfileVC {
                 self.selectedPassion.addTag(i)
             }
           
-            self.txtEmail.text = User.details.email
+//            self.txtEmail.text = User.details.email
             self.txtFname.text = User.details.firstName
             self.txtLname.text = User.details.lastName
+            self.txtJobTitle.text = User.details.job_title
             self.txtDob.text = User.details.dob
             self.numberOfKids = User.details.num_of_kids
             if User.details.about.count > 0 {
             self.txtAbout.text = User.details.about
+            }
+            if User.details.about.count > 0 {
+               
+                self.txtAbout.textColor = UIColor.black
+              
             }
             self.lblWordCounter.text = "Characters left: \(150 - self.txtAbout.text.count)"
             self.txtNumberOfKids.text = String(User.details.num_of_kids)
@@ -744,6 +750,8 @@ extension EditProfileVC: UITextViewDelegate {
         if txtAbout.text == placeHolder {
             txtAbout.text = nil
         }
+        
+       
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
