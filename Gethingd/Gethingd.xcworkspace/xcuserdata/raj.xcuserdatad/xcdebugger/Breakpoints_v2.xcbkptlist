@@ -215,22 +215,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3221FCA3-437B-4A0A-9890-5A71C64B3BCC"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Gethingd/Networking/NetworkManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "header"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "6578EA13-1E00-411A-9293-9E0921C4BE9E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -514,6 +498,118 @@
             endingLineNumber = "82"
             landmarkName = "SignIn(param:_:_:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0958AA72-70E9-4032-8C52-2B258AACC9DF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gethingd/Networking/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "415"
+            endingLineNumber = "415"
+            landmarkName = "discoverUser(param:_:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0DC96332-7E55-4C0F-A1E7-DD950E33BD4A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gethingd/Networking/NetworkCaller.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "postRequest(url:params:headers:_:failure:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AB68C707-AC1A-4B0A-AE3C-3E8291EF7BF3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gethingd/Networking/NetworkCaller.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "postRequest(url:params:headers:_:failure:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A8136F03-DDF3-4116-9D5C-AA56EBBB8352"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gethingd/Networking/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "461"
+            endingLineNumber = "461"
+            landmarkName = "discoverUser(param:_:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "706BD3EB-B1C8-4C4B-8DA5-1135C57C87D4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gethingd/Networking/NetworkCaller.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "postRequest(url:params:headers:_:failure:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "706BD3EB-B1C8-4C4B-8DA5-1135C57C87D4 - 62ba1f5da8a17913"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Gethingd.NetworkCaller.postRequest(url: Swift.String, params: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, headers: Swift.Optional&lt;Alamofire.HTTPHeaders&gt;, _: (SwiftyJSON.JSON) -&gt; (), failure: (Alamofire.AFError) -&gt; ()) -&gt; ()"
+                  moduleName = "Gethingd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/raj/Desktop/Project/BitBucket/Gethingds/Gethingd/Gethingd/Networking/NetworkCaller.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "503">
+               </Location>
+               <Location
+                  uuid = "706BD3EB-B1C8-4C4B-8DA5-1135C57C87D4 - c47f6131cf58f59b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any, Alamofire.AFError&gt;) -&gt; () in static Gethingd.NetworkCaller.postRequest(url: Swift.String, params: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, headers: Swift.Optional&lt;Alamofire.HTTPHeaders&gt;, _: (SwiftyJSON.JSON) -&gt; (), failure: (Alamofire.AFError) -&gt; ()) -&gt; ()"
+                  moduleName = "Gethingd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/raj/Desktop/Project/BitBucket/Gethingds/Gethingd/Gethingd/Networking/NetworkCaller.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "234">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

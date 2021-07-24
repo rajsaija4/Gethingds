@@ -77,6 +77,8 @@ extension DiscoverVC {
     
     func getUserList() {
         
+        Filter.lookingFor = "male"
+        
         let param = [
             "looking_for": Filter.lookingFor,
 //            "min_age": Filter.minAge,
