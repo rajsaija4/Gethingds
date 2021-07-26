@@ -142,7 +142,7 @@ extension NetworkManager {
                     return
                 }
                 
-                success(response["otp"].stringValue)
+                success(response["message"].stringValue)
                 
             }) { (error) in
                 fail(error.localizedDescription)
@@ -312,6 +312,28 @@ extension NetworkManager {
                 fail(error.localizedDescription)
             }
         }
+        
+        static func getReviewLaterProfiles( _ success: @escaping ([UserProfile]) -> Void, _ fail: @escaping (String) -> Void) {
+            
+            NetworkCaller.getRequest(url: URLManager.Discover.reviewLater, params: nil, headers: header, { (response) in
+                
+                guard response.isSuccess else {
+                    fail(response.message)
+                    return
+                }
+                
+                var arrUser: [UserProfile] = []
+                for user in response["data"].arrayValue {
+                    arrUser.append(UserProfile(user))
+                }
+                print(response)
+                success(arrUser)
+                
+            }) { (error) in
+                fail(error.localizedDescription)
+            }
+        }
+        
         
         static func logoutProfile(_ success: @escaping (String) -> Void, _ fail: @escaping (String) -> Void) {
             

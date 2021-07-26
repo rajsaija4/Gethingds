@@ -37,6 +37,7 @@ class UserProfile: NSObject {
     var image6:String = ""
     var userKids: [String] = []
     var token: String = ""
+    var status:String = ""
     var userSetting:UserSetting!
     var passion:[String] = []
     var jobTitle:String = ""
@@ -47,7 +48,7 @@ class UserProfile: NSObject {
     
     init(_ json: JSON) {
         super.init()
-        id = json["user_id"].intValue
+        id = json["id"].intValue
         firstName = json["first_name"].stringValue
         lastName = json["last_name"].stringValue
 //        nickName = json["nick_name"].stringValue
@@ -70,6 +71,7 @@ class UserProfile: NSObject {
         image2 = json["image2"].stringValue
         image3 = json["image3"].stringValue
         image4 = json["image4"].stringValue
+        status = json["status"].stringValue
         image5 = json["image5"].stringValue
         image6 = json["image6"].stringValue
         jobTitle = json["job_title"].stringValue

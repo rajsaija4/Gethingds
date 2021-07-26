@@ -27,8 +27,20 @@ class NewPasswordVC: UIViewController {
         
         
     }
+   
+     @IBAction func onPressVisiblepassbtn(_ sender: UIButton) {
+        
+        sender.isSelected = !sender.isSelected
+        
+        if sender.tag == 0 {
+            txtNewPassword.isSecureTextEntry = !sender.isSelected
+        }
+        if sender.tag == 1 {
+            txtNewPassword.isSecureTextEntry = !sender.isSelected
+        }
+     }
     /*
-    // MARK: - Navigation
+     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

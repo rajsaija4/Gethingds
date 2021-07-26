@@ -46,6 +46,7 @@ class ProfileTVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.isHidden = true
         lblName.text = User.details.firstName
         lblAddress.text = User.details.address
         if AppSupport.isOrder == false {
@@ -364,14 +365,14 @@ extension ProfileTVC {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
-            case 2:
+            case 1:
                 let vc = EditProfileVC.instantiate(fromAppStoryboard: .Profile)
                 
                 vc.hidesBottomBarWhenPushed = true
             
                 self.navigationController?.pushViewController(vc, animated: true)
             break
-            case 3:
+            case 2:
                 let vc = SettingVC.instantiate(fromAppStoryboard: .Setting)
                 vc.hidesBottomBarWhenPushed = true
 //                vc.userId = User.details.id
@@ -381,7 +382,7 @@ extension ProfileTVC {
 //                nvc.modalTransitionStyle = .crossDissolve
               self.navigationController?.pushViewController(vc, animated: true)
                 break
-            case 4:
+            case 3:
                 let vc = SubscribeVC.instantiate(fromAppStoryboard: .Upgrade)
 //                vc.onPopView = { [weak self] in
 //                    self?.setupNavigationBar()
@@ -410,11 +411,11 @@ extension ProfileTVC {
 //                vc.hidesBottomBarWhenPushed = true
 //                navigationController?.pushViewController(vc, animated: false)
 //                break
-            case 5:
+            case 4:
                 let vc = ChangePasVC.instantiate(fromAppStoryboard: .Login)
                 self.navigationController?.pushViewController(vc, animated: true)
             break
-            case 6:
+            case 5:
                 logoutProfile()
                 break
 //            case 8:

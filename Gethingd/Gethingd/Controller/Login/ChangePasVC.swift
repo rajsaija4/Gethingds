@@ -18,7 +18,27 @@ class ChangePasVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func onPresspassvisible(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        
+        if sender.tag == 0{
+            txtCurrentPassword.isSecureTextEntry = !sender.isSelected
+        }
+        if sender.tag == 1{
+            txtCurrentPassword.isSecureTextEntry = !sender.isSelected
+        }
+        if sender.tag == 2{
+            txtCurrentPassword.isSecureTextEntry = !sender.isSelected
+        }
+        
+    }
+    
+    @IBAction func onPressbackbtnTap(_ sender: UIButton) {
+        
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
     @IBAction func onPressResetPassword(_ sender: UIButton) {
         
         

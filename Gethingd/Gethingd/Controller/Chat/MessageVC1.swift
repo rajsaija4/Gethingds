@@ -54,6 +54,15 @@ extension MessageVC1: UITableViewDataSource {
 extension MessageVC1: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let vc = MessageVC.instantiate(fromAppStoryboard: .Chat)
+        vc.hidesBottomBarWhenPushed = true
+//        vc.onPopView = { [weak self] in
+//            self?.getConversation()
+//        }
+//        vc.conversation = arrMatchesMessage[indexPath.row]
+//        vc.userImage = arrMatchesMessage[indexPath.row].userImage
+        navigationController?.pushViewController(vc, animated: false)
     
     }
     

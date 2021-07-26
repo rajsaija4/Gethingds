@@ -19,6 +19,7 @@ class UserDetailsTVC: UITableViewController, TagListViewDelegate {
     @IBOutlet weak var viewAdolescent: UIView!
     //    @IBOutlet var mainKidsTag: [UIStackView]!
     @IBOutlet var kidMainStack: [UIStackView]!
+//    @IBOutlet weak var btnReviewLater: UIButton!
     @IBOutlet var kidView: [UIView]!
     @IBOutlet var kidsStack: [UIStackView]!
     @IBOutlet weak var lblAddress: UILabel!
@@ -36,9 +37,9 @@ class UserDetailsTVC: UITableViewController, TagListViewDelegate {
  
     @IBOutlet weak var tagListView: TagListView!
     
-    var onLikeUser: (() -> Void)?
-    var onReviewLater: (() -> Void)?
-    var onDisLikeUser: (() -> Void)?
+//    var onLikeUser: (() -> Void)?
+//    var onReviewLater: (() -> Void)?
+//    var onDisLikeUser: (() -> Void)?
     var collImage:[String] = []
     var infant = 0
     var arrTags:[TagList] = []
@@ -52,11 +53,11 @@ class UserDetailsTVC: UITableViewController, TagListViewDelegate {
     var isFromNotification = false
     var isFromProfile = false
     var userId = 0
-    fileprivate var arrInstaMedia: [InstaMedia] = []
+//    fileprivate var arrInstaMedia: [InstaMedia] = []
     
     //MARK:- OUTLET
     
-    @IBOutlet weak var lblInstgramCount: UILabel!
+//    @IBOutlet weak var lblInstgramCount: UILabel!
    
 //    @IBOutlet weak var collectionInsta: UICollectionView!{
 //        didSet{
@@ -65,14 +66,14 @@ class UserDetailsTVC: UITableViewController, TagListViewDelegate {
 //            collectionInsta.dataSource = self
 //        }
 //    }
-    @IBOutlet fileprivate var arrImgView: [UIImageView]!
-    @IBOutlet fileprivate var arrImgSignView: [UIImageView]!
-    @IBOutlet fileprivate var arrLblSignName: [UILabel]!
-    @IBOutlet fileprivate weak var lblAge: UILabel!
-    @IBOutlet fileprivate weak var lblHeight: UILabel!
-    @IBOutlet fileprivate weak var lblLocation: UILabel!
-    @IBOutlet fileprivate weak var lblUserDetails: UILabel!
-    @IBOutlet fileprivate weak var lblUserInfo: UILabel!
+//    @IBOutlet fileprivate var arrImgView: [UIImageView]!
+//    @IBOutlet fileprivate var arrImgSignView: [UIImageView]!
+//    @IBOutlet fileprivate var arrLblSignName: [UILabel]!
+//    @IBOutlet fileprivate weak var lblAge: UILabel!
+//    @IBOutlet fileprivate weak var lblHeight: UILabel!
+//    @IBOutlet fileprivate weak var lblLocation: UILabel!
+//    @IBOutlet fileprivate weak var lblUserDetails: UILabel!
+//    @IBOutlet fileprivate weak var lblUserInfo: UILabel!
    
     
     
@@ -80,6 +81,8 @@ class UserDetailsTVC: UITableViewController, TagListViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        userId = user.id
+        self.navigationController?.navigationBar.isHidden = true
         let angle = CGFloat.pi/2
                 pageControl.transform = CGAffineTransform(rotationAngle: angle)
                 
@@ -92,11 +95,10 @@ class UserDetailsTVC: UITableViewController, TagListViewDelegate {
         tagListView.textFont = AppFonts.Poppins_Medium.withSize(17)
         tagListView.alignment = .leading
        
-        navigationController?.addBackButtonWithTitle(title: "User Profile", action: #selector(self.onBackBtnTap))
-//        navigationController?.addBackButtonWithTitle(title: "User Profile", action: #selector(self.onBackBtnTap), reportAction: #selector(self.onReportBtnTap))
+    
         
         if isFromNotification || isFromProfile{
-            getUserDetails()
+//            getUserDetails()
         } else {
             setupUI()
         }
@@ -107,13 +109,18 @@ class UserDetailsTVC: UITableViewController, TagListViewDelegate {
         super.viewDidAppear(animated)
         
     }
-
+    @IBAction func onPressbackbtn(_ sender: UIButton) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func onDislikeBtnTap(_ sender: UIButton) {
         if self.isFromNotification {
             swipeUser(userID: userId, status: .nope)
             return
         }
-        onDisLikeUser?()
+        swipeUser(userID: userId, status: .nope)
+//        onDisLikeUser?()
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -122,7 +129,8 @@ class UserDetailsTVC: UITableViewController, TagListViewDelegate {
             swipeUser(userID: userId, status: .like)
             return
         }
-        onLikeUser?()
+        swipeUser(userID: userId, status: .like)
+//        onLikeUser?()
         self.dismiss(animated: true, completion: nil)
         
     }
@@ -132,7 +140,8 @@ class UserDetailsTVC: UITableViewController, TagListViewDelegate {
             swipeUser(userID: userId, status: .reviewLater)
             return
         }
-        onReviewLater?()
+        swipeUser(userID: userId, status: .reviewLater)
+//        onReviewLater?()
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -288,33 +297,35 @@ extension UserDetailsTVC {
 
 extension UserDetailsTVC {
     
-    fileprivate func getUserDetails() {
-        
-        showHUD()
-        
-        let param = ["user_id": userId]
-        
-        NetworkManager.Profile.getOtherUserProfile(param: param, { (userProfile) in
-            self.hideHUD()
-            self.user = userProfile
-            self.setupUI()
-        }, { (error) in
-            self.hideHUD()
-            self.showToast(error)
-        })
-    }
+//    fileprivate func getUserDetails() {
+//
+//        showHUD()
+//
+//        let param = ["user_id": userId]
+//
+//        NetworkManager.Profile.getOtherUserProfile(param: param, { (userProfile) in
+//            self.hideHUD()
+//            self.user = userProfile
+//            self.setupUI()
+//        }, { (error) in
+//            self.hideHUD()
+//            self.showToast(error)
+//        })
+//    }
     
     fileprivate func swipeUser(userID: Int, status: SwipeType) {
         
+
         showHUD()
         
         let param = [
             "status": status.rawValue,
-            "user_id": userID,
+            "user_id": userID
         ] as [String : Any]
         
-        NetworkManager.Discover.swipeProfiles(param: param, { (details) in
+        NetworkManager.Discover.swipeProfiles(param: param, { (message) in
             self.hideHUD()
+            
 //            if let matchDetails = details {
 //                let vc = MatchUserVC.instantiate(fromAppStoryboard: .Discover)
 //                vc.matchDetails = matchDetails
@@ -323,16 +334,27 @@ extension UserDetailsTVC {
 //                nvc.modalTransitionStyle = .crossDissolve
 //                nvc.isNavigationBarHidden = true
 //                self.present(nvc, animated: true, completion: nil)
-//                return
 //            }
-            if self.isFromNotification {
-                APPDEL?.setupMainTabBarController()
+//
+//            if status == .rewind {
+//                self.bottomStack.isHidden = false
+//                self.imgNoProfile.isHidden = true
+//                self.kolodaView.isHidden = false
+//            }
+            
+            guard status == .like else { return }
+            
+            if AppSupport.isLikeLimited && AppSupport.remainingLikes == 0 {
+                let alert = UIAlertController(title: "Oops!", message: "You have reached your daily limit of Likes. Please upgrade to enjoy unlimited Likes.")
+                self.present(alert, animated: true, completion: nil)
                 return
             }
             
+
         }, { (error) in
+            
             self.hideHUD()
-            self.showAlert(error)
+            self.showToast(error)
         })
         
     }
@@ -509,8 +531,9 @@ extension UserDetailsTVC {
              self.hideHUD()
              self.showToast(error)
          }
-
-
-         
+       
      }
+    
+    
+    
 }

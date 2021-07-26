@@ -114,11 +114,9 @@ extension VerificationVC {
     
     fileprivate func resendOTP(param: [String: Any]) {
         showHUD()
-        NetworkManager.Auth.resendOTP(param: param, { (otp) in
+        NetworkManager.Auth.resendOTP(param: param, { (response) in
             self.hideHUD()
-            
-            self.otp = otp
-            self.showToast("OTP Resend Successfully")
+            self.showToast("otp Successfully send")
             
         }) { (error) in
             self.hideHUD()
@@ -133,12 +131,12 @@ extension VerificationVC {
 extension VerificationVC {
     
     @IBAction func onResendBtnTap(_ sender: UIButton) {
-//
-//        let param = [
-//            "phone": contactNumber
-//        ]
+
+        let param = [
+            "email": email
+        ]
         
-//        resendOTP(param: param)
+        resendOTP(param: param)
     }
     
     @IBAction func onCallMeBtnTap(_ sender: UIButton) {

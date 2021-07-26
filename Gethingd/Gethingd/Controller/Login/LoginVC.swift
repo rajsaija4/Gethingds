@@ -31,6 +31,12 @@ class LoginVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func btnPasswordhideonPress(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        txtPassword.isSecureTextEntry = !sender.isSelected
+        
+        
+    }
     @IBAction func onPressForgotPassword(_ sender: UIButton) {
         
         let vc = FpasswordVC.instantiate(fromAppStoryboard: .Login)

@@ -12,14 +12,16 @@ class MainchatVC: UIViewController {
 
     @IBOutlet weak var contentView: UIView!
     var pagingViewController: PagingViewController!
+    
+    
+    //MARK:- VARIABLE
+    fileprivate var arrFreshMatches: [Conversation] = []
+    fileprivate var arrAstroLike: [Conversation] = []
+    fileprivate var arrMatchesMessage: [Conversation] = []
   
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-     
         setupSubViewControllers()
-     
     }
 }
 
@@ -78,6 +80,34 @@ extension MainchatVC {
     
     
     
+    
+}
+
+
+extension MainchatVC {
+    
+    func getConversation() {
+        
+        showHUD()
+        
+        NetworkManager.Chat.getMatchDetails { (conversation) in
+            self.hideHUD()
+            self.arrFreshMatches.removeAll()
+            self.arrAstroLike.removeAll()
+            self.arrMatchesMessage.removeAll()
+            self.arrFreshMatches.append(contentsOf: conversation.arrConversationNotStarted)
+            self.arrMatchesMessage.append(contentsOf: conversation.arrConversationStarted)
+            self.arrAstroLike.append(contentsOf: conversation.arrAstroLikeUser)
+   
+            self.tabBarController?.tabBar.items?.last?.badgeValue = conversation.unReadCount > 0 ? "\(conversation.unReadCount)" : nil
+         
+            
+        } _: { (error) in
+          
+            self.hideHUD()
+            self.showToast(error)
+        }
+    }
     
 }
 

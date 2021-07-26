@@ -52,6 +52,7 @@ struct URLManager {
     struct Discover {
         static let discover = basePath + "discover"
         static let swipe = basePath + "swipe_profile"
+        static let reviewLater = basePath + "review_later_list"
         static let boostUser = basePath + "add_user_boost"
     }
     

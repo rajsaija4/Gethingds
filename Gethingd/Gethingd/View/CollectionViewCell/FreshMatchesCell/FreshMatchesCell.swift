@@ -30,5 +30,16 @@ class FreshMatchesCell: UICollectionViewCell {
         let userStatus = user.readStatus == "unread" ? "img_active_user" : "img_inactive_user"
         //btnName.setImage(UIImage(named: userStatus), for: .normal)
     }
+    
+
+        func setupReviewLater(user: UserProfile) {
+            if let imgURL = URL(string: user.image1) {
+                imgUser.kf.setImage(with: imgURL)
+            }
+            lblUserName.text = user.firstName
+            let userStatus = user.status == "active" ? "img_active_user" : "img_inactive_user"
+            //btnName.setImage(UIImage(named: userStatus), for: .normal)
+        }
+
 
 }
