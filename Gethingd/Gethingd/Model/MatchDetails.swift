@@ -16,8 +16,7 @@ class MatchDetails: NSObject {
     var userImage: String = ""
     var matchUserImage: String = ""
     var matchUserName: String = ""
-    var matchUserSignId: Int = 0
-    var userSignId: Int = 0
+   
     
     init(_ json: JSON) {
         super.init()
@@ -27,8 +26,7 @@ class MatchDetails: NSObject {
         userImage = json["user_image_url"].stringValue
         matchUserImage = json["match_user_image_url"].stringValue
         matchUserName = json["match_user_name"].stringValue
-        matchUserSignId = json["match_sun_zodiac_sign_id"].intValue
-        userSignId = json["user_sun_zodiac_sign_id"].intValue
+        
         
     }
     

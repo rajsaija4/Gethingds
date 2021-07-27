@@ -62,8 +62,8 @@
             filePath = "Gethingd/Controller/Profile/CreateProfileTVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "769"
-            endingLineNumber = "769"
+            startingLineNumber = "773"
+            endingLineNumber = "773"
             landmarkName = "CreateProfileTVC"
             landmarkType = "21">
          </BreakpointContent>
@@ -78,8 +78,8 @@
             filePath = "Gethingd/Controller/Profile/CreateProfileTVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "783"
-            endingLineNumber = "783"
+            startingLineNumber = "787"
+            endingLineNumber = "787"
             landmarkName = "addProfile(source:parameters:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,13 +94,13 @@
             filePath = "Gethingd/Controller/SettingVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "206"
-            endingLineNumber = "206"
+            startingLineNumber = "208"
+            endingLineNumber = "208"
             landmarkName = "updateSetting(age:distance:notification:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "B41B1CA4-F58B-49F1-93B7-07C91865F922 - e2443e73c7cb6cf"
+                  uuid = "B41B1CA4-F58B-49F1-93B7-07C91865F922 - e2443e73c7cb601"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -110,12 +110,12 @@
                   urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/SettingVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "206"
-                  endingLineNumber = "206"
+                  startingLineNumber = "208"
+                  endingLineNumber = "208"
                   offsetFromSymbolStart = "332">
                </Location>
                <Location
-                  uuid = "B41B1CA4-F58B-49F1-93B7-07C91865F922 - 43e7166bc9fb3a9d"
+                  uuid = "B41B1CA4-F58B-49F1-93B7-07C91865F922 - 43e7166bc9fb3a53"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -125,8 +125,8 @@
                   urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/SettingVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "207"
-                  endingLineNumber = "207"
+                  startingLineNumber = "209"
+                  endingLineNumber = "209"
                   offsetFromSymbolStart = "37">
                </Location>
             </Locations>
@@ -142,8 +142,8 @@
             filePath = "Gethingd/Controller/SettingVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "207"
-            endingLineNumber = "207"
+            startingLineNumber = "209"
+            endingLineNumber = "209"
             landmarkName = "updateSetting(age:distance:notification:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -350,8 +350,8 @@
             filePath = "Gethingd/Controller/Profile/EditProfileVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "240"
-            endingLineNumber = "240"
+            startingLineNumber = "275"
+            endingLineNumber = "275"
             landmarkName = "onPressUpdatebtnTap(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -526,8 +526,8 @@
             filePath = "Gethingd/Controller/Profile/EditProfileVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "517"
-            endingLineNumber = "517"
+            startingLineNumber = "552"
+            endingLineNumber = "552"
             landmarkName = "onKidTypeTap(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -880,8 +880,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "106"
             endingLineNumber = "106"
-            landmarkName = "getProfiles()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
             <Locations>
                <Location
                   uuid = "EB8D5B42-2489-44D4-B07C-261A24FB98B7 - b794085719524ae7"
@@ -928,8 +928,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "108"
             endingLineNumber = "108"
-            landmarkName = "getProfiles()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -944,8 +944,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
             endingLineNumber = "33"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1266,6 +1266,423 @@
             endingLineNumber = "58"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "14348100-005D-4F65-AF2A-3F19E8CCE3EE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gethingd/Controller/Discover/DiscoverVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "getUserList()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "73FF31B8-8FF5-44BC-AABB-6D3FEA77B646"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gethingd/Controller/Profile/CreateProfileTVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "241"
+            endingLineNumber = "241"
+            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6A5CC4EA-F46C-4274-AE6D-B19E002F1FC1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gethingd/Controller/Profile/CreateProfileTVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "CreateProfileTVC"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "6A5CC4EA-F46C-4274-AE6D-B19E002F1FC1 - 1ef2e993990c2e05"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gethingd.CreateProfileTVC.txtFirstName.getter : Swift.Optional&lt;Gethingd.CustomTextField&gt;"
+                  moduleName = "Gethingd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Profile/CreateProfileTVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "6A5CC4EA-F46C-4274-AE6D-B19E002F1FC1 - c37aefc899ea6e09"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gethingd.CreateProfileTVC.txtFirstName.setter : Swift.Optional&lt;Gethingd.CustomTextField&gt;"
+                  moduleName = "Gethingd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Profile/CreateProfileTVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "155">
+               </Location>
+               <Location
+                  uuid = "6A5CC4EA-F46C-4274-AE6D-B19E002F1FC1 - 7e099b062ad5571c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gethingd.CreateProfileTVC.txtFirstName.modify : Swift.Optional&lt;Gethingd.CustomTextField&gt;"
+                  moduleName = "Gethingd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Profile/CreateProfileTVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "59">
+               </Location>
+               <Location
+                  uuid = "6A5CC4EA-F46C-4274-AE6D-B19E002F1FC1 - 6fbd79d8910935e0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gethingd.CreateProfileTVC.txtFirstName.modify : Swift.Optional&lt;Gethingd.CustomTextField&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Gethingd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Profile/CreateProfileTVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "6A5CC4EA-F46C-4274-AE6D-B19E002F1FC1 - 6bc0c1f84b6ca690"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gethingd.CreateProfileTVC.init(style: __C.UITableViewStyle) -&gt; Gethingd.CreateProfileTVC"
+                  moduleName = "Gethingd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Profile/CreateProfileTVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "4198">
+               </Location>
+               <Location
+                  uuid = "6A5CC4EA-F46C-4274-AE6D-B19E002F1FC1 - 52b52724edc811f9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gethingd.CreateProfileTVC.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Gethingd.CreateProfileTVC"
+                  moduleName = "Gethingd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Profile/CreateProfileTVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "3860">
+               </Location>
+               <Location
+                  uuid = "6A5CC4EA-F46C-4274-AE6D-B19E002F1FC1 - c8977aab75a7df56"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gethingd.CreateProfileTVC.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Gethingd.CreateProfileTVC&gt;"
+                  moduleName = "Gethingd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Profile/CreateProfileTVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "3795">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2463888F-A63C-46A0-AE58-1728A0DE92BF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gethingd/Controller/Profile/CreateProfileTVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "CreateProfileTVC"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "2463888F-A63C-46A0-AE58-1728A0DE92BF - 40eb6fb7fed190b5"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gethingd.CreateProfileTVC.arrProfileBtn.getter : Swift.Optional&lt;Swift.Array&lt;__C.UIButton&gt;&gt;"
+                  moduleName = "Gethingd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Profile/CreateProfileTVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  uuid = "2463888F-A63C-46A0-AE58-1728A0DE92BF - 7b64c3fbf9fc2481"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gethingd.CreateProfileTVC.arrProfileBtn.setter : Swift.Optional&lt;Swift.Array&lt;__C.UIButton&gt;&gt;"
+                  moduleName = "Gethingd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Profile/CreateProfileTVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "144">
+               </Location>
+               <Location
+                  uuid = "2463888F-A63C-46A0-AE58-1728A0DE92BF - eccadd3ec623ed28"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gethingd.CreateProfileTVC.arrProfileBtn.modify : Swift.Optional&lt;Swift.Array&lt;__C.UIButton&gt;&gt;"
+                  moduleName = "Gethingd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Profile/CreateProfileTVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "2463888F-A63C-46A0-AE58-1728A0DE92BF - 49e11e5011687da9"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gethingd.CreateProfileTVC.arrProfileBtn.modify : Swift.Optional&lt;Swift.Array&lt;__C.UIButton&gt;&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Gethingd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Profile/CreateProfileTVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "8">
+               </Location>
+               <Location
+                  uuid = "2463888F-A63C-46A0-AE58-1728A0DE92BF - 6bc0c1f84b6ca714"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gethingd.CreateProfileTVC.init(style: __C.UITableViewStyle) -&gt; Gethingd.CreateProfileTVC"
+                  moduleName = "Gethingd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Profile/CreateProfileTVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "2620">
+               </Location>
+               <Location
+                  uuid = "2463888F-A63C-46A0-AE58-1728A0DE92BF - 52b52724edc8107d"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gethingd.CreateProfileTVC.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Gethingd.CreateProfileTVC"
+                  moduleName = "Gethingd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Profile/CreateProfileTVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "2644">
+               </Location>
+               <Location
+                  uuid = "2463888F-A63C-46A0-AE58-1728A0DE92BF - c8977aab75a7ded2"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gethingd.CreateProfileTVC.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Gethingd.CreateProfileTVC&gt;"
+                  moduleName = "Gethingd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Profile/CreateProfileTVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "2620">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "48E4FFEB-8CCF-43AF-9E48-8B063E4D3BD4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gethingd/Networking/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "login(param:_:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9F863F69-40DA-4F66-96A3-BDF34259CFF3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gethingd/Controller/Profile/CreateProfileTVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "txtJobTitle"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "9F863F69-40DA-4F66-96A3-BDF34259CFF3 - 9e8452e4a034572e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gethingd.CreateProfileTVC.arrLookingforBtn.getter : Swift.Optional&lt;Swift.Array&lt;__C.UIButton&gt;&gt;"
+                  moduleName = "Gethingd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Profile/CreateProfileTVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "122">
+               </Location>
+               <Location
+                  uuid = "9F863F69-40DA-4F66-96A3-BDF34259CFF3 - 4c632ae3cb52e322"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gethingd.CreateProfileTVC.arrLookingforBtn.setter : Swift.Optional&lt;Swift.Array&lt;__C.UIButton&gt;&gt;"
+                  moduleName = "Gethingd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Profile/CreateProfileTVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "9F863F69-40DA-4F66-96A3-BDF34259CFF3 - a59b4e86bf8d2edc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gethingd.CreateProfileTVC.arrLookingforBtn.modify : Swift.Optional&lt;Swift.Array&lt;__C.UIButton&gt;&gt;"
+                  moduleName = "Gethingd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Profile/CreateProfileTVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "9F863F69-40DA-4F66-96A3-BDF34259CFF3 - 7c07037a398bfe5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gethingd.CreateProfileTVC.arrLookingforBtn.modify : Swift.Optional&lt;Swift.Array&lt;__C.UIButton&gt;&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Gethingd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Profile/CreateProfileTVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "9F863F69-40DA-4F66-96A3-BDF34259CFF3 - 6bc0c1f84b6ca17b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gethingd.CreateProfileTVC.init(style: __C.UITableViewStyle) -&gt; Gethingd.CreateProfileTVC"
+                  moduleName = "Gethingd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Profile/CreateProfileTVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "4838">
+               </Location>
+               <Location
+                  uuid = "9F863F69-40DA-4F66-96A3-BDF34259CFF3 - 52b52724edc81612"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gethingd.CreateProfileTVC.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Gethingd.CreateProfileTVC"
+                  moduleName = "Gethingd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Profile/CreateProfileTVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "4423">
+               </Location>
+               <Location
+                  uuid = "9F863F69-40DA-4F66-96A3-BDF34259CFF3 - c8977aab75a7d8bd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gethingd.CreateProfileTVC.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Gethingd.CreateProfileTVC&gt;"
+                  moduleName = "Gethingd"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Profile/CreateProfileTVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "4358">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -151,18 +151,18 @@ extension DiscoverVC {
             "user_id": userID
         ] as [String : Any]
         
-        NetworkManager.Discover.swipeProfiles(param: param, { (message) in
+        NetworkManager.Discover.swipeProfiles(param: param, { (details) in
             self.hideHUD()
             
-//            if let matchDetails = details {
-//                let vc = MatchUserVC.instantiate(fromAppStoryboard: .Discover)
-//                vc.matchDetails = matchDetails
-//                let nvc = UINavigationController(rootViewController: vc)
-//                nvc.modalPresentationStyle = .fullScreen
-//                nvc.modalTransitionStyle = .crossDissolve
-//                nvc.isNavigationBarHidden = true
-//                self.present(nvc, animated: true, completion: nil)
-//            }
+            if let matchDetails = details {
+                let vc = MatchUserVC.instantiate(fromAppStoryboard: .Discover)
+                vc.matchDetails = matchDetails
+                let nvc = UINavigationController(rootViewController: vc)
+                nvc.modalPresentationStyle = .fullScreen
+                nvc.modalTransitionStyle = .crossDissolve
+                nvc.isNavigationBarHidden = true
+                self.present(nvc, animated: true, completion: nil)
+            }
 //
 //            if status == .rewind {
 //                self.bottomStack.isHidden = false
@@ -310,9 +310,9 @@ extension DiscoverVC: KolodaViewDelegate {
         return [.left, .right, .up, .down]
     }
     
-    func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
-        let vc = UserDetailsTVC.instantiate(fromAppStoryboard: .Discover)
-        vc.user = arrUser[index]
+//    func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
+//        let vc = UserDetailsTVC.instantiate(fromAppStoryboard: .Discover)
+//        vc.user = arrUser[index]
 //        vc.onLikeUser = {
 //            koloda.swipe(.right)
 //        }
@@ -325,12 +325,12 @@ extension DiscoverVC: KolodaViewDelegate {
 //            koloda.swipe(.down)
 //            self.swipeUser(userID: self.arrUser[index].id, status: .reviewLater)
 //        }
-
-        let nvc = UINavigationController(rootViewController: vc)
-        nvc.modalPresentationStyle = .fullScreen
-        nvc.modalTransitionStyle = .crossDissolve
-        self.present(nvc, animated: true, completion: nil)
-    }
+//
+//        let nvc = UINavigationController(rootViewController: vc)
+//        nvc.modalPresentationStyle = .fullScreen
+//        nvc.modalTransitionStyle = .crossDissolve
+//        self.present(nvc, animated: true, completion: nil)
+//    }
     
     func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
         print(direction)

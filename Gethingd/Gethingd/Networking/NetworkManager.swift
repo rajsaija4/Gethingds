@@ -483,7 +483,7 @@ extension NetworkManager {
             }
         }
         
-        static func swipeProfiles(param: Parameters, _ success: @escaping (String) -> Void, _ fail: @escaping (String) -> Void) {
+        static func swipeProfiles(param: Parameters, _ success: @escaping (MatchDetails?) -> Void, _ fail: @escaping (String) -> Void) {
             
             NetworkCaller.postRequest(url: URLManager.Discover.swipe, params: param, headers: header, { (response) in
                 
@@ -498,13 +498,13 @@ extension NetworkManager {
                 AppSupport.isOrder = response["data"]["is_order"].stringValue == "Yes"
                 AppSupport.reviewLater = response["data"]["remaining_review_later_count"].intValue
                 
-//                if response["match_status"].stringValue == "Yes" {
-//                        success(MatchDetails(response))
-//                } else {
-//                    success(nil)
-//                }
-//
-                success(response["message"].stringValue)
+                if response["data"]["match_status"].stringValue == "match" {
+                        success(MatchDetails(response))
+                } else {
+                    success(nil)
+                }
+
+//                success(response["message"].stringValue)
             }) { (error) in
                 fail(error.localizedDescription)
             }

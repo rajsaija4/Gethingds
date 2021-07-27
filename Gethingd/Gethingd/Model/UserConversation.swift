@@ -58,7 +58,7 @@ class Conversation: NSObject {
         super.init()
         userId = json["user_id"].intValue
         name = json["user_name"].stringValue
-        userImage = json["user_image_url"].stringValue
+        userImage = json["image1"].stringValue
         readStatus = json["read_status"].stringValue
         likeStatus = json["like_status"].stringValue
         matchId = json["match_id"].intValue

@@ -34,13 +34,16 @@ class EditProfileVC: UITableViewController, TagListViewDelegate, UIImagePickerCo
     @IBOutlet weak var txtJobTitle: UITextField!
     @IBOutlet weak var lblWordCounter: UILabel!
     @IBOutlet weak var txtAbout: UITextView!
+    
     @IBOutlet weak var txtDob: CustomTextField!
     @IBOutlet weak var txtFname: CustomTextField!
+    @IBOutlet var arrLookingforBtn: [UIButton]!
     @IBOutlet weak var txtLname: CustomTextField!
     @IBOutlet weak var txtEmail: CustomTextField!
     @IBOutlet var img_Profile: [UIImageView]!
     @IBOutlet var img_Edit: [UIButton]!
     var selectedImage = 0
+     var selectedLookingFor = -1
     var selectedGender = -1
     var isFromLogin = false
     var onPopView: (() -> Void)?
@@ -84,6 +87,20 @@ class EditProfileVC: UITableViewController, TagListViewDelegate, UIImagePickerCo
         super.viewWillAppear(animated)
   
     }
+    
+    
+    @IBAction func onLookingForbtnTap(_ sender: UIButton) {
+        
+        for btn in arrLookingforBtn {
+            if btn.tag == sender.tag {
+                btn.isSelected = true
+                selectedLookingFor = btn.tag
+            } else {
+                btn.isSelected = false
+            }
+        }
+    }
+    
     @IBAction func onPressUpdatebtnTap(_ sender: UIButton) {
         
         let img1 = img_Profile[0].image
@@ -144,6 +161,23 @@ class EditProfileVC: UITableViewController, TagListViewDelegate, UIImagePickerCo
         }
         
         
+        guard selectedLookingFor  >= 0  else {
+            self.showAlert("Please Select Looking For")
+            return
+        }
+        var lookingForPass = ""
+
+        if selectedLookingFor == 0 {
+                lookingForPass = "Male"
+        }
+
+        if selectedLookingFor == 1 {
+            lookingForPass = "Female"
+        }
+
+        if selectedLookingFor == 2 {
+            lookingForPass = "Both"
+        }
         
         
         //        guard let img1 = arrImageProfile[0].image, let img2 = arrImageProfile[1].image, let img3 = arrImageProfile[2].image, let img4 = arrImageProfile[3].image, let img5 = arrImageProfile[4].image else {
@@ -231,7 +265,8 @@ class EditProfileVC: UITableViewController, TagListViewDelegate, UIImagePickerCo
                 "kids":kids.joined(separator: ","),
                 "num_of_kids": noOfkids,
                 "gender": gendertoPass,
-                "passion":arrPassionIds.joined(separator: ",")
+                "passion":arrPassionIds.joined(separator: ","),
+                "looking_for":lookingForPass
 
             ] as [String : String]
 
@@ -539,6 +574,7 @@ extension EditProfileVC {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
             return 400
+            
         }
 
         if indexPath.section == 1 {
@@ -553,7 +589,7 @@ extension EditProfileVC {
         }
         
         if indexPath.section == 3 {
-            return CGFloat(selectedPassion.subviews.count * 48) + 56
+            return CGFloat(selectedPassion.subviews.count * 48) + 60
         }
 
         if indexPath.section == 4 {
@@ -688,6 +724,20 @@ extension EditProfileVC {
           
 //            self.txtEmail.text = User.details.email
             self.txtFname.text = User.details.firstName
+            var lookfor = User.details.looking_for
+            print(lookfor)
+            if lookfor == "male" {
+                self.arrLookingforBtn[0].isSelected = true
+            }
+            
+            if lookfor == "female"{
+                self.arrLookingforBtn[1].isSelected = true
+            }
+            
+            if  lookfor == "both" {
+                self.arrLookingforBtn[2].isSelected = true
+            }
+            
             self.txtLname.text = User.details.lastName
             self.txtJobTitle.text = User.details.job_title
             self.txtDob.text = User.details.dob

@@ -22,6 +22,9 @@ class CreateProfileTVC: UITableViewController, UIImagePickerControllerDelegate, 
         arrPassion.append(contentsOf: passion)
         txtPassion.textFont = AppFonts.Poppins_Medium.withSize(17)
         txtPassion.alignment = .leading
+        
+//        txtPassion.textFont = UIFont.systemFont(ofSize: 17)
+
         txtPassion.removeAllTags()
         txtPassion.addTags(arrPassion)
         if passion.isEmpty {
@@ -106,13 +109,15 @@ class CreateProfileTVC: UITableViewController, UIImagePickerControllerDelegate, 
         txtLastName.setPlaceHolderColor()
         txtDate.setPlaceHolderColor()
         txtPassion.delegate = self
+       
 //        txtEmail.setPlaceHolderColor()
         txtNumberOfKids.setPlaceHolderColor()
  
 //        getProfile()
         
     }
-    @IBAction func onPressbtnPassion(_ sender: Any) {
+   
+    @IBAction func onPressPassionView(_ sender: Any) {
         
         let vc = TagListVC.instantiate(fromAppStoryboard: .Profile)
         vc.delegate = self
@@ -126,9 +131,8 @@ class CreateProfileTVC: UITableViewController, UIImagePickerControllerDelegate, 
         vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .crossDissolve
         self.present(vc, animated: true, completion: nil)
-        
     }
-    
+        
     @IBAction func onPressAddImagebtn(_ sender: UIButton) {
         if sender.tag == 0 {
             selectedImage = sender.tag
@@ -280,7 +284,7 @@ class CreateProfileTVC: UITableViewController, UIImagePickerControllerDelegate, 
         
         arrImageProfile[sender.tag].image = nil
         arrProfileBtn[sender.tag].isHidden = true
-        btnAddImages[sender.tag].isHidden = true
+        btnAddImages[sender.tag].isHidden = false
         
     }
     
@@ -720,7 +724,7 @@ extension CreateProfileTVC {
         }
 
         if selectedLookingFor == 2 {
-            lookingForPass = "other"
+            lookingForPass = "both"
         }
           
         var arrPassionIds = [String]()
@@ -925,11 +929,14 @@ extension CreateProfileTVC: UITextViewDelegate {
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
+            textView.textColor = UIColor(hexString: "#4C4C4C")
             textView.text = placeHolder
+            
         }
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        textView.textColor = .black
         lblCharacterLeft.text = "Characters left: \(150 - textView.text.count)"
         return textView.text.count < 150
     }

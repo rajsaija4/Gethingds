@@ -142,6 +142,8 @@ class SettingVC: UITableViewController {
                 print("1")
             case 2:
                 print("2")
+                
+            
             default:
                 break
             }
@@ -212,3 +214,5 @@ extension SettingVC {
         
     }
 }
+
+
