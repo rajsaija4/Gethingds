@@ -120,7 +120,7 @@ extension NotificationVC: UITableViewDelegate {
             guard let mainTVC = (APPDEL?.window?.rootViewController as? UINavigationController)?.viewControllers.first as? MainTabBarController else { return }
             mainTVC.selectedIndex = 2
             guard let chatVC = (mainTVC.viewControllers?.last as? UINavigationController)?.viewControllers.first as? ChatVC else { return }
-            chatVC.getConversation()
+//            chatVC.getConversation()
             return
         }
         
@@ -128,7 +128,7 @@ extension NotificationVC: UITableViewDelegate {
             guard let mainTVC = (APPDEL?.window?.rootViewController as? UINavigationController)?.viewControllers.first as? MainTabBarController else { return }
             mainTVC.selectedIndex = 2
             guard let chatVC = (mainTVC.viewControllers?.last as? UINavigationController)?.viewControllers.first as? ChatVC else { return }
-            chatVC.getConversation()
+//            chatVC.getConversation()
             return
         }
         

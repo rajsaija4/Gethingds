@@ -8,6 +8,8 @@
 import UIKit
 
 class MessageVC1: UIViewController {
+    
+    var arrMessagesList:[ChatMessages] = []
 
     @IBOutlet weak var tblChat: UITableView! {
         didSet {
@@ -16,13 +18,17 @@ class MessageVC1: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        getAllMessageList()
 
         // Do any additional setup after loading the view.
     }
     
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-            tblChat.reloadData()
+        getAllMessageList()
+           
     }
    
 
@@ -40,11 +46,12 @@ class MessageVC1: UIViewController {
 extension MessageVC1: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return arrMessagesList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UserChatCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+        cell.setupCell(user: arrMessagesList[indexPath.row])
         return cell
     }
 }
@@ -61,8 +68,10 @@ extension MessageVC1: UITableViewDelegate {
 //            self?.getConversation()
 //        }
 //        vc.conversation = arrMatchesMessage[indexPath.row]
-//        vc.userImage = arrMatchesMessage[indexPath.row].userImage
-        navigationController?.pushViewController(vc, animated: false)
+        vc.match_Id = arrMessagesList[indexPath.row].matchId
+        vc.userImage = arrMessagesList[indexPath.row].userImage
+        (ROOTVC as? UINavigationController)?.pushViewController(vc, animated: true)
+//        self.parent?.navigationController?.pushViewController(vc, animated: false)
     
     }
     
@@ -71,9 +80,32 @@ extension MessageVC1: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+//        return UITableView.automaticDimension
+        return 100
     }
     
 
     
 }
+
+
+extension MessageVC1 {
+    
+    func getAllMessageList() {
+        showHUD()
+        NetworkManager.Chat.getAllMessageConversation { (response) in
+            self.arrMessagesList.removeAll()
+            self.arrMessagesList.append(contentsOf: response)
+            self.tblChat.reloadData()
+            self.hideHUD()
+        } _: { (error) in
+            self.hideHUD()
+            self.showToast(error)
+        }
+
+    }
+
+        
+    }
+    
+

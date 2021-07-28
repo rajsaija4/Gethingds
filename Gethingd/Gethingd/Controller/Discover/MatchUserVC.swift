@@ -62,7 +62,7 @@ extension MatchUserVC {
     @IBAction func onSendControlTap(_ sender: UIControl) {
         let vc = MessageVC.instantiate(fromAppStoryboard: .Chat)
         vc.hidesBottomBarWhenPushed = true
-        vc.conversation = Conversation(json: JSON.null, matchId: matchDetails.matchId, name: matchDetails.matchUserName)
+//        vc.conversation = Conversation(json: JSON.null, matchId: matchDetails.matchId, name: matchDetails.matchUserName)
         vc.userImage = matchDetails.matchUserImage
         vc.onPopView = {
             self.dismiss(animated: true, completion: nil)

@@ -33,35 +33,36 @@ internal struct Message: MessageType {
 //    init(_ json: JSON) {
 //        self.init(.text(json["message"].stringValue), Message.currentSender, URL(string: json["sender_image_url"].stringValue), json["message_id"].stringValue, json["received_date_time"].stringValue.toDate ?? Date())
 //    }
-    
+    //https://gurutechnolabs.co.in/website/laravel/gethingd/public/api/get_message_conversation
     init(_ json: JSON) {
-        self.init(.text(json["message"].stringValue), ChatUser(senderId: "\(json["sender_id"].intValue)", displayName: ""), URL(string: json["sender_image_url"].stringValue), json["message_id"].stringValue, json["received_date_time"].stringValue.toDate ?? Date())
+        self.init(.text(json["message"].stringValue), ChatUser(senderId: "\(json["sender_id"].intValue)", displayName: ""), URL(string: json["sender_user_image"].stringValue), json["message_id"].stringValue, json["created_at"].stringValue.toDate ?? Date())
     }
     
+    //https://gurutechnolabs.co.in/website/laravel/gethingd/public/api/send_message
     init(json: JSON) {
-        self.init(.text(json["messages"]["message"].stringValue), ChatUser(senderId: "\(json["messages"]["sender_id"].intValue)", displayName: ""), URL(string: json["messages"]["sender_image_url"].stringValue), json["messages"]["message_id"].stringValue, json["messages"]["received_date_time"].stringValue.toDate ?? Date())
+        self.init(.text(json["data"]["message"].stringValue), ChatUser(senderId: "\(json["data"]["sender_id"].intValue)", displayName: ""), URL(string: json["data"]["sender_user_image"].stringValue), json["data"]["message_id"].stringValue, json["data"]["created_at"].stringValue.toDate ?? Date())
     }
     
-    init(_ text: String) {
-        
-        self.init(.text(text), ChatUser(senderId: "\(User.details.id)", displayName: User.details.firstName), URL(string: User.details.image1 ?? ""), UUID().uuidString, Date())
-    }
-    
-    class UserInfo: NSObject {
-        
-        var id: String?
-        var name: String?
-        var email: String?
-        var image: URL?
-        
-        init(_ json: JSON) {
-            super.init()
-            id = json["user_id"].stringValue
-            name = json["name"].stringValue
-            email = json["email"].stringValue
-            image = json["image"].url
-        }
-    }
+//    init(_ text: String) {
+//
+//        self.init(.text(text), ChatUser(senderId: "\(User.details.id)", displayName: User.details.firstName), URL(string: User.details.image1 ?? ""), UUID().uuidString, Date())
+//    }
+//
+//    class UserInfo: NSObject {
+//
+//        var id: String?
+//        var name: String?
+//        var email: String?
+//        var image: URL?
+//
+//        init(_ json: JSON) {
+//            super.init()
+//            id = json["user_id"].stringValue
+//            name = json["name"].stringValue
+//            email = json["email"].stringValue
+//            image = json["image"].url
+//        }
+//    }
 }
 
 

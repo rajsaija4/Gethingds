@@ -26,9 +26,11 @@ class MessageVC: MessagesViewController {
     }()
     
     var onPopView: (() -> Void)?
-    var conversation: Conversation!
+    var oppositeUserName:String = ""
+    var match_Id:Int = 0
     var userImage: String = ""
     var isFromNotification = false
+  
     
     //MARK:- OUTLET
     
@@ -45,11 +47,12 @@ class MessageVC: MessagesViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        AppUserDefaults.save(value: conversation.matchId, forKey: .currentMatchId)
+        AppUserDefaults.save(value: match_Id, forKey: .currentMatchId)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = true
         AppUserDefaults.save(value: 0, forKey: .currentMatchId)
     }
     
@@ -95,7 +98,7 @@ extension MessageVC {
         
         NotificationCenter.default.addObserver(self, selector: #selector(receiveNewMessage(_:)), name: .receiveMessage, object: nil)
         
-        navigationController?.addBackButtonWithTitle(title: conversation.name, action: #selector(self.onBackBtnTap), imgUser: (userImage, #selector(self.onUserImgBtnTap)), reportAction: #selector(self.onReportBtnTap))
+        navigationController?.addBackButtonWithTitle(title: oppositeUserName, action: #selector(self.onBackBtnTap), imgUser: (userImage, #selector(self.onUserImgBtnTap)), reportAction: #selector(self.onReportBtnTap))
     }
     
     
@@ -187,26 +190,26 @@ extension MessageVC {
     }
     
     @objc fileprivate func onUserImgBtnTap() {
-        let vc = UserDetailsTVC.instantiate(fromAppStoryboard: .Discover)
-        vc.isFromProfile = true
-        vc.userId = conversation.userId
-        let nvc = UINavigationController(rootViewController: vc)
-        nvc.modalPresentationStyle = .fullScreen
-        self.present(nvc, animated: true, completion: nil)
+//        let vc = UserDetailsTVC.instantiate(fromAppStoryboard: .Discover)
+//        vc.isFromProfile = true
+//        vc.userId = conversation.userId
+//        let nvc = UINavigationController(rootViewController: vc)
+//        nvc.modalPresentationStyle = .fullScreen
+//        self.present(nvc, animated: true, completion: nil)
     }
     
     @objc fileprivate func onReportBtnTap() {
         
-        let alert = UIAlertController(title: "", message: "Select Option", actionNames: ["UnMatch", "Report"]) { (action) in
-            guard let actionName = action.title else { return }
-            let vc = ReportVC.instantiate(fromAppStoryboard: .Report)
-            vc.modalPresentationStyle = .overCurrentContext
-            vc.reportType = actionName
-            vc.selectedUserId = self.conversation.userId
-            self.present(vc, animated: true, completion: nil)
-        }
-        
-        self.present(alert, animated: true, completion: nil)
+//        let alert = UIAlertController(title: "", message: "Select Option", actionNames: ["UnMatch", "Report"]) { (action) in
+//            guard let actionName = action.title else { return }
+//            let vc = ReportVC.instantiate(fromAppStoryboard: .Report)
+//            vc.modalPresentationStyle = .overCurrentContext
+//            vc.reportType = actionName
+//            vc.selectedUserId = self.conversation.userId
+//            self.present(vc, animated: true, completion: nil)
+//        }
+//
+//        self.present(alert, animated: true, completion: nil)
         
     }
 }
@@ -264,7 +267,7 @@ extension MessageVC {
         
         
 //        showHUD()
-        let param = ["match_id": conversation.matchId]
+        let param = ["match_id": match_Id]
         NetworkManager.Chat.getMessageConversation(param: param) { (messages) in
             self.hideHUD()
             self.refreshControl.endRefreshing()
@@ -285,7 +288,7 @@ extension MessageVC {
     
     fileprivate func sendMessage(_ text: String) {
         
-        let param = ["match_id": conversation.matchId, "message": text] as [String : Any]
+        let param = ["match_id": match_Id, "message": text] as [String : Any]
         NetworkManager.Chat.sendMessageConversation(param: param) { (message) in
             self.messageInputBar.sendButton.stopAnimating()
             DispatchQueue.main.async {

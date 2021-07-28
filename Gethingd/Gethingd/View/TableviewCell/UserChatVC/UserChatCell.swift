@@ -29,13 +29,13 @@ class UserChatCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setupCell(user: Conversation) {
+    func setupCell(user: ChatMessages) {
         if let imgURL = URL(string: user.userImage) {
             imgUser.kf.setImage(with: imgURL)
         }
-        lblName.text = user.name
+        lblName.text = user.userName
         lblLastMsg.text = user.message
-        lblTIime.text = user.createdDate.displayTime
+        lblTIime.text = user.createAt.displayTime
         lblUnread.isHidden = user.unreadMessageCount == 0
         lblUnread.text = "\(user.unreadMessageCount)"
     }

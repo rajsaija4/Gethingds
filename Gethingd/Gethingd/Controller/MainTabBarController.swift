@@ -38,7 +38,7 @@ extension MainTabBarController {
             case "Chat":
                 guard let nvc = self.viewControllers?[2] as? UINavigationController else{ return }
                 if let vc = nvc.viewControllers.first as? ChatVC {
-                    vc.getConversation()
+//                    vc.getConversation()
                 }
                 break
             default:

@@ -40,6 +40,15 @@ class FreshMatchesCell: UICollectionViewCell {
             let userStatus = user.status == "active" ? "img_active_user" : "img_inactive_user"
             //btnName.setImage(UIImage(named: userStatus), for: .normal)
         }
+    
+    func setupMatchesList(user:MatchConversation) {
+        
+        if let imgURL = URL(string: user.userImage) {
+            imgUser.kf.setImage(with: imgURL)
+        }
+        lblUserName.text = user.name
+//        let userStatus = user. == "active" ? "img_active_user" : "img_inactive_user"
+    }
 
 
 }

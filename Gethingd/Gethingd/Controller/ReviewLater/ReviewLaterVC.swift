@@ -20,7 +20,7 @@ class ReviewLaterVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getProfiles()
+      getProfiles()
       
 
         // Do any additional setup after loading the view.

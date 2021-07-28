@@ -70,36 +70,36 @@ extension ChatVC {
 
 
 extension ChatVC {
-    
-    func getConversation() {
-        
-        showHUD()
-        
-        NetworkManager.Chat.getMatchDetails { (conversation) in
-            self.hideHUD()
-            self.arrFreshMatches.removeAll()
-            self.arrAstroLike.removeAll()
-            self.arrMatchesMessage.removeAll()
-            self.arrFreshMatches.append(contentsOf: conversation.arrConversationNotStarted)
-            self.arrMatchesMessage.append(contentsOf: conversation.arrConversationStarted)
-            self.arrAstroLike.append(contentsOf: conversation.arrAstroLikeUser)
-            self.tblChat.reloadData()
-            self.collectionFreshMatch.reloadData()
-            self.collectionAstroLikes.reloadData()
-            
-            
-            self.tabBarController?.tabBar.items?.last?.badgeValue = conversation.unReadCount > 0 ? "\(conversation.unReadCount)" : nil
-            
-            self.viewAstroLike.isHidden = self.arrAstroLike.count == 0
-            self.viewFreshMatch.isHidden = self.arrFreshMatches.count == 0
-            self.lblNoChat.isHidden = (self.arrMatchesMessage.count != 0 || self.arrFreshMatches.count != 0 || self.arrAstroLike.count != 0)
-            
-        } _: { (error) in
-            self.lblNoChat.isHidden = (self.arrMatchesMessage.count != 0 || self.arrFreshMatches.count != 0 || self.arrAstroLike.count != 0)
-            self.hideHUD()
-            self.showToast(error)
-        }
-    }
+//    
+//    func getConversation() {
+//        
+//        showHUD()
+//        
+//        NetworkManager.Chat.getMatchDetails { (conversation) in
+//            self.hideHUD()
+//            self.arrFreshMatches.removeAll()
+//            self.arrAstroLike.removeAll()
+//            self.arrMatchesMessage.removeAll()
+//            self.arrFreshMatches.append(contentsOf: conversation.arrConversationNotStarted)
+//            self.arrMatchesMessage.append(contentsOf: conversation.arrConversationStarted)
+//            self.arrAstroLike.append(contentsOf: conversation.arrAstroLikeUser)
+//            self.tblChat.reloadData()
+//            self.collectionFreshMatch.reloadData()
+//            self.collectionAstroLikes.reloadData()
+//            
+//            
+//            self.tabBarController?.tabBar.items?.last?.badgeValue = conversation.unReadCount > 0 ? "\(conversation.unReadCount)" : nil
+//            
+//            self.viewAstroLike.isHidden = self.arrAstroLike.count == 0
+//            self.viewFreshMatch.isHidden = self.arrFreshMatches.count == 0
+//            self.lblNoChat.isHidden = (self.arrMatchesMessage.count != 0 || self.arrFreshMatches.count != 0 || self.arrAstroLike.count != 0)
+//            
+//        } _: { (error) in
+//            self.lblNoChat.isHidden = (self.arrMatchesMessage.count != 0 || self.arrFreshMatches.count != 0 || self.arrAstroLike.count != 0)
+//            self.hideHUD()
+//            self.showToast(error)
+//        }
+//    }
     
 }
 
@@ -113,7 +113,7 @@ extension ChatVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UserChatCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-        cell.setupCell(user: arrMatchesMessage[indexPath.row])
+//        cell.setupCell(user: arrMatchesMessage[indexPath.row])
         return cell
     }
 }
@@ -128,9 +128,9 @@ extension ChatVC: UITableViewDelegate {
         vc.hidesBottomBarWhenPushed = true
         vc.onPopView = { [weak self] in
             self?.setupNavigationBar()
-            self?.getConversation()
+//            self?.getConversation()
         }
-        vc.conversation = arrMatchesMessage[indexPath.row]
+//        vc.conversation = arrMatchesMessage[indexPath.row]
         vc.userImage = arrMatchesMessage[indexPath.row].userImage
         navigationController?.pushViewController(vc, animated: false)
     }
@@ -189,9 +189,9 @@ extension ChatVC: UICollectionViewDelegate {
         vc.hidesBottomBarWhenPushed = true
         vc.onPopView = { [weak self] in
             self?.setupNavigationBar()
-            self?.getConversation()
+//            self?.getConversation()
         }
-        vc.conversation = arrFreshMatches[indexPath.item]
+//        vc.conversation = arrFreshMatches[indexPath.item]
         vc.userImage = arrFreshMatches[indexPath.item].userImage
         
 //        vc.userImageURL = arrFreshMatches[indexPath.item]

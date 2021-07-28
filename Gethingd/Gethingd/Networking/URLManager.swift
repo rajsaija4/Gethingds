@@ -58,8 +58,9 @@ struct URLManager {
     
     struct Chat {
         static let matchDetails = basePath + "match_details"
-        static let messageConversation = basePath + "message_conversation"
+        static let messageConversation = basePath + "get_message_conversation"
         static let sendMessage = basePath + "send_message"
+        static let allmessageConversation = basePath + "message_conversation"
     }
     
     struct Report {

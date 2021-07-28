@@ -537,7 +537,7 @@ extension NetworkManager {
     
     struct Chat {
         
-        static func getMatchDetails(_ success: @escaping (UserConversation) -> Void, _ fail: @escaping (String) -> Void) {
+        static func getMatchDetails(_ success: @escaping (MatchesConversation) -> Void, _ fail: @escaping (String) -> Void) {
             
             NetworkCaller.getRequest(url: URLManager.Chat.matchDetails, params: nil, headers: header, { (response) in
                 
@@ -546,7 +546,7 @@ extension NetworkManager {
                     return
                 }
                 
-                success(UserConversation(response))
+                success(MatchesConversation(json: response))
                 
             }) { (error) in
                 fail(error.localizedDescription)
@@ -555,7 +555,7 @@ extension NetworkManager {
         
         static func getMessageConversation(param: Parameters, _ success: @escaping ([Message]) -> Void, _ fail: @escaping (String) -> Void) {
             
-            NetworkCaller.getRequest(url: URLManager.Chat.messageConversation, params: param, headers: header, { (response) in
+            NetworkCaller.postRequest(url: URLManager.Chat.messageConversation, params: param, headers: header, { (response) in
                 
                 guard response.isSuccess else {
                     fail(response.message)
@@ -564,7 +564,7 @@ extension NetworkManager {
                 
                 var arrMessage: [Message] = []
                 
-                for message in response["messages"].arrayValue {
+                for message in response["data"].arrayValue {
                     arrMessage.append(Message(message))
                 }
                 
@@ -577,7 +577,7 @@ extension NetworkManager {
         
         static func sendMessageConversation(param: Parameters, _ success: @escaping (Message) -> Void, _ fail: @escaping (String) -> Void) {
             
-            NetworkCaller.getRequest(url: URLManager.Chat.sendMessage, params: param, headers: header, { (response) in
+            NetworkCaller.postRequest(url: URLManager.Chat.sendMessage, params: param, headers: header, { (response) in
                 
                 guard response.isSuccess else {
                     fail(response.message)
@@ -590,7 +590,29 @@ extension NetworkManager {
                 fail(error.localizedDescription)
             }
         }
- 
+        
+     static func getAllMessageConversation( _ success: @escaping ([ChatMessages]) -> Void, _ fail: @escaping (String) -> Void) {
+        
+        NetworkCaller.getRequest(url: URLManager.Chat.allmessageConversation, params: nil, headers: header, { (response) in
+            
+            guard response.isSuccess else {
+                fail(response.message)
+                return
+            }
+            
+            var arrMessage: [ChatMessages] = []
+            
+            for message in response["data"].arrayValue {
+                arrMessage.append(ChatMessages(json: message))
+            }
+            
+            success(arrMessage)
+            
+        }) { (error) in
+            fail(error.localizedDescription)
+        }
+     }
+        
     }
 }
 

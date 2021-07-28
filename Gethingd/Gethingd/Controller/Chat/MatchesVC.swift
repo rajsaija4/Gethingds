@@ -8,6 +8,8 @@
 import UIKit
 
 class MatchesVC: UIViewController {
+    
+    var arrMatchesList:[MatchConversation] = []
 
     @IBOutlet weak var collMatches: UICollectionView!{
         didSet {
@@ -17,12 +19,14 @@ class MatchesVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getConversation()
 
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        getConversation()
         collMatches.reloadData()
     }
     
@@ -42,12 +46,13 @@ class MatchesVC: UIViewController {
 
 extension MatchesVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return arrMatchesList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 //        return cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FreshMatchesCell", for: indexPath) as! FreshMatchesCell
+        cell.setupMatchesList(user: arrMatchesList[indexPath.row])
         return cell
         
     }
@@ -57,7 +62,16 @@ extension MatchesVC: UICollectionViewDataSource {
 
 extension MatchesVC: UICollectionViewDelegate {
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = MessageVC.instantiate(fromAppStoryboard: .Chat)
+        vc.hidesBottomBarWhenPushed = true
+        vc.userImage = arrMatchesList[indexPath.row].userImage
+        vc.hidesBottomBarWhenPushed = true
+        vc.oppositeUserName = arrMatchesList[indexPath.row].name
+        vc.match_Id = arrMatchesList[indexPath.row].matchId
+        (ROOTVC as? UINavigationController)?.pushViewController(vc, animated: true)
+        
+    }
     
     
 }
@@ -82,4 +96,31 @@ extension MatchesVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 8
     }
+}
+
+
+extension MatchesVC {
+    func getConversation() {
+    
+            showHUD()
+    
+            NetworkManager.Chat.getMatchDetails { (conversation) in
+                self.hideHUD()
+                self.arrMatchesList.removeAll()
+                for data in conversation.conversationNotStartedArray {
+                    self.arrMatchesList.append(data)
+                }
+                
+                self.collMatches.reloadData()
+    
+//                self.tabBarController?.tabBar.items?.last?.badgeValue = conversation.unReadCount > 0 ? "\(conversation.unReadCount)" : nil
+    
+    
+            } _: { (error) in
+    
+                self.hideHUD()
+                self.showToast(error)
+            }
+        }
+    
 }

@@ -17,19 +17,34 @@ extension UINavigationController {
             view.removeFromSuperview()
         }
         
-        let top: CGFloat = self.view.safeAreaInsets.top
-        let offset : CGFloat = top == 0 ? self.presentingViewController?.view.safeAreaInsets.top ?? 0 : self.view.safeAreaInsets.top
+//        let top: CGFloat = self.view.safeAreaInsets.top
+//        let offset : CGFloat = top == 0 ? self.presentingViewController?.view.safeAreaInsets.top ?? 0 : self.view.safeAreaInsets.top
+//
+//        let shadowView = UIView(frame: CGRect(x: 0, y: -offset,
+//                                              width: self.navigationBar.bounds.width,
+//                                              height: self.navigationBar.bounds.height + offset))
+//
+//        shadowView.backgroundColor = .groupTableViewBackground
+//        self.navigationBar.insertSubview(shadowView, at: 1)
+//
+//        shadowView.layer.insertSublayer(shadowLayer(shadowView: shadowView), at: 0)
         
-        let shadowView = UIView(frame: CGRect(x: 0, y: -offset,
-                                              width: self.navigationBar.bounds.width,
-                                              height: self.navigationBar.bounds.height + offset))
         
-        shadowView.backgroundColor = .groupTableViewBackground
-        self.navigationBar.insertSubview(shadowView, at: 1)
+        let view = self.navigationBar
         
-        shadowView.layer.insertSublayer(shadowLayer(shadowView: shadowView), at: 0)
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.alignment = .center
+        stackView.spacing = 8
+        stackView.tag = -1
+        self.navigationBar.insertSubview(stackView, at: 1)
         
-        let stackView = addStackView(shadowView: shadowView)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
+        stackView.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -8).isActive = true
         
         if let actionBtn = action {
             stackView.addArrangedSubview(backButton(action: actionBtn))
@@ -49,6 +64,7 @@ extension UINavigationController {
         }
         
     }
+    
     
     /*
     func addBackButtonWithTitle(title: String? = nil, action: Selector? = nil, imgAction: Selector? = nil) {
@@ -171,7 +187,7 @@ extension UINavigationController {
         titleLabel.minimumScaleFactor = 0.5
         titleLabel.numberOfLines = 1
         titleLabel.adjustsFontSizeToFitWidth = true
-        titleLabel.textColor = .white
+        titleLabel.textColor = COLOR.Black
         return titleLabel
     }
     

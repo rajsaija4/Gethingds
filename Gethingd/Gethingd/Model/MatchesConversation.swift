@@ -17,8 +17,8 @@ class MatchesConversation: NSObject {
     init(json:JSON){
         super.init()
         
-        newMatchCount = json["new_match_count"].intValue
-        for notStartedChat in json["conversation_not_started_array"].arrayValue {
+        newMatchCount = json["data"]["new_match_count"].intValue
+        for notStartedChat in json["data"]["conversation_not_started_array"].arrayValue {
             conversationNotStartedArray.append(MatchConversation(json: notStartedChat))
         }
     }

@@ -25,6 +25,7 @@
 		9F6938DA268D7E7A00C57FCF /* WholikedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6938D9268D7E7A00C57FCF /* WholikedVC.swift */; };
 		9F6938DE268D80ED00C57FCF /* MainchatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6938DD268D80ED00C57FCF /* MainchatVC.swift */; };
 		9F79428E26B03754002C3711 /* MatchesConversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F79428D26B03754002C3711 /* MatchesConversation.swift */; };
+		9F7D081226B1765900C72396 /* ChatMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7D081126B1765800C72396 /* ChatMessages.swift */; };
 		9F7F723A2685959A009C46E9 /* ReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F72172685959A009C46E9 /* ReportVC.swift */; };
 		9F7F723B2685959A009C46E9 /* UpdateNowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F72192685959A009C46E9 /* UpdateNowVC.swift */; };
 		9F7F723C2685959A009C46E9 /* SuperLikeAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F721A2685959A009C46E9 /* SuperLikeAddVC.swift */; };
@@ -142,6 +143,7 @@
 		9F6938D9268D7E7A00C57FCF /* WholikedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WholikedVC.swift; sourceTree = "<group>"; };
 		9F6938DD268D80ED00C57FCF /* MainchatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainchatVC.swift; sourceTree = "<group>"; };
 		9F79428D26B03754002C3711 /* MatchesConversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesConversation.swift; sourceTree = "<group>"; };
+		9F7D081126B1765800C72396 /* ChatMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessages.swift; sourceTree = "<group>"; };
 		9F7F72172685959A009C46E9 /* ReportVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportVC.swift; sourceTree = "<group>"; };
 		9F7F72192685959A009C46E9 /* UpdateNowVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateNowVC.swift; sourceTree = "<group>"; };
 		9F7F721A2685959A009C46E9 /* SuperLikeAddVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperLikeAddVC.swift; sourceTree = "<group>"; };
@@ -523,6 +525,7 @@
 				9FD6CD9E26848C7D002EF5BD /* ReportReason.swift */,
 				9F53D20526A050C2008CF8FF /* PassionSetting.swift */,
 				9F79428D26B03754002C3711 /* MatchesConversation.swift */,
+				9F7D081126B1765800C72396 /* ChatMessages.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -822,6 +825,7 @@
 				9F7F72432685959B009C46E9 /* MatchUserVC.swift in Sources */,
 				9FD6CDA626848C7D002EF5BD /* SubscriptionPlan.swift in Sources */,
 				9F7F723D2685959A009C46E9 /* UpgradePlanInfoVC.swift in Sources */,
+				9F7D081226B1765900C72396 /* ChatMessages.swift in Sources */,
 				9FD6CD0D26846764002EF5BD /* Alert+Extension.swift in Sources */,
 				35B021B026AA90E500FE27CD /* NewPasswordVC.swift in Sources */,
 				9FD6CD0C26846764002EF5BD /* UIView+Inspectable.swift in Sources */,
