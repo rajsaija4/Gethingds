@@ -61,6 +61,7 @@ struct URLManager {
         static let messageConversation = basePath + "get_message_conversation"
         static let sendMessage = basePath + "send_message"
         static let allmessageConversation = basePath + "message_conversation"
+        static let userStatus = basePath + "update_user_lastseen"
     }
     
     struct Report {

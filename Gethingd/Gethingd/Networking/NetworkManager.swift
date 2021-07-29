@@ -613,7 +613,26 @@ extension NetworkManager {
         }
      }
         
+  
+    
+    
+    
+ static func checkUserStatus(param: Parameters, _ success: @escaping (String) -> Void, _ fail: @escaping (String) -> Void) {
+    
+    NetworkCaller.postRequest(url: URLManager.Chat.userStatus, params: param, headers: header, { (response) in
+        
+        guard response.isSuccess else {
+            fail(response.message)
+            return
+        }
+         success(response["message"].stringValue)
+        
+    }) { (error) in
+        fail(error.localizedDescription)
     }
+ }
+    
+}
 }
 
 

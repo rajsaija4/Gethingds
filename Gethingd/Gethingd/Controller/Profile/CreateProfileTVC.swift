@@ -27,10 +27,12 @@ class CreateProfileTVC: UITableViewController, UIImagePickerControllerDelegate, 
 
         txtPassion.removeAllTags()
         txtPassion.addTags(arrPassion)
+       
+        
         if passion.isEmpty {
             lblPassion.isHidden = false
         }
-        
+       
         
     }
     
@@ -410,7 +412,7 @@ extension CreateProfileTVC {
         if indexPath.section == 2 {
             return 106
         }
-        
+
         if indexPath.section == 3 {
             return 350
         }
@@ -420,7 +422,7 @@ extension CreateProfileTVC {
         }
         
         if indexPath.section == 6 {
-            return 80
+            return 100
         }
         return UITableView.automaticDimension
     }

@@ -34,6 +34,7 @@
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_Header" translatesAutoresizingMaskIntoConstraints="NO" id="0Lz-HM-6Xp">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                                        <color key="backgroundColor" red="0.94893664119999999" green="0.9490728974" blue="0.95282799009999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WPr-bb-MmJ">
                                         <rect key="frame" x="16" y="60" width="284" height="30"/>
@@ -121,7 +122,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="r1b-q7-EhZ"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.94893664119999999" green="0.9490728974" blue="0.95282799009999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="xJE-8w-qnw" firstAttribute="leading" secondItem="jGQ-QR-z9s" secondAttribute="leading" id="7NK-Mj-Wrp"/>
                             <constraint firstItem="uG3-Qp-4kR" firstAttribute="top" secondItem="fGU-S7-6gL" secondAttribute="bottom" constant="20" id="G7X-r2-lvW"/>

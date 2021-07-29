@@ -19,8 +19,8 @@ class MatchUserVC: UIViewController {
     @IBOutlet weak var imgUser: UIImageView!
     @IBOutlet weak var imgOppsiteUser: UIImageView!
     
-    @IBOutlet weak var imgSignUser: UIImageView!
-    @IBOutlet weak var imgOppositeUserSign: UIImageView!
+//    @IBOutlet weak var imgSignUser: UIImageView!
+//    @IBOutlet weak var imgOppositeUserSign: UIImageView!
     @IBOutlet weak var lblMatch: UILabel!
     
     //MARK:- LIFECYCLE
@@ -62,12 +62,15 @@ extension MatchUserVC {
     @IBAction func onSendControlTap(_ sender: UIControl) {
         let vc = MessageVC.instantiate(fromAppStoryboard: .Chat)
         vc.hidesBottomBarWhenPushed = true
-//        vc.conversation = Conversation(json: JSON.null, matchId: matchDetails.matchId, name: matchDetails.matchUserName)
+//        vc.onPopView = { [weak self] in
+//            self?.getConversation()
+//        }
+//        vc.conversation = arrMatchesMessage[indexPath.row]
+        vc.match_Id = matchDetails.matchId
         vc.userImage = matchDetails.matchUserImage
-        vc.onPopView = {
-            self.dismiss(animated: true, completion: nil)
-        }
-        navigationController?.pushViewController(vc, animated: false)
+        vc.oppositeUserName = matchDetails.matchUserName
+        self.navigationController?.pushViewController(vc, animated: true)
+//        (ROOTVC as? UINavigationController)?.pushViewController(vc, animated: true)
     }
 
     @IBAction func onLaterControlTap(_ sender: UIControl) {

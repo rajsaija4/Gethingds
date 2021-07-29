@@ -62,8 +62,8 @@
             filePath = "Gethingd/Controller/Profile/CreateProfileTVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "773"
-            endingLineNumber = "773"
+            startingLineNumber = "775"
+            endingLineNumber = "775"
             landmarkName = "CreateProfileTVC"
             landmarkType = "21">
          </BreakpointContent>
@@ -78,8 +78,8 @@
             filePath = "Gethingd/Controller/Profile/CreateProfileTVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "787"
-            endingLineNumber = "787"
+            startingLineNumber = "789"
+            endingLineNumber = "789"
             landmarkName = "addProfile(source:parameters:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -158,13 +158,13 @@
             filePath = "Gethingd/Networking/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "860"
-            endingLineNumber = "860"
+            startingLineNumber = "879"
+            endingLineNumber = "879"
             landmarkName = "getUserSetting(_:_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "C1A9C61F-2891-496F-8378-91E1C28FFDF6 - fcea3f53a5f91b5"
+                  uuid = "C1A9C61F-2891-496F-8378-91E1C28FFDF6 - fcea3f53a5faf2a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -174,12 +174,12 @@
                   urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Networking/NetworkManager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "861"
-                  endingLineNumber = "861"
+                  startingLineNumber = "880"
+                  endingLineNumber = "880"
                   offsetFromSymbolStart = "189">
                </Location>
                <Location
-                  uuid = "C1A9C61F-2891-496F-8378-91E1C28FFDF6 - ef72b84a212753cb"
+                  uuid = "C1A9C61F-2891-496F-8378-91E1C28FFDF6 - ef72b84a21276d56"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -189,8 +189,8 @@
                   urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Networking/NetworkManager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "862"
-                  endingLineNumber = "862"
+                  startingLineNumber = "881"
+                  endingLineNumber = "881"
                   offsetFromSymbolStart = "98">
                </Location>
             </Locations>
@@ -206,13 +206,13 @@
             filePath = "Gethingd/Networking/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "850"
-            endingLineNumber = "850"
+            startingLineNumber = "869"
+            endingLineNumber = "869"
             landmarkName = "getUserSetting(_:_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "206FC231-C6FC-409E-A613-4FCFA4A01146 - d0bab5c08d3bd7d3"
+                  uuid = "206FC231-C6FC-409E-A613-4FCFA4A01146 - d0bab5c08d3be9a0"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -222,12 +222,12 @@
                   urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Networking/NetworkManager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "851"
-                  endingLineNumber = "851"
+                  startingLineNumber = "870"
+                  endingLineNumber = "870"
                   offsetFromSymbolStart = "49">
                </Location>
                <Location
-                  uuid = "206FC231-C6FC-409E-A613-4FCFA4A01146 - fcea3f53a5f90ad"
+                  uuid = "206FC231-C6FC-409E-A613-4FCFA4A01146 - fcea3f53a5fae22"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -237,8 +237,8 @@
                   urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Networking/NetworkManager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "853"
-                  endingLineNumber = "853"
+                  startingLineNumber = "872"
+                  endingLineNumber = "872"
                   offsetFromSymbolStart = "144">
                </Location>
             </Locations>
@@ -254,8 +254,8 @@
             filePath = "Gethingd/Networking/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "852"
-            endingLineNumber = "852"
+            startingLineNumber = "871"
+            endingLineNumber = "871"
             landmarkName = "getUserSetting(_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -270,8 +270,8 @@
             filePath = "Gethingd/Networking/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "854"
-            endingLineNumber = "854"
+            startingLineNumber = "873"
+            endingLineNumber = "873"
             landmarkName = "getUserSetting(_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -318,8 +318,8 @@
             filePath = "Gethingd/Controller/Discover/UserDetailsTVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "515"
-            endingLineNumber = "515"
+            startingLineNumber = "530"
+            endingLineNumber = "530"
             landmarkName = "getPassion()"
             landmarkType = "7">
          </BreakpointContent>
@@ -334,8 +334,8 @@
             filePath = "Gethingd/Controller/Discover/UserDetailsTVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "516"
-            endingLineNumber = "516"
+            startingLineNumber = "531"
+            endingLineNumber = "531"
             landmarkName = "getPassion()"
             landmarkType = "7">
          </BreakpointContent>
@@ -462,8 +462,8 @@
             filePath = "Gethingd/Controller/Discover/UserDetailsTVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "228"
-            endingLineNumber = "228"
+            startingLineNumber = "243"
+            endingLineNumber = "243"
             landmarkName = "setupUI()"
             landmarkType = "7">
          </BreakpointContent>
@@ -478,8 +478,8 @@
             filePath = "Gethingd/Controller/Discover/UserDetailsTVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "231"
-            endingLineNumber = "231"
+            startingLineNumber = "246"
+            endingLineNumber = "246"
             landmarkName = "setupUI()"
             landmarkType = "7">
          </BreakpointContent>
@@ -494,8 +494,8 @@
             filePath = "Gethingd/Controller/Discover/UserDetailsTVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "234"
-            endingLineNumber = "234"
+            startingLineNumber = "249"
+            endingLineNumber = "249"
             landmarkName = "setupUI()"
             landmarkType = "7">
          </BreakpointContent>
@@ -510,8 +510,8 @@
             filePath = "Gethingd/Controller/Discover/UserDetailsTVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "290"
-            endingLineNumber = "290"
+            startingLineNumber = "305"
+            endingLineNumber = "305"
             landmarkName = "setupUI()"
             landmarkType = "7">
          </BreakpointContent>
@@ -529,22 +529,6 @@
             startingLineNumber = "552"
             endingLineNumber = "552"
             landmarkName = "onKidTypeTap(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "21051A03-F6C6-4E09-AE70-B5B0B5039A46"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Gethingd/Controller/Discover/UserDetailsTVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
-            landmarkName = "setupUI()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1022,10 +1006,10 @@
             filePath = "Gethingd/Controller/Discover/DiscoverVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "swipeUser(userID:status:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "00E01F78-A91D-4F5C-9D79-1DCF316D0755 - 46de35b0c1c4f1bd"
@@ -1070,10 +1054,10 @@
             filePath = "Gethingd/Controller/Discover/DiscoverVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "159"
+            endingLineNumber = "159"
+            landmarkName = "swipeUser(userID:status:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1086,10 +1070,10 @@
             filePath = "Gethingd/Controller/Discover/DiscoverVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "326"
-            endingLineNumber = "326"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "338"
+            endingLineNumber = "338"
+            landmarkName = "DiscoverVC"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1230,10 +1214,10 @@
             filePath = "Gethingd/Controller/Discover/DiscoverVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "getUserList()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1246,8 +1230,8 @@
             filePath = "Gethingd/Controller/Profile/CreateProfileTVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "241"
-            endingLineNumber = "241"
+            startingLineNumber = "243"
+            endingLineNumber = "243"
             landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1262,8 +1246,8 @@
             filePath = "Gethingd/Controller/Profile/CreateProfileTVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "CreateProfileTVC"
             landmarkType = "3">
             <Locations>
@@ -1385,8 +1369,8 @@
             filePath = "Gethingd/Controller/Profile/CreateProfileTVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "CreateProfileTVC"
             landmarkType = "3">
             <Locations>
@@ -1524,10 +1508,10 @@
             filePath = "Gethingd/Controller/Profile/CreateProfileTVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "CreateProfileTVC"
-            landmarkType = "3">
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "txtJobTitle"
+            landmarkType = "24">
             <Locations>
                <Location
                   uuid = "9F863F69-40DA-4F66-96A3-BDF34259CFF3 - 9e8452e4a03456b3"
@@ -1704,24 +1688,8 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4642FF61-D060-4AD5-914B-BE85A339A16D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Gethingd/Controller/Chat/MessageVC1.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "BA781512-62F7-441C-B692-8DAF450A6F04"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Gethingd/Controller/Chat/MessageKit/MessageVC.swift"
@@ -1828,114 +1796,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4F4BAAF1-7F8C-4E3D-99D4-E1B1049EF27B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Gethingd/Controller/Chat/MessageKit/MessageVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "MessageVC"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "4F4BAAF1-7F8C-4E3D-99D4-E1B1049EF27B - c146e0228b8796dc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Gethingd.MessageVC.userImage.getter : Swift.String"
-                  moduleName = "Gethingd"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Chat/MessageKit/MessageVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "139">
-               </Location>
-               <Location
-                  uuid = "4F4BAAF1-7F8C-4E3D-99D4-E1B1049EF27B - 939c6ee844a0a6e8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Gethingd.MessageVC.userImage.setter : Swift.String"
-                  moduleName = "Gethingd"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Chat/MessageKit/MessageVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "174">
-               </Location>
-               <Location
-                  uuid = "4F4BAAF1-7F8C-4E3D-99D4-E1B1049EF27B - 37314d0f558cbedc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Gethingd.MessageVC.userImage.modify : Swift.String"
-                  moduleName = "Gethingd"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Chat/MessageKit/MessageVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "18">
-               </Location>
-               <Location
-                  uuid = "4F4BAAF1-7F8C-4E3D-99D4-E1B1049EF27B - f1e4267505796e8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Gethingd.MessageVC.userImage.modify : Swift.String with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "Gethingd"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Chat/MessageKit/MessageVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "4">
-               </Location>
-               <Location
-                  uuid = "4F4BAAF1-7F8C-4E3D-99D4-E1B1049EF27B - 58ffab0773bff104"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Gethingd.MessageVC.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Gethingd.MessageVC"
-                  moduleName = "Gethingd"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Chat/MessageKit/MessageVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "1178">
-               </Location>
-               <Location
-                  uuid = "4F4BAAF1-7F8C-4E3D-99D4-E1B1049EF27B - 8559f74c22bc60fb"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Gethingd.MessageVC.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Gethingd.MessageVC&gt;"
-                  moduleName = "Gethingd"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Chat/MessageKit/MessageVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "1113">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "D276DA83-80A5-443A-BE26-7439D482B3EA"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -1952,80 +1812,144 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "05735ABC-D618-4F01-AC94-BDFFF5648DDE"
+            uuid = "DCCAA335-E254-44D4-9262-899EA2F2AE2E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Gethingd/Controller/Chat/MessageVC1.swift"
+            filePath = "Gethingd/Helper/Extention/UINavigationController+Ext.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "getAllMessageList()"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
+            landmarkName = "titleLable(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7064BF11-7B94-48AA-BAD4-1574EFAACD8E"
+            uuid = "8E93D90D-BE17-4D42-B5C6-0511F6005421"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gethingd/Controller/Chat/MessageKit/MessageVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F387E1C7-660F-4891-B13B-71B58328808D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Gethingd/Controller/Chat/MessageVC1.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "getAllMessageList()"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "7064BF11-7B94-48AA-BAD4-1574EFAACD8E - 3ca55f5a80479775"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Gethingd.MessageVC1.getAllMessageList() -&gt; ()"
-                  moduleName = "Gethingd"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Chat/MessageVC1.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "94"
-                  endingLineNumber = "94"
-                  offsetFromSymbolStart = "29">
-               </Location>
-               <Location
-                  uuid = "7064BF11-7B94-48AA-BAD4-1574EFAACD8E - 178f534a580ca9ca"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Array&lt;Gethingd.ChatMessages&gt;) -&gt; () in Gethingd.MessageVC1.getAllMessageList() -&gt; ()"
-                  moduleName = "Gethingd"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Chat/MessageVC1.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "95"
-                  endingLineNumber = "95"
-                  offsetFromSymbolStart = "116">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4D68FDF3-090E-4315-8509-8EDEB0723424"
-            shouldBeEnabled = "No"
+            uuid = "F8623709-F1FB-484E-B96A-7BE97338B559"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Gethingd/Controller/Chat/MessageVC1.swift"
+            filePath = "Gethingd/Controller/Discover/UserDetailsTVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "getAllMessageList()"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
+            landmarkName = "setupUI()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1179AC53-86EE-4775-B6EB-1771025E0EF2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gethingd/Controller/Discover/UserDetailsTVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "209"
+            endingLineNumber = "209"
+            landmarkName = "setupUI()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6B6146D1-483E-4AE4-9EA5-4612A29B9C0F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gethingd/Controller/Discover/MatchUserVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "onSendControlTap(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0374B131-A33C-4391-B031-753408AAE305"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gethingd/Controller/Discover/MatchUserVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "onSendControlTap(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "12DC3766-C40B-429D-AE8D-1ECA0E827F16"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gethingd/Controller/Discover/MatchUserVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "setupUI()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0ADC98BE-5E0C-431A-A6F6-D792A20C0B7E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gethingd/Controller/Discover/MatchUserVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "setupUI()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

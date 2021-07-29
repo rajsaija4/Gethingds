@@ -129,7 +129,14 @@ class UserDetailsTVC: UITableViewController, TagListViewDelegate {
             swipeUser(userID: userId, status: .like)
             return
         }
+        if AppSupport.isLikeLimited && AppSupport.remainingLikes == 0 {
+            let vc = UpgradeVC.instantiate(fromAppStoryboard: .Upgrade)
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
+            return
+        }
         swipeUser(userID: userId, status: .like)
+        AppSupport.remainingLikes -= 1
 //        onLikeUser?()
         self.dismiss(animated: true, completion: nil)
         
@@ -140,8 +147,16 @@ class UserDetailsTVC: UITableViewController, TagListViewDelegate {
             swipeUser(userID: userId, status: .reviewLater)
             return
         }
+        if AppSupport.reviewLater == 0 {
+            let vc = SubscribeVC.instantiate(fromAppStoryboard: .Upgrade)
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: true, completion: nil)
+            return
+        }
+     
         swipeUser(userID: userId, status: .reviewLater)
 //        onReviewLater?()
+        AppSupport.reviewLater -= 1
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -176,16 +191,16 @@ extension UserDetailsTVC {
         lblWork.text = user.jobTitle
         print(user.userKids)
         for kids in user.userKids {
-            if kids == "new born" {
+            if kids == "New born" {
                 newborn += 1
             }
-            else if kids == "infrant" {
+            else if kids == "Infrant" {
                 infant += 1
             }
-            else if kids == "toddler" {
+            else if kids == "Toddler" {
                 toddler += 1
             }
-            else if kids == "preschooler" {
+            else if kids == "Preschooler" {
                 preschooler += 1
             }
             else if kids == "School-aged Child" {

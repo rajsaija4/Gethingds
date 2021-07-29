@@ -218,7 +218,7 @@ open class TagListView: UIView {
         addTag("to")
         addTag("TagListView").isSelected = true
     }
-    
+
     // MARK: - Layout
     
     open override func layoutSubviews() {

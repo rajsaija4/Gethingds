@@ -224,7 +224,7 @@ extension UINavigationController {
     fileprivate func backButton(action: Selector) -> UIButton {
         let btnBack = UIButton(type: .custom)
         btnBack.setImage(UIImage(named: "img_back"), for: .normal)
-        btnBack.tintColor = .white
+        btnBack.tintColor = COLOR.Black
         btnBack.tag = -2
         btnBack.addTarget(self.topViewController, action: action, for: .touchUpInside)
         btnBack.translatesAutoresizingMaskIntoConstraints = false

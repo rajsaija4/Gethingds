@@ -200,16 +200,16 @@ extension MessageVC {
     
     @objc fileprivate func onReportBtnTap() {
         
-//        let alert = UIAlertController(title: "", message: "Select Option", actionNames: ["UnMatch", "Report"]) { (action) in
-//            guard let actionName = action.title else { return }
-//            let vc = ReportVC.instantiate(fromAppStoryboard: .Report)
-//            vc.modalPresentationStyle = .overCurrentContext
-//            vc.reportType = actionName
+        let alert = UIAlertController(title: "", message: "Select Option", actionNames: ["UnMatch", "Report"]) { (action) in
+            guard let actionName = action.title else { return }
+            let vc = ReportVC.instantiate(fromAppStoryboard: .Report)
+            vc.modalPresentationStyle = .overCurrentContext
+            vc.reportType = actionName
 //            vc.selectedUserId = self.conversation.userId
-//            self.present(vc, animated: true, completion: nil)
-//        }
-//
-//        self.present(alert, animated: true, completion: nil)
+            self.present(vc, animated: true, completion: nil)
+        }
+
+        self.present(alert, animated: true, completion: nil)
         
     }
 }
@@ -507,79 +507,81 @@ extension MessageVC: InputBarAccessoryViewDelegate {
     }
 }
 
-/*
+
 
 extension MessageVC {
-    
-    fileprivate func openActionSheet(for message: Message) {
-        
-        let alert = SkypeActionController()
-        if User.isExist, message.user.senderId == User.details.id {
-            alert.addAction(Action("Delete", style: .destructive, handler: { action in
-                self.delete(message)
-            }))
-        }else {
-            alert.addAction(Action("Report a \(message.user.displayName)", style: .default, handler: { action in
-                self.reportUser(message)
-            }))
-            
-            alert.addAction(Action("Block request to \(message.user.displayName)", style: .default, handler: { action in
-                self.blockUser(message)
-            }))
-        }
-        alert.addAction(Action("Report a problem", style: .default, handler: { action in
-            self.reportIssue(message)
-        }))
-        alert.addAction(Action("Cancel", style: .cancel, handler: nil))
-        
-        ROOTVC?.present(alert, animated: true, completion: nil)
-    }
-    
+
+//    fileprivate func openActionSheet(for message: Message) {
+
+//        let alert = SkypeActionController()
+//        if User.isExist, message.user.senderId == User.details.id {
+//            alert.addAction(Action("Delete", style: .destructive, handler: { action in
+//                self.delete(message)
+//            }))
+//        }else {
+//            alert.addAction(Action("Report a \(message.user.displayName)", style: .default, handler: { action in
+//                self.reportUser(message)
+//            }))
+//
+//            alert.addAction(Action("Block request to \(message.user.displayName)", style: .default, handler: { action in
+//                self.blockUser(message)
+//            }))
+//        }
+//        alert.addAction(Action("Report a problem", style: .default, handler: { action in
+//            self.reportIssue(message)
+//        }))
+//        alert.addAction(Action("Cancel", style: .cancel, handler: nil))
+//
+//        ROOTVC?.present(alert, animated: true, completion: nil)
+//    }
+
 }
-*/
+
 
 
 extension MessageVC {
-    
+
     fileprivate func reloadMessageView(_ message: Message) {
         guard let index: Int = messageList.firstIndex(where: { $0.messageId == message.messageId }) else { return }
         messageList.remove(at: index)
         messagesCollectionView.reloadData()
     }
-    
-    /*
-    fileprivate func delete(_ message: Message) {
-        showHUD()
-        APIManager.CHAT.delete(message.messageId, { (msg) in
-            self.hideHUD()
-            self.reloadMessageView(message)
-            let alert = UIAlertController(title: APP_NAME, message: msg)
-            self.present(alert, animated: true, completion: nil)
-        }) { (error) in
-            self.hideHUD()
-            let alert = UIAlertController(title: APP_NAME, message: error)
-            self.present(alert, animated: true, completion: nil)
-        }
-    }
-    
-    fileprivate func reportIssue(_ message: Message) {
-        let vc = loadController(ReportVC.self)
-        vc.param = ("Enter reason to report the problem", .chat_message, message.messageId, message.sender.senderId)
-        SwiftEntryKit.display(entry: vc, using: EntryKitAttributes.popupVCAttributes)
-    }
-    
-    fileprivate func reportUser(_ message: Message) {
-        let vc = loadController(ReportVC.self)
-        vc.param = ("Enter reason to report \(message.user.displayName)", .user, message.user.senderId, message.sender.senderId)
-        SwiftEntryKit.display(entry: vc, using: EntryKitAttributes.popupVCAttributes)
-    }
-    
-    fileprivate func blockUser(_ message: Message) {
-        let vc = loadController(ReportVC.self)
-        vc.param = ("Enter reason to block \(message.user.displayName)", .block_user, message.user.senderId, message.sender.senderId)
-        SwiftEntryKit.display(entry: vc, using: EntryKitAttributes.popupVCAttributes)
-    }
- 
-    */
-    
+
+
+//    fileprivate func delete(_ message: Message) {
+//        showHUD()
+//        APIManager.CHAT.delete(message.messageId, { (msg) in
+//            self.hideHUD()
+//            self.reloadMessageView(message)
+//            let alert = UIAlertController(title: APP_NAME, message: msg)
+//            self.present(alert, animated: true, completion: nil)
+//        }) { (error) in
+//            self.hideHUD()
+//            let alert = UIAlertController(title: APP_NAME, message: error)
+//            self.present(alert, animated: true, completion: nil)
+//        }
+//    }
+
+//    fileprivate func reportIssue(_ message: Message) {
+//        let vc = loadController(ReportVC.self)
+//        vc.param = ("Enter reason to report the problem", .chat_message, message.messageId, message.sender.senderId)
+//        SwiftEntryKit.display(entry: vc, using: EntryKitAttributes.popupVCAttributes)
+//    }
+//
+//    fileprivate func reportUser(_ message: Message) {
+//        let vc = loadController(ReportVC.self)
+//        vc.param = ("Enter reason to report \(message.user.displayName)", .user, message.user.senderId, message.sender.senderId)
+//        SwiftEntryKit.display(entry: vc, using: EntryKitAttributes.popupVCAttributes)
+//    }
+//
+//    fileprivate func blockUser(_ message: Message) {
+//        let vc = loadController(ReportVC.self)
+//        vc.param = ("Enter reason to block \(message.user.displayName)", .block_user, message.user.senderId, message.sender.senderId)
+//        SwiftEntryKit.display(entry: vc, using: EntryKitAttributes.popupVCAttributes)
+//    }
+//
+//
+//
 }
+
+

@@ -43,6 +43,10 @@ internal struct Message: MessageType {
         self.init(.text(json["data"]["message"].stringValue), ChatUser(senderId: "\(json["data"]["sender_id"].intValue)", displayName: ""), URL(string: json["data"]["sender_user_image"].stringValue), json["data"]["message_id"].stringValue, json["data"]["created_at"].stringValue.toDate ?? Date())
     }
     
+//    init(json: JSON) {
+//        self.init(image:UIImage, ChatUser(senderId: "\(json["data"]["sender_id"].intValue)", displayName: ""), URL(string: json["data"]["sender_user_image"].stringValue), json["data"]["message_id"].stringValue, json["data"]["created_at"].stringValue.toDate ?? Date()))
+//    }
+//    
 //    init(_ text: String) {
 //
 //        self.init(.text(text), ChatUser(senderId: "\(User.details.id)", displayName: User.details.firstName), URL(string: User.details.image1 ?? ""), UUID().uuidString, Date())
@@ -78,3 +82,27 @@ extension MessageType {
         }
     }
 }
+
+
+
+    
+    private struct ImageMediaItem: MediaItem {
+
+        var url: URL?
+        var image: UIImage?
+        var placeholderImage: UIImage
+        var size: CGSize
+
+        init(image: UIImage) {
+            self.image = image
+            self.size = CGSize(width: 240, height: 240)
+            self.placeholderImage = UIImage()
+        }
+
+        init(imageURL: URL) {
+            self.url = imageURL
+            self.size = CGSize(width: 240, height: 240)
+            self.placeholderImage = UIImage(imageLiteralResourceName: "image_message_placeholder")
+        }
+    }
+

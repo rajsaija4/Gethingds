@@ -70,6 +70,7 @@ extension MessageVC1: UITableViewDelegate {
 //        vc.conversation = arrMatchesMessage[indexPath.row]
         vc.match_Id = arrMessagesList[indexPath.row].matchId
         vc.userImage = arrMessagesList[indexPath.row].userImage
+        vc.oppositeUserName = arrMessagesList[indexPath.row].userName
         (ROOTVC as? UINavigationController)?.pushViewController(vc, animated: true)
 //        self.parent?.navigationController?.pushViewController(vc, animated: false)
     
@@ -81,7 +82,7 @@ extension MessageVC1: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 //        return UITableView.automaticDimension
-        return 100
+        return 80
     }
     
 

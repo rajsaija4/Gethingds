@@ -601,6 +601,10 @@ extension EditProfileVC {
         if indexPath.section == 5 {
             return 100
         }
+        
+        if indexPath.section == 6 {
+            return 100
+        }
         return UITableView.automaticDimension
     }
 }

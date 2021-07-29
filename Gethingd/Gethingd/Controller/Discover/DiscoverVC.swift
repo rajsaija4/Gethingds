@@ -28,6 +28,7 @@ class DiscoverVC: UIViewController {
     fileprivate var arrUser: [UserProfile] = []
     fileprivate var arrRewind: [UserProfile] = []
     fileprivate var locationManager: CLLocationManager?
+    var timer = Timer()
     
     
     @IBOutlet weak var btnReviewLater: UIButton!
@@ -42,7 +43,16 @@ class DiscoverVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true, block: { [weak self] (timer) in
+                    self?.getUserStatus()
+                    
+            
+            
+                })
+                
+              
         setupUI()
+        
     }
     
     
@@ -224,6 +234,7 @@ extension DiscoverVC {
             return
         }
         kolodaView?.swipe(.right)
+        AppSupport.remainingLikes -= 1
     }
     
     @IBAction func onDisLikeBtnTap(_ sender: UIButton) {
@@ -257,6 +268,7 @@ extension DiscoverVC {
             return
         }
         kolodaView?.swipe(.down)
+        AppSupport.reviewLater -= 1
     }
     
 //    @objc fileprivate func onRewindBtnTap(_ sender: UIButton) {
@@ -468,4 +480,28 @@ extension DiscoverVC: CLLocationManagerDelegate {
             //            Filter.latitude = "\(location.coordinate.latitude)"
         }
     }
+}
+
+
+extension DiscoverVC {
+    
+  
+    
+    func getUserStatus() {
+        
+        let timeStamp = "\(Date().timeIntervalSince1970)".components(separatedBy: ".").first ?? ""
+        let param = [
+            "time": timeStamp
+        ] as [String : Any]
+        
+        NetworkManager.Chat.checkUserStatus(param: param) { (response) in
+        } _: { (error) in
+        }
+
+    }
+
+    
+    
+    
+    
 }
