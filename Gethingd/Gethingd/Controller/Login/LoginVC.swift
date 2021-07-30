@@ -33,7 +33,7 @@ class LoginVC: UIViewController {
     */
     @IBAction func btnPasswordhideonPress(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
-        txtPassword.isSecureTextEntry = !sender.isSelected
+        txtPassword.isSecureTextEntry = sender.isSelected
         
         
     }

@@ -7,10 +7,13 @@
 
 import UIKit
 
-class MessageVC1: UIViewController {
+class MessageVC1: UIViewController, UISearchBarDelegate {
     
     var arrMessagesList:[ChatMessages] = []
+    var searchActive : Bool = false
+    var filtered:[ChatMessages] = []
 
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tblChat: UITableView! {
         didSet {
             tblChat.register(UserChatCell.self)
@@ -18,7 +21,9 @@ class MessageVC1: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        getAllMessageList()
+//        getAllMessageList()
+        searchBar.delegate = self
+       
 
         // Do any additional setup after loading the view.
     }
@@ -27,11 +32,39 @@ class MessageVC1: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        searchActive = false
         getAllMessageList()
            
     }
    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+            searchActive = true;
+        }
 
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+            searchActive = false;
+        }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+            searchActive = false;
+        }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+            searchActive = false;
+        }
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if searchText.count > 0 {
+            filtered = arrMessagesList.filter({$0.userName.contains(searchText)})
+            searchActive = true
+           self.tblChat.reloadData()
+        }
+        else {
+            searchActive = false
+            self.tblChat.reloadData()
+        }
+    }
     /*
     // MARK: - Navigation
 
@@ -46,12 +79,21 @@ class MessageVC1: UIViewController {
 extension MessageVC1: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(searchActive) {
+                   return filtered.count
+               }
         return arrMessagesList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UserChatCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+        if(searchActive){
+            cell.setupCell(user: filtered[indexPath.row])
+            
+        }
+        else {
         cell.setupCell(user: arrMessagesList[indexPath.row])
+        }
         return cell
     }
 }

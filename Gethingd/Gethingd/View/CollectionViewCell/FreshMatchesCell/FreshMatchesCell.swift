@@ -47,6 +47,13 @@ class FreshMatchesCell: UICollectionViewCell {
             imgUser.kf.setImage(with: imgURL)
         }
         lblUserName.text = user.name
+        if (Date().timeIntervalSince1970 - user.lastseen >= (60 * 2)) != nil {
+            btnStatus.isSelected = false
+        }
+        else {
+            btnStatus.isSelected = true
+        }
+        btnReviewLater.isHidden = true
 //        let userStatus = user. == "active" ? "img_active_user" : "img_inactive_user"
     }
 

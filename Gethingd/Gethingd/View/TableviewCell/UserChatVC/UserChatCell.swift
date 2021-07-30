@@ -10,6 +10,7 @@ import UIKit
 
 class UserChatCell: UITableViewCell {
 
+    @IBOutlet weak var btnStatus: UIButton!
     @IBOutlet weak var imgUser: UIImageView!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblLastMsg: UILabel!
@@ -38,6 +39,12 @@ class UserChatCell: UITableViewCell {
         lblTIime.text = user.createAt.displayTime
         lblUnread.isHidden = user.unreadMessageCount == 0
         lblUnread.text = "\(user.unreadMessageCount)"
+        if Date().timeIntervalSince1970 - user.lastSeen >= 60 * 2{
+            btnStatus.isSelected = false
+        }
+        else{
+            btnStatus.isSelected = true
+        }
     }
     
 }

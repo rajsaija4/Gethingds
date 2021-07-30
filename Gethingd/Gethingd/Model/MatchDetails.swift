@@ -21,11 +21,11 @@ class MatchDetails: NSObject {
     init(_ json: JSON) {
         super.init()
         
-        matchId = json["match_id"].intValue
-        matchedUserId = json["matched_user_id"].stringValue
-        userImage = json["user_image_url"].stringValue
-        matchUserImage = json["match_user_image_url"].stringValue
-        matchUserName = json["match_user_name"].stringValue
+        matchId = json["data"]["match_id"].intValue
+        matchedUserId = json["data"]["matched_user_id"].stringValue
+        userImage = json["data"]["user_image_url"].stringValue
+        matchUserImage = json["data"]["match_user_image_url"].stringValue
+        matchUserName = json["data"]["match_user_name"].stringValue
         
         
     }

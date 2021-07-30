@@ -19,6 +19,7 @@ class ChatMessages: NSObject {
     var likeStatus:String = ""
     var matchId:Int = 0
     var createAt:String = ""
+    var lastSeen:Double = 0.0
     
     init(json:JSON) {
         super.init()
@@ -32,7 +33,7 @@ class ChatMessages: NSObject {
         likeStatus = json["like_status"].stringValue
         matchId = json["match_id"].intValue
         createAt = json["created_at"].stringValue
-        
+        lastSeen = json["lastseen"].doubleValue
     }
     
 }

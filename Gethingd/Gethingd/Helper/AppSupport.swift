@@ -12,8 +12,8 @@ class AppSupport {
   
     static var remainingLikes = 0
     static var reviewLater = 0
-    static var isLikeLimited = true
-    static var isOrder = true
+    static var isLikeLimited = ""
+    static var isOrder = ""
     static var version: Double = 1.0
   
 }

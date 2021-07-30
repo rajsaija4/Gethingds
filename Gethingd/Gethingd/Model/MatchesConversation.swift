@@ -37,6 +37,7 @@ class MatchConversation:NSObject {
     var likeStatus:String = ""
     var matchId:Int = 0
     var createDate:String = ""
+    var lastseen:Double = 0.0
     
     
     init(json:JSON){
@@ -49,6 +50,7 @@ class MatchConversation:NSObject {
         likeStatus = json["like_status"].stringValue
         matchId = json["match_id"].intValue
         createDate = json["created_date"].stringValue
+        lastseen = json["lastseen"].doubleValue
         
     }
     

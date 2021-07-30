@@ -178,7 +178,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ry-Id-jKY">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <viewLayoutGuide key="contentLayoutGuide" id="WSe-fR-JTg"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="8BJ-JH-3Ht"/>
@@ -203,23 +203,34 @@
                                     <outlet property="delegate" destination="cSc-TA-WO7" id="gn7-SO-P0K"/>
                                 </connections>
                             </collectionView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="ikv-hr-HB9">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="YEG-h2-OjT"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oOD-Bc-dGj"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="8ry-Id-jKY" firstAttribute="top" secondItem="oOD-Bc-dGj" secondAttribute="top" id="2mn-M8-gIT"/>
+                            <constraint firstItem="ikv-hr-HB9" firstAttribute="trailing" secondItem="oOD-Bc-dGj" secondAttribute="trailing" id="44n-uw-R9h"/>
                             <constraint firstItem="oOD-Bc-dGj" firstAttribute="trailing" secondItem="8ry-Id-jKY" secondAttribute="trailing" id="Doh-eJ-EYm"/>
+                            <constraint firstItem="8ry-Id-jKY" firstAttribute="top" secondItem="ikv-hr-HB9" secondAttribute="bottom" id="IdV-bG-ZEw"/>
                             <constraint firstItem="8ry-Id-jKY" firstAttribute="leading" secondItem="oOD-Bc-dGj" secondAttribute="leading" id="SV9-fE-xr1"/>
                             <constraint firstItem="oOD-Bc-dGj" firstAttribute="bottom" secondItem="8ry-Id-jKY" secondAttribute="bottom" id="dRA-bX-wvY"/>
+                            <constraint firstItem="ikv-hr-HB9" firstAttribute="leading" secondItem="oOD-Bc-dGj" secondAttribute="leading" id="iOP-no-PIp"/>
+                            <constraint firstItem="ikv-hr-HB9" firstAttribute="top" secondItem="oOD-Bc-dGj" secondAttribute="top" id="n9z-Qg-1Yn"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collMatches" destination="8ry-Id-jKY" id="Bza-dt-UVC"/>
+                        <outlet property="searchBar" destination="ikv-hr-HB9" id="LzQ-on-lJp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7E3-GB-Rc7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="194" y="836"/>
+            <point key="canvasLocation" x="192.75362318840581" y="835.71428571428567"/>
         </scene>
         <!--MessageVC1-->
         <scene sceneID="JWe-gn-foV">
@@ -230,24 +241,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="D5X-9T-S7V">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="l5d-nM-JWc" id="tTZ-uI-cGY"/>
                                     <outlet property="delegate" destination="l5d-nM-JWc" id="0GY-px-djL"/>
                                 </connections>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Dye-Ge-wsF">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bPP-EP-8C6"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZSI-ML-JUr"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="D5X-9T-S7V" firstAttribute="top" secondItem="ZSI-ML-JUr" secondAttribute="top" id="4v0-OK-ftQ"/>
+                            <constraint firstItem="D5X-9T-S7V" firstAttribute="top" secondItem="Dye-Ge-wsF" secondAttribute="bottom" id="8FV-f8-WBs"/>
+                            <constraint firstItem="Dye-Ge-wsF" firstAttribute="leading" secondItem="ZSI-ML-JUr" secondAttribute="leading" id="Rfd-cB-FM8"/>
+                            <constraint firstItem="Dye-Ge-wsF" firstAttribute="top" secondItem="ZSI-ML-JUr" secondAttribute="top" id="eIl-SN-UzU"/>
                             <constraint firstItem="ZSI-ML-JUr" firstAttribute="bottom" secondItem="D5X-9T-S7V" secondAttribute="bottom" id="fHz-yc-g84"/>
                             <constraint firstItem="D5X-9T-S7V" firstAttribute="leading" secondItem="ZSI-ML-JUr" secondAttribute="leading" id="mF6-4G-REL"/>
+                            <constraint firstItem="Dye-Ge-wsF" firstAttribute="trailing" secondItem="ZSI-ML-JUr" secondAttribute="trailing" id="oB7-hO-iWA"/>
                             <constraint firstItem="ZSI-ML-JUr" firstAttribute="trailing" secondItem="D5X-9T-S7V" secondAttribute="trailing" id="tl9-Ze-GzJ"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="searchBar" destination="Dye-Ge-wsF" id="klL-gR-pPs"/>
                         <outlet property="tblChat" destination="D5X-9T-S7V" id="3Lh-YS-pQg"/>
                     </connections>
                 </viewController>
@@ -338,26 +360,15 @@
                                 <color key="textColor" red="0.32944318649999998" green="0.12744057180000001" blue="0.27206125860000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2OC-YL-efg">
-                                <rect key="frame" x="364" y="67" width="30" height="28"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="Pza-I1-KLP"/>
-                                    <constraint firstAttribute="height" constant="30" id="cI4-kM-Tn6"/>
-                                </constraints>
-                                <color key="tintColor" red="0.1139577702" green="0.1107517406" blue="0.13236281280000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" backgroundImage="magnifyingglass" catalog="system"/>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="00H-aF-UTw"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="00H-aF-UTw" firstAttribute="trailing" secondItem="2OC-YL-efg" secondAttribute="trailing" constant="20" id="776-C5-3HD"/>
                             <constraint firstItem="eNO-SU-aka" firstAttribute="leading" secondItem="00H-aF-UTw" secondAttribute="leading" constant="10" id="Kob-kE-aoM"/>
                             <constraint firstItem="eNO-SU-aka" firstAttribute="top" secondItem="00H-aF-UTw" secondAttribute="top" constant="16" id="RBu-fF-BCE"/>
                             <constraint firstItem="pMo-SA-xxH" firstAttribute="leading" secondItem="00H-aF-UTw" secondAttribute="leading" id="fFi-lE-92b"/>
                             <constraint firstItem="pMo-SA-xxH" firstAttribute="top" secondItem="eNO-SU-aka" secondAttribute="bottom" constant="8" id="kRn-4p-hQm"/>
                             <constraint firstItem="00H-aF-UTw" firstAttribute="bottom" secondItem="pMo-SA-xxH" secondAttribute="bottom" id="l0X-sF-58I"/>
-                            <constraint firstItem="2OC-YL-efg" firstAttribute="centerY" secondItem="eNO-SU-aka" secondAttribute="centerY" id="nLk-8r-DFU"/>
                             <constraint firstItem="00H-aF-UTw" firstAttribute="trailing" secondItem="pMo-SA-xxH" secondAttribute="trailing" id="vvy-hl-6Om"/>
                         </constraints>
                     </view>
@@ -371,7 +382,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

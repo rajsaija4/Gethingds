@@ -231,7 +231,7 @@ extension NetworkManager {
                 }
                 AppSupport.reviewLater = response["data"]["remaining_review_later_count"].intValue
                 AppSupport.remainingLikes = response["data"]["remaining_likes_count"].intValue
-                AppSupport.isLikeLimited = response["data"]["is_limited"].stringValue == "Yes"
+                AppSupport.isLikeLimited = response["data"]["is_limited"].stringValue
 //                let user = User(json: response, token: User.details.api_token)
                 let user = User(response)
                 user.save()
@@ -458,7 +458,8 @@ extension NetworkManager {
  
                 AppSupport.reviewLater = response["data"]["remaining_review_later_count"].intValue
                 AppSupport.remainingLikes = response["data"]["remaining_likes_count"].intValue
-                AppSupport.isLikeLimited = response["data"]["is_limited"].stringValue == "Yes"
+                AppSupport.isLikeLimited = response["data"]["is_limited"].stringValue
+                AppSupport.isOrder = response["data"]["is_order"].stringValue
 //                AppSupport.remainingSuperLikes = response["remaining_slikes_count"].intValue
 //                AppSupport.remainingBoost = response["remaining_boost_count"].intValue
 //
@@ -494,12 +495,12 @@ extension NetworkManager {
                 print(response)
                 
                 AppSupport.remainingLikes = response["data"]["remaining_likes_count"].intValue
-                AppSupport.isLikeLimited = response["data"]["is_limited"].stringValue == "Yes"
-                AppSupport.isOrder = response["data"]["is_order"].stringValue == "Yes"
+                AppSupport.isLikeLimited = response["data"]["is_limited"].stringValue
+                AppSupport.isOrder = response["data"]["is_order"].stringValue
                 AppSupport.reviewLater = response["data"]["remaining_review_later_count"].intValue
                 
                 if response["data"]["match_status"].stringValue == "match" {
-                        success(MatchDetails(response))
+                    success(MatchDetails(response))
                 } else {
                     success(nil)
                 }
@@ -826,10 +827,9 @@ extension NetworkManager {
                     return
                 }
                 
-                AppSupport.remainingLikes = response["remaining_likes_count"].intValue
-                AppSupport.isLikeLimited = response["is_limited"].stringValue == "Yes"
-                AppSupport.isOrder = response["is_order"].stringValue == "Yes"
-                AppSupport.reviewLater = response["remaining_review_later_count"].intValue
+//                AppSupport.remainingLikes = response["remaining_likes_count"].intValue
+//                AppSupport.isLikeLimited = response["is_limited"].stringValue         AppSupport.isOrder = response["is_order"].stringValue
+//                AppSupport.reviewLater = response["remaining_review_later_count"].intValue
                 
              
                 

@@ -9,6 +9,8 @@ import UIKit
 
 class UpdateNowVC: UIViewController {
 
+    @IBOutlet weak var txtTitle: UILabel!
+    @IBOutlet weak var txtMessage: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 

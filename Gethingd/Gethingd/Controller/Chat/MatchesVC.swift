@@ -7,10 +7,14 @@
 
 import UIKit
 
-class MatchesVC: UIViewController {
+class MatchesVC: UIViewController, UISearchBarDelegate {
     
     var arrMatchesList:[MatchConversation] = []
+    var searchActive : Bool = false
+    var filtered:[MatchConversation] = []
 
+
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collMatches: UICollectionView!{
         didSet {
             collMatches.registerCell(FreshMatchesCell.self)
@@ -19,15 +23,46 @@ class MatchesVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getConversation()
+//        getConversation()
+        searchBar.delegate = self
 
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        searchActive = false
         getConversation()
-        collMatches.reloadData()
+//        collMatches.reloadData()
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+            searchActive = true;
+        }
+
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+            searchActive = false;
+        }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+            searchActive = false;
+        }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+            searchActive = false;
+        }
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if searchText.count > 0 {
+            filtered = arrMatchesList.filter({$0.name.contains(searchText)})
+            searchActive = true
+           self.collMatches.reloadData()
+        }
+        else {
+            searchActive = false
+            self.collMatches.reloadData()
+        }
     }
     
 
@@ -46,13 +81,21 @@ class MatchesVC: UIViewController {
 
 extension MatchesVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if(searchActive){
+            return filtered.count
+        }
         return arrMatchesList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 //        return cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FreshMatchesCell", for: indexPath) as! FreshMatchesCell
+        if(searchActive){
+            cell.setupMatchesList(user: filtered[indexPath.row])
+        }
+        else {
         cell.setupMatchesList(user: arrMatchesList[indexPath.row])
+        }
         return cell
         
     }

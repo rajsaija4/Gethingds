@@ -49,11 +49,11 @@ class ProfileTVC: UITableViewController {
         self.navigationController?.navigationBar.isHidden = true
         lblName.text = User.details.firstName
         lblAddress.text = User.details.address
-        if AppSupport.isOrder == false {
+        if AppSupport.isOrder == "no" {
         lblFreelike.text = "FREE LIKES : \(AppSupport.remainingLikes)"
         lblReviewLater.text = "REVIEW LATER : \(AppSupport.reviewLater)"
         }
-        if AppSupport.isOrder == true {
+        if AppSupport.isOrder == "yes" {
             lblFreelike.text = "FREE LIKES : UNLIMITED"
             lblReviewLater.text = "REVIEW LATER : UNLIMITED"
         }

@@ -20,7 +20,7 @@ class ReviewLaterVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      getProfiles()
+//      getProfiles()
       
 
         // Do any additional setup after loading the view.
@@ -106,7 +106,11 @@ extension ReviewLaterVC {
            NetworkManager.Profile.getReviewLaterProfiles { (UserProfile) in
             self.arrUser.removeAll()
             self.arrUser.append(contentsOf: UserProfile)
-            self.collReviewLater.reloadData()
+            DispatchQueue.main.async {
+                self.collReviewLater.reloadData()
+                self.collReviewLater.collectionViewLayout.invalidateLayout()
+            }
+           
             self.hideHUD()
         } _: { (error) in
             self.hideHUD()

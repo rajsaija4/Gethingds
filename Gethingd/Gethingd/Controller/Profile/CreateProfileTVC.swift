@@ -20,7 +20,7 @@ class CreateProfileTVC: UITableViewController, UIImagePickerControllerDelegate, 
         arrPassion.removeAll()
         lblPassion.isHidden = true
         arrPassion.append(contentsOf: passion)
-        txtPassion.textFont = AppFonts.Poppins_Medium.withSize(17)
+        txtPassion.textFont = AppFonts.Poppins_Medium.withSize(15)
         txtPassion.alignment = .leading
         
 //        txtPassion.textFont = UIFont.systemFont(ofSize: 17)
@@ -32,7 +32,7 @@ class CreateProfileTVC: UITableViewController, UIImagePickerControllerDelegate, 
         if passion.isEmpty {
             lblPassion.isHidden = false
         }
-       
+        tableView.reloadData()
         
     }
     
@@ -414,7 +414,7 @@ extension CreateProfileTVC {
         }
 
         if indexPath.section == 3 {
-            return 350
+            return 448
         }
         
         if indexPath.section == 5 {

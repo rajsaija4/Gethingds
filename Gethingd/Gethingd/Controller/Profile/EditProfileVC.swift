@@ -732,14 +732,17 @@ extension EditProfileVC {
             print(lookfor)
             if lookfor == "male" {
                 self.arrLookingforBtn[0].isSelected = true
+                self.selectedLookingFor = 0
             }
             
             if lookfor == "female"{
                 self.arrLookingforBtn[1].isSelected = true
+                self.selectedLookingFor = 1
             }
             
             if  lookfor == "both" {
                 self.arrLookingforBtn[2].isSelected = true
+                self.selectedLookingFor = 2
             }
             
             self.txtLname.text = User.details.lastName

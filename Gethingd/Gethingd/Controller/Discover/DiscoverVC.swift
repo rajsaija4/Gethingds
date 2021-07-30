@@ -182,9 +182,14 @@ extension DiscoverVC {
             
             guard status == .like else { return }
             
-            if AppSupport.isLikeLimited && AppSupport.remainingLikes == 0 {
-                let alert = UIAlertController(title: "Oops!", message: "You have reached your daily limit of Likes. Please upgrade to enjoy unlimited Likes.")
-                self.present(alert, animated: true, completion: nil)
+            if AppSupport.isLikeLimited == "yes" && AppSupport.remainingLikes == 0 {
+                let vc = UpdateNowVC.instantiate(fromAppStoryboard: .Upgrade)
+                vc.txtTitle.text = "OOPS"
+                vc.txtMessage.text = "You have run out of your likes limit. Buy new likes now."
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true, completion: nil)
+//                let alert = UIAlertController(title: "Oops!", message: "You have reached your daily limit of Likes. Please upgrade to enjoy unlimited Likes.")
+//                self.present(alert, animated: true, completion: nil)
                 return
             }
             
@@ -227,7 +232,7 @@ extension DiscoverVC {
     
     @IBAction func onLikeBtnTap(_ sender: UIButton) {
         guard arrUser.count > 0 else { return }
-        if AppSupport.isLikeLimited && AppSupport.remainingLikes == 0 {
+        if AppSupport.isLikeLimited == "yes" && AppSupport.remainingLikes == 0 {
             let vc = UpgradeVC.instantiate(fromAppStoryboard: .Upgrade)
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true, completion: nil)
@@ -261,7 +266,7 @@ extension DiscoverVC {
     @IBAction func onSuperLikeBtnTap(_ sender: UIButton) {
         guard arrUser.count > 0 else { return }
         
-        if AppSupport.reviewLater == 0 {
+        if AppSupport.isLikeLimited == "yes" && AppSupport.reviewLater == 0 {
             let vc = SubscribeVC.instantiate(fromAppStoryboard: .Upgrade)
             vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: true, completion: nil)
@@ -350,7 +355,7 @@ extension DiscoverVC: KolodaViewDelegate {
 //        return
         switch direction {
             case .right:
-                if AppSupport.isLikeLimited && AppSupport.remainingLikes == 0 {
+                if AppSupport.isLikeLimited == "yes" && AppSupport.remainingLikes == 0 {
                     let vc = SubscribeVC.instantiate(fromAppStoryboard: .Upgrade)
                     vc.modalPresentationStyle = .fullScreen
                     self.present(vc, animated: true, completion: nil)
@@ -387,7 +392,7 @@ extension DiscoverVC: KolodaViewDelegate {
                 
                
         case .down:
-            if AppSupport.reviewLater == 0 {
+            if AppSupport.isLikeLimited == "yes" && AppSupport.reviewLater == 0 {
                 let vc = SubscribeVC.instantiate(fromAppStoryboard: .Upgrade)
                 vc.modalPresentationStyle = .overCurrentContext
                 self.present(vc, animated: true, completion: nil)

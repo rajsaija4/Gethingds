@@ -129,7 +129,7 @@ class UserDetailsTVC: UITableViewController, TagListViewDelegate {
             swipeUser(userID: userId, status: .like)
             return
         }
-        if AppSupport.isLikeLimited && AppSupport.remainingLikes == 0 {
+        if AppSupport.isLikeLimited == "yes" && AppSupport.remainingLikes == 0 {
             let vc = UpgradeVC.instantiate(fromAppStoryboard: .Upgrade)
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true, completion: nil)
@@ -147,7 +147,7 @@ class UserDetailsTVC: UITableViewController, TagListViewDelegate {
             swipeUser(userID: userId, status: .reviewLater)
             return
         }
-        if AppSupport.reviewLater == 0 {
+        if AppSupport.isLikeLimited == "yes" && AppSupport.reviewLater == 0 {
             let vc = SubscribeVC.instantiate(fromAppStoryboard: .Upgrade)
             vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: true, completion: nil)
@@ -359,7 +359,7 @@ extension UserDetailsTVC {
             
             guard status == .like else { return }
             
-            if AppSupport.isLikeLimited && AppSupport.remainingLikes == 0 {
+            if AppSupport.isLikeLimited == "yes" && AppSupport.remainingLikes == 0 {
                 let alert = UIAlertController(title: "Oops!", message: "You have reached your daily limit of Likes. Please upgrade to enjoy unlimited Likes.")
                 self.present(alert, animated: true, completion: nil)
                 return

@@ -28,7 +28,8 @@
                             <constraint firstAttribute="height" constant="20" id="WPi-l6-IoD"/>
                             <constraint firstAttribute="width" constant="20" id="wzf-Bd-i6f"/>
                         </constraints>
-                        <state key="normal" image="img_active_user"/>
+                        <state key="normal" image="img_inactive_user"/>
+                        <state key="selected" image="img_active_user"/>
                     </button>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="eA7-8R-LdO">
                         <rect key="frame" x="92" y="70" width="207.5" height="46"/>
@@ -98,6 +99,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="btnStatus" destination="Xf5-xz-ER5" id="r37-UH-5qM"/>
                 <outlet property="imgUser" destination="XVW-Ac-7vu" id="3Oj-Qi-csJ"/>
                 <outlet property="lblLastMsg" destination="35G-fH-t9M" id="EOx-ck-huv"/>
                 <outlet property="lblName" destination="XTh-ow-G4T" id="4ky-nb-14F"/>
@@ -109,6 +111,7 @@
     </objects>
     <resources>
         <image name="img_active_user" width="6" height="6"/>
+        <image name="img_inactive_user" width="6" height="6"/>
         <image name="img_user_placeholder" width="640" height="960"/>
     </resources>
 </document>

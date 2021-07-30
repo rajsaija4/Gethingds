@@ -52,8 +52,8 @@
                                             <constraint firstAttribute="height" constant="17" id="JAN-Ke-Z4S"/>
                                             <constraint firstAttribute="width" constant="17" id="nq5-q5-81M"/>
                                         </constraints>
-                                        <state key="normal" image="img_active_user"/>
-                                        <state key="selected" image="img_inactive_user"/>
+                                        <state key="normal" image="img_inactive_user"/>
+                                        <state key="selected" image="img_active_user"/>
                                     </button>
                                 </subviews>
                                 <constraints>
