@@ -67,7 +67,7 @@ extension WholikedVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (view.frame.width - 40) / 3
-        let height = width / 0.6
+        let height = width / 0.7
         return CGSize(width: width, height: height)
     }
     

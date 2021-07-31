@@ -593,13 +593,13 @@ extension EditProfileVC {
         }
 
         if indexPath.section == 4 {
-            return 92
+            return 106
             
            
         }
 
         if indexPath.section == 5 {
-            return 100
+            return 106
         }
         
         if indexPath.section == 6 {
@@ -679,41 +679,64 @@ extension EditProfileVC {
     fileprivate func getProfile() {
         showHUD()
         NetworkManager.Profile.getMyProfile { (profile) in
-            if let url = URL(string: User.details.image1) {
-                self.img_Profile[0].kf.setImage(with: url)
-                self.img_Edit[0].isHidden = true
-                self.img_Remove[0].isHidden = false
+            if let imageUrl = URL(string: User.details.image1) {
+            self.img_Profile[0].kf.indicatorType = .activity
+            self.img_Edit[0].isHidden = true
+            self.img_Remove[0].isHidden = false
+            self.img_Profile[0].kf.indicator?.startAnimatingView()
+                self.img_Profile[0].kf.setImage(with: imageUrl, placeholder: UIImage(named: "img_profile"), options: nil, progressBlock: nil) { (_) in
+                self.img_Profile[0].kf.indicator?.stopAnimatingView()
             }
+         }
+            if let imageUrl = URL(string: User.details.image2) {
+            self.img_Profile[1].kf.indicatorType = .activity
+            self.img_Edit[1].isHidden = true
+            self.img_Remove[1].isHidden = false
+            self.img_Profile[1].kf.indicator?.startAnimatingView()
+                self.img_Profile[1].kf.setImage(with: imageUrl, placeholder: UIImage(named: "img_profile"), options: nil, progressBlock: nil) { (_) in
+                self.img_Profile[1].kf.indicator?.stopAnimatingView()
+            }
+         }
             
-            if let url = URL(string: User.details.image2) {
-                self.img_Profile[1].kf.setImage(with: url)
-                self.img_Edit[1].isHidden = true
-                self.img_Remove[1].isHidden = false
+            if let imageUrl = URL(string: User.details.image3) {
+            self.img_Profile[2].kf.indicatorType = .activity
+            self.img_Edit[2].isHidden = true
+            self.img_Remove[2].isHidden = false
+            self.img_Profile[2].kf.indicator?.startAnimatingView()
+                self.img_Profile[2].kf.setImage(with: imageUrl, placeholder: UIImage(named: "img_profile"), options: nil, progressBlock: nil) { (_) in
+                self.img_Profile[2].kf.indicator?.stopAnimatingView()
             }
+         }
             
-            if let url = URL(string: User.details.image3) {
-                self.img_Profile[2].kf.setImage(with: url)
-                self.img_Edit[2].isHidden = true
-                self.img_Remove[2].isHidden = false
+            if let imageUrl = URL(string: User.details.image4) {
+            self.img_Profile[3].kf.indicatorType = .activity
+            self.img_Edit[3].isHidden = true
+            self.img_Remove[3].isHidden = false
+            self.img_Profile[3].kf.indicator?.startAnimatingView()
+                self.img_Profile[3].kf.setImage(with: imageUrl, placeholder: UIImage(named: "img_profile"), options: nil, progressBlock: nil) { (_) in
+                self.img_Profile[3].kf.indicator?.stopAnimatingView()
             }
+         }
             
-            if let url = URL(string: User.details.image4) {
-                self.img_Profile[3].kf.setImage(with: url)
-                self.img_Edit[3].isHidden = true
-                self.img_Remove[3].isHidden = false
+            if let imageUrl = URL(string: User.details.image5) {
+            self.img_Profile[4].kf.indicatorType = .activity
+            self.img_Edit[4].isHidden = true
+            self.img_Remove[4].isHidden = false
+            self.img_Profile[4].kf.indicator?.startAnimatingView()
+                self.img_Profile[4].kf.setImage(with: imageUrl, placeholder: UIImage(named: "img_profile"), options: nil, progressBlock: nil) { (_) in
+                self.img_Profile[4].kf.indicator?.stopAnimatingView()
             }
+         }
             
-            if let url = URL(string: User.details.image5) {
-                self.img_Profile[4].kf.setImage(with: url)
-                self.img_Edit[4].isHidden = true
-                self.img_Remove[4].isHidden = false
+            if let imageUrl = URL(string: User.details.image6) {
+            self.img_Profile[5].kf.indicatorType = .activity
+            self.img_Edit[5].isHidden = true
+            self.img_Remove[5].isHidden = false
+            self.img_Profile[5].kf.indicator?.startAnimatingView()
+                self.img_Profile[5].kf.setImage(with: imageUrl, placeholder: UIImage(named: "img_profile"), options: nil, progressBlock: nil) { (_) in
+                self.img_Profile[5].kf.indicator?.stopAnimatingView()
             }
-            
-            if let url = URL(string: User.details.image6) {
-                self.img_Profile[5].kf.setImage(with: url)
-                self.img_Edit[5].isHidden = true
-                self.img_Remove[5].isHidden = false
-            }
+         }
             self.arrPassion.removeAll()
             for id in User.details.passion {
                 if let pas = self.arrTags.first(where: {$0.id == Int(id)})?.passion {

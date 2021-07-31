@@ -1035,12 +1035,6 @@
                                                                         <userDefinedRuntimeAttribute type="color" keyPath="handleColor">
                                                                             <color key="value" red="0.32944318649999998" green="0.12744057180000001" blue="0.27206125860000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="minValue">
-                                                                            <real key="value" value="0.0"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
-                                                                            <real key="value" value="100"/>
-                                                                        </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
                                                             </subviews>
@@ -1080,15 +1074,6 @@
                                                                         </userDefinedRuntimeAttribute>
                                                                         <userDefinedRuntimeAttribute type="color" keyPath="handleColor">
                                                                             <color key="value" red="0.32944318649999998" green="0.12744057180000001" blue="0.27206125860000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="minValue">
-                                                                            <real key="value" value="0.0"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
-                                                                            <real key="value" value="100"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="selectedMaxValue">
-                                                                            <real key="value" value="28"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
@@ -1130,12 +1115,6 @@
                                                                         <userDefinedRuntimeAttribute type="color" keyPath="handleColor">
                                                                             <color key="value" red="0.32944318649999998" green="0.12744057180000001" blue="0.27206125860000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="minValue">
-                                                                            <real key="value" value="0.0"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
-                                                                            <real key="value" value="100"/>
-                                                                        </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
                                                             </subviews>
@@ -1147,7 +1126,7 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VUJ-t7-PkA" customClass="UIControl">
                                                             <rect key="frame" x="0.0" y="280" width="280" height="50"/>
                                                             <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ek5-06-WF8">
+                                                                <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ek5-06-WF8">
                                                                     <rect key="frame" x="16" y="8" width="248" height="34"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rdm-7V-RxV">
@@ -1554,23 +1533,6 @@
             <point key="canvasLocation" x="2540.579710144928" y="125.89285714285714"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="0of-Pu-Qc2">
-            <size key="intrinsicContentSize" width="-1" height="65"/>
-        </designable>
-        <designable name="6TE-4H-lZF">
-            <size key="intrinsicContentSize" width="-1" height="65"/>
-        </designable>
-        <designable name="M5d-kC-ecA">
-            <size key="intrinsicContentSize" width="350" height="32"/>
-        </designable>
-        <designable name="Rtl-cN-SKI">
-            <size key="intrinsicContentSize" width="-1" height="65"/>
-        </designable>
-        <designable name="bAq-dh-CcJ">
-            <size key="intrinsicContentSize" width="-5" height="6"/>
-        </designable>
-    </designables>
     <resources>
         <image name="img_Header" width="750" height="359"/>
         <image name="img_back" width="16" height="13.5"/>

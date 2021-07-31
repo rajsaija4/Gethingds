@@ -23,7 +23,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="131" height="174"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_user_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="0CA-hW-5lG">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0CA-hW-5lG">
                         <rect key="frame" x="0.0" y="0.0" width="131" height="144"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nbf-zc-uzc">
@@ -102,7 +102,6 @@
         <image name="img_active_user" width="6" height="6"/>
         <image name="img_inactive_user" width="6" height="6"/>
         <image name="img_reviewLater" width="20" height="18"/>
-        <image name="img_user_placeholder" width="640" height="960"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

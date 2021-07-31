@@ -42,6 +42,12 @@ class FilterTVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        rangeAge.minDistance = 1
+        rangeKidsCount.minDistance = 1
+        rangeAge.minValue = 18
+        rangeAge.maxValue = 100
+        rangeKidsCount.minValue = 0
+        rangeKidsCount.maxValue = 3
         setupUI()
     }
     

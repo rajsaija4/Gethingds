@@ -70,7 +70,7 @@
                             </label>
                         </subviews>
                     </stackView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_user_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="XVW-Ac-7vu">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XVW-Ac-7vu">
                         <rect key="frame" x="34" y="68" width="50" height="50"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="Tqe-ia-0NW"/>
@@ -112,6 +112,5 @@
     <resources>
         <image name="img_active_user" width="6" height="6"/>
         <image name="img_inactive_user" width="6" height="6"/>
-        <image name="img_user_placeholder" width="640" height="960"/>
     </resources>
 </document>

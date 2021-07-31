@@ -233,7 +233,9 @@ extension DiscoverVC {
     @IBAction func onLikeBtnTap(_ sender: UIButton) {
         guard arrUser.count > 0 else { return }
         if AppSupport.isLikeLimited == "yes" && AppSupport.remainingLikes == 0 {
-            let vc = UpgradeVC.instantiate(fromAppStoryboard: .Upgrade)
+            let vc = UpdateNowVC.instantiate(fromAppStoryboard: .Upgrade)
+            vc.header = "OOPS!!"
+            vc.message = "You have run out of your likes limit. Buy new likes now."
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true, completion: nil)
             return
@@ -267,7 +269,9 @@ extension DiscoverVC {
         guard arrUser.count > 0 else { return }
         
         if AppSupport.isLikeLimited == "yes" && AppSupport.reviewLater == 0 {
-            let vc = SubscribeVC.instantiate(fromAppStoryboard: .Upgrade)
+            let vc = UpdateNowVC.instantiate(fromAppStoryboard: .Upgrade)
+            vc.header = "OOPS!!"
+            vc.message = "You have exhausted your review limit. Buy more credits."
             vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: true, completion: nil)
             return
@@ -356,10 +360,13 @@ extension DiscoverVC: KolodaViewDelegate {
         switch direction {
             case .right:
                 if AppSupport.isLikeLimited == "yes" && AppSupport.remainingLikes == 0 {
-                    let vc = SubscribeVC.instantiate(fromAppStoryboard: .Upgrade)
+                    let vc = UpdateNowVC.instantiate(fromAppStoryboard: .Upgrade)
+                    vc.header = "OOPS!!"
+                    vc.message = "You have run out of your likes limit. Buy new likes now."
                     vc.modalPresentationStyle = .fullScreen
                     self.present(vc, animated: true, completion: nil)
                     return
+
                 }
                 
                 AppSupport.remainingLikes -= 1
@@ -393,7 +400,9 @@ extension DiscoverVC: KolodaViewDelegate {
                
         case .down:
             if AppSupport.isLikeLimited == "yes" && AppSupport.reviewLater == 0 {
-                let vc = SubscribeVC.instantiate(fromAppStoryboard: .Upgrade)
+                let vc = UpdateNowVC.instantiate(fromAppStoryboard: .Upgrade)
+                vc.header = "OOPS!!"
+                vc.message = "You have exhausted your review limit. Buy more credits."
                 vc.modalPresentationStyle = .overCurrentContext
                 self.present(vc, animated: true, completion: nil)
                 return

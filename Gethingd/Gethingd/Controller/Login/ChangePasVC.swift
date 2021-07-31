@@ -22,13 +22,13 @@ class ChangePasVC: UIViewController {
         sender.isSelected = !sender.isSelected
         
         if sender.tag == 0{
-            txtCurrentPassword.isSecureTextEntry = sender.isSelected
+            txtCurrentPassword.isSecureTextEntry = !sender.isSelected
         }
         if sender.tag == 1{
-            txtCurrentPassword.isSecureTextEntry = sender.isSelected
+            txtCurrentPassword.isSecureTextEntry = !sender.isSelected
         }
         if sender.tag == 2{
-            txtCurrentPassword.isSecureTextEntry = sender.isSelected
+            txtCurrentPassword.isSecureTextEntry = !sender.isSelected
         }
         
     }

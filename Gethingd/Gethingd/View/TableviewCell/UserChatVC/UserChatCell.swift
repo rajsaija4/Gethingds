@@ -31,9 +31,16 @@ class UserChatCell: UITableViewCell {
     }
     
     func setupCell(user: ChatMessages) {
-        if let imgURL = URL(string: user.userImage) {
-            imgUser.kf.setImage(with: imgURL)
+//        if let imgURL = URL(string: user.userImage) {
+//            imgUser.kf.setImage(with: imgURL)
+//        }
+        if let imageUrl = URL(string: user.userImage) {
+        imgUser.kf.indicatorType = .activity
+        imgUser.kf.indicator?.startAnimatingView()
+            imgUser.kf.setImage(with: imageUrl, placeholder: UIImage(named: "img_profile"), options: nil, progressBlock: nil) { (_) in
+            self.imgUser.kf.indicator?.stopAnimatingView()
         }
+     }
         lblName.text = user.userName
         lblLastMsg.text = user.message
         lblTIime.text = user.createAt.displayTime

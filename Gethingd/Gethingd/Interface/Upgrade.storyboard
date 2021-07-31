@@ -1477,7 +1477,7 @@
                                                     <action selector="onUpdateNowControlTap:" destination="tHg-Dc-Ft1" eventType="touchUpInside" id="xP4-95-cAO"/>
                                                 </connections>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sGz-XF-tO8" customClass="UIControl">
+                                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sGz-XF-tO8" customClass="UIControl">
                                                 <rect key="frame" x="77.5" y="171" width="140" height="40"/>
                                                 <subviews>
                                                     <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jef-4B-St9">

@@ -57,11 +57,11 @@ class SignInVC: UIViewController {
     @IBAction func btnPassVisible(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
         if sender.tag == 0 {
-            TxtPass.isSecureTextEntry = sender.isSelected
+            TxtPass.isSecureTextEntry = !sender.isSelected
         }
         
         else if sender.tag == 1 {
-            txtConfirmPass.isSecureTextEntry = sender.isSelected
+            txtConfirmPass.isSecureTextEntry = !sender.isSelected
         }
         
     }

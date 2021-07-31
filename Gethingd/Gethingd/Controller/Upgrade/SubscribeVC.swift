@@ -28,7 +28,7 @@ class SubscribeVC: UIViewController {
     
     @IBAction func onPressbackbtnTap(_ sender: UIButton) {
         
-        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true)
     }
     
     /*

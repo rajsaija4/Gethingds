@@ -19,13 +19,21 @@ class FreshMatchesCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         // Initialization code
     }
     
     func setupCell(user: Conversation) {
-        if let imgURL = URL(string: user.userImage) {
-            imgUser.kf.setImage(with: imgURL)
+//        if let imgURL = URL(string: user.userImage) {
+//            imgUser.kf.setImage(with: imgURL)
+//        }
+        if let imageUrl = URL(string: user.userImage) {
+        imgUser.kf.indicatorType = .activity
+        imgUser.kf.indicator?.startAnimatingView()
+            imgUser.kf.setImage(with: imageUrl, placeholder: UIImage(named: "img_profile"), options: nil, progressBlock: nil) { (_) in
+            self.imgUser.kf.indicator?.stopAnimatingView()
         }
+     }
         lblUserName.text = user.name
         let userStatus = user.readStatus == "unread" ? "img_active_user" : "img_inactive_user"
         //btnName.setImage(UIImage(named: userStatus), for: .normal)
@@ -33,9 +41,16 @@ class FreshMatchesCell: UICollectionViewCell {
     
 
         func setupReviewLater(user: UserProfile) {
-            if let imgURL = URL(string: user.image1) {
-                imgUser.kf.setImage(with: imgURL)
+//            if let imgURL = URL(string: user.image1) {
+//                imgUser.kf.setImage(with: imgURL)
+//            }
+            if let imageUrl = URL(string: user.image1) {
+            imgUser.kf.indicatorType = .activity
+            imgUser.kf.indicator?.startAnimatingView()
+                imgUser.kf.setImage(with: imageUrl, placeholder: UIImage(named: "img_profile"), options: nil, progressBlock: nil) { (_) in
+                self.imgUser.kf.indicator?.stopAnimatingView()
             }
+         }
             lblUserName.text = user.firstName
             let userStatus = user.status == "active" ? "img_active_user" : "img_inactive_user"
             //btnName.setImage(UIImage(named: userStatus), for: .normal)
@@ -43,9 +58,16 @@ class FreshMatchesCell: UICollectionViewCell {
     
     func setupMatchesList(user:MatchConversation) {
         
-        if let imgURL = URL(string: user.userImage) {
-            imgUser.kf.setImage(with: imgURL)
+//        if let imgURL = URL(string: user.userImage) {
+//            imgUser.kf.setImage(with: imgURL)
+//        }
+        if let imageUrl = URL(string: user.userImage) {
+        imgUser.kf.indicatorType = .activity
+        imgUser.kf.indicator?.startAnimatingView()
+        imgUser.kf.setImage(with: imageUrl, placeholder: UIImage(named: "img_profile"), options: nil, progressBlock: nil) { (_) in
+            self.imgUser.kf.indicator?.stopAnimatingView()
         }
+     }
         lblUserName.text = user.name
         if (Date().timeIntervalSince1970 - user.lastseen >= (60 * 2)) != nil {
             btnStatus.isSelected = false

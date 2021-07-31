@@ -130,7 +130,9 @@ class UserDetailsTVC: UITableViewController, TagListViewDelegate {
             return
         }
         if AppSupport.isLikeLimited == "yes" && AppSupport.remainingLikes == 0 {
-            let vc = UpgradeVC.instantiate(fromAppStoryboard: .Upgrade)
+            let vc = UpdateNowVC.instantiate(fromAppStoryboard: .Upgrade)
+            vc.header = "OOPS!!"
+            vc.message = "You have run out of your likes limit. Buy new likes now."
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true, completion: nil)
             return
@@ -147,12 +149,15 @@ class UserDetailsTVC: UITableViewController, TagListViewDelegate {
             swipeUser(userID: userId, status: .reviewLater)
             return
         }
-        if AppSupport.isLikeLimited == "yes" && AppSupport.reviewLater == 0 {
-            let vc = SubscribeVC.instantiate(fromAppStoryboard: .Upgrade)
-            vc.modalPresentationStyle = .overFullScreen
+        if AppSupport.isLikeLimited == "yes" && AppSupport.remainingLikes == 0 {
+            let vc = UpdateNowVC.instantiate(fromAppStoryboard: .Upgrade)
+            vc.header = "OOPS!!"
+            vc.message = "You have exhausted your review limit. Buy more credits."
+            vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true, completion: nil)
             return
         }
+
      
         swipeUser(userID: userId, status: .reviewLater)
 //        onReviewLater?()
@@ -338,18 +343,18 @@ extension UserDetailsTVC {
             "user_id": userID
         ] as [String : Any]
         
-        NetworkManager.Discover.swipeProfiles(param: param, { (message) in
+        NetworkManager.Discover.swipeProfiles(param: param, { (details) in
             self.hideHUD()
             
-//            if let matchDetails = details {
-//                let vc = MatchUserVC.instantiate(fromAppStoryboard: .Discover)
-//                vc.matchDetails = matchDetails
-//                let nvc = UINavigationController(rootViewController: vc)
-//                nvc.modalPresentationStyle = .fullScreen
-//                nvc.modalTransitionStyle = .crossDissolve
-//                nvc.isNavigationBarHidden = true
-//                self.present(nvc, animated: true, completion: nil)
-//            }
+            if let matchDetails = details {
+                let vc = MatchUserVC.instantiate(fromAppStoryboard: .Discover)
+                vc.matchDetails = matchDetails
+                let nvc = UINavigationController(rootViewController: vc)
+                nvc.modalPresentationStyle = .fullScreen
+                nvc.modalTransitionStyle = .crossDissolve
+                nvc.isNavigationBarHidden = true
+                self.present(nvc, animated: true, completion: nil)
+            }
 //
 //            if status == .rewind {
 //                self.bottomStack.isHidden = false
@@ -360,8 +365,13 @@ extension UserDetailsTVC {
             guard status == .like else { return }
             
             if AppSupport.isLikeLimited == "yes" && AppSupport.remainingLikes == 0 {
-                let alert = UIAlertController(title: "Oops!", message: "You have reached your daily limit of Likes. Please upgrade to enjoy unlimited Likes.")
-                self.present(alert, animated: true, completion: nil)
+                let vc = UpdateNowVC.instantiate(fromAppStoryboard: .Upgrade)
+                vc.txtTitle.text = "OOPS"
+                vc.txtMessage.text = "You have run out of your likes limit. Buy new likes now."
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true, completion: nil)
+//                let alert = UIAlertController(title: "Oops!", message: "You have reached your daily limit of Likes. Please upgrade to enjoy unlimited Likes.")
+//                self.present(alert, animated: true, completion: nil)
                 return
             }
             

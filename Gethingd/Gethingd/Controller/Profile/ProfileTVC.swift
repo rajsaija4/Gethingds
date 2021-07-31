@@ -47,6 +47,10 @@ class ProfileTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         lblName.text = User.details.firstName
         lblAddress.text = User.details.address
         if AppSupport.isOrder == "no" {
@@ -58,18 +62,16 @@ class ProfileTVC: UITableViewController {
             lblReviewLater.text = "REVIEW LATER : UNLIMITED"
         }
         
-        if let url = URL(string: User.details.image1) {
-            self.imgUser.kf.setImage(with: url)
+//        if let url = URL(string: User.details.image1) {
+//            self.imgUser.kf.setImage(with: url)
+//        }
+        if let imageUrl = URL(string: User.details.image1) {
+        imgUser.kf.indicatorType = .activity
+        imgUser.kf.indicator?.startAnimatingView()
+            imgUser.kf.setImage(with: imageUrl, placeholder: UIImage(named: "img_profile"), options: nil, progressBlock: nil) { (_) in
+            self.imgUser.kf.indicator?.stopAnimatingView()
         }
-        
-        
-        
-//        setupUI()
-       
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+     }
 //        setupDataUI()
 //        getProfile()
         
@@ -388,7 +390,8 @@ extension ProfileTVC {
 //                    self?.setupNavigationBar()
 //                }
                 vc.hidesBottomBarWhenPushed = true
-                navigationController?.pushViewController(vc, animated: false)
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: false)
             break
 //            case 4:
 //                guard isPurchase else {

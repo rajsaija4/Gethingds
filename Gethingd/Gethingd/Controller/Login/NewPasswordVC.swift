@@ -33,10 +33,10 @@ class NewPasswordVC: UIViewController {
         sender.isSelected = !sender.isSelected
         
         if sender.tag == 0 {
-            txtNewPassword.isSecureTextEntry = sender.isSelected
+            txtNewPassword.isSecureTextEntry = !sender.isSelected
         }
         if sender.tag == 1 {
-            txtNewPassword.isSecureTextEntry = sender.isSelected
+            txtNewPassword.isSecureTextEntry = !sender.isSelected
         }
      }
     /*
