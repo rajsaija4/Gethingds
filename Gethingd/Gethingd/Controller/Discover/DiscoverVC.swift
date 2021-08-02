@@ -45,17 +45,17 @@ class DiscoverVC: UIViewController {
         super.viewDidLoad()
         timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true, block: { [weak self] (timer) in
                     self?.getUserStatus()
-                    
-            
-            
-                })
+                   })
                 
               
         setupUI()
         
     }
     
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+       
+    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()

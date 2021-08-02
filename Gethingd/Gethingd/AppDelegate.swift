@@ -159,6 +159,7 @@ extension AppDelegate {
     }
     
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        print(fcmToken)
         AppUserDefaults.save(value: fcmToken ?? "", forKey: .fcmToken)
     }
     

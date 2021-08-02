@@ -3,23 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>1002906035447-kn5bdnntgg739k11fibok0d2fj1gbg91.apps.googleusercontent.com</string>
+	<string>351382606491-m3ras6sta0ll75g97ltuq7raifaric6k.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1002906035447-kn5bdnntgg739k11fibok0d2fj1gbg91</string>
+	<string>com.googleusercontent.apps.351382606491-m3ras6sta0ll75g97ltuq7raifaric6k</string>
 	<key>ANDROID_CLIENT_ID</key>
-	<string>1002906035447-1vrufgk1kqu7cou8ugs2j84uc59hdkqu.apps.googleusercontent.com</string>
+	<string>351382606491-9b1at78n5p0abt5ukctehttplrgs5u6i.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCAOjirFcdHFUPLJF52Jw0sTX92AGl-uFs</string>
+	<string>AIzaSyAkkNL4HOyA-_AjbYhr3p3bwd-le0gasXM</string>
 	<key>GCM_SENDER_ID</key>
-	<string>1002906035447</string>
+	<string>351382606491</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.Zodiap</string>
+	<string>com.gathingd123</string>
 	<key>PROJECT_ID</key>
-	<string>zodiap-b5bf9</string>
+	<string>gethingd-45e1d</string>
 	<key>STORAGE_BUCKET</key>
-	<string>zodiap-b5bf9.appspot.com</string>
+	<string>gethingd-45e1d.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -31,8 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1002906035447:ios:25ebc224a9e8e370aedff2</string>
-	<key>DATABASE_URL</key>
-	<string>https://zodiap-b5bf9.firebaseio.com</string>
+	<string>1:351382606491:ios:ff0c77060c214b086f6c3e</string>
 </dict>
 </plist>

@@ -312,6 +312,7 @@ extension ProfileTVC {
         showHUD()
         NetworkManager.Profile.logoutProfile { (message) in
             self.hideHUD()
+            
             User.details.delete()
             UserDefaults.standard.removeObject(forKey: "btoken")
             APPDEL?.setupLogin()
@@ -419,6 +420,16 @@ extension ProfileTVC {
                 self.navigationController?.pushViewController(vc, animated: true)
             break
             case 5:
+                
+//                let vc = DiscoverVC.init()
+//                vc.timer.invalidate()
+                guard let mainTVC = ((ROOTVC as? UINavigationController)?.viewControllers.first as? UITabBarController) else {
+                    return
+                }
+                
+                guard let discoverVC = (mainTVC.viewControllers?[1] as? UINavigationController)?.viewControllers.first as? DiscoverVC else { return }
+                discoverVC.timer.invalidate()
+                
                 logoutProfile()
                 break
 //            case 8:
