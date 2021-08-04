@@ -12,10 +12,13 @@ class UpdateNowVC: UIViewController {
     
     var header:String = ""
     var message:String = ""
+    var onreloadColl:(()-> Void)?
     @IBOutlet weak var txtTitle: UILabel!
     @IBOutlet weak var txtMessage: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         txtTitle.text = header
         txtMessage.text = message
 
@@ -27,11 +30,13 @@ class UpdateNowVC: UIViewController {
             let vc = SubscribeVC.instantiate(fromAppStoryboard: .Upgrade)
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true)
-            self.dismiss(animated: true, completion: nil)
+//            self.dismiss(animated: true, completion: nil)
         }
         
         if sender.tag == 1 {
+            onreloadColl?()
             self.dismiss(animated: true, completion: nil)
+            
         }
 //        if let url = URL(string: "http://itunes.apple.com/app/id\(APPID)") {
 //            UIApplication.shared.open(url, options: [:], completionHandler: nil)

@@ -28,6 +28,7 @@ class MessageVC: MessagesViewController {
     var onPopView: (() -> Void)?
     var oppositeUserName:String = ""
     var match_Id:Int = 0
+    var selectedUserId:Int = 0
     var userImage: String = ""
     var isFromNotification = false
   
@@ -200,12 +201,12 @@ extension MessageVC {
     
     @objc fileprivate func onReportBtnTap() {
         
-        let alert = UIAlertController(title: "", message: "Select Option", actionNames: ["UnMatch", "Report"]) { (action) in
+        let alert = UIAlertController(title: "", message: "Select Option", actionNames: ["Unmatch", "Report"]) { (action) in
             guard let actionName = action.title else { return }
             let vc = ReportVC.instantiate(fromAppStoryboard: .Report)
             vc.modalPresentationStyle = .overCurrentContext
             vc.reportType = actionName
-//            vc.selectedUserId = self.conversation.userId
+            vc.selectedUserId = self.selectedUserId
             self.present(vc, animated: true, completion: nil)
         }
 

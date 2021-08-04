@@ -51,7 +51,7 @@ extension ReportVC {
     
     fileprivate func getReasons() {
         showHUD()
-        let param = ["type": reportType]
+        let param = ["report_type": reportType]
         NetworkManager.Report.getReasons(param: param){ (reasons) in
             self.hideHUD()
             self.arrReason.removeAll()

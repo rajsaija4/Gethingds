@@ -15,6 +15,16 @@ class ProfilePhotoCollectionCell: UICollectionViewCell {
         super.awakeFromNib()
        
     }
- 
+    func setImage(string:String) {
+        if let imageUrl = URL(string: string) {
+            imgProfiles.kf.indicatorType = .activity
+            imgProfiles.kf.indicator?.startAnimatingView()
+            imgProfiles.kf.setImage(with: imageUrl, placeholder: UIImage(named: "img_profile"), options: nil, progressBlock: nil) { (_) in
+             self.imgProfiles.kf.indicator?.stopAnimatingView()
+         }
+      }
+        
+        
+    }
 
 }

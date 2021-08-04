@@ -78,6 +78,9 @@ extension LoginVC {
     
         let param = ["email": email,
                      "password":password,
+                     "device_type":"ios",
+                     "fcm_token": AppUserDefaults.value(forKey: .fcmToken, fallBackValue: "123").stringValue
+
                      
         ] as [String:Any]
         showHUD()

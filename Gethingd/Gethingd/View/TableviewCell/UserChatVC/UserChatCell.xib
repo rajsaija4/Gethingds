@@ -22,17 +22,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="609" height="186"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xf5-xz-ER5">
-                        <rect key="frame" x="75" y="63" width="20" height="20"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20" id="WPi-l6-IoD"/>
-                            <constraint firstAttribute="width" constant="20" id="wzf-Bd-i6f"/>
-                        </constraints>
-                        <state key="normal" image="img_inactive_user"/>
-                        <state key="selected" image="img_active_user"/>
-                    </button>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="eA7-8R-LdO">
-                        <rect key="frame" x="92" y="70" width="207.5" height="46"/>
+                        <rect key="frame" x="100" y="70" width="207.5" height="46"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Snow " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTh-ow-G4T">
                                 <rect key="frame" x="0.0" y="0.0" width="85.5" height="21"/>
@@ -82,17 +73,27 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xf5-xz-ER5">
+                        <rect key="frame" x="70" y="65.5" width="15" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="WPi-l6-IoD"/>
+                            <constraint firstAttribute="width" constant="15" id="wzf-Bd-i6f"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                        <state key="normal" image="img_inactive_user"/>
+                        <state key="selected" image="img_active_user"/>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="Xf5-xz-ER5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="55" id="4dD-Fh-KDd"/>
+                    <constraint firstItem="Xf5-xz-ER5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="50" id="4dD-Fh-KDd"/>
                     <constraint firstItem="XVW-Ac-7vu" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="BiF-zE-xYy"/>
                     <constraint firstAttribute="trailingMargin" secondItem="3Po-uY-UNx" secondAttribute="trailing" constant="14" id="FOO-hP-0xx"/>
                     <constraint firstItem="3Po-uY-UNx" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="OqM-me-gXz"/>
                     <constraint firstItem="XVW-Ac-7vu" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="RC2-Uv-dTo"/>
                     <constraint firstItem="eA7-8R-LdO" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="jia-SD-NhG"/>
                     <constraint firstItem="Xf5-xz-ER5" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="-20" id="rT4-Bt-srH"/>
-                    <constraint firstItem="eA7-8R-LdO" firstAttribute="leading" secondItem="XVW-Ac-7vu" secondAttribute="trailing" constant="8" id="to0-yO-icJ"/>
+                    <constraint firstItem="eA7-8R-LdO" firstAttribute="leading" secondItem="XVW-Ac-7vu" secondAttribute="trailing" constant="16" id="to0-yO-icJ"/>
                     <constraint firstItem="XVW-Ac-7vu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="14" id="zib-By-Nz2"/>
                 </constraints>
             </tableViewCellContentView>
@@ -111,6 +112,6 @@
     </objects>
     <resources>
         <image name="img_active_user" width="6" height="6"/>
-        <image name="img_inactive_user" width="6" height="6"/>
+        <image name="img_inactive_user" width="33" height="33"/>
     </resources>
 </document>

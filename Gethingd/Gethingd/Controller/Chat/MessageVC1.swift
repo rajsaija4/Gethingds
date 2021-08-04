@@ -110,7 +110,9 @@ extension MessageVC1: UITableViewDelegate {
 //            self?.getConversation()
 //        }
 //        vc.conversation = arrMatchesMessage[indexPath.row]
+    
         vc.match_Id = arrMessagesList[indexPath.row].matchId
+        vc.selectedUserId = arrMessagesList[indexPath.row].userId
         vc.userImage = arrMessagesList[indexPath.row].userImage
         vc.oppositeUserName = arrMessagesList[indexPath.row].userName
         (ROOTVC as? UINavigationController)?.pushViewController(vc, animated: true)

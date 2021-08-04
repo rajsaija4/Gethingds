@@ -110,6 +110,7 @@ extension MatchesVC: UICollectionViewDelegate {
         vc.hidesBottomBarWhenPushed = true
         vc.userImage = arrMatchesList[indexPath.row].userImage
         vc.hidesBottomBarWhenPushed = true
+        vc.selectedUserId = arrMatchesList[indexPath.row].userId
         vc.oppositeUserName = arrMatchesList[indexPath.row].name
         vc.match_Id = arrMatchesList[indexPath.row].matchId
         (ROOTVC as? UINavigationController)?.pushViewController(vc, animated: true)
@@ -148,13 +149,14 @@ extension MatchesVC {
             showHUD()
     
             NetworkManager.Chat.getMatchDetails { (conversation) in
-                self.hideHUD()
+               
                 self.arrMatchesList.removeAll()
                 for data in conversation.conversationNotStartedArray {
                     self.arrMatchesList.append(data)
                 }
                 
                 self.collMatches.reloadData()
+                self.hideHUD()
     
 //                self.tabBarController?.tabBar.items?.last?.badgeValue = conversation.unReadCount > 0 ? "\(conversation.unReadCount)" : nil
     

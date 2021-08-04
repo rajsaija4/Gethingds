@@ -614,6 +614,28 @@ extension NetworkManager {
         }
      }
         
+        static func getWhoLikedMe( _ success: @escaping ([UserProfile]) -> Void, _ fail: @escaping (String) -> Void) {
+           
+           NetworkCaller.getRequest(url: URLManager.Chat.whoLikedMe, params: nil, headers: header, { (response) in
+               
+               guard response.isSuccess else {
+                   fail(response.message)
+                   return
+               }
+               
+               var arrData: [UserProfile] = []
+               
+               for data in response["data"].arrayValue {
+                   arrData.append(UserProfile(data))
+               }
+               
+               success(arrData)
+               
+           }) { (error) in
+               fail(error.localizedDescription)
+           }
+        }
+        
   
     
     
@@ -644,7 +666,7 @@ extension NetworkManager {
         
         static func getReasons(param: Parameters, _ success: @escaping ([ReportReason]) -> Void, _ fail: @escaping (String) -> Void) {
             
-            NetworkCaller.getRequest(url: URLManager.Report.reasons, params: param, headers: header, { (response) in
+            NetworkCaller.postRequest(url: URLManager.Report.reasons, params: param, headers: header, { (response) in
                 
                 guard response.isSuccess else {
                     fail(response.message)
@@ -653,7 +675,7 @@ extension NetworkManager {
                 
                 var arrReportReason: [ReportReason] = []
                 
-                for reason in response["reasons"].arrayValue {
+                for reason in response["data"].arrayValue {
                     arrReportReason.append(ReportReason(reason))
                 }
                 
@@ -667,7 +689,7 @@ extension NetworkManager {
       
         static func actionAccount(param: Parameters,_ success: @escaping (String) -> Void, _ fail: @escaping (String) -> Void) {
             
-            NetworkCaller.getRequest(url: URLManager.Report.actionAccount, params: param, headers: header, { (response) in
+            NetworkCaller.postRequest(url: URLManager.Report.actionAccount, params: param, headers: header, { (response) in
                 
                 guard response.isSuccess else {
                     fail(response.message)

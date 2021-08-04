@@ -44,6 +44,7 @@ class UserDetailsTVC: UITableViewController, TagListViewDelegate {
     var infant = 0
     var arrTags:[TagList] = []
     var arrPassion:[String] = []
+    var isfromWhoLikedMe:Bool = false
     var newborn = 0
     var toddler = 0
     var preschooler = 0
@@ -133,15 +134,20 @@ class UserDetailsTVC: UITableViewController, TagListViewDelegate {
             let vc = UpdateNowVC.instantiate(fromAppStoryboard: .Upgrade)
             vc.header = "OOPS!!"
             vc.message = "You have run out of your likes limit. Buy new likes now."
-            vc.modalPresentationStyle = .fullScreen
+            vc.modalPresentationStyle = .overCurrentContext
+            vc.modalTransitionStyle = .crossDissolve
+//            vc.onreloadColl = {
+//                self.setupUI()
+//            }
             self.present(vc, animated: true, completion: nil)
             return
         }
         swipeUser(userID: userId, status: .like)
         AppSupport.remainingLikes -= 1
 //        onLikeUser?()
+        if isfromWhoLikedMe == false {
         self.dismiss(animated: true, completion: nil)
-        
+        }
     }
     
     @IBAction func onSuperLikeBtnTap(_ sender: UIButton) {
@@ -153,7 +159,11 @@ class UserDetailsTVC: UITableViewController, TagListViewDelegate {
             let vc = UpdateNowVC.instantiate(fromAppStoryboard: .Upgrade)
             vc.header = "OOPS!!"
             vc.message = "You have exhausted your review limit. Buy more credits."
-            vc.modalPresentationStyle = .fullScreen
+            vc.modalPresentationStyle = .overCurrentContext
+            vc.modalTransitionStyle = .crossDissolve
+//            vc.onreloadColl = {
+//                self.setupUI()
+//            }
             self.present(vc, animated: true, completion: nil)
             return
         }
@@ -345,7 +355,6 @@ extension UserDetailsTVC {
         
         NetworkManager.Discover.swipeProfiles(param: param, { (details) in
             self.hideHUD()
-            
             if let matchDetails = details {
                 let vc = MatchUserVC.instantiate(fromAppStoryboard: .Discover)
                 vc.matchDetails = matchDetails
@@ -366,13 +375,16 @@ extension UserDetailsTVC {
             
             if AppSupport.isLikeLimited == "yes" && AppSupport.remainingLikes == 0 {
                 let vc = UpdateNowVC.instantiate(fromAppStoryboard: .Upgrade)
-                vc.txtTitle.text = "OOPS"
-                vc.txtMessage.text = "You have run out of your likes limit. Buy new likes now."
-                vc.modalPresentationStyle = .fullScreen
+                vc.header = "OOPS!!"
+                vc.message = "You have run out of your likes limit. Buy new likes now."
+                vc.modalPresentationStyle = .overCurrentContext
+                vc.modalTransitionStyle = .crossDissolve
+//                vc.onreloadColl = {
+//                    self.setupUI()
+//                }
                 self.present(vc, animated: true, completion: nil)
-//                let alert = UIAlertController(title: "Oops!", message: "You have reached your daily limit of Likes. Please upgrade to enjoy unlimited Likes.")
-//                self.present(alert, animated: true, completion: nil)
                 return
+
             }
             
 
@@ -443,7 +455,8 @@ extension UserDetailsTVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfilePhotoCollectionCell", for: indexPath) as! ProfilePhotoCollectionCell
-        cell.imgProfiles.kf.setImage(with: URL(string: collImage[indexPath.row]))
+        cell.setImage(string: collImage[indexPath.row])
+//        cell.imgProfiles.kf.setImage(with: URL(string: collImage[indexPath.row]))
         cell.cornerRadius = 9
         cell.clipsToBounds = true
         return cell

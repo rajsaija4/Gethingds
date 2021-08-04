@@ -41,6 +41,7 @@ class UserProfile: NSObject {
     var userSetting:UserSetting!
     var passion:[String] = []
     var jobTitle:String = ""
+    var lastSeen:Double = 0.0
     
     
   
@@ -84,6 +85,7 @@ class UserProfile: NSObject {
         for pas in json["passion"].arrayValue{
             passion.append(pas.stringValue)
         }
+        lastSeen = json["lastseen"].doubleValue
        
 //        isSuperLike = json["super_like"].stringValue != "No"
 //        isButtonHide = json["button_hide"].boolValue

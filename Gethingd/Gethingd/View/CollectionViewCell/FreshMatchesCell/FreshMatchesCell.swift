@@ -69,7 +69,7 @@ class FreshMatchesCell: UICollectionViewCell {
         }
      }
         lblUserName.text = user.name
-        if (Date().timeIntervalSince1970 - user.lastseen >= (60 * 2)) != nil {
+        if Date().timeIntervalSince1970 - user.lastseen >= 120{
             btnStatus.isSelected = false
         }
         else {
@@ -78,6 +78,26 @@ class FreshMatchesCell: UICollectionViewCell {
         btnReviewLater.isHidden = true
 //        let userStatus = user. == "active" ? "img_active_user" : "img_inactive_user"
     }
+    
+    func setupWhoLikedMe(user:UserProfile) {
+       if let imageUrl = URL(string: user.image1) {
+        imgUser.kf.indicatorType = .activity
+        imgUser.kf.indicator?.startAnimatingView()
+        imgUser.kf.setImage(with: imageUrl, placeholder: UIImage(named: "img_profile"), options: nil, progressBlock: nil) { (_) in
+            self.imgUser.kf.indicator?.stopAnimatingView()
+        }
+     }
+        lblUserName.text = user.firstName
+        if Date().timeIntervalSince1970 - user.lastSeen >= 120{
+            btnStatus.isSelected = false
+        }
+        else {
+            btnStatus.isSelected = true
+        }
+        btnReviewLater.isHidden = true
+//        let userStatus = user. == "active" ? "img_active_user" : "img_inactive_user"
+    }
+
 
 
 }

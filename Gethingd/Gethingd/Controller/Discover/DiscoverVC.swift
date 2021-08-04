@@ -187,9 +187,8 @@ extension DiscoverVC {
                 vc.txtTitle.text = "OOPS"
                 vc.txtMessage.text = "You have run out of your likes limit. Buy new likes now."
                 vc.modalPresentationStyle = .fullScreen
+                vc.modalTransitionStyle = .crossDissolve
                 self.present(vc, animated: true, completion: nil)
-//                let alert = UIAlertController(title: "Oops!", message: "You have reached your daily limit of Likes. Please upgrade to enjoy unlimited Likes.")
-//                self.present(alert, animated: true, completion: nil)
                 return
             }
             
@@ -236,9 +235,15 @@ extension DiscoverVC {
             let vc = UpdateNowVC.instantiate(fromAppStoryboard: .Upgrade)
             vc.header = "OOPS!!"
             vc.message = "You have run out of your likes limit. Buy new likes now."
-            vc.modalPresentationStyle = .fullScreen
+            vc.modalPresentationStyle = .overCurrentContext
+            vc.modalTransitionStyle = .crossDissolve
+            vc.onreloadColl = {
+                self.setupUI()
+            }
             self.present(vc, animated: true, completion: nil)
             return
+
+
         }
         kolodaView?.swipe(.right)
         AppSupport.remainingLikes -= 1
@@ -272,7 +277,11 @@ extension DiscoverVC {
             let vc = UpdateNowVC.instantiate(fromAppStoryboard: .Upgrade)
             vc.header = "OOPS!!"
             vc.message = "You have exhausted your review limit. Buy more credits."
-            vc.modalPresentationStyle = .overFullScreen
+            vc.modalPresentationStyle = .overCurrentContext
+            vc.modalTransitionStyle = .crossDissolve
+            vc.onreloadColl = {
+                self.setupUI()
+            }
             self.present(vc, animated: true, completion: nil)
             return
         }
@@ -363,7 +372,11 @@ extension DiscoverVC: KolodaViewDelegate {
                     let vc = UpdateNowVC.instantiate(fromAppStoryboard: .Upgrade)
                     vc.header = "OOPS!!"
                     vc.message = "You have run out of your likes limit. Buy new likes now."
-                    vc.modalPresentationStyle = .fullScreen
+                    vc.modalPresentationStyle = .overCurrentContext
+                    vc.modalTransitionStyle = .crossDissolve
+                    vc.onreloadColl = {
+                        self.setupUI()
+                    }
                     self.present(vc, animated: true, completion: nil)
                     return
 
@@ -404,6 +417,10 @@ extension DiscoverVC: KolodaViewDelegate {
                 vc.header = "OOPS!!"
                 vc.message = "You have exhausted your review limit. Buy more credits."
                 vc.modalPresentationStyle = .overCurrentContext
+                vc.modalTransitionStyle = .crossDissolve
+                vc.onreloadColl = {
+                    self.setupUI()
+                }
                 self.present(vc, animated: true, completion: nil)
                 return
             }

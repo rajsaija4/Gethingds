@@ -46,7 +46,7 @@ class UserChatCell: UITableViewCell {
         lblTIime.text = user.createAt.displayTime
         lblUnread.isHidden = user.unreadMessageCount == 0
         lblUnread.text = "\(user.unreadMessageCount)"
-        if Date().timeIntervalSince1970 - user.lastSeen >= 60 * 2{
+        if Date().timeIntervalSince1970 - user.lastSeen >= 120 {
             btnStatus.isSelected = false
         }
         else{

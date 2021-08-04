@@ -18,9 +18,9 @@ class ReportReason: NSObject {
     
     init(_ json: JSON) {
         super.init()
-        id = json["reason_id"].intValue
-        icon = json["reason_icon"].stringValue
-        message = json["reason_message"].stringValue
+        id = json["id"].intValue
+        icon = json["icon"].stringValue
+        message = json["description"].stringValue
     }
     
 }

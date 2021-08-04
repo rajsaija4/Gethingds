@@ -70,6 +70,7 @@ extension MatchUserVC {
         vc.userImage = matchDetails.matchUserImage
         vc.oppositeUserName = matchDetails.matchUserName
         self.navigationController?.pushViewController(vc, animated: true)
+//        self.dismiss(animated: true, completion: nil)
 //        (ROOTVC as? UINavigationController)?.pushViewController(vc, animated: true)
     }
 

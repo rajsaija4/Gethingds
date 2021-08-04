@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Ellipse 1270-1.png",
+      "filename" : "offline.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Ellipse 1270-1@2x.png",
+      "filename" : "offline@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Ellipse 1270-1@3x.png",
+      "filename" : "offline@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -1386,7 +1386,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMn-HP-LP2">
-                                                            <rect key="frame" x="305" y="7" width="10" height="16"/>
+                                                            <rect key="frame" x="305" y="3" width="10" height="24"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="16" id="4QW-bM-ACL"/>
                                                                 <constraint firstAttribute="width" constant="10" id="Pwb-wJ-p0c"/>
@@ -2626,8 +2626,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LDf-O0-wBQ">
-                                                    <rect key="frame" x="20" y="8" width="374" height="114"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LDf-O0-wBQ">
+                                                    <rect key="frame" x="20" y="8" width="374" height="96"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZFO-uT-pDx" customClass="UIControl">
                                                             <rect key="frame" x="0.0" y="0.0" width="374" height="56"/>
@@ -2675,8 +2675,8 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
-                                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pcw-Cf-qrP" customClass="TagListView" customModule="TagListView">
-                                                            <rect key="frame" x="0.0" y="64" width="374" height="50"/>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pcw-Cf-qrP" customClass="TagListView" customModule="TagListView">
+                                                            <rect key="frame" x="0.0" y="64" width="374" height="32"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" id="VsW-PQ-qqB"/>
@@ -2985,6 +2985,17 @@
             <point key="canvasLocation" x="6369.6000000000004" y="-2.2167487684729066"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="MfI-g4-4aZ">
+            <size key="intrinsicContentSize" width="322" height="28"/>
+        </designable>
+        <designable name="pcw-Cf-qrP">
+            <size key="intrinsicContentSize" width="374" height="32"/>
+        </designable>
+        <designable name="w0D-YI-Zim">
+            <size key="intrinsicContentSize" width="255" height="32"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Img_Setting" width="28" height="28"/>
         <image name="Img_closeImage" width="12" height="12"/>

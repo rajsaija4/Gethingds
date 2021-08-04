@@ -62,11 +62,12 @@ struct URLManager {
         static let sendMessage = basePath + "send_message"
         static let allmessageConversation = basePath + "message_conversation"
         static let userStatus = basePath + "update_user_lastseen"
+        static let whoLikedMe = basePath + "get_who_like_me"
     }
     
     struct Report {
-        static let reasons = basePath + "unmatch_details"
-        static let actionAccount = basePath + "unmatch_account"
+        static let reasons = basePath + "get_reson"
+        static let actionAccount = basePath + "report_user"
     }
     
     struct AllNotification {

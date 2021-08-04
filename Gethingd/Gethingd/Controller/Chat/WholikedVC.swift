@@ -7,22 +7,59 @@
 
 import UIKit
 
-class WholikedVC: UIViewController {
+class WholikedVC: UIViewController, UISearchBarDelegate {
 
     @IBOutlet weak var collWholike: UICollectionView! {
         didSet {
             collWholike.registerCell(FreshMatchesCell.self)
         }
     }
+    @IBOutlet weak var searchBar: UISearchBar!
+    var arrUserData:[UserProfile] = []
+    var searchActive : Bool = false
+    var filtered:[UserProfile] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
 
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        collWholike.reloadData()
+        searchActive = false
+        getWhoLikedMe()
+        
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+            searchActive = true;
+        }
+
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+            searchActive = false;
+        }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+            searchActive = false;
+        }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+            searchActive = false;
+        }
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if searchText.count > 0 {
+            filtered = arrUserData.filter({$0.firstName.contains(searchText)})
+            searchActive = true
+            self.collWholike.reloadData()
+        }
+        else {
+            searchActive = false
+            self.collWholike.reloadData()
+        }
     }
     
 
@@ -40,14 +77,21 @@ class WholikedVC: UIViewController {
 
 extension WholikedVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        if(searchActive){
+            return filtered.count
+        }
+        return arrUserData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 //        return cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FreshMatchesCell", for: indexPath) as! FreshMatchesCell
-        cell.lblUserName.textAlignment = .center
-        cell.btnStatus.isHidden = true
+        if(searchActive){
+            cell.setupWhoLikedMe(user: filtered[indexPath.row])
+        }
+        else {
+        cell.setupWhoLikedMe(user: arrUserData[indexPath.row])
+        }
         return cell
         
     }
@@ -57,7 +101,13 @@ extension WholikedVC: UICollectionViewDataSource {
 
 extension WholikedVC: UICollectionViewDelegate {
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = UserDetailsTVC.instantiate(fromAppStoryboard: .Discover)
+        vc.user = arrUserData[indexPath.row]
+        vc.modalPresentationStyle = .fullScreen
+        vc.isfromWhoLikedMe = true
+        self.present(vc, animated: true, completion: nil)
+    }
     
     
 }
@@ -82,4 +132,23 @@ extension WholikedVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 8
     }
+}
+
+
+extension WholikedVC {
+    
+    func getWhoLikedMe(){
+        showHUD()
+        NetworkManager.Chat.getWhoLikedMe { (response) in
+            self.arrUserData.removeAll()
+            self.arrUserData.append(contentsOf: response)
+            self.collWholike.reloadData()
+            self.hideHUD()
+        } _: { (error) in
+            self.hideHUD()
+            print(error)
+        }
+
+    }
+    
 }
