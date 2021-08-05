@@ -12,6 +12,8 @@ class PassionSetting:NSObject {
     
     var noKids:Int = 0
     var passion:[TagList] = []
+    var minimumAge:Int = 0
+    var maximumAge:Int = 0
     
     
     init(json:JSON){
@@ -21,6 +23,8 @@ class PassionSetting:NSObject {
         for data in json["data"]["passion"].arrayValue {
             passion.append(TagList(json: data))
         }
+        minimumAge = json["data"]["minimum_age"].intValue
+        maximumAge = json["data"]["maximum_age"].intValue
         
         
     }

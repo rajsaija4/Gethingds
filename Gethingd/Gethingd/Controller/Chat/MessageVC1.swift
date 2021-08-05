@@ -21,8 +21,12 @@ class MessageVC1: UIViewController, UISearchBarDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MessageVC1.dismissKeyboard))
+//            view.addGestureRecognizer(tap)
 //        getAllMessageList()
         searchBar.delegate = self
+        searchBar.endEditing(true)
+        
        
 
         // Do any additional setup after loading the view.
@@ -36,7 +40,11 @@ class MessageVC1: UIViewController, UISearchBarDelegate {
         getAllMessageList()
            
     }
-   
+    
+//    @objc func dismissKeyboard() {
+//        view.endEditing(true)
+//    }
+//   
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
             searchActive = true;
         }
@@ -47,10 +55,15 @@ class MessageVC1: UIViewController, UISearchBarDelegate {
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
             searchActive = false;
+      
+
         }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-            searchActive = false;
+        searchBar.resignFirstResponder()
+        searchActive = false;
+            
+           
         }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -65,6 +78,8 @@ class MessageVC1: UIViewController, UISearchBarDelegate {
             self.tblChat.reloadData()
         }
     }
+    
+  
     /*
     // MARK: - Navigation
 

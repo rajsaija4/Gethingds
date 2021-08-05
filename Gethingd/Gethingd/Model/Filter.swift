@@ -9,14 +9,19 @@
 import UIKit
 
 struct Filter {
-    static var lookingFor = "both"
-    static var minAge = 18
-    static var maxAge = 100
+    static var lookingFor = ""
+    static var minAge = 0
+    static var defaultMinAge = 0
+    static var defaultMaximumAge = 0
+    static var defaultMinKids = 0
+    static var defaultMaxKids = 0
+    static var maxAge = 0
     static var distance = 0
     static var minKid = 0  // inch
-    static var maxKid = 3 // inch
+    static var maxKid = 0 // inch
     static var latitude = "0.0"
     static var longitude = "0.0"
+    static var place = ""
  
 
     
@@ -30,6 +35,7 @@ struct Filter {
         maxKid = 3
         latitude = "0.0"
         longitude = "0.0"
+        place = "rajkot"
        
     }
 }

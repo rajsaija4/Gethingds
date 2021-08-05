@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
 //        setupCreateProfileVC()
 //        setupLogin()
         setupAppDelegate()
+        getPassion() 
 //        setupMainTabBarController()
 //        return true
 //        editProfile()
@@ -255,5 +256,27 @@ extension AppDelegate {
         }
         */
         completionHandler([.alert, .sound])
+    }
+}
+
+
+extension AppDelegate {
+    
+    fileprivate func getPassion() {
+         NetworkManager.getPassion { (PassionSetting) in
+            Filter.defaultMinAge = PassionSetting.minimumAge
+            Filter.defaultMaximumAge = PassionSetting.maximumAge
+            Filter.minAge = PassionSetting.minimumAge
+            Filter.maxAge = PassionSetting.maximumAge
+            Filter.defaultMinKids = 0
+            Filter.defaultMaxKids = PassionSetting.noKids
+            Filter.lookingFor = "both"
+            Filter.distance = 0
+        
+         } _: { (error) in
+               print(error)
+       
+     }
+    
     }
 }

@@ -23,4 +23,4 @@ func SCREEN_HEIGHT_CAL(orignalSize:CGFloat) -> CGFloat { return orignalSize * SC
 
 let GooglePlaceAPIKey = "AIzaSyBw44keQPj2qC2m7cAt9pXzQzbvGA3m3I8"
 
-let APP_VERSION = 1.0
+let APP_VERSION = "1.0"

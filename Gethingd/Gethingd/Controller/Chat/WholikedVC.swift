@@ -21,6 +21,8 @@ class WholikedVC: UIViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MessageVC1.dismissKeyboard))
+//            view.addGestureRecognizer(tap)
         searchBar.delegate = self
 
         // Do any additional setup after loading the view.
@@ -32,6 +34,11 @@ class WholikedVC: UIViewController, UISearchBarDelegate {
         getWhoLikedMe()
         
     }
+    
+    
+//    @objc func dismissKeyboard() {
+//        view.endEditing(true)
+//    }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
             searchActive = true;
@@ -46,6 +53,8 @@ class WholikedVC: UIViewController, UISearchBarDelegate {
         }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+
             searchActive = false;
         }
 

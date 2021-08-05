@@ -19,6 +19,7 @@ class FilterTVC: UITableViewController {
     var gender = ""
 
     fileprivate var latitude: String = ""
+//    fileprivate var place:String = ""
     @IBOutlet weak var location: UIControl!
     fileprivate var longitude: String = ""
     var onFilter: (() -> Void)?
@@ -33,7 +34,6 @@ class FilterTVC: UITableViewController {
     @IBOutlet weak var lbl_location: UILabel!
     @IBOutlet weak var lblAge: UILabel!
     @IBOutlet weak var lbl_Distance: UILabel!
-    
     @IBOutlet weak var lbl_kidsCount: UILabel!
     //    @IBOutlet weak var lbl_Distance: UILabel!
 
@@ -44,10 +44,30 @@ class FilterTVC: UITableViewController {
         super.viewDidLoad()
         rangeAge.minDistance = 1
         rangeKidsCount.minDistance = 1
-        rangeAge.minValue = 18
-        rangeAge.maxValue = 100
-        rangeKidsCount.minValue = 0
-        rangeKidsCount.maxValue = 3
+        rangeAge.minValue = CGFloat(Filter.defaultMinAge)
+        rangeAge.maxValue = CGFloat(Filter.defaultMaximumAge)
+        rangeAge.selectedMinValue = CGFloat(Filter.minAge)
+        rangeAge.selectedMaxValue = CGFloat(Filter.maxAge)
+        rangeKidsCount.minValue = CGFloat(Filter.defaultMinKids)
+        rangeKidsCount.maxValue = CGFloat(Filter.defaultMaxKids)
+        rangeKidsCount.selectedMinValue = CGFloat(Filter.minKid)
+        lbl_location.text = Filter.place
+        
+        rangeKidsCount.selectedMaxValue = CGFloat(Filter.maxKid)
+        if Filter.lookingFor == "male" {
+            btn_gender[0].isSelected = true
+            
+        }
+        if Filter.lookingFor == "female"{
+            btn_gender[1].isSelected = true
+            
+        }
+        if Filter.lookingFor == "both"  {
+            btn_gender[2].isSelected = true
+            
+        }
+        
+        
         setupUI()
     }
     
@@ -124,6 +144,7 @@ extension FilterTVC {
         rangeDistance.selectedMaxValue = CGFloat(Filter.distance)
         rangeKidsCount.selectedMinValue = CGFloat(Filter.minKid)
         rangeKidsCount.selectedMaxValue = CGFloat(Filter.maxKid)
+        
        
 
         lblAge.text = "\(Filter.minAge)-\(Filter.maxAge)"
@@ -161,7 +182,15 @@ extension FilterTVC {
         Filter.maxAge = Int(rangeAge.selectedMaxValue)
         Filter.minKid = Int(rangeKidsCount.selectedMinValue)
         Filter.maxKid = Int(rangeKidsCount.selectedMaxValue)
-        Filter.lookingFor = gender
+        if gender == "male" {
+            Filter.lookingFor = "male"
+        }
+        if gender == "female" {
+            Filter.lookingFor = "female"
+        }
+        if gender == "both" {
+            Filter.lookingFor = "both"
+        }
         Filter.latitude = latitude
         Filter.longitude = longitude
       
@@ -231,6 +260,7 @@ extension FilterTVC: GMSAutocompleteViewControllerDelegate {
         var postalCode = ""
         
         let placeName = place.name ?? ""
+        Filter.place = placeName
         let address = place.formattedAddress ?? ""
         
         var addArray:[String] = []

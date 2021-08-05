@@ -23,6 +23,8 @@ class MatchesVC: UIViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MessageVC1.dismissKeyboard))
+//            view.addGestureRecognizer(tap)
 //        getConversation()
         searchBar.delegate = self
 
@@ -35,6 +37,11 @@ class MatchesVC: UIViewController, UISearchBarDelegate {
         getConversation()
 //        collMatches.reloadData()
     }
+    
+    
+//    @objc func dismissKeyboard() {
+//        view.endEditing(true)
+//    }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
             searchActive = true;
@@ -49,6 +56,8 @@ class MatchesVC: UIViewController, UISearchBarDelegate {
         }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+
             searchActive = false;
         }
 

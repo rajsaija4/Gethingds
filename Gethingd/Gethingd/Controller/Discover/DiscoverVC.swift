@@ -100,17 +100,17 @@ extension DiscoverVC {
         }
 
  
-        Filter.lookingFor = "both"
+//        Filter.lookingFor = "both"
         
         let param = [
             "looking_for": Filter.lookingFor,
-//            "min_age": Filter.minAge,
-//            "max_age": Filter.maxAge,
-//            "distance": Filter.distance,
-//            "min_kids": Filter.minKid,
-//            "max_kids": Filter.maxKid,
-//            "latitude": Filter.latitude,
-//            "longitude": Filter.longitude
+            "min_age": Filter.minAge,
+            "max_age": Filter.maxAge,
+            "distance": Filter.distance,
+            "min_kids": Filter.minKid,
+            "max_kids": Filter.maxKid,
+            "latitude": Filter.latitude,
+            "longitude": Filter.longitude
         ] as [String : Any]
             
         showHUD()
@@ -118,17 +118,7 @@ extension DiscoverVC {
             self.hideHUD()
            
             self.tabBarController?.tabBar.items?.last?.badgeValue = AppSupport.reviewLater > 0 ? "\(AppSupport.reviewLater)" : nil
-            
-            
-            if AppSupport.version > APP_VERSION {
-                let vc = UpdateNowVC.instantiate(fromAppStoryboard: .Upgrade)
-                vc.modalPresentationStyle = .overFullScreen
-                self.present(vc, animated: true, completion: nil)
-                return
-            }
-            
-            
-            self.arrUser.removeAll()
+              self.arrUser.removeAll()
             self.arrUser.append(contentsOf: users)
             self.kolodaView.reconfigureCards()
             self.kolodaView.reloadData()
@@ -145,6 +135,14 @@ extension DiscoverVC {
             self.kolodaView.reloadData()
             self.kolodaView.resetCurrentCardIndex()
             self.setupNoProfileView()
+        },{ (version) in
+            if version != APP_VERSION {
+                let vc = UpdateAppVC.instantiate(fromAppStoryboard: .Upgrade)
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true, completion: nil)
+                return
+            }
+            
         })
         
     }

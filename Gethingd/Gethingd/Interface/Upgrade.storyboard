@@ -47,13 +47,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ZOMATE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vUX-Bf-5Os">
-                                <rect key="frame" x="108" y="50" width="159.5" height="47"/>
+                                <rect key="frame" x="104" y="50" width="167" height="56"/>
                                 <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7rF-AE-E8N">
-                                <rect key="frame" x="20" y="117" width="375" height="550"/>
+                                <rect key="frame" x="20" y="126" width="375" height="541"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="SFd-nE-OuW">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="702"/>
@@ -101,7 +101,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="104" height="130"/>
                                                                                 <subviews>
                                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zEB-m9-gfr">
-                                                                                        <rect key="frame" x="8" y="36" width="88" height="58"/>
+                                                                                        <rect key="frame" x="8" y="34.5" width="88" height="61"/>
                                                                                         <subviews>
                                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_love" translatesAutoresizingMaskIntoConstraints="NO" id="N6y-Af-E7O">
                                                                                                 <rect key="frame" x="27" y="0.0" width="34" height="34.5"/>
@@ -110,7 +110,7 @@
                                                                                                 </constraints>
                                                                                             </imageView>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 Likes Daily" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CyP-gg-QoF">
-                                                                                                <rect key="frame" x="4" y="42.5" width="80.5" height="15.5"/>
+                                                                                                <rect key="frame" x="3.5" y="42.5" width="81.5" height="18.5"/>
                                                                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
                                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <nil key="highlightedColor"/>
@@ -148,7 +148,7 @@
                                                                                 <rect key="frame" x="104.5" y="0.0" width="114.5" height="130"/>
                                                                                 <subviews>
                                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rMN-3y-jp1">
-                                                                                        <rect key="frame" x="8" y="27" width="98.5" height="76"/>
+                                                                                        <rect key="frame" x="8" y="24" width="98.5" height="82"/>
                                                                                         <subviews>
                                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_astrolikes" translatesAutoresizingMaskIntoConstraints="NO" id="lgW-h9-nJi">
                                                                                                 <rect key="frame" x="30.5" y="0.0" width="37.5" height="37.5"/>
@@ -157,7 +157,7 @@
                                                                                                 </constraints>
                                                                                             </imageView>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 Astro Like Daily" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqK-l0-h0O">
-                                                                                                <rect key="frame" x="21" y="45.5" width="56" height="30.5"/>
+                                                                                                <rect key="frame" x="19.5" y="45.5" width="59" height="36.5"/>
                                                                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
                                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <nil key="highlightedColor"/>
@@ -192,7 +192,7 @@
                                                                                 <rect key="frame" x="219.5" y="0.0" width="115.5" height="130"/>
                                                                                 <subviews>
                                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CKY-ga-qkT">
-                                                                                        <rect key="frame" x="8" y="26.5" width="99.5" height="77"/>
+                                                                                        <rect key="frame" x="8" y="23.5" width="99.5" height="83"/>
                                                                                         <subviews>
                                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_swipe" translatesAutoresizingMaskIntoConstraints="NO" id="oHw-v3-Tpz">
                                                                                                 <rect key="frame" x="30.5" y="0.0" width="38" height="38.5"/>
@@ -201,7 +201,7 @@
                                                                                                 </constraints>
                                                                                             </imageView>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 Moon Boost Monthly" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZt-tc-1Ch">
-                                                                                                <rect key="frame" x="6.5" y="46.5" width="86" height="30.5"/>
+                                                                                                <rect key="frame" x="6" y="46.5" width="87" height="36.5"/>
                                                                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
                                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <nil key="highlightedColor"/>
@@ -252,7 +252,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
                                                                                 <subviews>
                                                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gat-Fv-5GL">
-                                                                                        <rect key="frame" x="17.5" y="0.0" width="300.5" height="50"/>
+                                                                                        <rect key="frame" x="23" y="0.0" width="289" height="50"/>
                                                                                         <subviews>
                                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_correct" translatesAutoresizingMaskIntoConstraints="NO" id="nb2-16-jdR">
                                                                                                 <rect key="frame" x="0.0" y="15" width="20" height="20"/>
@@ -262,7 +262,7 @@
                                                                                                 </constraints>
                                                                                             </imageView>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOON AND RISING SIGN FILTER UNLOCKED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Syc-Ek-I5H">
-                                                                                                <rect key="frame" x="28" y="17.5" width="272.5" height="15.5"/>
+                                                                                                <rect key="frame" x="28" y="16" width="261" height="18.5"/>
                                                                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
                                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <nil key="highlightedColor"/>
@@ -304,7 +304,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="167" height="50"/>
                                                                                 <subviews>
                                                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Taq-Dd-ohI">
-                                                                                        <rect key="frame" x="24" y="0.0" width="119.5" height="50"/>
+                                                                                        <rect key="frame" x="20.5" y="0.0" width="126.5" height="50"/>
                                                                                         <subviews>
                                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_rewind_upgrade" translatesAutoresizingMaskIntoConstraints="NO" id="GAa-FY-KnP">
                                                                                                 <rect key="frame" x="0.0" y="15" width="20" height="20"/>
@@ -314,7 +314,7 @@
                                                                                                 </constraints>
                                                                                             </imageView>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rewind - Locked" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JHi-HF-Jw8">
-                                                                                                <rect key="frame" x="28" y="18" width="91.5" height="14"/>
+                                                                                                <rect key="frame" x="28" y="16.5" width="98.5" height="17"/>
                                                                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <nil key="highlightedColor"/>
@@ -356,7 +356,7 @@
                                                                                 <rect key="frame" x="168" y="0.0" width="167" height="50"/>
                                                                                 <subviews>
                                                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xj8-mF-UKc">
-                                                                                        <rect key="frame" x="10.5" y="0.0" width="146" height="50"/>
+                                                                                        <rect key="frame" x="6" y="0.0" width="155" height="50"/>
                                                                                         <subviews>
                                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_planet" translatesAutoresizingMaskIntoConstraints="NO" id="IjE-VO-fKO">
                                                                                                 <rect key="frame" x="0.0" y="15" width="20" height="20"/>
@@ -366,7 +366,7 @@
                                                                                                 </constraints>
                                                                                             </imageView>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Galaxy Pass - Locked" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PvR-a5-Bfo">
-                                                                                                <rect key="frame" x="28" y="18" width="118" height="14"/>
+                                                                                                <rect key="frame" x="28" y="16.5" width="127" height="17"/>
                                                                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <nil key="highlightedColor"/>
@@ -469,7 +469,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="111.5" height="130"/>
                                                                                 <subviews>
                                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PNq-3t-Jp7">
-                                                                                        <rect key="frame" x="8" y="35" width="95.5" height="60"/>
+                                                                                        <rect key="frame" x="8" y="33.5" width="95.5" height="63"/>
                                                                                         <subviews>
                                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_love" translatesAutoresizingMaskIntoConstraints="NO" id="HlU-54-zCk">
                                                                                                 <rect key="frame" x="29.5" y="0.0" width="36.5" height="36.5"/>
@@ -478,7 +478,7 @@
                                                                                                 </constraints>
                                                                                             </imageView>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unlimited Likes" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i6y-kr-040">
-                                                                                                <rect key="frame" x="3" y="44.5" width="89.5" height="15.5"/>
+                                                                                                <rect key="frame" x="0.0" y="44.5" width="95.5" height="18.5"/>
                                                                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
                                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <nil key="highlightedColor"/>
@@ -516,7 +516,7 @@
                                                                                 <rect key="frame" x="112" y="0.0" width="111" height="130"/>
                                                                                 <subviews>
                                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vDq-Ib-Yvg">
-                                                                                        <rect key="frame" x="8" y="27.5" width="95" height="75"/>
+                                                                                        <rect key="frame" x="8" y="24.5" width="95" height="81"/>
                                                                                         <subviews>
                                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_astrolikes" translatesAutoresizingMaskIntoConstraints="NO" id="K8c-7q-Zbd">
                                                                                                 <rect key="frame" x="29" y="0.0" width="37" height="36.5"/>
@@ -525,7 +525,7 @@
                                                                                                 </constraints>
                                                                                             </imageView>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 Astro likes a day" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9TT-LA-pSh">
-                                                                                                <rect key="frame" x="10" y="44.5" width="75" height="30.5"/>
+                                                                                                <rect key="frame" x="7.5" y="44.5" width="80" height="36.5"/>
                                                                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
                                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <nil key="highlightedColor"/>
@@ -560,7 +560,7 @@
                                                                                 <rect key="frame" x="223.5" y="0.0" width="111.5" height="130"/>
                                                                                 <subviews>
                                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="D3N-Ef-UCH">
-                                                                                        <rect key="frame" x="8" y="27.5" width="95.5" height="75"/>
+                                                                                        <rect key="frame" x="8" y="24.5" width="95.5" height="81"/>
                                                                                         <subviews>
                                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_swipe" translatesAutoresizingMaskIntoConstraints="NO" id="I1S-pc-Vb8">
                                                                                                 <rect key="frame" x="29.5" y="0.0" width="36.5" height="36.5"/>
@@ -569,7 +569,7 @@
                                                                                                 </constraints>
                                                                                             </imageView>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 Moon Boost per month" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HzI-lY-5vT">
-                                                                                                <rect key="frame" x="1" y="44.5" width="93.5" height="30.5"/>
+                                                                                                <rect key="frame" x="0.0" y="44.5" width="95.5" height="36.5"/>
                                                                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
                                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <nil key="highlightedColor"/>
@@ -620,7 +620,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
                                                                                 <subviews>
                                                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="aGq-kO-qV4">
-                                                                                        <rect key="frame" x="17.5" y="0.0" width="300.5" height="50"/>
+                                                                                        <rect key="frame" x="23" y="0.0" width="289" height="50"/>
                                                                                         <subviews>
                                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_correct" translatesAutoresizingMaskIntoConstraints="NO" id="cdl-ta-w4d">
                                                                                                 <rect key="frame" x="0.0" y="15" width="20" height="20"/>
@@ -630,7 +630,7 @@
                                                                                                 </constraints>
                                                                                             </imageView>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOON AND RISING SIGN FILTER UNLOCKED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rj6-ow-twK">
-                                                                                                <rect key="frame" x="28" y="17.5" width="272.5" height="15.5"/>
+                                                                                                <rect key="frame" x="28" y="16" width="261" height="18.5"/>
                                                                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
                                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <nil key="highlightedColor"/>
@@ -672,7 +672,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="167" height="50"/>
                                                                                 <subviews>
                                                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5IE-y6-RSZ">
-                                                                                        <rect key="frame" x="18" y="0.0" width="131" height="50"/>
+                                                                                        <rect key="frame" x="13.5" y="0.0" width="140" height="50"/>
                                                                                         <subviews>
                                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_rewind_upgrade" translatesAutoresizingMaskIntoConstraints="NO" id="HkP-lq-ikd">
                                                                                                 <rect key="frame" x="0.0" y="15" width="20" height="20"/>
@@ -682,7 +682,7 @@
                                                                                                 </constraints>
                                                                                             </imageView>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rewind - Unlocked" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="B6T-wH-Ocl">
-                                                                                                <rect key="frame" x="28" y="18" width="103" height="14"/>
+                                                                                                <rect key="frame" x="28" y="16.5" width="112" height="17"/>
                                                                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <nil key="highlightedColor"/>
@@ -724,7 +724,7 @@
                                                                                 <rect key="frame" x="168" y="0.0" width="167" height="50"/>
                                                                                 <subviews>
                                                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="EZU-QQ-en1">
-                                                                                        <rect key="frame" x="5" y="0.0" width="157" height="50"/>
+                                                                                        <rect key="frame" x="-1" y="0.0" width="168.5" height="50"/>
                                                                                         <subviews>
                                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_planet" translatesAutoresizingMaskIntoConstraints="NO" id="Gjc-gO-mgw">
                                                                                                 <rect key="frame" x="0.0" y="15" width="20" height="20"/>
@@ -734,7 +734,7 @@
                                                                                                 </constraints>
                                                                                             </imageView>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Galaxy Pass - Unlocked" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Wgo-iL-kSP">
-                                                                                                <rect key="frame" x="28" y="18" width="129" height="14"/>
+                                                                                                <rect key="frame" x="28" y="16.5" width="140.5" height="17"/>
                                                                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <nil key="highlightedColor"/>
@@ -837,7 +837,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="103.5" height="130"/>
                                                                                 <subviews>
                                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FbI-2G-Byd">
-                                                                                        <rect key="frame" x="8" y="28.5" width="87.5" height="73"/>
+                                                                                        <rect key="frame" x="8" y="25.5" width="87.5" height="79"/>
                                                                                         <subviews>
                                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_love" translatesAutoresizingMaskIntoConstraints="NO" id="7XK-IR-PzH">
                                                                                                 <rect key="frame" x="26.5" y="0.0" width="34.5" height="34.5"/>
@@ -846,7 +846,7 @@
                                                                                                 </constraints>
                                                                                             </imageView>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unlimited Likes" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGa-qa-9FN">
-                                                                                                <rect key="frame" x="14.5" y="42.5" width="59" height="30.5"/>
+                                                                                                <rect key="frame" x="11" y="42.5" width="65.5" height="36.5"/>
                                                                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
                                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <nil key="highlightedColor"/>
@@ -888,7 +888,7 @@
                                                                                 <rect key="frame" x="104.5" y="0.0" width="115" height="130"/>
                                                                                 <subviews>
                                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Gag-sd-HKr">
-                                                                                        <rect key="frame" x="8" y="27" width="99" height="76.5"/>
+                                                                                        <rect key="frame" x="8" y="24" width="99" height="82.5"/>
                                                                                         <subviews>
                                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_astrolikes" translatesAutoresizingMaskIntoConstraints="NO" id="oeX-sh-UEN">
                                                                                                 <rect key="frame" x="30.5" y="0.0" width="38" height="38"/>
@@ -897,7 +897,7 @@
                                                                                                 </constraints>
                                                                                             </imageView>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 Astro Likes Daily" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="829-LB-jOq">
-                                                                                                <rect key="frame" x="18" y="46" width="62.5" height="30.5"/>
+                                                                                                <rect key="frame" x="16.5" y="46" width="66" height="36.5"/>
                                                                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
                                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <nil key="highlightedColor"/>
@@ -932,7 +932,7 @@
                                                                                 <rect key="frame" x="220" y="0.0" width="115" height="130"/>
                                                                                 <subviews>
                                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2k8-K6-GwO">
-                                                                                        <rect key="frame" x="8" y="27" width="99" height="76.5"/>
+                                                                                        <rect key="frame" x="8" y="24" width="99" height="82.5"/>
                                                                                         <subviews>
                                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_swipe" translatesAutoresizingMaskIntoConstraints="NO" id="sby-rb-vUm">
                                                                                                 <rect key="frame" x="30.5" y="0.0" width="38" height="38"/>
@@ -941,7 +941,7 @@
                                                                                                 </constraints>
                                                                                             </imageView>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 Moon Boosts Monthly" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDF-2W-Sss">
-                                                                                                <rect key="frame" x="3.5" y="46" width="91.5" height="30.5"/>
+                                                                                                <rect key="frame" x="0.0" y="46" width="99" height="36.5"/>
                                                                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
                                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <nil key="highlightedColor"/>
@@ -992,7 +992,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
                                                                                 <subviews>
                                                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RvT-vC-tWd">
-                                                                                        <rect key="frame" x="17.5" y="0.0" width="300.5" height="50"/>
+                                                                                        <rect key="frame" x="23" y="0.0" width="289" height="50"/>
                                                                                         <subviews>
                                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_correct" translatesAutoresizingMaskIntoConstraints="NO" id="PR7-ZH-PXS">
                                                                                                 <rect key="frame" x="0.0" y="15" width="20" height="20"/>
@@ -1002,7 +1002,7 @@
                                                                                                 </constraints>
                                                                                             </imageView>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOON AND RISING SIGN FILTER UNLOCKED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HUD-Kt-WKj">
-                                                                                                <rect key="frame" x="28" y="17.5" width="272.5" height="15.5"/>
+                                                                                                <rect key="frame" x="28" y="16" width="261" height="18.5"/>
                                                                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
                                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <nil key="highlightedColor"/>
@@ -1040,7 +1040,7 @@
                                                                                         <rect key="frame" x="0.0" y="0.0" width="167" height="50"/>
                                                                                         <subviews>
                                                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0Bj-hN-0eE">
-                                                                                                <rect key="frame" x="47.5" y="0.0" width="72" height="50"/>
+                                                                                                <rect key="frame" x="46" y="0.0" width="75" height="50"/>
                                                                                                 <subviews>
                                                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_rewind_upgrade" translatesAutoresizingMaskIntoConstraints="NO" id="JrR-fp-jKS">
                                                                                                         <rect key="frame" x="0.0" y="15" width="20" height="20"/>
@@ -1050,7 +1050,7 @@
                                                                                                         </constraints>
                                                                                                     </imageView>
                                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rewind " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="AZY-ED-ulG">
-                                                                                                        <rect key="frame" x="28" y="18" width="44" height="14"/>
+                                                                                                        <rect key="frame" x="28" y="16.5" width="47" height="17"/>
                                                                                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                         <nil key="highlightedColor"/>
@@ -1092,7 +1092,7 @@
                                                                                         <rect key="frame" x="168" y="0.0" width="167" height="50"/>
                                                                                         <subviews>
                                                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="EY2-rf-Y2B">
-                                                                                                <rect key="frame" x="34.5" y="0.0" width="98" height="50"/>
+                                                                                                <rect key="frame" x="31.5" y="0.0" width="103.5" height="50"/>
                                                                                                 <subviews>
                                                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_planet" translatesAutoresizingMaskIntoConstraints="NO" id="ujM-ON-oB5">
                                                                                                         <rect key="frame" x="0.0" y="15" width="20" height="20"/>
@@ -1102,7 +1102,7 @@
                                                                                                         </constraints>
                                                                                                     </imageView>
                                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Galaxy Pass " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Zc7-Kt-dVA">
-                                                                                                        <rect key="frame" x="28" y="18" width="70" height="14"/>
+                                                                                                        <rect key="frame" x="28" y="16.5" width="75.5" height="17"/>
                                                                                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                         <nil key="highlightedColor"/>
@@ -1272,10 +1272,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dzF-bI-GIP">
-                                <rect key="frame" x="20" y="102" width="335" height="463.5"/>
+                                <rect key="frame" x="20" y="86" width="335" height="495"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_love_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="vaF-XX-Gzo">
-                                        <rect key="frame" x="-100" y="193.5" width="350" height="350"/>
+                                        <rect key="frame" x="-100" y="225" width="350" height="350"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="350" id="jmM-sX-hGW"/>
                                             <constraint firstAttribute="width" secondItem="vaF-XX-Gzo" secondAttribute="height" id="ptt-qc-78b"/>
@@ -1294,13 +1294,13 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uT6-Bv-Ho6" customClass="UIControl">
-                                        <rect key="frame" x="92.5" y="393.5" width="150" height="40"/>
+                                        <rect key="frame" x="92.5" y="425" width="150" height="40"/>
                                         <subviews>
                                             <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="L4q-Oy-sYN">
                                                 <rect key="frame" x="25.5" y="8" width="99" height="24"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BUY NOW" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FhV-1y-ujK">
-                                                        <rect key="frame" x="0.0" y="2" width="81" height="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="81" height="24"/>
                                                         <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="17"/>
                                                         <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1332,7 +1332,7 @@
                                         </connections>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ASTRO LIKE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fW-94-Igg">
-                                        <rect key="frame" x="96.5" y="50" width="142.5" height="35"/>
+                                        <rect key="frame" x="99" y="50" width="137.5" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="MMC-fC-PcR"/>
                                         </constraints>
@@ -1341,7 +1341,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Astro likes allow you to Notify a person instantly that you like them." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ffn-UM-nhn">
-                                        <rect key="frame" x="20" y="333.5" width="295" height="40"/>
+                                        <rect key="frame" x="20" y="333.5" width="295" height="71.5"/>
                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="17"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -1363,7 +1363,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGf-iX-dcu">
-                                        <rect key="frame" x="136" y="278.5" width="63" height="35"/>
+                                        <rect key="frame" x="132.5" y="278.5" width="70.5" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="Bzs-dU-Qcr"/>
                                         </constraints>
@@ -1491,6 +1491,17 @@
                                                             </label>
                                                         </subviews>
                                                     </stackView>
+                                                    <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xa0-j2-ezK">
+                                                        <rect key="frame" x="37.5" y="18" width="85.5" height="21"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NO THANKS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKZ-Wl-W6x">
+                                                                <rect key="frame" x="0.0" y="0.0" width="85.5" height="21"/>
+                                                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="15"/>
+                                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="jef-4B-St9" firstAttribute="centerX" secondItem="sGz-XF-tO8" secondAttribute="centerX" id="3B7-BP-yHx"/>
@@ -1540,7 +1551,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a6T-9p-mWp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4543" y="118"/>
+            <point key="canvasLocation" x="4374" y="-47"/>
         </scene>
         <!--SubscribeVC-->
         <scene sceneID="jMt-xt-hg3">
@@ -2111,7 +2122,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Premium Features" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3dt-lb-T4r">
-                                <rect key="frame" x="65.5" y="50" width="244" height="35"/>
+                                <rect key="frame" x="45" y="50" width="285" height="42"/>
                                 <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -2129,7 +2140,7 @@
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="WN3-lY-uyt">
-                                <rect key="frame" x="20" y="105" width="375" height="542"/>
+                                <rect key="frame" x="20" y="112" width="375" height="535"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="xYv-e4-V2r">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="347"/>
@@ -2232,6 +2243,101 @@
             </objects>
             <point key="canvasLocation" x="2765" y="118"/>
         </scene>
+        <!--Update AppVC-->
+        <scene sceneID="aNR-vT-Wch">
+            <objects>
+                <viewController storyboardIdentifier="UpdateAppVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tA7-fQ-Inm" customClass="UpdateAppVC" customModule="Gethingd" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="lIu-qD-GfP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wrQ-n1-nYM">
+                                <rect key="frame" x="20" y="184.5" width="335" height="298.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="SgB-Nh-epA">
+                                        <rect key="frame" x="20" y="30" width="295" height="238.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="update-info" translatesAutoresizingMaskIntoConstraints="NO" id="t8V-R5-OD3">
+                                                <rect key="frame" x="122.5" y="0.0" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="XB5-2H-kw5"/>
+                                                    <constraint firstAttribute="height" constant="50" id="d61-Vb-mzI"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Force Update" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2c1-3y-ZF9">
+                                                <rect key="frame" x="59.5" y="70" width="176" height="36.5"/>
+                                                <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="26"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The App version is Older please Update to the new version " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9C-sn-Nbc">
+                                                <rect key="frame" x="0.0" y="126.5" width="295" height="42"/>
+                                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iVb-td-tis" customClass="UIControl">
+                                                <rect key="frame" x="77.5" y="188.5" width="140" height="50"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SSq-2n-gwj">
+                                                        <rect key="frame" x="16.5" y="8" width="107.5" height="34"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yes, Update it!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqv-Kh-8dh">
+                                                                <rect key="frame" x="0.0" y="6.5" width="107.5" height="21"/>
+                                                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="15"/>
+                                                                <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.32944318649999998" green="0.12744057180000001" blue="0.27206125860000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="SSq-2n-gwj" firstAttribute="centerX" secondItem="iVb-td-tis" secondAttribute="centerX" id="6P1-Wz-QO8"/>
+                                                    <constraint firstItem="SSq-2n-gwj" firstAttribute="top" secondItem="iVb-td-tis" secondAttribute="top" constant="8" id="Af7-ep-0oV"/>
+                                                    <constraint firstAttribute="height" constant="50" id="LPn-b9-NQI"/>
+                                                    <constraint firstAttribute="bottom" secondItem="SSq-2n-gwj" secondAttribute="bottom" constant="8" id="aiB-tr-xZs"/>
+                                                    <constraint firstAttribute="width" constant="140" id="kVM-Cs-CJi"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="25"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="onPressUpdatebtnTap:" destination="tA7-fQ-Inm" eventType="valueChanged" id="EoE-LN-Qsw"/>
+                                                </connections>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="SgB-Nh-epA" secondAttribute="bottom" constant="30" id="LcJ-tN-pE7"/>
+                                    <constraint firstItem="SgB-Nh-epA" firstAttribute="leading" secondItem="wrQ-n1-nYM" secondAttribute="leading" constant="20" id="Y2g-r7-jgP"/>
+                                    <constraint firstAttribute="trailing" secondItem="SgB-Nh-epA" secondAttribute="trailing" constant="20" id="rvs-9p-zcn"/>
+                                    <constraint firstItem="SgB-Nh-epA" firstAttribute="top" secondItem="wrQ-n1-nYM" secondAttribute="top" constant="30" id="w4K-Ty-mRO"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cUD-9G-88C"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wrQ-n1-nYM" firstAttribute="centerY" secondItem="lIu-qD-GfP" secondAttribute="centerY" id="KD1-dj-Vi4"/>
+                            <constraint firstItem="cUD-9G-88C" firstAttribute="trailing" secondItem="wrQ-n1-nYM" secondAttribute="trailing" constant="20" id="SkI-RX-03n"/>
+                            <constraint firstItem="wrQ-n1-nYM" firstAttribute="leading" secondItem="cUD-9G-88C" secondAttribute="leading" constant="20" id="Tsg-gm-1dU"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KNn-U1-rYR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5430" y="-175"/>
+        </scene>
     </scenes>
     <resources>
         <image name="chack" width="28.5" height="28.5"/>
@@ -2252,6 +2358,7 @@
         <image name="img_rewind_upgrade" width="22" height="22"/>
         <image name="img_splash" width="1080" height="1920"/>
         <image name="img_swipe" width="56.5" height="56.5"/>
+        <image name="update-info" width="100" height="100"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

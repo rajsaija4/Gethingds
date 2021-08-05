@@ -429,7 +429,7 @@ extension NetworkManager {
     
     struct Discover {
         
-        static func discoverUser(param: Parameters, _ success: @escaping ([UserProfile]) -> Void, _ fail: @escaping (String) -> Void) {
+        static func discoverUser(param: Parameters, _ success: @escaping ([UserProfile]) -> Void, _ fail: @escaping (String) -> Void, _ version: @escaping(String) -> Void) {
             
             NetworkCaller.postRequest(url: URLManager.Discover.discover, params: param, headers: header, { (response) in
                 
@@ -438,15 +438,14 @@ extension NetworkManager {
                     return
                 }
                 
-                
-                Filter.distance = Int(response["params"]["distance"].intValue)
-                Filter.minAge = Int(response["params"]["min_age"].intValue)
-                Filter.maxAge = Int(response["params"]["max_age"].intValue)
-                Filter.minKid = Int(response["params"]["min_kids"].intValue)
-                Filter.maxKid = Int(response["params"]["max_kids"].intValue)
-                Filter.longitude = String(response["params"]["longitude"].stringValue)
-                Filter.latitude = String(response["params"]["latitude"].stringValue)
-                Filter.lookingFor = String(response["params"]["looking_for"].stringValue)
+                Filter.distance = Int(response["data"]["params"]["distance"].intValue)
+                Filter.minAge = Int(response["data"]["params"]["min_age"].intValue)
+                Filter.maxAge = Int(response["data"]["params"]["max_age"].intValue)
+                Filter.minKid = Int(response["data"]["params"]["min_kids"].intValue)
+                Filter.maxKid = Int(response["data"]["params"]["max_kids"].intValue)
+//                Filter.longitude = String(response["data"]["longitude"].stringValue)
+//                Filter.latitude = String(response["data"]["latitude"].stringValue)
+                Filter.lookingFor = String(response["data"]["params"]["looking_for"].stringValue)
                 
 //                Filter.minHeight = Int(response["params"]["min_height"].stringValue) ?? 0
 //                Filter.maxHeight = Int(response["params"]["max_height"].stringValue) ?? 0
@@ -478,6 +477,9 @@ extension NetworkManager {
                 }
                 print(response)
                 success(arrUser)
+                
+                let versionName = response["data"]["ios_version"].stringValue
+                version(versionName)
                 
             }) { (error) in
                 fail(error.localizedDescription)
