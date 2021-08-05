@@ -56,6 +56,7 @@
 		9F8B3A6826A93BD400AFC663 /* FpasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B3A6726A93BD400AFC663 /* FpasswordVC.swift */; };
 		9F8B3A6B26A93EDD00AFC663 /* ChangePasVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B3A6A26A93EDD00AFC663 /* ChangePasVC.swift */; };
 		9FA0CADA26BC017D0057494C /* UpdateAppVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA0CAD926BC017D0057494C /* UpdateAppVC.swift */; };
+		9FA0CADE26BC1A920057494C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FA0CADD26BC1A920057494C /* GoogleService-Info.plist */; };
 		9FBFFE94269C093800CA5BBE /* KidCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBFFE92269C093800CA5BBE /* KidCell.swift */; };
 		9FBFFE95269C093800CA5BBE /* KidCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FBFFE93269C093800CA5BBE /* KidCell.xib */; };
 		9FD6CD0326846764002EF5BD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6CCF126846764002EF5BD /* Constants.swift */; };
@@ -117,7 +118,6 @@
 		9FD6CDFB26848EF9002EF5BD /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FD6CDF626848EF8002EF5BD /* Poppins-Regular.ttf */; };
 		9FD6CDFC26848EF9002EF5BD /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FD6CDF726848EF8002EF5BD /* Poppins-Bold.ttf */; };
 		9FD6CDFD26848EF9002EF5BD /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FD6CDF826848EF8002EF5BD /* Poppins-SemiBold.ttf */; };
-		9FE9F61B26B7FFDE00C1C42A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FE9F61A26B7FFDE00C1C42A /* GoogleService-Info.plist */; };
 		9FF205B126944E0100AC5332 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FF205B026944E0100AC5332 /* Setting.storyboard */; };
 		9FF205B426945E4900AC5332 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF205B326945E4900AC5332 /* SettingVC.swift */; };
 /* End PBXBuildFile section */
@@ -176,6 +176,7 @@
 		9F8B3A6726A93BD400AFC663 /* FpasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FpasswordVC.swift; sourceTree = "<group>"; };
 		9F8B3A6A26A93EDD00AFC663 /* ChangePasVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasVC.swift; sourceTree = "<group>"; };
 		9FA0CAD926BC017D0057494C /* UpdateAppVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAppVC.swift; sourceTree = "<group>"; };
+		9FA0CADD26BC1A920057494C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9FBFFE92269C093800CA5BBE /* KidCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidCell.swift; sourceTree = "<group>"; };
 		9FBFFE93269C093800CA5BBE /* KidCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KidCell.xib; sourceTree = "<group>"; };
 		9FD6CCF126846764002EF5BD /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -237,7 +238,6 @@
 		9FD6CDF626848EF8002EF5BD /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		9FD6CDF726848EF8002EF5BD /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		9FD6CDF826848EF8002EF5BD /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
-		9FE9F61A26B7FFDE00C1C42A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9FF205B026944E0100AC5332 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		9FF205B326945E4900AC5332 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
 		D9F5AD948B2005A04BB9EEB2 /* Pods_Gethingd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gethingd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -489,7 +489,7 @@
 		9FD6CD42268489A4002EF5BD /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
-				9FE9F61A26B7FFDE00C1C42A /* GoogleService-Info.plist */,
+				9FA0CADD26BC1A920057494C /* GoogleService-Info.plist */,
 				183042D826720E8B00E6A29A /* Info.plist */,
 			);
 			path = Supporting;
@@ -738,6 +738,7 @@
 				9FD6CDFC26848EF9002EF5BD /* Poppins-Bold.ttf in Resources */,
 				9FD6CDE626848DF0002EF5BD /* Report.storyboard in Resources */,
 				9FD6CDD426848D2A002EF5BD /* UserChatCell.xib in Resources */,
+				9FA0CADE26BC1A920057494C /* GoogleService-Info.plist in Resources */,
 				9FD6CDFB26848EF9002EF5BD /* Poppins-Regular.ttf in Resources */,
 				9FD6CDFA26848EF9002EF5BD /* Poppins-Medium.ttf in Resources */,
 				9FD6CDE926848DF0002EF5BD /* LaunchScreen.storyboard in Resources */,
@@ -752,7 +753,6 @@
 				9FD6CDFD26848EF9002EF5BD /* Poppins-SemiBold.ttf in Resources */,
 				9F53C08F269322AA0058D21B /* ProfilePhotoCollectionCell.xib in Resources */,
 				9FD6CDCF26848D2A002EF5BD /* UserView.xib in Resources */,
-				9FE9F61B26B7FFDE00C1C42A /* GoogleService-Info.plist in Resources */,
 				9FF205B126944E0100AC5332 /* Setting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

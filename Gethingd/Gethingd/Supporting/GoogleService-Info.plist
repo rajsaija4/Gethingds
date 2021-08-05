@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>351382606491-m3ras6sta0ll75g97ltuq7raifaric6k.apps.googleusercontent.com</string>
+	<string>351382606491-ihlgmj4uva73q31lve5nflkmbsge658j.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.351382606491-m3ras6sta0ll75g97ltuq7raifaric6k</string>
+	<string>com.googleusercontent.apps.351382606491-ihlgmj4uva73q31lve5nflkmbsge658j</string>
 	<key>ANDROID_CLIENT_ID</key>
 	<string>351382606491-9b1at78n5p0abt5ukctehttplrgs5u6i.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
@@ -15,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.gathingd123</string>
+	<string>com.gethingd.app</string>
 	<key>PROJECT_ID</key>
 	<string>gethingd-45e1d</string>
 	<key>STORAGE_BUCKET</key>
@@ -31,6 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:351382606491:ios:ff0c77060c214b086f6c3e</string>
+	<string>1:351382606491:ios:43a88c110b324eca6f6c3e</string>
 </dict>
 </plist>
