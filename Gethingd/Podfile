@@ -23,6 +23,9 @@ target 'Gethingd' do
   pod 'TagListView'
   pod "PageControls"
   pod 'CHIPageControl'
+  pod 'GoogleSignIn'
+  pod 'FBSDKLoginKit'
+  pod 'FBSDKShareKit'
   # For Animation View
   
 #  pod 'Hero'

@@ -35,6 +35,7 @@ struct URLManager {
         static let emailVerification = basePath + "forget_password_verification"
         static let loginUser = basePath + "signin"
         static let updatepassword = basePath + "update_new_password"
+        static let socialLogin = basePath + "social_login"
     }
     
     struct Profile {

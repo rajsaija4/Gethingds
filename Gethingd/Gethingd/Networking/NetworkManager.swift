@@ -62,6 +62,34 @@ extension NetworkManager {
             }
         }
         
+        static func socialLogin(param: Parameters, _ success: @escaping (String) -> Void, _ fail: @escaping (String) -> Void) {
+            
+            NetworkCaller.postRequest(url: URLManager.Auth.socialLogin, params: param, headers: header, { (response) in
+                guard response.isSuccess else {
+                    for param in param {
+                        if response["message"][param.key].arrayValue.count > 0 {
+                            let error = response["message"][param.key].arrayValue.map{ $0.stringValue }.joined(separator: "\n")
+                            fail(error)
+                            return
+                        }
+                        
+                    }
+                    fail(response.message)
+                    return
+                }
+                let user = User(response)
+                let barearToken = response["data"]["token"].stringValue
+                UserDefaults.standard.set(barearToken, forKey: "btoken")
+                user.save()
+                success(response["message"].stringValue)
+
+     
+            }) { (error) in
+                fail(error.localizedDescription)
+            }
+        }
+
+        
         static func SignIn(param: Parameters, _ success: @escaping (String) -> Void, _ fail: @escaping (String) -> Void) {
             
             NetworkCaller.postRequest(url: URLManager.Auth.loginUser, params: param, headers: header, { (response) in
@@ -211,7 +239,7 @@ extension NetworkManager {
                 guard response.isSuccess else {
                     
                     if response["status"].stringValue == "2" {
-                        let user = User(json: response, token: User.details.api_token)
+                        let user = User(json: response)
                         user.save()
                         fail("2")
                         return
@@ -253,7 +281,7 @@ extension NetworkManager {
                     return
                 }
                 
-                let user = User(response)
+                let user = User(json: response)
                 user.save()
                 success(user)
                 

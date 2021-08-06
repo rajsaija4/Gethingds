@@ -8,7 +8,11 @@
 
 import UIKit
 import CoreLocation
+import GoogleSignIn
 import PhoneNumberKit
+import GoogleSignIn
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 class SignInVC: UIViewController {
 
@@ -25,9 +29,76 @@ class SignInVC: UIViewController {
     //MARK:- LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupUI()
         self.navigationController?.navigationBar.isHidden = true
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        NotificationCenter.default.addObserver(self,
+                                                   selector: #selector(userDidSignInGoogle(_:)),
+                                                   name: .signInGoogleCompleted,
+                                                   object: nil)
     }
+    
+    
+    
+    @IBAction func onPressGoogleLoginbtnTap(_ sender: UIButton) {
+        GIDSignIn.sharedInstance()?.signOut()
+        GIDSignIn.sharedInstance()?.signIn()
+        
+    }
+    
+    private func updateScreen() {
+           
+           if let user = GIDSignIn.sharedInstance()?.currentUser {
+            let firstName = user.profile.givenName
+            let lastName = user.profile.familyName
+            let email = user.profile.email
+            let loginId = user.userID
+            let loginType = "google"
+            
+            let params = [
+                "login_id": loginId ?? 0,
+                "login_type":loginType ,
+                "email": email ?? "",
+                "first_name":firstName ?? "",
+                "last_name":lastName ?? "",
+                "device_type":"ios",
+                "fcm_token": AppUserDefaults.value(forKey: .fcmToken, fallBackValue: "123").stringValue
+                ] as [String:Any]
+            
+            NetworkManager.Auth.socialLogin(param: params) { (success) in
+                if User.details.firstName.count > 0 {
+                APPDEL?.setupMainTabBarController()
+                }
+                else {
+                    APPDEL?.setupCreateProfileVC()
+                }
+
+            } _: { (error) in
+                print(error)
+            }
+
+           
+           
+           } else {
+              
+           }
+       }
+    
+    // MARK:- Button action
+       @objc func signInButtonTapped(_ sender: UIButton) {
+           GIDSignIn.sharedInstance()?.signOut()
+           GIDSignIn.sharedInstance()?.signIn()
+       }
+
+      
+
+       // MARK:- Notification
+       @objc private func userDidSignInGoogle(_ notification: Notification) {
+           // Update screen after user successfully signed in
+           updateScreen()
+       }
+
     
     @IBAction func onPressSignin(_ sender: Any) {
         
@@ -35,7 +106,61 @@ class SignInVC: UIViewController {
         self.modalPresentationStyle = .fullScreen
         self.navigationController?.popViewController(animated: true)
     }
+    @IBAction func onPressFbloginbtnTap(_ sender: Any) {
+        
+        LoginManager().logOut()
+        let facebookReadPermissions = ["public_profile", "email","user_birthday","user_gender"]
+        LoginManager().logIn(permissions: facebookReadPermissions, from: self) { (loginResult, error) in
+            if error != nil {
+                print(error?.localizedDescription as Any)
+            } else {
+                let fbloginresult : LoginManagerLoginResult = loginResult!
+                if fbloginresult.grantedPermissions != nil {
+                    if(fbloginresult.grantedPermissions.contains("email"))
+                    {
+                        self.getFBUserData()
+                    }
+                }
+            }
+        }
+    }
     
+    func getFBUserData() {
+        if((AccessToken.current) != nil){
+            GraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email,gender,birthday"]).start(completionHandler: { (connection, result, error) -> Void in
+                if (error == nil) {
+                    let data = result as! [String:Any]
+                    let email = (data["email"] as? String) ?? "no email"
+                    let firstName = (data["first_name"] as? String) ?? "no fname"
+                    let lastName = (data["last_name"] as? String) ?? "no lastname"
+                    let id = (data["id"] as? String) ?? "no id"
+                    
+                    let params = [
+                        "login_id": id ,
+                        "login_type":"ios" ,
+                        "email": email ,
+                        "first_name":firstName ,
+                        "last_name":lastName ,
+                        "device_type":"ios",
+                        "fcm_token": AppUserDefaults.value(forKey: .fcmToken, fallBackValue: "123").stringValue
+                        ] as [String:Any]
+                    
+                    NetworkManager.Auth.socialLogin(param: params) { (success) in
+                        if User.details.firstName.count > 0 {
+                        APPDEL?.setupMainTabBarController()
+                        }
+                        else {
+                        APPDEL?.setupCreateProfileVC()
+                        }
+
+                    } _: { (error) in
+                        print(error)
+                    }
+               
+                }
+            })
+        }
+    }
     @IBAction func onTermsBtnTap(_ sender: UIButton) {
         
         guard let termsURL = URL(string: "https://www.zodiap.org/page/terms_and_conditions") else {

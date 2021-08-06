@@ -88,18 +88,7 @@ extension DiscoverVC {
     
     func getUserList() {
         
-        NetworkManager.Profile.getMyProfile { user in
-            guard user.address.count > 0  else {
-              
-                APPDEL?.setupCreateProfileVC()
-               
-                return
-                    }
-        } _: { error in
-            self.showToast(error)
-        }
-
- 
+      
 //        Filter.lookingFor = "both"
         
         let param = [
@@ -488,26 +477,6 @@ extension DiscoverVC: KolodaViewDataSource {
     
     func koloda(_ koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {
         return Bundle.main.loadNibNamed("OverlayView", owner: self, options: nil)?[0] as? OverlayView
-    }
-}
-
-
-extension DiscoverVC: CLLocationManagerDelegate {
-    
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .authorizedAlways || status == .authorizedWhenInUse {
-            manager.startUpdatingLocation()
-            self.getUserList()
-        } else {
-            self.getUserList()
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.last {
-            //            Filter.longitude = "\(location.coordinate.longitude)"
-            //            Filter.latitude = "\(location.coordinate.latitude)"
-        }
     }
 }
 

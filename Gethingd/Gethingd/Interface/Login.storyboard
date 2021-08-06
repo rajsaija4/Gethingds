@@ -1245,10 +1245,16 @@
                                                     <constraint firstAttribute="height" constant="50" id="nes-hG-yji"/>
                                                 </constraints>
                                                 <state key="normal" image="Facebook"/>
+                                                <connections>
+                                                    <action selector="onPressFbloginbtnTap:" destination="FFv-GH-7Oy" eventType="touchUpInside" id="OVX-dR-z3D"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvO-W7-nC3">
                                                 <rect key="frame" x="117" y="0.0" width="101" height="50"/>
                                                 <state key="normal" image="gmail"/>
+                                                <connections>
+                                                    <action selector="onPressGoogleSIgnin:" destination="FFv-GH-7Oy" eventType="touchUpInside" id="924-QI-JHg"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctb-Al-r8f">
                                                 <rect key="frame" x="234" y="0.0" width="101" height="50"/>
@@ -1740,10 +1746,16 @@
                                                     <constraint firstAttribute="height" constant="50" id="MgX-UO-0Ju"/>
                                                 </constraints>
                                                 <state key="normal" image="Facebook"/>
+                                                <connections>
+                                                    <action selector="onPressFbloginbtnTap:" destination="LFs-XS-cuW" eventType="touchUpInside" id="UhU-5q-cZZ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9GN-xD-icp">
                                                 <rect key="frame" x="117" y="0.0" width="101" height="50"/>
                                                 <state key="normal" image="gmail"/>
+                                                <connections>
+                                                    <action selector="onPressGoogleLoginbtnTap:" destination="LFs-XS-cuW" eventType="touchUpInside" id="ggS-AV-VS6"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJX-3u-Vw3">
                                                 <rect key="frame" x="234" y="0.0" width="101" height="50"/>

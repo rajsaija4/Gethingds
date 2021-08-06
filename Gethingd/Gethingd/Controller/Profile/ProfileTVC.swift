@@ -8,6 +8,7 @@
 
 import UIKit
 import GooglePlaces
+import GoogleSignIn
 import Kingfisher
 
 class ProfileTVC: UITableViewController {
@@ -315,6 +316,7 @@ extension ProfileTVC {
             
             User.details.delete()
             UserDefaults.standard.removeObject(forKey: "btoken")
+            
             APPDEL?.setupLogin()
         } _: { (error) in
             self.hideHUD()
