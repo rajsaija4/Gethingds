@@ -1240,7 +1240,7 @@
                                         <rect key="frame" x="0.0" y="34" width="335" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qtw-BG-Ey9">
-                                                <rect key="frame" x="0.0" y="0.0" width="101" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="159.5" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="nes-hG-yji"/>
                                                 </constraints>
@@ -1250,15 +1250,11 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvO-W7-nC3">
-                                                <rect key="frame" x="117" y="0.0" width="101" height="50"/>
+                                                <rect key="frame" x="175.5" y="0.0" width="159.5" height="50"/>
                                                 <state key="normal" image="gmail"/>
                                                 <connections>
                                                     <action selector="onPressGoogleSIgnin:" destination="FFv-GH-7Oy" eventType="touchUpInside" id="924-QI-JHg"/>
                                                 </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctb-Al-r8f">
-                                                <rect key="frame" x="234" y="0.0" width="101" height="50"/>
-                                                <state key="normal" image="apple"/>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -1313,6 +1309,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="a6w-uS-kwf"/>
                     <connections>
+                        <outlet property="loginStack" destination="7ua-yF-ltm" id="Gr5-Sq-IsC"/>
                         <outlet property="txtEmail" destination="Ylm-BP-1Ip" id="gsq-Gi-6ah"/>
                         <outlet property="txtPassword" destination="Chd-GO-lnQ" id="1k8-X5-04Y"/>
                     </connections>
@@ -1741,7 +1738,7 @@
                                         <rect key="frame" x="0.0" y="34" width="335" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tTs-ok-J6T">
-                                                <rect key="frame" x="0.0" y="0.0" width="101" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="159.5" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="MgX-UO-0Ju"/>
                                                 </constraints>
@@ -1751,15 +1748,11 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9GN-xD-icp">
-                                                <rect key="frame" x="117" y="0.0" width="101" height="50"/>
+                                                <rect key="frame" x="175.5" y="0.0" width="159.5" height="50"/>
                                                 <state key="normal" image="gmail"/>
                                                 <connections>
                                                     <action selector="onPressGoogleLoginbtnTap:" destination="LFs-XS-cuW" eventType="touchUpInside" id="ggS-AV-VS6"/>
                                                 </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJX-3u-Vw3">
-                                                <rect key="frame" x="234" y="0.0" width="101" height="50"/>
-                                                <state key="normal" image="apple"/>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -1895,6 +1888,7 @@
                     <navigationItem key="navigationItem" id="2L1-Df-xL2"/>
                     <connections>
                         <outlet property="TxtPass" destination="8eo-Dq-quq" id="5rC-fE-bj1"/>
+                        <outlet property="loginStack" destination="jOo-J6-zsh" id="nGL-Wn-eFC"/>
                         <outlet property="txtConfirmPass" destination="dJg-Xf-Huq" id="ExK-nH-wy2"/>
                         <outlet property="txtEmail" destination="vca-RX-8jp" id="H8L-aC-6yD"/>
                     </connections>
@@ -2519,7 +2513,6 @@
         <image name="Facebook" width="190" height="95"/>
         <image name="Icon feather-eye" width="33" height="33"/>
         <image name="Icon feather-eye-off" width="33" height="33"/>
-        <image name="apple" width="190" height="95"/>
         <image name="gmail" width="190" height="95"/>
         <image name="img_Header" width="750" height="359"/>
         <image name="img_back" width="16" height="13.5"/>

@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
             if User.details.firstName.count > 0  {
                 setupMainTabBarController()
             } else {
-                
+                print(User.details.firstName)
                 setupCreateProfileVC()
 //                editProfile()
             }
@@ -197,11 +197,13 @@ extension AppDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         
         UIApplication.shared.applicationIconBadgeNumber = 0
-        
+        print(response)
         guard let jsonString = response.notification.request.content.userInfo["custom"] as? String,  let json = jsonString.jsonObject else {
             completionHandler()
             return
         }
+        
+        print(jsonString)
         
         /*
         

@@ -10,6 +10,7 @@ import UIKit
 import CoreLocation
 import GoogleSignIn
 import PhoneNumberKit
+import AuthenticationServices
 import GoogleSignIn
 import FBSDKCoreKit
 import FBSDKLoginKit
@@ -25,11 +26,12 @@ class SignInVC: UIViewController {
     @IBOutlet weak var txtEmail: UITextField!
    @IBOutlet weak var txtConfirmPass: UITextField!
     @IBOutlet weak var TxtPass: UITextField!
+    @IBOutlet weak var loginStack: UIStackView!
     
     //MARK:- LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        appleCustomLoginButton()
         setupUI()
         self.navigationController?.navigationBar.isHidden = true
         GIDSignIn.sharedInstance()?.presentingViewController = self
@@ -46,7 +48,59 @@ class SignInVC: UIViewController {
         GIDSignIn.sharedInstance()?.signIn()
         
     }
+    // Custom 'Sign in with Apple' button
+    func appleCustomLoginButton() {
+        if #available(iOS 13.0, *) {
+            let customAppleLoginBtn = UIButton()
+            customAppleLoginBtn.setImage(UIImage(named: "apple"), for: .normal)
+            customAppleLoginBtn.addTarget(self, action: #selector(actionHandleAppleSignin), for: .touchUpInside)
+            self.loginStack.addArrangedSubview(customAppleLoginBtn)
+      }
+    }
     
+    @available(iOS 13.0, *)
+    func getCredentialState() {
+        let appleIDProvider = ASAuthorizationAppleIDProvider()
+        appleIDProvider.getCredentialState(forUserID: "USER_ID") { (credentialState, error) in
+            switch credentialState {
+            case .authorized:
+                // Credential is valid
+                // Continiue to show 'User's Profile' Screen
+                if User.details.firstName.count > 0 {
+                APPDEL?.setupMainTabBarController()
+                }
+                else {
+                    APPDEL?.setupCreateProfileVC()
+                }
+                
+                break
+            case .revoked:
+                // Credential is revoked.
+                APPDEL?.setupLogin()
+                break
+            case .notFound:
+                // Credential not found.
+                // Show 'Sign In' Screen
+                APPDEL?.setupLogin()
+                break
+            default:
+                break
+            }
+        }
+    }
+
+
+    @objc func actionHandleAppleSignin() {
+        if #available(iOS 13.0, *) {
+            let appleIDProvider = ASAuthorizationAppleIDProvider()
+            let request = appleIDProvider.createRequest()
+            request.requestedScopes = [.fullName, .email]
+            let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+            authorizationController.delegate = self
+            authorizationController.presentationContextProvider = self
+            authorizationController.performRequests()
+        }
+    }
     private func updateScreen() {
            
            if let user = GIDSignIn.sharedInstance()?.currentUser {
@@ -137,7 +191,7 @@ class SignInVC: UIViewController {
                     
                     let params = [
                         "login_id": id ,
-                        "login_type":"ios" ,
+                        "login_type":"facebook" ,
                         "email": email ,
                         "first_name":firstName ,
                         "last_name":lastName ,
@@ -284,6 +338,71 @@ extension SignInVC {
 }
 
 
+@available(iOS 13.0, *)
+extension SignInVC: ASAuthorizationControllerDelegate {
+
+    // Authorization Failed
+    @available(iOS 13.0, *)
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        print(error.localizedDescription)
+    }
+
+
+    // Authorization Succeeded
+    @available(iOS 13.0, *)
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
+            // Get user data with Apple ID credentitial
+            let appleId = appleIDCredential.user
+              let userID = appleId
+              let appleUserFirstName = appleIDCredential.fullName?.givenName
+              let firstName = appleUserFirstName ?? ""
+              let appleUserLastName = appleIDCredential.fullName?.familyName
+              let lastName = appleUserLastName ?? ""
+              let appleUserEmail = appleIDCredential.email
+              let email = appleUserEmail ?? ""
+                let params = [
+                    "login_id": appleId ,
+                    "login_type":"apple" ,
+                    "email": email ,
+                    "first_name":firstName ,
+                    "last_name":lastName ,
+                    "device_type":"ios",
+                    "fcm_token": AppUserDefaults.value(forKey: .fcmToken, fallBackValue: "123").stringValue
+                ] as [String:Any]
+            print(params)
+            
+            NetworkManager.Auth.socialLogin(param: params) { (success) in
+                if User.details.firstName.count > 0 {
+                APPDEL?.setupMainTabBarController()
+                }
+                else {
+                APPDEL?.setupCreateProfileVC()
+                }
+
+            } _: { (error) in
+                print(error)
+            }        } else if let passwordCredential = authorization.credential as? ASPasswordCredential {
+            // Get user data using an existing iCloud Keychain credential
+            let appleUsername = passwordCredential.user
+            let applePassword = passwordCredential.password
+            // Write your code
+        }
+    }
+
+}
+
+
+@available(iOS 13.0, *)
+extension SignInVC: ASAuthorizationControllerPresentationContextProviding {
+    
+    // For present window
+    @available(iOS 13.0, *)
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return self.view.window!
+    }
+    
+}
 
 
 extension SignInVC {
