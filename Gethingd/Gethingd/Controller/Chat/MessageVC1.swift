@@ -26,7 +26,6 @@ class MessageVC1: UIViewController, UISearchBarDelegate {
 //        getAllMessageList()
         searchBar.delegate = self
         searchBar.endEditing(true)
-        
        
 
         // Do any additional setup after loading the view.

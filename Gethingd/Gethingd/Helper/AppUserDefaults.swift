@@ -15,6 +15,7 @@ enum AppUserDefaults {
         case UserProfile
         case fcmToken
         case currentMatchId
+        case selectedUserId
         case isFirstTimeUpgrade
        
     }

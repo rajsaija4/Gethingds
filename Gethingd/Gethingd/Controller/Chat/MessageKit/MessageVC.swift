@@ -28,6 +28,7 @@ class MessageVC: MessagesViewController {
     var onPopView: (() -> Void)?
     var oppositeUserName:String = ""
     var match_Id:Int = 0
+    var conversation:ChatMessages!
     var selectedUserId:Int = 0
     var userImage: String = ""
     var isFromNotification = false
@@ -44,17 +45,73 @@ class MessageVC: MessagesViewController {
         messagesCollectionView.register(MessageCell.self)
         super.viewDidLoad()
         setupUI()
+        setupInputButton()
     }
     
+    private func setupInputButton() {
+        let button = InputBarButtonItem()
+        button.setSize(CGSize(width: 35, height: 35), animated: false)
+        if #available(iOS 13.0, *) {
+            button.setImage(UIImage(systemName: "camera"), for: .normal)
+            button.tintColor = UIColor(hexString: "#5F054A")
+        } else {
+            // Fallback on earlier versions
+        }
+        button.onTouchUpInside { [weak self] _ in
+            self?.presentInputActionSheet()
+        }
+        messageInputBar.setLeftStackViewWidthConstant(to: 36, animated: false)
+        messageInputBar.setStackViewItems([button], forStack: .left, animated: false)
+    }
+    
+    private func presentInputActionSheet() {
+        let actionSheet = UIAlertController(title: "Attach Media",
+                                            message: "What would you like to attach?",
+                                            preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Photo", style: .default, handler: { [weak self] _ in
+            self?.presentPhotoInputActionsheet()
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+        present(actionSheet, animated: true)
+    }
+    
+    private func presentPhotoInputActionsheet() {
+        let actionSheet = UIAlertController(title: "Attach Photo",
+                                            message: "Where would you like to attach a photo from",
+                                            preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { [weak self] _ in
+
+            let picker = UIImagePickerController()
+            picker.sourceType = .camera
+            picker.delegate = self
+            picker.allowsEditing = true
+            self?.present(picker, animated: true)
+
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { [weak self] _ in
+
+            let picker = UIImagePickerController()
+            picker.sourceType = .photoLibrary
+            picker.delegate = self
+            picker.allowsEditing = true
+            self?.present(picker, animated: true)
+
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+        present(actionSheet, animated: true)
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        AppUserDefaults.save(value: match_Id, forKey: .currentMatchId)
+        AppUserDefaults.save(value: selectedUserId, forKey: .selectedUserId)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.isNavigationBarHidden = true
-        AppUserDefaults.save(value: 0, forKey: .currentMatchId)
+        AppUserDefaults.save(value: 0, forKey: .selectedUserId)
     }
     
     
@@ -255,12 +312,11 @@ extension MessageVC {
 extension MessageVC {
     
     @objc func receiveNewMessage(_ notification: NSNotification) {
-        loadMessages()
-//        if let msg = notification.userInfo?["custom"] {
-//            let json = JSON(msg)
-//            let message = Message(JSON(json["a"]))
-//            self.insertMessage(message)
-//        }
+//        loadMessages()
+        if let jsonString = notification.userInfo?["custom"] as? String,  let json = jsonString.jsonObject {
+            let msg = Message(jsonNotification: json)
+            self.insertMessage(msg)
+        }
     }
     
     fileprivate func loadMessages() {
@@ -586,3 +642,22 @@ extension MessageVC {
 }
 
 
+extension MessageVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+//
+        if let image = info[.editedImage] as? UIImage, let imageData =  image.pngData() {
+            print(image)
+//            let fileName = "photo_message_" + xxx + ".png"
+
+            // Upload image
+    }
+ 
+    }
+
+}

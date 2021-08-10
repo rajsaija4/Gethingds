@@ -48,7 +48,8 @@ class DiscoverVC: UIViewController {
                    })
                 
               
-        setupUI()
+        getPassion()
+
         
     }
     
@@ -63,7 +64,6 @@ class DiscoverVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupUI()
         navigationController?.isNavigationBarHidden = true
     }
     
@@ -132,9 +132,26 @@ extension DiscoverVC {
                 return
             }
             
+        },{ (unread) in
+            if unread != 0 {
+                guard let mVC = ((ROOTVC as? UINavigationController)?.viewControllers.first as? UITabBarController) else {
+                    return
+                }
+                mVC.tabBar.items?.last?.badgeValue = "\(unread)"
+                
+            } else {
+                guard let mVC = ((ROOTVC as? UINavigationController)?.viewControllers.first as? UITabBarController) else {
+                    return
+                }
+                mVC.tabBar.items?.last?.badgeValue = nil
+            }
+            
+            
         })
         
     }
+    
+    
   
     
     
@@ -327,27 +344,14 @@ extension DiscoverVC: KolodaViewDelegate {
         return [.left, .right, .up, .down]
     }
     
-//    func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
-//        let vc = UserDetailsTVC.instantiate(fromAppStoryboard: .Discover)
-//        vc.user = arrUser[index]
-//        vc.onLikeUser = {
-//            koloda.swipe(.right)
-//        }
-//
-//        vc.onDisLikeUser = {
-//            koloda.swipe(.left)
-//        }
-//
-//        vc.onReviewLater = {
-//            koloda.swipe(.down)
-//            self.swipeUser(userID: self.arrUser[index].id, status: .reviewLater)
-//        }
-//
-//        let nvc = UINavigationController(rootViewController: vc)
-//        nvc.modalPresentationStyle = .fullScreen
-//        nvc.modalTransitionStyle = .crossDissolve
-//        self.present(nvc, animated: true, completion: nil)
-//    }
+    func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
+        let vc = UserDetailsTVC.instantiate(fromAppStoryboard: .Discover)
+        vc.user = arrUser[index]
+        let nvc = UINavigationController(rootViewController: vc)
+        nvc.modalPresentationStyle = .fullScreen
+        nvc.modalTransitionStyle = .crossDissolve
+        self.present(nvc, animated: true, completion: nil)
+    }
     
     func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
         print(direction)
@@ -497,7 +501,26 @@ extension DiscoverVC {
         }
 
     }
-
+    
+    fileprivate func getPassion() {
+         NetworkManager.getPassion { (PassionSetting) in
+            Filter.defaultMinAge = PassionSetting.minimumAge
+            Filter.defaultMaximumAge = PassionSetting.maximumAge
+            Filter.minAge = PassionSetting.minimumAge
+            Filter.maxAge = PassionSetting.maximumAge
+            Filter.defaultMinKids = 0
+            Filter.defaultMaxKids = PassionSetting.noKids
+            Filter.maxKid = PassionSetting.noKids
+            Filter.lookingFor = "both"
+            Filter.distance = 0
+            self.setupUI()
+        
+         } _: { (error) in
+               print(error)
+       
+     }
+    
+    }
     
     
     

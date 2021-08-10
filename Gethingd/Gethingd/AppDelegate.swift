@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
 //        setupCreateProfileVC()
 //        setupLogin()
         setupAppDelegate()
-        getPassion() 
+//        getPassion() 
 //        setupMainTabBarController()
 //        return true
 //        editProfile()
@@ -203,15 +203,18 @@ extension AppDelegate {
             return
         }
         
-        print(jsonString)
+       
         
-        /*
+       
         
         if json["message"].dictionaryObject != nil {
             let vc = MessageVC.instantiate(fromAppStoryboard: .Chat)
-            let conversation = Conversation(json: json)
+            let conversation = ChatMessages(json: json)
             vc.conversation = conversation
             vc.userImage = conversation.userImage
+            vc.match_Id = conversation.matchId
+            vc.selectedUserId = conversation.userId
+            vc.oppositeUserName = conversation.userName
             vc.isFromNotification = true
             let nvc = UINavigationController(rootViewController: vc)
             nvc.isNavigationBarHidden = true
@@ -220,7 +223,7 @@ extension AppDelegate {
             completionHandler()
             return
         }
-        
+        /*
         if json["match"].dictionaryObject != nil {
             guard let mainTVC = (window?.rootViewController as? UINavigationController)?.viewControllers.first as? MainTabBarController else { return }
             mainTVC.selectedIndex = 2
@@ -272,20 +275,19 @@ extension AppDelegate {
             return
         }
         
-        /*
         if json["message"].dictionaryObject != nil {
-            let conversation = Conversation(json: json)
-            if AppUserDefaults.value(forKey: .currentMatchId).intValue == conversation.matchId {
-                NotificationCenter.default.post(name: .receiveMessage, object: self, userInfo: nil)
+            let msg = Message(jsonNotification: json)
+            if AppUserDefaults.value(forKey: .selectedUserId).stringValue == msg.sender.senderId {
+                NotificationCenter.default.post(name: .receiveMessage, object: self, userInfo: notification.request.content.userInfo)
                 completionHandler([])
             } else {
                 guard let mainTVC = (window?.rootViewController as? UINavigationController)?.viewControllers.first as? MainTabBarController else { return }
-                mainTVC.tabBar.items?.last?.badgeValue = conversation.unreadMessageCount > 0 ? "\(conversation.unreadMessageCount)" : nil
+                mainTVC.tabBar.items?.last?.badgeValue = json["message"]["unread_count"] > 0 ? "\(json["message"]["unread_count"])" : nil
                 completionHandler([.alert, .sound])
             }
             return
         }
-        */
+    
         completionHandler([.alert, .sound])
     }
 }
@@ -293,23 +295,7 @@ extension AppDelegate {
 
 extension AppDelegate {
     
-    fileprivate func getPassion() {
-         NetworkManager.getPassion { (PassionSetting) in
-            Filter.defaultMinAge = PassionSetting.minimumAge
-            Filter.defaultMaximumAge = PassionSetting.maximumAge
-            Filter.minAge = PassionSetting.minimumAge
-            Filter.maxAge = PassionSetting.maximumAge
-            Filter.defaultMinKids = 0
-            Filter.defaultMaxKids = PassionSetting.noKids
-            Filter.lookingFor = "both"
-            Filter.distance = 0
-        
-         } _: { (error) in
-               print(error)
-       
-     }
-    
-    }
+  
 }
 
 

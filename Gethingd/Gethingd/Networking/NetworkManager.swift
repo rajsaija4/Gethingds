@@ -457,7 +457,7 @@ extension NetworkManager {
     
     struct Discover {
         
-        static func discoverUser(param: Parameters, _ success: @escaping ([UserProfile]) -> Void, _ fail: @escaping (String) -> Void, _ version: @escaping(String) -> Void) {
+        static func discoverUser(param: Parameters, _ success: @escaping ([UserProfile]) -> Void, _ fail: @escaping (String) -> Void, _ version: @escaping(String) -> Void, _ unreadmsg:@escaping (Int) -> Void) {
             
             NetworkCaller.postRequest(url: URLManager.Discover.discover, params: param, headers: header, { (response) in
                 
@@ -508,6 +508,9 @@ extension NetworkManager {
                 
                 let versionName = response["data"]["ios_version"].stringValue
                 version(versionName)
+                
+                let unreadMessage = response["data"]["unread_count"].intValue
+                unreadmsg(unreadMessage)
                 
             }) { (error) in
                 fail(error.localizedDescription)
