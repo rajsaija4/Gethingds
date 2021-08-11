@@ -32,7 +32,8 @@ extension MainTabBarController {
             case "Discover":
                 guard let nvc = self.viewControllers?[1] as? UINavigationController else{ return }
                 if let vc = nvc.viewControllers.first as? DiscoverVC {
-                    vc.getUserList()
+                    vc.getPassion()
+                    
                 }
                 break
             case "Chat":
@@ -46,4 +47,9 @@ extension MainTabBarController {
         }
        
     }
+}
+
+
+extension MainTabBarController {
+    
 }

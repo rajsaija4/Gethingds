@@ -19,7 +19,7 @@ class MessageVC: MessagesViewController {
     fileprivate var page = 1
     fileprivate var messageList: [Message] = []
     fileprivate let refreshControl = UIRefreshControl()
-    fileprivate let formatter: DateFormatter = {
+       private let formatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         return formatter

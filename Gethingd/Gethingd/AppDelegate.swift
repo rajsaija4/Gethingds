@@ -156,8 +156,8 @@ extension AppDelegate {
         window?.makeKeyAndVisible()
         
     }
+    
 }
-
 
 
 extension AppDelegate {
@@ -171,8 +171,10 @@ extension AppDelegate {
             UNUserNotificationCenter.current().requestAuthorization(
                 options: authOptions,
                 completionHandler: {_, _ in })
+            UIApplication.shared.applicationIconBadgeNumber = Int(UNAuthorizationOptions.badge.rawValue)
             // For iOS 10 data message (sent via FCM)
             Messaging.messaging().delegate = self
+            
         } else {
             let settings: UIUserNotificationSettings =
                 UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
@@ -209,7 +211,7 @@ extension AppDelegate {
         
         if json["message"].dictionaryObject != nil {
             let vc = MessageVC.instantiate(fromAppStoryboard: .Chat)
-            let conversation = ChatMessages(json: json)
+            let conversation = ChatMessages(json)
             vc.conversation = conversation
             vc.userImage = conversation.userImage
             vc.match_Id = conversation.matchId
@@ -223,17 +225,18 @@ extension AppDelegate {
             completionHandler()
             return
         }
-        /*
+        
         if json["match"].dictionaryObject != nil {
-            guard let mainTVC = (window?.rootViewController as? UINavigationController)?.viewControllers.first as? MainTabBarController else { return }
-            mainTVC.selectedIndex = 2
-            guard let chatVC = (mainTVC.viewControllers?.last as? UINavigationController)?.viewControllers.first as? ChatVC else { return }
-            chatVC.getConversation()
+            let vc  = MatchesVC.instantiate(fromAppStoryboard: .Chat)
+            let nvc = UINavigationController(rootViewController: vc)
+            nvc.isNavigationBarHidden = true
+            window?.rootViewController = nvc
+            window?.makeKeyAndVisible()
             completionHandler()
             return
         }
         
-        
+        /*
         if json["astro_like"].dictionaryObject != nil {
             
             let vc = UserDetailsTVC.instantiate(fromAppStoryboard: .Discover)

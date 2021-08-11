@@ -176,7 +176,13 @@ extension String {
         dateFormatter.timeZone = TimeZone(identifier: "UTC")
         return dateFormatter.date(from: self)
     }
-    
+    var toLocal: Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.timeZone = NSTimeZone.local
+        return dateFormatter.date(from: self)
+    }
+        
     var toEventDate: String? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -335,4 +341,6 @@ extension UIImageView {
         })
     }
 }
+
+
 

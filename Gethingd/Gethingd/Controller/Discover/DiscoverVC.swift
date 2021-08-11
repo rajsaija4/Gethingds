@@ -48,7 +48,7 @@ class DiscoverVC: UIViewController {
                    })
                 
               
-        getPassion()
+//        getPassion()
 
         
     }
@@ -64,6 +64,7 @@ class DiscoverVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        getPassion()
         navigationController?.isNavigationBarHidden = true
     }
     
@@ -502,7 +503,7 @@ extension DiscoverVC {
 
     }
     
-    fileprivate func getPassion() {
+     func getPassion() {
          NetworkManager.getPassion { (PassionSetting) in
             Filter.defaultMinAge = PassionSetting.minimumAge
             Filter.defaultMaximumAge = PassionSetting.maximumAge

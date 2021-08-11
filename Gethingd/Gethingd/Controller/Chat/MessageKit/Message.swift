@@ -63,17 +63,19 @@ internal struct Message: MessageType {
 //    }
     //https://gurutechnolabs.co.in/website/laravel/gethingd/public/api/get_message_conversation
     init(_ json: JSON) {
-        self.init(.text(json["message"].stringValue), ChatUser(senderId: "\(json["sender_id"].intValue)", displayName: ""), URL(string: json["sender_user_image"].stringValue), json["message_id"].stringValue, json["created_at"].stringValue.toDate ?? Date())
+        self.init(.text(json["message"].stringValue), ChatUser(senderId: "\(json["sender_id"].intValue)", displayName: ""), URL(string: json["sender_user_image"].stringValue), json["message_id"].stringValue, json["created_at"].stringValue.toLocal ?? Date())
     }
     
     //https://gurutechnolabs.co.in/website/laravel/gethingd/public/api/send_message
     init(json: JSON) {
-        self.init(.text(json["data"]["message"].stringValue), ChatUser(senderId: "\(json["data"]["sender_id"].intValue)", displayName: ""), URL(string: json["data"]["sender_user_image"].stringValue), json["data"]["message_id"].stringValue, json["data"]["created_at"].stringValue.toDate ?? Date())
+        self.init(.text(json["data"]["message"].stringValue), ChatUser(senderId: "\(json["data"]["sender_id"].intValue)", displayName: ""), URL(string: json["data"]["sender_user_image"].stringValue), json["data"]["message_id"].stringValue, json["data"]["created_at"].stringValue.toLocal ?? Date())
     }
     
     init(jsonNotification: JSON) {
-        self.init(.text(jsonNotification["message"]["message"].stringValue), ChatUser(senderId: "\(jsonNotification["message"]["sender_id"].intValue)", displayName: ""), URL(string: jsonNotification["message"]["sender_user_image"].stringValue), jsonNotification["message"]["message_id"].stringValue, jsonNotification["message"]["created_at"].stringValue.toDate ?? Date())
+        self.init(.text(jsonNotification["message"]["message"].stringValue), ChatUser(senderId: "\(jsonNotification["message"]["sender_id"].intValue)", displayName: ""), URL(string: jsonNotification["message"]["sender_user_image"].stringValue), jsonNotification["message"]["message_id"].stringValue, jsonNotification["message"]["created_at"].stringValue.toLocal ?? Date())
     }
+    
+    
     
 //    init(json: JSON) {
 //        self.init(image:UIImage, ChatUser(senderId: "\(json["data"]["sender_id"].intValue)", displayName: ""), URL(string: json["data"]["sender_user_image"].stringValue), json["data"]["message_id"].stringValue, json["data"]["created_at"].stringValue.toDate ?? Date()))
@@ -137,4 +139,7 @@ extension MessageType {
             self.placeholderImage = UIImage(imageLiteralResourceName: "image_message_placeholder")
         }
     }
+
+
+
 

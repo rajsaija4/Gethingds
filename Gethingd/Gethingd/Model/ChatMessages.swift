@@ -36,4 +36,19 @@ class ChatMessages: NSObject {
         lastSeen = json["lastseen"].doubleValue
     }
     
+    init( _ json:JSON) {
+        super.init()
+        
+        userId = json["message"]["user_id"].intValue
+        userName = json["message"]["name"].stringValue
+        userImage = json["message"]["sender_user_image"].stringValue
+        message = json["message"]["message"].stringValue
+        unreadMessageCount = json["message"]["unread_message_count"].intValue
+        readStatus = json["message"]["read_status"].stringValue
+        likeStatus = json["message"]["like_status"].stringValue
+        matchId = json["message"]["match_id"].intValue
+        createAt = json["message"]["created_at"].stringValue
+        lastSeen = json["message"]["lastseen"].doubleValue
+    }
+    
 }
