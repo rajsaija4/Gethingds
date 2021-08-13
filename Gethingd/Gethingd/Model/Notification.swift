@@ -29,7 +29,6 @@ class AppNotification: NSObject {
         message = json["message"].stringValue
         userId = json["user_id"].intValue
         createdAt = json["created_at"].stringValue
-        userId = json["user_id"].intValue
         senderId = json["sender_id"].intValue
         imgUser = json["user_image"].stringValue
         

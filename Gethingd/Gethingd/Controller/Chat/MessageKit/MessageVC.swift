@@ -20,11 +20,16 @@ class MessageVC: MessagesViewController {
     fileprivate var messageList: [Message] = []
     fileprivate let refreshControl = UIRefreshControl()
        private let formatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        return formatter
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        dateFormatter.timeZone = NSTimeZone.local
+        return dateFormatter
+//        return formatter
     }()
-    
+    /*
+     
+     */
     var onPopView: (() -> Void)?
     var oppositeUserName:String = ""
     var match_Id:Int = 0
@@ -45,63 +50,63 @@ class MessageVC: MessagesViewController {
         messagesCollectionView.register(MessageCell.self)
         super.viewDidLoad()
         setupUI()
-        setupInputButton()
+//        setupInputButton()
     }
     
-    private func setupInputButton() {
-        let button = InputBarButtonItem()
-        button.setSize(CGSize(width: 35, height: 35), animated: false)
-        if #available(iOS 13.0, *) {
-            button.setImage(UIImage(systemName: "camera"), for: .normal)
-            button.tintColor = UIColor(hexString: "#5F054A")
-        } else {
-            // Fallback on earlier versions
-        }
-        button.onTouchUpInside { [weak self] _ in
-            self?.presentInputActionSheet()
-        }
-        messageInputBar.setLeftStackViewWidthConstant(to: 36, animated: false)
-        messageInputBar.setStackViewItems([button], forStack: .left, animated: false)
-    }
+//    private func setupInputButton() {
+//        let button = InputBarButtonItem()
+//        button.setSize(CGSize(width: 35, height: 35), animated: false)
+//        if #available(iOS 13.0, *) {
+//            button.setImage(UIImage(systemName: "camera"), for: .normal)
+//            button.tintColor = UIColor(hexString: "#5F054A")
+//        } else {
+//            // Fallback on earlier versions
+//        }
+//        button.onTouchUpInside { [weak self] _ in
+//            self?.presentInputActionSheet()
+//        }
+//        messageInputBar.setLeftStackViewWidthConstant(to: 36, animated: false)
+//        messageInputBar.setStackViewItems([button], forStack: .left, animated: false)
+//    }
     
-    private func presentInputActionSheet() {
-        let actionSheet = UIAlertController(title: "Attach Media",
-                                            message: "What would you like to attach?",
-                                            preferredStyle: .actionSheet)
-        actionSheet.addAction(UIAlertAction(title: "Photo", style: .default, handler: { [weak self] _ in
-            self?.presentPhotoInputActionsheet()
-        }))
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-
-        present(actionSheet, animated: true)
-    }
-    
-    private func presentPhotoInputActionsheet() {
-        let actionSheet = UIAlertController(title: "Attach Photo",
-                                            message: "Where would you like to attach a photo from",
-                                            preferredStyle: .actionSheet)
-        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { [weak self] _ in
-
-            let picker = UIImagePickerController()
-            picker.sourceType = .camera
-            picker.delegate = self
-            picker.allowsEditing = true
-            self?.present(picker, animated: true)
-
-        }))
-        actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { [weak self] _ in
-
-            let picker = UIImagePickerController()
-            picker.sourceType = .photoLibrary
-            picker.delegate = self
-            picker.allowsEditing = true
-            self?.present(picker, animated: true)
-
-        }))
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-
-        present(actionSheet, animated: true)
-    }
+//    private func presentInputActionSheet() {
+//        let actionSheet = UIAlertController(title: "Attach Media",
+//                                            message: "What would you like to attach?",
+//                                            preferredStyle: .actionSheet)
+//        actionSheet.addAction(UIAlertAction(title: "Photo", style: .default, handler: { [weak self] _ in
+//            self?.presentPhotoInputActionsheet()
+//        }))
+//        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+//
+//        present(actionSheet, animated: true)
+//    }
+//
+//    private func presentPhotoInputActionsheet() {
+//        let actionSheet = UIAlertController(title: "Attach Photo",
+//                                            message: "Where would you like to attach a photo from",
+//                                            preferredStyle: .actionSheet)
+//        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { [weak self] _ in
+//
+//            let picker = UIImagePickerController()
+//            picker.sourceType = .camera
+//            picker.delegate = self
+//            picker.allowsEditing = true
+//            self?.present(picker, animated: true)
+//
+//        }))
+//        actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { [weak self] _ in
+//
+//            let picker = UIImagePickerController()
+//            picker.sourceType = .photoLibrary
+//            picker.delegate = self
+//            picker.allowsEditing = true
+//            self?.present(picker, animated: true)
+//
+//        }))
+//        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+//
+//        present(actionSheet, animated: true)
+//    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -331,6 +336,7 @@ extension MessageVC {
             self.messageList.removeAll()
             self.messageList.append(contentsOf: messages)
             self.messagesCollectionView.reloadData()
+//            self.messagesCollectionView.reloadDataAndKeepOffset()
             self.messagesCollectionView.scrollToBottom()
             
         } _: { (error) in
@@ -407,7 +413,33 @@ extension MessageVC: MessagesDataSource {
     }
     
     func messageBottomLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
-        let dateString = formatter.string(from: message.sentDate)
+        var dateString = formatter.string(from: message.sentDate)
+       
+  
+             let currentDate = Date()
+             
+            let timeZoneDate = message.sentDate
+             
+             if (currentDate).weeks(from: timeZoneDate) > 0 {
+                 
+                 if (currentDate).weeks(from: timeZoneDate) > 1 {
+     //                return self.convertFromLocaltoCurrentFormatStringDateForNotification
+                     dateString =  "\(currentDate.days(from: timeZoneDate)) days ago"
+                 }
+                 
+                 dateString = "\(currentDate.weeks(from: timeZoneDate)) week ago"
+             } else if currentDate.days(from: timeZoneDate) > 0 {
+                 dateString =  "\(currentDate.days(from: timeZoneDate))" + (currentDate.days(from: timeZoneDate) == 1 ? " day ago" : " days ago")
+             } else if currentDate.hours(from: timeZoneDate) > 0 {
+                 dateString = "\(currentDate.hours(from: timeZoneDate)) hour ago"
+             } else if currentDate.minutes(from: timeZoneDate) > 0 {
+                 dateString = "\(currentDate.minutes(from: timeZoneDate)) minute ago"
+             } else {
+                 dateString = "just now"
+             }
+       
+         
+        
         return NSAttributedString(string: dateString, attributes: [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .caption2)])
     }
 }

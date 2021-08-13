@@ -22,6 +22,7 @@ enum AppStoryboard : String {
     case Upgrade
     case ReviewLater
     case Setting
+    case Notification
     
     
     var instance : UIStoryboard {

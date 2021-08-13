@@ -14,14 +14,78 @@ class MainchatVC: UIViewController {
     var pagingViewController: PagingViewController!
     
     
+    @IBOutlet weak var btnBack: UIButton!
+    @IBOutlet weak var lblTitle: UILabel!
     //MARK:- VARIABLE
     fileprivate var arrFreshMatches: [Conversation] = []
     fileprivate var arrAstroLike: [Conversation] = []
     fileprivate var arrMatchesMessage: [Conversation] = []
-  
+    var isFromNotifications = false
+    var isFromPushnotifications = false
+    var selectedIndex  = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        if isFromNotifications {
+            lblTitle.isHidden = true
+            btnBack.isHidden = false
+        }
+        
+        if isFromPushnotifications {
+            lblTitle.isHidden = true
+            btnBack.isHidden = false
+        }
+        
         setupSubViewControllers()
+        NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveData(_:)), name: .recieveMatch, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(onRecieveLike(_:)), name: .recieveLike, object: nil)
+            
+        NotificationCenter.default.addObserver(self, selector: #selector(onRecieveMsg(_:)), name: .recieveMsg, object: nil)
+        
+    }
+    
+    @IBAction func onPressBackbtn(_ sender: Any) {
+        if isFromPushnotifications {
+            APPDEL?.setupMainTabBarController()
+        }
+        else {
+        self.navigationController?.popViewController(animated: true)
+        }
+        
+    }
+    @objc func onDidReceiveData(_ notifications:NSNotification){
+    let vc = MainchatVC.instantiate(fromAppStoryboard: .Chat)
+    vc.modalPresentationStyle = .fullScreen
+    vc.modalTransitionStyle = .flipHorizontal
+    vc.present(vc, animated: true, completion: nil)
+    
+        
+    }
+    
+    @objc func onRecieveLike(_ notifications:NSNotification){
+     let vc = WholikedVC.instantiate(fromAppStoryboard: .Chat)
+     vc.modalPresentationStyle = .fullScreen
+     vc.modalTransitionStyle = .flipHorizontal
+     vc.present(vc, animated: true, completion: nil)
+     
+         
+     }
+    
+    @objc func onRecieveMsg(_ notifications:NSNotification){
+     let vc = MatchesVC.instantiate(fromAppStoryboard: .Chat)
+     vc.modalPresentationStyle = .fullScreen
+     vc.modalTransitionStyle = .flipHorizontal
+     vc.present(vc, animated: true, completion: nil)
+     
+         
+     }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .recieveMatch, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .recieveLike, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .recieveMsg, object: nil)
+
+
     }
 }
 
@@ -59,6 +123,7 @@ extension MainchatVC {
         
         pagingViewController = PagingViewController(viewControllers: [messageVC1, matchesVC,wholikedmeVC])
         pagingViewController.font = AppFonts.Poppins_Medium.withSize(15)
+        
         pagingViewController.selectedFont = AppFonts.Poppins_Medium.withSize(15)
         pagingViewController.menuItemSize = .sizeToFit(minWidth: 0, height: 50)
         pagingViewController.backgroundColor = .white
@@ -71,6 +136,7 @@ extension MainchatVC {
         addChild(pagingViewController)
         contentView.addSubview(pagingViewController.view)
         contentView.constrainToEdges(pagingViewController.view)
+        pagingViewController.select(index: selectedIndex)
         pagingViewController.didMove(toParent: self)
       
         

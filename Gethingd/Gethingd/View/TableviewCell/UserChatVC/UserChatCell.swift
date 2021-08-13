@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class UserChatCell: UITableViewCell {
 
     @IBOutlet weak var btnStatus: UIButton!
@@ -73,7 +74,7 @@ extension String
     
     var convertFromLocaltoCurrentFormatDateForNotification: Date {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         formatter.timeZone = TimeZone.init(abbreviation: "UTC")
         formatter.locale = Locale(identifier: "UTC")
         formatter.calendar = Calendar(identifier: .gregorian)
@@ -124,9 +125,10 @@ extension String
         } else if currentDate.minutes(from: timeZoneDate) > 0 {
             return "\(currentDate.minutes(from: timeZoneDate)) minute"
         } else {
-            return "\(currentDate.seconds(from: timeZoneDate)) second"
+            return "just"
         }
     }
+    
     
 }
 

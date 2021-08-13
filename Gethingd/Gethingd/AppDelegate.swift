@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
   
 
     var window: UIWindow?
+//     var applicationBadgeno = 0
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -81,9 +82,9 @@ extension AppDelegate {
         FirebaseApp.configure()
         registerNotification()
         IQKeyboardManager.shared.enable = true
-//        IQKeyboardManager.shared.disabledDistanceHandlingClasses = [MessageVC.self]
-//        IQKeyboardManager.shared.disabledToolbarClasses = [MessageVC.self]
-//        IQKeyboardManager.shared.disabledTouchResignedClasses = [MessageVC.self]
+        IQKeyboardManager.shared.disabledDistanceHandlingClasses = [MessageVC.self]
+        IQKeyboardManager.shared.disabledToolbarClasses = [MessageVC.self]
+        IQKeyboardManager.shared.disabledTouchResignedClasses = [MessageVC.self]
         GMSPlacesClient.provideAPIKey(GooglePlaceAPIKey)
         IAPManager.setup()
         
@@ -171,9 +172,10 @@ extension AppDelegate {
             UNUserNotificationCenter.current().requestAuthorization(
                 options: authOptions,
                 completionHandler: {_, _ in })
-            UIApplication.shared.applicationIconBadgeNumber = Int(UNAuthorizationOptions.badge.rawValue)
+            
             // For iOS 10 data message (sent via FCM)
             Messaging.messaging().delegate = self
+          
             
         } else {
             let settings: UIUserNotificationSettings =
@@ -182,6 +184,7 @@ extension AppDelegate {
         }
         
         UIApplication.shared.registerForRemoteNotifications()
+    
         
     }
     
@@ -227,13 +230,51 @@ extension AppDelegate {
         }
         
         if json["match"].dictionaryObject != nil {
-            let vc  = MatchesVC.instantiate(fromAppStoryboard: .Chat)
+            let vc = MainchatVC.instantiate(fromAppStoryboard: .Chat)
+            vc.isFromPushnotifications = true
+            vc.selectedIndex = 1
             let nvc = UINavigationController(rootViewController: vc)
             nvc.isNavigationBarHidden = true
             window?.rootViewController = nvc
             window?.makeKeyAndVisible()
+            
+            
+
+            
+           
+            
+//            let vc  = MainchatVC.instantiate(fromAppStoryboard: .Chat)
+//            let nvc = UINavigationController(rootViewController: vc)
+//            nvc.isNavigationBarHidden = true
+//            window?.rootViewController = nvc
+//            window?.makeKeyAndVisible()
             completionHandler()
             return
+        }
+        
+        if json["like"].dictionaryObject != nil {
+            
+            let vc = MainchatVC.instantiate(fromAppStoryboard: .Chat)
+            vc.isFromPushnotifications = true
+            vc.selectedIndex = 2
+            let nvc = UINavigationController(rootViewController: vc)
+            nvc.isNavigationBarHidden = true
+            window?.rootViewController = nvc
+            window?.makeKeyAndVisible()
+             completionHandler()
+
+        }
+        
+        if json["custom"].dictionaryObject != nil {
+            let vc = NotificationVC.instantiate(fromAppStoryboard: .Notification)
+            vc.isFromNotification = true
+            let nvc = UINavigationController(rootViewController: vc)
+            window?.rootViewController = nvc
+            window?.makeKeyAndVisible()
+            completionHandler()
+          
+            
+            
         }
         
         /*

@@ -162,6 +162,10 @@ extension Notification.Name {
     
     static let changeReachability = Notification.Name("changeReachabilityNotification")
     static let receiveMessage = Notification.Name("receiveMessageNotification")
+    static let recieveMatch = Notification.Name("recieveMatchNotification")
+    static let recieveLike = Notification.Name("revieveLike")
+    static let recieveMsg = Notification.Name("revieveLike")
+    static let recieveCustom = Notification.Name("recieveCustom")
     static let removeAds = Notification.Name("updateAdsNotification")
     static let resetContent = Notification.Name("resetContentNotification")
 }
@@ -176,6 +180,14 @@ extension String {
         dateFormatter.timeZone = TimeZone(identifier: "UTC")
         return dateFormatter.date(from: self)
     }
+    
+    var toLocalTime: Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        dateFormatter.timeZone = NSTimeZone.local
+        return dateFormatter.date(from: self)
+    }
+
     var toLocal: Date? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"

@@ -47,9 +47,24 @@ class ProfileTVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(onRecieveCustom(_:)), name: .recieveCustom, object: nil)
         self.navigationController?.navigationBar.isHidden = true
         
     }
+    
+    @objc func onRecieveCustom(_ notifications:NSNotification){
+     let vc = NotificationVC.instantiate(fromAppStoryboard: .Notification)
+     vc.modalPresentationStyle = .fullScreen
+     vc.modalTransitionStyle = .flipHorizontal
+     vc.present(vc, animated: true, completion: nil)
+    }
+    
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .recieveCustom, object: nil)
+
+    }
+        
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         lblName.text = User.details.firstName
@@ -387,7 +402,19 @@ extension ProfileTVC {
 //                nvc.modalTransitionStyle = .crossDissolve
               self.navigationController?.pushViewController(vc, animated: true)
                 break
-            case 3:
+                
+        case 3:
+            let vc = NotificationVC.instantiate(fromAppStoryboard: .Notification)
+            vc.hidesBottomBarWhenPushed = true
+//                vc.userId = User.details.id
+//                vc.isFromProfile = true
+//                let nvc = UINavigationController(rootViewController: vc)
+//                vc.modalPresentationStyle = .fullScreen
+//                nvc.modalTransitionStyle = .crossDissolve
+          self.navigationController?.pushViewController(vc, animated: true)
+            break
+            
+            case 4:
                 let vc = SubscribeVC.instantiate(fromAppStoryboard: .Upgrade)
 //                vc.onPopView = { [weak self] in
 //                    self?.setupNavigationBar()
@@ -417,11 +444,11 @@ extension ProfileTVC {
 //                vc.hidesBottomBarWhenPushed = true
 //                navigationController?.pushViewController(vc, animated: false)
 //                break
-            case 4:
+            case 5:
                 let vc = ChangePasVC.instantiate(fromAppStoryboard: .Login)
                 self.navigationController?.pushViewController(vc, animated: true)
             break
-            case 5:
+            case 6:
                 
 //                let vc = DiscoverVC.init()
 //                vc.timer.invalidate()

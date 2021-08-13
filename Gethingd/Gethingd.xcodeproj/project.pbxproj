@@ -15,6 +15,7 @@
 		9F1F70C8268B599700097F7E /* ReviewLater.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F1F70C7268B599700097F7E /* ReviewLater.storyboard */; };
 		9F48A6232692CB23007A6046 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F48A6222692CB23007A6046 /* EditProfileVC.swift */; };
 		9F48A6702692E4E0007A6046 /* TagListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F48A66F2692E4E0007A6046 /* TagListVC.swift */; };
+		9F4CC14D26C553B600CA0CB1 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4CC14C26C553B600CA0CB1 /* Notification.storyboard */; };
 		9F53C08E269322AA0058D21B /* ProfilePhotoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53C08C269322AA0058D21B /* ProfilePhotoCollectionCell.swift */; };
 		9F53C08F269322AA0058D21B /* ProfilePhotoCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F53C08D269322AA0058D21B /* ProfilePhotoCollectionCell.xib */; };
 		9F53D20626A050C2008CF8FF /* PassionSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53D20526A050C2008CF8FF /* PassionSetting.swift */; };
@@ -124,7 +125,7 @@
 
 /* Begin PBXFileReference section */
 		183042C726720E8900E6A29A /* Gethingd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gethingd.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		183042CA26720E8900E6A29A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		183042CA26720E8900E6A29A /* AppDelegate.swift */ = {isa = PBXFileReference; indentWidth = 5; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		183042D326720E8B00E6A29A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		183042D826720E8B00E6A29A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CA5EC62CBB9378181B5FC41 /* Pods-Gethingd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gethingd.debug.xcconfig"; path = "Target Support Files/Pods-Gethingd/Pods-Gethingd.debug.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +135,7 @@
 		9F1F70C7268B599700097F7E /* ReviewLater.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReviewLater.storyboard; sourceTree = "<group>"; };
 		9F48A6222692CB23007A6046 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		9F48A66F2692E4E0007A6046 /* TagListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListVC.swift; sourceTree = "<group>"; };
+		9F4CC14C26C553B600CA0CB1 /* Notification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
 		9F53C08C269322AA0058D21B /* ProfilePhotoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoCollectionCell.swift; sourceTree = "<group>"; };
 		9F53C08D269322AA0058D21B /* ProfilePhotoCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfilePhotoCollectionCell.xib; sourceTree = "<group>"; };
 		9F53D20526A050C2008CF8FF /* PassionSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassionSetting.swift; sourceTree = "<group>"; };
@@ -651,6 +653,7 @@
 				9FD6CDE526848DF0002EF5BD /* Discover.storyboard */,
 				9F1F70C7268B599700097F7E /* ReviewLater.storyboard */,
 				9FF205B026944E0100AC5332 /* Setting.storyboard */,
+				9F4CC14C26C553B600CA0CB1 /* Notification.storyboard */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -740,6 +743,7 @@
 				9FD6CDD426848D2A002EF5BD /* UserChatCell.xib in Resources */,
 				9FA0CADE26BC1A920057494C /* GoogleService-Info.plist in Resources */,
 				9FD6CDFB26848EF9002EF5BD /* Poppins-Regular.ttf in Resources */,
+				9F4CC14D26C553B600CA0CB1 /* Notification.storyboard in Resources */,
 				9FD6CDFA26848EF9002EF5BD /* Poppins-Medium.ttf in Resources */,
 				9FD6CDE926848DF0002EF5BD /* LaunchScreen.storyboard in Resources */,
 				9FD6CDF926848EF9002EF5BD /* Poppins-Light.ttf in Resources */,

@@ -72,7 +72,7 @@ struct URLManager {
     }
     
     struct AllNotification {
-        static let notification = basePath + "notification_history"
+        static let notification = basePath + "get_notifcation"
     }
     
     struct GalaxyPass {

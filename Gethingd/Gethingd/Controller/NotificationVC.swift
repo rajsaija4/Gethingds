@@ -28,10 +28,18 @@ class NotificationVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tblNotification.delegate = self
+        tblNotification.dataSource = self
         setupUI()
         
     }
     
+    @IBAction func onPressBackbtnTap(_ sender: UIButton) {
+        if isFromNotification {
+            APPDEL?.setupMainTabBarController()
+        }
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 
 
@@ -39,8 +47,8 @@ class NotificationVC: UIViewController {
 extension NotificationVC {
     
     fileprivate func setupUI() {
-        navigationItem.setHidesBackButton(true, animated: true)
-        navigationController?.addBackButtonWithTitle(title: "Notification", action: #selector(self.onBackBtnTap))
+//        navigationItem.setHidesBackButton(false, animated: true)
+//        navigationController?.addBackButtonWithTitle(title: "Notification", action: #selector(self.onBackBtnTap))
         getNotifications()
     }
 }
@@ -73,17 +81,17 @@ extension NotificationVC {
 
 
 extension NotificationVC {
-    
-    @objc fileprivate func onBackBtnTap() {
-        
-        if isFromNotification {
-            APPDEL?.setupMainTabBarController()
-            return
-        }
-        
-        onPopView?()
-        navigationController?.popViewController(animated: false)
-    }
+//
+//    @objc fileprivate func onBackBtnTap() {
+//
+//        if isFromNotification {
+//            APPDEL?.setupMainTabBarController()
+//            return
+//        }
+//
+//        onPopView?()
+//        navigationController?.popViewController(animated: false)
+//    }
 }
 
 
@@ -115,42 +123,79 @@ extension NotificationVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        print(arrNotification[indexPath.row].type)
         
-        if arrNotification[indexPath.row].type == "message" {
-            guard let mainTVC = (APPDEL?.window?.rootViewController as? UINavigationController)?.viewControllers.first as? MainTabBarController else { return }
-            mainTVC.selectedIndex = 2
-            guard let chatVC = (mainTVC.viewControllers?.last as? UINavigationController)?.viewControllers.first as? ChatVC else { return }
-//            chatVC.getConversation()
-            return
+        if arrNotification[indexPath.row].type == "match"{
+            let vc = MainchatVC.instantiate(fromAppStoryboard: .Chat)
+            vc.modalPresentationStyle = .fullScreen
+            vc.selectedIndex = 1
+            vc.isFromNotifications = true
+            self.navigationController?.pushViewController(vc, animated: true)
         }
         
-        if arrNotification[indexPath.row].type == "match" {
-            guard let mainTVC = (APPDEL?.window?.rootViewController as? UINavigationController)?.viewControllers.first as? MainTabBarController else { return }
-            mainTVC.selectedIndex = 2
-            guard let chatVC = (mainTVC.viewControllers?.last as? UINavigationController)?.viewControllers.first as? ChatVC else { return }
-//            chatVC.getConversation()
-            return
+        if arrNotification[indexPath.row].type == "like"{
+            let vc = MainchatVC.instantiate(fromAppStoryboard: .Chat)
+            vc.modalPresentationStyle = .fullScreen
+            vc.selectedIndex = 2
+            vc.isFromNotifications = true
+            self.navigationController?.pushViewController(vc, animated: true)
+
+        }
+        if arrNotification[indexPath.row].type == "message"{
+            let vc = MainchatVC.instantiate(fromAppStoryboard: .Chat)
+            vc.selectedIndex = 0
+            vc.isFromNotifications = true
+            self.navigationController?.pushViewController(vc, animated: true)
         }
         
-        if arrNotification[indexPath.row].type == "astro_like" {
-            let vc = UserDetailsTVC.instantiate(fromAppStoryboard: .Discover)
-            vc.isFromNotification = true
-            vc.userId = arrNotification[indexPath.row].senderId
-            let nvc = UINavigationController(rootViewController: vc)
-            nvc.isNavigationBarHidden = false
-            APPDEL?.window?.rootViewController = nvc
-            APPDEL?.window?.makeKeyAndVisible()
-            return
-        }
         
-        if arrNotification[indexPath.row].type == "premium" {
-            let vc = UpgradeVC.instantiate(fromAppStoryboard: .Upgrade)
-            vc.hidesBottomBarWhenPushed = true
-            navigationController?.pushViewController(vc, animated: false)
-            return
-        }
+        
+//        if arrNotification[indexPath.row].type == "match"{
+//            let vc = MatchesVC.instantiate(fromAppStoryboard: .Chat)
+//            self.navigationController?.pushViewController(vc, animated: true)
+//        }
         
         
     }
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//
+//
+//        if arrNotification[indexPath.row].type == "message" {
+//            guard let mainTVC = (APPDEL?.window?.rootViewController as? UINavigationController)?.viewControllers.first as? MainTabBarController else { return }
+//            mainTVC.selectedIndex = 3
+////            guard ((mainTVC.viewControllers?.last as? UINavigationController)?.viewControllers.first as? ChatVC) != nil else { return }
+////            chatVC.getConversation()
+//            return
+//        }
+//
+//        if arrNotification[indexPath.row].type == "match" {
+//            guard let mainTVC = (APPDEL?.window?.rootViewController as? UINavigationController)?.viewControllers.first as? MainTabBarController else { return }
+//            mainTVC.selectedIndex = 2
+//            guard let chatVC = (mainTVC.viewControllers?.last as? UINavigationController)?.viewControllers.first as? ChatVC else { return }
+////            chatVC.getConversation()
+//            return
+//        }
+//
+//        if arrNotification[indexPath.row].type == "astro_like" {
+//            let vc = UserDetailsTVC.instantiate(fromAppStoryboard: .Discover)
+//            vc.isFromNotification = true
+//            vc.userId = arrNotification[indexPath.row].senderId
+//            let nvc = UINavigationController(rootViewController: vc)
+//            nvc.isNavigationBarHidden = false
+//            APPDEL?.window?.rootViewController = nvc
+//            APPDEL?.window?.makeKeyAndVisible()
+//            return
+//        }
+//
+//        if arrNotification[indexPath.row].type == "premium" {
+//            let vc = UpgradeVC.instantiate(fromAppStoryboard: .Upgrade)
+//            vc.hidesBottomBarWhenPushed = true
+//            navigationController?.pushViewController(vc, animated: false)
+//            return
+//        }
+//
+//
+//    }
 
 }

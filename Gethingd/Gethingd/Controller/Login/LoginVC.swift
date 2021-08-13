@@ -217,6 +217,24 @@ class LoginVC: UIViewController {
         
         
     }
+    @IBAction func onPressPrivacybtnTap(_ sender: UIButton) {
+        
+        guard let termsURL = URL(string: "https://gurutechnolabs.co.in/website/laravel/gethingd/page/term_and_condition") else {
+            return
+        }
+        
+        openSafariViewController(termsURL)
+    }
+
+    @IBAction func onPressTermsbtnTap(_ sender: UIButton) {
+        
+        guard let privacyURL = URL(string: "https://gurutechnolabs.co.in/website/laravel/gethingd/page/privacy_policy") else {
+            return
+        }
+        
+        openSafariViewController(privacyURL)
+    }
+
     @IBAction func onPressForgotPassword(_ sender: UIButton) {
         
         let vc = FpasswordVC.instantiate(fromAppStoryboard: .Login)

@@ -12,6 +12,8 @@ class MatchesVC: UIViewController, UISearchBarDelegate {
     var arrMatchesList:[MatchConversation] = []
     var searchActive : Bool = false
     var filtered:[MatchConversation] = []
+    var isFromNotification = false
+
 
 
     @IBOutlet weak var searchBar: UISearchBar!
@@ -23,6 +25,8 @@ class MatchesVC: UIViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+
 //        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MessageVC1.dismissKeyboard))
 //            view.addGestureRecognizer(tap)
 //        getConversation()
@@ -37,6 +41,7 @@ class MatchesVC: UIViewController, UISearchBarDelegate {
         getConversation()
 //        collMatches.reloadData()
     }
+  
     
     
 //    @objc func dismissKeyboard() {

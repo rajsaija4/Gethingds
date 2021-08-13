@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -1850,11 +1850,14 @@
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9G-38-NbY">
-                                                                                <rect key="frame" x="299" y="4" width="20" height="47"/>
+                                                                                <rect key="frame" x="290.5" y="4" width="28.5" height="47"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                                                 <color key="tintColor" red="0.32944318649999998" green="0.12744057180000001" blue="0.27206125860000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                <state key="normal" image="circle" catalog="system"/>
+                                                                                <state key="normal" image="img_unselected"/>
                                                                                 <state key="selected" image="chack"/>
+                                                                                <connections>
+                                                                                    <action selector="onPressbuybtnTap:" destination="8gt-CW-Zus" eventType="touchUpInside" id="VoS-tG-qHq"/>
+                                                                                </connections>
                                                                             </button>
                                                                         </subviews>
                                                                         <color key="backgroundColor" red="0.93309468029999998" green="0.85807365179999995" blue="0.89893406629999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1897,11 +1900,14 @@
                                                                                 <color key="textColor" red="0.32944318649999998" green="0.12744057180000001" blue="0.27206125860000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="myd-gK-TR5">
-                                                                                <rect key="frame" x="299" y="4" width="20" height="47"/>
+                                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="myd-gK-TR5">
+                                                                                <rect key="frame" x="290.5" y="4" width="28.5" height="47"/>
                                                                                 <color key="tintColor" red="0.32944318649999998" green="0.12744057180000001" blue="0.27206125860000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                <state key="normal" image="circle" catalog="system"/>
+                                                                                <state key="normal" image="img_unselected"/>
                                                                                 <state key="selected" image="chack"/>
+                                                                                <connections>
+                                                                                    <action selector="onPressthreemonthbtnTap:" destination="8gt-CW-Zus" eventType="touchUpInside" id="AO8-xb-dCa"/>
+                                                                                </connections>
                                                                             </button>
                                                                         </subviews>
                                                                         <color key="backgroundColor" red="0.93309468029999998" green="0.85807365179999995" blue="0.89893406629999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2102,8 +2108,9 @@
                         <outlet property="btnFMonthActivate" destination="h9G-38-NbY" id="1Qy-LM-TTQ"/>
                         <outlet property="btnFplan" destination="Awd-kw-a0U" id="AMG-Hc-KnB"/>
                         <outlet property="btnPplan" destination="WxA-xk-UuS" id="jyw-vn-nMP"/>
-                        <outlet property="btnTHreeMonthActivate" destination="myd-gK-TR5" id="HI8-3H-Lir"/>
                         <outlet property="fplanReviewLater" destination="DZa-pu-Lyc" id="kpU-iS-U82"/>
+                        <outletCollection property="btnpurchase" destination="h9G-38-NbY" collectionClass="NSMutableArray" id="Win-ji-xFc"/>
+                        <outletCollection property="btnpurchase" destination="myd-gK-TR5" collectionClass="NSMutableArray" id="aiz-5c-TOg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1W1-6f-VDg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2342,7 +2349,6 @@
     <resources>
         <image name="chack" width="28.5" height="28.5"/>
         <image name="check" width="20" height="14"/>
-        <image name="circle" catalog="system" width="128" height="121"/>
         <image name="close" width="21" height="21"/>
         <image name="img_astrolikes" width="83" height="79"/>
         <image name="img_back" width="16" height="13.5"/>
@@ -2358,6 +2364,7 @@
         <image name="img_rewind_upgrade" width="22" height="22"/>
         <image name="img_splash" width="1080" height="1920"/>
         <image name="img_swipe" width="56.5" height="56.5"/>
+        <image name="img_unselected" width="28.5" height="28.5"/>
         <image name="update-info" width="100" height="100"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

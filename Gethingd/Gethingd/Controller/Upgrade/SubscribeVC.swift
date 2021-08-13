@@ -12,6 +12,7 @@ class SubscribeVC: UIViewController {
     fileprivate var freePlan: SubscriptionPlan?
     fileprivate var premiumPlan: SubscriptionPlan?
 
+    @IBOutlet var btnpurchase: [UIButton]!
     @IBOutlet weak var btnFMonthActivate: UIButton!
     @IBOutlet weak var btnTHreeMonthActivate: UIButton!
     @IBOutlet weak var btnFplan: UIButton!
@@ -31,6 +32,19 @@ class SubscribeVC: UIViewController {
         self.dismiss(animated: true)
     }
     
+    @IBAction func onPressbuybtnTap(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        if btnpurchase[1].isSelected {
+            btnpurchase[1].isSelected = false
+        }
+        
+    }
+    @IBAction func onPressthreemonthbtnTap(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        if btnpurchase[0].isSelected {
+            btnpurchase[0].isSelected = false
+        }
+    }
     /*
     // MARK: - Navigation
 
