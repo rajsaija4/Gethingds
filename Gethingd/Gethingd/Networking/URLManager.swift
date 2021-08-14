@@ -43,6 +43,7 @@ struct URLManager {
         static let addInstagramToken = basePath + "add_instagram_token"
         static let getUserProfile = basePath + "use_profile_view?"
         static let getMyProfile = basePath + "get_profile"
+        static let getUserDetails = basePath + "get_user_details"
         static let getHeight = basePath + "get_height"
         static let getOtherUserProfile = basePath + "get_user_profile"
         static let logoutProfile = basePath + "logout"

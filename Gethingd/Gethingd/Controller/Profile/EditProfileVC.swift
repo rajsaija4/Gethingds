@@ -22,6 +22,7 @@ class EditProfileVC: UITableViewController, TagListViewDelegate, UIImagePickerCo
         tableView.reloadData()
     }
   
+    @IBOutlet weak var imgeView: UIView!
     @IBOutlet var btnGender: [UIButton]!
     @IBOutlet weak var txtNumberOfKids: CustomTextField!
     @IBOutlet weak var collKid: UICollectionView! {
@@ -63,6 +64,7 @@ class EditProfileVC: UITableViewController, TagListViewDelegate, UIImagePickerCo
     @IBOutlet weak var selectedPassion: TagListView!
     override func viewDidLoad() {
         super.viewDidLoad()
+//        imgeView.backgroundColor = UIColor(patternImage: UIImage(named: "img_Header")!)
         self.navigationController?.navigationBar.isHidden = true
         txtFname.setPlaceHolderColor()
         txtLname.setPlaceHolderColor()
@@ -109,6 +111,10 @@ class EditProfileVC: UITableViewController, TagListViewDelegate, UIImagePickerCo
         let img4 = img_Profile[3].image
         let img5 = img_Profile[4].image
         let img6 = img_Profile[5].image
+        
+        if img1 == nil {
+            showAlert("please insert your selfi")
+        }
         
         let imgData1 = img1?.jpegData(compressionQuality: 0.5)
         let imgData2 = img2?.jpegData(compressionQuality: 0.5)

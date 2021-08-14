@@ -92,6 +92,53 @@ class UserProfile: NSObject {
 //        instaToken = json["insta_access_token"].stringValue
 //        isActiveAccount = json["status"].stringValue == "Active" ? true : false
     }
+    
+    
+    init(json: JSON) {
+        super.init()
+        id = json["data"]["id"].intValue
+        firstName = json["data"]["first_name"].stringValue
+        lastName = json["data"]["last_name"].stringValue
+//        nickName = json["nick_name"].stringValue
+        email = json["data"]["email"].stringValue
+        age = json["data"]["age"].intValue
+        token = json["data"]["api_token"].stringValue
+        about = json["data"]["about"].stringValue
+        dateOfBirth = json["data"]["dob"].stringValue
+        lookingFor = json["data"]["looking_for"].stringValue
+//        instagramId = json["instagram_id"].stringValue
+        gender = json["data"]["gender"].stringValue
+        address = json["data"]["address"].stringValue
+//        sunSignId = json["sun_zodiac_sign_id"].stringValue
+//        moonSignId = json["moon_zodiac_sign_id"].stringValue
+//        risingSignId = json["rising_zodiac_sign_id"].stringValue
+//        userHeight = json["height"].stringValue
+        distance = json["data"]["distance"].intValue
+        noOfkids = json["data"]["num_of_kids"].intValue
+        image1 = json["data"]["image1"].stringValue
+        image2 = json["data"]["image2"].stringValue
+        image3 = json["data"]["image3"].stringValue
+        image4 = json["data"]["image4"].stringValue
+        status = json["data"]["status"].stringValue
+        image5 = json["data"]["image5"].stringValue
+        image6 = json["data"]["image6"].stringValue
+        jobTitle = json["data"]["job_title"].stringValue
+        
+        for kid in json["data"]["user_kids"].arrayValue {
+            userKids.append(kid["kids_status"].stringValue)
+        }
+        
+        userSetting = UserSetting(json)
+        for pas in json["data"]["passion"].arrayValue{
+            passion.append(pas.stringValue)
+        }
+        lastSeen = json["data"]["lastseen"].doubleValue
+       
+//        isSuperLike = json["super_like"].stringValue != "No"
+//        isButtonHide = json["button_hide"].boolValue
+//        instaToken = json["insta_access_token"].stringValue
+//        isActiveAccount = json["status"].stringValue == "Active" ? true : false
+    }
 }
 
 class UserSetting: NSObject {
@@ -105,5 +152,13 @@ class UserSetting: NSObject {
         showmyAge =  json["user_settings"]["show_my_age"].intValue
         distanceVisible = json["user_settings"]["distance_visible"].intValue
     }
+    
+    init(_ json:JSON){
+        super.init()
+        
+        showmyAge =  json["data"]["user_settings"]["show_my_age"].intValue
+        distanceVisible = json["data"]["user_settings"]["distance_visible"].intValue
+    }
+
     
 }

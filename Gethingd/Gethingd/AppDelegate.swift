@@ -123,6 +123,14 @@ extension AppDelegate {
         window?.rootViewController = nvc
         window?.makeKeyAndVisible()
     }
+     
+     func setUpAcceptTerms(){
+          let vc = PolicyVerificationVC.instantiate(fromAppStoryboard: .Setting)
+          let nvc = UINavigationController(rootViewController: vc)
+          nvc.isNavigationBarHidden = true
+          window?.rootViewController = nvc
+          window?.makeKeyAndVisible()
+     }
     
     func setupMainTabBarController() {
         

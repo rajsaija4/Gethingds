@@ -22,7 +22,8 @@ class SubscribeVC: UIViewController {
     @IBOutlet weak var fplanReviewLater: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        getPlanList()
+        btnFplan.isHidden = true
+//        getPlanList()
         self.navigationController?.navigationBar.isHidden = true
         // Do any additional setup after loading the view.
     }

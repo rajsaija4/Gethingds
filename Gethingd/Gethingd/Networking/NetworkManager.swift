@@ -261,7 +261,7 @@ extension NetworkManager {
                 AppSupport.remainingLikes = response["data"]["remaining_likes_count"].intValue
                 AppSupport.isLikeLimited = response["data"]["is_limited"].stringValue
 //                let user = User(json: response, token: User.details.api_token)
-                let user = User(response)
+                let user = User(json:response)
                 user.save()
                 success(response.message)
                 
@@ -318,6 +318,23 @@ extension NetworkManager {
                 }
                 
                 success(response["height"].arrayValue.map{ $0.doubleValue })
+                
+            }) { (error) in
+                fail(error.localizedDescription)
+            }
+        }
+        
+        static func getUserDetails(param: Parameters, _ success: @escaping (UserProfile) -> Void, _ fail: @escaping (String) -> Void) {
+            
+            NetworkCaller.postRequest(url: URLManager.Profile.getUserDetails, params: param, headers: header, { (response) in
+                
+                guard response.isSuccess else {
+                    fail(response.message)
+                    return
+                }
+                
+                success(UserProfile(json:response))
+                print(response)
                 
             }) { (error) in
                 fail(error.localizedDescription)

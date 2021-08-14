@@ -413,7 +413,7 @@ extension UserDetailsTVC {
                 return 148
                 
             case 2:
-            return 60
+            return 75
             
 //            case 3:
 //                

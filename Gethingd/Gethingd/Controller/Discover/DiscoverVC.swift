@@ -43,6 +43,7 @@ class DiscoverVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true, block: { [weak self] (timer) in
                     self?.getUserStatus()
                    })

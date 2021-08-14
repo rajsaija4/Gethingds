@@ -15,7 +15,11 @@ class PolicyVerificationVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func onPressAcceptbtnTap(_ sender: UIButton) {
+        
+        APPDEL?.setupMainTabBarController()
+    }
+    
     /*
     // MARK: - Navigation
 

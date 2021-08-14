@@ -133,12 +133,22 @@ extension NotificationVC: UITableViewDelegate {
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
-        if arrNotification[indexPath.row].type == "like"{
-            let vc = MainchatVC.instantiate(fromAppStoryboard: .Chat)
-            vc.modalPresentationStyle = .fullScreen
-            vc.selectedIndex = 2
-            vc.isFromNotifications = true
-            self.navigationController?.pushViewController(vc, animated: true)
+        if arrNotification[indexPath.row].type == "custom"{
+            let param = [
+                "user_id": arrNotification[indexPath.row].userId
+            ] as [String : Any]
+            
+            NetworkManager.Profile.getUserDetails(param: param) { response in
+                let vc = UserDetailsTVC.instantiate(fromAppStoryboard: .Discover)
+                vc.modalPresentationStyle = .fullScreen
+                vc.user = response
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true)
+            } _: { error in
+                print(error)
+            }
+
+           
 
         }
         if arrNotification[indexPath.row].type == "message"{

@@ -204,7 +204,7 @@ class SignInVC: UIViewController {
                         APPDEL?.setupMainTabBarController()
                         }
                         else {
-                        APPDEL?.setupCreateProfileVC()
+                            APPDEL?.setupCreateProfileVC()
                         }
 
                     } _: { (error) in
@@ -377,7 +377,7 @@ extension SignInVC: ASAuthorizationControllerDelegate {
                 APPDEL?.setupMainTabBarController()
                 }
                 else {
-                APPDEL?.setupCreateProfileVC()
+                    APPDEL?.setupCreateProfileVC()
                 }
 
             } _: { (error) in

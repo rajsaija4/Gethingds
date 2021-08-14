@@ -139,7 +139,7 @@ extension JSON {
     }
     
     var isAuthenticationFailed: Bool {
-        return self["status"].intValue == -1
+        return self["status"].intValue == -2
     }
     
     var errorMessage: String {

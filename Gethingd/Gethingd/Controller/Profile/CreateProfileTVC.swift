@@ -569,15 +569,17 @@ extension CreateProfileTVC {
         }
     }
     
-    @IBAction func onNextControlTap(_ sender: UIControl) {
-        
-        
+    @IBAction func onNextControlTap(_ sender: UIControl) {        
         let img1 = arrImageProfile[0].image
         let img2 = arrImageProfile[1].image
         let img3 = arrImageProfile[2].image
         let img4 = arrImageProfile[3].image
         let img5 = arrImageProfile[4].image
         let img6 = arrImageProfile[5].image
+        
+        if img1 == nil {
+            showAlert("please insert your selfi")
+        }
         
         let imgData1 = img1?.jpegData(compressionQuality: 0.5)
         let imgData2 = img2?.jpegData(compressionQuality: 0.5)
@@ -587,6 +589,7 @@ extension CreateProfileTVC {
         let imgData6 = img6?.jpegData(compressionQuality: 0.5)
         
         var source: [String: Data] = [:]
+        
         
         if imgData1 != nil {
             source.merge(["image1": imgData1!]) { (current, _) -> Data in
@@ -801,7 +804,8 @@ extension CreateProfileTVC {
             
             let alert = UIAlertController(title: "Success", message: message) { (_) in
                 if self.isFromLogin {
-                    APPDEL?.setupMainTabBarController()
+                    
+                    APPDEL?.setUpAcceptTerms()
                 } else {
                     self.onPopView?()
                     self.navigationController?.popViewController(animated: false)
