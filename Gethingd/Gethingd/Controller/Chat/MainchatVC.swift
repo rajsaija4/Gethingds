@@ -44,6 +44,11 @@ class MainchatVC: UIViewController {
         
     }
     
+//    override func viewWillAppear(_ animated: Bool) {
+//        self.viewWillAppear(animated)
+//        self.navigationController?.navigationBar.isHidden = true
+//    }
+    
     @IBAction func onPressBackbtn(_ sender: Any) {
         if isFromPushnotifications {
             APPDEL?.setupMainTabBarController()

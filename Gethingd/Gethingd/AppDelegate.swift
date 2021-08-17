@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+          
         // 1
         ApplicationDelegate.shared.application(
                     application,
@@ -35,6 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
 //        setupCreateProfileVC()
 //        setupLogin()
         setupAppDelegate()
+     UIApplication.shared.applicationIconBadgeNumber = 0
 //        getPassion() 
 //        setupMainTabBarController()
 //        return true
@@ -180,9 +182,11 @@ extension AppDelegate {
             UNUserNotificationCenter.current().requestAuthorization(
                 options: authOptions,
                 completionHandler: {_, _ in })
-            
+          
             // For iOS 10 data message (sent via FCM)
             Messaging.messaging().delegate = self
+        
+         
           
             
         } else {
@@ -195,7 +199,7 @@ extension AppDelegate {
     
         
     }
-    
+     
     func application(application: UIApplication,
                      didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         Messaging.messaging().apnsToken = deviceToken as Data
@@ -206,18 +210,17 @@ extension AppDelegate {
         AppUserDefaults.save(value: fcmToken ?? "", forKey: .fcmToken)
     }
     
-    
+  
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         
-        UIApplication.shared.applicationIconBadgeNumber = 0
+     UIApplication.shared.applicationIconBadgeNumber = 0
         print(response)
         guard let jsonString = response.notification.request.content.userInfo["custom"] as? String,  let json = jsonString.jsonObject else {
             completionHandler()
             return
         }
         
-       
-        
+     
        
         
         if json["message"].dictionaryObject != nil {
@@ -316,11 +319,12 @@ extension AppDelegate {
             completionHandler(.failed)
             return
         }
+    
+
         completionHandler(.newData)
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        
         
         guard let jsonString = notification.request.content.userInfo["custom"] as? String,  let json = jsonString.jsonObject else {
             completionHandler([.alert, .sound])
@@ -335,6 +339,7 @@ extension AppDelegate {
             } else {
                 guard let mainTVC = (window?.rootViewController as? UINavigationController)?.viewControllers.first as? MainTabBarController else { return }
                 mainTVC.tabBar.items?.last?.badgeValue = json["message"]["unread_count"] > 0 ? "\(json["message"]["unread_count"])" : nil
+               
                 completionHandler([.alert, .sound])
             }
             return

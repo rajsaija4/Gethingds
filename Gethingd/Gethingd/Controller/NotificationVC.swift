@@ -133,7 +133,7 @@ extension NotificationVC: UITableViewDelegate {
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
-        if arrNotification[indexPath.row].type == "custom"{
+        if arrNotification[indexPath.row].type == "like"{
             let param = [
                 "user_id": arrNotification[indexPath.row].userId
             ] as [String : Any]

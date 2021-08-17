@@ -108,7 +108,7 @@ extension DiscoverVC {
          NetworkManager.Discover.discoverUser(param: param, { (users) in
             self.hideHUD()
            
-            self.tabBarController?.tabBar.items?.last?.badgeValue = AppSupport.reviewLater > 0 ? "\(AppSupport.reviewLater)" : nil
+//            self.tabBarController?.tabBar.items?.last?.badgeValue = AppSupport.reviewLater > 0 ? "\(AppSupport.reviewLater)" : nil
               self.arrUser.removeAll()
             self.arrUser.append(contentsOf: users)
             self.kolodaView.reconfigureCards()

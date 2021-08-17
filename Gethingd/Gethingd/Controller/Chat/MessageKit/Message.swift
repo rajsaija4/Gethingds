@@ -22,6 +22,7 @@ internal struct Message: MessageType {
         return ChatUser(senderId: "\(User.details.id)", displayName: User.details.firstName)
     }
     
+    
 //    extension MessageKind {
 //        
 //        var messageKindString: String {

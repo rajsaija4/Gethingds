@@ -53,6 +53,11 @@ class MessageVC: MessagesViewController {
 //        setupInputButton()
     }
     
+//    override func viewDidDisappear(_ animated: Bool) {
+//        self.viewWillDisappear(animated)
+//        self.navigationController?.navigationBar.isHidden = true
+//    }
+//
 //    private func setupInputButton() {
 //        let button = InputBarButtonItem()
 //        button.setSize(CGSize(width: 35, height: 35), animated: false)
@@ -253,12 +258,22 @@ extension MessageVC {
     }
     
     @objc fileprivate func onUserImgBtnTap() {
-//        let vc = UserDetailsTVC.instantiate(fromAppStoryboard: .Discover)
-//        vc.isFromProfile = true
-//        vc.userId = conversation.userId
-//        let nvc = UINavigationController(rootViewController: vc)
-//        nvc.modalPresentationStyle = .fullScreen
-//        self.present(nvc, animated: true, completion: nil)
+        let oppositeID = selectedUserId
+        print("user details tap")
+        let param = [
+            "user_id": oppositeID
+        ] as [String : Any]
+
+        NetworkManager.Profile.getUserDetails(param: param) { response in
+            let vc = UserDetailsTVC.instantiate(fromAppStoryboard: .Discover)
+            vc.user = response
+            let nvc = UINavigationController(rootViewController: vc)
+            nvc.modalPresentationStyle = .overCurrentContext
+            self.present(nvc, animated: true)
+        } _: { error in
+            print(error)
+        }
+
     }
     
     @objc fileprivate func onReportBtnTap() {

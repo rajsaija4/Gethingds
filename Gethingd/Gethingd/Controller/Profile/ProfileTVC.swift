@@ -449,17 +449,26 @@ extension ProfileTVC {
                 self.navigationController?.pushViewController(vc, animated: true)
             break
             case 6:
-                
+                let alert = UIAlertController(title: "Gethingd", message: "Are You Sure Want to Logout?", preferredStyle: UIAlertController.Style.alert)
+
+                       // add the actions (buttons)
+                alert.addAction(UIAlertAction(title: "YES", style: UIAlertAction.Style.default, handler: { _ in
+                    guard let mainTVC = ((ROOTVC as? UINavigationController)?.viewControllers.first as? UITabBarController) else {
+                        return
+                    }
+                    
+                    guard let discoverVC = (mainTVC.viewControllers?[1] as? UINavigationController)?.viewControllers.first as? DiscoverVC else { return }
+                    discoverVC.timer.invalidate()
+                    
+                    self.logoutProfile()
+                }))
+                       alert.addAction(UIAlertAction(title: "NO", style: UIAlertAction.Style.cancel, handler: nil))
+
+                       // show the alert
+                       self.present(alert, animated: true, completion: nil)
 //                let vc = DiscoverVC.init()
 //                vc.timer.invalidate()
-                guard let mainTVC = ((ROOTVC as? UINavigationController)?.viewControllers.first as? UITabBarController) else {
-                    return
-                }
                 
-                guard let discoverVC = (mainTVC.viewControllers?[1] as? UINavigationController)?.viewControllers.first as? DiscoverVC else { return }
-                discoverVC.timer.invalidate()
-                
-                logoutProfile()
                 break
 //            case 8:
 //
