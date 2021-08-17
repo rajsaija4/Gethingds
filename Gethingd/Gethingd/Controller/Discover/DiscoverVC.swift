@@ -49,7 +49,7 @@ class DiscoverVC: UIViewController {
                    })
                 
               
-//        getPassion()
+        getPassion()
 
         
     }
@@ -65,7 +65,7 @@ class DiscoverVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getPassion()
+//        getPassion()
         navigationController?.isNavigationBarHidden = true
     }
     
@@ -321,7 +321,10 @@ extension DiscoverVC {
     
     @IBAction func onFilterBtnTap(_ sender: UIButton) {
         let vc = FilterTVC.instantiate(fromAppStoryboard: .Discover)
-//        
+        vc.onFilter = {
+            self.getPassion()
+        }
+        
         let nvc = UINavigationController(rootViewController: vc)
         nvc.modalPresentationStyle = .fullScreen
         nvc.modalTransitionStyle = .crossDissolve

@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "4BE6C8D8-9EF8-4F56-8B24-18A230BCC2B5"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Gethingd/Networking/NetworkManager.swift"
@@ -24,7 +24,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "5A711AD6-D1E8-4888-9EF4-C624E77211CA"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Gethingd/Controller/Upgrade/SubscribeVC.swift"
@@ -40,7 +40,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "5555B637-F3A7-4319-B1B9-817CE54294EB"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Gethingd/Networking/NetworkManager.swift"
@@ -56,7 +56,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "8ED00BE3-3B9E-47C8-9BD0-519A7C68B5A4"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Gethingd/Controller/Login/SignInVC.swift"
@@ -72,7 +72,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "3052AD26-E4B8-4ECB-96B8-72EED794136F"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Gethingd/Controller/Login/SignInVC.swift"
@@ -85,7 +85,7 @@
             <Locations>
                <Location
                   uuid = "3052AD26-E4B8-4ECB-96B8-72EED794136F - c7d47e0a23dd815b"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Gethingd.SignInVC.updateScreen() -&gt; ()"
@@ -100,7 +100,7 @@
                </Location>
                <Location
                   uuid = "3052AD26-E4B8-4ECB-96B8-72EED794136F - c5ab5bfbf2e7e300"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (Swift.String) -&gt; () in Gethingd.SignInVC.updateScreen() -&gt; ()"
@@ -112,54 +112,6 @@
                   startingLineNumber = "124"
                   endingLineNumber = "124"
                   offsetFromSymbolStart = "40">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FE9CAE34-1018-4355-A0A7-297418438E67"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Gethingd/Controller/Discover/DiscoverVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
-            landmarkName = "getUserList()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "FE9CAE34-1018-4355-A0A7-297418438E67 - b6a1d0f7e24f3a56"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Gethingd.DiscoverVC.getUserList() -&gt; ()"
-                  moduleName = "Gethingd"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Discover/DiscoverVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "108"
-                  endingLineNumber = "108"
-                  offsetFromSymbolStart = "1224">
-               </Location>
-               <Location
-                  uuid = "FE9CAE34-1018-4355-A0A7-297418438E67 - 57b8c83ae257900e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Array&lt;Gethingd.UserProfile&gt;) -&gt; () in Gethingd.DiscoverVC.getUserList() -&gt; ()"
-                  moduleName = "Gethingd"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Project/Project/BitBucket/Gethingd/Gethingd/Gethingd/Controller/Discover/DiscoverVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "109"
-                  endingLineNumber = "109"
-                  offsetFromSymbolStart = "72">
                </Location>
             </Locations>
          </BreakpointContent>

@@ -26,16 +26,16 @@ extension MainTabBarController {
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         
         switch item.title {
-            case "Profile":
+            case "PROFILE":
                 break
-            case "Discover":
+            case "DISCOVER":
                 guard let nvc = self.viewControllers?[1] as? UINavigationController else{ return }
                 if let vc = nvc.viewControllers.first as? DiscoverVC {
                     vc.getPassion()
                     
                 }
                 break
-            case "Chat":
+            case "CHAT":
                 guard let nvc = self.viewControllers?[2] as? UINavigationController else{ return }
                 if let vc = nvc.viewControllers.first as? ChatVC {
 //                    vc.getConversation()
