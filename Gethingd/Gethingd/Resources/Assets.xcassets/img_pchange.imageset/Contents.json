@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "326518_arrow_back_icon.png",
+      "filename" : "7023958_password_account_security_reset_safety_icon.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "326518_arrow_back_icon-1.png",
+      "filename" : "7023958_password_account_security_reset_safety_icon-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "326518_arrow_back_icon-2.png",
+      "filename" : "7023958_password_account_security_reset_safety_icon-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
@@ -19,8 +19,5 @@
   "info" : {
     "author" : "xcode",
     "version" : 1
-  },
-  "properties" : {
-    "template-rendering-intent" : "template"
   }
 }

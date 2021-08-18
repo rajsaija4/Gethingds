@@ -382,6 +382,13 @@ extension ProfileTVC {
 //
 //
 extension ProfileTVC {
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 4 {
+            return 0
+        }
+        return UITableView.automaticDimension
+    }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {

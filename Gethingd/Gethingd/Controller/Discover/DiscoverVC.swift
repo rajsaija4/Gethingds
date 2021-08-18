@@ -517,7 +517,7 @@ extension DiscoverVC {
             Filter.defaultMaxKids = PassionSetting.noKids
             Filter.maxKid = PassionSetting.noKids
             Filter.lookingFor = "both"
-            Filter.distance = 0
+//            Filter.distance = 0
             self.setupUI()
         
          } _: { (error) in
