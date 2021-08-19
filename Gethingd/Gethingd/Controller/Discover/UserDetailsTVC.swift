@@ -408,7 +408,7 @@ extension UserDetailsTVC {
         
         switch indexPath.section {
             case 0:
-                return 500
+                return 400
             case 1:
                 return 148
                 
