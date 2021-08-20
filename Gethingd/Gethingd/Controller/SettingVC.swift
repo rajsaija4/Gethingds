@@ -137,11 +137,21 @@ class SettingVC: UITableViewController {
         case 3:
             switch indexPath.row {
             case 0:
-                print("0")
+                
+                guard let termsURL = URL(string: URLManager.PrivacyPolicy.disclaimer) else {
+                    return
+                }
+                openSafariViewController(termsURL)
             case 1:
-                print("1")
+                guard let termsURL = URL(string: URLManager.PrivacyPolicy.cookie) else {
+                    return
+                }
+                openSafariViewController(termsURL)
             case 2:
-                print("2")
+                guard let termsURL = URL(string: URLManager.PrivacyPolicy.dataProcess) else {
+                    return
+                }
+                openSafariViewController(termsURL)
                 
             
             default:

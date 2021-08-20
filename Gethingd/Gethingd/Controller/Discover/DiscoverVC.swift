@@ -93,16 +93,22 @@ extension DiscoverVC {
       
 //        Filter.lookingFor = "both"
         
-        let param = [
-            "looking_for": Filter.lookingFor,
-            "min_age": Filter.minAge,
-            "max_age": Filter.maxAge,
-            "distance": Filter.distance,
-            "min_kids": Filter.minKid,
-            "max_kids": Filter.maxKid,
-            "latitude": Filter.latitude,
-            "longitude": Filter.longitude
-        ] as [String : Any]
+//        var param:[String : Any]? = nil
+        
+       // if isfilter {
+           let param = [
+               "looking_for": Filter.lookingFor,
+               "min_age": Filter.minAge,
+               "max_age": Filter.maxAge,
+               "distance": Filter.distance,
+               "min_kids": Filter.minKid,
+               "max_kids": Filter.maxKid,
+               "latitude": Filter.latitude,
+               "longitude": Filter.longitude
+           ] as [String : Any]
+//        }
+        
+        
             
         showHUD()
          NetworkManager.Discover.discoverUser(param: param, { (users) in
@@ -322,7 +328,8 @@ extension DiscoverVC {
     @IBAction func onFilterBtnTap(_ sender: UIButton) {
         let vc = FilterTVC.instantiate(fromAppStoryboard: .Discover)
         vc.onFilter = {
-            self.getPassion()
+            self.getUserList()
+//            self.getUserList(isfilter: true)
         }
         
         let nvc = UINavigationController(rootViewController: vc)
@@ -460,14 +467,14 @@ extension DiscoverVC: KolodaViewDataSource {
         
         let userView = UserView(frame: koloda.bounds)
 //        userView.imgSuperLike.isHidden = !user.isSuperLike
-        if user.userSetting.showmyAge == 1{
+        if user.userSetting.showmyAge == 0{
         userView.lblInfo.text = "\(user.firstName)" + ", " + "\(user.age)"
         }
         else {
             userView.lblInfo.text = "\(user.firstName)"
         }
         if user.userSetting.distanceVisible == 1{
-        userView.lbladdress.text = "\(user.distance)" + ", " + "\(user.address)"
+        userView.lbladdress.text = "\(user.address)" + ", " + "\(user.distance) KM"
         }
         else {
         userView.lbladdress.text = "\(user.address)"
@@ -516,7 +523,7 @@ extension DiscoverVC {
             Filter.defaultMinKids = 0
             Filter.defaultMaxKids = PassionSetting.noKids
             Filter.maxKid = PassionSetting.noKids
-            Filter.lookingFor = "both"
+            Filter.lookingFor = User.details.looking_for
 //            Filter.distance = 0
             self.setupUI()
         

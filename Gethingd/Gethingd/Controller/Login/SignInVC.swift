@@ -217,7 +217,7 @@ class SignInVC: UIViewController {
     }
     @IBAction func onTermsBtnTap(_ sender: UIButton) {
         
-        guard let termsURL = URL(string: "https://gurutechnolabs.co.in/website/laravel/gethingd/page/term_and_condition") else {
+        guard let termsURL = URL(string: URLManager.PrivacyPolicy.TermsUrl) else {
             return
         }
         
@@ -226,7 +226,7 @@ class SignInVC: UIViewController {
     
     @IBAction func onPrivacyBtnTap(_ sender: UIButton) {
         
-        guard let privacyURL = URL(string: "https://gurutechnolabs.co.in/website/laravel/gethingd/page/privacy_policy") else {
+        guard let privacyURL = URL(string: URLManager.PrivacyPolicy.privacyUrl) else {
             return
         }
         

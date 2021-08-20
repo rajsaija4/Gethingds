@@ -474,7 +474,7 @@ extension NetworkManager {
     
     struct Discover {
         
-        static func discoverUser(param: Parameters, _ success: @escaping ([UserProfile]) -> Void, _ fail: @escaping (String) -> Void, _ version: @escaping(String) -> Void, _ unreadmsg:@escaping (Int) -> Void) {
+        static func discoverUser(param: Parameters? = nil, _ success: @escaping ([UserProfile]) -> Void, _ fail: @escaping (String) -> Void, _ version: @escaping(String) -> Void, _ unreadmsg:@escaping (Int) -> Void) {
             
             NetworkCaller.postRequest(url: URLManager.Discover.discover, params: param, headers: header, { (response) in
                 

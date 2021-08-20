@@ -22,7 +22,7 @@ struct URLManager {
     
     static let mainBasePath = "https://gurutechnolabs.co.in/website/laravel/gethingd/public/"
     static let basePath = "\(mainBasePath)api/"
-
+    static let privacy = "https://gurutechnolabs.co.in/website/laravel/gethingd/page/"
     
     
     struct Auth {
@@ -92,6 +92,15 @@ struct URLManager {
         static let getUserSetting = basePath + "get_user_settings"
         static let updateUserSetting = basePath + "user_settings"
         static let passion = basePath + "get_passion_list"
+    }
+    
+    
+    struct PrivacyPolicy {
+        static let disclaimer = privacy + "disclaimer"
+        static let TermsUrl = privacy + "term_and_condition"
+        static let privacyUrl = privacy + "privacy_policy"
+        static let cookie = privacy + "privacy_and_cookie_policy"
+        static let dataProcess = privacy + "how_to_gethingd_processes_your_data"
     }
     
 
