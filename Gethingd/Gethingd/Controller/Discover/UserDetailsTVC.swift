@@ -41,6 +41,7 @@ class UserDetailsTVC: UITableViewController, TagListViewDelegate {
 //    var onReviewLater: (() -> Void)?
 //    var onDisLikeUser: (() -> Void)?
     var collImage:[String] = []
+    var isFromChat = false
     var infant = 0
     var arrTags:[TagList] = []
     var arrPassion:[String] = []
@@ -436,7 +437,13 @@ extension UserDetailsTVC {
                 
                 
             case 5:
+                if isFromChat {
+                    return 0
+                }
+                else {
                 return  80
+                }
+                
 
             default:
                 return UITableView.automaticDimension

@@ -16,6 +16,7 @@ class MatchesVC: UIViewController, UISearchBarDelegate {
 
 
 
+    @IBOutlet weak var lblNomessageFound: UILabel!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collMatches: UICollectionView!{
         didSet {
@@ -168,7 +169,9 @@ extension MatchesVC {
                 for data in conversation.conversationNotStartedArray {
                     self.arrMatchesList.append(data)
                 }
-                
+                if self.arrMatchesList.count == 0 {
+                    self.lblNomessageFound.isHidden = false
+                }
                 self.collMatches.reloadData()
                 self.hideHUD()
     

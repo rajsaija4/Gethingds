@@ -14,6 +14,7 @@ class WholikedVC: UIViewController, UISearchBarDelegate {
             collWholike.registerCell(FreshMatchesCell.self)
         }
     }
+    @IBOutlet weak var lblNolikeFound: UILabel!
     @IBOutlet weak var searchBar: UISearchBar!
     var arrUserData:[UserProfile] = []
     var searchActive : Bool = false
@@ -151,6 +152,9 @@ extension WholikedVC {
         NetworkManager.Chat.getWhoLikedMe { (response) in
             self.arrUserData.removeAll()
             self.arrUserData.append(contentsOf: response)
+            if self.arrUserData.count == 0 {
+                self.lblNolikeFound.isHidden = false
+            }
             self.collWholike.reloadData()
             self.hideHUD()
         } _: { (error) in

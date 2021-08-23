@@ -13,6 +13,7 @@ class MessageVC1: UIViewController, UISearchBarDelegate {
     var searchActive : Bool = false
     var filtered:[ChatMessages] = []
 
+    @IBOutlet weak var lblNoMessages: UILabel!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tblChat: UITableView! {
         didSet {
@@ -155,6 +156,9 @@ extension MessageVC1 {
         NetworkManager.Chat.getAllMessageConversation { (response) in
             self.arrMessagesList.removeAll()
             self.arrMessagesList.append(contentsOf: response)
+            if self.arrMessagesList.count == 0 {
+                self.lblNoMessages.isHidden = false
+            }
             self.tblChat.reloadData()
             self.hideHUD()
         } _: { (error) in

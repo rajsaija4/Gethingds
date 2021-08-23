@@ -267,6 +267,7 @@ extension MessageVC {
         NetworkManager.Profile.getUserDetails(param: param) { response in
             let vc = UserDetailsTVC.instantiate(fromAppStoryboard: .Discover)
             vc.user = response
+            vc.isFromChat = true
             let nvc = UINavigationController(rootViewController: vc)
             nvc.modalPresentationStyle = .overCurrentContext
             self.present(nvc, animated: true)
