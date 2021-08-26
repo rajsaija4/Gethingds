@@ -50,11 +50,11 @@ class LoginVC: UIViewController {
             case .authorized:
                 // Credential is valid
                 // Continiue to show 'User's Profile' Screen
-                if User.details.firstName.count > 0 {
+                if User.details.address.count > 0 {
                 APPDEL?.setupMainTabBarController()
                 }
                 else {
-                    APPDEL?.setupCreateProfileVC()
+                    APPDEL?.setUpAcceptTerms()
                 }
                 
                 break
@@ -105,11 +105,11 @@ class LoginVC: UIViewController {
                 ] as [String:Any]
             
             NetworkManager.Auth.socialLogin(param: params) { (success) in
-                if User.details.firstName.count > 0 {
+                if User.details.address.count > 0 {
                 APPDEL?.setupMainTabBarController()
                 }
                 else {
-                    APPDEL?.setupCreateProfileVC()
+                    APPDEL?.setUpAcceptTerms()
                 }
 
             } _: { (error) in
@@ -182,11 +182,11 @@ class LoginVC: UIViewController {
                         ] as [String:Any]
                     
                     NetworkManager.Auth.socialLogin(param: params) { (success) in
-                        if User.details.firstName.count > 0 {
+                        if User.details.address.count > 0 {
                         APPDEL?.setupMainTabBarController()
                         }
                         else {
-                        APPDEL?.setupCreateProfileVC()
+                        APPDEL?.setUpAcceptTerms()
                         }
 
                     } _: { (error) in
@@ -285,11 +285,11 @@ extension LoginVC {
         
         NetworkManager.Auth.SignIn(param: param, { (response) in
             self.hideHUD()
-            if User.details.firstName.count > 0 {
+            if User.details.address.count > 0 {
             APPDEL?.setupMainTabBarController()
             }
             else {
-                APPDEL?.setupCreateProfileVC()
+                APPDEL?.setUpAcceptTerms()
             }
            print(response)
         }) { (error) in
@@ -335,11 +335,11 @@ extension LoginVC: ASAuthorizationControllerDelegate {
             print(params)
             
             NetworkManager.Auth.socialLogin(param: params) { (success) in
-                if User.details.firstName.count > 0 {
+                if User.details.address.count > 0 {
                 APPDEL?.setupMainTabBarController()
                 }
                 else {
-                APPDEL?.setupCreateProfileVC()
+                APPDEL?.setUpAcceptTerms()
                 }
 
             } _: { (error) in

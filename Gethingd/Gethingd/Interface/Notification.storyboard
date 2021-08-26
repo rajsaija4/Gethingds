@@ -42,10 +42,10 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QK0-yN-CMy">
-                                <rect key="frame" x="0.0" y="35" width="414" height="30"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Oh2-ok-RbI">
-                                        <rect key="frame" x="20" y="0.0" width="374" height="30"/>
+                                        <rect key="frame" x="20" y="10" width="374" height="30"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fkf-jy-EcE">
                                                 <rect key="frame" x="0.0" y="0.0" width="20" height="30"/>
@@ -85,14 +85,14 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.92148786780000003" green="0.92162030939999995" blue="0.92145889999999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="4Lf-GT-hhR"/>
-                                    <constraint firstItem="Oh2-ok-RbI" firstAttribute="top" secondItem="QK0-yN-CMy" secondAttribute="top" id="BjX-fW-xUc"/>
-                                    <constraint firstItem="Oh2-ok-RbI" firstAttribute="leading" secondItem="QK0-yN-CMy" secondAttribute="leading" constant="20" id="dnw-0n-HdN"/>
-                                    <constraint firstAttribute="trailing" secondItem="Oh2-ok-RbI" secondAttribute="trailing" constant="20" id="gej-p4-vH6"/>
+                                    <constraint firstItem="Oh2-ok-RbI" firstAttribute="leading" secondItem="QK0-yN-CMy" secondAttribute="leading" constant="20" id="6pV-MC-dkC"/>
+                                    <constraint firstItem="Oh2-ok-RbI" firstAttribute="centerY" secondItem="QK0-yN-CMy" secondAttribute="centerY" id="AjL-De-ba6"/>
+                                    <constraint firstAttribute="trailing" secondItem="Oh2-ok-RbI" secondAttribute="trailing" constant="20" id="F8R-Qv-9fa"/>
+                                    <constraint firstAttribute="height" constant="50" id="Wfl-8B-IO2"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dyp-8p-y2P">
-                                <rect key="frame" x="0.0" y="65" width="414" height="797"/>
+                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="K6X-IS-qF6" id="KUh-SB-K7v"/>
@@ -105,15 +105,14 @@
                         <constraints>
                             <constraint firstItem="cGS-cb-QHn" firstAttribute="centerY" secondItem="yZ2-ub-9Od" secondAttribute="centerY" constant="-50" id="770-E5-hEH"/>
                             <constraint firstItem="wjo-0o-NRF" firstAttribute="width" secondItem="yZ2-ub-9Od" secondAttribute="width" multiplier="0.2" id="7mD-dC-km3"/>
-                            <constraint firstItem="U0q-nZ-icC" firstAttribute="trailing" secondItem="QK0-yN-CMy" secondAttribute="trailing" id="9ES-ah-Fjh"/>
                             <constraint firstItem="U0q-nZ-icC" firstAttribute="trailing" secondItem="dyp-8p-y2P" secondAttribute="trailing" id="MpD-vw-YBs"/>
+                            <constraint firstItem="QK0-yN-CMy" firstAttribute="trailing" secondItem="U0q-nZ-icC" secondAttribute="trailing" id="Pas-rH-J0d"/>
                             <constraint firstItem="U0q-nZ-icC" firstAttribute="bottom" secondItem="dyp-8p-y2P" secondAttribute="bottom" id="XSt-64-HfZ"/>
-                            <constraint firstItem="QK0-yN-CMy" firstAttribute="top" secondItem="yZ2-ub-9Od" secondAttribute="top" constant="35" id="YEe-xr-Sm9"/>
+                            <constraint firstItem="QK0-yN-CMy" firstAttribute="leading" secondItem="U0q-nZ-icC" secondAttribute="leading" id="bMi-WQ-iHU"/>
                             <constraint firstItem="dyp-8p-y2P" firstAttribute="leading" secondItem="U0q-nZ-icC" secondAttribute="leading" id="ch2-t5-AIF"/>
-                            <constraint firstItem="dyp-8p-y2P" firstAttribute="top" secondItem="QK0-yN-CMy" secondAttribute="bottom" id="feJ-iF-01N"/>
-                            <constraint firstItem="QK0-yN-CMy" firstAttribute="centerX" secondItem="yZ2-ub-9Od" secondAttribute="centerX" id="mG4-xh-sc3"/>
+                            <constraint firstItem="dyp-8p-y2P" firstAttribute="top" secondItem="QK0-yN-CMy" secondAttribute="bottom" id="mJm-ar-gPc"/>
                             <constraint firstItem="cGS-cb-QHn" firstAttribute="centerX" secondItem="yZ2-ub-9Od" secondAttribute="centerX" id="pot-MM-zXC"/>
-                            <constraint firstItem="QK0-yN-CMy" firstAttribute="leading" secondItem="U0q-nZ-icC" secondAttribute="leading" id="yHi-uT-WNA"/>
+                            <constraint firstItem="QK0-yN-CMy" firstAttribute="top" secondItem="U0q-nZ-icC" secondAttribute="top" id="xOh-fc-uIa"/>
                         </constraints>
                     </view>
                     <connections>

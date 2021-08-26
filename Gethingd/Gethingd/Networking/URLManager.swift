@@ -27,7 +27,7 @@ struct URLManager {
     
     struct Auth {
         static let userSignUp = basePath + "user_signup"
-        static let login = basePath + "register"
+        static let login = basePath + "user_register"
         static let verify = basePath + "user_conformation"
         static let forgotPassword = basePath + "forget_password"
         static let changePassword = basePath + "change_password"

@@ -17,7 +17,7 @@ class PolicyVerificationVC: UIViewController {
     
     @IBAction func onPressAcceptbtnTap(_ sender: UIButton) {
         
-        APPDEL?.setupMainTabBarController()
+        APPDEL?.setupCreateProfileVC()
     }
     
     /*

@@ -210,7 +210,7 @@ extension UserDetailsTVC {
             if kids == "New born" {
                 newborn += 1
             }
-            else if kids == "Infrant" {
+            else if kids == "Infant" {
                 infant += 1
             }
             else if kids == "Toddler" {
@@ -404,14 +404,14 @@ extension UserDetailsTVC {
 extension UserDetailsTVC {
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let width = SCREEN_WIDTH - 40
-        let height = width * 16/11
+//        let width = SCREEN_WIDTH - 40
+//        let height = width * 16/11
         
         switch indexPath.section {
             case 0:
                 return 400
             case 1:
-                return 148
+                return txtAbout.contentSize.height + 70
                 
             case 2:
             return 75
@@ -433,7 +433,7 @@ extension UserDetailsTVC {
             
             case 4:
               
-                return  CGFloat(tagListView.subviews.count * 48) + 56
+                return  CGFloat(tagListView.subviews.count * 48) + 70
                 
                 
             case 5:

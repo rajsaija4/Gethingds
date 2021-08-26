@@ -66,11 +66,11 @@ class SignInVC: UIViewController {
             case .authorized:
                 // Credential is valid
                 // Continiue to show 'User's Profile' Screen
-                if User.details.firstName.count > 0 {
+                if User.details.address.count > 0 {
                 APPDEL?.setupMainTabBarController()
                 }
                 else {
-                    APPDEL?.setupCreateProfileVC()
+                    APPDEL?.setUpAcceptTerms()
                 }
                 
                 break
@@ -121,11 +121,11 @@ class SignInVC: UIViewController {
                 ] as [String:Any]
             
             NetworkManager.Auth.socialLogin(param: params) { (success) in
-                if User.details.firstName.count > 0 {
+                if User.details.address.count > 0 {
                 APPDEL?.setupMainTabBarController()
                 }
                 else {
-                    APPDEL?.setupCreateProfileVC()
+                    APPDEL?.setUpAcceptTerms()
                 }
 
             } _: { (error) in
@@ -200,11 +200,11 @@ class SignInVC: UIViewController {
                         ] as [String:Any]
                     
                     NetworkManager.Auth.socialLogin(param: params) { (success) in
-                        if User.details.firstName.count > 0 {
+                        if User.details.address.count > 0 {
                         APPDEL?.setupMainTabBarController()
                         }
                         else {
-                            APPDEL?.setupCreateProfileVC()
+                            APPDEL?.setUpAcceptTerms()
                         }
 
                     } _: { (error) in
@@ -298,7 +298,7 @@ extension SignInVC {
         }
         
         guard password == rePassword else {
-            self.showToast("Please Enter Both Password Same")
+            self.showToast("Both Password Must be Same")
             return
             
         }
@@ -316,7 +316,7 @@ extension SignInVC {
         
         let param = ["email": email,
                      "password":password,
-                     "password_confirmation":rePassword
+                     "password_confirmation":rePassword,
         ] as [String:Any]
         showHUD()
         
@@ -373,11 +373,11 @@ extension SignInVC: ASAuthorizationControllerDelegate {
             print(params)
             
             NetworkManager.Auth.socialLogin(param: params) { (success) in
-                if User.details.firstName.count > 0 {
+                if User.details.address.count > 0 {
                 APPDEL?.setupMainTabBarController()
                 }
                 else {
-                    APPDEL?.setupCreateProfileVC()
+                    APPDEL?.setUpAcceptTerms()
                 }
 
             } _: { (error) in

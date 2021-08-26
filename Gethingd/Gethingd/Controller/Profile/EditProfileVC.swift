@@ -162,10 +162,26 @@ class EditProfileVC: UITableViewController, TagListViewDelegate, UIImagePickerCo
         }
         
         guard source.count > 0 else {
-            self.showAlert("Please upload at least one picture")
+            self.showAlert("Please Upload Your Profile Pictures")
             return
         }
         
+        guard let firstName = txtFname.text, firstName.count > 0 else {
+            self.showAlert("Please \(txtFname.placeholder ?? "")")
+            return
+        }
+        
+        guard let lastName = txtLname.text, lastName.count > 0 else {
+            self.showAlert("Please \(txtLname.placeholder ?? "")")
+            return
+        }
+        
+       
+        
+        guard let dob = txtDob.text, dob.count > 0 else {
+            self.showAlert("Please Select Date Of Birth")
+            return
+        }
         
         guard selectedLookingFor  >= 0  else {
             self.showAlert("Please Select Looking For")
@@ -193,22 +209,7 @@ class EditProfileVC: UITableViewController, TagListViewDelegate, UIImagePickerCo
         
         
         
-        guard let firstName = txtFname.text, firstName.count > 0 else {
-            self.showAlert("Please \(txtFname.placeholder ?? "")")
-            return
-        }
-        
-        guard let lastName = txtLname.text, lastName.count > 0 else {
-            self.showAlert("Please \(txtLname.placeholder ?? "")")
-            return
-        }
-        
        
-        
-        guard let dob = txtDob.text, dob.count > 0 else {
-            self.showAlert("Please Select Date Of Birth")
-            return
-        }
         
 //        guard let email = txtEmail.text, email.count > 0, email != placeHolder else {
 //            self.showAlert("Please Enter Email")

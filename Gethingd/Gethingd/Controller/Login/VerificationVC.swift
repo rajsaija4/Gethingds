@@ -97,9 +97,7 @@ extension VerificationVC {
             self.hideHUD()
             
             guard User.details.firstName.count > 0 else {
-                let vc = CreateProfileTVC.instantiate(fromAppStoryboard: .Profile)
-                vc.isFromLogin = true
-                self.navigationController?.pushViewController(vc, animated: true)
+                APPDEL?.setUpAcceptTerms()
                 return
             }
             

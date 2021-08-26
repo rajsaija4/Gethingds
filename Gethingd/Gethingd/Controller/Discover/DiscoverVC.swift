@@ -194,15 +194,15 @@ extension DiscoverVC {
             
             guard status == .like else { return }
             
-            if AppSupport.isLikeLimited == "yes" && AppSupport.remainingLikes == 0 {
-                let vc = UpdateNowVC.instantiate(fromAppStoryboard: .Upgrade)
-                vc.txtTitle.text = "OOPS"
-                vc.txtMessage.text = "You have run out of your likes limit. Buy new likes now."
-                vc.modalPresentationStyle = .fullScreen
-                vc.modalTransitionStyle = .crossDissolve
-                self.present(vc, animated: true, completion: nil)
-                return
-            }
+//            if AppSupport.isLikeLimited == "yes" && AppSupport.remainingLikes == 0 {
+//                let vc = UpdateNowVC.instantiate(fromAppStoryboard: .Upgrade)
+//                vc.txtTitle.text = "OOPS"
+//                vc.txtMessage.text = "You have run out of your likes limit. Buy new likes now."
+//                vc.modalPresentationStyle = .fullScreen
+//                vc.modalTransitionStyle = .crossDissolve
+//                self.present(vc, animated: true, completion: nil)
+//                return
+//            }
             
 
         }, { (error) in

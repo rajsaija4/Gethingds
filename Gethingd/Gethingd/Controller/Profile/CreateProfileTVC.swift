@@ -569,7 +569,74 @@ extension CreateProfileTVC {
         }
     }
     
-    @IBAction func onNextControlTap(_ sender: UIControl) {        
+    @IBAction func onNextControlTap(_ sender: UIControl) {
+        guard let firstName = txtFirstName.text, firstName.count > 0 else {
+            self.showAlert("Please Enter First Name")
+            return
+        }
+        
+        guard let lastName = txtLastName.text, lastName.count > 0 else {
+            self.showAlert("Please Enter Last Name")
+            return
+        }
+        
+       
+        
+        guard let dob = txtDate.text, dob.count > 0 else {
+            self.showAlert("Please Select Date Of Birth")
+            return
+        }
+        
+        
+        guard selectedGender  >= 0  else {
+            self.showAlert("Please Select Gender")
+            return
+        }
+
+        guard selectedLookingFor  >= 0  else {
+            self.showAlert("Please Select Looking For")
+            return
+        }
+
+        var gendertoPass = ""
+
+        if selectedGender == 0 {
+                gendertoPass = "male"
+        }
+
+         if selectedGender == 1 {
+            gendertoPass = "female"
+        }
+
+        if selectedGender == 2 {
+            gendertoPass = "other"
+        }
+
+        var lookingForPass = ""
+
+        if selectedLookingFor == 0 {
+                lookingForPass = "male"
+        }
+
+        if selectedLookingFor == 1 {
+            lookingForPass = "female"
+        }
+
+        if selectedLookingFor == 2 {
+            lookingForPass = "both"
+        }
+        
+        
+        guard let loc = lblLocation.text, loc.count > 0 else {
+            self.showAlert("Please Select Location")
+            return
+        }
+        
+        guard let noOfkids = txtNumberOfKids.text, noOfkids.count > 0 else {
+            self.showAlert("Please Enter No of Kids")
+            return
+        }
+        
         let img1 = arrImageProfile[0].image
         let img2 = arrImageProfile[1].image
         let img3 = arrImageProfile[2].image
@@ -578,7 +645,7 @@ extension CreateProfileTVC {
         let img6 = arrImageProfile[5].image
         
         if img1 == nil {
-            showAlert("please insert your selfi")
+            showAlert("please upload Your Profile Pictures")
         }
         
         let imgData1 = img1?.jpegData(compressionQuality: 0.5)
@@ -628,7 +695,7 @@ extension CreateProfileTVC {
         }
         
         guard source.count > 0 else {
-            self.showAlert("Please upload at least one picture")
+            self.showAlert("Please upload your selfi")
             return
         }
         
@@ -642,37 +709,12 @@ extension CreateProfileTVC {
         
         
         
-        guard let firstName = txtFirstName.text, firstName.count > 0 else {
-            self.showAlert("Please \(txtFirstName.placeholder ?? "")")
-            return
-        }
-        
-        guard let lastName = txtLastName.text, lastName.count > 0 else {
-            self.showAlert("Please \(txtLastName.placeholder ?? "")")
-            return
-        }
-        
        
-        
-        guard let dob = txtDate.text, dob.count > 0 else {
-            self.showAlert("Please Select Date Of Birth")
-            return
-        }
-        
 //        guard let email = txtEmail.text, email.count > 0, email != placeHolder else {
 //            self.showAlert("Please Enter Email")
 //            return
 //        }
         
-        guard let loc = lblLocation.text, loc.count > 0 else {
-            self.showAlert("Please Select Location")
-            return
-        }
-        
-        guard let noOfkids = txtNumberOfKids.text, noOfkids.count > 0 else {
-            self.showAlert("Please Enter No of Kids")
-            return
-        }
         
         
 //        guard email.isValidEmail else {
@@ -693,44 +735,7 @@ extension CreateProfileTVC {
         }
         
         
-        
-        guard selectedGender  >= 0  else {
-            self.showAlert("Please Select Gender")
-            return
-        }
-
-        guard selectedLookingFor  >= 0  else {
-            self.showAlert("Please Select Looking For")
-            return
-        }
-
-        var gendertoPass = ""
-
-        if selectedGender == 0 {
-                gendertoPass = "male"
-        }
-
-         if selectedGender == 1 {
-            gendertoPass = "female"
-        }
-
-        if selectedGender == 2 {
-            gendertoPass = "other"
-        }
-
-        var lookingForPass = ""
-
-        if selectedLookingFor == 0 {
-                lookingForPass = "male"
-        }
-
-        if selectedLookingFor == 1 {
-            lookingForPass = "female"
-        }
-
-        if selectedLookingFor == 2 {
-            lookingForPass = "both"
-        }
+       
           
         var arrPassionIds = [String]()
         
@@ -805,7 +810,7 @@ extension CreateProfileTVC {
             let alert = UIAlertController(title: "Success", message: message) { (_) in
                 if self.isFromLogin {
                     
-                    APPDEL?.setUpAcceptTerms()
+                    APPDEL?.setupMainTabBarController()
                 } else {
                     self.onPopView?()
                     self.navigationController?.popViewController(animated: false)

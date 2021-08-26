@@ -44,11 +44,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
 //        return true
         
         if User.isExist {
-            if User.details.firstName.count > 0  {
+            if User.details.address.count > 0  {
                 setupMainTabBarController()
             } else {
                 print(User.details.firstName)
-                setupCreateProfileVC()
+                setUpAcceptTerms()
 //                editProfile()
             }
         } else {
