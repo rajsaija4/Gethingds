@@ -414,22 +414,32 @@ extension UserDetailsTVC {
                 return txtAbout.contentSize.height + 70
                 
             case 2:
-            return 75
-            
+            return 65
+                
 //            case 3:
-//                
-//                return 200
-//                if mainKidsTag[0].isHidden == true && mainKidsTag[1].isHidden == true && mainKidsTag[2].isHidden == true {
-//                    return 50
-//                }
 //
-//                else if mainKidsTag[0].isHidden || true && mainKidsTag[1].isHidden || true && mainKidsTag[2].isHidden || true {
-//                    return 155
-//                }
+//            if kidMainStack[0].isHidden == true && kidMainStack[1].isHidden == true && viewAdolescent.isHidden == true {
+//                return 50
+//            }
 //
-//                else {
-//                    return 200
-//                }
+//            else if kidMainStack[0].isHidden == false && kidMainStack[1].isHidden == false && viewAdolescent.isHidden == false {
+//                return 150
+//
+//            }
+//
+//            else if kidMainStack[0].isHidden == false && kidMainStack[1].isHidden == false && viewAdolescent.isHidden == true{
+//                return 50
+//            }
+//
+//            else if kidMainStack[0].isHidden == true && kidMainStack[1].isHidden == true && viewAdolescent.isHidden == false{
+//                return 100
+//            }
+//
+//
+//            else {
+//                return UITableView.automaticDimension
+//            }
+        
             
             case 4:
               
@@ -444,9 +454,8 @@ extension UserDetailsTVC {
                 return  80
                 }
                 
-
-            default:
-                return UITableView.automaticDimension
+        default:
+            return UITableView.automaticDimension
         }
     }
 }

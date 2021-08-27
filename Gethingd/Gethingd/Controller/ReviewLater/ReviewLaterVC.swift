@@ -12,6 +12,7 @@ class ReviewLaterVC: UIViewController {
     var arrUser: [UserProfile] = []
     
     
+    @IBOutlet weak var lblNoreviewLaterFound: UILabel!
     @IBOutlet weak var collReviewLater: UICollectionView! {
         didSet {
             collReviewLater.registerCell(FreshMatchesCell.self)
@@ -106,6 +107,9 @@ extension ReviewLaterVC {
            NetworkManager.Profile.getReviewLaterProfiles { (UserProfile) in
             self.arrUser.removeAll()
             self.arrUser.append(contentsOf: UserProfile)
+            if self.arrUser.count > 0 {
+                self.lblNoreviewLaterFound.isHidden = false
+            }
             DispatchQueue.main.async {
                 self.collReviewLater.reloadData()
                 self.collReviewLater.collectionViewLayout.invalidateLayout()
