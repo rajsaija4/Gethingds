@@ -22,9 +22,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review Later" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lo-RQ-RYX">
-                                <rect key="frame" x="10" y="35" width="191.5" height="42"/>
-                                <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REVIEW LATER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lo-RQ-RYX">
+                                <rect key="frame" x="16" y="44" width="151.5" height="31"/>
+                                <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="22"/>
                                 <color key="textColor" red="0.32944318649999998" green="0.12744057180000001" blue="0.27206125860000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -35,7 +35,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dEs-UV-aA6">
-                                <rect key="frame" x="0.0" y="77" width="414" height="785"/>
+                                <rect key="frame" x="0.0" y="75" width="414" height="787"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="T7j-P8-vO9">
                                     <size key="itemSize" width="128" height="128"/>
@@ -63,8 +63,8 @@
                         <color key="backgroundColor" red="0.95677906270000002" green="0.95691651109999998" blue="0.96067017320000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="aht-kj-e0o" firstAttribute="centerY" secondItem="aYf-6d-6e7" secondAttribute="centerY" id="9dc-Jn-NES"/>
-                            <constraint firstItem="4lo-RQ-RYX" firstAttribute="leading" secondItem="NH9-we-A4P" secondAttribute="leading" constant="10" id="PVM-tI-Njf"/>
-                            <constraint firstItem="4lo-RQ-RYX" firstAttribute="top" secondItem="aYf-6d-6e7" secondAttribute="top" constant="35" id="XyU-88-aOl"/>
+                            <constraint firstItem="4lo-RQ-RYX" firstAttribute="leading" secondItem="NH9-we-A4P" secondAttribute="leading" constant="16" id="PVM-tI-Njf"/>
+                            <constraint firstItem="4lo-RQ-RYX" firstAttribute="top" secondItem="NH9-we-A4P" secondAttribute="top" id="XyU-88-aOl"/>
                             <constraint firstItem="dEs-UV-aA6" firstAttribute="leading" secondItem="NH9-we-A4P" secondAttribute="leading" id="ZhR-e5-Mes"/>
                             <constraint firstItem="aht-kj-e0o" firstAttribute="centerX" secondItem="aYf-6d-6e7" secondAttribute="centerX" id="uJN-yj-l1m"/>
                             <constraint firstItem="dEs-UV-aA6" firstAttribute="top" secondItem="4lo-RQ-RYX" secondAttribute="bottom" id="vUp-w2-ST0"/>

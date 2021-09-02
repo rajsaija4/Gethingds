@@ -67,7 +67,7 @@ class ProfileTVC: UITableViewController {
         
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        lblName.text = User.details.firstName
+        lblName.text = "\(User.details.firstName) \(User.details.lastName)"
         lblAddress.text = User.details.address
         if AppSupport.isOrder == "no" {
         lblFreelike.text = "FREE LIKES : \(AppSupport.remainingLikes)"

@@ -74,10 +74,10 @@
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xf5-xz-ER5">
-                        <rect key="frame" x="70" y="65.5" width="15" height="15"/>
+                        <rect key="frame" x="70" y="66.5" width="13" height="13"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="15" id="WPi-l6-IoD"/>
-                            <constraint firstAttribute="width" constant="15" id="wzf-Bd-i6f"/>
+                            <constraint firstAttribute="height" constant="13" id="WPi-l6-IoD"/>
+                            <constraint firstAttribute="width" constant="13" id="wzf-Bd-i6f"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                         <state key="normal" image="img_inactive_user"/>

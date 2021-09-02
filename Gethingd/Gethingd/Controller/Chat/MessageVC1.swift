@@ -156,8 +156,9 @@ extension MessageVC1 {
         NetworkManager.Chat.getAllMessageConversation { (response) in
             self.arrMessagesList.removeAll()
             self.arrMessagesList.append(contentsOf: response)
-            if self.arrMessagesList.count == 0 {
-                self.lblNoMessages.isHidden = false
+            if self.arrMessagesList.count > 0 {
+                self.searchBar.isHidden = false
+                self.lblNoMessages.isHidden = true
             }
             self.tblChat.reloadData()
             self.hideHUD()

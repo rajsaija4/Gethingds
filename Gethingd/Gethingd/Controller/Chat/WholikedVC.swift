@@ -152,7 +152,8 @@ extension WholikedVC {
         NetworkManager.Chat.getWhoLikedMe { (response) in
             self.arrUserData.removeAll()
             self.arrUserData.append(contentsOf: response)
-            if self.arrUserData.count == 0 {
+            if self.arrUserData.count > 0 {
+                self.searchBar.isHidden = false
                 self.lblNolikeFound.isHidden = false
             }
             self.collWholike.reloadData()

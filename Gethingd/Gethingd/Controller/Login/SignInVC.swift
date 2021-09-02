@@ -278,12 +278,12 @@ extension SignInVC {
     fileprivate func userLogIn() {
         
         guard let email = txtEmail.text, email.count > 0 else {
-            self.showToast("Please Enter Email")
+            self.showToast("Please Enter Email Address")
             return
         }
         
         guard email.isValidEmail else {
-            self.showToast("Please Enter Valid Email")
+            self.showToast("Please Enter Valid Email Address")
             return
         }
         
@@ -292,8 +292,18 @@ extension SignInVC {
             return
         }
         
+        guard password.count >= 6 else {
+            showToast("Password should be 6 or more then 6 characters")
+            return
+        }
+        
         guard let rePassword = txtConfirmPass.text, rePassword.count > 0 else {
-            self.showToast("Please Enter Password")
+            self.showToast("Please Enter Confirm Password")
+            return
+        }
+        
+        guard rePassword.count >= 6 else {
+            showToast("Password should be 6 or more then 6 characters")
             return
         }
         
@@ -303,15 +313,9 @@ extension SignInVC {
             
         }
         
-        guard password.count >= 6 else {
-            showToast("Password should be 6 or more then 6 characters")
-            return
-        }
+       
         
-        guard rePassword.count >= 6 else {
-            showToast("Password should be 6 or more then 6 characters")
-            return
-        }
+       
         
         
         let param = ["email": email,

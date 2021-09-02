@@ -169,8 +169,9 @@ extension MatchesVC {
                 for data in conversation.conversationNotStartedArray {
                     self.arrMatchesList.append(data)
                 }
-                if self.arrMatchesList.count == 0 {
-                    self.lblNomessageFound.isHidden = false
+                if self.arrMatchesList.count > 0 {
+                    self.searchBar.isHidden = false
+                    self.lblNomessageFound.isHidden = true
                 }
                 self.collMatches.reloadData()
                 self.hideHUD()

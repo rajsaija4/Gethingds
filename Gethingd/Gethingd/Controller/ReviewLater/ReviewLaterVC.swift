@@ -108,7 +108,7 @@ extension ReviewLaterVC {
             self.arrUser.removeAll()
             self.arrUser.append(contentsOf: UserProfile)
             if self.arrUser.count > 0 {
-                self.lblNoreviewLaterFound.isHidden = false
+                self.lblNoreviewLaterFound.isHidden = true
             }
             DispatchQueue.main.async {
                 self.collReviewLater.reloadData()

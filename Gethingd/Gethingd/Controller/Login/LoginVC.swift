@@ -255,12 +255,12 @@ extension LoginVC {
     fileprivate func userLogIn() {
         
         guard let email = txtEmail.text, email.count > 0 else {
-            self.showToast("Please Enter Email")
+            self.showToast("Please Enter Email Address")
             return
         }
         
         guard email.isValidEmail else {
-            self.showToast("Please Enter Valid Email")
+            self.showToast("Please Enter Valid Email Address")
             return
         }
         
@@ -294,6 +294,7 @@ extension LoginVC {
            print(response)
         }) { (error) in
             self.hideHUD()
+//            self.showToast(error)
             let alert = UIAlertController(title: "Oops!", message: error)
             self.present(alert, animated: true, completion: nil)
         }

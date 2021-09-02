@@ -338,7 +338,7 @@ extension AppDelegate {
                 completionHandler([])
             } else {
                 guard let mainTVC = (window?.rootViewController as? UINavigationController)?.viewControllers.first as? MainTabBarController else { return }
-                mainTVC.tabBar.items?.last?.badgeValue = json["message"]["unread_count"] > 0 ? "\(json["message"]["unread_count"])" : nil
+               mainTVC.tabBar.items?.last?.badgeValue = json["message"]["unread_count"] > 0 ? "\(json["message"]["unread_count"])" : nil
                
                 completionHandler([.alert, .sound])
             }

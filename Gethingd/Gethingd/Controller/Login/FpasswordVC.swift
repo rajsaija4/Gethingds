@@ -45,12 +45,12 @@ extension FpasswordVC  {
         func forgotPassword() {
         
         guard let email = txtEMail.text, email.count > 0 else {
-            self.showToast("Please Enter Email")
+            self.showToast("Please Enter Email Address")
             return
         }
         
         guard email.isValidEmail else {
-            self.showToast("Please Enter Valid Email")
+            self.showToast("Please Enter Valid Email Address")
             return
         }
         

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -30,27 +30,27 @@
                         <rect key="frame" x="0.0" y="144" width="131" height="30"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YKm-qr-TPW">
-                                <rect key="frame" x="4" y="6.5" width="123" height="17"/>
+                                <rect key="frame" x="8" y="8.5" width="115" height="13"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sheron" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hQ-lP-JNh">
-                                        <rect key="frame" x="0.0" y="0.0" width="89" height="17"/>
-                                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="17"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jay1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hQ-lP-JNh">
+                                        <rect key="frame" x="0.0" y="0.0" width="89" height="13"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVa-wn-o8k">
-                                        <rect key="frame" x="89" y="0.0" width="17" height="17"/>
+                                        <rect key="frame" x="89" y="0.0" width="13" height="13"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="17" id="KXK-YJ-dpi"/>
-                                            <constraint firstAttribute="width" constant="17" id="a5d-yP-vQ8"/>
+                                            <constraint firstAttribute="height" constant="13" id="KXK-YJ-dpi"/>
+                                            <constraint firstAttribute="width" constant="13" id="a5d-yP-vQ8"/>
                                         </constraints>
                                         <state key="normal" image="img_reviewLater"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLa-4h-wwB">
-                                        <rect key="frame" x="106" y="0.0" width="17" height="17"/>
+                                        <rect key="frame" x="102" y="0.0" width="13" height="13"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="17" id="JAN-Ke-Z4S"/>
-                                            <constraint firstAttribute="width" constant="17" id="nq5-q5-81M"/>
+                                            <constraint firstAttribute="height" constant="13" id="JAN-Ke-Z4S"/>
+                                            <constraint firstAttribute="width" constant="13" id="nq5-q5-81M"/>
                                         </constraints>
                                         <state key="normal" image="img_inactive_user"/>
                                         <state key="selected" image="img_active_user"/>
@@ -58,15 +58,14 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="zLa-4h-wwB" firstAttribute="centerY" secondItem="0hQ-lP-JNh" secondAttribute="centerY" id="NNN-oP-Bpu"/>
-                                    <constraint firstItem="hVa-wn-o8k" firstAttribute="centerY" secondItem="0hQ-lP-JNh" secondAttribute="centerY" id="h09-bD-BH7"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="YKm-qr-TPW" firstAttribute="centerX" secondItem="Nbf-zc-uzc" secondAttribute="centerX" id="AV3-Am-GhS"/>
-                            <constraint firstAttribute="trailing" secondItem="YKm-qr-TPW" secondAttribute="trailing" constant="4" id="BBr-eM-bTP"/>
-                            <constraint firstItem="YKm-qr-TPW" firstAttribute="leading" secondItem="Nbf-zc-uzc" secondAttribute="leading" constant="4" id="SEX-lA-EtM"/>
+                            <constraint firstAttribute="trailing" secondItem="YKm-qr-TPW" secondAttribute="trailing" constant="8" id="BBr-eM-bTP"/>
+                            <constraint firstItem="YKm-qr-TPW" firstAttribute="leading" secondItem="Nbf-zc-uzc" secondAttribute="leading" constant="8" id="SEX-lA-EtM"/>
                             <constraint firstItem="YKm-qr-TPW" firstAttribute="centerY" secondItem="Nbf-zc-uzc" secondAttribute="centerY" id="X0C-ZG-BGP"/>
                             <constraint firstAttribute="height" constant="30" id="nFD-5h-EaI"/>
                         </constraints>
@@ -99,8 +98,8 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="img_active_user" width="6" height="6"/>
-        <image name="img_inactive_user" width="6" height="6"/>
+        <image name="img_active_user" width="33" height="33"/>
+        <image name="img_inactive_user" width="33" height="33"/>
         <image name="img_reviewLater" width="20" height="18"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

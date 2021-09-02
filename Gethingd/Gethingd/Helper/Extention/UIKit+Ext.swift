@@ -332,7 +332,7 @@ extension DateFormatter {
     
     var ecmDateFormatter: DateFormatter {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = "dd MMM yyyy"
         dateFormatter.timeZone = TimeZone.init(abbreviation: "IST")
         dateFormatter.locale = Locale(identifier: "IST")
         dateFormatter.calendar = Calendar(identifier: .gregorian)

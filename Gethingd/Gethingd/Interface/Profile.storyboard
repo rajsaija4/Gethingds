@@ -1190,9 +1190,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_Header" translatesAutoresizingMaskIntoConstraints="NO" id="0x3-YC-bfC">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="120" id="jqR-rD-Shv"/>
+                                                        <constraint firstAttribute="height" constant="150" id="jqR-rD-Shv"/>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c5e-ZL-DkE">
@@ -1378,7 +1378,7 @@
                                                                 <constraint firstAttribute="width" constant="25" id="BFQ-Oc-y6A"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Setting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1QI-HH-uoO">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1QI-HH-uoO">
                                                             <rect key="frame" x="45" y="3" width="240" height="24"/>
                                                             <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="17"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2316,7 +2316,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="610"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xyl-y5-NKR">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Persoanl Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xyl-y5-NKR">
                                                     <rect key="frame" x="20" y="15.999999999999996" width="374" height="39.666666666666657"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="39.670000000000002" id="DWL-JG-4lk"/>
@@ -2393,7 +2393,7 @@
                                                                     <rect key="frame" x="16" y="7.9999999999999858" width="342" height="34"/>
                                                                     <subviews>
                                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date of Birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Vd-Qb-iLL" customClass="CustomTextField" customModule="Gethingd" customModuleProvider="target">
-                                                                            <rect key="frame" x="0.0" y="7.333333333333341" width="342" height="19.333333333333329"/>
+                                                                            <rect key="frame" x="0.0" y="5.6666666666666874" width="342" height="22.666666666666671"/>
                                                                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                                                                             <textInputTraits key="textInputTraits"/>
                                                                         </textField>
@@ -2427,7 +2427,7 @@
                                                                     <rect key="frame" x="16" y="8" width="342" height="34"/>
                                                                     <subviews>
                                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Job Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qjU-3P-QpT">
-                                                                            <rect key="frame" x="0.0" y="7.333333333333341" width="342" height="19.333333333333329"/>
+                                                                            <rect key="frame" x="0.0" y="5.6666666666666874" width="342" height="22.666666666666671"/>
                                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                                                                             <textInputTraits key="textInputTraits"/>
@@ -2525,7 +2525,7 @@
                                                                     <rect key="frame" x="16" y="8" width="342" height="34"/>
                                                                     <subviews>
                                                                         <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="No of Kids" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="psZ-Vy-Kwe" customClass="CustomTextField" customModule="Gethingd" customModuleProvider="target">
-                                                                            <rect key="frame" x="0.0" y="7.3333333333333339" width="319" height="19.333333333333329"/>
+                                                                            <rect key="frame" x="0.0" y="5.6666666666666661" width="319" height="22.666666666666671"/>
                                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                                                                             <textInputTraits key="textInputTraits"/>

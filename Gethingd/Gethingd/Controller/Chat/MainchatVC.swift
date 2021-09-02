@@ -113,15 +113,15 @@ extension MainchatVC {
 //        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: COLOR.App]
         
         let messageVC1 = MessageVC1.instantiate(fromAppStoryboard: .Chat)
-        messageVC1.title = "Message"
+        messageVC1.title = "MESSAGES"
         
         let matchesVC = MatchesVC.instantiate(fromAppStoryboard: .Chat)
-        matchesVC.title = "Matches"
+        matchesVC.title = "MATCHES"
 //        historyVC.onShowStatement = { isShowStatement in
 //            historyVC.title = isShowStatement ? "STATEMENTS" : "HISTORY"
 //        }
         let wholikedmeVC = WholikedVC.instantiate(fromAppStoryboard: .Chat)
-        wholikedmeVC.title = "Who Liked"
+        wholikedmeVC.title = "WHO LIKED"
 //        wholikedmeVC.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont(name: "LeagueGothic-Regular", size: 30.0)]
         
       
