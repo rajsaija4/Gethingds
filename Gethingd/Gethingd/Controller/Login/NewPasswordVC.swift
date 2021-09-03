@@ -36,7 +36,7 @@ class NewPasswordVC: UIViewController {
             txtNewPassword.isSecureTextEntry = !sender.isSelected
         }
         if sender.tag == 1 {
-            txtNewPassword.isSecureTextEntry = !sender.isSelected
+            txtConfirmPassword.isSecureTextEntry = !sender.isSelected
         }
      }
     /*

@@ -35,6 +35,13 @@ extension MainTabBarController {
                     
                 }
                 break
+        case "REVIEW LATER":
+            guard let nvc = self.viewControllers?[2] as? UINavigationController else {
+                return
+            }
+            if let vc = nvc.viewControllers.first as? ReviewLaterVC {
+                vc.getProfiles()
+            }
             case "CHAT":
                 guard let nvc = self.viewControllers?[2] as? UINavigationController else{ return }
                 if let vc = nvc.viewControllers.first as? ChatVC {

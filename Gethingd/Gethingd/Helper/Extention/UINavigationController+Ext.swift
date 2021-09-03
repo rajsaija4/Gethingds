@@ -228,8 +228,8 @@ extension UINavigationController {
         btnBack.tag = -2
         btnBack.addTarget(self.topViewController, action: action, for: .touchUpInside)
         btnBack.translatesAutoresizingMaskIntoConstraints = false
-        btnBack.widthAnchor.constraint(equalToConstant: 30).isActive = true
-        btnBack.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        btnBack.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        btnBack.heightAnchor.constraint(equalToConstant: 20).isActive = true
         return btnBack
     }
 }

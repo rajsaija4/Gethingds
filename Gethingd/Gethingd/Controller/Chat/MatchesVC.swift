@@ -173,6 +173,10 @@ extension MatchesVC {
                     self.searchBar.isHidden = false
                     self.lblNomessageFound.isHidden = true
                 }
+                else {
+                    self.lblNomessageFound.isHidden = false
+                    self.searchBar.isHidden = true
+                }
                 self.collMatches.reloadData()
                 self.hideHUD()
     

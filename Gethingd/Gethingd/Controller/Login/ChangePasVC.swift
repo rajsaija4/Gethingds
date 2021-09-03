@@ -25,10 +25,10 @@ class ChangePasVC: UIViewController {
             txtCurrentPassword.isSecureTextEntry = !sender.isSelected
         }
         if sender.tag == 1{
-            txtCurrentPassword.isSecureTextEntry = !sender.isSelected
+            txtNewPassword.isSecureTextEntry = !sender.isSelected
         }
         if sender.tag == 2{
-            txtCurrentPassword.isSecureTextEntry = !sender.isSelected
+            txtConfirmNewPassword.isSecureTextEntry = !sender.isSelected
         }
         
     }
@@ -43,12 +43,17 @@ class ChangePasVC: UIViewController {
         
         
         guard let currentPassword = txtCurrentPassword.text, currentPassword.count > 0 else {
-            showToast("Please \(txtCurrentPassword.placeholder ?? "")")
+            showToast("Please Enter \(txtCurrentPassword.placeholder ?? "")")
+            return
+        }
+        
+        guard currentPassword.count >= 6 else {
+            showToast("Password should be 6 or more then 6 characters")
             return
         }
         
         guard let newPassword = txtNewPassword.text, newPassword.count > 0 else {
-            showToast("Please \(txtNewPassword.placeholder ?? "")")
+            showToast("Please Enter \(txtNewPassword.placeholder ?? "")")
             return
         }
         
@@ -58,7 +63,7 @@ class ChangePasVC: UIViewController {
         }
         
         guard let confirmPassword = txtConfirmNewPassword.text, confirmPassword.count > 0 else {
-            showToast("Please \(txtConfirmNewPassword.placeholder ?? "")")
+            showToast("Please Enter \(txtConfirmNewPassword.placeholder ?? "")")
             return
         }
         

@@ -156,6 +156,10 @@ extension WholikedVC {
                 self.searchBar.isHidden = false
                 self.lblNolikeFound.isHidden = false
             }
+            else {
+                self.lblNolikeFound.isHidden = false
+                self.searchBar.isHidden = true
+            }
             self.collWholike.reloadData()
             self.hideHUD()
         } _: { (error) in

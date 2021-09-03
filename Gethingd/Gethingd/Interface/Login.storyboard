@@ -2196,6 +2196,9 @@
                                                         </constraints>
                                                         <state key="normal" image="Icon feather-eye"/>
                                                         <state key="selected" image="Icon feather-eye-off"/>
+                                                        <connections>
+                                                            <action selector="onPresspassvisible:" destination="WAM-PA-8zg" eventType="touchUpInside" id="TW2-be-w4x"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.91756659750000003" green="0.9176985621" blue="0.91753774880000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2241,6 +2244,9 @@
                                                         </constraints>
                                                         <state key="normal" image="Icon feather-eye"/>
                                                         <state key="selected" image="Icon feather-eye-off"/>
+                                                        <connections>
+                                                            <action selector="onPresspassvisible:" destination="WAM-PA-8zg" eventType="touchUpInside" id="FqR-gq-f47"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.91756659750000003" green="0.9176985621" blue="0.91753774880000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2453,6 +2459,9 @@
                                                         </constraints>
                                                         <state key="normal" image="Icon feather-eye"/>
                                                         <state key="selected" image="Icon feather-eye-off"/>
+                                                        <connections>
+                                                            <action selector="onPressVisiblepassbtn:" destination="Py6-eI-Unl" eventType="touchUpInside" id="G68-G4-wwF"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.91756659750000003" green="0.9176985621" blue="0.91753774880000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

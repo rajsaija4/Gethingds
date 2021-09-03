@@ -160,6 +160,10 @@ extension MessageVC1 {
                 self.searchBar.isHidden = false
                 self.lblNoMessages.isHidden = true
             }
+            else {
+                self.lblNoMessages.isHidden = false
+                self.searchBar.isHidden = true
+            }
             self.tblChat.reloadData()
             self.hideHUD()
         } _: { (error) in

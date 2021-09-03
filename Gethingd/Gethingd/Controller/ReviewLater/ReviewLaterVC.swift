@@ -21,7 +21,7 @@ class ReviewLaterVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//      getProfiles()
+      getProfiles()
       
 
         // Do any additional setup after loading the view.
@@ -31,7 +31,7 @@ class ReviewLaterVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getProfiles()
+//        getProfiles()
 
     }
 
@@ -68,7 +68,10 @@ extension ReviewLaterVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = UserDetailsTVC.instantiate(fromAppStoryboard: .Discover)
         vc.user = arrUser[indexPath.row]
-        vc.modalPresentationStyle = .fullScreen
+        vc.onreload = {
+            self.getProfiles()
+        }
+        vc.modalPresentationStyle = .overCurrentContext
         self.present(vc, animated: true)
     }
     
@@ -109,6 +112,10 @@ extension ReviewLaterVC {
             self.arrUser.append(contentsOf: UserProfile)
             if self.arrUser.count > 0 {
                 self.lblNoreviewLaterFound.isHidden = true
+            }
+            
+            else {
+                self.lblNoreviewLaterFound.isHidden = false
             }
             DispatchQueue.main.async {
                 self.collReviewLater.reloadData()

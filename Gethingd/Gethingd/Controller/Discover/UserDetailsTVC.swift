@@ -54,6 +54,7 @@ class UserDetailsTVC: UITableViewController, TagListViewDelegate {
     var user: UserProfile = UserProfile(JSON.null)
     var isFromNotification = false
     var isFromProfile = false
+    var onreload:(() -> Void)?
     var userId = 0
 //    fileprivate var arrInstaMedia: [InstaMedia] = []
     
@@ -123,7 +124,9 @@ class UserDetailsTVC: UITableViewController, TagListViewDelegate {
         }
         swipeUser(userID: userId, status: .nope)
 //        onDisLikeUser?()
+        
         self.dismiss(animated: true, completion: nil)
+        onreload?()
     }
     
     @IBAction func onLikeBtnTap(_ sender: UIButton) {
