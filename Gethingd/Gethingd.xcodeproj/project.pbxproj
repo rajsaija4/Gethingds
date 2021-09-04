@@ -1066,7 +1066,7 @@
 				CODE_SIGN_ENTITLEMENTS = Gethingd/Gethingd.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = HGA884967L;
 				INFOPLIST_FILE = Gethingd/Supporting/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
@@ -1091,7 +1091,7 @@
 				CODE_SIGN_ENTITLEMENTS = Gethingd/Gethingd.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = HGA884967L;
 				INFOPLIST_FILE = Gethingd/Supporting/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
